@@ -1,0 +1,205 @@
+{
+  "schema_version": "1",
+  "source": "demo",
+  "generated_at": "2026-11-16T00:00:00Z",
+  "user": {
+    "login": "sample-dev"
+  },
+  "period": 14,
+  "repository_total": 5,
+  "event_total": 10,
+  "eligible_total": 10,
+  "repositories": [
+    {
+      "full_name": "sample-dev/ember",
+      "name": "ember",
+      "language": "Rust",
+      "stars": 2,
+      "index": 0,
+      "events": 2,
+      "units": 3
+    },
+    {
+      "full_name": "sample-dev/harbour",
+      "name": "harbour",
+      "language": "Go",
+      "stars": 0,
+      "index": 1,
+      "events": 2,
+      "units": 5
+    },
+    {
+      "full_name": "sample-dev/aurora",
+      "name": "aurora",
+      "language": "Python",
+      "stars": 12,
+      "index": 2,
+      "events": 2,
+      "units": 4
+    },
+    {
+      "full_name": "sample-dev/orbit",
+      "name": "orbit",
+      "language": "Python",
+      "stars": 7,
+      "index": 3,
+      "events": 2,
+      "units": 6
+    },
+    {
+      "full_name": "sample-dev/atlas",
+      "name": "atlas",
+      "language": "TypeScript",
+      "stars": 4,
+      "index": 4,
+      "events": 2,
+      "units": 2
+    }
+  ],
+  "jobs": [
+    {
+      "id": "demo-001",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "repo_index": 2,
+      "count": 3,
+      "occurred_at": "2026-08-03T10:20:00Z",
+      "start": 0.55,
+      "duration": 2.2,
+      "agents": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "demo-002",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "repo_index": 4,
+      "count": 1,
+      "occurred_at": "2026-08-21T09:15:00Z",
+      "start": 1.75,
+      "duration": 2.2,
+      "agents": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "demo-003",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "repo_index": 0,
+      "count": 2,
+      "occurred_at": "2026-09-06T20:45:00Z",
+      "start": 2.95,
+      "duration": 2.2,
+      "agents": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "demo-004",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/atlas",
+      "repo_index": 4,
+      "count": 1,
+      "occurred_at": "2026-09-12T13:00:00Z",
+      "start": 4.15,
+      "duration": 2.2,
+      "agents": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "demo-005",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "repo_index": 3,
+      "count": 1,
+      "occurred_at": "2026-09-28T06:30:00Z",
+      "start": 5.35,
+      "duration": 2.2,
+      "agents": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "demo-006",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "repo_index": 3,
+      "count": 5,
+      "occurred_at": "2026-10-17T18:25:00Z",
+      "start": 6.55,
+      "duration": 2.2,
+      "agents": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "demo-007",
+      "kind": "release",
+      "repo_full_name": "sample-dev/aurora",
+      "repo_index": 2,
+      "count": 1,
+      "occurred_at": "2026-10-24T11:00:00Z",
+      "start": 7.75,
+      "duration": 2.2,
+      "agents": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "demo-008",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/harbour",
+      "repo_index": 1,
+      "count": 1,
+      "occurred_at": "2026-11-04T15:10:00Z",
+      "start": 8.95,
+      "duration": 2.2,
+      "agents": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "demo-009",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "repo_index": 1,
+      "count": 4,
+      "occurred_at": "2026-11-09T07:45:00Z",
+      "start": 10.15,
+      "duration": 2.2,
+      "agents": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "demo-010",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "repo_index": 0,
+      "count": 1,
+      "occurred_at": "2026-11-13T09:00:00Z",
+      "start": 11.35,
+      "duration": 2.2,
+      "agents": [
+        2,
+        3
+      ]
+    }
+  ],
+  "shown": 10,
+  "truncated": false,
+  "stale_days": 2,
+  "note": "Visual metaphor only. Agents do not perform GitHub actions."
+}

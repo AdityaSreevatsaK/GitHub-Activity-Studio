@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="350" viewBox="0 0 1120 350" role="img" aria-labelledby="swarm-title swarm-desc">
+ <title id="swarm-title">Agent Swarm, geometric choreography, dark theme</title>
+ <desc id="swarm-desc">DEMONSTRATION DATA. A symbolic, deterministic fourteen-second replay of 10 source-backed GitHub event packets across 5 repository hubs. These agents are only a visual metaphor and do not carry out GitHub operations.</desc>
+ <defs>
+ <linearGradient id="swarm-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#091321"/><stop offset="1" stop-color="#14253b"/></linearGradient>
+ <pattern id="dotfield" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.8" fill="#233c52"/></pattern>
+ <filter id="softlight" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+ </defs>
+ <style>text{font-family:Segoe UI,Inter,Arial,sans-serif;font-weight:500} .micro{letter-spacing:1.5px;font-weight:700} .repo{font-weight:750} @media(prefers-reduced-motion:reduce){.motion-mark{display:none}}</style>
+ <rect x="0" y="0" width="1120" height="350" rx="0" fill="url(#swarm-bg)" stroke="none" stroke-width="1"/>
+ <rect x="0" y="0" width="1120" height="350" rx="0" fill="url(#dotfield)" stroke="none" stroke-width="1"/>
+ <rect x="15" y="15" width="1090" height="320" rx="18" fill="none" stroke="#29435b" stroke-width="1"/>
+ <text x="39" y="46" font-size="23" fill="#edf8ff" font-weight="800" letter-spacing="1.2">AGENT / SWARM</text>
+ <text x="40" y="66" font-size="10.6" fill="#a1b9ca" class="micro">An orchestrated visualisation of repository activity</text>
+ <rect x="944" y="29" width="133" height="32" rx="16" fill="#ffdf96" stroke="none" stroke-width="1"/>
+ <text x="1010" y="49" font-size="11" fill="#3b301e" text-anchor="middle" font-weight="800">● DEMO DATA</text>
+ <path d="M 39 80 L 1080 80" fill="none" stroke="#29435b" stroke-width="1"/>
+ <text x="42" y="97" font-size="9.3" fill="#a1b9ca" class="micro">REPOSITORY HUBS</text>
+ <text x="1077" y="97" font-size="9.3" fill="#a1b9ca" text-anchor="end" class="micro">5 REPOS · 10 EVENTS</text>
+ <g class="hub" data-repository="sample-dev/ember">
+     <rect x="42" y="109" width="195.2" height="135" rx="10" fill="#101f31" stroke="#29435b" stroke-width="1"/>
+     <rect x="53" y="121" width="173.2" height="2" rx="1" fill="#60dcc1" stroke="none" stroke-width="1"/>
+     <circle cx="139.6" cy="165" r="34" fill="#60dcc1" fill-opacity=".08" stroke="#60dcc1" stroke-opacity=".5" stroke-dasharray="2 6"/>
+     <circle cx="139.6" cy="165" r="18" fill="#60dcc1" fill-opacity=".15" stroke="#60dcc1" stroke-width="1.6"/>
+     <path d="M 139.6 151 L 153.6 165 L 139.6 179 L 125.6 165 Z" fill="#60dcc1" fill-opacity=".75"/>
+     <text x="139.6" y="211" font-size="15" fill="#edf8ff" text-anchor="middle" class="repo">ember</text>
+     <text x="139.6" y="229" font-size="9.5" fill="#a1b9ca" text-anchor="middle">2 events · 3 units</text>
+     </g><path d="M 139.6 245 Q 149.6 263 139.6 269" fill="none" stroke="#60dcc1" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/harbour">
+     <rect x="249.2" y="109" width="195.2" height="135" rx="10" fill="#101f31" stroke="#29435b" stroke-width="1"/>
+     <rect x="260.2" y="121" width="173.2" height="2" rx="1" fill="#8abaff" stroke="none" stroke-width="1"/>
+     <circle cx="346.79999999999995" cy="165" r="34" fill="#8abaff" fill-opacity=".08" stroke="#8abaff" stroke-opacity=".5" stroke-dasharray="2 6"/>
+     <circle cx="346.79999999999995" cy="165" r="18" fill="#8abaff" fill-opacity=".15" stroke="#8abaff" stroke-width="1.6"/>
+     <path d="M 346.79999999999995 151 L 360.79999999999995 165 L 346.79999999999995 179 L 332.79999999999995 165 Z" fill="#8abaff" fill-opacity=".75"/>
+     <text x="346.79999999999995" y="211" font-size="15" fill="#edf8ff" text-anchor="middle" class="repo">harbour</text>
+     <text x="346.79999999999995" y="229" font-size="9.5" fill="#a1b9ca" text-anchor="middle">2 events · 5 units</text>
+     </g><path d="M 346.79999999999995 245 Q 356.79999999999995 263 346.79999999999995 269" fill="none" stroke="#8abaff" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/aurora">
+     <rect x="456.4" y="109" width="195.2" height="135" rx="10" fill="#101f31" stroke="#29435b" stroke-width="1"/>
+     <rect x="467.4" y="121" width="173.2" height="2" rx="1" fill="#e7a5ff" stroke="none" stroke-width="1"/>
+     <circle cx="554" cy="165" r="34" fill="#e7a5ff" fill-opacity=".08" stroke="#e7a5ff" stroke-opacity=".5" stroke-dasharray="2 6"/>
+     <circle cx="554" cy="165" r="18" fill="#e7a5ff" fill-opacity=".15" stroke="#e7a5ff" stroke-width="1.6"/>
+     <path d="M 554 151 L 568 165 L 554 179 L 540 165 Z" fill="#e7a5ff" fill-opacity=".75"/>
+     <text x="554" y="211" font-size="15" fill="#edf8ff" text-anchor="middle" class="repo">aurora</text>
+     <text x="554" y="229" font-size="9.5" fill="#a1b9ca" text-anchor="middle">2 events · 4 units</text>
+     </g><path d="M 554 245 Q 564 263 554 269" fill="none" stroke="#e7a5ff" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/orbit">
+     <rect x="663.5999999999999" y="109" width="195.2" height="135" rx="10" fill="#101f31" stroke="#29435b" stroke-width="1"/>
+     <rect x="674.5999999999999" y="121" width="173.2" height="2" rx="1" fill="#ffbd84" stroke="none" stroke-width="1"/>
+     <circle cx="761.1999999999999" cy="165" r="34" fill="#ffbd84" fill-opacity=".08" stroke="#ffbd84" stroke-opacity=".5" stroke-dasharray="2 6"/>
+     <circle cx="761.1999999999999" cy="165" r="18" fill="#ffbd84" fill-opacity=".15" stroke="#ffbd84" stroke-width="1.6"/>
+     <path d="M 761.1999999999999 151 L 775.1999999999999 165 L 761.1999999999999 179 L 747.1999999999999 165 Z" fill="#ffbd84" fill-opacity=".75"/>
+     <text x="761.1999999999999" y="211" font-size="15" fill="#edf8ff" text-anchor="middle" class="repo">orbit</text>
+     <text x="761.1999999999999" y="229" font-size="9.5" fill="#a1b9ca" text-anchor="middle">2 events · 6 units</text>
+     </g><path d="M 761.1999999999999 245 Q 771.1999999999999 263 761.1999999999999 269" fill="none" stroke="#ffbd84" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/atlas">
+     <rect x="870.8" y="109" width="195.2" height="135" rx="10" fill="#101f31" stroke="#29435b" stroke-width="1"/>
+     <rect x="881.8" y="121" width="173.2" height="2" rx="1" fill="#ff8fb2" stroke="none" stroke-width="1"/>
+     <circle cx="968.4" cy="165" r="34" fill="#ff8fb2" fill-opacity=".08" stroke="#ff8fb2" stroke-opacity=".5" stroke-dasharray="2 6"/>
+     <circle cx="968.4" cy="165" r="18" fill="#ff8fb2" fill-opacity=".15" stroke="#ff8fb2" stroke-width="1.6"/>
+     <path d="M 968.4 151 L 982.4 165 L 968.4 179 L 954.4 165 Z" fill="#ff8fb2" fill-opacity=".75"/>
+     <text x="968.4" y="211" font-size="15" fill="#edf8ff" text-anchor="middle" class="repo">atlas</text>
+     <text x="968.4" y="229" font-size="9.5" fill="#a1b9ca" text-anchor="middle">2 events · 2 units</text>
+     </g><path d="M 968.4 245 Q 978.4 263 968.4 269" fill="none" stroke="#ff8fb2" stroke-opacity=".33" stroke-dasharray="3 6"/><rect x="42" y="267" width="1036" height="35" rx="12" fill="#101f31" stroke="#29435b" stroke-width="1"/><text x="55" y="289" font-size="9" fill="#a1b9ca" class="micro">AGENT POOL</text><path d="M 186 276 L 192 284 L 186 292 L 180 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><path d="M 219 276 L 225 284 L 219 292 L 213 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><path d="M 252 276 L 258 284 L 252 292 L 246 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><path d="M 285 276 L 291 284 L 285 292 L 279 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><path d="M 318 276 L 324 284 L 318 292 L 312 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><path d="M 351 276 L 357 284 L 351 292 L 345 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><path d="M 384 276 L 390 284 L 384 292 L 378 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><path d="M 417 276 L 423 284 L 417 292 L 411 284 Z" fill="#172a40" stroke="#a1b9ca" stroke-width="1"/><text x="1061" y="289" font-size="9" fill="#a1b9ca" class="micro" text-anchor="end">8 SYMBOLIC AGENTS</text><g opacity="0" class="task" data-event="demo-001">
+     <rect x="506" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="554" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">C · 3 units</text>
+     <circle cx="554" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="470.4" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="470.4" y="235" width="167" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="0" class="task" data-event="demo-002">
+     <rect x="920.4" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#83b7ff" stroke-width="1.2"/>
+     <text x="968.4" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">P+ · 1 unit</text>
+     <circle cx="968.4" cy="165" r="41" fill="none" stroke="#83b7ff" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="884.8" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="884.8" y="235" width="167" height="3" rx="1" fill="#83b7ff" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="0" class="task" data-event="demo-003">
+     <rect x="91.6" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="139.6" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">C · 2 units</text>
+     <circle cx="139.6" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="56" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="56" y="235" width="167" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="1" class="task" data-event="demo-004">
+     <rect x="920.4" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#b69bff" stroke-width="1.2"/>
+     <text x="968.4" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">PM · 1 unit</text>
+     <circle cx="968.4" cy="165" r="41" fill="none" stroke="#b69bff" stroke-width="2" stroke-dasharray="2 8" opacity="1"/>
+     
+     </g><g opacity="1">
+     <rect x="884.8" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="884.8" y="235" width="70.21590909090888" height="3" rx="1" fill="#b69bff" stroke="none" stroke-width="1"/>
+     
+     </g><g transform="translate(945.34 170.46)"><g><circle r="13" fill="#b69bff" opacity=".15" filter="url(#softlight)"/>
+   <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#0d1c2d" stroke="#b69bff" stroke-width="2.2"/>
+   <circle r="3.5" fill="#b69bff"/>
+   <path d="M -17 0 H -12 M 12 0 H 17" stroke="#b69bff" stroke-width="1.7" stroke-linecap="round"/></g></g><g transform="translate(988.40 182.33)"><g><circle r="13" fill="#b69bff" opacity=".15" filter="url(#softlight)"/>
+   <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#0d1c2d" stroke="#b69bff" stroke-width="2.2"/>
+   <circle r="3.5" fill="#b69bff"/>
+   <path d="M -17 0 H -12 M 12 0 H 17" stroke="#b69bff" stroke-width="1.7" stroke-linecap="round"/></g></g><g opacity="0" class="task" data-event="demo-005">
+     <rect x="713.1999999999999" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#ffbd79" stroke-width="1.2"/>
+     <text x="761.1999999999999" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">? · 1 unit</text>
+     <circle cx="761.1999999999999" cy="165" r="41" fill="none" stroke="#ffbd79" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="677.5999999999999" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#ffbd79" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="0" class="task" data-event="demo-006">
+     <rect x="713.1999999999999" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="761.1999999999999" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">C · 5 units</text>
+     <circle cx="761.1999999999999" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="677.5999999999999" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="0" class="task" data-event="demo-007">
+     <rect x="506" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#ff91ab" stroke-width="1.2"/>
+     <text x="554" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">R · 1 unit</text>
+     <circle cx="554" cy="165" r="41" fill="none" stroke="#ff91ab" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="470.4" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="470.4" y="235" width="0" height="3" rx="1" fill="#ff91ab" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="0" class="task" data-event="demo-008">
+     <rect x="298.79999999999995" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#b69bff" stroke-width="1.2"/>
+     <text x="346.79999999999995" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">PM · 1 unit</text>
+     <circle cx="346.79999999999995" cy="165" r="41" fill="none" stroke="#b69bff" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="263.2" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#b69bff" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="0" class="task" data-event="demo-009">
+     <rect x="298.79999999999995" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="346.79999999999995" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">C · 4 units</text>
+     <circle cx="346.79999999999995" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="263.2" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     
+     </g><g opacity="0" class="task" data-event="demo-010">
+     <rect x="91.6" y="121" width="96" height="22" rx="11" fill="#172a40" stroke="#83b7ff" stroke-width="1.2"/>
+     <text x="139.6" y="136.5" font-size="9.3" fill="#edf8ff" text-anchor="middle" font-weight="700">P+ · 1 unit</text>
+     <circle cx="139.6" cy="165" r="41" fill="none" stroke="#83b7ff" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     
+     </g><g opacity="0">
+     <rect x="56" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
+     <rect x="56" y="235" width="0" height="3" rx="1" fill="#83b7ff" stroke="none" stroke-width="1"/>
+     
+     </g><circle cx="48" cy="321" r="3.5" fill="#58d7bf"/><text x="57" y="324" font-size="9" fill="#a1b9ca" >COMMIT 4</text><circle cx="136.8" cy="321" r="3.5" fill="#83b7ff"/><text x="145.8" y="324" font-size="9" fill="#a1b9ca" >PR OPENED 2</text><circle cx="246" cy="321" r="3.5" fill="#b69bff"/><text x="255" y="324" font-size="9" fill="#a1b9ca" >PR MERGED 2</text><circle cx="355.2" cy="321" r="3.5" fill="#ffbd79"/><text x="364.2" y="324" font-size="9" fill="#a1b9ca" >ISSUE 1</text><circle cx="437.2" cy="321" r="3.5" fill="#ff91ab"/><text x="446.2" y="324" font-size="9" fill="#a1b9ca" >RELEASE 1</text><text x="1076" y="324" font-size="9" fill="#a1b9ca" text-anchor="end" class="micro">METAPHOR · NOT AUTONOMOUS ACTIONS</text></svg>

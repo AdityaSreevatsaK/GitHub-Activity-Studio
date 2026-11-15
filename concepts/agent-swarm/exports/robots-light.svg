@@ -1,0 +1,410 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="350" viewBox="0 0 1120 350" role="img" aria-labelledby="swarm-title swarm-desc">
+ <title id="swarm-title">Agent Swarm, miniature robots, light theme</title>
+ <desc id="swarm-desc">DEMONSTRATION DATA. A symbolic, deterministic fourteen-second replay of 10 source-backed GitHub event packets across 5 repository hubs. These agents are only a visual metaphor and do not carry out GitHub operations.</desc>
+ <defs>
+ <linearGradient id="swarm-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6f2e9"/><stop offset="1" stop-color="#e9f0ec"/></linearGradient>
+ <pattern id="dotfield" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="0.8" fill="#e2e4df"/></pattern>
+ <filter id="softlight" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+ </defs>
+ <style>text{font-family:Segoe UI,Inter,Arial,sans-serif;font-weight:500} .micro{letter-spacing:1.5px;font-weight:700} .repo{font-weight:750} @media(prefers-reduced-motion:reduce){.motion-mark{display:none}}</style>
+ <rect x="0" y="0" width="1120" height="350" rx="0" fill="url(#swarm-bg)" stroke="none" stroke-width="1"/>
+ <rect x="0" y="0" width="1120" height="350" rx="0" fill="url(#dotfield)" stroke="none" stroke-width="1"/>
+ <rect x="15" y="15" width="1090" height="320" rx="18" fill="none" stroke="#bdcbd3" stroke-width="1"/>
+ <text x="39" y="46" font-size="23" fill="#203044" font-weight="800" letter-spacing="1.2">TINY OPERATIONS DEPT.</text>
+ <text x="40" y="66" font-size="10.6" fill="#51677b" class="micro">Little robots. Real signals. Make-believe work.</text>
+ <rect x="944" y="29" width="133" height="32" rx="16" fill="#ffdf96" stroke="none" stroke-width="1"/>
+ <text x="1010" y="49" font-size="11" fill="#3b301e" text-anchor="middle" font-weight="800">● DEMO DATA</text>
+ <path d="M 39 80 L 1080 80" fill="none" stroke="#bdcbd3" stroke-width="1"/>
+ <text x="42" y="97" font-size="9.3" fill="#51677b" class="micro">WORKSHOP BAYS</text>
+ <text x="1077" y="97" font-size="9.3" fill="#51677b" text-anchor="end" class="micro">5 REPOS · 10 EVENTS</text>
+ <g class="hub" data-repository="sample-dev/ember">
+     <rect x="42" y="109" width="195.2" height="135" rx="18" fill="#ffffff" stroke="#bdcbd3" stroke-width="1"/>
+     <rect x="49" y="117" width="181.2" height="17" rx="7" fill="#e9eef0" stroke="none" stroke-width="1"/><rect x="52" y="123" width="8" height="4" rx="2" fill="#60dcc1" stroke="none" stroke-width="1"/><rect x="219.2" y="123" width="8" height="4" rx="2" fill="#60dcc1" stroke="none" stroke-width="1"/>
+     <circle cx="139.6" cy="165" r="31" fill="#60dcc1" fill-opacity=".11" stroke="#60dcc1" stroke-opacity=".5" stroke-dasharray="5 5"/>
+     <circle cx="139.6" cy="165" r="13" fill="#60dcc1" fill-opacity=".15" stroke="#60dcc1" stroke-width="1.6"/>
+     <path d="M 127.6 165 l 6 -8 6 8 6 -8 6 8" fill="none" stroke="#60dcc1" stroke-width="2"/>
+     <text x="139.6" y="211" font-size="15" fill="#203044" text-anchor="middle" class="repo">ember</text>
+     <text x="139.6" y="229" font-size="9.5" fill="#51677b" text-anchor="middle">2 events · 3 units</text>
+     </g><path d="M 139.6 245 Q 149.6 263 139.6 269" fill="none" stroke="#60dcc1" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/harbour">
+     <rect x="249.2" y="109" width="195.2" height="135" rx="18" fill="#ffffff" stroke="#bdcbd3" stroke-width="1"/>
+     <rect x="256.2" y="117" width="181.2" height="17" rx="7" fill="#e9eef0" stroke="none" stroke-width="1"/><rect x="259.2" y="123" width="8" height="4" rx="2" fill="#8abaff" stroke="none" stroke-width="1"/><rect x="426.4" y="123" width="8" height="4" rx="2" fill="#8abaff" stroke="none" stroke-width="1"/>
+     <circle cx="346.79999999999995" cy="165" r="31" fill="#8abaff" fill-opacity=".11" stroke="#8abaff" stroke-opacity=".5" stroke-dasharray="5 5"/>
+     <circle cx="346.79999999999995" cy="165" r="13" fill="#8abaff" fill-opacity=".15" stroke="#8abaff" stroke-width="1.6"/>
+     <path d="M 334.79999999999995 165 l 6 -8 6 8 6 -8 6 8" fill="none" stroke="#8abaff" stroke-width="2"/>
+     <text x="346.79999999999995" y="211" font-size="15" fill="#203044" text-anchor="middle" class="repo">harbour</text>
+     <text x="346.79999999999995" y="229" font-size="9.5" fill="#51677b" text-anchor="middle">2 events · 5 units</text>
+     </g><path d="M 346.79999999999995 245 Q 356.79999999999995 263 346.79999999999995 269" fill="none" stroke="#8abaff" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/aurora">
+     <rect x="456.4" y="109" width="195.2" height="135" rx="18" fill="#ffffff" stroke="#bdcbd3" stroke-width="1"/>
+     <rect x="463.4" y="117" width="181.2" height="17" rx="7" fill="#e9eef0" stroke="none" stroke-width="1"/><rect x="466.4" y="123" width="8" height="4" rx="2" fill="#e7a5ff" stroke="none" stroke-width="1"/><rect x="633.5999999999999" y="123" width="8" height="4" rx="2" fill="#e7a5ff" stroke="none" stroke-width="1"/>
+     <circle cx="554" cy="165" r="31" fill="#e7a5ff" fill-opacity=".11" stroke="#e7a5ff" stroke-opacity=".5" stroke-dasharray="5 5"/>
+     <circle cx="554" cy="165" r="13" fill="#e7a5ff" fill-opacity=".15" stroke="#e7a5ff" stroke-width="1.6"/>
+     <path d="M 542 165 l 6 -8 6 8 6 -8 6 8" fill="none" stroke="#e7a5ff" stroke-width="2"/>
+     <text x="554" y="211" font-size="15" fill="#203044" text-anchor="middle" class="repo">aurora</text>
+     <text x="554" y="229" font-size="9.5" fill="#51677b" text-anchor="middle">2 events · 4 units</text>
+     </g><path d="M 554 245 Q 564 263 554 269" fill="none" stroke="#e7a5ff" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/orbit">
+     <rect x="663.5999999999999" y="109" width="195.2" height="135" rx="18" fill="#ffffff" stroke="#bdcbd3" stroke-width="1"/>
+     <rect x="670.5999999999999" y="117" width="181.2" height="17" rx="7" fill="#e9eef0" stroke="none" stroke-width="1"/><rect x="673.5999999999999" y="123" width="8" height="4" rx="2" fill="#ffbd84" stroke="none" stroke-width="1"/><rect x="840.8" y="123" width="8" height="4" rx="2" fill="#ffbd84" stroke="none" stroke-width="1"/>
+     <circle cx="761.1999999999999" cy="165" r="31" fill="#ffbd84" fill-opacity=".11" stroke="#ffbd84" stroke-opacity=".5" stroke-dasharray="5 5"/>
+     <circle cx="761.1999999999999" cy="165" r="13" fill="#ffbd84" fill-opacity=".15" stroke="#ffbd84" stroke-width="1.6"/>
+     <path d="M 749.1999999999999 165 l 6 -8 6 8 6 -8 6 8" fill="none" stroke="#ffbd84" stroke-width="2"/>
+     <text x="761.1999999999999" y="211" font-size="15" fill="#203044" text-anchor="middle" class="repo">orbit</text>
+     <text x="761.1999999999999" y="229" font-size="9.5" fill="#51677b" text-anchor="middle">2 events · 6 units</text>
+     </g><path d="M 761.1999999999999 245 Q 771.1999999999999 263 761.1999999999999 269" fill="none" stroke="#ffbd84" stroke-opacity=".33" stroke-dasharray="3 6"/><g class="hub" data-repository="sample-dev/atlas">
+     <rect x="870.8" y="109" width="195.2" height="135" rx="18" fill="#ffffff" stroke="#bdcbd3" stroke-width="1"/>
+     <rect x="877.8" y="117" width="181.2" height="17" rx="7" fill="#e9eef0" stroke="none" stroke-width="1"/><rect x="880.8" y="123" width="8" height="4" rx="2" fill="#ff8fb2" stroke="none" stroke-width="1"/><rect x="1048" y="123" width="8" height="4" rx="2" fill="#ff8fb2" stroke="none" stroke-width="1"/>
+     <circle cx="968.4" cy="165" r="31" fill="#ff8fb2" fill-opacity=".11" stroke="#ff8fb2" stroke-opacity=".5" stroke-dasharray="5 5"/>
+     <circle cx="968.4" cy="165" r="13" fill="#ff8fb2" fill-opacity=".15" stroke="#ff8fb2" stroke-width="1.6"/>
+     <path d="M 956.4 165 l 6 -8 6 8 6 -8 6 8" fill="none" stroke="#ff8fb2" stroke-width="2"/>
+     <text x="968.4" y="211" font-size="15" fill="#203044" text-anchor="middle" class="repo">atlas</text>
+     <text x="968.4" y="229" font-size="9.5" fill="#51677b" text-anchor="middle">2 events · 2 units</text>
+     </g><path d="M 968.4 245 Q 978.4 263 968.4 269" fill="none" stroke="#ff8fb2" stroke-opacity=".33" stroke-dasharray="3 6"/><rect x="42" y="267" width="1036" height="35" rx="12" fill="#ffffff" stroke="#bdcbd3" stroke-width="1"/><text x="55" y="289" font-size="9" fill="#51677b" class="micro">ROBOT DOCK</text><rect x="180" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="184" cy="284" r="1.2" fill="#203044"/><circle cx="189" cy="284" r="1.2" fill="#203044"/><rect x="213" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="217" cy="284" r="1.2" fill="#203044"/><circle cx="222" cy="284" r="1.2" fill="#203044"/><rect x="246" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="250" cy="284" r="1.2" fill="#203044"/><circle cx="255" cy="284" r="1.2" fill="#203044"/><rect x="279" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="283" cy="284" r="1.2" fill="#203044"/><circle cx="288" cy="284" r="1.2" fill="#203044"/><rect x="312" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="316" cy="284" r="1.2" fill="#203044"/><circle cx="321" cy="284" r="1.2" fill="#203044"/><rect x="345" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="349" cy="284" r="1.2" fill="#203044"/><circle cx="354" cy="284" r="1.2" fill="#203044"/><rect x="378" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="382" cy="284" r="1.2" fill="#203044"/><circle cx="387" cy="284" r="1.2" fill="#203044"/><rect x="411" y="278" width="13" height="13" rx="4" fill="#e9eef0" stroke="#51677b" stroke-width="1"/><circle cx="415" cy="284" r="1.2" fill="#203044"/><circle cx="420" cy="284" r="1.2" fill="#203044"/><text x="1061" y="289" font-size="9" fill="#51677b" class="micro" text-anchor="end">8 HELPER BOTS</text><g opacity="0" class="task" data-event="demo-001">
+     <rect x="506" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="554" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">C · 3 units</text>
+     <circle cx="554" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="470.4" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="470.4" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="0" data-task="demo-001">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 125 275 Q 328.5 95 532 171 Q 767 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="1" data-task="demo-001">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 238 275 Q 407 105 576 181 Q 789 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-002">
+     <rect x="920.4" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#83b7ff" stroke-width="1.2"/>
+     <text x="968.4" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">P+ · 1 unit</text>
+     <circle cx="968.4" cy="165" r="41" fill="none" stroke="#83b7ff" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="884.8" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="884.8" y="235" width="0" height="3" rx="1" fill="#83b7ff" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="2" data-task="demo-002">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#83b7ff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#83b7ff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#83b7ff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#83b7ff"/><circle cx="3.5" cy="-1" r="1.5" fill="#83b7ff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#83b7ff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 351 275 Q 648.7 95 946.4 171 Q 974.2 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="3" data-task="demo-002">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#83b7ff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#83b7ff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#83b7ff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#83b7ff"/><circle cx="3.5" cy="-1" r="1.5" fill="#83b7ff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#83b7ff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 464 275 Q 727.2 105 990.4 181 Q 996.2 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-003">
+     <rect x="91.6" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="139.6" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">C · 2 units</text>
+     <circle cx="139.6" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="56" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="56" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="4" data-task="demo-003">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 577 275 Q 347.3 95 117.6 171 Q 559.8 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="5" data-task="demo-003">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 690 275 Q 425.8 105 161.6 181 Q 581.8 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-004">
+     <rect x="920.4" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#b69bff" stroke-width="1.2"/>
+     <text x="968.4" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">PM · 1 unit</text>
+     <circle cx="968.4" cy="165" r="41" fill="none" stroke="#b69bff" stroke-width="2" stroke-dasharray="2 8" opacity="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="884.8" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="884.8" y="235" width="0" height="3" rx="1" fill="#b69bff" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="6" data-task="demo-004">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#b69bff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#b69bff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#b69bff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#b69bff"/><circle cx="3.5" cy="-1" r="1.5" fill="#b69bff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#b69bff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 803 275 Q 874.7 95 946.4 171 Q 974.2 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="7" data-task="demo-004">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#b69bff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#b69bff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#b69bff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#b69bff"/><circle cx="3.5" cy="-1" r="1.5" fill="#b69bff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#b69bff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 916 275 Q 953.2 105 990.4 181 Q 996.2 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-005">
+     <rect x="713.1999999999999" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#ffbd79" stroke-width="1.2"/>
+     <text x="761.1999999999999" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">? · 1 unit</text>
+     <circle cx="761.1999999999999" cy="165" r="41" fill="none" stroke="#ffbd79" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="677.5999999999999" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#ffbd79" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="0" data-task="demo-005">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#ffbd79" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#ffbd79"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#ffbd79" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#ffbd79"/><circle cx="3.5" cy="-1" r="1.5" fill="#ffbd79"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#ffbd79" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 125 275 Q 432.09999999999997 95 739.1999999999999 171 Q 870.5999999999999 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="1" data-task="demo-005">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#ffbd79" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#ffbd79"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#ffbd79" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#ffbd79"/><circle cx="3.5" cy="-1" r="1.5" fill="#ffbd79"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#ffbd79" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 238 275 Q 510.59999999999997 105 783.1999999999999 181 Q 892.5999999999999 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-006">
+     <rect x="713.1999999999999" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="761.1999999999999" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">C · 5 units</text>
+     <circle cx="761.1999999999999" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="677.5999999999999" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="2" data-task="demo-006">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 351 275 Q 545.0999999999999 95 739.1999999999999 171 Q 870.5999999999999 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="3" data-task="demo-006">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 464 275 Q 623.5999999999999 105 783.1999999999999 181 Q 892.5999999999999 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-007">
+     <rect x="506" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#ff91ab" stroke-width="1.2"/>
+     <text x="554" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">R · 1 unit</text>
+     <circle cx="554" cy="165" r="41" fill="none" stroke="#ff91ab" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="470.4" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="470.4" y="235" width="0" height="3" rx="1" fill="#ff91ab" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="4" data-task="demo-007">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#ff91ab" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#ff91ab"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#ff91ab" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#ff91ab"/><circle cx="3.5" cy="-1" r="1.5" fill="#ff91ab"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#ff91ab" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 577 275 Q 554.5 95 532 171 Q 767 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="5" data-task="demo-007">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#ff91ab" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#ff91ab"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#ff91ab" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#ff91ab"/><circle cx="3.5" cy="-1" r="1.5" fill="#ff91ab"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#ff91ab" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 690 275 Q 633 105 576 181 Q 789 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-008">
+     <rect x="298.79999999999995" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#b69bff" stroke-width="1.2"/>
+     <text x="346.79999999999995" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">PM · 1 unit</text>
+     <circle cx="346.79999999999995" cy="165" r="41" fill="none" stroke="#b69bff" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="263.2" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#b69bff" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="6" data-task="demo-008">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#b69bff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#b69bff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#b69bff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#b69bff"/><circle cx="3.5" cy="-1" r="1.5" fill="#b69bff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#b69bff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 803 275 Q 563.9 95 324.79999999999995 171 Q 663.4 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="7" data-task="demo-008">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#b69bff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#b69bff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#b69bff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#b69bff"/><circle cx="3.5" cy="-1" r="1.5" fill="#b69bff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#b69bff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 916 275 Q 642.4 105 368.79999999999995 181 Q 685.4 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-009">
+     <rect x="298.79999999999995" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#58d7bf" stroke-width="1.2"/>
+     <text x="346.79999999999995" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">C · 4 units</text>
+     <circle cx="346.79999999999995" cy="165" r="41" fill="none" stroke="#58d7bf" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="263.2" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="0" data-task="demo-009">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 125 275 Q 224.89999999999998 95 324.79999999999995 171 Q 663.4 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="1" data-task="demo-009">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#58d7bf" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#58d7bf"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#58d7bf" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#58d7bf"/><circle cx="3.5" cy="-1" r="1.5" fill="#58d7bf"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#58d7bf" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 238 275 Q 303.4 105 368.79999999999995 181 Q 685.4 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000"/>
+         </g><g opacity="0" class="task" data-event="demo-010">
+     <rect x="91.6" y="121" width="96" height="22" rx="11" fill="#e9eef0" stroke="#83b7ff" stroke-width="1.2"/>
+     <text x="139.6" y="136.5" font-size="9.3" fill="#203044" text-anchor="middle" font-weight="700">P+ · 1 unit</text>
+     <circle cx="139.6" cy="165" r="41" fill="none" stroke="#83b7ff" stroke-width="2" stroke-dasharray="2 8" opacity="0.5"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g opacity="0">
+     <rect x="56" y="235" width="167" height="3" rx="1" fill="#c5d4d9" stroke="none" stroke-width="1"/>
+     <rect x="56" y="235" width="0" height="3" rx="1" fill="#83b7ff" stroke="none" stroke-width="1"/>
+     <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000" dur="14s" repeatCount="indefinite"/>
+     </g><g class="motion-mark" opacity="0" data-agent="2" data-task="demo-010">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#83b7ff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#83b7ff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#83b7ff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#83b7ff"/><circle cx="3.5" cy="-1" r="1.5" fill="#83b7ff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#83b7ff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 351 275 Q 234.3 95 117.6 171 Q 559.8 97 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000"/>
+         </g><g class="motion-mark" opacity="0" data-agent="3" data-task="demo-010">
+         <g>
+    <path d="M -10 -10 l -6 -5 m 26 5 l 6 -5 M 0 -12 v -8" stroke="#83b7ff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="-21" r="2.5" fill="#83b7ff"/>
+    <rect x="-13" y="-11" width="26" height="23" rx="7" fill="#ffffff" stroke="#83b7ff" stroke-width="2.4"/>
+    <rect x="-7" y="-4" width="14" height="7" rx="3.5" fill="#e3f2f4"/>
+    <circle cx="-3.5" cy="-1" r="1.5" fill="#83b7ff"/><circle cx="3.5" cy="-1" r="1.5" fill="#83b7ff"/>
+    <path d="M -7 12 l -3 4 M 7 12 l 3 4" stroke="#83b7ff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+         <animateMotion path="M 464 275 Q 312.8 105 161.6 181 Q 581.8 107 1002 275" dur="14s" repeatCount="indefinite" calcMode="linear"
+         keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000" keyPoints="0;0;0;0.5;0.5;1;1"/>
+         <animate attributeName="opacity" dur="14s" repeatCount="indefinite"
+         values="0;0;1;1;1;0;0" keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000"/>
+         </g><circle cx="48" cy="321" r="3.5" fill="#58d7bf"/><text x="57" y="324" font-size="9" fill="#51677b" >COMMIT 4</text><circle cx="136.8" cy="321" r="3.5" fill="#83b7ff"/><text x="145.8" y="324" font-size="9" fill="#51677b" >PR OPENED 2</text><circle cx="246" cy="321" r="3.5" fill="#b69bff"/><text x="255" y="324" font-size="9" fill="#51677b" >PR MERGED 2</text><circle cx="355.2" cy="321" r="3.5" fill="#ffbd79"/><text x="364.2" y="324" font-size="9" fill="#51677b" >ISSUE 1</text><circle cx="437.2" cy="321" r="3.5" fill="#ff91ab"/><text x="446.2" y="324" font-size="9" fill="#51677b" >RELEASE 1</text><text x="1076" y="324" font-size="9" fill="#51677b" text-anchor="end" class="micro">METAPHOR · NOT AUTONOMOUS ACTIONS</text></svg>
