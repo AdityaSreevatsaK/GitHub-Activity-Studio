@@ -62,8 +62,9 @@ class ConstellationTests(unittest.TestCase):
         payload["activity"] = []
         data = constellation.normalise(payload)
         self.assertEqual(len(data["repositories"]), 15)
-        self.assertIn("5 omitted", constellation.render(data, "radial"))
+        self.assertIn("5 repos omitted", constellation.render(data, "radial"))
         self.assertIn("…", constellation.render(data, "clustered", "paper"))
+        self.assertLessEqual(constellation.render(data).count('data-relation="shared-language"'), 14)
         for layout in ("radial", "clustered"):
             coords = list(constellation.positions(data["repositories"], layout).values())
             self.assertEqual(len(set(coords)), 15)
@@ -97,7 +98,19 @@ class ConstellationTests(unittest.TestCase):
         self.assertEqual(svg.count('data-relation="shared-language"'), 1)
         self.assertNotIn('class="pulse"', svg)
         self.assertNotIn('class="traveller"', svg)
+        self.assertNotIn('class="twinkle"', svg)
         self.assertIn("pr merged", constellation.render(data))
+
+    def test_many_events_replay_is_recent_and_explicitly_bounded(self):
+        payload = copy.deepcopy(FIXTURE)
+        template = dict(payload["activity"][0])
+        payload["activity"] = [dict(template, id=f"event-{i:03d}") for i in range(200)]
+        model = constellation.normalise(payload)
+        svg = constellation.render(model)
+        self.assertEqual(svg.count('class="pulse"'), 150)
+        self.assertIn('latest 150/200 events', svg)
+        self.assertNotIn('data-event="event-000"', svg)
+        self.assertIn('data-event="event-199"', svg)
 
     def test_build_eight_exports_offline(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -168,11 +168,16 @@ def render(model: dict, layout: str = "radial", theme: str = "night", *, animate
     for e in events:
         units[e["repo_full_name"]] += e["count"]
         by_repo[e["repo_full_name"]][e["kind"]] += e["count"]
+    replayed = events[-150:]  # latest 150; acknowledge this limit in the footer
+    # One chain per explicitly matching language; avoid unreadable all-to-all webs.
+    language_members = defaultdict(list)
+    for repo in repos:
+        if repo["language"] != "Unspecified":
+            language_members[repo["language"]].append(repo["full_name"])
     links = []
-    for i, r in enumerate(repos):
-        for other in repos[i + 1:]:
-            if r["language"] != "Unspecified" and r["language"] == other["language"]:
-                links.append((r["full_name"], other["full_name"]))
+    for language in sorted(language_members):
+        members = sorted(language_members[language])
+        links.extend(zip(members, members[1:]))
     esc = lambda s: escape(str(s), quote=True)
     parts = [f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 375" width="1200" height="375" role="img" aria-labelledby="sky-title sky-desc" data-layout="{layout}" data-theme="{theme}" data-source="{model["source"]}" data-repositories="{len(repos)}" data-events="{len(events)}">',
         '<title id="sky-title">GitHub Constellation, ' + esc(layout) + ', ' + esc(theme) + '</title>',
@@ -219,20 +224,20 @@ def render(model: dict, layout: str = "radial", theme: str = "night", *, animate
         parts.append(f'<path d="M{fnum(x1)} {fnum(y1)} Q{fnum((x1+x2)/2)} {fnum((y1+y2)/2-23)} {fnum(x2)} {fnum(y2)}" fill="none" stroke="{p["line"]}" stroke-opacity=".47" stroke-width="1.2" stroke-dasharray="3 5" data-relation="shared-language"/>')
     if animated and events:
         # Chronological event order drives phase; each source event emits one pulse.
-        for index, e in enumerate(events[:150]):
+        for index, e in enumerate(replayed):
             x, y = coords[e["repo_full_name"]]
-            phase = 16 * index / len(events)
+            phase = 16 * index / len(replayed)
             size = 9 + min(10, sqrt(e["count"]) * 2.2)
             parts.append(f'<circle class="pulse" cx="{fnum(x)}" cy="{fnum(y)}" r="{fnum(size)}" fill="none" stroke="{p["spark"]}" stroke-width="1.4" style="animation-delay:{phase:.3f}s" data-event="{esc(e["id"])}" data-kind="{esc(e["kind"])}"><title>{esc(e["kind"])}: {e["count"]} at {esc(e["occurred_at"].isoformat())}</title></circle>')
     if animated and links and events:
         # A traveller runs only on a factual same-language link, triggered by an event
         # in one of its endpoint repositories. It is not a claim of collaboration.
-        for index, e in enumerate(events[:150]):
+        for index, e in enumerate(replayed):
             target = next((b if a == e["repo_full_name"] else a for a, b in links if e["repo_full_name"] in (a, b)), None)
             if target is None:
                 continue
             x1, y1 = coords[e["repo_full_name"]]; x2, y2 = coords[target]
-            a = 0.03 + 0.90 * index / len(events)
+            a = 0.03 + 0.90 * index / len(replayed)
             b = min(.98, a + .065)
             path = f"M{fnum(x1)} {fnum(y1)} Q{fnum((x1+x2)/2)} {fnum((y1+y2)/2-23)} {fnum(x2)} {fnum(y2)}"
             parts.append(f'<circle class="traveller" r="2.5" fill="{p["spark"]}" opacity="0"><animateMotion path="{path}" dur="16s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;{a:.3f};{b:.3f};1" calcMode="linear"/><animate attributeName="opacity" dur="16s" repeatCount="indefinite" values="0;0;.85;0;0" keyTimes="0;{a:.3f};{(a+b)/2:.3f};{b:.3f};1"/></circle>')
@@ -246,19 +251,19 @@ def render(model: dict, layout: str = "radial", theme: str = "night", *, animate
         parts.append(f'<title>{esc(full)} · {esc(r["language"])} · {r["stars"]} stars · {esc(detail)}</title>')
         parts.append(f'<circle cx="{fnum(x)}" cy="{fnum(y)}" r="22" fill="url(#halo)" opacity=".7"/>')
         parts.append(f'<circle class="hit" cx="{fnum(x)}" cy="{fnum(y)}" r="{fnum(radius+5)}" fill="none" stroke="{p["accent"]}" stroke-opacity=".38" stroke-width=".85"/>')
-        parts.append(f'<circle class="twinkle" cx="{fnum(x)}" cy="{fnum(y)}" r="{fnum(radius)}" fill="{p["spark"]}" stroke="{p["panel"]}" stroke-width="1.8"/>')
+        parts.append(f'<circle class="{'twinkle' if animated else 'stationary'}" cx="{fnum(x)}" cy="{fnum(y)}" r="{fnum(radius)}" fill="{p["spark"]}" stroke="{p["panel"]}" stroke-width="1.8"/>')
         parts.append(f'<path d="M{fnum(x-15)} {fnum(y)} H{fnum(x-9)} M{fnum(x+9)} {fnum(y)} H{fnum(x+15)} M{fnum(x)} {fnum(y-15)} V{fnum(y-9)} M{fnum(x)} {fnum(y+9)} V{fnum(y+15)}" stroke="{p["accent"]}" stroke-opacity=".6" stroke-width=".8"/>')
         # Label backing permits contrast against dust/lines; separate activity units.
-        width = min(172, 14 + len(label) * 7.3)
+        width = min(172, 18 + len(label) * 7.6)
         parts.append(f'<rect x="{fnum(x-width/2)}" y="{fnum(y+21)}" width="{fnum(width)}" height="27" rx="7" fill="{p["panel"]}" fill-opacity=".92" stroke="{p["hair"]}" stroke-opacity=".65"/>')
-        parts.append(f'<text x="{fnum(x)}" y="{fnum(y+33)}" text-anchor="middle" font-size="11" font-weight="600" fill="{p["ink"]}">{esc(label)}</text>')
-        parts.append(f'<text x="{fnum(x)}" y="{fnum(y+43)}" text-anchor="middle" font-size="8" fill="{p["mute"]}">{units[full]} activity units</text></a>')
+        parts.append(f'<text x="{fnum(x)}" y="{fnum(y+33)}" text-anchor="middle" font-size="12" font-weight="600" fill="{p["ink"]}">{esc(label)}</text>')
+        parts.append(f'<text x="{fnum(x)}" y="{fnum(y+43)}" text-anchor="middle" font-size="9.5" fill="{p["mute"]}">{units[full]} activity units</text></a>')
     marker = "SYNTHETIC DEMO · NOT LIVE DATA" if model["source"] == "demo" else "PUBLIC GITHUB SNAPSHOT · NOT LIVE"
     hidden = model["total_repos"] - len(repos)
     parts += [
         f'<path d="M33 334 H1167" stroke="{p["hair"]}"/>',
         f'<text x="47" y="352" font-size="10" font-weight="700" letter-spacing="1.2" fill="{p["accent"]}">{esc(marker)}</text>',
-        f'<text x="1155" y="352" text-anchor="end" font-size="10" fill="{p["mute"]}">{esc(layout.upper())} · 16s replay{f" · {hidden} omitted (top 15 by units)" if hidden else ""}</text>',
+        f'<text x="1155" y="352" text-anchor="end" font-size="10" fill="{p["mute"]}">{esc(layout.upper())} · 16s replay{f" · latest 150/{len(events)} events" if len(events) > 150 else ""}{f" · {hidden} repos omitted" if hidden else ""}</text>',
         '</svg>'
     ]
     return "\n".join(parts) + "\n"

@@ -2,7 +2,7 @@
 
 **Status:** concept prototype, not published on a profile. Example data is **synthetic demonstration data**, not actual contributions.
 
-A quiet, animated atlas of public GitHub work. Each star is a repository, its size reflects its *reported GitHub star count*, each ring represents an individual sourced event, and every connecting arc means **shared primary programming language only**. A travelling light marks an event on a connected repository, never a claim of collaboration.
+A quiet, animated atlas of public GitHub work. Each star is a repository, its size reflects its *reported GitHub star count*, each ring represents an individual sourced event, and every connecting arc means **shared primary programming language only**. For crowded datasets, one deterministic neighbour chain per language prevents a complete network of distracting lines. A travelling light marks an event on a connected repository, never a claim of collaboration.
 
 ## Requirements
 
@@ -64,13 +64,13 @@ Each animated file has a matching `*-still.svg` fallback. Outputs are 1200 × 37
 - **Orbital (recommended for a README):** narrative, memorable, legible for the five-repository fixture, with meaningful negative space and an editorial legend.
 - **Language clusters:** immediately communicates why stars connect; scales more naturally as language groups grow. For 5+ distinct languages or over nine radial stars, a stable staggered grid protects labels.
 - **Night sky:** restrained celestial light and fine grain. **Paper chart:** cartographic grid, vellum and ink, not merely recolouring.
-- Each **unique event** emits one pulse in source timestamp order across a 16-second loop. `count` changes the ring size but does not imply additional events. Travelling glints only follow explicitly justified same-language connections.
+- Each of the **150 most recent unique events** at most emits one pulse in source timestamp order across a 16-second loop. If the snapshot contains more, the export explicitly labels the replay limit; all event units remain included in totals. `count` changes the ring size but does not imply additional events. Travelling glints only follow explicitly justified same-language connections.
 - At most 15 repositories are shown, chosen by recorded activity units then full name. The export states how many were omitted. Name order fixes positions within the displayed set; a changed top-15 selection can alter placement. All source times must be UTC, and duplicate event IDs are counted only once.
 
 ## Accessibility and limitations
 
 - Generated SVGs provide `<title>`, `<desc>`, per-repository link titles and keyboard-focusable anchors. Browser preview has a focus inspector and resizes without horizontal scrolling.
-- `prefers-reduced-motion: reduce` disables CSS pulses and travelling particles; manual pause is available in the preview. Static exports have no animation elements.
+- `prefers-reduced-motion: reduce` disables CSS pulses and travelling particles; manual pause is available in the preview. Static exports have no animation elements or animated star styles.
 - Event types include commits, PR openings, PR merges, issue openings and releases. Aggregating **activity units** is not aggregating commits; PR opened and merged remain distinct. These are snapshot events, not a complete GitHub contribution graph.
 - This renderer does not use GitHub APIs, pagination, private repositories, secrets or paid services. An upstream collector will need documented visibility/recency/pagination limits, ownership checks and API caching.
 - Browser preview uses generated demo SVGs; refresh the exports after changing input. Static SVGs will not auto-update. Busy (>15) datasets require an explicitly filtered view.

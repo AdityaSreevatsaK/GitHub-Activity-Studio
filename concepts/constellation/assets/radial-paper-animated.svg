@@ -70,45 +70,45 @@ text{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif} .p
 <circle class="hit" cx="767.0" cy="103.0" r="11.7" fill="none" stroke="#32798a" stroke-opacity=".38" stroke-width=".85"/>
 <circle class="twinkle" cx="767.0" cy="103.0" r="6.7" fill="#a47739" stroke="#fffdf5" stroke-width="1.8"/>
 <path d="M752.0 103.0 H758.0 M776.0 103.0 H782.0 M767.0 88.0 V94.0 M767.0 112.0 V118.0" stroke="#32798a" stroke-opacity=".6" stroke-width=".8"/>
-<rect x="741.8" y="124.0" width="50.5" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
-<text x="767.0" y="136.0" text-anchor="middle" font-size="11" font-weight="600" fill="#263548">atlas</text>
-<text x="767.0" y="146.0" text-anchor="middle" font-size="8" fill="#617281">2 activity units</text></a>
+<rect x="739.0" y="124.0" width="56.0" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
+<text x="767.0" y="136.0" text-anchor="middle" font-size="12" font-weight="600" fill="#263548">atlas</text>
+<text x="767.0" y="146.0" text-anchor="middle" font-size="9.5" fill="#617281">2 activity units</text></a>
 <a class="star-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="sample-dev/aurora; Python; 12 stars; 4 recorded units" data-full-name="sample-dev/aurora" data-language="Python" data-stars="12" data-units="4" data-events="commit 3 · release 1">
 <title>sample-dev/aurora · Python · 12 stars · commit 3 · release 1</title>
 <circle cx="1052.3" cy="168.0" r="22" fill="url(#halo)" opacity=".7"/>
 <circle class="hit" cx="1052.3" cy="168.0" r="13.4" fill="none" stroke="#32798a" stroke-opacity=".38" stroke-width=".85"/>
 <circle class="twinkle" cx="1052.3" cy="168.0" r="8.4" fill="#a47739" stroke="#fffdf5" stroke-width="1.8"/>
 <path d="M1037.3 168.0 H1043.3 M1061.3 168.0 H1067.3 M1052.3 153.0 V159.0 M1052.3 177.0 V183.0" stroke="#32798a" stroke-opacity=".6" stroke-width=".8"/>
-<rect x="1023.4" y="189.0" width="57.8" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
-<text x="1052.3" y="201.0" text-anchor="middle" font-size="11" font-weight="600" fill="#263548">aurora</text>
-<text x="1052.3" y="211.0" text-anchor="middle" font-size="8" fill="#617281">4 activity units</text></a>
+<rect x="1020.5" y="189.0" width="63.6" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
+<text x="1052.3" y="201.0" text-anchor="middle" font-size="12" font-weight="600" fill="#263548">aurora</text>
+<text x="1052.3" y="211.0" text-anchor="middle" font-size="9.5" fill="#617281">4 activity units</text></a>
 <a class="star-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="sample-dev/ember; Rust; 2 stars; 3 recorded units" data-full-name="sample-dev/ember" data-language="Rust" data-stars="2" data-units="3" data-events="commit 2 · pr opened 1">
 <title>sample-dev/ember · Rust · 2 stars · commit 2 · pr opened 1</title>
 <circle cx="943.3" cy="273.0" r="22" fill="url(#halo)" opacity=".7"/>
 <circle class="hit" cx="943.3" cy="273.0" r="11.0" fill="none" stroke="#32798a" stroke-opacity=".38" stroke-width=".85"/>
 <circle class="twinkle" cx="943.3" cy="273.0" r="6.0" fill="#a47739" stroke="#fffdf5" stroke-width="1.8"/>
 <path d="M928.3 273.0 H934.3 M952.3 273.0 H958.3 M943.3 258.0 V264.0 M943.3 282.0 V288.0" stroke="#32798a" stroke-opacity=".6" stroke-width=".8"/>
-<rect x="918.1" y="294.0" width="50.5" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
-<text x="943.3" y="306.0" text-anchor="middle" font-size="11" font-weight="600" fill="#263548">ember</text>
-<text x="943.3" y="316.0" text-anchor="middle" font-size="8" fill="#617281">3 activity units</text></a>
+<rect x="915.3" y="294.0" width="56.0" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
+<text x="943.3" y="306.0" text-anchor="middle" font-size="12" font-weight="600" fill="#263548">ember</text>
+<text x="943.3" y="316.0" text-anchor="middle" font-size="9.5" fill="#617281">3 activity units</text></a>
 <a class="star-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="sample-dev/harbour; Go; 0 stars; 5 recorded units" data-full-name="sample-dev/harbour" data-language="Go" data-stars="0" data-units="5" data-events="commit 4 · pr merged 1">
 <title>sample-dev/harbour · Go · 0 stars · commit 4 · pr merged 1</title>
 <circle cx="590.7" cy="273.0" r="22" fill="url(#halo)" opacity=".7"/>
 <circle class="hit" cx="590.7" cy="273.0" r="9.4" fill="none" stroke="#32798a" stroke-opacity=".38" stroke-width=".85"/>
 <circle class="twinkle" cx="590.7" cy="273.0" r="4.4" fill="#a47739" stroke="#fffdf5" stroke-width="1.8"/>
 <path d="M575.7 273.0 H581.7 M599.7 273.0 H605.7 M590.7 258.0 V264.0 M590.7 282.0 V288.0" stroke="#32798a" stroke-opacity=".6" stroke-width=".8"/>
-<rect x="558.1" y="294.0" width="65.1" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
-<text x="590.7" y="306.0" text-anchor="middle" font-size="11" font-weight="600" fill="#263548">harbour</text>
-<text x="590.7" y="316.0" text-anchor="middle" font-size="8" fill="#617281">5 activity units</text></a>
+<rect x="555.1" y="294.0" width="71.2" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
+<text x="590.7" y="306.0" text-anchor="middle" font-size="12" font-weight="600" fill="#263548">harbour</text>
+<text x="590.7" y="316.0" text-anchor="middle" font-size="9.5" fill="#617281">5 activity units</text></a>
 <a class="star-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="sample-dev/orbit; Python; 7 stars; 6 recorded units" data-full-name="sample-dev/orbit" data-language="Python" data-stars="7" data-units="6" data-events="commit 5 · issue opened 1">
 <title>sample-dev/orbit · Python · 7 stars · commit 5 · issue opened 1</title>
 <circle cx="481.7" cy="168.0" r="22" fill="url(#halo)" opacity=".7"/>
 <circle class="hit" cx="481.7" cy="168.0" r="12.4" fill="none" stroke="#32798a" stroke-opacity=".38" stroke-width=".85"/>
 <circle class="twinkle" cx="481.7" cy="168.0" r="7.4" fill="#a47739" stroke="#fffdf5" stroke-width="1.8"/>
 <path d="M466.7 168.0 H472.7 M490.7 168.0 H496.7 M481.7 153.0 V159.0 M481.7 177.0 V183.0" stroke="#32798a" stroke-opacity=".6" stroke-width=".8"/>
-<rect x="456.4" y="189.0" width="50.5" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
-<text x="481.7" y="201.0" text-anchor="middle" font-size="11" font-weight="600" fill="#263548">orbit</text>
-<text x="481.7" y="211.0" text-anchor="middle" font-size="8" fill="#617281">6 activity units</text></a>
+<rect x="453.7" y="189.0" width="56.0" height="27" rx="7" fill="#fffdf5" fill-opacity=".92" stroke="#d1c7b0" stroke-opacity=".65"/>
+<text x="481.7" y="201.0" text-anchor="middle" font-size="12" font-weight="600" fill="#263548">orbit</text>
+<text x="481.7" y="211.0" text-anchor="middle" font-size="9.5" fill="#617281">6 activity units</text></a>
 <path d="M33 334 H1167" stroke="#d1c7b0"/>
 <text x="47" y="352" font-size="10" font-weight="700" letter-spacing="1.2" fill="#32798a">SYNTHETIC DEMO · NOT LIVE DATA</text>
 <text x="1155" y="352" text-anchor="end" font-size="10" fill="#617281">RADIAL · 16s replay</text>
