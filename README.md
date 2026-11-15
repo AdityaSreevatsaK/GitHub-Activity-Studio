@@ -1,5 +1,33 @@
 # GitHub Activity Studio
 
+## Open Source Metro | Branch preview
+
+**Two transit-map designs, built from synthetic demonstration data.** This gallery is shown **only on the `concept/open-source-metro` branch** while the concept is under review. It is not the owner's real GitHub contribution activity.
+
+### Contemporary metropolitan map
+
+![Contemporary metro map, dark mode, showing five repositories as station columns and five event-type routes. Synthetic demonstration only.](concepts/open-source-metro/exports/modern-dark-still.svg)
+
+[View animated metropolitan map](concepts/open-source-metro/exports/modern-dark.svg) · [Open concept documentation](concepts/open-source-metro/README.md)
+
+### Refined vintage transport diagram
+
+![Vintage paper-toned transport diagram of five repositories and event-type routes. Synthetic demonstration only.](concepts/open-source-metro/exports/vintage-light-still.svg)
+
+[View animated vintage map](concepts/open-source-metro/exports/vintage-light.svg) · [Open local browser preview](concepts/open-source-metro/exports/preview.html)
+
+### Extended network test: 17 stations
+
+![Seventeen-station synthetic demo metro network used to assess label readability and layout.](concepts/open-source-metro/exports/stress-modern-dark-still.svg)
+
+**How to interpret the map:** Stations represent repositories, and coloured routes represent recorded event categories: commits, PRs opened, PRs merged, issues opened and releases. Animated trains follow UTC event order. Route sharing does not imply an actual relationship between repositories.
+
+**Viewing note:** GitHub renders the still SVGs above. Animated SVG motion may be blocked or stripped by GitHub's image proxy; open a raw SVG in a browser, or run the offline [browser preview](concepts/open-source-metro/README.md#windows-run-from-a-fresh-clone) for dependable animation and design controls. GitHub does not run JavaScript inside repository HTML previews.
+
+[Review Draft PR #4](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/4)
+
+---
+
 Five original, independently developed GitHub activity visualisations. Explore them, compare the results, then select one for a personal GitHub profile or develop a reusable open-source tool.
 
 **Status:** concept exploration. No design is selected, released, or installed on a GitHub profile.
