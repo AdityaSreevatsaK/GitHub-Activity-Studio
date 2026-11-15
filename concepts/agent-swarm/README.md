@@ -8,6 +8,20 @@ A pair of original, deterministic **visual metaphors** of GitHub activity. Eight
 
 All sample data is explicitly marked **synthetic demo**.
 
+## Watch the animations directly on GitHub
+
+These are **synthetic demonstration data**, not the owner's real GitHub contributions. Both GIFs are embedded below so they can be inspected in GitHub's rendered README without running anything locally.
+
+### Geometric swarm (primary)
+
+![Animated geometric Agent Swarm showing demo GitHub events mapped to symbolic helper movement](exports/geometric-dark.gif)
+
+### Miniature robot swarm (alternative)
+
+![Animated miniature robot Agent Swarm showing demo GitHub events mapped to symbolic workshop tasks](exports/robots-light.gif)
+
+If animations are disabled, see the [geometric still](exports/geometric-dark-still.svg) and [robot still](exports/robots-light-still.svg). **These animations are visual metaphors, not real AI agents.**
+
 ## Windows: start to finish
 
 **Beforehand:** install [Node.js 20 or later](https://nodejs.org/) and clone or download this repository. No tokens or extra packages are needed.
