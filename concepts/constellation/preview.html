@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Constellation | GitHub Activity Studio</title>
+  <style>
+    :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--bg:#070e19;--surface:#101e2d;--line:#2a3b4c;--ink:#eef4fc;--muted:#a0b0be;--accent:#bdded3;--subtle:#172637}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,#21354a 0,transparent 52%),var(--bg);color:var(--ink);transition:background .3s,color .3s}
+    body.paper{color-scheme:light;--bg:#f5f0e5;--surface:#fffcf4;--line:#d9cebc;--ink:#243348;--muted:#5d6d7a;--accent:#275f70;--subtle:#e9e3d8;background:linear-gradient(140deg,#ede6d8,#faf7ef 55%,#eee8dc)}
+    .shell{max-width:1420px;margin:auto;padding:28px clamp(18px,4vw,64px) 64px}
+    .topline{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:23px;border-bottom:1px solid var(--line)}
+    .brand{font-weight:650;font-size:12px;letter-spacing:2.6px;text-transform:uppercase}
+    .brand b{color:var(--accent);font-weight:700;margin-right:12px}.topright{font-size:12px;color:var(--muted);letter-spacing:.3px}
+    .hero{display:flex;align-items:end;justify-content:space-between;gap:32px;flex-wrap:wrap;padding:52px 0 38px}
+    .eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700;color:var(--accent)}
+    h1{font-family:Georgia,Times,serif;font-weight:400;font-size:clamp(38px,5.6vw,70px);letter-spacing:-2.5px;line-height:1.08;margin:18px 0 14px}
+    h1 em{color:var(--accent);font-weight:400}.lead{max-width:550px;font-size:14px;line-height:1.7;color:var(--muted);margin:0}
+    .demo{display:inline-flex;align-items:center;gap:7px;background:var(--subtle);border:1px solid var(--line);border-radius:40px;color:var(--accent);padding:9px 13px;font-size:10px;letter-spacing:1px;font-weight:700;white-space:nowrap}
+    .demo::before{content:"";width:6px;height:6px;border-radius:100%;background:currentColor}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);padding:15px 20px;border-radius:16px;margin-bottom:22px}
+    .controls{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.field{display:flex;align-items:center;gap:10px}.field>span{font-size:11px;color:var(--muted)}
+    .toggle{border-radius:9px;padding:3px;background:var(--subtle);display:inline-flex;gap:3px}
+    button{background:transparent;border:0;color:var(--muted);padding:8px 13px;border-radius:6px;cursor:pointer;font:600 12px inherit;font-family:inherit;font-size:12px}
+    button[aria-pressed="true"]{color:var(--ink);background:var(--surface);box-shadow:0 1px 8px #0002}
+    button:hover{color:var(--ink)}button:focus-visible,.star-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .actions{display:flex;gap:8px;align-items:center}.outline{border:1px solid var(--line);color:var(--ink);font-size:12px;padding:10px 13px;border-radius:8px}
+    .canvas{position:relative;border:1px solid var(--line);border-radius:20px;padding:10px;background:var(--surface);box-shadow:0 24px 80px #0002;overflow:hidden}
+    .visual{width:100%;min-height:160px}.visual svg{display:block;width:100%;height:auto;max-height:none}.visual.dual{display:grid;gap:12px;grid-template-columns:1fr 1fr}.visual.dual svg{width:100%}
+    .status{margin:0;padding:13px;font-size:12px;color:var(--muted)}.paused .pulse,.paused .twinkle{animation-play-state:paused!important}.paused .traveller{display:none!important}
+    .below{display:grid;grid-template-columns:minmax(270px,1.05fr) 1fr;gap:24px;margin-top:25px}.panel{border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:24px}
+    .panel .heading{display:flex;justify-content:space-between;align-items:center}.smallcaps{font-size:10px;letter-spacing:2px;color:var(--accent);font-weight:700}.panel h2{font-family:Georgia,serif;font-size:25px;letter-spacing:-.4px;font-weight:400;margin:12px 0}.panel p{font-size:13px;color:var(--muted);line-height:1.8;margin:8px 0}
+    #focus-repo{color:var(--ink);font-size:16px;font-weight:650;overflow-wrap:anywhere}#focus-meta{font-size:12px}#focus-events{color:var(--accent);font-size:12px}
+    .legend{display:flex;gap:20px;flex-wrap:wrap;padding:16px 0;font-size:11px;color:var(--muted)}.legend b{color:var(--accent)}
+    a{color:var(--accent)}.footer{font-size:11px;color:var(--muted);padding-top:38px;line-height:1.8}
+    @media(max-width:850px){.visual.dual{grid-template-columns:1fr}.below{grid-template-columns:1fr}.hero{padding-top:36px}.toolbar{align-items:flex-start}}
+    @media(max-width:540px){.shell{padding:19px 12px 32px}.visual{min-width:0}.canvas{padding:3px}.toolbar{padding:13px}.field{flex-wrap:wrap}.topright{display:none}.panel{padding:18px}.hero{padding:32px 7px 25px}.lead{font-size:13px}.legend{padding-left:5px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <div class="topline"><div class="brand"><b>✦</b> Github Activity Studio <span style="opacity:.4;margin:0 10px">/</span> Constellation</div><div class="topright">CONCEPT 01&nbsp; / &nbsp;EXPERIMENTAL STUDY</div></div>
+  <section class="hero">
+    <div><div class="eyebrow">Mapping the work behind the code</div><h1>Every project<br>has its own <em>orbit.</em></h1><p class="lead">Five repositories become a living sky. Every pulse is a recorded event. Every connection has an explanation. No invented collaboration, no arbitrary statistics.</p></div>
+    <div class="demo">SYNTHETIC DEMONSTRATION DATA</div>
+  </section>
+  <div class="toolbar" role="group" aria-label="Visualisation controls">
+    <div class="controls"><div class="field"><span>Composition</span><div class="toggle" aria-label="Composition"><button type="button" data-layout="radial" aria-pressed="true">Orbital</button><button type="button" data-layout="clustered" aria-pressed="false">Language clusters</button></div></div>
+      <div class="field"><span>Atmosphere</span><div class="toggle" aria-label="Theme"><button type="button" data-theme="night" aria-pressed="true">Night sky</button><button type="button" data-theme="paper" aria-pressed="false">Paper chart</button></div></div></div>
+    <div class="actions"><button type="button" class="outline" id="compare" aria-pressed="false">Compare layouts</button><button type="button" class="outline" id="play" aria-pressed="true">Pause motion</button></div>
+  </div>
+  <section class="canvas" aria-label="Generated constellation preview"><div id="visual" class="visual" aria-live="polite"></div><p id="status" class="status" role="status">Opening the sky…</p></section>
+  <div class="legend"><span><b>●</b> Star size = repository stars</span><span><b>◌</b> Pulse = timestamped activity</span><span><b>⌁</b> Connection = shared language</span><span><b>✧</b> Travelling light = event on a linked star</span></div>
+  <section class="below">
+    <div class="panel" aria-live="polite"><div class="heading"><span class="smallcaps">SELECTED SYSTEM</span><span class="smallcaps">HOVER OR TAB TO EXPLORE</span></div><h2 id="focus-repo">Choose a star</h2><p id="focus-meta">Move the pointer over a star, or use Tab to select a repository.</p><p id="focus-events">Activity counts appear here.</p></div>
+    <div class="panel"><span class="smallcaps">READING THE SKY</span><h2>Signals, not decoration.</h2><p>Each event is shown once in a 16-second chronological replay. Event counts change pulse size, not the number of events. Connections mean only a shared programming language. Stars reflect reported repository stars; they do not measure code quality.</p><p>Switch to Paper chart for an engraved atlas look, or compare both compositions. Reduced-motion preferences suppress movement.</p></div>
+  </section>
+  <div class="footer">Offline by design · Snapshot from shared/fixtures/demo-activity.json · Source: synthetic demo · No external services or trackers · <a href="assets/radial-night-still.svg" download>Download static SVG fallback</a></div>
+</main>
+<script>
+(() => {
+  'use strict';
+  const visual = document.getElementById('visual');
+  const status = document.getElementById('status');
+  const state = { layout: 'radial', theme: 'night', compare: false, playing: !matchMedia('(prefers-reduced-motion: reduce)').matches };
+  const cache = new Map();
+  const setPressed = (selector, value) => document.querySelectorAll(selector).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.layout === value || b.dataset.theme === value)));
+  async function loadSvg(layout, theme) {
+    const key = `${layout}-${theme}-animated`;
+    if (!cache.has(key)) {
+      const response = await fetch(`assets/${key}.svg`);
+      if (!response.ok) throw new Error(`Unable to load ${key}.svg (${response.status}). Run export first.`);
+      const text = await response.text();
+      if (!text.includes('SYNTHETIC DEMO')) throw new Error('Expected a labelled synthetic demo export.');
+      cache.set(key, text);
+    }
+    const doc = new DOMParser().parseFromString(cache.get(key), 'image/svg+xml');
+    if (doc.querySelector('parsererror')) throw new Error('Invalid SVG export');
+    return document.importNode(doc.documentElement, true);
+  }
+  function reveal(event) {
+    const star = event.target.closest('.star-link');
+    if (!star) return;
+    document.getElementById('focus-repo').textContent = star.dataset.fullName;
+    document.getElementById('focus-meta').textContent = `${star.dataset.language} · ${star.dataset.stars} GitHub stars · ${star.dataset.units} activity units`;
+    document.getElementById('focus-events').textContent = star.dataset.events;
+  }
+  let latest = 0;
+  async function redraw() {
+    const ticket = ++latest;
+    status.textContent = 'Drawing constellation…';
+    try {
+      const layouts = state.compare ? ['radial','clustered'] : [state.layout];
+      const svgs = await Promise.all(layouts.map(layout => loadSvg(layout, state.theme)));
+      if (ticket !== latest) return;
+      visual.replaceChildren(...svgs);
+      visual.classList.toggle('dual',state.compare);
+      document.body.classList.toggle('paused',!state.playing);
+      document.body.classList.toggle('paper',state.theme === 'paper');
+      status.textContent = `${state.compare ? 'Both compositions' : state.layout === 'radial' ? 'Orbital constellation' : 'Language clusters'} · ${state.theme === 'night' ? 'Night sky' : 'Paper chart'} · Synthetic demo · 5 repositories / 10 distinct events`;
+    } catch (error) {
+      if (ticket !== latest) return;
+      status.textContent = `Preview unavailable: ${error.message}`;
+    }
+  }
+  document.querySelectorAll('[data-layout]').forEach(button => button.addEventListener('click', () => {state.layout=button.dataset.layout;setPressed('[data-layout]',state.layout);redraw();}));
+  document.querySelectorAll('[data-theme]').forEach(button => button.addEventListener('click', () => {state.theme=button.dataset.theme;setPressed('[data-theme]',state.theme);redraw();}));
+  document.getElementById('compare').addEventListener('click', function(){state.compare=!state.compare;this.setAttribute('aria-pressed',String(state.compare));this.textContent=state.compare?'Single layout':'Compare layouts';redraw();});
+  document.getElementById('play').addEventListener('click', function(){state.playing=!state.playing;this.setAttribute('aria-pressed',String(state.playing));this.textContent=state.playing?'Pause motion':'Resume motion';document.body.classList.toggle('paused',!state.playing);});
+  visual.addEventListener('pointerover',reveal);
+  visual.addEventListener('focusin',reveal);
+  if (!state.playing) {const play=document.getElementById('play');play.textContent='Resume motion';play.setAttribute('aria-pressed','false');}
+  redraw();
+})();
+</script>
+</body>
+</html>
