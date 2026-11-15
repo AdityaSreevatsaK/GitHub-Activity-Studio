@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Code Factory | concept preview</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color-scheme:dark;--paper:#101d2a;--text:#f6ecdb;--muted:#b7c8cd;--border:#456270;--card:#1c2e3d}
+    :root[data-theme=light]{color-scheme:light;--paper:#f4eddc;--text:#24394b;--muted:#5f7280;--border:#a7b9ba;--card:#fff9ea}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--text)}
+    main{max-width:1160px;margin:24px auto;padding:0 22px}h1{font-size:clamp(1.6rem,4vw,2.6rem);margin-bottom:4px}p{color:var(--muted);line-height:1.55}
+    .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:end;margin:24px 0}
+    label{display:grid;gap:6px;font-size:.85rem;font-weight:650}select,button{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:9px;padding:10px 12px;font:inherit}
+    button:focus-visible,select:focus-visible{outline:3px solid #e7aa67;outline-offset:2px}
+    figure{margin:0;padding:12px;border:1px solid var(--border);border-radius:18px;background:var(--card)}
+    figure img{width:100%;height:auto;display:block;aspect-ratio:1000 / 310}figcaption{padding:12px 6px 0;color:var(--muted);font-size:.9rem}
+    .note{border-left:3px solid #ddaa6f;padding-left:14px;margin-top:20px}
+    ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;list-style:none;padding:0}
+    li{border:1px solid var(--border);border-radius:10px;padding:12px;background:var(--card)}
+    .marker{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:8px}
+    @media(prefers-reduced-motion:reduce){html{scroll-behaviour:auto}}
+  </style>
+</head>
+<body>
+<main>
+  <h1>Code Factory</h1>
+  <p>Miniature animated workshops powered by the common <strong>synthetic demo</strong> snapshot. Browse two original production floors, switch themes, or freeze the scene.</p>
+  <div class="controls">
+    <label>Factory layout<select id="layout"><option value="isometric">Isometric workshop</option><option value="pixel">Side-scrolling pixel works</option></select></label>
+    <label>Colour theme<select id="theme"><option value="dark">Night shift</option><option value="light">Day shift</option></select></label>
+    <label>Motion<select id="motion"><option value="animated">Animated</option><option value="still">Still / reduced motion</option></select></label>
+    <button type="button" id="replay">Replay animation</button>
+  </div>
+  <figure>
+    <img id="scene" src="exports/isometric-dark.svg" alt="Isometric Code Factory. Five labelled repository workshops feed a conveyor with illustrated GitHub events. Synthetic demo data; no real CI or deployments.">
+    <figcaption id="caption" aria-live="polite">Isometric factory · dark theme · animated · synthetic demo</figcaption>
+  </figure>
+  <p class="note">These machines are <strong>metaphors</strong>. A merged pull request makes a sealed crate, not a deployed application. Only the five contract event types appear. Counts are source-recorded units, not invented measurements.</p>
+  <h2>Production vocabulary</h2>
+  <ul>
+    <li><span class="marker" style="background:#55cbb9"></span><strong>Parts</strong> <p>Commits supply materials. A badge preserves the count.</p></li>
+    <li><span class="marker" style="background:#83a7ed"></span><strong>Assembly</strong><p>Pull requests opened.</p></li>
+    <li><span class="marker" style="background:#e6af62"></span><strong>Sealed</strong><p>Pull requests merged; not deployments.</p></li>
+    <li><span class="marker" style="background:#e78f97"></span><strong>Inspection</strong><p>Issues opened, not necessarily bugs.</p></li>
+    <li><span class="marker" style="background:#bc9ce8"></span><strong>Dispatch</strong><p>Releases published.</p></li>
+  </ul>
+  <script>
+    (()=>{
+      const layout=document.getElementById('layout'),theme=document.getElementById('theme'),motion=document.getElementById('motion'),scene=document.getElementById('scene'),caption=document.getElementById('caption');
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) motion.value='still';
+      function update(){
+        document.documentElement.dataset.theme=theme.value;
+        scene.src='exports/'+layout.value+'-'+theme.value+(motion.value==='still'?'-still':'')+'.svg';
+        scene.alt=(layout.value==='pixel'?'Side-scrolling pixel':'Isometric')+' Code Factory in '+theme.value+' theme; '+motion.value+' view. Five repository machines and an activity conveyor based on synthetic demo data.';
+        caption.textContent=(layout.value==='pixel'?'Pixel works':'Isometric workshop')+' · '+theme.value+' theme · '+motion.value+' · synthetic demo';
+      }
+      for(const el of [layout,theme,motion])el.addEventListener('change',update);
+      document.getElementById('replay').addEventListener('click',()=>{if(motion.value==='still')motion.value='animated';update();scene.src=scene.src.split('?')[0]+'?replay='+Date.now()});
+      update();
+    })();
+  </script>
+</main>
+</body>
+</html>
