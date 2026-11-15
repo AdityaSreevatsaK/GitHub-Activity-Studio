@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 376" width="1200" height="376" role="img" aria-labelledby="metroTitle metroDesc">
+<title id="metroTitle">Open Source Metro, vintage light visualisation</title>
+<desc id="metroDesc">Synthetic demo metro map. Repositories are stations; five colour-coded lines represent commits, pull requests opened, pull requests merged, issues opened, and releases. Animated trains replay recorded events in UTC timestamp order. Lines show shared event types, not repository dependencies.</desc>
+<defs><style><![CDATA[
+.headline{font:700 28px Georgia,serif;letter-spacing:1.3px;fill:#322F2C}
+.kicker{font:700 10px system-ui,sans-serif;letter-spacing:3px;fill:#746D63}
+.station{font:600 14px Georgia,serif;fill:#322F2C}
+.small{font:600 9px system-ui,sans-serif;letter-spacing:1px;fill:#746D63}
+.line-name{font:700 11px system-ui,sans-serif;letter-spacing:1px;fill:#322F2C}
+.detail{font:500 10px system-ui,sans-serif;fill:#746D63}
+.stop:focus{outline:none}.stop:focus .focus-ring{stroke-width:4;opacity:1}
+@media (prefers-reduced-motion:reduce){.train,.pulse{display:none}}
+]]></style></defs>
+<rect width="1200" height="376" fill="#F0E8D9"/>
+<rect x="18" y="18" width="1164" height="340" rx="4" fill="#FBF4E5" stroke="#CCBFA9" stroke-width="1.5"/>
+<path d="M30 78H1170 M30 329H1170" stroke="#CCBFA9" stroke-width="2"/>
+<path d="M32 80H1168" stroke="#746D63" stroke-opacity=".4" stroke-width=".5"/>
+<circle cx="1137" cy="103" r="13" stroke="#746D63" stroke-width="1" fill="none" opacity=".5"/>
+<text x="1137" y="106" class="small" text-anchor="middle" >OS</text>
+<text x="52" y="48" class="headline" text-anchor="start" >OPEN SOURCE METRO</text>
+<text x="54" y="67" class="kicker" text-anchor="start" >AN ACTIVITY TRANSIT DIAGRAM  /  EVENT-TYPE SERVICES</text>
+<text x="1142" y="39" class="kicker" text-anchor="end" >SYNTHETIC DEMO</text>
+<text x="1142" y="57" class="detail" text-anchor="end" >5 repos   ·   10 source events</text>
+<text x="54" y="112" class="kicker" text-anchor="start" >DISTRICT 01</text>
+<g class="station-node"><title>sample-dev/aurora</title>
+<path d="M330.4 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
+<rect x="326.4" y="133" width="8" height="8" transform="rotate(45 330.4 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
+<text x="330.4" y="129" class="station" text-anchor="middle" >aurora</text>
+</g>
+<g class="station-node"><title>sample-dev/atlas</title>
+<path d="M497.2 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
+<rect x="493.2" y="133" width="8" height="8" transform="rotate(45 497.2 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
+<text x="497.2" y="129" class="station" text-anchor="middle" >atlas</text>
+</g>
+<g class="station-node"><title>sample-dev/ember</title>
+<path d="M664 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
+<rect x="660" y="133" width="8" height="8" transform="rotate(45 664 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
+<text x="664" y="129" class="station" text-anchor="middle" >ember</text>
+</g>
+<g class="station-node"><title>sample-dev/orbit</title>
+<path d="M830.8 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
+<rect x="826.8" y="133" width="8" height="8" transform="rotate(45 830.8 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
+<text x="830.8" y="129" class="station" text-anchor="middle" >orbit</text>
+</g>
+<g class="station-node"><title>sample-dev/harbour</title>
+<path d="M997.6 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
+<rect x="993.6" y="133" width="8" height="8" transform="rotate(45 997.6 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
+<text x="997.6" y="129" class="station" text-anchor="middle" >harbour</text>
+</g>
+<g class="line-commit">
+<rect x="45" y="144" width="9" height="17" rx="4.5" fill="#398174"/>
+<text x="66" y="159" class="line-name" text-anchor="start" >CODE</text>
+<path d="M197 155H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
+<path d="M197 155H1141" fill="none" stroke="#398174" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
+<path d="M197 155H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
+<g class="stop" tabindex="0" aria-label="sample-dev/aurora · Commits: demo-001 (03 Aug 2026 10:20 UTC, 3 unit(s))">
+<title>sample-dev/aurora · Commits: demo-001 (03 Aug 2026 10:20 UTC, 3 unit(s))</title>
+<circle class="focus-ring" cx="330.4" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
+<rect x="322.4" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 330.4 155)"/>
+<circle cx="330.4" cy="155" r="3.5" fill="#398174"/>
+<text x="343.4" y="146" class="small" text-anchor="start" >3</text>
+</g>
+<g class="stop" tabindex="0" aria-label="sample-dev/ember · Commits: demo-003 (06 Sep 2026 20:45 UTC, 2 unit(s))">
+<title>sample-dev/ember · Commits: demo-003 (06 Sep 2026 20:45 UTC, 2 unit(s))</title>
+<circle class="focus-ring" cx="664" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
+<rect x="656" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 664 155)"/>
+<circle cx="664" cy="155" r="3.5" fill="#398174"/>
+<text x="677" y="146" class="small" text-anchor="start" >2</text>
+</g>
+<g class="stop" tabindex="0" aria-label="sample-dev/orbit · Commits: demo-006 (17 Oct 2026 18:25 UTC, 5 unit(s))">
+<title>sample-dev/orbit · Commits: demo-006 (17 Oct 2026 18:25 UTC, 5 unit(s))</title>
+<circle class="focus-ring" cx="830.8" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
+<rect x="822.8" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 830.8 155)"/>
+<circle cx="830.8" cy="155" r="3.5" fill="#398174"/>
+<text x="843.8" y="146" class="small" text-anchor="start" >5</text>
+</g>
+<g class="stop" tabindex="0" aria-label="sample-dev/harbour · Commits: demo-009 (09 Nov 2026 07:45 UTC, 4 unit(s))">
+<title>sample-dev/harbour · Commits: demo-009 (09 Nov 2026 07:45 UTC, 4 unit(s))</title>
+<circle class="focus-ring" cx="997.6" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
+<rect x="989.6" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 997.6 155)"/>
+<circle cx="997.6" cy="155" r="3.5" fill="#398174"/>
+<text x="1010.6" y="146" class="small" text-anchor="start" >4</text>
+</g>
+<g class="train" aria-hidden="true">
+<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#398174" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
+<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<animateMotion dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;0.166625;0.583313;0.791656;1.000000;1.000000" keyTimes="0.000000;0.200000;0.400000;0.600000;0.800000;1.000000" path="M 197,155 L 330.4,155 L 664,155 L 830.8,155 L 997.6,155"/>
+</g>
+<circle class="pulse" cx="330.4" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="2.4s" repeatCount="indefinite"/>
+</circle>
+<circle class="pulse" cx="664" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="4.8s" repeatCount="indefinite"/>
+</circle>
+<circle class="pulse" cx="830.8" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="7.2s" repeatCount="indefinite"/>
+</circle>
+<circle class="pulse" cx="997.6" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="9.6s" repeatCount="indefinite"/>
+</circle>
+</g>
+<g class="line-pr_opened">
+<rect x="45" y="181" width="9" height="17" rx="4.5" fill="#B86658"/>
+<text x="66" y="196" class="line-name" text-anchor="start" >PROPOSE</text>
+<path d="M197 192H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
+<path d="M197 192H1141" fill="none" stroke="#B86658" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
+<path d="M197 192H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
+<g class="stop" tabindex="0" aria-label="sample-dev/atlas · PRs opened: demo-002 (21 Aug 2026 09:15 UTC, 1 unit(s))">
+<title>sample-dev/atlas · PRs opened: demo-002 (21 Aug 2026 09:15 UTC, 1 unit(s))</title>
+<circle class="focus-ring" cx="497.2" cy="192" r="13" fill="none" stroke="#B86658" stroke-width="0" opacity=".85"/>
+<rect x="489.2" y="184" width="16" height="16" fill="#FBF4E5" stroke="#B86658" stroke-width="2.8" transform="rotate(45 497.2 192)"/>
+<circle cx="497.2" cy="192" r="3.5" fill="#B86658"/>
+</g>
+<g class="stop" tabindex="0" aria-label="sample-dev/ember · PRs opened: demo-010 (13 Nov 2026 09:00 UTC, 1 unit(s))">
+<title>sample-dev/ember · PRs opened: demo-010 (13 Nov 2026 09:00 UTC, 1 unit(s))</title>
+<circle class="focus-ring" cx="664" cy="192" r="13" fill="none" stroke="#B86658" stroke-width="0" opacity=".85"/>
+<rect x="656" y="184" width="16" height="16" fill="#FBF4E5" stroke="#B86658" stroke-width="2.8" transform="rotate(45 664 192)"/>
+<circle cx="664" cy="192" r="3.5" fill="#B86658"/>
+</g>
+<g class="train" aria-hidden="true">
+<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#B86658" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
+<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;0.642827;1.000000;1.000000" keyTimes="0.000000;0.333333;0.666667;1.000000" path="M 197,192 L 497.2,192 L 664,192"/>
+</g>
+<circle class="pulse" cx="497.2" cy="192" r="17" fill="none" stroke="#B86658" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="3s" repeatCount="indefinite"/>
+</circle>
+<circle class="pulse" cx="664" cy="192" r="17" fill="none" stroke="#B86658" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="6s" repeatCount="indefinite"/>
+</circle>
+</g>
+<g class="line-pr_merged">
+<rect x="45" y="218" width="9" height="17" rx="4.5" fill="#89759E"/>
+<text x="66" y="233" class="line-name" text-anchor="start" >MERGE</text>
+<path d="M197 229H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
+<path d="M197 229H1141" fill="none" stroke="#89759E" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
+<path d="M197 229H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
+<g class="stop" tabindex="0" aria-label="sample-dev/atlas · PRs merged: demo-004 (12 Sep 2026 13:00 UTC, 1 unit(s))">
+<title>sample-dev/atlas · PRs merged: demo-004 (12 Sep 2026 13:00 UTC, 1 unit(s))</title>
+<circle class="focus-ring" cx="497.2" cy="229" r="13" fill="none" stroke="#89759E" stroke-width="0" opacity=".85"/>
+<rect x="489.2" y="221" width="16" height="16" fill="#FBF4E5" stroke="#89759E" stroke-width="2.8" transform="rotate(45 497.2 229)"/>
+<circle cx="497.2" cy="229" r="3.5" fill="#89759E"/>
+</g>
+<g class="stop" tabindex="0" aria-label="sample-dev/harbour · PRs merged: demo-008 (04 Nov 2026 15:10 UTC, 1 unit(s))">
+<title>sample-dev/harbour · PRs merged: demo-008 (04 Nov 2026 15:10 UTC, 1 unit(s))</title>
+<circle class="focus-ring" cx="997.6" cy="229" r="13" fill="none" stroke="#89759E" stroke-width="0" opacity=".85"/>
+<rect x="989.6" y="221" width="16" height="16" fill="#FBF4E5" stroke="#89759E" stroke-width="2.8" transform="rotate(45 997.6 229)"/>
+<circle cx="997.6" cy="229" r="3.5" fill="#89759E"/>
+</g>
+<g class="train" aria-hidden="true">
+<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#89759E" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
+<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;0.374969;1.000000;1.000000" keyTimes="0.000000;0.333333;0.666667;1.000000" path="M 197,229 L 497.2,229 L 997.6,229"/>
+</g>
+<circle class="pulse" cx="497.2" cy="229" r="17" fill="none" stroke="#89759E" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="3s" repeatCount="indefinite"/>
+</circle>
+<circle class="pulse" cx="997.6" cy="229" r="17" fill="none" stroke="#89759E" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="6s" repeatCount="indefinite"/>
+</circle>
+</g>
+<g class="line-issue_opened">
+<rect x="45" y="255" width="9" height="17" rx="4.5" fill="#B38445"/>
+<text x="66" y="270" class="line-name" text-anchor="start" >DISCUSS</text>
+<path d="M197 266H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
+<path d="M197 266H1141" fill="none" stroke="#B38445" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
+<path d="M197 266H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
+<g class="stop" tabindex="0" aria-label="sample-dev/orbit · Issues opened: demo-005 (28 Sep 2026 06:30 UTC, 1 unit(s))">
+<title>sample-dev/orbit · Issues opened: demo-005 (28 Sep 2026 06:30 UTC, 1 unit(s))</title>
+<circle class="focus-ring" cx="830.8" cy="266" r="13" fill="none" stroke="#B38445" stroke-width="0" opacity=".85"/>
+<rect x="822.8" y="258" width="16" height="16" fill="#FBF4E5" stroke="#B38445" stroke-width="2.8" transform="rotate(45 830.8 266)"/>
+<circle cx="830.8" cy="266" r="3.5" fill="#B38445"/>
+</g>
+<g class="train" aria-hidden="true">
+<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#B38445" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
+<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;1.000000;1.000000" keyTimes="0.000000;0.500000;1.000000" path="M 197,266 L 830.8,266"/>
+</g>
+<circle class="pulse" cx="830.8" cy="266" r="17" fill="none" stroke="#B38445" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="4.5s" repeatCount="indefinite"/>
+</circle>
+</g>
+<g class="line-release">
+<rect x="45" y="292" width="9" height="17" rx="4.5" fill="#607D9A"/>
+<text x="66" y="307" class="line-name" text-anchor="start" >SHIP</text>
+<path d="M197 303H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
+<path d="M197 303H1141" fill="none" stroke="#607D9A" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
+<path d="M197 303H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
+<g class="stop" tabindex="0" aria-label="sample-dev/aurora · Releases: demo-007 (24 Oct 2026 11:00 UTC, 1 unit(s))">
+<title>sample-dev/aurora · Releases: demo-007 (24 Oct 2026 11:00 UTC, 1 unit(s))</title>
+<circle class="focus-ring" cx="330.4" cy="303" r="13" fill="none" stroke="#607D9A" stroke-width="0" opacity=".85"/>
+<rect x="322.4" y="295" width="16" height="16" fill="#FBF4E5" stroke="#607D9A" stroke-width="2.8" transform="rotate(45 330.4 303)"/>
+<circle cx="330.4" cy="303" r="3.5" fill="#607D9A"/>
+</g>
+<g class="train" aria-hidden="true">
+<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#607D9A" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
+<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
+<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;1.000000;1.000000" keyTimes="0.000000;0.500000;1.000000" path="M 197,303 L 330.4,303"/>
+</g>
+<circle class="pulse" cx="330.4" cy="303" r="17" fill="none" stroke="#607D9A" stroke-width="2" opacity="0" aria-hidden="true">
+<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="4.5s" repeatCount="indefinite"/>
+</circle>
+</g>
+<path d="M43 317H1156" stroke="#CCBFA9" stroke-width="1"/>
+<text x="54" y="337" class="small" text-anchor="start" >LINES = EVENT TYPES   ·   TRAIN JOURNEYS = UTC-ORDERED REPLAYS   ·   STATIONS = REPOSITORIES</text>
+<text x="1140" y="337" class="small" text-anchor="end" >REPLAY  /  DEMO ONLY</text>
+</svg>
