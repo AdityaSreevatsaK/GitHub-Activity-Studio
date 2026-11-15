@@ -23,6 +23,8 @@ class ConstellationTests(unittest.TestCase):
                 svg = constellation.render(data, layout, theme)
                 root = ET.fromstring(svg)
                 self.assertEqual(root.attrib["viewBox"], "0 0 1200 375")
+                self.assertEqual(root.attrib["data-source"], "demo")
+                self.assertEqual(root.attrib["data-events"], "10")
                 self.assertIn("SYNTHETIC DEMO", svg)
                 self.assertIn('data-relation="shared-language"', svg)
                 self.assertIn('class="traveller"', svg)
@@ -65,6 +67,10 @@ class ConstellationTests(unittest.TestCase):
         for layout in ("radial", "clustered"):
             coords = list(constellation.positions(data["repositories"], layout).values())
             self.assertEqual(len(set(coords)), 15)
+            # Labels are at most 131px wide in crowded layouts. No same-row collision.
+            for i, (x, y) in enumerate(coords):
+                for x2, y2 in coords[i+1:]:
+                    self.assertTrue(abs(y-y2) > 45 or abs(x-x2) >= 130)
             self.assertTrue(all(330 <= x <= 1190 and 50 <= y <= 335 for x, y in coords))
 
     def test_unsafe_text_is_escaped_and_urls_rejected(self):

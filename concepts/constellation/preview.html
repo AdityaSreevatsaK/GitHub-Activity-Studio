@@ -44,8 +44,8 @@
 <main class="shell">
   <div class="topline"><div class="brand"><b>✦</b> Github Activity Studio <span style="opacity:.4;margin:0 10px">/</span> Constellation</div><div class="topright">CONCEPT 01&nbsp; / &nbsp;EXPERIMENTAL STUDY</div></div>
   <section class="hero">
-    <div><div class="eyebrow">Mapping the work behind the code</div><h1>Every project<br>has its own <em>orbit.</em></h1><p class="lead">Five repositories become a living sky. Every pulse is a recorded event. Every connection has an explanation. No invented collaboration, no arbitrary statistics.</p></div>
-    <div class="demo">SYNTHETIC DEMONSTRATION DATA</div>
+    <div><div class="eyebrow">Mapping the work behind the code</div><h1>Every project<br>has its own <em>orbit.</em></h1><p class="lead">Repositories become a living sky. Every pulse is a recorded event. Every connection has an explanation. No invented collaboration, no arbitrary statistics.</p></div>
+    <div class="demo" id="source-label">SYNTHETIC DEMONSTRATION DATA</div>
   </section>
   <div class="toolbar" role="group" aria-label="Visualisation controls">
     <div class="controls"><div class="field"><span>Composition</span><div class="toggle" aria-label="Composition"><button type="button" data-layout="radial" aria-pressed="true">Orbital</button><button type="button" data-layout="clustered" aria-pressed="false">Language clusters</button></div></div>
@@ -74,7 +74,7 @@
       const response = await fetch(`assets/${key}.svg`);
       if (!response.ok) throw new Error(`Unable to load ${key}.svg (${response.status}). Run export first.`);
       const text = await response.text();
-      if (!text.includes('SYNTHETIC DEMO')) throw new Error('Expected a labelled synthetic demo export.');
+      if (!text.includes('data-source=') || !text.includes('data-repositories=')) throw new Error('Expected a labelled contract-v1 export.');
       cache.set(key, text);
     }
     const doc = new DOMParser().parseFromString(cache.get(key), 'image/svg+xml');
@@ -97,10 +97,12 @@
       const svgs = await Promise.all(layouts.map(layout => loadSvg(layout, state.theme)));
       if (ticket !== latest) return;
       visual.replaceChildren(...svgs);
+      const source = svgs[0].dataset.source;
+      document.getElementById('source-label').textContent = source === 'demo' ? 'SYNTHETIC DEMONSTRATION DATA' : 'PUBLIC GITHUB SNAPSHOT';
       visual.classList.toggle('dual',state.compare);
       document.body.classList.toggle('paused',!state.playing);
       document.body.classList.toggle('paper',state.theme === 'paper');
-      status.textContent = `${state.compare ? 'Both compositions' : state.layout === 'radial' ? 'Orbital constellation' : 'Language clusters'} · ${state.theme === 'night' ? 'Night sky' : 'Paper chart'} · Synthetic demo · 5 repositories / 10 distinct events`;
+      status.textContent = `${state.compare ? 'Both compositions' : state.layout === 'radial' ? 'Orbital constellation' : 'Language clusters'} · ${state.theme === 'night' ? 'Night sky' : 'Paper chart'} · ${source === 'demo' ? 'Synthetic demo' : 'Public GitHub snapshot'} · ${svgs[0].dataset.repositories} repositories / ${svgs[0].dataset.events} distinct events`;
     } catch (error) {
       if (ticket !== latest) return;
       status.textContent = `Preview unavailable: ${error.message}`;

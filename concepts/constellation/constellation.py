@@ -130,7 +130,7 @@ def positions(repos: list[dict], layout: str) -> dict[str, tuple[float, float]]:
             lane = lanes[language]
             group = grouped[language]
             # For many distinct languages, fall back to wider grid to maintain legibility.
-            if len(languages) <= 4:
+            if len(languages) <= 4 and max(len(grouped[value]) for value in languages) <= 5:
                 y = 108 + lane * (180 / max(1, len(languages) - 1))
                 for i, repo in enumerate(group):
                     x = 445 + (i + 0.5) * 650 / len(group)
@@ -174,7 +174,7 @@ def render(model: dict, layout: str = "radial", theme: str = "night", *, animate
             if r["language"] != "Unspecified" and r["language"] == other["language"]:
                 links.append((r["full_name"], other["full_name"]))
     esc = lambda s: escape(str(s), quote=True)
-    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 375" width="1200" height="375" role="img" aria-labelledby="sky-title sky-desc" data-layout="{layout}" data-theme="{theme}">',
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 375" width="1200" height="375" role="img" aria-labelledby="sky-title sky-desc" data-layout="{layout}" data-theme="{theme}" data-source="{model["source"]}" data-repositories="{len(repos)}" data-events="{len(events)}">',
         '<title id="sky-title">GitHub Constellation, ' + esc(layout) + ', ' + esc(theme) + '</title>',
         '<desc id="sky-desc">' + esc(f'{"DEMO synthetic" if model["source"] == "demo" else "Public GitHub snapshot"} activity for {model["login"]}: {len(repos)} visible repositories. Stars represent repositories, lines indicate shared programming language, rings replay sourced events. No connection implies collaboration.') + '</desc>',
         '<defs>',
@@ -223,7 +223,7 @@ def render(model: dict, layout: str = "radial", theme: str = "night", *, animate
             x, y = coords[e["repo_full_name"]]
             phase = 16 * index / len(events)
             size = 9 + min(10, sqrt(e["count"]) * 2.2)
-            parts.append(f'<circle class="pulse" cx="{fnum(x)}" cy="{fnum(y)}" r="{fnum(size)}" fill="none" stroke="{p["spark"]}" stroke-width="1.4" style="animation-delay:-{phase:.3f}s" data-event="{esc(e["id"])}" data-kind="{esc(e["kind"])}"><title>{esc(e["kind"])}: {e["count"]} at {esc(e["occurred_at"].isoformat())}</title></circle>')
+            parts.append(f'<circle class="pulse" cx="{fnum(x)}" cy="{fnum(y)}" r="{fnum(size)}" fill="none" stroke="{p["spark"]}" stroke-width="1.4" style="animation-delay:{phase:.3f}s" data-event="{esc(e["id"])}" data-kind="{esc(e["kind"])}"><title>{esc(e["kind"])}: {e["count"]} at {esc(e["occurred_at"].isoformat())}</title></circle>')
     if animated and links and events:
         # A traveller runs only on a factual same-language link, triggered by an event
         # in one of its endpoint repositories. It is not a claim of collaboration.
