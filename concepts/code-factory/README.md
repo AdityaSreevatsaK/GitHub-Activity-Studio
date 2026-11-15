@@ -35,7 +35,7 @@ Supported options: `--layout isometric|pixel|both`, `--theme dark|light|both`, `
 
 - **Repository → station.** Five busiest repositories are shown. Ranking uses summed event units for visual selection only, never labelled as commit count.
 - **Commit → mint parts** (teal), **PR opened → assemble** (blue), **PR merged → sealed crate** (amber), **issue opened → inspection ticket** (coral), **release → dispatch package** (violet). These are *metaphors*. A merge is never described as a deployment, nor an issue as a confirmed bug.
-- Every displayed event gets exactly one moving package, with a **×N** badge for source `count`. Original timestamps determine ordering; playback compresses event time into a 12-second ambient loop. The loop does **not** claim real-time spacing or a CI pipeline.
+- Every displayed event gets exactly one moving package emerging from its repository station, with a **×N** badge for source `count`. Original timestamps determine ordering; playback compresses event time into a 12-second ambient loop. The loop does **not** claim real-time spacing or a CI pipeline.
 - Legend counts use all unique, valid events, split by kind. Duplicate identical event IDs are ignored; conflicting IDs raise an error. This avoids double-counting.
 - Overflow is **explicit**: at most five busiest repository stations and fifteen latest qualifying event records are drawn; the image announces how many records are shown. The legend still counts all valid event units.
 - All activity is rendered offline from the snapshot; links and arbitrary HTML are never embedded from input.
