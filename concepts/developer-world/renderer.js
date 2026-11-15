@@ -85,7 +85,7 @@ function archipelago(values,p){
   if(v.commit>=1)ground+=flower(29,24,p,i);
   ground+=topBuilding(i,v,p);
   s+=G(x,y,ground);
-  if(v.pr_merged)s+=G(x+82,y+31,P("M-15 10h29l-7 8h-14Z",p.roof2)+P("M0 9V-15L15 8Z",p.wall),`class="boat" style="animation-delay:-${i}s"`);
+  if(v.pr_merged)s+=G(x+82,y+31,`<g class="boat" style="animation-delay:-${i}s">`+P("M-15 10h29l-7 8h-14Z",p.roof2)+P("M0 9V-15L15 8Z",p.wall)+"</g>");
  }
  if(!values.length)s+=T(560,182,"A quiet sea, waiting for its first repository",18,p.ink,600,`text-anchor="middle"`);
  return s;

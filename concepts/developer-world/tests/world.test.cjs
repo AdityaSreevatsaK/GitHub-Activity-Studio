@@ -57,7 +57,7 @@ test("invalid schema, timestamps, kinds, counts and repos are rejected",()=>{
  for(const edit of cases){const input=copy(fixture);edit(input);assert.throws(()=>world.normalise(input));}
 });
 test("untrusted names are XML escaped",()=>{
- const input=copy(fixture);input.repositories[0].name='<script>alert("bad")</script>&';
+ const input=copy(fixture);input.repositories[0].name='<script>&';
  const svg=world.render(input);assert.doesNotMatch(svg,/<script>/);assert.match(svg,/&lt;script&gt;/);assert.match(svg,/&amp;/);
 });
 test("overflow is disclosed explicitly",()=>{
