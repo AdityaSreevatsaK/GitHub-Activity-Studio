@@ -221,12 +221,13 @@ def _station_pixel(i: int, station: dict, p: dict, active: bool, animated: bool)
     return v
 
 
-def _package(event: dict, p: dict, idx: int, animated: bool, iso: bool) -> str:
+def _package(event: dict, p: dict, idx: int, animated: bool, iso: bool, station_index: int) -> str:
     kind, count = event["kind"], event["count"]
     tone = COLOURS[kind]
     symbol = SYMBOLS[kind]
     # No interpolated event content enters SVG as raw markup.
-    x, y = (95, 224) if iso else (86, 215)
+    x = (110 + 167 * station_index) if iso else (153 + 167 * station_index)
+    y = 224 if iso else 215
     offset = f'{idx * 0.74:.2f}s'
     body = (_path("M-10 -8 l20 0 6 5 -20 0z", tone) +
             _path("M-10 -8 l6 5 v15 l-6 -5z", p["edge"]) +
@@ -235,12 +236,13 @@ def _package(event: dict, p: dict, idx: int, animated: bool, iso: bool) -> str:
             _rect(-10, -12, 22, 23, p["edge"]) + _rect(-8, -10, 18, 19, tone) +
             _rect(-8, -10, 18, 4, p["window"]) +
             _text(1, 6, symbol, 13, p["edge"], text_anchor="middle", font_weight="900"))
+    body += _rect(-12, -15, 5, 5, list(COLOURS.values())[station_index])
     if count > 1:
         body += _rect(8, -21, 27, 13, p["edge"], 5) + _text(21, -11, f'×{count}', 10, p["ink"], text_anchor="middle", font_weight="bold")
     if animated:
         return (f'<g><title>{escape(event["repo"])} | {escape(kind)} ×{count} | {escape(event["when"].isoformat())}</title>'
                 f'<g>{body}<animateMotion dur="12s" begin="{offset}" repeatCount="indefinite" '
-                f'path="M{x-75},{y} L{x+855},{y}" calcMode="linear"/></g></g>')
+                f'path="M{x},{y} L965,{y}" calcMode="linear"/></g></g>')
     # Static snapshot positions are deterministic and are not fabricated events.
     sx = 185 + (idx % 6) * 120
     sy = 227 if iso else 225
@@ -279,8 +281,9 @@ def render(snapshot: dict, layout: str = "isometric", theme: str = "dark", anima
         v.extend(f(i, station, p, station["full_name"] in station_events, animated))
     v += _conveyor(p, layout == "isometric", animated)
     # Maintain a readable single line of five symbols and a visibly honest total.
+    station_lookup = {station["full_name"]: i for i, station in enumerate(scene["stations"])}
     for i, event in enumerate(scene["events"]):
-        v.append(_package(event, p, i, animated, layout == "isometric"))
+        v.append(_package(event, p, i, animated, layout == "isometric", station_lookup[event["repo"]]))
     if not scene["events"]:
         v += [_rect(342, 216, 315, 39, p["panel"], 9, stroke=p["rail"]),
               _text(500, 241, "IDLE SHIFT · NO RECORDED ACTIVITY", 14, p["ink"], text_anchor="middle", font_weight="bold")]
