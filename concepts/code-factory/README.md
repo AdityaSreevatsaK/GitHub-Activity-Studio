@@ -4,9 +4,7 @@ Two tiny, original, procedurally illustrated GitHub activity factories. **Protot
 
 | Isometric workshop (primary) | Side-scrolling pixel works |
 | --- | --- |
-| ![Demo isometric factory, dark theme](previews/isometric-dark.png) | ![Demo pixel factory, light theme](previews/pixel-light.png) |
-
-**Generate animated exports (and all eight SVG variants) with the command below.**
+| ![Demo isometric factory, dark theme](exports/isometric-dark-still.svg) | ![Demo pixel factory, light theme](exports/pixel-light-still.svg) |
 
 **Animated exports:** [Isometric, dark](exports/isometric-dark.svg) · [Isometric, light](exports/isometric-light.svg) · [Pixel, dark](exports/pixel-dark.svg) · [Pixel, light](exports/pixel-light.svg)
 
@@ -44,7 +42,7 @@ Supported options: `--layout isometric|pixel|both`, `--theme dark|light|both`, `
 
 ## Profile integration and limitations
 
-- Primary: `exports/isometric-dark.svg`, a standalone 1000 × 310 animated SVG, with `exports/isometric-dark-still.svg` as the motion-free fallback. Light-theme and pixel variants are included. The eight generated SVGs can be used as Markdown images with informative alt text.
+- Primary: `exports/isometric-dark.svg`, a standalone 1000 × 310 animated SVG, with `exports/isometric-dark-still.svg` as the motion-free fallback. Light-theme and pixel variants are included. All eight committed SVGs can be used as Markdown images with informative alt text.
 - **GitHub README animation has not yet been visually verified on GitHub.** SVG animation support can vary with GitHub image delivery, browser and motion settings. Test a temporary README in a separate sandbox before selecting a design. If animation fails, use the shipped still SVG. Avoid implying a static SVG is animated on GitHub.
 - Browser preview's JavaScript is **not** embedded in the SVG. GitHub does not execute it in a README. Pure SVG exports use SVG animation and CSS only. No hover interaction is required. Browser preview provides native controls and readable explanations.
 - Preview scene is 1000 × 310 and responsively scales down. On very narrow screens, individual repository names may be hard to read; use the accessible description and preview for detail.
