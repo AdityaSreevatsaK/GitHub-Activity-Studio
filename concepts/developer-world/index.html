@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer World | GitHub Activity Studio</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#eff4ed;background:#111e30}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% -10%,#344b68,#111e30 70%);min-height:100vh}
+main{max-width:1240px;width:calc(100% - 30px);margin:auto;padding:34px 0 50px}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.08;letter-spacing:-.05em;margin:6px 0}
+h2{font-size:1.1rem;margin:0 0 15px}.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:#e7ba7e;font-weight:800}
+.subtitle,.hint{color:#bbccd0}header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 25px}
+.stamp{border:1px solid #637284;border-radius:30px;padding:9px 13px;font-size:12px;color:#efcf9d}
+.panel,.box{border:1px solid #445c73;background:#1c2e43;border-radius:17px;box-shadow:0 16px 40px #07111c33}
+.panel{overflow:hidden}.controls{display:flex;gap:15px;align-items:flex-end;flex-wrap:wrap;padding:18px 21px}
+label{font-size:11px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#b9ccd2;display:grid;gap:6px}
+button,select,input[type=file]{background:#2b4158;border:1px solid #718796;border-radius:9px;padding:10px;color:#f5f0e6;font:inherit}
+button{cursor:pointer}button:hover{background:#405d70}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f3c789;outline-offset:2px}
+select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.primary{background:#ddb182;border-color:#ddb182;color:#273040;font-weight:700}.primary:hover{background:#f0c899}
+.scene{padding:20px;background:#223951}.scene svg{display:block;width:100%;max-width:1120px;height:auto;margin:auto;border-radius:12px;box-shadow:0 12px 32px #0003}
+.timeline{border-top:1px solid #425a70;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:17px 22px}
+.timeline input{flex:1;accent-color:#ebbd83;min-width:110px}.timeline output{font-size:12px;color:#d0dfdc;font-variant-numeric:tabular-nums}
+.details{margin:18px 0;display:grid;grid-template-columns:1.3fr 1fr;gap:16px}.box{padding:23px}
+#repos{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:9px}.repo{border:1px solid #546b80;background:#293f55;border-radius:10px;padding:10px;min-width:0}.repo strong{display:block;overflow-wrap:anywhere;font-size:13px}.repo span{display:block;font-size:11px;color:#bccdd1;margin-top:5px}
+.rules{font-size:13px;color:#d0d9d9;padding-left:20px;line-height:1.6}.rules li{margin-bottom:7px}
+#status{min-height:25px;font-size:12px;color:#ffe1aa;margin:14px 2px}.hint{font-size:12px;line-height:1.6}
+@media(max-width:780px){.details{grid-template-columns:1fr}.controls{padding:15px}.scene{padding:9px}main{width:calc(100% - 16px)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">GitHub Activity Studio / Concept 05</div><h1>Developer World ✦</h1><div class="subtitle">Small worlds. Real signals. Gentle growth.</div></div><div class="stamp">Offline-first · Original SVG artwork</div></header>
+<section class="panel" aria-label="Interactive Developer World preview">
+<div class="controls">
+<label for="layout">World<select id="layout"><option value="archipelago">The Isles of Making</option><option value="village">The Little Buildtown</option></select></label>
+<label for="theme">Palette<select id="theme"><option value="dark">Moonlit</option><option value="light">Daybreak</option></select></label>
+<label for="file">Input JSON<input id="file" type="file" accept=".json,application/json"></label>
+<div class="actions"><button id="motion" aria-pressed="true">Pause motion</button><button id="still">Download still</button><button id="save" class="primary">Download animated SVG</button></div>
+</div>
+<div id="scene" class="scene" role="img" aria-label="Activity-based miniature landscape"></div>
+<div class="timeline"><button id="play" type="button">▶ Play events</button><label for="progress">Timeline</label><input id="progress" type="range" min="0" max="0" value="0" step="1"><output id="counter" for="progress">0 of 0 events</output></div>
+</section>
+<p id="status" role="status" aria-live="polite">Loading labelled synthetic demonstration…</p>
+<div class="details">
+<section class="box"><h2>Repository neighbourhood</h2><div id="repos"></div><p id="overflow" class="hint"></p></section>
+<section class="box"><h2>How the landscape grows</h2><ul class="rules">
+<li>Every repository starts with a home. Source-backed activity units unlock stages at 1, 3, 6 and 10.</li>
+<li>Growth 1 lights windows; growth 2 adds gardens and paths; growth 3 upgrades roofs; growth 4 raises pennants.</li>
+<li>Commit units grow plants (3+). Opened PRs build scaffolding; merged PRs add boats or bridges. Issues add noticeboards; releases add glowing beacons.</li>
+<li>Unlike events remain distinct, and never become a guessed productivity score.</li></ul>
+<p class="hint">Upload any normalised public-activity JSON snapshot to replace the demo. No API, token or external service is used.</p></section>
+</div>
+<p class="hint">The compact SVG displays up to five repositories. Reduced-motion settings are respected. This demonstration is synthetic, not the owner's contribution history.</p>
+</main>
+<script src="./renderer.js"></script>
+<script>
+(function(){
+"use strict";
+var el=id=>document.getElementById(id);
+var source=null,normal=null,animated=true,timer=null;
+function stop(){if(timer!==null){clearInterval(timer);timer=null;}el("play").textContent="▶ Play events";}
+function render(){
+ if(!source)return;
+ try{
+ var opts={layout:el("layout").value,theme:el("theme").value,progress:Number(el("progress").value),animated:animated};
+ el("scene").innerHTML=DeveloperWorld.render(source,opts);
+ var f=DeveloperWorld.statsFor(normal,opts.progress);
+ el("counter").textContent=f.eventCount+" of "+f.totalEvents+" events · "+f.units+" units";
+ el("repos").replaceChildren();
+ f.repositories.slice(0,5).forEach(function(item){
+ var card=document.createElement("div"),name=document.createElement("strong"),detail=document.createElement("span");
+ card.className="repo";name.textContent=item.repository.full_name;
+ detail.textContent="Growth "+item.stage+"/4 · "+item.units+" units · "+item.events+" distinct events";
+ card.append(name,detail);el("repos").appendChild(card);
+ });
+ var hidden=Math.max(0,f.repositories.length-5);
+ el("overflow").textContent=hidden?"+"+hidden+" repositories omitted from the compact scene.":"All repositories shown.";
+ el("status").textContent=normal.source==="demo"?"DEMO DATA: All repository names and activities are synthetic.":"PUBLIC GITHUB SNAPSHOT: Rendered only from supplied data.";
+ }catch(err){el("status").textContent="Rendering error: "+err.message;}
+}
+function load(value){
+ var next=DeveloperWorld.normalise(value);stop();source=value;normal=next;
+ el("progress").max=String(next.activity.length);el("progress").value=String(next.activity.length);render();
+}
+function save(moving){
+ if(!source)return;
+ var svg=DeveloperWorld.render(source,{layout:el("layout").value,theme:el("theme").value,progress:Number(el("progress").value),animated:moving});
+ var url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml;charset=utf-8"}));
+ var a=document.createElement("a");a.href=url;a.download="developer-world-"+el("layout").value+"-"+el("theme").value+(moving?"":"-still")+".svg";
+ document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
+}
+el("layout").addEventListener("change",render);el("theme").addEventListener("change",render);
+el("progress").addEventListener("input",function(){stop();render();});
+el("motion").addEventListener("click",function(){animated=!animated;el("motion").textContent=animated?"Pause motion":"Resume motion";el("motion").setAttribute("aria-pressed",String(animated));render();});
+el("still").addEventListener("click",function(){save(false);});el("save").addEventListener("click",function(){save(true);});
+el("play").addEventListener("click",function(){
+ if(timer!==null){stop();return;}if(!normal)return;
+ if(Number(el("progress").value)>=normal.activity.length)el("progress").value="0";
+ el("play").textContent="❚❚ Pause events";
+ timer=setInterval(function(){var n=Number(el("progress").value)+1;if(n>normal.activity.length){stop();return;}el("progress").value=String(n);render();},950);
+});
+el("file").addEventListener("change",async function(){try{
+ var file=el("file").files[0];if(!file)return;if(file.size>2*1024*1024)throw Error("Maximum input 2 MB");
+ load(JSON.parse(await file.text()));
+}catch(err){el("status").textContent="Input rejected: "+err.message;}});
+fetch("../../shared/fixtures/demo-activity.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();}).then(load).catch(function(e){el("status").textContent="Unable to open demo fixture: "+e.message+". Use the bundled Node server.";});
+})();
+</script></body></html>
