@@ -1,0 +1,97 @@
+"use strict";
+const test=require("node:test"),assert=require("node:assert/strict");
+const fs=require("node:fs"),path=require("node:path"),os=require("node:os"),http=require("node:http");
+const {spawnSync}=require("node:child_process"),world=require("../renderer.js"),{createServer}=require("../server.cjs");
+const fixture=JSON.parse(fs.readFileSync(path.resolve(__dirname,"../../../shared/fixtures/demo-activity.json"),"utf8"));
+const copy=x=>JSON.parse(JSON.stringify(x));
+test("shared demo: five repositories, ten events and 20 recorded units",()=>{
+ const n=world.normalise(fixture),f=world.statsFor(n);
+ assert.equal(n.repositories.length,5);assert.equal(n.activity.length,10);assert.equal(f.units,20);
+ assert.equal(f.repositories.filter(v=>v.stage>0).length,5);
+});
+test("growth thresholds 0, 1, 3, 6 and 10",()=>{
+ for(const [units,growth] of [[0,0],[1,1],[2,1],[3,2],[5,2],[6,3],[9,3],[10,4],[100,4]])assert.equal(world.stage(units),growth);
+});
+test("timeline displays only recorded events",()=>{
+ const n=world.normalise(fixture);
+ assert.equal(world.statsFor(n,0).units,0);assert.equal(world.statsFor(n,4).units,7);assert.equal(world.statsFor(n,10).units,20);
+});
+test("deduplicate by event ID but not by timestamp",()=>{
+ const input=copy(fixture);input.activity.push(copy(input.activity[0]));
+ assert.equal(world.normalise(input).activity.length,10);
+ const newEvent=copy(input.activity[0]);newEvent.id="separate-event";input.activity.push(newEvent);
+ assert.equal(world.statsFor(world.normalise(input)).units,23);
+});
+test("stable rendering irrespective of source list order",()=>{
+ const reversed=copy(fixture);reversed.repositories.reverse();reversed.activity.reverse();
+ const opts={layout:"archipelago",theme:"dark",animated:false};
+ assert.equal(world.render(reversed,opts),world.render(fixture,opts));
+ assert.equal(world.render(fixture,opts),world.render(fixture,opts));
+});
+test("two distinct layouts with light and dark styles",()=>{
+ const a=world.render(fixture,{layout:"archipelago",theme:"dark"});
+ const b=world.render(fixture,{layout:"village",theme:"light"});
+ assert.match(a,/Isles of Making/);assert.match(b,/Little Buildtown/);
+ assert.match(a,/water-gradient/);assert.match(b,/sky-gradient/);assert.notEqual(a,b);
+ assert.match(a,/DEMO DATA/);assert.match(b,/prefers-reduced-motion/);
+});
+test("empty input creates a safe quiet world",()=>{
+ const input=copy(fixture);input.activity=[];input.repositories=[];
+ for(const layout of ["archipelago","village"]){
+  const svg=world.render(input,{layout});assert.match(svg,/waiting for its first repository/);assert.match(svg,/0 activity units/);
+ }
+});
+test("single repository and large source count reach growth four",()=>{
+ const input=copy(fixture);input.repositories=input.repositories.slice(0,1);
+ input.activity=[{id:"large",kind:"commit",repo_full_name:input.repositories[0].full_name,occurred_at:"2026-11-01T00:00:00Z",count:20}];
+ assert.equal(world.statsFor(world.normalise(input)).repositories[0].stage,4);
+ assert.match(world.render(input),/growth 4\/4/);
+});
+test("invalid schema, timestamps, kinds, counts and repos are rejected",()=>{
+ const cases=[
+  o=>o.schema_version="2",o=>o.source="private",o=>o.generated_at="2026-11-16T05:30:00+05:30",
+  o=>o.activity[0].kind="unknown",o=>o.activity[0].count=0,o=>o.activity[0].count=1.5,
+  o=>o.activity[0].repo_full_name="somebody/else",o=>o.repositories[0].full_name="",
+  o=>o.repositories.push(copy(o.repositories[0]))
+ ];
+ for(const edit of cases){const input=copy(fixture);edit(input);assert.throws(()=>world.normalise(input));}
+});
+test("untrusted names are XML escaped",()=>{
+ const input=copy(fixture);input.repositories[0].name='<script>alert("bad")</script>&';
+ const svg=world.render(input);assert.doesNotMatch(svg,/<script>/);assert.match(svg,/&lt;script&gt;/);assert.match(svg,/&amp;/);
+});
+test("overflow is disclosed explicitly",()=>{
+ const input=copy(fixture);input.repositories.push({full_name:"sample-dev/zeta",name:"zeta"});
+ assert.match(world.render(input),/\+1 repositories not shown/);
+});
+test("invalid rendering options are rejected",()=>{
+ assert.throws(()=>world.render(fixture,{layout:"map"}));assert.throws(()=>world.render(fixture,{progress:-1}));
+});
+test("CLI creates reproducible animated and still SVG files",()=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),"dw-test-"));
+ try{
+  const args=["../export.cjs","--out",dir,"--layout","village","--theme","light"];
+  const first=spawnSync(process.execPath,args,{cwd:__dirname,encoding:"utf8"});
+  assert.equal(first.status,0,first.stderr);
+  const file=path.join(dir,"village-light.svg"),text=fs.readFileSync(file,"utf8");
+  assert.match(text,/Little Buildtown/);
+  assert.ok(fs.existsSync(path.join(dir,"village-light-still.svg")));
+  const second=spawnSync(process.execPath,args,{cwd:__dirname,encoding:"utf8"});
+  assert.equal(second.status,0,second.stderr);assert.equal(fs.readFileSync(file,"utf8"),text);
+ }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});
+test("local server serves preview and fixture but blocks private dotfiles",async()=>{
+ const server=createServer(path.resolve(__dirname,"../../.."));
+ await new Promise(resolve=>server.listen(0,"127.0.0.1",resolve));
+ try{
+  const port=server.address().port;
+  const get=pathname=>new Promise((resolve,reject)=>{
+   http.get({hostname:"127.0.0.1",port,path:pathname},res=>{
+    let body="";res.on("data",part=>body+=part);res.on("end",()=>resolve({code:res.statusCode,body}));
+   }).on("error",reject);
+  });
+  const page=await get("/");assert.equal(page.code,200);assert.match(page.body,/Developer World/);
+  const data=await get("/shared/fixtures/demo-activity.json");assert.equal(data.code,200);assert.equal(JSON.parse(data.body).source,"demo");
+  assert.equal((await get("/.git/config")).code,403);
+ }finally{await new Promise(resolve=>server.close(resolve));}
+});
