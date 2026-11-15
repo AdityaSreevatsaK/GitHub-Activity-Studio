@@ -4,6 +4,41 @@
 
 A quiet, animated atlas of public GitHub work. Each star is a repository, its size reflects its *reported GitHub star count*, each ring represents an individual sourced event, and every connecting arc means **shared primary programming language only**. For crowded datasets, one deterministic neighbour chain per language prevents a complete network of distracting lines. A travelling light marks an event on a connected repository, never a claim of collaboration.
 
+## Explore the constellation on GitHub
+
+> **DEMO, NOT REAL CONTRIBUTIONS.** These are reproducible visuals generated from the shared synthetic activity fixture. No GitHub profile has been changed.
+
+All the images below are already committed to this branch. GitHub can show the **still SVG previews** in this README. To watch the 16-second replay, follow the **animated SVG** link and choose **Raw** if GitHub shows the file viewer. Animated SVG playback inside GitHub's Markdown image proxy has **not been verified**.
+
+### Orbital atlas · Night sky
+
+[![Synthetic demo of a radial star map with five repository stars, an editorial legend and a factual same-language connection.](assets/radial-night-still.svg)](assets/radial-night-animated.svg)
+
+[Open animated version](assets/radial-night-animated.svg) · [Still image](assets/radial-night-still.svg) · [Paper-chart version](assets/radial-paper-still.svg) · [Paper animation](assets/radial-paper-animated.svg)
+
+### Language clusters · Paper chart
+
+[![Synthetic demo of an ink-and-paper constellation, grouping repository stars by their primary programming languages.](assets/clustered-paper-still.svg)](assets/clustered-paper-animated.svg)
+
+[Open animated version](assets/clustered-paper-animated.svg) · [Still image](assets/clustered-paper-still.svg) · [Night-sky version](assets/clustered-night-still.svg) · [Night animation](assets/clustered-night-animated.svg)
+
+<details>
+<summary><strong>Compare the alternative theme for each layout</strong></summary>
+
+#### Orbital atlas · Paper chart
+
+![Synthetic demo, radial paper-chart constellation](assets/radial-paper-still.svg)
+
+#### Language clusters · Night sky
+
+![Synthetic demo, clustered night-sky constellation](assets/clustered-night-still.svg)
+
+</details>
+
+**What the motion means:** each repository is a star; star size uses the reported GitHub stars metadata, not event volume. Distinct recorded events produce ring pulses, while glints trace connections only where repositories share a primary programming language. The demo does not suggest the repositories collaborated.
+
+**For full interactivity:** the [browser preview source](preview.html) supports hover/focus details, layout/theme switching, pause and mobile layouts. GitHub does **not** run HTML/JavaScript inside a repository README or file preview. Use the two PowerShell commands below to serve it locally; there is no public live web deployment.
+
 ## Requirements
 
 - Windows 10/11 with Python **3.11 or later** (`py -3 --version`)
