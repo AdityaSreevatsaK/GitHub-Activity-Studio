@@ -84,6 +84,11 @@ class FactoryTest(unittest.TestCase):
         self.assertEqual(scene["stations"][0]["full_name"], "org/r10")
         self.assertIn("5/11 REPOS", render(self.data))
 
+    def test_packages_start_at_their_own_station(self):
+        svg = render(self.data, "isometric", "dark", True)
+        self.assertIn('path="M110,224 L965,224"', svg)
+        self.assertIn('path="M277,224 L965,224"', svg)
+
     def test_same_name_different_owners_keep_identity(self):
         self.assertEqual(len(normalise(self.data)["stations"]), 2)
 
