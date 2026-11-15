@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><title>Agent Swarm | Animation Lab</title>
+<style>
+:root{font-family:Segoe UI,Inter,system-ui,sans-serif;color-scheme:dark;background:#0a1321;color:#edf5ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 75% -10%,#224563 0%,transparent 46%),#0a1321}
+main{max-width:1220px;margin:auto;padding:clamp(18px,4vw,48px)}
+header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap}
+h1{margin:0;font-size:clamp(28px,4vw,48px);letter-spacing:-.04em}h2{font-size:17px;margin:0 0 12px}
+p{color:#adbfce;line-height:1.55}.eyebrow{letter-spacing:.18em;text-transform:uppercase;color:#85dac9;font-weight:700;font-size:11px}
+mark{color:#402c00;background:#ffe4a5;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:800}
+.panel{background:#112238;border:1px solid #304459;border-radius:18px;padding:18px;margin-top:20px;box-shadow:0 18px 60px #0003}
+.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+button,select,input{font:inherit}button,select{border-radius:10px;background:#1b344e;border:1px solid #426078;color:#edf5ff;padding:10px 13px;cursor:pointer}
+button:hover,button:focus-visible,select:focus-visible{border-color:#7fddc8;outline:2px solid transparent;box-shadow:0 0 0 2px #2c8677}
+button[aria-pressed="true"]{background:#255a59;border-color:#7fddc8}
+fieldset{display:flex;gap:6px;align-items:center;flex-wrap:wrap;border:0;padding:0;margin:0}
+legend{font-size:11px;color:#b2cada;margin-bottom:5px;text-transform:uppercase;letter-spacing:.12em}
+.stage{margin-top:15px;border-radius:13px;overflow:hidden;border:1px solid #466078;background:#132237}
+object,.stage img{display:block;width:100%;aspect-ratio:16/5}
+.motion{display:flex;align-items:center;gap:12px;margin-top:14px}
+input[type=range]{width:100%;accent-color:#84ddc4;min-width:80px}
+time{font-variant-numeric:tabular-nums;min-width:90px;color:#c7d9e8;font-size:13px}
+.layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(250px,1fr);gap:18px;margin-top:20px}
+.note{font-size:13px;color:#b8cbda}.stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat{border:1px solid #3d5267;border-radius:10px;padding:10px 14px;color:#e5f4ff;font-size:13px}
+ol{padding:0;margin:0;list-style:none;max-height:330px;overflow:auto}
+li{padding:10px 6px;border-bottom:1px solid #304559;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+li strong{font-size:13px;font-weight:600}li small{font-size:11px;color:#b9c9db;display:block;margin-top:4px}
+.status{padding:4px 8px;border-radius:6px;background:#283c54;color:#c7d7e8;font-size:11px}
+.status.working{background:#215447;color:#a4f5ce}.status.complete{background:#433c6b;color:#e7d7ff}
+footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decoration-thickness:1px;text-underline-offset:3px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}main{padding:16px}.panel{padding:12px}.controls{align-items:stretch}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behaviour:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">GitHub Activity Studio / concept 03</div><h1>Agent Swarm</h1>
+<p>A choreographed visual metaphor. Real event categories, pretend little helpers.<br>No LLM calls. No repository actions.</p></div><mark id="provenance">● DEMO DATA</mark></header>
+<section class="panel" aria-label="Interactive design preview">
+<div class="controls">
+<fieldset aria-label="Visual design"><legend>Design</legend>
+<button id="geometric" type="button" aria-pressed="true">Geometric</button>
+<button id="robots" type="button" aria-pressed="false">Mini robots</button></fieldset>
+<label for="theme"><span class="eyebrow">Theme</span><br><select id="theme"><option value="dark">Dark</option><option value="light">Light</option></select></label>
+<button id="play" type="button" aria-label="Play animation">Play</button>
+<button id="reset" type="button">Restart</button>
+</div>
+<div class="stage" id="stage">
+<object id="art" type="image/svg+xml" data="exports/geometric-dark.svg" aria-label="Geometric swarm, source-backed symbolic tasks"><img src="exports/geometric-dark-still.svg" alt="A static diagram of activity hubs and symbolic helper agents"></object>
+</div>
+<div class="motion"><label for="scrub" class="eyebrow">Replay</label><input id="scrub" type="range" min="0" max="140" step="1" value="0" aria-label="Scrub the fourteen-second replay"><time id="clock">0.0s / 14s</time></div>
+<p class="note">Pause or scrub to inspect event phases. The timeline is compressed choreography, not original event time. Reduced-motion preferences start paused. Static images are available below.</p>
+</section>
+<div class="layout">
+<section class="panel" aria-label="Activity provenance"><h2>From event to animation</h2>
+<div class="stats"><div class="stat" id="events">Loading…</div><div class="stat" id="repos"></div><div class="stat" id="units"></div></div>
+<p id="limits" class="note"></p><h2>Symbol key</h2><p class="note">C = commit · P+ = PR opened · PM = PR merged · ? = issue · R = release. Counts are units within source events.</p>
+<p class="note">Task phases: queued → assigned → travelling → working → complete → delivered. Helpers are visual metaphor only.</p>
+<a id="gif" href="exports/geometric-dark.gif">Download GitHub-compatible GIF</a> ·
+<a id="still" href="exports/geometric-dark-still.svg">Static fallback</a>
+</section>
+<section class="panel"><h2>Task inspector</h2><ol id="tasks" aria-live="off"><li>Loading scene…</li></ol></section>
+</div><footer>Source: labelled shared demonstration fixture. Offline and deterministic. No GitHub token, network API, autonomous AI or write access.</footer>
+</main>
+<script>
+"use strict";
+const el=id=>document.getElementById(id);
+let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0;
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function phase(j,t){const d=((t%14)+14)%14-j.start;return d<0?"queued":d<.18?"assigned":d<.68?"travelling":d<1.56?"working":d<2.2?"complete":"delivered"}
+function svg(){try{return el("art").contentDocument.querySelector("svg")}catch{return null}}
+function setSvgTime(){const s=svg();if(!s)return;try{s.pauseAnimations();s.setCurrentTime(seconds);if(playing)s.unpauseAnimations()}catch{}}
+function renderState(){
+ el("scrub").value=String(Math.round(seconds*10));
+ el("clock").textContent=seconds.toFixed(1)+"s / 14s";
+ if(!scene)return;
+ const list=el("tasks");list.replaceChildren();
+ for(const j of scene.jobs){
+   const li=document.createElement("li"),summary=document.createElement("div"),name=document.createElement("strong"),meta=document.createElement("small"),state=document.createElement("span");
+   name.textContent=j.repo_full_name.split("/").pop()+"  ·  "+j.kind.replaceAll("_"," ");
+   meta.textContent=j.id+" · "+j.count+" unit"+(j.count===1?"":"s")+" · agents "+j.agents.join(" & ");
+   const p=phase(j,seconds);state.className="status "+p;state.textContent=p;
+   summary.append(name,meta);li.append(summary,state);list.append(li);
+ }
+}
+function choose(next){style=next;el("geometric").setAttribute("aria-pressed",String(style==="geometric"));el("robots").setAttribute("aria-pressed",String(style==="robots"));loadArt()}
+function loadArt(){const art=el("art");art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>setSvgTime();
+ el("gif").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+".gif";
+ el("still").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";
+}
+function setPlaying(value){playing=value;el("play").textContent=playing?"Pause":"Play";el("play").setAttribute("aria-label",playing?"Pause animation":"Play animation");previous=performance.now();setSvgTime();if(playing)raf=requestAnimationFrame(tick);else cancelAnimationFrame(raf)}
+function tick(now){if(!playing)return;seconds=(seconds+(now-previous)/1000)%14;previous=now;renderState();raf=requestAnimationFrame(tick)}
+el("geometric").addEventListener("click",()=>choose("geometric"));el("robots").addEventListener("click",()=>choose("robots"));
+el("theme").addEventListener("change",e=>{theme=e.target.value;loadArt()});
+el("play").addEventListener("click",()=>setPlaying(!playing));
+el("reset").addEventListener("click",()=>{seconds=0;renderState();setSvgTime()});
+el("scrub").addEventListener("input",e=>{seconds=Math.min(13.99,Number(e.target.value)/10);renderState();setSvgTime()});
+(async()=>{try{
+ const response=await fetch("exports/scene.json",{cache:"no-store"});if(!response.ok)throw Error("scene.json not found. Run the build command.");
+ scene=await response.json();
+ el("provenance").textContent=scene.source==="demo"?"● DEMO DATA":"● GITHUB SNAPSHOT";
+ el("events").textContent=scene.shown+" / "+scene.event_total+" events shown";
+ el("repos").textContent=scene.repositories.length+" / "+scene.repository_total+" hubs";
+ el("units").textContent=scene.jobs.reduce((n,j)=>n+j.count,0)+" visible units";
+ el("limits").textContent=(scene.truncated?"Truncated: five most recently active repositories and the ten latest eligible event packets. ":"All input events are represented. ")+(scene.stale_days>30?"Snapshot is stale by "+scene.stale_days+" days. ":"")+"Agents are illustrative, never operational.";
+ renderState();setPlaying(!reduced);
+ }catch(error){el("tasks").textContent="Could not load scene: "+error.message;el("events").textContent="Build required";setPlaying(false)}})();
+document.addEventListener("visibilitychange",()=>{if(document.hidden&&playing)setPlaying(false)});
+</script>
+</body></html>
