@@ -205,7 +205,7 @@ export function renderSvg(scene,{style="geometric",theme="dark",animated=true,ti
    const barWidth=Math.round(w-28);
    s+=`<g opacity="${animated?0:active?1:0}">
      ${rect(x+14,235,barWidth,3,1,c.track)}
-     ${rect(x+14,235,animated?0:barWidth*Math.min(1,Math.max(0,(d-.68)/.88)),3,1,colour)}
+     ${animated?`<rect x="${x+14}" y="235" width="0" height="3" rx="1" fill="${colour}"><animate attributeName="width" values="0;0;0;${barWidth};${barWidth};0;0" keyTimes="${tm}" dur="${PERIOD}s" repeatCount="indefinite"/></rect>`:rect(x+14,235,barWidth*Math.min(1,Math.max(0,(d-.68)/.88)),3,1,colour)}
      ${animated?`<animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="${tm}" dur="${PERIOD}s" repeatCount="indefinite"/>`:""}
      </g>`;
    for(let side=0;side<2;side++){

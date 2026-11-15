@@ -29,7 +29,7 @@ node concepts/agent-swarm/serve.mjs
 5. Run tests in another PowerShell window:
 
 ~~~powershell
-node --test concepts/agent-swarm/tests/*.test.mjs
+node --test concepts/agent-swarm/tests
 ~~~
 
 To use a different, already-normalised public snapshot:

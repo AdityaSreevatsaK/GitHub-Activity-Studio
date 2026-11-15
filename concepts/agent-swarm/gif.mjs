@@ -169,11 +169,11 @@ export function drawGifFrame(scene,{style="geometric",theme="dark",time=0}={}){
    }
  }
  box(20,227,760,1,4);
- label(24,235,"C COMMIT  P+ PR OPEN  PM PR MERGE  ? ISSUE  R RELEASE",2,1);
- label(24,63,"",2,1);
- if(scene.truncated)label(420,233,"LIMITED VIEW",8,1);
+ label(24,231,"C COMMIT  P+ PR OPEN  PM PR MERGE  ? ISSUE  R RELEASE",2,1);
+ if(scene.stale_days!==null&&scene.stale_days>30)label(570,48,"STALE SNAPSHOT",8,1);
+ if(scene.truncated)label(425,231,"LIMITED VIEW",8,1);
  // Unmissable source warning; not a claim that AI agents did anything.
- label(527,20,"",2,1);
+ label(681,231,"NO REAL AI",2,1);
  return pixels;
 }
 export function lzwEncode(data,minCodeSize=5){

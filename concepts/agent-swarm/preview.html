@@ -69,7 +69,7 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <script>
 "use strict";
 const el=id=>document.getElementById(id);
-let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0;
+let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0,lastSignature="";
 const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function phase(j,t){const d=((t%14)+14)%14-j.start;return d<0?"queued":d<.18?"assigned":d<.68?"travelling":d<1.56?"working":d<2.2?"complete":"delivered"}
 function svg(){try{return el("art").contentDocument.querySelector("svg")}catch{return null}}
@@ -78,6 +78,7 @@ function renderState(){
  el("scrub").value=String(Math.round(seconds*10));
  el("clock").textContent=seconds.toFixed(1)+"s / 14s";
  if(!scene)return;
+ const signature=scene.jobs.map(j=>phase(j,seconds)).join("|");if(signature===lastSignature)return;lastSignature=signature;
  const list=el("tasks");list.replaceChildren();
  for(const j of scene.jobs){
    const li=document.createElement("li"),summary=document.createElement("div"),name=document.createElement("strong"),meta=document.createElement("small"),state=document.createElement("span");
@@ -88,7 +89,7 @@ function renderState(){
  }
 }
 function choose(next){style=next;el("geometric").setAttribute("aria-pressed",String(style==="geometric"));el("robots").setAttribute("aria-pressed",String(style==="robots"));loadArt()}
-function loadArt(){const art=el("art");art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>setSvgTime();
+function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>setSvgTime();
  el("gif").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+".gif";
  el("still").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";
 }

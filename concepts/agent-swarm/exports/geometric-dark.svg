@@ -64,7 +64,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="470.4" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="470.4" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <rect x="470.4" y="235" width="0" height="3" rx="1" fill="#58d7bf"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.039286;0.052143;0.087857;0.150714;0.196429;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="0" data-task="demo-001">
          <g><circle r="13" fill="#58d7bf" opacity=".15" filter="url(#softlight)"/>
@@ -91,7 +91,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="884.8" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="884.8" y="235" width="0" height="3" rx="1" fill="#83b7ff" stroke="none" stroke-width="1"/>
+     <rect x="884.8" y="235" width="0" height="3" rx="1" fill="#83b7ff"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.125000;0.137857;0.173571;0.236429;0.282143;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="2" data-task="demo-002">
          <g><circle r="13" fill="#83b7ff" opacity=".15" filter="url(#softlight)"/>
@@ -118,7 +118,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="56" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="56" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <rect x="56" y="235" width="0" height="3" rx="1" fill="#58d7bf"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.210714;0.223571;0.259286;0.322143;0.367857;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="4" data-task="demo-003">
          <g><circle r="13" fill="#58d7bf" opacity=".15" filter="url(#softlight)"/>
@@ -145,7 +145,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="884.8" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="884.8" y="235" width="0" height="3" rx="1" fill="#b69bff" stroke="none" stroke-width="1"/>
+     <rect x="884.8" y="235" width="0" height="3" rx="1" fill="#b69bff"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.296429;0.309286;0.345000;0.407857;0.453571;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="6" data-task="demo-004">
          <g><circle r="13" fill="#b69bff" opacity=".15" filter="url(#softlight)"/>
@@ -172,7 +172,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="677.5999999999999" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#ffbd79" stroke="none" stroke-width="1"/>
+     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#ffbd79"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.382143;0.395000;0.430714;0.493571;0.539286;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="0" data-task="demo-005">
          <g><circle r="13" fill="#ffbd79" opacity=".15" filter="url(#softlight)"/>
@@ -199,7 +199,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="677.5999999999999" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <rect x="677.5999999999999" y="235" width="0" height="3" rx="1" fill="#58d7bf"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.467857;0.480714;0.516429;0.579286;0.625000;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="2" data-task="demo-006">
          <g><circle r="13" fill="#58d7bf" opacity=".15" filter="url(#softlight)"/>
@@ -226,7 +226,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="470.4" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="470.4" y="235" width="0" height="3" rx="1" fill="#ff91ab" stroke="none" stroke-width="1"/>
+     <rect x="470.4" y="235" width="0" height="3" rx="1" fill="#ff91ab"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.553571;0.566429;0.602143;0.665000;0.710714;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="4" data-task="demo-007">
          <g><circle r="13" fill="#ff91ab" opacity=".15" filter="url(#softlight)"/>
@@ -253,7 +253,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="263.2" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#b69bff" stroke="none" stroke-width="1"/>
+     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#b69bff"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.639286;0.652143;0.687857;0.750714;0.796429;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="6" data-task="demo-008">
          <g><circle r="13" fill="#b69bff" opacity=".15" filter="url(#softlight)"/>
@@ -280,7 +280,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="263.2" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#58d7bf" stroke="none" stroke-width="1"/>
+     <rect x="263.2" y="235" width="0" height="3" rx="1" fill="#58d7bf"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.725000;0.737857;0.773571;0.836429;0.882143;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="0" data-task="demo-009">
          <g><circle r="13" fill="#58d7bf" opacity=".15" filter="url(#softlight)"/>
@@ -307,7 +307,7 @@
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g opacity="0">
      <rect x="56" y="235" width="167" height="3" rx="1" fill="#263e56" stroke="none" stroke-width="1"/>
-     <rect x="56" y="235" width="0" height="3" rx="1" fill="#83b7ff" stroke="none" stroke-width="1"/>
+     <rect x="56" y="235" width="0" height="3" rx="1" fill="#83b7ff"><animate attributeName="width" values="0;0;0;167;167;0;0" keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000" dur="14s" repeatCount="indefinite"/></rect>
      <animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="0.000000;0.810714;0.823571;0.859286;0.922143;0.967857;1.000000" dur="14s" repeatCount="indefinite"/>
      </g><g class="motion-mark" opacity="0" data-agent="2" data-task="demo-010">
          <g><circle r="13" fill="#83b7ff" opacity=".15" filter="url(#softlight)"/>
