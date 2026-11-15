@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img" aria-labelledby="factory-title factory-desc">
+<title id="factory-title">Code Factory | isometric | SYNTHETIC DEMO</title>
+<desc id="factory-desc">Code Factory isometric illustration. SYNTHETIC DEMO. 5 repositories, 10 unique event records. 14 commit, 2 pr opened, 2 pr merged, 1 issue opened, 1 release. Factory processes are visual metaphors only, not build or deployment status.</desc>
+<defs>
+<pattern id="bolts" width="28" height="16" patternUnits="userSpaceOnUse"><path d="M0 14h6" stroke="#657c8a" opacity=".45" stroke-width="2"/></pattern>
+<clipPath id="belt-clip"><rect x="80" y="208" width="838" height="54"/></clipPath>
+</defs>
+<rect x="0" y="0" width="1000" height="310" rx="0" fill="#f6efde" />
+<rect x="16" y="13" width="968" height="283" rx="15" fill="#fdf7e9" stroke="#bccabb" stroke-width="1" opacity=".96"/>
+<text x="39" y="46" font-size="24" fill="#24394b" font-weight="900" letter-spacing="3">CODE FACTORY</text>
+<text x="40" y="66" font-size="12" fill="#627786" >a little production line of open-source activity</text>
+<rect x="780" y="27" width="174" height="26" rx="13" fill="#e0d7c4" />
+<text x="867" y="45" font-size="11" fill="#24394b" text-anchor="middle" font-weight="bold" letter-spacing="1">SYNTHETIC DEMO</text>
+<text x="40" y="88" font-size="10" fill="#b77946" font-weight="bold" letter-spacing="1.5">FLOOR 01 / ISOMETRIC</text>
+<text x="957" y="87" font-size="10" fill="#627786" text-anchor="end">LIVE LOOP</text>
+<style>@keyframes rolling{from{transform:translateX(-32px)}to{transform:translateX(0)}}.belt-lines{animation:rolling .9s linear infinite}.blink{animation:glow 1.8s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.belt-lines,.blink{animation:none!important}.steam{display:none}}</style>
+<path d="M56 210 L170 142 862 142 961 210 860 269 151 269 Z" fill="#cfc5b0" />
+<path d="M56 210 L170 142 862 142 961 210" fill="none" stroke="#657c8a" stroke-width="3"/>
+<path d="M150 269 L860 269" fill="none" stroke="#4d5964" stroke-width="4"/>
+<path d="M88 195 l80 -47 693 0 69 47" fill="none" stroke="#bccabb" stroke-width="2" opacity=".8"/>
+<path d="M59 208 L167 147 M962 209 L862 146" fill="none" stroke="#bccabb" stroke-width="2"/>
+<path d="M60 209 L962 209" fill="none" stroke="#657c8a" stroke-width="1" opacity=".4"/>
+<path d="M81 206 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
+<path d="M83 160 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
+<path d="M83 160 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
+<path d="M128 182 l45 -24 v53 l-45 24 z" fill="#4d5964" />
+<path d="M91 191 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
+<path d="M137 193 l25 -13 v18 l-25 13 z" fill="#bccabb" />
+<path d="M93 193 l10 5 v9 l-10 -5 z" fill="#55cbb9" />
+<path d="M106 200 l10 5 v9 l-10 -5 z" fill="#f6d187" />
+<path d="M124 138 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
+<path d="M123 122 l13 -7 10 5 -13 7 z" fill="#55cbb9" />
+<path d="M152 156 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
+<path d="M148 132 l12 -7 9 5 -12 7 z" fill="#657c8a" />
+<text x="122" y="106" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">orbit</text>
+<rect x="145" y="188" width="7" height="7" rx="2" fill="#f6d187" />
+<path d="M148 190 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
+<path d="M87 165 l3 1 M166 165 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
+<g class="steam"><circle cx="156" cy="120" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="120;101;120" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
+<path d="M149 147 l6 -3 6 3 -6 3z" fill="#55cbb9" />
+<path d="M108 153 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
+<circle cx="152" cy="138" r="4" fill="#55cbb9" class="blink"/>
+<path d="M248 198 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
+<path d="M250 152 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
+<path d="M250 152 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
+<path d="M295 174 l45 -24 v53 l-45 24 z" fill="#4d5964" />
+<path d="M258 183 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
+<path d="M304 185 l25 -13 v18 l-25 13 z" fill="#bccabb" />
+<path d="M260 185 l10 5 v9 l-10 -5 z" fill="#83a7ed" />
+<path d="M273 192 l10 5 v9 l-10 -5 z" fill="#f6d187" />
+<path d="M291 130 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
+<path d="M290 114 l13 -7 10 5 -13 7 z" fill="#83a7ed" />
+<path d="M319 148 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
+<path d="M315 124 l12 -7 9 5 -12 7 z" fill="#657c8a" />
+<text x="289" y="98" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">harbour</text>
+<rect x="312" y="180" width="7" height="7" rx="2" fill="#f6d187" />
+<path d="M315 182 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
+<path d="M254 157 l3 1 M333 157 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
+<g class="steam"><circle cx="323" cy="112" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="112;93;112" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
+<path d="M316 139 l6 -3 6 3 -6 3z" fill="#83a7ed" />
+<path d="M275 145 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
+<circle cx="319" cy="130" r="4" fill="#83a7ed" class="blink"/>
+<path d="M415 206 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
+<path d="M417 160 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
+<path d="M417 160 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
+<path d="M462 182 l45 -24 v53 l-45 24 z" fill="#4d5964" />
+<path d="M425 191 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
+<path d="M471 193 l25 -13 v18 l-25 13 z" fill="#bccabb" />
+<path d="M427 193 l10 5 v9 l-10 -5 z" fill="#e6af62" />
+<path d="M440 200 l10 5 v9 l-10 -5 z" fill="#f6d187" />
+<path d="M458 138 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
+<path d="M457 122 l13 -7 10 5 -13 7 z" fill="#e6af62" />
+<path d="M486 156 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
+<path d="M482 132 l12 -7 9 5 -12 7 z" fill="#657c8a" />
+<text x="456" y="106" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">aurora</text>
+<rect x="479" y="188" width="7" height="7" rx="2" fill="#f6d187" />
+<path d="M482 190 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
+<path d="M421 165 l3 1 M500 165 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
+<g class="steam"><circle cx="490" cy="120" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="120;101;120" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
+<path d="M483 147 l6 -3 6 3 -6 3z" fill="#e6af62" />
+<path d="M442 153 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
+<circle cx="486" cy="138" r="4" fill="#e6af62" class="blink"/>
+<path d="M582 198 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
+<path d="M584 152 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
+<path d="M584 152 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
+<path d="M629 174 l45 -24 v53 l-45 24 z" fill="#4d5964" />
+<path d="M592 183 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
+<path d="M638 185 l25 -13 v18 l-25 13 z" fill="#bccabb" />
+<path d="M594 185 l10 5 v9 l-10 -5 z" fill="#e78f97" />
+<path d="M607 192 l10 5 v9 l-10 -5 z" fill="#f6d187" />
+<path d="M625 130 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
+<path d="M624 114 l13 -7 10 5 -13 7 z" fill="#e78f97" />
+<path d="M653 148 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
+<path d="M649 124 l12 -7 9 5 -12 7 z" fill="#657c8a" />
+<text x="623" y="98" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">ember</text>
+<rect x="646" y="180" width="7" height="7" rx="2" fill="#f6d187" />
+<path d="M649 182 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
+<path d="M588 157 l3 1 M667 157 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
+<g class="steam"><circle cx="657" cy="112" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="112;93;112" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
+<path d="M650 139 l6 -3 6 3 -6 3z" fill="#e78f97" />
+<path d="M609 145 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
+<circle cx="653" cy="130" r="4" fill="#e78f97" class="blink"/>
+<path d="M749 206 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
+<path d="M751 160 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
+<path d="M751 160 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
+<path d="M796 182 l45 -24 v53 l-45 24 z" fill="#4d5964" />
+<path d="M759 191 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
+<path d="M805 193 l25 -13 v18 l-25 13 z" fill="#bccabb" />
+<path d="M761 193 l10 5 v9 l-10 -5 z" fill="#bc9ce8" />
+<path d="M774 200 l10 5 v9 l-10 -5 z" fill="#f6d187" />
+<path d="M792 138 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
+<path d="M791 122 l13 -7 10 5 -13 7 z" fill="#bc9ce8" />
+<path d="M820 156 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
+<path d="M816 132 l12 -7 9 5 -12 7 z" fill="#657c8a" />
+<text x="790" y="106" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">atlas</text>
+<rect x="813" y="188" width="7" height="7" rx="2" fill="#f6d187" />
+<path d="M816 190 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
+<path d="M755 165 l3 1 M834 165 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
+<g class="steam"><circle cx="824" cy="120" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="120;101;120" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
+<path d="M817 147 l6 -3 6 3 -6 3z" fill="#bc9ce8" />
+<path d="M776 153 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
+<circle cx="820" cy="138" r="4" fill="#bc9ce8" class="blink"/>
+<path d="M78 218 L910 218 938 251 105 251 Z" fill="#4d5964" />
+<path d="M83 219 L905 219 921 235 99 235 Z" fill="#657c8a" />
+<path d="M87 221 L905 221 914 231 96 231 Z" fill="#e0d7c4" />
+<path d="M102 252 L938 252 934 259 100 259 Z" fill="#8eaab5" />
+<path d="M113 251 l11 0 -2 16 -11 0z M876 251 l13 0 4 16 -13 0z" fill="#4d5964" />
+<path d="M106 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M138 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M170 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M202 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M234 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M266 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M298 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M330 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M362 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M394 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M426 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M458 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M490 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M522 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M554 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M586 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M618 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M650 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M682 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M714 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M746 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M778 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M810 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M842 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M874 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<path d="M906 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
+<g opacity=".35" clip-path="url(#belt-clip)"><g class="belt-lines"><path d="M78 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M110 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M142 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M174 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M206 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M238 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M270 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M302 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M334 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M366 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M398 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M430 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M462 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M494 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M526 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M558 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M590 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M622 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M654 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M686 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M718 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M750 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M782 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M814 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M846 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M878 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M910 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M942 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/></g></g>
+<g><title>sample-dev/aurora | commit ×3 | 2026-08-03T10:20:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×3</text><animateMotion dur="12s" begin="0.00s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/atlas | pr_opened ×1 | 2026-08-21T09:15:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#83a7ed" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#83a7ed" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◇</text><animateMotion dur="12s" begin="0.74s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/ember | commit ×2 | 2026-09-06T20:45:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×2</text><animateMotion dur="12s" begin="1.48s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/atlas | pr_merged ×1 | 2026-09-12T13:00:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#e6af62" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#e6af62" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◆</text><animateMotion dur="12s" begin="2.22s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/orbit | issue_opened ×1 | 2026-09-28T06:30:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#e78f97" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#e78f97" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">!</text><animateMotion dur="12s" begin="2.96s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/orbit | commit ×5 | 2026-10-17T18:25:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×5</text><animateMotion dur="12s" begin="3.70s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/aurora | release ×1 | 2026-10-24T11:00:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#bc9ce8" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#bc9ce8" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">✦</text><animateMotion dur="12s" begin="4.44s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/harbour | pr_merged ×1 | 2026-11-04T15:10:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#e6af62" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#e6af62" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◆</text><animateMotion dur="12s" begin="5.18s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/harbour | commit ×4 | 2026-11-09T07:45:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×4</text><animateMotion dur="12s" begin="5.92s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<g><title>sample-dev/ember | pr_opened ×1 | 2026-11-13T09:00:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#83a7ed" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#83a7ed" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◇</text><animateMotion dur="12s" begin="6.66s" repeatCount="indefinite" path="M20,224 L950,224" calcMode="linear"/></g></g>
+<rect x="28" y="273" width="944" height="16" rx="4" fill="#fdf7e9" />
+<rect x="44" y="275" width="13" height="11" rx="2" fill="#55cbb9" />
+<text x="62" y="285" font-size="10" fill="#24394b" font-weight="bold">PARTS  14</text>
+<rect x="227" y="275" width="13" height="11" rx="2" fill="#83a7ed" />
+<text x="245" y="285" font-size="10" fill="#24394b" font-weight="bold">ASSEMBLE  2</text>
+<rect x="410" y="275" width="13" height="11" rx="2" fill="#e6af62" />
+<text x="428" y="285" font-size="10" fill="#24394b" font-weight="bold">SEALED  2</text>
+<rect x="593" y="275" width="13" height="11" rx="2" fill="#e78f97" />
+<text x="611" y="285" font-size="10" fill="#24394b" font-weight="bold">INSPECT  1</text>
+<rect x="776" y="275" width="13" height="11" rx="2" fill="#bc9ce8" />
+<text x="794" y="285" font-size="10" fill="#24394b" font-weight="bold">DISPATCH  1</text>
+<text x="965" y="305" font-size="9" fill="#627786" text-anchor="end">METAPHOR ONLY · NOT CI OR DEPLOYMENT STATUS</text>
+</svg>
