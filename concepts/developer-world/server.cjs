@@ -11,7 +11,7 @@ function createServer(dir=root){
   if(relative.startsWith("..")||path.isAbsolute(relative)||pathname.includes("\\")||!mime[ext]||relative.split(path.sep).some(x=>x.startsWith("."))){res.writeHead(403);res.end("Forbidden");return;}
   fs.stat(file,(err,stat)=>{
    if(err||!stat.isFile()){res.writeHead(404);res.end("Not found");return;}
-   res.writeHead(200,{"Content-Type":mime[ext],"Content-Length":stat.size,"X-Content-Type-Options":"nosniff","Cache-Control":"no-store","Content-Security-Policy":"default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"});
+   res.writeHead(200,{"Content-Type":mime[ext],"Content-Length":stat.size,"X-Content-Type-Options":"nosniff","Cache-Control":"no-store","Content-Security-Policy":"default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"});
    if(req.method==="HEAD"){res.end();return;}fs.createReadStream(file).pipe(res);
   });
  });
