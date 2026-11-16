@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="factoryTitle factoryDesc">
 <title id="factoryTitle">Code Factory · isometric · SYNTHETIC DEMO</title><desc id="factoryDesc">GitHub-style weekly grid with selected week 8 Nov to 14 Nov. 2 observed event records representing 5 source-backed event units. Each factory machine below corresponds to an event recorded on the same calendar day. This is not the official GitHub contributions calendar or CI/deployment status.</desc>
-<defs><linearGradient id="panelGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e6f0e9"/><stop offset="100%" stop-color="#fff8e9"/></linearGradient><pattern id="workshopTiles" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 19H20" stroke="#a8c1bd" stroke-opacity=".27"/><path d="M19 0V20" stroke="#a8c1bd" stroke-opacity=".15"/></pattern></defs>
+<defs><linearGradient id="panelGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e6f0e9"/><stop offset="100%" stop-color="#fff8e9"/></linearGradient><pattern id="isoTiles" width="28" height="18" patternUnits="userSpaceOnUse"><path d="M0 9L14 1L28 9L14 17Z" stroke="#6e969a" stroke-opacity=".22" fill="none"/><circle cx="14" cy="9" r="1.2" fill="#b8814e" opacity=".2"/></pattern><pattern id="pixelTiles" width="24" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="17" width="11" height="2" fill="#6e969a" opacity=".28"/><rect x="13" y="17" width="11" height="2" fill="#6e969a" opacity=".28"/><rect x="11" y="1" width="2" height="16" fill="#a8c1bd" opacity=".22"/><rect x="3" y="5" width="3" height="3" fill="#b8814e" opacity=".15"/></pattern></defs>
 <style>@keyframes machinePulse{0%,100%{filter:brightness(1);opacity:.82}50%{filter:brightness(1.12);opacity:1}}@keyframes movingBelt{to{transform:translateX(16px)}}.active .machine-part{animation:machinePulse 2.2s ease-in-out infinite}.belt-dashes{animation:movingBelt .9s linear infinite}@media(prefers-reduced-motion:reduce){.active .machine-part,.belt-dashes{animation:none!important}.travelling{display:none!important}}</style>
 <rect x="0" y="0" width="1200" height="430" rx="0" fill="#ebe6d9" />
 <rect x="14" y="11" width="1172" height="407" rx="15" fill="#fff8e9" stroke="#a8c1bd" stroke-width="1"/>
@@ -10,7 +10,7 @@
 <text x="1071" y="44" font-size="11" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">SYNTHETIC DEMO</text>
 <rect x="28" y="79" width="1144" height="127" rx="9" fill="#e6f0e9" stroke="#a8c1bd" stroke-width="1"/>
 <text x="42" y="102" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" letter-spacing=".7">52-WEEK ACTIVITY CALENDAR</text>
-<text x="1155" y="102" font-size="10" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">10 recorded events · partial source snapshot</text>
+<text x="1155" y="102" font-size="10" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">10 event records · partial snapshot</text>
 <g><title>2025-11-16: 0 recorded units across 0 events</title><rect x="154.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#d3dfd4" /></g>
 <g><title>2025-11-17: 0 recorded units across 0 events</title><rect x="154.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#d3dfd4" /></g>
 <g><title>2025-11-18: 0 recorded units across 0 events</title><rect x="154.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#d3dfd4" /></g>
@@ -448,11 +448,27 @@
 <rect x="1089.00" y="115" width="18.1" height="84.39999999999999" rx="4" fill="none" stroke="#b8814e" stroke-width="2.6" pointer-events="none"/>
 <path d="M1098.40 203V215H595V221" fill="none" stroke="#b8814e" stroke-width="1.7" stroke-dasharray="4 5" opacity=".85"/>
 <rect x="28" y="222" width="1144" height="163" rx="10" fill="url(#panelGlow)" stroke="#a8c1bd"/>
+<path d="M58 219L1143 219" fill="none" stroke="#b8814e" stroke-width="1" stroke-dasharray="3 7" opacity=".35"/>
+<path d="M120 219L120 252" fill="none" stroke="#b8814e" stroke-width="1" opacity=".45"/>
+<circle cx="120" cy="219" r="2.7" fill="#b8814e" opacity=".7"/>
+<path d="M280 219L280 252" fill="none" stroke="#b8814e" stroke-width="1" opacity=".45"/>
+<circle cx="280" cy="219" r="2.7" fill="#b8814e" opacity=".7"/>
+<path d="M440 219L440 252" fill="none" stroke="#b8814e" stroke-width="1" opacity=".45"/>
+<circle cx="440" cy="219" r="2.7" fill="#b8814e" opacity=".7"/>
+<path d="M600 219L600 252" fill="none" stroke="#b8814e" stroke-width="1" opacity=".45"/>
+<circle cx="600" cy="219" r="2.7" fill="#b8814e" opacity=".7"/>
+<path d="M760 219L760 252" fill="none" stroke="#b8814e" stroke-width="1" opacity=".45"/>
+<circle cx="760" cy="219" r="2.7" fill="#b8814e" opacity=".7"/>
+<path d="M920 219L920 252" fill="none" stroke="#b8814e" stroke-width="1" opacity=".45"/>
+<circle cx="920" cy="219" r="2.7" fill="#b8814e" opacity=".7"/>
+<path d="M1080 219L1080 252" fill="none" stroke="#b8814e" stroke-width="1" opacity=".45"/>
+<circle cx="1080" cy="219" r="2.7" fill="#b8814e" opacity=".7"/>
 <text x="43" y="243" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="900" letter-spacing=".8">WEEK OF 8 NOV  •  2 RECORDS  •  5 UNITS</text>
 <text x="1158" y="243" font-size="10" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Each lane below maps directly to one calendar day</text>
-<rect x="36" y="250" width="1128" height="126" rx="5" fill="url(#workshopTiles)" />
+<rect x="36" y="250" width="1128" height="126" rx="5" fill="url(#isoTiles)" />
 <g data-day="2026-11-08">
 <rect x="41" y="254" width="154" height="120" rx="6" fill="#fff8e9" stroke="#a8c1bd" stroke-opacity=".5"/>
+<path d="M49 358l28 9 28 -9 28 9 28 -9" fill="none" stroke="#6e969a" stroke-opacity=".18" stroke-width="2"/>
 <rect x="50" y="263" width="12" height="12" rx="3" fill="#d3dfd4" />
 <text x="67" y="273" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">SUN 08</text>
 <text x="187" y="272" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
@@ -463,15 +479,17 @@
 </g>
 <g data-day="2026-11-09">
 <rect x="201" y="254" width="154" height="120" rx="6" fill="#d5e5d9" stroke="#6e969a" stroke-opacity=".9"/>
+<path d="M209 358l28 9 28 -9 28 9 28 -9" fill="none" stroke="#6e969a" stroke-opacity=".18" stroke-width="2"/>
 <rect x="210" y="263" width="12" height="12" rx="3" fill="#51a77d" />
 <text x="227" y="273" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">MON 09</text>
 <text x="347" y="272" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">4 UNITS</text>
 <path d="M280 279L280 292" fill="none" stroke="#b8814e" stroke-width="2" stroke-dasharray="3 3"/>
-<g class="active" data-repo="sample-dev/harbour" data-kind="commit"><g class="machine isometric"><g class="machine-part"><path d="M247 336l29 -13 36 15 -30 15z" fill="#53716f" opacity=".45"/><path d="M253 323l22 -9 31 12 -22 10z" fill="#c7d9d0" /><path d="M253 323l31 13v13l-31 -13z" fill="#90b3b7" /><path d="M284 336l22 -10v13l-22 10z" fill="#53716f" /><path d="M261 331l13 5v7l-13 -5z" fill="#63d9bc" /><path d="M276 338l5 2v4l-5 -2z" fill="#b8814e" /><rect x="262" y="311" width="20" height="10" rx="2" fill="#53716f" /><rect x="266" y="313" width="12" height="6" rx="1" fill="#63d9bc" /><rect x="284" y="308" width="8" height="15" rx="1" fill="#c7d9d0" /><rect x="283" y="306" width="11" height="3" rx="0" fill="#b8814e" /><path d="M289 304L292 299" fill="none" stroke="#63d9bc" stroke-width="1" /><path d="M282 302L283 296" fill="none" stroke="#63d9bc" stroke-width="1" /><title>harbour · commit · 4 recorded units</title></g><text x="280" y="360" font-size="10" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">harbour</text><text x="280" y="291" font-size="9" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">×4</text></g></g>
+<g class="active" data-repo="sample-dev/harbour" data-kind="commit" data-records="1" data-units="4"><g class="machine isometric" ><g class="machine-part"><path d="M247 336l29 -13 36 15 -30 15z" fill="#53716f" opacity=".45"/><path d="M253 323l22 -9 31 12 -22 10z" fill="#c7d9d0" /><path d="M253 323l31 13v13l-31 -13z" fill="#90b3b7" /><path d="M284 336l22 -10v13l-22 10z" fill="#53716f" /><path d="M261 331l13 5v7l-13 -5z" fill="#63d9bc" /><path d="M276 338l5 2v4l-5 -2z" fill="#b8814e" /><rect x="262" y="311" width="20" height="10" rx="2" fill="#53716f" /><rect x="266" y="313" width="12" height="6" rx="1" fill="#63d9bc" /><rect x="284" y="308" width="8" height="15" rx="1" fill="#c7d9d0" /><rect x="283" y="306" width="11" height="3" rx="0" fill="#b8814e" /><path d="M289 304L292 299" fill="none" stroke="#63d9bc" stroke-width="1" /><path d="M282 302L283 296" fill="none" stroke="#63d9bc" stroke-width="1" /><rect x="263" y="294" width="5" height="3" rx="1" fill="#63d9bc" /><rect x="271" y="294" width="5" height="3" rx="1" fill="#63d9bc" /><rect x="279" y="294" width="5" height="3" rx="1" fill="#63d9bc" /><rect x="287" y="294" width="5" height="3" rx="1" fill="#d3dfd4" /><rect x="295" y="294" width="5" height="3" rx="1" fill="#d3dfd4" /><title>sample-dev/harbour · commit · 1 record · 4 recorded units</title></g><text x="280" y="360" font-size="10" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">harbour</text><text x="280" y="291" font-size="9" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">×4</text></g></g>
 <text x="280" y="368" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle">PARTS</text>
 </g>
 <g data-day="2026-11-10">
 <rect x="361" y="254" width="154" height="120" rx="6" fill="#fff8e9" stroke="#a8c1bd" stroke-opacity=".5"/>
+<path d="M369 358l28 9 28 -9 28 9 28 -9" fill="none" stroke="#6e969a" stroke-opacity=".18" stroke-width="2"/>
 <rect x="370" y="263" width="12" height="12" rx="3" fill="#d3dfd4" />
 <text x="387" y="273" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">TUE 10</text>
 <text x="507" y="272" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
@@ -482,6 +500,7 @@
 </g>
 <g data-day="2026-11-11">
 <rect x="521" y="254" width="154" height="120" rx="6" fill="#fff8e9" stroke="#a8c1bd" stroke-opacity=".5"/>
+<path d="M529 358l28 9 28 -9 28 9 28 -9" fill="none" stroke="#6e969a" stroke-opacity=".18" stroke-width="2"/>
 <rect x="530" y="263" width="12" height="12" rx="3" fill="#d3dfd4" />
 <text x="547" y="273" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">WED 11</text>
 <text x="667" y="272" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
@@ -492,6 +511,7 @@
 </g>
 <g data-day="2026-11-12">
 <rect x="681" y="254" width="154" height="120" rx="6" fill="#fff8e9" stroke="#a8c1bd" stroke-opacity=".5"/>
+<path d="M689 358l28 9 28 -9 28 9 28 -9" fill="none" stroke="#6e969a" stroke-opacity=".18" stroke-width="2"/>
 <rect x="690" y="263" width="12" height="12" rx="3" fill="#d3dfd4" />
 <text x="707" y="273" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">THU 12</text>
 <text x="827" y="272" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
@@ -502,15 +522,17 @@
 </g>
 <g data-day="2026-11-13">
 <rect x="841" y="254" width="154" height="120" rx="6" fill="#d5e5d9" stroke="#6e969a" stroke-opacity=".9"/>
+<path d="M849 358l28 9 28 -9 28 9 28 -9" fill="none" stroke="#6e969a" stroke-opacity=".18" stroke-width="2"/>
 <rect x="850" y="263" width="12" height="12" rx="3" fill="#afd3b0" />
 <text x="867" y="273" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">FRI 13</text>
 <text x="987" y="272" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">1 UNITS</text>
 <path d="M920 279L920 292" fill="none" stroke="#b8814e" stroke-width="2" stroke-dasharray="3 3"/>
-<g class="active" data-repo="sample-dev/ember" data-kind="pr_opened"><g class="machine isometric"><g class="machine-part"><path d="M887 336l29 -13 36 15 -30 15z" fill="#53716f" opacity=".45"/><path d="M893 323l22 -9 31 12 -22 10z" fill="#c7d9d0" /><path d="M893 323l31 13v13l-31 -13z" fill="#90b3b7" /><path d="M924 336l22 -10v13l-22 10z" fill="#53716f" /><path d="M901 331l13 5v7l-13 -5z" fill="#90b6ff" /><path d="M916 338l5 2v4l-5 -2z" fill="#b8814e" /><rect x="912" y="307" width="4" height="17" rx="0" fill="#c7d9d0" /><path d="M914 309L927 300" fill="none" stroke="#90b6ff" stroke-width="4" stroke-linecap="square"/><rect x="924" y="297" width="12" height="5" rx="1" fill="#90b6ff" /><path d="M930 302L930 313" fill="none" stroke="#53716f" stroke-width="3" /><path d="M930 313L937 317" fill="none" stroke="#b8814e" stroke-width="2" /><title>ember · pr_opened · 1 recorded unit</title></g><text x="920" y="360" font-size="10" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">ember</text><text x="920" y="291" font-size="9" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">×1</text></g></g>
+<g class="active" data-repo="sample-dev/ember" data-kind="pr_opened" data-records="1" data-units="1"><g class="machine isometric" ><g class="machine-part"><path d="M887 336l29 -13 36 15 -30 15z" fill="#53716f" opacity=".45"/><path d="M893 323l22 -9 31 12 -22 10z" fill="#c7d9d0" /><path d="M893 323l31 13v13l-31 -13z" fill="#90b3b7" /><path d="M924 336l22 -10v13l-22 10z" fill="#53716f" /><path d="M901 331l13 5v7l-13 -5z" fill="#90b6ff" /><path d="M916 338l5 2v4l-5 -2z" fill="#b8814e" /><rect x="912" y="307" width="4" height="17" rx="0" fill="#c7d9d0" /><path d="M914 309L927 300" fill="none" stroke="#90b6ff" stroke-width="4" stroke-linecap="square"/><rect x="924" y="297" width="12" height="5" rx="1" fill="#90b6ff" /><path d="M930 302L930 313" fill="none" stroke="#53716f" stroke-width="3" /><path d="M930 313L937 317" fill="none" stroke="#b8814e" stroke-width="2" /><rect x="903" y="294" width="5" height="3" rx="1" fill="#90b6ff" /><rect x="911" y="294" width="5" height="3" rx="1" fill="#d3dfd4" /><rect x="919" y="294" width="5" height="3" rx="1" fill="#d3dfd4" /><rect x="927" y="294" width="5" height="3" rx="1" fill="#d3dfd4" /><rect x="935" y="294" width="5" height="3" rx="1" fill="#d3dfd4" /><title>sample-dev/ember · pr_opened · 1 record · 1 recorded unit</title></g><text x="920" y="360" font-size="10" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">ember</text><text x="920" y="291" font-size="9" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">×1</text></g></g>
 <text x="920" y="368" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle">ASSEMBLY</text>
 </g>
 <g data-day="2026-11-14">
 <rect x="1001" y="254" width="154" height="120" rx="6" fill="#fff8e9" stroke="#a8c1bd" stroke-opacity=".5"/>
+<path d="M1009 358l28 9 28 -9 28 9 28 -9" fill="none" stroke="#6e969a" stroke-opacity=".18" stroke-width="2"/>
 <rect x="1010" y="263" width="12" height="12" rx="3" fill="#d3dfd4" />
 <text x="1027" y="273" font-size="12" fill="#29454b" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">SAT 14</text>
 <text x="1147" y="272" font-size="9" fill="#5d7778" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
