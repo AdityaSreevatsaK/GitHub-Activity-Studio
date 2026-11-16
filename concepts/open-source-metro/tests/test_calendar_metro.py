@@ -156,6 +156,27 @@ class CalendarContract(unittest.TestCase):
         self.assertEqual(result["events"][-1]["id"], "bulk-299")
         self.assertEqual(result["omitted_events"], 60)
 
+    def test_busy_repository_retained_when_many_active_stations(self):
+        data = raw()
+        for i in range(21):
+            full = f"busy-demo/single-{i:02}"
+            data["repositories"].append({"full_name": full, "name": f"single-{i:02}"})
+            data["activity"].append({"id": f"single-{i:02}", "repo_full_name": full,
+                                     "kind": "issue_opened", "count": 1,
+                                     "occurred_at": "2026-10-01T10:00:00Z"})
+        popular = "busy-demo/popular"
+        data["repositories"].append({"full_name": popular, "name": "popular"})
+        for i in range(5):
+            data["activity"].append({"id": f"popular-{i:02}", "repo_full_name": popular,
+                                     "kind": "commit", "count": 1,
+                                     "occurred_at": f"2026-11-{i+1:02}T10:00:00Z"})
+        expected = {r["full_name"] for r in plan(normalise(data))["repos"]}
+        self.assertIn(popular, expected)
+        self.assertEqual(len(expected), MAX_REPOS)
+        data["repositories"].reverse()
+        data["activity"].reverse()
+        self.assertEqual(expected, {r["full_name"] for r in plan(normalise(data))["repos"]})
+
     def test_empty_user_login_rejected(self):
         data = raw()
         data["user"]["login"] = ""

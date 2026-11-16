@@ -154,11 +154,23 @@ def plan(snapshot: dict) -> dict:
     first_visible = {}
     for event in eligible:
         first_visible.setdefault(event["repo"], event["date"])
-    repo_list = sorted(snapshot["repos"], key=lambda r: (
+    # When capped, retain the repositories with the most recorded events in
+    # the displayed period, then preserve the familiar first-visit station order.
+    # Counts of unlike event types are NOT treated as commits or used as weights.
+    eligible_count = Counter(event["repo"] for event in eligible)
+    if len(snapshot["repos"]) > MAX_REPOS:
+        candidates = sorted(snapshot["repos"], key=lambda r: (
+            -eligible_count[r["full_name"]],
+            first_visible.get(r["full_name"], datetime.max.replace(tzinfo=timezone.utc)),
+            r["full_name"],
+        ))[:MAX_REPOS]
+    else:
+        candidates = snapshot["repos"]
+    repo_list = sorted(candidates, key=lambda r: (
         r["full_name"] not in first_visible,
         first_visible.get(r["full_name"], datetime.max.replace(tzinfo=timezone.utc)),
         r["full_name"],
-    ))[:MAX_REPOS]
+    ))
     repo_names = {r["full_name"] for r in repo_list}
     # Retain recent source events if this snapshot exceeds the display cap.
     # Filtering by an exact instant also excludes events later on the snapshot day.
