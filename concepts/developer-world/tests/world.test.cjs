@@ -180,3 +180,36 @@ test("both worlds include five distinct evolving repository landmark illustratio
   assert.notEqual(first,final);
  }
 });
+
+test("same-day timestamps later than generated_at are excluded from calendar and anchors",()=>{
+ const data=copy(fixture);
+ data.activity.push({id:"not-yet",kind:"release",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-16T15:35:00Z",count:40});
+ const c=world.calendarFor(world.normalise(data));
+ assert.equal(c.outside,1);assert.equal(c.observed,20);
+ assert.equal(c.byRepo.get("sample-dev/aurora").units,4);
+ assert.equal(c.lookup.get("2026-11-16").units,0);
+ assert.equal(c.anchors.get("sample-dev/aurora"),"2026-08-03");
+});
+test("invalid Gregorian dates are rejected even if Date.parse normalises them",()=>{
+ for(const value of ["2026-02-30T00:00:00Z","2026-11-31T22:00:00Z","2026-13-01T00:00:00Z"]){
+  const data=copy(fixture);data.activity[0].occurred_at=value;
+  assert.throws(()=>world.normalise(data));
+ }
+});
+test("frame-based environmental motion is deterministic and never changes activity tiles",()=>{
+ const a=world.render(fixture,{layout:"archipelago",frame:0,animated:false});
+ const b=world.render(fixture,{layout:"archipelago",frame:3,animated:false});
+ assert.notEqual(a,b);assert.equal(a,world.render(fixture,{layout:"archipelago",frame:0,animated:false}));
+ const dates=svg=>[...svg.matchAll(/data-date="([^"]+)" data-level="([^"]+)" data-units="([^"]+)"/g)].map(m=>m.slice(1).join(":"));
+ assert.deepEqual(dates(a),dates(b));
+ assert.throws(()=>world.render(fixture,{frame:-1}));
+ assert.throws(()=>world.render(fixture,{frame:1.5}));
+});
+test("selecting an inspected date only outlines its tile, not its source values",()=>{
+ const base=world.render(fixture,{animated:false});
+ const focus=world.render(fixture,{animated:false,focusDate:"2026-11-09"});
+ assert.match(focus,/data-date="2026-11-09"/);
+ assert.notEqual(base,focus);
+ const level=svg=>svg.match(/data-date="2026-11-09" data-level="([^"]+)" data-units="([^"]+)"/).slice(1);
+ assert.deepEqual(level(base),level(focus));
+});
