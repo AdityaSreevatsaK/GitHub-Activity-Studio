@@ -1,76 +1,66 @@
 # Open Source Metro
 
-A deterministic, offline **metro map for public GitHub activity**. Repositories are named station columns; the five colour-coded services correspond to source event kinds. Tiny trains replay source events in UTC timestamp order. Sharing a service does **not** imply repositories depend upon or collaborate with one another.
+**A GitHub-style contribution calendar turned into a metro network.** The familiar **53-week × 7-day grid** remains the centrepiece, while dated public activity becomes brightly marked stations and five coloured transit services.
 
-All checked-in examples use the repository's **synthetic demo fixture**, not anyone's actual GitHub activity.
+The checked-in previews use the shared **synthetic demonstration fixture**, **not** the account owner's actual contributions. Only observed events from the supplied snapshot are plotted. A blank cell does **not** prove zero GitHub contributions.
 
-## Design gallery
+## See both designs, rendered in this README
 
-**Contemporary metropolitan map, night (primary profile candidate)**
+**Metropolitan, midnight (primary profile-size candidate)**
 
-![Synthetic demo, contemporary metro design with event routes and station names](exports/modern-dark-still.svg)
+![Synthetic demonstration of a 53-week GitHub-style contribution calendar with green activity squares, numbered repository stops, and five coloured metro routes on a midnight background.](exports/modern-dark-still.svg)
 
-**Vintage transport diagram, day**
+**Vintage transport diagram, parchment**
 
-![Synthetic demo, paper-coloured vintage transport diagram](exports/vintage-light-still.svg)
+![Synthetic demonstration of a vintage paper-coloured 53-week contribution-style calendar with diamond metro line markers, numbered repository stops, and fine cartographic rules.](exports/vintage-light-still.svg)
 
-**17-station stress test (synthetic extensions of the shared fixture)**
+**Extended scale test: 17 synthetic repositories**
 
-![Synthetic demonstration with 17 repository stations across three districts](exports/stress-modern-dark-still.svg)
+![Seventeen synthetic repository stations referenced beneath a 53-week source-activity calendar; dense same-day events are interchanges.](exports/stress-modern-dark-still.svg)
 
-Animated versions: [contemporary metro](exports/modern-dark.svg) · [vintage transport diagram](exports/vintage-light.svg). The static exports are the reliable fallback for GitHub READMEs. Whether GitHub actually plays SMIL animation in its image proxy has **not** been independently verified; do not promise animation on a live profile until tested in a temporary README.
+The still SVGs above are the intended GitHub README embeds. [Animated metropolitan SVG](exports/modern-dark.svg) · [Animated vintage SVG](exports/vintage-light.svg) · [Browser preview](exports/preview.html). GitHub's image proxy may not play SVG animations, so the still versions are the safe default.
 
-## Windows: run from a fresh clone
+## Reading the map
 
-**Prerequisites:** Windows PowerShell, Git, Python 3.11+ (`py -3 --version`), and a browser. No `pip install`, account, token, API request or paid service is required.
+- **The calendar remains primary.** Columns represent 53 Sunday-to-Saturday weeks; rows represent days. Month headings, weekday labels and a green event-unit intensity key keep the familiar GitHub chart language.
+- **Event units, not complete GitHub contributions.** Cells only count the source-backed `count` values in the normalised snapshot, even when they represent different event types. A filled cell indicates recorded activity; blank cells mean no event appears in this supplied snapshot. This is not a live API contribution graph.
+- **Repository stations.** An active cell contains a small roundel numbered to match a repository in the station directory. If several repositories have activity on the same date, the calendar cell becomes an interchange and its numeral shows how many distinct repositories are present. Event IDs, source units and UTC dates are in accessible SVG titles.
+- **Five meaningful metro services.** `CODE` = commits, `PROPOSE` = PRs opened, `MERGE` = PRs merged, `DISCUSS` = issues opened, `SHIP` = releases. Each line connects only chronological event stops **of its own type**. The diagram does not claim any relationship between repositories, nor does it treat a PR opened as a PR merged.
+- **Two art directions.** Metropolitan uses luminous transit roundels and a restrained midnight palette. Vintage uses paper-coloured cells, double outlines, serif signage and diamond-line medallions. Both also offer light/dark variants.
 
-Open **PowerShell**, then paste:
+## Windows PowerShell: generate and view
+
+Requires **Python 3.11+** and Git. Everything runs offline after cloning. No `pip install`, API token, external font, hosted assets or paid service.
 
 ```powershell
 git clone https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio.git
 cd GitHub-Activity-Studio
 git switch concept/open-source-metro
-py -3 .\concepts\open-source-metro\metro.py
+py -3 .\concepts\open-source-metro\calendar_metro.py
 Start-Process .\concepts\open-source-metro\exports\preview.html
 ```
 
-In the browser preview choose a **design**, **day/night scheme**, **animation/still**, and **5-station/17-station network**. Hover or keyboard-focus a platform to inspect source event IDs, dates and counts. The preview automatically starts with motion disabled when your system requests reduced motion.
-
-To run automated tests:
+Browser controls select **design, colour scheme, still/animated replay and a 5- or 17-station scenario**. All combinations are included as generated SVGs when running the command above. For automated tests:
 
 ```powershell
 py -3 -m unittest discover -s .\concepts\open-source-metro\tests -v
 ```
 
-To export your own **normalised, public-only** snapshot:
+To render your own **public, normalised** JSON snapshot matching [`docs/DATA_CONTRACT.md`](../../docs/DATA_CONTRACT.md):
 
 ```powershell
-py -3 .\concepts\open-source-metro\metro.py --input C:\path\to\activity.json --output .\concepts\open-source-metro\exports
+py -3 .\concepts\open-source-metro\calendar_metro.py --input C:\path\to\public-activity.json --output .\concepts\open-source-metro\exports
 ```
 
-The snapshot must follow [`docs/DATA_CONTRACT.md`](../../docs/DATA_CONTRACT.md). This concept does **not** fetch GitHub data; an API collector requires separate review. Do not supply private repository data.
+For existing users of `metro.py`, its CLI delegates to the calendar-first generator. The previous stand-alone diagram's testable internals remain available for compatibility.
 
-## Design semantics
+## Validation and limits
 
-| Service | Source event | Visual consequence |
-| --- | --- | --- |
-| **CODE** | `commit` | Teal/green train visits recorded commit platforms |
-| **PROPOSE** | `pr_opened` | Coral train visits opened-PR platforms |
-| **MERGE** | `pr_merged` | Violet train visits merged-PR platforms |
-| **DISCUSS** | `issue_opened` | Gold train visits issue platforms |
-| **SHIP** | `release` | Blue train visits release platforms |
+- Offline, deterministic, Python standard-library renderer and **22 calendar tests** in addition to the existing legacy regression suite. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
+- The supplied demonstration fixture has **five repositories and ten source events** across August to November 2026. It is intentionally sparse across a full 53-week calendar. The 17-station stress demo is separately labelled as synthetic.
+- The snapshot is **not** a complete GitHub contribution calendar. GitHub source APIs have differing coverage; a future public-data collector would need an independently reviewed data provenance and pagination contract.
+- The renderer limits the directory to the first **18 repositories** and the first **240 selected-repository source events**; omissions appear in the footer. Historical events outside the visible 53-week range or events dated beyond snapshot generation are also excluded and counted as omitted.
+- Browser links are opt-in via `render(..., browser_links=True)` for `source="github"` only, and only safe GitHub HTTPS links are allowed. Demonstration previews have no click-through links.
+- Static SVGs are the GitHub-compatible exports. A GitHub README render, mobile browser and screen-reader accessibility pass should be checked before installing on a public profile. SVG animation in GitHub is not guaranteed.
 
-The station columns are ordered by **first recorded event**, then repository full name. Each line is its own dedicated service. A platform appears only if that repo has an event of the service's kind. Each train's path goes through its service's events in `(occurred_at UTC, id)` order, including revisits. The train returns to the start at the loop boundary, marking a replay restart, **not** a new contribution. A number beside a platform is the sum of `count` units for that type and repo, never a claim about commits for unrelated event types.
-
-Modern uses luminous roundels, softened rails and a compact sans-serif hierarchy. Vintage uses double-keyline rails, diamond platforms, ink typography and a restrained paper palette. Both support day/night colour schemes, static fallbacks, keyboard-focusable SVG platform details and SVG reduced-motion media queries.
-
-## Validation and limitations
-
-- Stdlib-only Python source and 21 offline unit tests for schema validation, duplicate event IDs, sort stability, URL sanitisation, XSS-safe labels, four palettes, empty/single/long-name cases, 17 stations, explicit caps, and reproducible exports.
-- Browser preview is a local HTML page. SVG motion uses SMIL; the browser must support `<animateMotion>`. No embedded JavaScript is required in the SVG export.
-- First **18** repositories and first **240** events among them are rendered; omissions are declared in the image. For dense activity, the map is a curated view, not a complete contributions graph. The full 17-station stress output is intentionally **not** profile-wide in aspect ratio.
-- Source `github` means a supplied normalised snapshot, not independently audited provenance. Only valid HTTPS github.com event links can be enabled for interactive source-`github` rendering via `render(..., browser_links=True)`; demo previews intentionally have no clickable links. A local export remains non-clickable.
-- SMIL support in the GitHub README image proxy remains unverified. Prefer [the still profile candidate](exports/modern-dark-still.svg) unless a real GitHub README render confirms animation. No production data collector, automatic refresh, GIF export or GitHub Actions integration is included.
-- All assets use system fonts. Appearance can vary by operating system, especially the vintage serif. A real-device mobile, screen-reader and GitHub proxy review should precede adoption.
-
-**Scope:** this entire prototype lives under `concepts/open-source-metro/`; no shared/root files, releases, profile README or other concept branches are changed.
+**Scope:** changes are confined to this concept and the **branch-only landing README**. Other concepts, `master`, and the profile repository remain untouched. The draft PR remains unmerged.
