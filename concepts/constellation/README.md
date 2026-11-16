@@ -1,89 +1,80 @@
-# GitHub Constellation · A calendar written in stars
+# GitHub Constellation: a year of contributions, written in stars
 
-> **DESIGN RESET, 16 November 2026:** The visuals below are **legacy experiments**, not the owner's approved final direction. The next agent must build **three distinct GitHub contribution-calendar-first prototypes**: **Comet Streaks**, **Celestial Cartographer** and **Starforge**. Read [scoped agent instructions](AGENTS.md) and the [implementation specification](NEXT_ITERATION.md) before touching code. Keep all changes on `concept/constellation` and PR #1 in draft. **These three new designs have not yet been implemented.**
+Three **implemented** GitHub contribution-calendar animations on the isolated [`concept/constellation`](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/tree/concept/constellation/concepts/constellation) branch. Each preserves the **53-week × 7-day Sunday-first calendar**; each active star comes from an actual date in its input, not decorative filler. No profile installation or `master` changes.
 
-**Prototype on `concept/constellation` only. No changes to the GitHub profile or `master`.**
+> **SYNTHETIC STRESS-TEST PREVIEWS.** The six illustrations below use a *separate, deliberately synthetic* fixture containing **65 active dates and 69 events** to make streak mechanics visible. They **do not depict any real person's history**. The repository's unmodified shared demo contains **10 synthetic events on 10 isolated dates**, so that dataset truthfully produces **no comets**. Unlit cells indicate *not represented in the sample*, **not** a verified zero in GitHub's contributions graph. Counts are mixed **recorded activity units**, not official GitHub contributions.
 
-> **Synthetic demonstration, NOT the owner's GitHub contribution history.** This 53-week chart shows only **events present in the shared fixture**. Empty squares mean *no event recorded by this input*, NOT proof of zero GitHub contributions.
+## Three concepts, directly rendered on GitHub
 
-## The constellation, now with a signal lens
+Click any still for its self-contained animated SVG. The table contains **six separate actual exports**; use the full-width previews below for detail.
 
-This is **not** a conventional statistics card or a disconnected astronomy illustration. The upper sky retains GitHub’s actual **53 × 7 weekday grid**. The lower **Signal Lens** magnifies dated repository activity into clearly visible, colour-coded, connected star paths, so a sparse source snapshot still tells a story.
+| | Comet Streaks | Celestial Cartographer | Starforge |
+|:--|:--|:--|:--|
+| **Night** | [![Synthetic dark calendar, factual consecutive-date comet trails](assets/stress/comet-night-still.svg)](assets/stress/comet-night-animated.svg) | [![Synthetic dark calendar and miniature observatory](assets/stress/cartographer-night-still.svg)](assets/stress/cartographer-night-animated.svg) | [![Synthetic dark calendar and tiny stellar foundry](assets/stress/starforge-night-still.svg)](assets/stress/starforge-night-animated.svg) |
+| **Paper** | [![Synthetic paper calendar, factual consecutive-date comet trails](assets/stress/comet-paper-still.svg)](assets/stress/comet-paper-animated.svg) | [![Synthetic paper calendar and observatory](assets/stress/cartographer-paper-still.svg)](assets/stress/cartographer-paper-animated.svg) | [![Synthetic paper calendar and stellar foundry](assets/stress/starforge-paper-still.svg)](assets/stress/starforge-paper-animated.svg) |
 
-- **Data-driven nebula:** the coloured atmosphere centres on the actual recorded dates; ambient dust is decorative, not contribution points.
-- **Repository orbits:** trails connect observations of the **same repository**, in both the calendar and a magnified recent-activity panel. No invented relationships.
-- **Two real treatments:** **Star chart** uses a GitHub-like square heatmap; **Comet trails** has a diamond-marked sky, smoother lines and distinct themes.
-- **Interactive exploration:** switch layouts/themes, compare, pause, hide trails, spotlight one repository or inspect active days and zoomed signals by pointer or keyboard.
-- **Sensible bounds:** at most 150 distinct events replay as pulses; the lens groups activity by repository/date and shows at most the latest 80 repository-days. Any truncation is labelled.
+### A. Comet Streaks: the meaningful motion
 
-All generated visuals are **1200 × 425**, self-contained and responsive. They work offline with Python 3.11+ and the unmodified shared fixture, without credentials or paid services.
+[![SYNTHETIC STRESS TEST: full-width dark GitHub contribution chart, adjacent active days linked into restrained comet paths](assets/stress/comet-night-still.svg)](assets/stress/comet-night-animated.svg)
 
-## See the design rendered on GitHub
+**Stars = recorded active days. Brighter = more activity units. Comets = uninterrupted streaks.** A single isolated date stays a star. Missing days always break the trail, including across week boundaries.
 
-### 1. Star chart | Night sky
+[Animated night](assets/stress/comet-night-animated.svg) · [Animated paper](assets/stress/comet-paper-animated.svg) · [Shared ten-event static](assets/comet-night-still.svg)
 
-[![Aurora-lit GitHub-style calendar with 53 weeks, source-backed constellation trails and a magnified signal lens underneath.](assets/calendar-atlas-night-still.svg)](assets/calendar-atlas-night-animated.svg)
+### B. Celestial Cartographer: the editorial survey
 
-[View animated SVG](assets/calendar-atlas-night-animated.svg) · [Still](assets/calendar-atlas-night-still.svg) · [Light paper version](assets/calendar-atlas-paper-still.svg)
+[![SYNTHETIC STRESS TEST: paper contribution calendar and a miniature telescope revealing recorded dates as stars](assets/stress/cartographer-paper-still.svg)](assets/stress/cartographer-paper-animated.svg)
 
-### 2. Comet trails | Paper chart
+The small original observatory stays outside the lattice. A moving meridian sweeps **chronologically by week**, revealing only already recorded dates. The final still keeps every real date at exactly the same position.
 
-[![Parchment observatory view with diamond-shaped calendar stars and an enlarged repository-event constellation timeline.](assets/calendar-trails-paper-still.svg)](assets/calendar-trails-paper-animated.svg)
+[Animated night](assets/stress/cartographer-night-animated.svg) · [Animated paper](assets/stress/cartographer-paper-animated.svg) · [Shared ten-event static](assets/cartographer-paper-still.svg)
 
-[View animated SVG](assets/calendar-trails-paper-animated.svg) · [Still](assets/calendar-trails-paper-still.svg) · [Dark version](assets/calendar-trails-night-still.svg)
+### C. Starforge: the stellar foundry
 
-<details><summary><b>See the other two theme combinations</b></summary>
+[![SYNTHETIC STRESS TEST: dark contribution calendar and a tiny forge that sends sparks to precisely dated cells](assets/stress/starforge-night-still.svg)](assets/stress/starforge-night-animated.svg)
 
-#### Star chart | Paper chart
-![Star-chart light theme demo](assets/calendar-atlas-paper-still.svg)
+A tiny foundry casts **one spark per recorded active date**, ending on its true cell. Multiple source events on one day resolve into a single day-star. The spark's brightness depends on the **summed recorded activity units**, not a fictitious number of contributions.
 
-#### Comet trails | Night sky
-![Comet trails dark theme demo](assets/calendar-trails-night-still.svg)
+[Animated night](assets/stress/starforge-night-animated.svg) · [Animated paper](assets/stress/starforge-paper-animated.svg) · [Shared ten-event static](assets/starforge-night-still.svg)
 
-</details>
+## Interactive browser comparison
 
-These are **actual SVG exports committed on this branch**, not illustrations of a planned implementation. GitHub can display the still images in this README; SVG animation inside GitHub's image proxy remains unverified. For independent playback, open the animated SVG directly (choose **Raw** in the GitHub file viewer). HTML and JavaScript cannot run inside GitHub Markdown.
+Open [`preview.html`](preview.html) through a local HTTP server to switch between all three designs, night/paper, shared/stress datasets, **Compare all three**, and **Pause/Resume**. Focus or hover any illuminated calendar cell for its *date, source event kinds, repositories and activity units*. The comparison adapts to phones with an internally scrollable calendar rather than overflowing the page. Reduced-motion preferences are respected.
 
-## Meaningful, chart-first encoding
+### Windows PowerShell: reproducible offline build
 
-- **Exactly 53 columns × 7 rows** represent Sunday-first UTC calendar weeks, fixed relative to `generated_at`. The current week's future dates are muted.
-- **Square brightness** shows source-backed, per-day *activity units*, across commits, opened/merged PRs, opened issues and releases. These are **not equivalent to GitHub's official contribution totals**.
-- **A tiny repository-coloured star** identifies the leading recorded repository on an active day; the browser inspector reveals every repository and event kind if multiple occur on the same date.
-- **Curved trails** connect consecutive *dated events within one repository*. This never asserts collaboration between repositories. The magnified lens groups events on the same repository/day and uses factual calendar spacing, not new data.
-- **Pulses** replay at most 150 source events over a gentle 16-second loop. Motionless static SVGs and reduced-motion support are provided.
-- **No artificial green squares**: the fixture contains only 10 dated events, so the historical portion of this demo appears sparse by design.
-
-Two variants remain recognisable as GitHub contribution charts: **Star chart** retains square heatmap cells, while **Comet trails** places a subtle diamond-star lattice within the identical calendar geometry. Both support dark night-sky and light paper-cartography themes. All artwork is generated locally.
-
-## Windows PowerShell
-
-From the **GitHub-Activity-Studio** repository root, with Python 3.11+ installed:
+Requires **Node.js 20+** (no npm install and no third-party packages) and Python 3.11+ or another local static server for the browser preview. From the repository root:
 
 ```powershell
-# Generate 8 exports, with no API key, installation or network required
-py -3 concepts/constellation/calendar_sky.py
+# Render the source-of-truth ten-event shared fixture, six animated + six still
+node concepts/constellation/export.mjs
 
-# Run both the new and original prototype test suites
-py -3 -m unittest discover -s concepts/constellation/tests -v
+# Render an explicitly synthetic, longer streak sample, another 12 exports
+node concepts/constellation/export.mjs --input concepts/constellation/fixtures/streak-demo.json --out concepts/constellation/assets/stress --label "SYNTHETIC STREAK STRESS TEST"
 
-# Serve the interactive browser preview
+# Run the 24 new zero-dependency regression tests
+node --test concepts/constellation/tests/test_engine.mjs
+
+# Existing Python prototype regression suite (unchanged)
+py -3 -m unittest discover -s concepts/constellation/tests -p "test_*.py" -v
+
+# Serve the interactive preview from the repository root
 py -3 -m http.server 8000
 ```
 
-Open <http://localhost:8000/concepts/constellation/preview.html>. Try **Star chart / Comet trails**, **Night sky / Paper chart**, **Compare layouts**, **Hide trails**, **Repository spotlight**, **Pause animation**, and hover or Tab over a bright day or a signal-lens point. Press `Ctrl+C` to stop the server.
+Open <http://localhost:8000/concepts/constellation/preview.html>. The export CLI accepts `--input`, `--out` and `--label`. Identical snapshot + options produce byte-for-byte identical SVGs. No network, token, fonts or paid services are needed for generation or tests.
 
-For a contract-v1 **public-only** JSON snapshot:
+## Accuracy, accessibility and GitHub compatibility
 
-```powershell
-py -3 concepts/constellation/calendar_sky.py --input "C:\path\to\public-activity.json" --out "concepts/constellation/assets"
-```
+- Both fixtures use shared **contract v1**. IDs are deduplicated, timestamps are strictly UTC, source URLs are restricted to HTTPS GitHub, dates are Sunday-first and the current week's future days are muted. `commit`, `pr_opened`, `pr_merged`, `issue_opened` and `release` remain separate kinds.
+- Intensity thresholds for recorded activity **units**: **1, 2–3, 4–6, 7+**. Unlit means **no event in this input**. Mixed-kind unit totals must not be mistaken for official GitHub contribution counts.
+- A 16-second motion cycle uses data-backed cell positions. Comets join consecutive dates only; Cartographer's weekly sweep reveals known active dates; Starforge replays one particle per active date, bounded to 95 particles for very large inputs without hiding cells.
+- All exports are self-contained 1200 × 390 SVGs with accessible `<title>`, `<desc>`, inspectable source-backed links, no external assets or scripts, and truly static alternatives. The browser preview offers keyboard navigation and controls, horizontal scrolling on small screens and `prefers-reduced-motion`.
+- **GitHub rendering limitation:** the six static showcase files are embedded as standard Markdown images and their relative links are present in this branch. **Animated SVG playback through GitHub's image proxy is not verified**; GitHub may rasterise or suppress SVG motion. Open the linked animated `.svg` directly in a compatible browser. The static versions are the reliable README fallback.
+- This remains **an event-sample renderer**, not an official annual contribution collector. GitHub's GraphQL `contributionsCollection.contributionCalendar` is a separate future source contract and must not be conflated with these mixed-event counts.
 
-A later shared collector could provide fuller public contribution coverage, with pagination, visibility, identity and rate-limit controls. The renderer does not claim to collect the whole GitHub graph, query private data or automatically update.
+## Verification
 
-## Tested and known limitations
+Locally verified: **24/24 Node regression tests**, SVG XML parsing, image rasterisation, and Chromium browser interactions at **1280 px and 390 px** (all choices, theme, compare, pause, keyboard focus, both fixtures, no document overflow). Browser smoke used an in-memory content server because outbound/local navigation was restricted in the test environment. **Live GitHub-hosted animation rendering has not been independently confirmed.**
 
-- Deterministic standard-library renderer; **12 new calendar-specific regression tests**, in addition to 10 original star-map tests.
-- Tests exercise 53×7 cells, dates, UTC, deduplication, intensity, multi-repository days, factual trails, source-backed lens grouping, truncation, static vs animated exports, input validation, escaping and performance bounds.
-- GitHub profile README animation itself is **not verified**. Static fallbacks are provided and linked above.
-- This folder retains the earlier **repository star-map experiment** as `constellation.py` with its original `radial-*` and `clustered-*` SVGs for design comparison. **The calendar-first implementation is now the recommended concept**.
-- All examples are synthetic and rely on the same unmodified `shared/fixtures/demo-activity.json`. No tokens, external fonts or paid APIs are required.
+Legacy experiments (`calendar_sky.py`, `constellation.py` and their earlier SVG assets/tests) remain in place for comparison, but they are **not** the three new implementations. The existing [draft PR #1](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/1) is for review only; do not merge or edit the owner's live profile without approval.
