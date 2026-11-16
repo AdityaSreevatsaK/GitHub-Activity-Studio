@@ -1,428 +1,544 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-labelledby="codefactory-title codefactory-desc">
-<title id="codefactory-title">Code Factory · pixel · SYNTHETIC DEMO</title><desc id="codefactory-desc">52-week calendar grid of 10 unique observed event records across 5 repositories. This synthetic demo is a partial activity snapshot, not the official GitHub contribution calendar. Isometric or pixel factory machines represent the selected repositories. Events appear as coloured packages, and counts are recorded units rather than a count of commits.</desc>
-<defs><clipPath id="scene-belt"><rect x="30" y="274" width="940" height="14"/></clipPath><pattern id="floor-dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#426170" opacity=".26"/></pattern></defs>
-<style>@keyframes lamp{0%,100%{opacity:.3}50%{opacity:1}}@keyframes belt{to{transform:translateX(16px)}}.machine-light{animation:lamp 2s ease-in-out infinite}.belt-ticks{animation:belt .9s linear infinite}@media(prefers-reduced-motion:reduce){.machine-light,.belt-ticks{animation:none!important}.moving-package{display:none!important}.pulse-dot{display:none!important}}</style>
-<rect x="0" y="0" width="1000" height="320" rx="0" fill="#071722" />
-<rect x="13" y="12" width="974" height="296" rx="14" fill="#0f2431" stroke="#385363" stroke-width="1"/>
-<text x="35" y="44" font-size="23" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="900" letter-spacing="2.2">CODE FACTORY</text>
-<text x="36" y="63" font-size="11" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">GitHub activity, built into a miniature world</text>
-<rect x="801" y="28" width="160" height="25" rx="12" fill="#152d3c" stroke="#385363"/>
-<text x="881" y="45" font-size="11" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" font-weight="700">SYNTHETIC DEMO</text>
-<rect x="29" y="76" width="942" height="140" rx="10" fill="#152d3c" stroke="#385363" stroke-width="1"/>
-<text x="45" y="93" font-size="11" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" letter-spacing=".7">52-WEEK ACTIVITY GRID</text>
-<text x="955" y="93" font-size="10" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Recorded event units · not official contribution totals</text>
-<g><title>2025-11-16: 0 recorded event units</title><rect x="127.00" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-17: 0 recorded event units</title><rect x="127.00" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-18: 0 recorded event units</title><rect x="127.00" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-19: 0 recorded event units</title><rect x="127.00" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-20: 0 recorded event units</title><rect x="127.00" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-21: 0 recorded event units</title><rect x="127.00" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-22: 0 recorded event units</title><rect x="127.00" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-23: 0 recorded event units</title><rect x="141.15" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-24: 0 recorded event units</title><rect x="141.15" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-25: 0 recorded event units</title><rect x="141.15" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-26: 0 recorded event units</title><rect x="141.15" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-27: 0 recorded event units</title><rect x="141.15" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-28: 0 recorded event units</title><rect x="141.15" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-29: 0 recorded event units</title><rect x="141.15" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-11-30: 0 recorded event units</title><rect x="155.30" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-01: 0 recorded event units</title><rect x="155.30" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-02: 0 recorded event units</title><rect x="155.30" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-03: 0 recorded event units</title><rect x="155.30" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-04: 0 recorded event units</title><rect x="155.30" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-05: 0 recorded event units</title><rect x="155.30" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-06: 0 recorded event units</title><rect x="155.30" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="169.45" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Dec</text>
-<g><title>2025-12-07: 0 recorded event units</title><rect x="169.45" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-08: 0 recorded event units</title><rect x="169.45" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-09: 0 recorded event units</title><rect x="169.45" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-10: 0 recorded event units</title><rect x="169.45" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-11: 0 recorded event units</title><rect x="169.45" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-12: 0 recorded event units</title><rect x="169.45" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-13: 0 recorded event units</title><rect x="169.45" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-14: 0 recorded event units</title><rect x="183.60" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-15: 0 recorded event units</title><rect x="183.60" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-16: 0 recorded event units</title><rect x="183.60" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-17: 0 recorded event units</title><rect x="183.60" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-18: 0 recorded event units</title><rect x="183.60" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-19: 0 recorded event units</title><rect x="183.60" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-20: 0 recorded event units</title><rect x="183.60" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-21: 0 recorded event units</title><rect x="197.75" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-22: 0 recorded event units</title><rect x="197.75" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-23: 0 recorded event units</title><rect x="197.75" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-24: 0 recorded event units</title><rect x="197.75" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-25: 0 recorded event units</title><rect x="197.75" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-26: 0 recorded event units</title><rect x="197.75" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-27: 0 recorded event units</title><rect x="197.75" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-28: 0 recorded event units</title><rect x="211.90" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-29: 0 recorded event units</title><rect x="211.90" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-30: 0 recorded event units</title><rect x="211.90" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2025-12-31: 0 recorded event units</title><rect x="211.90" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-01: 0 recorded event units</title><rect x="211.90" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-02: 0 recorded event units</title><rect x="211.90" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-03: 0 recorded event units</title><rect x="211.90" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="226.05" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Jan</text>
-<g><title>2026-01-04: 0 recorded event units</title><rect x="226.05" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-05: 0 recorded event units</title><rect x="226.05" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-06: 0 recorded event units</title><rect x="226.05" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-07: 0 recorded event units</title><rect x="226.05" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-08: 0 recorded event units</title><rect x="226.05" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-09: 0 recorded event units</title><rect x="226.05" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-10: 0 recorded event units</title><rect x="226.05" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-11: 0 recorded event units</title><rect x="240.20" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-12: 0 recorded event units</title><rect x="240.20" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-13: 0 recorded event units</title><rect x="240.20" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-14: 0 recorded event units</title><rect x="240.20" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-15: 0 recorded event units</title><rect x="240.20" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-16: 0 recorded event units</title><rect x="240.20" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-17: 0 recorded event units</title><rect x="240.20" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-18: 0 recorded event units</title><rect x="254.35" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-19: 0 recorded event units</title><rect x="254.35" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-20: 0 recorded event units</title><rect x="254.35" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-21: 0 recorded event units</title><rect x="254.35" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-22: 0 recorded event units</title><rect x="254.35" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-23: 0 recorded event units</title><rect x="254.35" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-24: 0 recorded event units</title><rect x="254.35" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-25: 0 recorded event units</title><rect x="268.50" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-26: 0 recorded event units</title><rect x="268.50" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-27: 0 recorded event units</title><rect x="268.50" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-28: 0 recorded event units</title><rect x="268.50" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-29: 0 recorded event units</title><rect x="268.50" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-30: 0 recorded event units</title><rect x="268.50" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-01-31: 0 recorded event units</title><rect x="268.50" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="282.65" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Feb</text>
-<g><title>2026-02-01: 0 recorded event units</title><rect x="282.65" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-02: 0 recorded event units</title><rect x="282.65" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-03: 0 recorded event units</title><rect x="282.65" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-04: 0 recorded event units</title><rect x="282.65" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-05: 0 recorded event units</title><rect x="282.65" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-06: 0 recorded event units</title><rect x="282.65" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-07: 0 recorded event units</title><rect x="282.65" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-08: 0 recorded event units</title><rect x="296.80" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-09: 0 recorded event units</title><rect x="296.80" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-10: 0 recorded event units</title><rect x="296.80" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-11: 0 recorded event units</title><rect x="296.80" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-12: 0 recorded event units</title><rect x="296.80" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-13: 0 recorded event units</title><rect x="296.80" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-14: 0 recorded event units</title><rect x="296.80" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-15: 0 recorded event units</title><rect x="310.95" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-16: 0 recorded event units</title><rect x="310.95" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-17: 0 recorded event units</title><rect x="310.95" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-18: 0 recorded event units</title><rect x="310.95" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-19: 0 recorded event units</title><rect x="310.95" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-20: 0 recorded event units</title><rect x="310.95" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-21: 0 recorded event units</title><rect x="310.95" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-22: 0 recorded event units</title><rect x="325.10" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-23: 0 recorded event units</title><rect x="325.10" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-24: 0 recorded event units</title><rect x="325.10" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-25: 0 recorded event units</title><rect x="325.10" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-26: 0 recorded event units</title><rect x="325.10" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-27: 0 recorded event units</title><rect x="325.10" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-02-28: 0 recorded event units</title><rect x="325.10" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="339.25" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Mar</text>
-<g><title>2026-03-01: 0 recorded event units</title><rect x="339.25" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-02: 0 recorded event units</title><rect x="339.25" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-03: 0 recorded event units</title><rect x="339.25" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-04: 0 recorded event units</title><rect x="339.25" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-05: 0 recorded event units</title><rect x="339.25" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-06: 0 recorded event units</title><rect x="339.25" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-07: 0 recorded event units</title><rect x="339.25" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-08: 0 recorded event units</title><rect x="353.40" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-09: 0 recorded event units</title><rect x="353.40" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-10: 0 recorded event units</title><rect x="353.40" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-11: 0 recorded event units</title><rect x="353.40" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-12: 0 recorded event units</title><rect x="353.40" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-13: 0 recorded event units</title><rect x="353.40" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-14: 0 recorded event units</title><rect x="353.40" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-15: 0 recorded event units</title><rect x="367.55" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-16: 0 recorded event units</title><rect x="367.55" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-17: 0 recorded event units</title><rect x="367.55" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-18: 0 recorded event units</title><rect x="367.55" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-19: 0 recorded event units</title><rect x="367.55" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-20: 0 recorded event units</title><rect x="367.55" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-21: 0 recorded event units</title><rect x="367.55" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-22: 0 recorded event units</title><rect x="381.70" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-23: 0 recorded event units</title><rect x="381.70" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-24: 0 recorded event units</title><rect x="381.70" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-25: 0 recorded event units</title><rect x="381.70" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-26: 0 recorded event units</title><rect x="381.70" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-27: 0 recorded event units</title><rect x="381.70" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-28: 0 recorded event units</title><rect x="381.70" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-29: 0 recorded event units</title><rect x="395.85" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-30: 0 recorded event units</title><rect x="395.85" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-03-31: 0 recorded event units</title><rect x="395.85" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-01: 0 recorded event units</title><rect x="395.85" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-02: 0 recorded event units</title><rect x="395.85" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-03: 0 recorded event units</title><rect x="395.85" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-04: 0 recorded event units</title><rect x="395.85" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="410" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Apr</text>
-<g><title>2026-04-05: 0 recorded event units</title><rect x="410.00" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-06: 0 recorded event units</title><rect x="410.00" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-07: 0 recorded event units</title><rect x="410.00" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-08: 0 recorded event units</title><rect x="410.00" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-09: 0 recorded event units</title><rect x="410.00" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-10: 0 recorded event units</title><rect x="410.00" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-11: 0 recorded event units</title><rect x="410.00" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-12: 0 recorded event units</title><rect x="424.15" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-13: 0 recorded event units</title><rect x="424.15" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-14: 0 recorded event units</title><rect x="424.15" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-15: 0 recorded event units</title><rect x="424.15" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-16: 0 recorded event units</title><rect x="424.15" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-17: 0 recorded event units</title><rect x="424.15" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-18: 0 recorded event units</title><rect x="424.15" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-19: 0 recorded event units</title><rect x="438.30" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-20: 0 recorded event units</title><rect x="438.30" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-21: 0 recorded event units</title><rect x="438.30" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-22: 0 recorded event units</title><rect x="438.30" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-23: 0 recorded event units</title><rect x="438.30" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-24: 0 recorded event units</title><rect x="438.30" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-25: 0 recorded event units</title><rect x="438.30" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-26: 0 recorded event units</title><rect x="452.45" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-27: 0 recorded event units</title><rect x="452.45" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-28: 0 recorded event units</title><rect x="452.45" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-29: 0 recorded event units</title><rect x="452.45" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-04-30: 0 recorded event units</title><rect x="452.45" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-01: 0 recorded event units</title><rect x="452.45" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-02: 0 recorded event units</title><rect x="452.45" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="466.6" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">May</text>
-<g><title>2026-05-03: 0 recorded event units</title><rect x="466.60" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-04: 0 recorded event units</title><rect x="466.60" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-05: 0 recorded event units</title><rect x="466.60" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-06: 0 recorded event units</title><rect x="466.60" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-07: 0 recorded event units</title><rect x="466.60" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-08: 0 recorded event units</title><rect x="466.60" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-09: 0 recorded event units</title><rect x="466.60" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-10: 0 recorded event units</title><rect x="480.75" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-11: 0 recorded event units</title><rect x="480.75" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-12: 0 recorded event units</title><rect x="480.75" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-13: 0 recorded event units</title><rect x="480.75" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-14: 0 recorded event units</title><rect x="480.75" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-15: 0 recorded event units</title><rect x="480.75" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-16: 0 recorded event units</title><rect x="480.75" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-17: 0 recorded event units</title><rect x="494.90" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-18: 0 recorded event units</title><rect x="494.90" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-19: 0 recorded event units</title><rect x="494.90" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-20: 0 recorded event units</title><rect x="494.90" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-21: 0 recorded event units</title><rect x="494.90" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-22: 0 recorded event units</title><rect x="494.90" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-23: 0 recorded event units</title><rect x="494.90" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-24: 0 recorded event units</title><rect x="509.05" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-25: 0 recorded event units</title><rect x="509.05" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-26: 0 recorded event units</title><rect x="509.05" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-27: 0 recorded event units</title><rect x="509.05" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-28: 0 recorded event units</title><rect x="509.05" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-29: 0 recorded event units</title><rect x="509.05" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-30: 0 recorded event units</title><rect x="509.05" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-05-31: 0 recorded event units</title><rect x="523.20" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-01: 0 recorded event units</title><rect x="523.20" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-02: 0 recorded event units</title><rect x="523.20" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-03: 0 recorded event units</title><rect x="523.20" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-04: 0 recorded event units</title><rect x="523.20" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-05: 0 recorded event units</title><rect x="523.20" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-06: 0 recorded event units</title><rect x="523.20" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="537.35" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Jun</text>
-<g><title>2026-06-07: 0 recorded event units</title><rect x="537.35" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-08: 0 recorded event units</title><rect x="537.35" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-09: 0 recorded event units</title><rect x="537.35" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-10: 0 recorded event units</title><rect x="537.35" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-11: 0 recorded event units</title><rect x="537.35" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-12: 0 recorded event units</title><rect x="537.35" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-13: 0 recorded event units</title><rect x="537.35" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-14: 0 recorded event units</title><rect x="551.50" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-15: 0 recorded event units</title><rect x="551.50" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-16: 0 recorded event units</title><rect x="551.50" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-17: 0 recorded event units</title><rect x="551.50" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-18: 0 recorded event units</title><rect x="551.50" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-19: 0 recorded event units</title><rect x="551.50" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-20: 0 recorded event units</title><rect x="551.50" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-21: 0 recorded event units</title><rect x="565.65" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-22: 0 recorded event units</title><rect x="565.65" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-23: 0 recorded event units</title><rect x="565.65" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-24: 0 recorded event units</title><rect x="565.65" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-25: 0 recorded event units</title><rect x="565.65" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-26: 0 recorded event units</title><rect x="565.65" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-27: 0 recorded event units</title><rect x="565.65" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-28: 0 recorded event units</title><rect x="579.80" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-29: 0 recorded event units</title><rect x="579.80" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-06-30: 0 recorded event units</title><rect x="579.80" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-01: 0 recorded event units</title><rect x="579.80" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-02: 0 recorded event units</title><rect x="579.80" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-03: 0 recorded event units</title><rect x="579.80" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-04: 0 recorded event units</title><rect x="579.80" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="593.95" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Jul</text>
-<g><title>2026-07-05: 0 recorded event units</title><rect x="593.95" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-06: 0 recorded event units</title><rect x="593.95" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-07: 0 recorded event units</title><rect x="593.95" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-08: 0 recorded event units</title><rect x="593.95" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-09: 0 recorded event units</title><rect x="593.95" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-10: 0 recorded event units</title><rect x="593.95" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-11: 0 recorded event units</title><rect x="593.95" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-12: 0 recorded event units</title><rect x="608.10" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-13: 0 recorded event units</title><rect x="608.10" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-14: 0 recorded event units</title><rect x="608.10" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-15: 0 recorded event units</title><rect x="608.10" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-16: 0 recorded event units</title><rect x="608.10" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-17: 0 recorded event units</title><rect x="608.10" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-18: 0 recorded event units</title><rect x="608.10" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-19: 0 recorded event units</title><rect x="622.25" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-20: 0 recorded event units</title><rect x="622.25" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-21: 0 recorded event units</title><rect x="622.25" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-22: 0 recorded event units</title><rect x="622.25" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-23: 0 recorded event units</title><rect x="622.25" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-24: 0 recorded event units</title><rect x="622.25" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-25: 0 recorded event units</title><rect x="622.25" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-26: 0 recorded event units</title><rect x="636.40" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-27: 0 recorded event units</title><rect x="636.40" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-28: 0 recorded event units</title><rect x="636.40" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-29: 0 recorded event units</title><rect x="636.40" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-30: 0 recorded event units</title><rect x="636.40" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-07-31: 0 recorded event units</title><rect x="636.40" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-01: 0 recorded event units</title><rect x="636.40" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="650.5500000000001" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Aug</text>
-<g><title>2026-08-02: 0 recorded event units</title><rect x="650.55" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-03: 3 recorded event units (Parts)</title><rect x="650.55" y="129.80" width="10.7" height="10.7" rx="2" fill="#378e75" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-08-04: 0 recorded event units</title><rect x="650.55" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-05: 0 recorded event units</title><rect x="650.55" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-06: 0 recorded event units</title><rect x="650.55" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-07: 0 recorded event units</title><rect x="650.55" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-08: 0 recorded event units</title><rect x="650.55" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-09: 0 recorded event units</title><rect x="664.70" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-10: 0 recorded event units</title><rect x="664.70" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-11: 0 recorded event units</title><rect x="664.70" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-12: 0 recorded event units</title><rect x="664.70" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-13: 0 recorded event units</title><rect x="664.70" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-14: 0 recorded event units</title><rect x="664.70" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-15: 0 recorded event units</title><rect x="664.70" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-16: 0 recorded event units</title><rect x="678.85" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-17: 0 recorded event units</title><rect x="678.85" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-18: 0 recorded event units</title><rect x="678.85" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-19: 0 recorded event units</title><rect x="678.85" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-20: 0 recorded event units</title><rect x="678.85" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-21: 1 recorded event unit (Assembly)</title><rect x="678.85" y="181.00" width="10.7" height="10.7" rx="2" fill="#286b61" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-08-22: 0 recorded event units</title><rect x="678.85" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-23: 0 recorded event units</title><rect x="693.00" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-24: 0 recorded event units</title><rect x="693.00" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-25: 0 recorded event units</title><rect x="693.00" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-26: 0 recorded event units</title><rect x="693.00" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-27: 0 recorded event units</title><rect x="693.00" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-28: 0 recorded event units</title><rect x="693.00" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-29: 0 recorded event units</title><rect x="693.00" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-30: 0 recorded event units</title><rect x="707.15" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-08-31: 0 recorded event units</title><rect x="707.15" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-01: 0 recorded event units</title><rect x="707.15" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-02: 0 recorded event units</title><rect x="707.15" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-03: 0 recorded event units</title><rect x="707.15" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-04: 0 recorded event units</title><rect x="707.15" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-05: 0 recorded event units</title><rect x="707.15" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="721.3000000000001" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Sept</text>
-<g><title>2026-09-06: 2 recorded event units (Parts)</title><rect x="721.30" y="117.00" width="10.7" height="10.7" rx="2" fill="#378e75" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-09-07: 0 recorded event units</title><rect x="721.30" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-08: 0 recorded event units</title><rect x="721.30" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-09: 0 recorded event units</title><rect x="721.30" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-10: 0 recorded event units</title><rect x="721.30" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-11: 0 recorded event units</title><rect x="721.30" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-12: 1 recorded event unit (Sealed)</title><rect x="721.30" y="193.80" width="10.7" height="10.7" rx="2" fill="#286b61" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-09-13: 0 recorded event units</title><rect x="735.45" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-14: 0 recorded event units</title><rect x="735.45" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-15: 0 recorded event units</title><rect x="735.45" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-16: 0 recorded event units</title><rect x="735.45" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-17: 0 recorded event units</title><rect x="735.45" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-18: 0 recorded event units</title><rect x="735.45" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-19: 0 recorded event units</title><rect x="735.45" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-20: 0 recorded event units</title><rect x="749.60" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-21: 0 recorded event units</title><rect x="749.60" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-22: 0 recorded event units</title><rect x="749.60" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-23: 0 recorded event units</title><rect x="749.60" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-24: 0 recorded event units</title><rect x="749.60" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-25: 0 recorded event units</title><rect x="749.60" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-26: 0 recorded event units</title><rect x="749.60" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-27: 0 recorded event units</title><rect x="763.75" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-28: 1 recorded event unit (Inspect)</title><rect x="763.75" y="129.80" width="10.7" height="10.7" rx="2" fill="#286b61" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-09-29: 0 recorded event units</title><rect x="763.75" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-09-30: 0 recorded event units</title><rect x="763.75" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-01: 0 recorded event units</title><rect x="763.75" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-02: 0 recorded event units</title><rect x="763.75" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-03: 0 recorded event units</title><rect x="763.75" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="777.9" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Oct</text>
-<g><title>2026-10-04: 0 recorded event units</title><rect x="777.90" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-05: 0 recorded event units</title><rect x="777.90" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-06: 0 recorded event units</title><rect x="777.90" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-07: 0 recorded event units</title><rect x="777.90" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-08: 0 recorded event units</title><rect x="777.90" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-09: 0 recorded event units</title><rect x="777.90" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-10: 0 recorded event units</title><rect x="777.90" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-11: 0 recorded event units</title><rect x="792.05" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-12: 0 recorded event units</title><rect x="792.05" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-13: 0 recorded event units</title><rect x="792.05" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-14: 0 recorded event units</title><rect x="792.05" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-15: 0 recorded event units</title><rect x="792.05" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-16: 0 recorded event units</title><rect x="792.05" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-17: 5 recorded event units (Parts)</title><rect x="792.05" y="193.80" width="10.7" height="10.7" rx="2" fill="#59b98c" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-10-18: 0 recorded event units</title><rect x="806.20" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-19: 0 recorded event units</title><rect x="806.20" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-20: 0 recorded event units</title><rect x="806.20" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-21: 0 recorded event units</title><rect x="806.20" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-22: 0 recorded event units</title><rect x="806.20" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-23: 0 recorded event units</title><rect x="806.20" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-24: 1 recorded event unit (Dispatch)</title><rect x="806.20" y="193.80" width="10.7" height="10.7" rx="2" fill="#286b61" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-10-25: 0 recorded event units</title><rect x="820.35" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-26: 0 recorded event units</title><rect x="820.35" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-27: 0 recorded event units</title><rect x="820.35" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-28: 0 recorded event units</title><rect x="820.35" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-29: 0 recorded event units</title><rect x="820.35" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-30: 0 recorded event units</title><rect x="820.35" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-10-31: 0 recorded event units</title><rect x="820.35" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="834.5" y="111" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif">Nov</text>
-<g><title>2026-11-01: 0 recorded event units</title><rect x="834.50" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-02: 0 recorded event units</title><rect x="834.50" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-03: 0 recorded event units</title><rect x="834.50" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-04: 1 recorded event unit (Sealed)</title><rect x="834.50" y="155.40" width="10.7" height="10.7" rx="2" fill="#286b61" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-11-05: 0 recorded event units</title><rect x="834.50" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-06: 0 recorded event units</title><rect x="834.50" y="181.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-07: 0 recorded event units</title><rect x="834.50" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-08: 0 recorded event units</title><rect x="848.65" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-09: 4 recorded event units (Parts)</title><rect x="848.65" y="129.80" width="10.7" height="10.7" rx="2" fill="#59b98c" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-11-10: 0 recorded event units</title><rect x="848.65" y="142.60" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-11: 0 recorded event units</title><rect x="848.65" y="155.40" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-12: 0 recorded event units</title><rect x="848.65" y="168.20" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-13: 1 recorded event unit (Assembly)</title><rect x="848.65" y="181.00" width="10.7" height="10.7" rx="2" fill="#286b61" stroke="#f5eddc" stroke-opacity=".2" stroke-width=".5"/></g>
-<g><title>2026-11-14: 0 recorded event units</title><rect x="848.65" y="193.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-15: 0 recorded event units</title><rect x="862.80" y="117.00" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<g><title>2026-11-16: 0 recorded event units</title><rect x="862.80" y="129.80" width="10.7" height="10.7" rx="2" fill="#29404b" /></g>
-<text x="93" y="137.8" font-size="10" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Mon</text>
-<text x="93" y="163.4" font-size="10" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Wed</text>
-<text x="93" y="189" font-size="10" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Fri</text>
-<text x="950" y="192" font-size="10" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">10 records · 5 repositories</text>
-<text x="949" y="206" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 outside displayed window</text>
-<rect x="31" y="219" width="938" height="66" rx="6" fill="#1d3745" />
-<rect x="31" y="219" width="938" height="66" rx="6" fill="url(#floor-dots)" />
-<path d="M37 278L955 278" fill="none" stroke="#091923" stroke-width="9" stroke-linecap="round"/>
-<path d="M37 278L955 278" fill="none" stroke="#426170" stroke-width="5" stroke-linecap="round"/>
-<g clip-path="url(#scene-belt)"><g class="belt-ticks"><path d="M40 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M58 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M76 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M94 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M112 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M130 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M148 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M166 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M184 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M202 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M220 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M238 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M256 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M274 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M292 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M310 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M328 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M346 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M364 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M382 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M400 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M418 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M436 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M454 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M472 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M490 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M508 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M526 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M544 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M562 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M580 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M598 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M616 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M634 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M652 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M670 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M688 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M706 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M724 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M742 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M760 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M778 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M796 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M814 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M832 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M850 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M868 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M886 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M904 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M922 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M940 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M958 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M976 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M994 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/><path d="M1012 276l7 0" fill="none" stroke="#f5eddc" stroke-opacity=".35" stroke-width="2"/></g></g>
-<g><text x="114" y="229" font-size="11" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">orbit</text><rect x="50" y="242" width="128" height="31" rx="2" fill="#091923" /><rect x="53" y="245" width="122" height="25" rx="0" fill="#658492" /><rect x="62" y="249" width="33" height="17" rx="0" fill="#152d3c" /><rect x="65" y="251" width="26" height="12" rx="0" fill="#f0c58a" /><rect x="104" y="249" width="24" height="8" rx="0" fill="#57d9bd" /><rect x="104" y="259" width="48" height="7" rx="0" fill="#152d3c" /><rect x="107" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="119" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="131" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="143" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="153" y="246" width="17" height="17" rx="0" fill="#091923" /><rect x="156" y="249" width="11" height="11" rx="0" fill="#f0c58a" /><rect x="77" y="233" width="14" height="9" rx="0" fill="#091923" /><rect x="75" y="230" width="18" height="4" rx="0" fill="#57d9bd" /><rect x="146" y="238" width="15" height="7" rx="0" fill="#091923" /><rect x="53" y="272" width="8" height="5" rx="0" fill="#426170" /><rect x="167" y="272" width="8" height="5" rx="0" fill="#426170" /><circle cx="162" cy="251" r="3" fill="#57d9bd" class="machine-light"/><title>sample-dev/orbit · recorded activity</title></g>
-<g><text x="305" y="229" font-size="11" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">harbour</text><rect x="241" y="242" width="128" height="31" rx="2" fill="#091923" /><rect x="244" y="245" width="122" height="25" rx="0" fill="#658492" /><rect x="253" y="249" width="33" height="17" rx="0" fill="#152d3c" /><rect x="256" y="251" width="26" height="12" rx="0" fill="#f0c58a" /><rect x="295" y="249" width="24" height="8" rx="0" fill="#8cb5ff" /><rect x="295" y="259" width="48" height="7" rx="0" fill="#152d3c" /><rect x="298" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="310" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="322" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="334" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="344" y="246" width="17" height="17" rx="0" fill="#091923" /><rect x="347" y="249" width="11" height="11" rx="0" fill="#f0c58a" /><rect x="268" y="233" width="14" height="9" rx="0" fill="#091923" /><rect x="266" y="230" width="18" height="4" rx="0" fill="#8cb5ff" /><rect x="337" y="238" width="15" height="7" rx="0" fill="#091923" /><rect x="244" y="272" width="8" height="5" rx="0" fill="#426170" /><rect x="358" y="272" width="8" height="5" rx="0" fill="#426170" /><circle cx="353" cy="251" r="3" fill="#8cb5ff" class="machine-light"/><title>sample-dev/harbour · recorded activity</title></g>
-<g><text x="496" y="229" font-size="11" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">aurora</text><rect x="432" y="242" width="128" height="31" rx="2" fill="#091923" /><rect x="435" y="245" width="122" height="25" rx="0" fill="#658492" /><rect x="444" y="249" width="33" height="17" rx="0" fill="#152d3c" /><rect x="447" y="251" width="26" height="12" rx="0" fill="#f0c58a" /><rect x="486" y="249" width="24" height="8" rx="0" fill="#ffbd76" /><rect x="486" y="259" width="48" height="7" rx="0" fill="#152d3c" /><rect x="489" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="501" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="513" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="525" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="535" y="246" width="17" height="17" rx="0" fill="#091923" /><rect x="538" y="249" width="11" height="11" rx="0" fill="#f0c58a" /><rect x="459" y="233" width="14" height="9" rx="0" fill="#091923" /><rect x="457" y="230" width="18" height="4" rx="0" fill="#ffbd76" /><rect x="528" y="238" width="15" height="7" rx="0" fill="#091923" /><rect x="435" y="272" width="8" height="5" rx="0" fill="#426170" /><rect x="549" y="272" width="8" height="5" rx="0" fill="#426170" /><circle cx="544" cy="251" r="3" fill="#ffbd76" class="machine-light"/><title>sample-dev/aurora · recorded activity</title></g>
-<g><text x="687" y="229" font-size="11" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">ember</text><rect x="623" y="242" width="128" height="31" rx="2" fill="#091923" /><rect x="626" y="245" width="122" height="25" rx="0" fill="#658492" /><rect x="635" y="249" width="33" height="17" rx="0" fill="#152d3c" /><rect x="638" y="251" width="26" height="12" rx="0" fill="#f0c58a" /><rect x="677" y="249" width="24" height="8" rx="0" fill="#ff8e9d" /><rect x="677" y="259" width="48" height="7" rx="0" fill="#152d3c" /><rect x="680" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="692" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="704" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="716" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="726" y="246" width="17" height="17" rx="0" fill="#091923" /><rect x="729" y="249" width="11" height="11" rx="0" fill="#f0c58a" /><rect x="650" y="233" width="14" height="9" rx="0" fill="#091923" /><rect x="648" y="230" width="18" height="4" rx="0" fill="#ff8e9d" /><rect x="719" y="238" width="15" height="7" rx="0" fill="#091923" /><rect x="626" y="272" width="8" height="5" rx="0" fill="#426170" /><rect x="740" y="272" width="8" height="5" rx="0" fill="#426170" /><circle cx="735" cy="251" r="3" fill="#ff8e9d" class="machine-light"/><title>sample-dev/ember · recorded activity</title></g>
-<g><text x="878" y="229" font-size="11" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">atlas</text><rect x="814" y="242" width="128" height="31" rx="2" fill="#091923" /><rect x="817" y="245" width="122" height="25" rx="0" fill="#658492" /><rect x="826" y="249" width="33" height="17" rx="0" fill="#152d3c" /><rect x="829" y="251" width="26" height="12" rx="0" fill="#f0c58a" /><rect x="868" y="249" width="24" height="8" rx="0" fill="#c3a4ff" /><rect x="868" y="259" width="48" height="7" rx="0" fill="#152d3c" /><rect x="871" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="883" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="895" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="907" y="261" width="6" height="4" rx="0" fill="#8ca9b1" /><rect x="917" y="246" width="17" height="17" rx="0" fill="#091923" /><rect x="920" y="249" width="11" height="11" rx="0" fill="#f0c58a" /><rect x="841" y="233" width="14" height="9" rx="0" fill="#091923" /><rect x="839" y="230" width="18" height="4" rx="0" fill="#c3a4ff" /><rect x="910" y="238" width="15" height="7" rx="0" fill="#091923" /><rect x="817" y="272" width="8" height="5" rx="0" fill="#426170" /><rect x="931" y="272" width="8" height="5" rx="0" fill="#426170" /><circle cx="926" cy="251" r="3" fill="#c3a4ff" class="machine-light"/><title>sample-dev/atlas · recorded activity</title></g>
-<g class="moving-package"><title>sample-dev/atlas | pr_opened ×1</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#8cb5ff" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">◇</text><animateMotion begin="0.00s" dur="11s" repeatCount="indefinite" path="M878,277 L956,277"/><animate attributeName="opacity" begin="0.00s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/ember | commit ×2</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#57d9bd" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">●</text><text x="17" y="-9" text-anchor="middle" font-size="9" fill="#f5eddc">×2</text><animateMotion begin="0.95s" dur="11s" repeatCount="indefinite" path="M687,277 L956,277"/><animate attributeName="opacity" begin="0.95s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/atlas | pr_merged ×1</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#ffbd76" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">◆</text><animateMotion begin="1.90s" dur="11s" repeatCount="indefinite" path="M878,277 L956,277"/><animate attributeName="opacity" begin="1.90s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/orbit | issue_opened ×1</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#ff8e9d" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">!</text><animateMotion begin="2.85s" dur="11s" repeatCount="indefinite" path="M114,277 L956,277"/><animate attributeName="opacity" begin="2.85s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/orbit | commit ×5</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#57d9bd" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">●</text><text x="17" y="-9" text-anchor="middle" font-size="9" fill="#f5eddc">×5</text><animateMotion begin="3.80s" dur="11s" repeatCount="indefinite" path="M114,277 L956,277"/><animate attributeName="opacity" begin="3.80s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/aurora | release ×1</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#c3a4ff" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">✦</text><animateMotion begin="4.75s" dur="11s" repeatCount="indefinite" path="M496,277 L956,277"/><animate attributeName="opacity" begin="4.75s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/harbour | pr_merged ×1</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#ffbd76" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">◆</text><animateMotion begin="5.70s" dur="11s" repeatCount="indefinite" path="M305,277 L956,277"/><animate attributeName="opacity" begin="5.70s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/harbour | commit ×4</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#57d9bd" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">●</text><text x="17" y="-9" text-anchor="middle" font-size="9" fill="#f5eddc">×4</text><animateMotion begin="6.65s" dur="11s" repeatCount="indefinite" path="M305,277 L956,277"/><animate attributeName="opacity" begin="6.65s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<g class="moving-package"><title>sample-dev/ember | pr_opened ×1</title><g><rect x="-8" y="-8" width="17" height="16" rx="0" fill="#091923" /><rect x="-6" y="-7" width="13" height="12" rx="0" fill="#8cb5ff" /><rect x="-6" y="-7" width="13" height="3" rx="0" fill="#f0c58a" /><text x="3" y="7" font-size="10" fill="#091923" text-anchor="middle" font-weight="900">◇</text><animateMotion begin="7.60s" dur="11s" repeatCount="indefinite" path="M687,277 L956,277"/><animate attributeName="opacity" begin="7.60s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
-<text x="956" y="240" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Showing 5/5 stations · 9/10 packages</text>
-<rect x="42" y="294" width="12" height="10" rx="2" fill="#57d9bd" />
-<text x="59" y="303" font-size="10" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Parts 14</text>
-<rect x="222" y="294" width="12" height="10" rx="2" fill="#8cb5ff" />
-<text x="239" y="303" font-size="10" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Assembly 2</text>
-<rect x="402" y="294" width="12" height="10" rx="2" fill="#ffbd76" />
-<text x="419" y="303" font-size="10" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Sealed 2</text>
-<rect x="582" y="294" width="12" height="10" rx="2" fill="#ff8e9d" />
-<text x="599" y="303" font-size="10" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Inspect 1</text>
-<rect x="762" y="294" width="12" height="10" rx="2" fill="#c3a4ff" />
-<text x="779" y="303" font-size="10" fill="#f5eddc" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Dispatch 1</text>
-<text x="961" y="316" font-size="9" fill="#a6bac4" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">PIXEL WORKS · FACTORY METAPHOR ONLY</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="factoryTitle factoryDesc">
+<title id="factoryTitle">Code Factory · pixel · SYNTHETIC DEMO</title><desc id="factoryDesc">GitHub-style weekly grid with selected week 8 Nov to 14 Nov. 2 observed event records representing 5 source-backed event units. Each factory machine below corresponds to an event recorded on the same calendar day. This is not the official GitHub contributions calendar or CI/deployment status.</desc>
+<defs><linearGradient id="panelGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#163441"/><stop offset="100%" stop-color="#102936"/></linearGradient><pattern id="workshopTiles" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 19H20" stroke="#42606c" stroke-opacity=".27"/><path d="M19 0V20" stroke="#42606c" stroke-opacity=".15"/></pattern></defs>
+<style>@keyframes machinePulse{0%,100%{filter:brightness(1);opacity:.82}50%{filter:brightness(1.12);opacity:1}}@keyframes movingBelt{to{transform:translateX(16px)}}.active .machine-part{animation:machinePulse 2.2s ease-in-out infinite}.belt-dashes{animation:movingBelt .9s linear infinite}@media(prefers-reduced-motion:reduce){.active .machine-part,.belt-dashes{animation:none!important}.travelling{display:none!important}}</style>
+<rect x="0" y="0" width="1200" height="430" rx="0" fill="#071923" />
+<rect x="14" y="11" width="1172" height="407" rx="15" fill="#102936" stroke="#42606c" stroke-width="1"/>
+<text x="39" y="43" font-size="26" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="900" letter-spacing="2.3">CODE FACTORY</text>
+<text x="40" y="62" font-size="12" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" >Every highlighted week powers its own seven-day workshop</text>
+<rect x="984" y="25" width="174" height="27" rx="13" fill="#163441" stroke="#42606c"/>
+<text x="1071" y="44" font-size="11" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">SYNTHETIC DEMO</text>
+<rect x="28" y="79" width="1144" height="127" rx="9" fill="#163441" stroke="#42606c" stroke-width="1"/>
+<text x="42" y="102" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" letter-spacing=".7">52-WEEK ACTIVITY CALENDAR</text>
+<text x="1155" y="102" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">10 recorded events · partial source snapshot</text>
+<g><title>2025-11-16: 0 recorded units across 0 events</title><rect x="154.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-17: 0 recorded units across 0 events</title><rect x="154.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-18: 0 recorded units across 0 events</title><rect x="154.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-19: 0 recorded units across 0 events</title><rect x="154.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-20: 0 recorded units across 0 events</title><rect x="154.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-21: 0 recorded units across 0 events</title><rect x="154.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-22: 0 recorded units across 0 events</title><rect x="154.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="0" tabindex="-1"><title>Week beginning 2025-11-16: 0 events</title><rect x="151.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2025-11-23: 0 recorded units across 0 events</title><rect x="172.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-24: 0 recorded units across 0 events</title><rect x="172.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-25: 0 recorded units across 0 events</title><rect x="172.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-26: 0 recorded units across 0 events</title><rect x="172.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-27: 0 recorded units across 0 events</title><rect x="172.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-28: 0 recorded units across 0 events</title><rect x="172.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-11-29: 0 recorded units across 0 events</title><rect x="172.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="1" tabindex="-1"><title>Week beginning 2025-11-23: 0 events</title><rect x="170.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2025-11-30: 0 recorded units across 0 events</title><rect x="190.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-01: 0 recorded units across 0 events</title><rect x="190.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-02: 0 recorded units across 0 events</title><rect x="190.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-03: 0 recorded units across 0 events</title><rect x="190.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-04: 0 recorded units across 0 events</title><rect x="190.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-05: 0 recorded units across 0 events</title><rect x="190.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-06: 0 recorded units across 0 events</title><rect x="190.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="2" tabindex="-1"><title>Week beginning 2025-11-30: 0 events</title><rect x="188.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="209.2" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">DEC</text>
+<g><title>2025-12-07: 0 recorded units across 0 events</title><rect x="209.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-08: 0 recorded units across 0 events</title><rect x="209.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-09: 0 recorded units across 0 events</title><rect x="209.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-10: 0 recorded units across 0 events</title><rect x="209.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-11: 0 recorded units across 0 events</title><rect x="209.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-12: 0 recorded units across 0 events</title><rect x="209.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-13: 0 recorded units across 0 events</title><rect x="209.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="3" tabindex="-1"><title>Week beginning 2025-12-07: 0 events</title><rect x="207.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2025-12-14: 0 recorded units across 0 events</title><rect x="227.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-15: 0 recorded units across 0 events</title><rect x="227.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-16: 0 recorded units across 0 events</title><rect x="227.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-17: 0 recorded units across 0 events</title><rect x="227.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-18: 0 recorded units across 0 events</title><rect x="227.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-19: 0 recorded units across 0 events</title><rect x="227.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-20: 0 recorded units across 0 events</title><rect x="227.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="4" tabindex="-1"><title>Week beginning 2025-12-14: 0 events</title><rect x="225.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2025-12-21: 0 recorded units across 0 events</title><rect x="246.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-22: 0 recorded units across 0 events</title><rect x="246.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-23: 0 recorded units across 0 events</title><rect x="246.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-24: 0 recorded units across 0 events</title><rect x="246.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-25: 0 recorded units across 0 events</title><rect x="246.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-26: 0 recorded units across 0 events</title><rect x="246.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-27: 0 recorded units across 0 events</title><rect x="246.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="5" tabindex="-1"><title>Week beginning 2025-12-21: 0 events</title><rect x="243.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2025-12-28: 0 recorded units across 0 events</title><rect x="264.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-29: 0 recorded units across 0 events</title><rect x="264.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-30: 0 recorded units across 0 events</title><rect x="264.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2025-12-31: 0 recorded units across 0 events</title><rect x="264.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-01: 0 recorded units across 0 events</title><rect x="264.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-02: 0 recorded units across 0 events</title><rect x="264.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-03: 0 recorded units across 0 events</title><rect x="264.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="6" tabindex="-1"><title>Week beginning 2025-12-28: 0 events</title><rect x="262.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="282.79999999999995" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">JAN</text>
+<g><title>2026-01-04: 0 recorded units across 0 events</title><rect x="282.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-05: 0 recorded units across 0 events</title><rect x="282.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-06: 0 recorded units across 0 events</title><rect x="282.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-07: 0 recorded units across 0 events</title><rect x="282.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-08: 0 recorded units across 0 events</title><rect x="282.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-09: 0 recorded units across 0 events</title><rect x="282.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-10: 0 recorded units across 0 events</title><rect x="282.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="7" tabindex="-1"><title>Week beginning 2026-01-04: 0 events</title><rect x="280.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-01-11: 0 recorded units across 0 events</title><rect x="301.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-12: 0 recorded units across 0 events</title><rect x="301.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-13: 0 recorded units across 0 events</title><rect x="301.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-14: 0 recorded units across 0 events</title><rect x="301.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-15: 0 recorded units across 0 events</title><rect x="301.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-16: 0 recorded units across 0 events</title><rect x="301.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-17: 0 recorded units across 0 events</title><rect x="301.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="8" tabindex="-1"><title>Week beginning 2026-01-11: 0 events</title><rect x="299.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-01-18: 0 recorded units across 0 events</title><rect x="319.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-19: 0 recorded units across 0 events</title><rect x="319.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-20: 0 recorded units across 0 events</title><rect x="319.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-21: 0 recorded units across 0 events</title><rect x="319.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-22: 0 recorded units across 0 events</title><rect x="319.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-23: 0 recorded units across 0 events</title><rect x="319.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-24: 0 recorded units across 0 events</title><rect x="319.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="9" tabindex="-1"><title>Week beginning 2026-01-18: 0 events</title><rect x="317.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-01-25: 0 recorded units across 0 events</title><rect x="338.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-26: 0 recorded units across 0 events</title><rect x="338.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-27: 0 recorded units across 0 events</title><rect x="338.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-28: 0 recorded units across 0 events</title><rect x="338.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-29: 0 recorded units across 0 events</title><rect x="338.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-30: 0 recorded units across 0 events</title><rect x="338.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-01-31: 0 recorded units across 0 events</title><rect x="338.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="10" tabindex="-1"><title>Week beginning 2026-01-25: 0 events</title><rect x="335.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="356.4" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">FEB</text>
+<g><title>2026-02-01: 0 recorded units across 0 events</title><rect x="356.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-02: 0 recorded units across 0 events</title><rect x="356.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-03: 0 recorded units across 0 events</title><rect x="356.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-04: 0 recorded units across 0 events</title><rect x="356.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-05: 0 recorded units across 0 events</title><rect x="356.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-06: 0 recorded units across 0 events</title><rect x="356.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-07: 0 recorded units across 0 events</title><rect x="356.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="11" tabindex="-1"><title>Week beginning 2026-02-01: 0 events</title><rect x="354.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-02-08: 0 recorded units across 0 events</title><rect x="374.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-09: 0 recorded units across 0 events</title><rect x="374.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-10: 0 recorded units across 0 events</title><rect x="374.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-11: 0 recorded units across 0 events</title><rect x="374.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-12: 0 recorded units across 0 events</title><rect x="374.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-13: 0 recorded units across 0 events</title><rect x="374.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-14: 0 recorded units across 0 events</title><rect x="374.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="12" tabindex="-1"><title>Week beginning 2026-02-08: 0 events</title><rect x="372.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-02-15: 0 recorded units across 0 events</title><rect x="393.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-16: 0 recorded units across 0 events</title><rect x="393.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-17: 0 recorded units across 0 events</title><rect x="393.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-18: 0 recorded units across 0 events</title><rect x="393.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-19: 0 recorded units across 0 events</title><rect x="393.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-20: 0 recorded units across 0 events</title><rect x="393.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-21: 0 recorded units across 0 events</title><rect x="393.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="13" tabindex="-1"><title>Week beginning 2026-02-15: 0 events</title><rect x="391.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-02-22: 0 recorded units across 0 events</title><rect x="411.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-23: 0 recorded units across 0 events</title><rect x="411.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-24: 0 recorded units across 0 events</title><rect x="411.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-25: 0 recorded units across 0 events</title><rect x="411.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-26: 0 recorded units across 0 events</title><rect x="411.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-27: 0 recorded units across 0 events</title><rect x="411.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-02-28: 0 recorded units across 0 events</title><rect x="411.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="14" tabindex="-1"><title>Week beginning 2026-02-22: 0 events</title><rect x="409.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="430" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">MAR</text>
+<g><title>2026-03-01: 0 recorded units across 0 events</title><rect x="430.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-02: 0 recorded units across 0 events</title><rect x="430.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-03: 0 recorded units across 0 events</title><rect x="430.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-04: 0 recorded units across 0 events</title><rect x="430.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-05: 0 recorded units across 0 events</title><rect x="430.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-06: 0 recorded units across 0 events</title><rect x="430.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-07: 0 recorded units across 0 events</title><rect x="430.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="15" tabindex="-1"><title>Week beginning 2026-03-01: 0 events</title><rect x="427.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-03-08: 0 recorded units across 0 events</title><rect x="448.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-09: 0 recorded units across 0 events</title><rect x="448.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-10: 0 recorded units across 0 events</title><rect x="448.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-11: 0 recorded units across 0 events</title><rect x="448.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-12: 0 recorded units across 0 events</title><rect x="448.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-13: 0 recorded units across 0 events</title><rect x="448.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-14: 0 recorded units across 0 events</title><rect x="448.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="16" tabindex="-1"><title>Week beginning 2026-03-08: 0 events</title><rect x="446.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-03-15: 0 recorded units across 0 events</title><rect x="466.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-16: 0 recorded units across 0 events</title><rect x="466.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-17: 0 recorded units across 0 events</title><rect x="466.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-18: 0 recorded units across 0 events</title><rect x="466.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-19: 0 recorded units across 0 events</title><rect x="466.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-20: 0 recorded units across 0 events</title><rect x="466.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-21: 0 recorded units across 0 events</title><rect x="466.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="17" tabindex="-1"><title>Week beginning 2026-03-15: 0 events</title><rect x="464.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-03-22: 0 recorded units across 0 events</title><rect x="485.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-23: 0 recorded units across 0 events</title><rect x="485.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-24: 0 recorded units across 0 events</title><rect x="485.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-25: 0 recorded units across 0 events</title><rect x="485.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-26: 0 recorded units across 0 events</title><rect x="485.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-27: 0 recorded units across 0 events</title><rect x="485.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-28: 0 recorded units across 0 events</title><rect x="485.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="18" tabindex="-1"><title>Week beginning 2026-03-22: 0 events</title><rect x="483.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-03-29: 0 recorded units across 0 events</title><rect x="503.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-30: 0 recorded units across 0 events</title><rect x="503.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-03-31: 0 recorded units across 0 events</title><rect x="503.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-01: 0 recorded units across 0 events</title><rect x="503.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-02: 0 recorded units across 0 events</title><rect x="503.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-03: 0 recorded units across 0 events</title><rect x="503.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-04: 0 recorded units across 0 events</title><rect x="503.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="19" tabindex="-1"><title>Week beginning 2026-03-29: 0 events</title><rect x="501.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="522" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">APR</text>
+<g><title>2026-04-05: 0 recorded units across 0 events</title><rect x="522.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-06: 0 recorded units across 0 events</title><rect x="522.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-07: 0 recorded units across 0 events</title><rect x="522.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-08: 0 recorded units across 0 events</title><rect x="522.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-09: 0 recorded units across 0 events</title><rect x="522.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-10: 0 recorded units across 0 events</title><rect x="522.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-11: 0 recorded units across 0 events</title><rect x="522.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="20" tabindex="-1"><title>Week beginning 2026-04-05: 0 events</title><rect x="519.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-04-12: 0 recorded units across 0 events</title><rect x="540.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-13: 0 recorded units across 0 events</title><rect x="540.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-14: 0 recorded units across 0 events</title><rect x="540.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-15: 0 recorded units across 0 events</title><rect x="540.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-16: 0 recorded units across 0 events</title><rect x="540.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-17: 0 recorded units across 0 events</title><rect x="540.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-18: 0 recorded units across 0 events</title><rect x="540.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="21" tabindex="-1"><title>Week beginning 2026-04-12: 0 events</title><rect x="538.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-04-19: 0 recorded units across 0 events</title><rect x="558.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-20: 0 recorded units across 0 events</title><rect x="558.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-21: 0 recorded units across 0 events</title><rect x="558.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-22: 0 recorded units across 0 events</title><rect x="558.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-23: 0 recorded units across 0 events</title><rect x="558.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-24: 0 recorded units across 0 events</title><rect x="558.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-25: 0 recorded units across 0 events</title><rect x="558.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="22" tabindex="-1"><title>Week beginning 2026-04-19: 0 events</title><rect x="556.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-04-26: 0 recorded units across 0 events</title><rect x="577.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-27: 0 recorded units across 0 events</title><rect x="577.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-28: 0 recorded units across 0 events</title><rect x="577.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-29: 0 recorded units across 0 events</title><rect x="577.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-04-30: 0 recorded units across 0 events</title><rect x="577.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-01: 0 recorded units across 0 events</title><rect x="577.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-02: 0 recorded units across 0 events</title><rect x="577.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="23" tabindex="-1"><title>Week beginning 2026-04-26: 0 events</title><rect x="575.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="595.5999999999999" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">MAY</text>
+<g><title>2026-05-03: 0 recorded units across 0 events</title><rect x="595.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-04: 0 recorded units across 0 events</title><rect x="595.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-05: 0 recorded units across 0 events</title><rect x="595.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-06: 0 recorded units across 0 events</title><rect x="595.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-07: 0 recorded units across 0 events</title><rect x="595.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-08: 0 recorded units across 0 events</title><rect x="595.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-09: 0 recorded units across 0 events</title><rect x="595.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="24" tabindex="-1"><title>Week beginning 2026-05-03: 0 events</title><rect x="593.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-05-10: 0 recorded units across 0 events</title><rect x="614.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-11: 0 recorded units across 0 events</title><rect x="614.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-12: 0 recorded units across 0 events</title><rect x="614.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-13: 0 recorded units across 0 events</title><rect x="614.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-14: 0 recorded units across 0 events</title><rect x="614.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-15: 0 recorded units across 0 events</title><rect x="614.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-16: 0 recorded units across 0 events</title><rect x="614.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="25" tabindex="-1"><title>Week beginning 2026-05-10: 0 events</title><rect x="611.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-05-17: 0 recorded units across 0 events</title><rect x="632.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-18: 0 recorded units across 0 events</title><rect x="632.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-19: 0 recorded units across 0 events</title><rect x="632.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-20: 0 recorded units across 0 events</title><rect x="632.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-21: 0 recorded units across 0 events</title><rect x="632.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-22: 0 recorded units across 0 events</title><rect x="632.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-23: 0 recorded units across 0 events</title><rect x="632.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="26" tabindex="-1"><title>Week beginning 2026-05-17: 0 events</title><rect x="630.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-05-24: 0 recorded units across 0 events</title><rect x="650.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-25: 0 recorded units across 0 events</title><rect x="650.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-26: 0 recorded units across 0 events</title><rect x="650.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-27: 0 recorded units across 0 events</title><rect x="650.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-28: 0 recorded units across 0 events</title><rect x="650.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-29: 0 recorded units across 0 events</title><rect x="650.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-05-30: 0 recorded units across 0 events</title><rect x="650.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="27" tabindex="-1"><title>Week beginning 2026-05-24: 0 events</title><rect x="648.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-05-31: 0 recorded units across 0 events</title><rect x="669.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-01: 0 recorded units across 0 events</title><rect x="669.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-02: 0 recorded units across 0 events</title><rect x="669.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-03: 0 recorded units across 0 events</title><rect x="669.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-04: 0 recorded units across 0 events</title><rect x="669.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-05: 0 recorded units across 0 events</title><rect x="669.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-06: 0 recorded units across 0 events</title><rect x="669.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="28" tabindex="-1"><title>Week beginning 2026-05-31: 0 events</title><rect x="667.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="687.5999999999999" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">JUN</text>
+<g><title>2026-06-07: 0 recorded units across 0 events</title><rect x="687.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-08: 0 recorded units across 0 events</title><rect x="687.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-09: 0 recorded units across 0 events</title><rect x="687.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-10: 0 recorded units across 0 events</title><rect x="687.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-11: 0 recorded units across 0 events</title><rect x="687.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-12: 0 recorded units across 0 events</title><rect x="687.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-13: 0 recorded units across 0 events</title><rect x="687.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="29" tabindex="-1"><title>Week beginning 2026-06-07: 0 events</title><rect x="685.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-06-14: 0 recorded units across 0 events</title><rect x="706.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-15: 0 recorded units across 0 events</title><rect x="706.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-16: 0 recorded units across 0 events</title><rect x="706.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-17: 0 recorded units across 0 events</title><rect x="706.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-18: 0 recorded units across 0 events</title><rect x="706.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-19: 0 recorded units across 0 events</title><rect x="706.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-20: 0 recorded units across 0 events</title><rect x="706.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="30" tabindex="-1"><title>Week beginning 2026-06-14: 0 events</title><rect x="703.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-06-21: 0 recorded units across 0 events</title><rect x="724.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-22: 0 recorded units across 0 events</title><rect x="724.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-23: 0 recorded units across 0 events</title><rect x="724.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-24: 0 recorded units across 0 events</title><rect x="724.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-25: 0 recorded units across 0 events</title><rect x="724.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-26: 0 recorded units across 0 events</title><rect x="724.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-27: 0 recorded units across 0 events</title><rect x="724.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="31" tabindex="-1"><title>Week beginning 2026-06-21: 0 events</title><rect x="722.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-06-28: 0 recorded units across 0 events</title><rect x="742.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-29: 0 recorded units across 0 events</title><rect x="742.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-06-30: 0 recorded units across 0 events</title><rect x="742.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-01: 0 recorded units across 0 events</title><rect x="742.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-02: 0 recorded units across 0 events</title><rect x="742.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-03: 0 recorded units across 0 events</title><rect x="742.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-04: 0 recorded units across 0 events</title><rect x="742.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="32" tabindex="-1"><title>Week beginning 2026-06-28: 0 events</title><rect x="740.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="761.1999999999999" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">JUL</text>
+<g><title>2026-07-05: 0 recorded units across 0 events</title><rect x="761.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-06: 0 recorded units across 0 events</title><rect x="761.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-07: 0 recorded units across 0 events</title><rect x="761.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-08: 0 recorded units across 0 events</title><rect x="761.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-09: 0 recorded units across 0 events</title><rect x="761.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-10: 0 recorded units across 0 events</title><rect x="761.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-11: 0 recorded units across 0 events</title><rect x="761.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="33" tabindex="-1"><title>Week beginning 2026-07-05: 0 events</title><rect x="759.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-07-12: 0 recorded units across 0 events</title><rect x="779.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-13: 0 recorded units across 0 events</title><rect x="779.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-14: 0 recorded units across 0 events</title><rect x="779.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-15: 0 recorded units across 0 events</title><rect x="779.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-16: 0 recorded units across 0 events</title><rect x="779.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-17: 0 recorded units across 0 events</title><rect x="779.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-18: 0 recorded units across 0 events</title><rect x="779.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="34" tabindex="-1"><title>Week beginning 2026-07-12: 0 events</title><rect x="777.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-07-19: 0 recorded units across 0 events</title><rect x="798.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-20: 0 recorded units across 0 events</title><rect x="798.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-21: 0 recorded units across 0 events</title><rect x="798.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-22: 0 recorded units across 0 events</title><rect x="798.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-23: 0 recorded units across 0 events</title><rect x="798.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-24: 0 recorded units across 0 events</title><rect x="798.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-25: 0 recorded units across 0 events</title><rect x="798.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="35" tabindex="-1"><title>Week beginning 2026-07-19: 0 events</title><rect x="795.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-07-26: 0 recorded units across 0 events</title><rect x="816.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-27: 0 recorded units across 0 events</title><rect x="816.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-28: 0 recorded units across 0 events</title><rect x="816.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-29: 0 recorded units across 0 events</title><rect x="816.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-30: 0 recorded units across 0 events</title><rect x="816.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-07-31: 0 recorded units across 0 events</title><rect x="816.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-01: 0 recorded units across 0 events</title><rect x="816.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="36" tabindex="-1"><title>Week beginning 2026-07-26: 0 events</title><rect x="814.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="834.8" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">AUG</text>
+<g><title>2026-08-02: 0 recorded units across 0 events</title><rect x="834.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-03: 3 recorded units across 1 events · commit</title><rect x="834.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#358a6c" /></g>
+<g><title>2026-08-04: 0 recorded units across 0 events</title><rect x="834.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-05: 0 recorded units across 0 events</title><rect x="834.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-06: 0 recorded units across 0 events</title><rect x="834.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-07: 0 recorded units across 0 events</title><rect x="834.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-08: 0 recorded units across 0 events</title><rect x="834.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="37" tabindex="-1"><title>Week beginning 2026-08-02: 1 events</title><rect x="832.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-08-09: 0 recorded units across 0 events</title><rect x="853.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-10: 0 recorded units across 0 events</title><rect x="853.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-11: 0 recorded units across 0 events</title><rect x="853.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-12: 0 recorded units across 0 events</title><rect x="853.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-13: 0 recorded units across 0 events</title><rect x="853.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-14: 0 recorded units across 0 events</title><rect x="853.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-15: 0 recorded units across 0 events</title><rect x="853.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="38" tabindex="-1"><title>Week beginning 2026-08-09: 0 events</title><rect x="851.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-08-16: 0 recorded units across 0 events</title><rect x="871.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-17: 0 recorded units across 0 events</title><rect x="871.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-18: 0 recorded units across 0 events</title><rect x="871.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-19: 0 recorded units across 0 events</title><rect x="871.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-20: 0 recorded units across 0 events</title><rect x="871.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-21: 1 recorded units across 1 events · pr_opened</title><rect x="871.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#256d5e" /></g>
+<g><title>2026-08-22: 0 recorded units across 0 events</title><rect x="871.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="39" tabindex="-1"><title>Week beginning 2026-08-16: 1 events</title><rect x="869.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-08-23: 0 recorded units across 0 events</title><rect x="890.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-24: 0 recorded units across 0 events</title><rect x="890.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-25: 0 recorded units across 0 events</title><rect x="890.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-26: 0 recorded units across 0 events</title><rect x="890.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-27: 0 recorded units across 0 events</title><rect x="890.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-28: 0 recorded units across 0 events</title><rect x="890.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-29: 0 recorded units across 0 events</title><rect x="890.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="40" tabindex="-1"><title>Week beginning 2026-08-23: 0 events</title><rect x="887.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-08-30: 0 recorded units across 0 events</title><rect x="908.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-08-31: 0 recorded units across 0 events</title><rect x="908.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-01: 0 recorded units across 0 events</title><rect x="908.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-02: 0 recorded units across 0 events</title><rect x="908.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-03: 0 recorded units across 0 events</title><rect x="908.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-04: 0 recorded units across 0 events</title><rect x="908.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-05: 0 recorded units across 0 events</title><rect x="908.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="41" tabindex="-1"><title>Week beginning 2026-08-30: 0 events</title><rect x="906.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="926.8" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">SEP</text>
+<g><title>2026-09-06: 2 recorded units across 1 events · commit</title><rect x="926.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#358a6c" /></g>
+<g><title>2026-09-07: 0 recorded units across 0 events</title><rect x="926.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-08: 0 recorded units across 0 events</title><rect x="926.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-09: 0 recorded units across 0 events</title><rect x="926.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-10: 0 recorded units across 0 events</title><rect x="926.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-11: 0 recorded units across 0 events</title><rect x="926.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-12: 1 recorded units across 1 events · pr_merged</title><rect x="926.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#256d5e" /></g>
+<g data-week-index="42" tabindex="-1"><title>Week beginning 2026-09-06: 2 events</title><rect x="924.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-09-13: 0 recorded units across 0 events</title><rect x="945.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-14: 0 recorded units across 0 events</title><rect x="945.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-15: 0 recorded units across 0 events</title><rect x="945.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-16: 0 recorded units across 0 events</title><rect x="945.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-17: 0 recorded units across 0 events</title><rect x="945.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-18: 0 recorded units across 0 events</title><rect x="945.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-19: 0 recorded units across 0 events</title><rect x="945.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="43" tabindex="-1"><title>Week beginning 2026-09-13: 0 events</title><rect x="943.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-09-20: 0 recorded units across 0 events</title><rect x="963.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-21: 0 recorded units across 0 events</title><rect x="963.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-22: 0 recorded units across 0 events</title><rect x="963.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-23: 0 recorded units across 0 events</title><rect x="963.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-24: 0 recorded units across 0 events</title><rect x="963.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-25: 0 recorded units across 0 events</title><rect x="963.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-26: 0 recorded units across 0 events</title><rect x="963.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="44" tabindex="-1"><title>Week beginning 2026-09-20: 0 events</title><rect x="961.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-09-27: 0 recorded units across 0 events</title><rect x="982.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-28: 1 recorded units across 1 events · issue_opened</title><rect x="982.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#256d5e" /></g>
+<g><title>2026-09-29: 0 recorded units across 0 events</title><rect x="982.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-09-30: 0 recorded units across 0 events</title><rect x="982.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-01: 0 recorded units across 0 events</title><rect x="982.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-02: 0 recorded units across 0 events</title><rect x="982.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-03: 0 recorded units across 0 events</title><rect x="982.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="45" tabindex="-1"><title>Week beginning 2026-09-27: 1 events</title><rect x="979.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="1000.4" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">OCT</text>
+<g><title>2026-10-04: 0 recorded units across 0 events</title><rect x="1000.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-05: 0 recorded units across 0 events</title><rect x="1000.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-06: 0 recorded units across 0 events</title><rect x="1000.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-07: 0 recorded units across 0 events</title><rect x="1000.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-08: 0 recorded units across 0 events</title><rect x="1000.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-09: 0 recorded units across 0 events</title><rect x="1000.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-10: 0 recorded units across 0 events</title><rect x="1000.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="46" tabindex="-1"><title>Week beginning 2026-10-04: 0 events</title><rect x="998.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-10-11: 0 recorded units across 0 events</title><rect x="1018.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-12: 0 recorded units across 0 events</title><rect x="1018.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-13: 0 recorded units across 0 events</title><rect x="1018.80" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-14: 0 recorded units across 0 events</title><rect x="1018.80" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-15: 0 recorded units across 0 events</title><rect x="1018.80" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-16: 0 recorded units across 0 events</title><rect x="1018.80" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-17: 5 recorded units across 1 events · commit</title><rect x="1018.80" y="191.20" width="11.3" height="11.3" rx="2" fill="#50aa7e" /></g>
+<g data-week-index="47" tabindex="-1"><title>Week beginning 2026-10-11: 1 events</title><rect x="1016.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-10-18: 0 recorded units across 0 events</title><rect x="1037.20" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-19: 0 recorded units across 0 events</title><rect x="1037.20" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-20: 0 recorded units across 0 events</title><rect x="1037.20" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-21: 0 recorded units across 0 events</title><rect x="1037.20" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-22: 0 recorded units across 0 events</title><rect x="1037.20" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-23: 0 recorded units across 0 events</title><rect x="1037.20" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-24: 1 recorded units across 1 events · release</title><rect x="1037.20" y="191.20" width="11.3" height="11.3" rx="2" fill="#256d5e" /></g>
+<g data-week-index="48" tabindex="-1"><title>Week beginning 2026-10-18: 1 events</title><rect x="1035.1" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-10-25: 0 recorded units across 0 events</title><rect x="1055.60" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-26: 0 recorded units across 0 events</title><rect x="1055.60" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-27: 0 recorded units across 0 events</title><rect x="1055.60" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-28: 0 recorded units across 0 events</title><rect x="1055.60" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-29: 0 recorded units across 0 events</title><rect x="1055.60" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-30: 0 recorded units across 0 events</title><rect x="1055.60" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-10-31: 0 recorded units across 0 events</title><rect x="1055.60" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="49" tabindex="-1"><title>Week beginning 2026-10-25: 0 events</title><rect x="1053.5" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="1074" y="113" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" font-weight="600">NOV</text>
+<g><title>2026-11-01: 0 recorded units across 0 events</title><rect x="1074.00" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-02: 0 recorded units across 0 events</title><rect x="1074.00" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-03: 0 recorded units across 0 events</title><rect x="1074.00" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-04: 1 recorded units across 1 events · pr_merged</title><rect x="1074.00" y="154.60" width="11.3" height="11.3" rx="2" fill="#256d5e" /></g>
+<g><title>2026-11-05: 0 recorded units across 0 events</title><rect x="1074.00" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-06: 0 recorded units across 0 events</title><rect x="1074.00" y="179.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-07: 0 recorded units across 0 events</title><rect x="1074.00" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="50" tabindex="-1"><title>Week beginning 2026-11-01: 1 events</title><rect x="1071.9" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-11-08: 0 recorded units across 0 events</title><rect x="1092.40" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-09: 4 recorded units across 1 events · commit</title><rect x="1092.40" y="130.20" width="11.3" height="11.3" rx="2" fill="#50aa7e" /></g>
+<g><title>2026-11-10: 0 recorded units across 0 events</title><rect x="1092.40" y="142.40" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-11: 0 recorded units across 0 events</title><rect x="1092.40" y="154.60" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-12: 0 recorded units across 0 events</title><rect x="1092.40" y="166.80" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-13: 1 recorded units across 1 events · pr_opened</title><rect x="1092.40" y="179.00" width="11.3" height="11.3" rx="2" fill="#256d5e" /></g>
+<g><title>2026-11-14: 0 recorded units across 0 events</title><rect x="1092.40" y="191.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="51" tabindex="-1"><title>Week beginning 2026-11-08: 2 events</title><rect x="1090.3" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<g><title>2026-11-15: 0 recorded units across 0 events</title><rect x="1110.80" y="118.00" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g><title>2026-11-16: 0 recorded units across 0 events</title><rect x="1110.80" y="130.20" width="11.3" height="11.3" rx="2" fill="#29454b" /></g>
+<g data-week-index="52" tabindex="-1"><title>Week beginning 2026-11-15: 0 events</title><rect x="1108.7" y="116" width="15.600000000000001" height="86.39999999999999" rx="3" fill="transparent" /></g>
+<text x="137" y="139.2" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Mon</text>
+<text x="137" y="163.6" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Wed</text>
+<text x="137" y="188" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Fri</text>
+<rect x="1089.00" y="115" width="18.1" height="84.39999999999999" rx="4" fill="none" stroke="#f3bf7a" stroke-width="2.6" pointer-events="none"/>
+<path d="M1098.40 203V215H595V221" fill="none" stroke="#f3bf7a" stroke-width="1.7" stroke-dasharray="4 5" opacity=".85"/>
+<rect x="28" y="222" width="1144" height="163" rx="10" fill="url(#panelGlow)" stroke="#42606c"/>
+<text x="43" y="243" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="900" letter-spacing=".8">WEEK OF 8 NOV  •  2 RECORDS  •  5 UNITS</text>
+<text x="1158" y="243" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Each lane below maps directly to one calendar day</text>
+<rect x="36" y="250" width="1128" height="126" rx="5" fill="url(#workshopTiles)" />
+<g data-day="2026-11-08">
+<rect x="41" y="254" width="154" height="120" rx="6" fill="#102936" stroke="#42606c" stroke-opacity=".5"/>
+<rect x="50" y="263" width="12" height="12" rx="3" fill="#29454b" />
+<text x="67" y="273" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">SUN 08</text>
+<text x="187" y="272" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
+<path d="M120 279L120 292" fill="none" stroke="#42606c" stroke-width="2" />
+<rect x="99" y="304" width="42" height="28" rx="4" fill="#163441" stroke="#42606c" stroke-dasharray="3 3"/>
+<path d="M108 319L132 319" fill="none" stroke="#678893" stroke-width="2" />
+<text x="120" y="351" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" font-weight="700">IDLE LANE</text>
+</g>
+<g data-day="2026-11-09">
+<rect x="201" y="254" width="154" height="120" rx="6" fill="#244b51" stroke="#678893" stroke-opacity=".9"/>
+<rect x="210" y="263" width="12" height="12" rx="3" fill="#50aa7e" />
+<text x="227" y="273" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">MON 09</text>
+<text x="347" y="272" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">4 UNITS</text>
+<path d="M280 279L280 292" fill="none" stroke="#f3bf7a" stroke-width="2" stroke-dasharray="3 3"/>
+<g class="active" data-repo="sample-dev/harbour" data-kind="commit"><g class="machine pixel"><g class="machine-part"><rect x="251" y="321" width="57" height="26" rx="1" fill="#06121d" /><rect x="253" y="323" width="53" height="22" rx="1" fill="#557c8e" /><rect x="258" y="328" width="18" height="13" rx="1" fill="#163441" /><rect x="260" y="330" width="14" height="9" rx="0" fill="#63d9bc" /><rect x="281" y="328" width="18" height="5" rx="0" fill="#63d9bc" /><rect x="282" y="336" width="5" height="5" rx="0" fill="#06121d" /><rect x="291" y="336" width="5" height="5" rx="0" fill="#06121d" /><rect x="262" y="311" width="20" height="10" rx="2" fill="#06121d" /><rect x="266" y="313" width="12" height="6" rx="1" fill="#63d9bc" /><rect x="284" y="308" width="8" height="15" rx="1" fill="#91b3b6" /><rect x="283" y="306" width="11" height="3" rx="0" fill="#f3bf7a" /><path d="M289 304L292 299" fill="none" stroke="#63d9bc" stroke-width="1" /><path d="M282 302L283 296" fill="none" stroke="#63d9bc" stroke-width="1" /><title>harbour · commit · 4 recorded units</title></g><text x="280" y="360" font-size="10" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">harbour</text><text x="280" y="291" font-size="9" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">×4</text></g></g>
+<text x="280" y="368" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle">PARTS</text>
+</g>
+<g data-day="2026-11-10">
+<rect x="361" y="254" width="154" height="120" rx="6" fill="#102936" stroke="#42606c" stroke-opacity=".5"/>
+<rect x="370" y="263" width="12" height="12" rx="3" fill="#29454b" />
+<text x="387" y="273" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">TUE 10</text>
+<text x="507" y="272" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
+<path d="M440 279L440 292" fill="none" stroke="#42606c" stroke-width="2" />
+<rect x="419" y="304" width="42" height="28" rx="4" fill="#163441" stroke="#42606c" stroke-dasharray="3 3"/>
+<path d="M428 319L452 319" fill="none" stroke="#678893" stroke-width="2" />
+<text x="440" y="351" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" font-weight="700">IDLE LANE</text>
+</g>
+<g data-day="2026-11-11">
+<rect x="521" y="254" width="154" height="120" rx="6" fill="#102936" stroke="#42606c" stroke-opacity=".5"/>
+<rect x="530" y="263" width="12" height="12" rx="3" fill="#29454b" />
+<text x="547" y="273" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">WED 11</text>
+<text x="667" y="272" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
+<path d="M600 279L600 292" fill="none" stroke="#42606c" stroke-width="2" />
+<rect x="579" y="304" width="42" height="28" rx="4" fill="#163441" stroke="#42606c" stroke-dasharray="3 3"/>
+<path d="M588 319L612 319" fill="none" stroke="#678893" stroke-width="2" />
+<text x="600" y="351" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" font-weight="700">IDLE LANE</text>
+</g>
+<g data-day="2026-11-12">
+<rect x="681" y="254" width="154" height="120" rx="6" fill="#102936" stroke="#42606c" stroke-opacity=".5"/>
+<rect x="690" y="263" width="12" height="12" rx="3" fill="#29454b" />
+<text x="707" y="273" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">THU 12</text>
+<text x="827" y="272" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
+<path d="M760 279L760 292" fill="none" stroke="#42606c" stroke-width="2" />
+<rect x="739" y="304" width="42" height="28" rx="4" fill="#163441" stroke="#42606c" stroke-dasharray="3 3"/>
+<path d="M748 319L772 319" fill="none" stroke="#678893" stroke-width="2" />
+<text x="760" y="351" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" font-weight="700">IDLE LANE</text>
+</g>
+<g data-day="2026-11-13">
+<rect x="841" y="254" width="154" height="120" rx="6" fill="#244b51" stroke="#678893" stroke-opacity=".9"/>
+<rect x="850" y="263" width="12" height="12" rx="3" fill="#256d5e" />
+<text x="867" y="273" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">FRI 13</text>
+<text x="987" y="272" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">1 UNITS</text>
+<path d="M920 279L920 292" fill="none" stroke="#f3bf7a" stroke-width="2" stroke-dasharray="3 3"/>
+<g class="active" data-repo="sample-dev/ember" data-kind="pr_opened"><g class="machine pixel"><g class="machine-part"><rect x="891" y="321" width="57" height="26" rx="1" fill="#06121d" /><rect x="893" y="323" width="53" height="22" rx="1" fill="#557c8e" /><rect x="898" y="328" width="18" height="13" rx="1" fill="#163441" /><rect x="900" y="330" width="14" height="9" rx="0" fill="#90b6ff" /><rect x="921" y="328" width="18" height="5" rx="0" fill="#90b6ff" /><rect x="922" y="336" width="5" height="5" rx="0" fill="#06121d" /><rect x="931" y="336" width="5" height="5" rx="0" fill="#06121d" /><rect x="912" y="307" width="4" height="17" rx="0" fill="#91b3b6" /><path d="M914 309L927 300" fill="none" stroke="#90b6ff" stroke-width="4" stroke-linecap="square"/><rect x="924" y="297" width="12" height="5" rx="1" fill="#90b6ff" /><path d="M930 302L930 313" fill="none" stroke="#06121d" stroke-width="3" /><path d="M930 313L937 317" fill="none" stroke="#f3bf7a" stroke-width="2" /><title>ember · pr_opened · 1 recorded unit</title></g><text x="920" y="360" font-size="10" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">ember</text><text x="920" y="291" font-size="9" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" text-anchor="middle">×1</text></g></g>
+<text x="920" y="368" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle">ASSEMBLY</text>
+</g>
+<g data-day="2026-11-14">
+<rect x="1001" y="254" width="154" height="120" rx="6" fill="#102936" stroke="#42606c" stroke-opacity=".5"/>
+<rect x="1010" y="263" width="12" height="12" rx="3" fill="#29454b" />
+<text x="1027" y="273" font-size="12" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="850">SAT 14</text>
+<text x="1147" y="272" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 UNITS</text>
+<path d="M1080 279L1080 292" fill="none" stroke="#42606c" stroke-width="2" />
+<rect x="1059" y="304" width="42" height="28" rx="4" fill="#163441" stroke="#42606c" stroke-dasharray="3 3"/>
+<path d="M1068 319L1092 319" fill="none" stroke="#678893" stroke-width="2" />
+<text x="1080" y="351" font-size="10" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" font-weight="700">IDLE LANE</text>
+</g>
+<path d="M47 378L1155 378" fill="none" stroke="#678893" stroke-width="4" stroke-linecap="round"/>
+<rect x="115" y="374" width="10" height="8" rx="2" fill="#42606c" />
+<rect x="275" y="374" width="10" height="8" rx="2" fill="#f3bf7a" />
+<g class="travelling"><rect x="-5" y="-5" width="10" height="10" rx="2" fill="#63d9bc" /><animateMotion dur="6s" begin="0.25s" repeatCount="indefinite" path="M280 377L374 377"/></g>
+<rect x="435" y="374" width="10" height="8" rx="2" fill="#42606c" />
+<rect x="595" y="374" width="10" height="8" rx="2" fill="#42606c" />
+<rect x="755" y="374" width="10" height="8" rx="2" fill="#42606c" />
+<rect x="915" y="374" width="10" height="8" rx="2" fill="#f3bf7a" />
+<g class="travelling"><rect x="-5" y="-5" width="10" height="10" rx="2" fill="#90b6ff" /><animateMotion dur="6s" begin="1.25s" repeatCount="indefinite" path="M920 377L1014 377"/></g>
+<rect x="1075" y="374" width="10" height="8" rx="2" fill="#42606c" />
+<rect x="28" y="391" width="1144" height="19" rx="5" fill="#163441" />
+<rect x="43" y="395" width="12" height="10" rx="2" fill="#63d9bc" />
+<text x="60" y="404" font-size="10" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="750">PARTS 4</text>
+<rect x="267" y="395" width="12" height="10" rx="2" fill="#90b6ff" />
+<text x="284" y="404" font-size="10" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="750">ASSEMBLY 1</text>
+<rect x="491" y="395" width="12" height="10" rx="2" fill="#ffc27f" />
+<text x="508" y="404" font-size="10" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="750">SEALED 0</text>
+<rect x="715" y="395" width="12" height="10" rx="2" fill="#ff98a7" />
+<text x="732" y="404" font-size="10" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="750">INSPECT 0</text>
+<rect x="939" y="395" width="12" height="10" rx="2" fill="#c8adff" />
+<text x="956" y="404" font-size="10" fill="#fbefd9" font-family="system-ui,Segoe UI,sans-serif" font-weight="750">DISPATCH 0</text>
+<text x="1157" y="425" font-size="9" fill="#b8cbd0" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">PIXEL WORKS · SELECTED WEEK ONLY · NOT CI / DEPLOYMENT STATUS</text>
 </svg>
