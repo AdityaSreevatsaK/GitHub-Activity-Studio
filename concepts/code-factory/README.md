@@ -1,67 +1,97 @@
-# Code Factory: contribution calendar × miniature factory
+# Code Factory
 
-**Prototype. Synthetic demonstration activity only.** This concept is **not** installed on the owner's GitHub profile, and it is **not** an official GitHub contributions graph.
+### A living contribution calendar, not a factory pasted under a chart
 
-The **recognisable 53-column × 7-day GitHub-style calendar is now the centrepiece**. The factories are a second, charming layer: repository machines sit underneath the calendar, feeding a small conveyor with event-specific parcels. No fabricated events or production metrics.
+**Synthetic demonstration.** The images below use `shared/fixtures/demo-activity.json`. They are **not** the owner's real GitHub contributions, and the counts are recorded **event units**, not official GitHub contributions totals.
 
-## Rendered previews
+The highlighted contribution **week** expands into a seven-day miniature production line directly below it. A day with no recorded activity stays idle. An active day displays only its actual repository and event-type machinery.
 
-### Isometric workshop, night shift
+## Rendered designs (still images)
 
-![Synthetic demo calendar heatmap with a detailed isometric miniature code factory and five repository machines](exports/isometric-dark-still.svg)
+### 1. Isometric Foundry · Night shift
 
-### Side-scrolling pixel factory, day shift
+![GitHub-style 52-week calendar with highlighted week, seven directly linked daily factory lanes, and two active isometric machines from synthetic demo events](exports/isometric-dark-still.svg)
 
-![Synthetic demo calendar heatmap with a pixel-art miniature code factory below the activity grid](exports/pixel-light-still.svg)
+### 2. Pixel Works · Day shift
 
-Also available: [isometric day](exports/isometric-light-still.svg) · [pixel night](exports/pixel-dark-still.svg).
+![GitHub-style 52-week calendar with highlighted week, seven linked daily factory lanes, and pixel-art machines only for recorded activity](exports/pixel-light-still.svg)
 
-Animated versions (optional): [isometric night](exports/isometric-dark.svg) · [isometric day](exports/isometric-light.svg) · [pixel night](exports/pixel-dark.svg) · [pixel day](exports/pixel-light.svg).
+Also available: [Isometric daylight](exports/isometric-light-still.svg) · [Pixel night](exports/pixel-dark-still.svg) · [Optional animated isometric](exports/isometric-dark.svg) · [Optional animated pixel](exports/pixel-light.svg).
 
-**For an actual GitHub README, use a still SVG first.** These stills are intentionally embedded above so that the design can be reviewed without animation. Animated-SVG playback through GitHub's image proxy is not yet verified.
+**[Open the browser preview](preview.html)** for theme switching and the selectable contribution weeks. On GitHub, this URL shows the source file: run the local server below to interact with the preview. GitHub README images cannot run JavaScript, so the committed stills show a deterministic **latest active week**.
 
-## What the calendar and factory mean
+## Proof the factory and calendar match
 
-- **Columns are weeks; rows are Sunday to Saturday**, using the final 53 calendar-week columns as at the snapshot's `generated_at` timestamp. The last week may be incomplete.
-- **Green squares mark days with recorded events** from the input. Shade represents the total recorded **event units** for that day, *not necessarily GitHub contribution counts*.
-- **Repositories become named machines.** The five busiest stations (by recorded units) are selected, with explicit overflow if necessary.
-- **Events become parcels** on the lower conveyor: commits = parts (teal), PR opened = assembly (blue), PR merged = sealed (amber), issues opened = inspection (coral), releases = dispatch (purple). The visual metaphor does **not** suggest actual CI, builds, deployments or shipping.
-- A source-backed event with `count: N` produces **one parcel marked ×N**, not N invented activity records. The graph deduplicates identical event IDs, rejects conflicting IDs and sorts chronologically.
-- The 52-week window includes only dates at/before `generated_at`. Recorded events outside that window are disclosed. An empty square means no **recorded event in this snapshot**, **not** proven inactivity on GitHub.
+In the shared fixture, the default selected week is **8–14 November 2026**:
 
-The snapshot is deliberately **partial**. GitHub's official contributions heatmap uses more nuanced contribution rules, eligibility, privacy and source coverage. Do not claim this visual is an exact copy of that heatmap without a future shared, verified collector.
+| Date | Calendar activity | Factory action |
+| --- | --- | --- |
+| Monday 9 November | 4 recorded commit units | **harbour** part forge, labelled ×4 |
+| Friday 13 November | 1 PR-opened record | **ember** assembly arm, labelled ×1 |
+| Other days | No recorded records | Idle machinery, no event parcels |
 
-## Run locally on Windows
+Change the selected week in the browser. The highlighted column, seven day lanes, machine names, event types, units and the ledger all update together. Choosing a week without recorded events produces seven idle lanes, never decorative fake production.
 
-Requires **Node.js 20+**, no packages, no tokens, and no external network access after cloning. From PowerShell:
+Five production metaphors are deliberately distinct:
+
+- `commit` → **parts forge** (teal)
+- `pr_opened` → **assembly arm** (blue)
+- `pr_merged` → **sealing press** (amber), *not a deployment*
+- `issue_opened` → **inspection lens** (coral), *not necessarily a bug*
+- `release` → **dispatch crane** (violet)
+
+Each source event produces one labelled machine and preserves its original `count` as **×N**. A day with more than two events displays two machines and a truthful `+N more recorded events` marker. All recorded activity within the calendar's date window still contributes to the entire heatmap. The highlight and the factory are driven by exactly the same week model.
+
+## Windows PowerShell quick start
+
+Requires **Node.js 20+** and Python 3 for the optional local web server. The renderer itself uses only built-in Node modules: **no npm install, GitHub token, paid API or live network access**.
 
 ```powershell
 git clone https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio.git
 cd GitHub-Activity-Studio
 git switch concept/code-factory
+
+# Regenerate all eight SVGs from the common synthetic fixture
 node concepts/code-factory/calendar-factory.mjs
+
+# Run the contract, week-mapping and SVG tests
 node --test concepts/code-factory/tests/test_calendar_factory.mjs
-python -m unittest discover -s concepts/code-factory/tests -v
+
+# Explore and click any of the 53 calendar-week columns
 python -m http.server 8000
 ```
 
-Open **http://localhost:8000/concepts/code-factory/preview.html**. Choose either layout, light/dark colour theme or still/animated motion. The preview starts in **still mode**, including on mobile.
+Open **http://localhost:8000/concepts/code-factory/preview.html**.
 
-To export from your own v1 normalised snapshot:
+To render another **normalised v1 snapshot** and choose a specific calendar-week column (0–52):
 
 ```powershell
-node concepts/code-factory/calendar-factory.mjs "C:\path\to\snapshot.json" "C:\path\to\exports"
+node concepts/code-factory/calendar-factory.mjs "C:\path\to\snapshot.json" "C:\path\to\output" --week-index 51
 ```
 
-This regenerates the **eight** profile-sized standalone SVGs: two styles × two themes × animated/still. The original `factory.py` remains as a historical experiment; it **does not produce this calendar-first version**. Do not run it over the new exports.
+Without `--week-index`, the exporter automatically picks the most recent week with recorded activity. If none exist, it displays the current calendar week with idle lanes.
 
-## Engineering and design notes
+The old `factory.py` is retained for historical comparison. **It is not the source of these updated exports.** Running it over `exports/` overwrites the new design, so use the Node exporter instead.
 
-- One deterministic source of truth: `calendar-factory.mjs`, with no third-party sprites, fonts, APIs or dependencies.
-- All names and event tooltips are XML-escaped; unsupported kinds, malformed timestamps, invalid counts and conflicting duplicate IDs are rejected.
-- Mobile renders scale the 1000 × 320 SVG without horizontal overflow. At narrow sizes, month and station labels become small; the HTML preview provides a larger view.
-- SVGs contain accessible title/description text. Static versions have no motion; animated versions use CSS and SVG SMIL, with reduced-motion styling.
-- The five-station limit and nine-parcel limit affect only the factory strip. The **calendar still reflects all valid records within the displayed date window**.
-- This branch is a prototype. A future verified public-only GitHub collector should be shared between all concepts rather than improvised here.
+## How the data is handled
 
-**Remaining before release:** visually verify both variants in GitHub's rendered README at mobile width, run Windows-native test commands, and confirm the optional animated SVG behaviour in GitHub's image delivery. Keep this PR as **draft**; do not merge or modify the live profile.
+- The normalised snapshot follows [the shared data contract](../../docs/DATA_CONTRACT.md). No concept-specific GitHub collector has been added.
+- Calendar columns are **53 Sunday-start weeks**, covering approximately the previous 52 weeks plus the current incomplete week. Days after `generated_at` are not treated as zero contributions, and events after the snapshot's UTC timestamp are excluded.
+- Event IDs are deduplicated, conflicts rejected, repository ownership preserved using `full_name`, and timestamps handled as UTC. Text is escaped before becoming SVG attributes or labels.
+- Colour intensity reflects *recorded event units* across the day. Because the shared fixture is sparse, an empty calendar cell means **no input record**, not proof that no contributions occurred.
+- A selected day has one miniature machine per visible event; to stay readable at 1200 × 430 px, only the first **two event records per day** are drawn, with overflow disclosed.
+- All artwork uses original procedural SVG geometry, with different isometric and pixel-art drawings; no external imagery, fonts or third-party sprites.
+
+## Accessibility and GitHub behaviour
+
+The browser preview provides an accessible week selector, previous/next buttons, event ledger, static default and optional motion. Each SVG contains a title, description and event-specific machine titles. Browser reduced-motion preferences are respected, and a static SVG can always be used instead.
+
+The **README embeds still SVGs**, so the design can be judged without relying on GitHub SVG animation support. CSS/SMIL animation in GitHub's image proxy is not claimed as verified. Labels will be smaller on mobile because the complete 53-week chart shares a single wide image.
+
+### Verification status
+
+- **13 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
+- Native `node --test`, Windows PowerShell execution, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes.
+- The pull request remains draft. **No changes to `master` or the owner's profile.**
+
+The next review should focus on visual legibility, verifying the embedded still images on GitHub, and only then considering shared real-data integration with the other concepts.
