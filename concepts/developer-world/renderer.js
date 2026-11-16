@@ -34,8 +34,18 @@ function normalise(raw){
   check(Number.isSafeInteger(e.count)&&e.count>0&&e.count<=100000,"Invalid count "+i);
   ids.add(e.id);activity.push({id:e.id,kind:e.kind,repo_full_name:e.repo_full_name,occurred_at:e.occurred_at,count:e.count});
  });
- activity.sort((a,b)=>a.occurred_at.localeCompare(b.occurred_at)||a.id.localeCompare(b.id));
+ activity.sort((a,b)=>compareUtc(a.occurred_at,b.occurred_at)||a.id.localeCompare(b.id));
  return {source:raw.source,generated_at:raw.generated_at,user:{login:raw.user.login,url:safeUrl(raw.user.url)},repositories,activity};
+}
+// UTC ISO-8601 strings can use different fractional precision. Compare them numerically,
+// rather than placing ".500Z" before "Z" in an ordinary string sort.
+function compareUtc(a,b){
+ const aa=a.slice(0,19),bb=b.slice(0,19);
+ if(aa!==bb)return aa<bb?-1:1;
+ const af=a.slice(19,-1).replace(/^\./,""),bf=b.slice(19,-1).replace(/^\./,"");
+ const n=Math.max(af.length,bf.length);
+ const fa=af.padEnd(n,"0"),fb=bf.padEnd(n,"0");
+ return fa<fb?-1:fa>fb?1:0;
 }
 const stage=n=>n>=10?4:n>=6?3:n>=3?2:n>=1?1:0;
 function statsFor(data,progress){
@@ -61,7 +71,7 @@ function calendarFor(data,progress){
  let outside=0;
  for(const e of data.activity.slice(0,seen)){
   const date=e.occurred_at.slice(0,10),cell=lookup.get(date);
-  if(!cell||cell.future||e.occurred_at>data.generated_at){outside++;continue;}
+  if(!cell||cell.future||compareUtc(e.occurred_at,data.generated_at)>0){outside++;continue;}
   cell.units+=e.count;cell.events++;cell.byKind[e.kind]+=e.count;cell.byRepo[e.repo_full_name]=(cell.byRepo[e.repo_full_name]||0)+e.count;
   const observed=byRepo.get(e.repo_full_name);observed.units+=e.count;observed.events++;
  }
@@ -69,7 +79,7 @@ function calendarFor(data,progress){
  const all=new Map();
  for(const e of data.activity){
   const date=e.occurred_at.slice(0,10),cell=lookup.get(date);
-  if(!cell||cell.future||e.occurred_at>data.generated_at)continue;
+  if(!cell||cell.future||compareUtc(e.occurred_at,data.generated_at)>0)continue;
   let dates=all.get(e.repo_full_name);
   if(!dates){dates=new Map();all.set(e.repo_full_name,dates);}
   dates.set(date,(dates.get(date)||0)+e.count);
