@@ -47,7 +47,7 @@ node concepts/agent-swarm/serve.mjs
 5. Run tests in another PowerShell window:
 
 ~~~powershell
-node --test concepts/agent-swarm/tests/scene.test.mjs
+node --test concepts/agent-swarm/tests/scene.test.mjs concepts/agent-swarm/tests/calendar.test.mjs
 ~~~
 
 To use a different, already-normalised public snapshot:
