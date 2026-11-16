@@ -196,3 +196,17 @@ test("heavy input preserves 10k valid source records with bounded SVG complexity
  assert.match(svg,/data-records="10000" data-units="30000"/);
  assert.ok(svg.length<150000,"SVG should remain compact under heavy activity");
 });
+
+test("mixed ISO UTC precision sorts chronologically and equivalent timestamps deduplicate",()=>{
+ const d=clone(fixture);
+ d.generated_at="2026-11-16T00:00:00.123Z";
+ d.activity=[
+  {...fixture.activity[0],id:"later",occurred_at:"2026-11-09T07:45:00.100Z"},
+  {...fixture.activity[0],id:"earlier",occurred_at:"2026-11-09T07:45:00Z"},
+  {...fixture.activity[0],id:"earlier",occurred_at:"2026-11-09T07:45:00.000Z"},
+ ];
+ const snap=validSnapshot(d);
+ assert.equal(snap.events.length,2);
+ assert.deepEqual(snap.events.map(e=>e.id),["earlier","later"]);
+ assert.match(render(d),/6 UNITS/);
+});
