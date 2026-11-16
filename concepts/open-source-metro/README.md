@@ -18,7 +18,7 @@ The checked-in previews use the shared **synthetic demonstration fixture**, **no
 
 ![Seventeen synthetic repository stations referenced beneath a 53-week source-activity calendar; dense same-day events are interchanges.](exports/stress-modern-dark-still.svg)
 
-The still SVGs above are the intended GitHub README embeds. [Animated metropolitan SVG](exports/modern-dark.svg) · [Animated vintage SVG](exports/vintage-light.svg) · [Browser preview](exports/preview.html). GitHub's image proxy may not play SVG animations, so the still versions are the safe default.
+The still SVGs above are the intended GitHub README embeds. [Animated metropolitan SVG](exports/modern-dark.svg) · [Animated vintage SVG](exports/vintage-light.svg) · [Browser preview](exports/preview.html). GitHub [does not support inline animation in SVG images](https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files), so the still versions are the intended GitHub embeds; animated SVGs are for local browser viewing.
 
 ## Reading the map
 
@@ -59,13 +59,13 @@ For existing users of `metro.py`, its CLI delegates to the calendar-first genera
 
 ## Validation and limits
 
-- Offline, deterministic, Python standard-library renderer and **26 calendar tests**, **7 checked-in SVG gate tests**, and **6 browser-preview contract tests**, in addition to the existing legacy regression suite. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
+- Offline, deterministic, Python standard-library renderer and **30 calendar test cases**, **7 checked-in SVG gate tests**, and **6 browser-preview contract tests**, in addition to the existing 21 legacy regression tests. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
 - The supplied demonstration fixture has **five repositories and ten source events** across August to November 2026. It is intentionally sparse across a full 53-week calendar. The 17-station stress demo is separately labelled as synthetic.
 - The snapshot is **not** a complete GitHub contribution calendar. GitHub source APIs have differing coverage; a future public-data collector would need an independently reviewed data provenance and pagination contract.
-- The renderer limits the directory to up to **18 repositories**, prioritising those active in the displayed year, and the **most recent 240 source events** from those repositories; omissions appear in the footer. Historical events outside the visible 53-week range or events dated beyond snapshot generation are also excluded and counted as omitted.
+- The renderer limits the directory to up to **18 repositories**, preferring those with more recorded in-window events when the 18-station cap is exceeded, and the **most recent 240 source events** from those repositories; omissions appear in the footer. Historical events outside the visible 53-week range or events dated beyond snapshot generation are also excluded and counted as omitted.
 - Browser links are opt-in via `render(..., browser_links=True)` for `source="github"` only, and only safe GitHub HTTPS links are allowed. Demonstration previews have no click-through links.
-- Static SVGs are the GitHub-compatible exports. A GitHub README render, mobile browser and screen-reader accessibility pass should be checked before installing on a public profile. SVG animation in GitHub is not guaranteed.
+- Static SVGs are the GitHub-compatible exports. A GitHub README render, mobile browser and screen-reader accessibility pass should be checked before installing on a public profile. GitHub does not render inline SVG animation; browsers may play animated exports when opened locally.
 
 **Scope:** changes are confined to this concept and the **branch-only landing README**. Other concepts, `master`, and the profile repository remain untouched. The draft PR remains unmerged.
 
-**Browser verification note:** This environment's automated Chromium was blocked from loading even a local `data:` page. The responsive browser behaviour is covered by offline code contracts, but a real mobile-browser and GitHub image-proxy check is still required before release.
+**Verification status:** Seven SVG integrity gate tests and the checked-in SVG audit passed locally. Twenty-six calendar tests had passed before these latest changes. The additional calendar and browser-preview tests have been added but have not yet run under CI. Automated Chromium was blocked from loading even a local `data:` page, so a real mobile-browser, full-suite and GitHub README render check are still required before release.
