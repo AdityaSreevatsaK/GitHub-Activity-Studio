@@ -38,8 +38,8 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 </style>
 </head>
 <body><main>
-<header><div><div class="eyebrow">GitHub Activity Studio / concept 03</div><h1>Agent Swarm</h1>
-<p>A choreographed visual metaphor. Real event categories, pretend little helpers.<br>No LLM calls. No repository actions.</p></div><mark id="provenance">● DEMO DATA</mark></header>
+<header><div><div class="eyebrow">GitHub Activity Studio / concept 03</div><h1>Agent Swarm: Living Contributions</h1>
+<p>A calendar of recorded GitHub activity, animated by tiny coordinated helpers.<br>The agents are metaphors, not real GitHub operations.</p></div><mark id="provenance">● DEMO DATA</mark></header>
 <section class="panel" aria-label="Interactive design preview">
 <div class="controls">
 <fieldset aria-label="Visual design"><legend>Design</legend>
@@ -52,14 +52,15 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <div class="stage" id="stage">
 <object id="art" type="image/svg+xml" data="exports/geometric-dark.svg" aria-label="Geometric swarm, source-backed symbolic tasks"><img src="exports/geometric-dark-still.svg" alt="A static diagram of activity hubs and symbolic helper agents"></object>
 </div>
+<p class="note" id="day-detail" aria-live="polite">Hover over a calendar cell to inspect its recorded events.</p>
 <div class="motion"><label for="scrub" class="eyebrow">Replay</label><input id="scrub" type="range" min="0" max="140" step="1" value="0" aria-label="Scrub the fourteen-second replay"><time id="clock">0.0s / 14s</time></div>
 <p class="note">Pause or scrub to inspect event phases. The timeline is compressed choreography, not original event time. Reduced-motion preferences start paused. Static images are available below.</p>
 </section>
 <div class="layout">
-<section class="panel" aria-label="Activity provenance"><h2>From event to animation</h2>
-<div class="stats"><div class="stat" id="events">Loading…</div><div class="stat" id="repos"></div><div class="stat" id="units"></div></div>
+<section class="panel" aria-label="Activity provenance"><h2>From recorded dates to the swarm</h2>
+<div class="stats"><div class="stat" id="events">Loading…</div><div class="stat" id="repos"></div><div class="stat" id="units"></div><div class="stat" id="days"></div></div>
 <p id="limits" class="note"></p><h2>Symbol key</h2><p class="note">C = commit · P+ = PR opened · PM = PR merged · ? = issue · R = release. Counts are units within source events.</p>
-<p class="note">Task phases: queued → assigned → travelling → working → complete → delivered. Helpers are visual metaphor only.</p>
+<p class="note">Cell intensity shows source-observed events, not GitHub’s complete contribution totals. Blank cells do not prove inactivity. Task phases: queued → assigned → travelling → working → complete → delivered.</p>
 <a id="gif" href="exports/geometric-dark.gif">Download GitHub-compatible GIF</a> ·
 <a id="still" href="exports/geometric-dark-still.svg">Static fallback</a>
 </section>
@@ -89,7 +90,7 @@ function renderState(){
  }
 }
 function choose(next){style=next;el("geometric").setAttribute("aria-pressed",String(style==="geometric"));el("robots").setAttribute("aria-pressed",String(style==="robots"));loadArt()}
-function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>setSvgTime();
+function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{const root=svg();if(root)for(const cell of root.querySelectorAll(".day-cell")){cell.style.cursor="help";cell.addEventListener("pointerenter",()=>{el("day-detail").textContent=cell.dataset.date+": "+cell.dataset.events+" observed event(s), "+cell.dataset.units+" original activity units. This is not a complete GitHub contribution count."});}}catch{}};
  el("gif").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+".gif";
  el("still").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";
 }
@@ -106,8 +107,9 @@ el("scrub").addEventListener("input",e=>{seconds=Math.min(13.99,Number(e.target.
  el("provenance").textContent=scene.source==="demo"?"● DEMO DATA":"● GITHUB SNAPSHOT";
  el("events").textContent=scene.shown+" / "+scene.event_total+" events shown";
  el("repos").textContent=scene.repositories.length+" / "+scene.repository_total+" hubs";
- el("units").textContent=scene.jobs.reduce((n,j)=>n+j.count,0)+" visible units";
- el("limits").textContent=(scene.truncated?"Truncated: five most recently active repositories and the ten latest eligible event packets. ":"All input events are represented. ")+(scene.stale_days>30?"Snapshot is stale by "+scene.stale_days+" days. ":"")+"Agents are illustrative, never operational.";
+ el("units").textContent=scene.jobs.reduce((n,j)=>n+j.count,0)+" animated units";
+ el("days").textContent=scene.calendar.observed_days+" observed days";
+ el("limits").textContent=(scene.truncated?"Animated subset: five most recent repository beacons and up to ten latest eligible events. ":"Calendar covers observed events in the 53-week window. ")+(scene.stale_days>30?"Snapshot is stale by "+scene.stale_days+" days. ":"")+"Agents are illustrative, never operational.";
  renderState();setPlaying(!reduced);
  }catch(error){el("tasks").textContent="Could not load scene: "+error.message;el("events").textContent="Build required";setPlaying(false)}})();
 document.addEventListener("visibilitychange",()=>{if(document.hidden&&playing)setPlaying(false)});

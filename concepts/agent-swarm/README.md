@@ -1,10 +1,10 @@
 # Agent Swarm
 
-A pair of original, deterministic **visual metaphors** of GitHub activity. Eight symbolic helpers relay event packets to labelled repository hubs. **No LLM calls, no autonomous agents performing GitHub actions, and no write access.**
+A pair of original, deterministic **visual metaphors** of GitHub activity. Eight symbolic helpers travel across a recognisable **53-week contribution-style calendar**, co-ordinating on recorded event days. Repository beacons remain secondary. **No LLM calls, no autonomous agents performing GitHub actions, and no write access.**
 
 | Primary design | Alternative |
 | --- | --- |
-| **Geometric:** restrained shapes, signals and orbital choreography | **Mini robots:** friendly little helpers and workshop bays |
+| **Geometric:** luminous activity cells, elegant paths and geometric swarm choreography | **Mini robots:** expressive helpers, charging docks and miniature task-cell workshops |
 
 All sample data is explicitly marked **synthetic demo**.
 
@@ -21,6 +21,10 @@ These are **synthetic demonstration data**, not the owner's real GitHub contribu
 ![Animated miniature robot Agent Swarm showing demo GitHub events mapped to symbolic workshop tasks](exports/robots-light.gif)
 
 If animations are disabled, see the [geometric still](exports/geometric-dark-still.svg) and [robot still](exports/robots-light-still.svg). **These animations are visual metaphors, not real AI agents.**
+
+## Calendar interpretation
+
+The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar can display events from all repositories in the input, whilst the animated swarm selects up to five recently active repository beacons and the ten latest eligible events. Animations target source-backed calendar dates; the 14-second replay remains a visual metaphor.
 
 ## Windows: start to finish
 
@@ -71,16 +75,16 @@ GIF is supported as an image format in GitHub READMEs. Animated SVGs may behave 
 
 ## Trustworthy mapping
 
-Each observed GitHub event corresponds to **one** symbolic task, not one task per commit. Its source repository becomes a hub. The kind determines a separate glyph: commit (C), PR opened (P+), PR merged (PM), issue opened (?), release (R). Its count appears explicitly as source-backed **units within the packet**, never disguised as commits. Two numbered illustrative helpers travel to a hub, perform an abstract collaborative transformation, and return to the dock. State transitions are queued → assigned → travelling → working → complete → delivered. The entire sequence is a metaphor; the original events were not made by AI agents, and its compressed timeline does not represent actual elapsed time.
+Each observed GitHub event corresponds to **one** symbolic task, not one task per commit. The event timestamp selects a calendar cell; its repository becomes a secondary beacon. The kind determines a separate glyph: commit (C), PR opened (P+), PR merged (PM), issue opened (?), release (R). Its count appears explicitly as source-backed **units within the packet**, never disguised as commits. Two numbered illustrative helpers travel to a hub, perform an abstract collaborative transformation, and return to the dock. State transitions are queued → assigned → travelling → working → complete → delivered. The entire sequence is a metaphor; the original events were not made by AI agents, and its compressed timeline does not represent actual elapsed time.
 
-The visual window shows at most **five** recently active repository hubs and the **ten latest** eligible event packets. Clipping is disclosed. Other repository histories are not inferred or invented. Source event IDs are deduplicated, and names are escaped. Empty data, one repository, missing optional metadata, bursty load, long names, invalid input and stale snapshots are handled. A 30-day stale warning is relative to the snapshot's generated timestamp.
+The calendar covers **53 weeks** of observed events, while at most **five** recently active repository beacons and **ten latest** event packets are animated. Clipping and out-of-window events are disclosed. Other repository histories are not inferred or invented. Source event IDs are deduplicated, and names are escaped. Empty data, one repository, missing optional metadata, bursty load, long names, invalid input and stale snapshots are handled. A 30-day stale warning is relative to the snapshot's generated timestamp.
 
 ## Technical notes and trade-offs
 
-- Engine: standalone deterministic Node.js ES modules, standard library only. No API calls, paid providers, tokens or third-party fonts.
+- Engine: standalone deterministic Node.js ES modules, standard library only. Calendar and GIF implementations live in `calendar.mjs` and `calendar-gif.mjs`. No API calls, paid providers, tokens or third-party fonts.
 - Data: the repository's shared/fixtures/demo-activity.json. The normalised contract is documented in docs/DATA_CONTRACT.md. No independently developed collector or invented activity data.
-- Geometry: smooth, aligned arcs and restrained hubs with consistent visual encoding. Mini robots: separate robot silhouettes, antennae, face screens and playful collaborative pairs. Distinct compositions, not reskinned snake or stats cards.
-- Exports: detailed vector rendering (SVG) and a purposely simplified pixel GIF rendering from the **same schedule**, not pixel-identical files. A native LZW encoder avoids extra dependencies.
+- Geometry: bright recorded-day cells, controlled routes, event halos, and repository beacons. Mini robots add face screens, antennae, charging docks and paired approaches to activity cells. Both remain recognisable as calendar graphs.
+- Exports: detailed SVG and simplified pixel GIF from the **same calendar and task schedule**, not pixel-identical files. A native LZW encoder avoids extra dependencies.
 - Accessibility: descriptive SVG titles, descriptions, visible legend and demo label, keyboard-operable controls and static fallbacks. Reduced-motion preferences initially pause the browser animation. GIFs have no automatic reduced-motion adaptation; use stills where necessary.
 - The preview server binds to 127.0.0.1 and only serves files within this concept directory. The inspector uses textContent, and export text is escaped.
 - Tests cover validation, determinism, deduplication, state transitions, agent assignment conflicts, truncation, provenance, escaping, themes, rendering and GIF integrity.
