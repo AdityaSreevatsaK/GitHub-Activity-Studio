@@ -1,6 +1,6 @@
 # Next iteration: three unmistakably GitHub-first constellation prototypes
 
-**Status: NOT YET IMPLEMENTED.** This is the concrete build specification approved after the owner rejected the original standalone repository constellation and the complex signal-lens revision. Treat the existing illustrations as legacy references only, not accepted deliverables.
+**Status: IMPLEMENTED, 16 November 2026.** Comet Streaks, Celestial Cartographer and Starforge are built with one deterministic 53-week calendar engine, 24 new passing Node tests, a responsive interactive preview and GitHub-compatible night/paper SVG exports. The original design instructions below remain as the accepted specification; previous illustrations are legacy only. See [README.md](README.md) for real previews, source-honesty limits, Windows commands and verified/unverified checks.
 
 **Branch:** `concept/constellation`  
 **PR:** https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/1 (must stay draft)  
