@@ -1,30 +1,26 @@
 # GitHub Activity Studio
 
-## Open Source Metro | Branch preview
+## Open Source Metro | Contribution calendar × transit network
 
-**Two transit-map designs, built from synthetic demonstration data.** This gallery is shown **only on the `concept/open-source-metro` branch** while the concept is under review. It is not the owner's real GitHub contribution activity.
+**Concept 04, shown only on this branch.** The original standalone route diagram has been redesigned around the **GitHub-style 53-week × 7-day contribution grid**. Coloured metro services connect real dates from the supplied synthetic fixture, and numbered station markers identify repositories. **All events shown are synthetic demonstration data, not the owner's GitHub history.**
 
-### Contemporary metropolitan map
+### Contemporary metropolitan: Midnight
 
-![Contemporary metro map, dark mode, showing five repositories as station columns and five event-type routes. Synthetic demonstration only.](concepts/open-source-metro/exports/modern-dark-still.svg)
+![A GitHub-style 53-week daily-square calendar in midnight blue; numbered repository stations and five neon metro services trace supplied synthetic event dates.](concepts/open-source-metro/exports/modern-dark-still.svg)
 
-[View animated metropolitan map](concepts/open-source-metro/exports/modern-dark.svg) · [Open concept documentation](concepts/open-source-metro/README.md)
+### Refined vintage transport: Parchment
 
-### Refined vintage transport diagram
+![A paper-coloured 53-week contribution-style calendar with vintage transit lines, numbered repository stations, and a classical station directory; synthetic demo data.](concepts/open-source-metro/exports/vintage-light-still.svg)
 
-![Vintage paper-toned transport diagram of five repositories and event-type routes. Synthetic demonstration only.](concepts/open-source-metro/exports/vintage-light-still.svg)
+### Stress preview: 17 synthetic stations
 
-[View animated vintage map](concepts/open-source-metro/exports/vintage-light.svg) · [Open local browser preview](concepts/open-source-metro/exports/preview.html)
+![Seventeen synthetic repositories represented as a station directory beneath a calendar-first source-event metro diagram.](concepts/open-source-metro/exports/stress-modern-dark-still.svg)
 
-### Extended network test: 17 stations
+**How to read it:** A coloured route denotes one event kind (commits, PRs opened, PRs merged, issues opened or releases), and each station stop is on a dated source event. Green cells show **observed units in the supplied snapshot**, not GitHub's complete contribution count. Blank days are **unknown, not verified zero contributions**. No line claims relationships between repositories.
 
-![Seventeen-station synthetic demo metro network used to assess label readability and layout.](concepts/open-source-metro/exports/stress-modern-dark-still.svg)
+[Full design explanation and Windows instructions](concepts/open-source-metro/README.md) · [Animated contemporary SVG](concepts/open-source-metro/exports/modern-dark.svg) · [Animated vintage SVG](concepts/open-source-metro/exports/vintage-light.svg) · [Draft PR #4](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/4)
 
-**How to interpret the map:** Stations represent repositories, and coloured routes represent recorded event categories: commits, PRs opened, PRs merged, issues opened and releases. Animated trains follow UTC event order. Route sharing does not imply an actual relationship between repositories.
-
-**Viewing note:** GitHub renders the still SVGs above. Animated SVG motion may be blocked or stripped by GitHub's image proxy; open a raw SVG in a browser, or run the offline [browser preview](concepts/open-source-metro/README.md#windows-run-from-a-fresh-clone) for dependable animation and design controls. GitHub does not run JavaScript inside repository HTML previews.
-
-[Review Draft PR #4](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/4)
+**GitHub view:** Still SVGs above are appropriate for rendered README previews. Browser controls require running the local generator. GitHub image-proxy playback of SVG motion is not guaranteed.
 
 ---
 
