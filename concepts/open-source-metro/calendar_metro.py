@@ -70,7 +70,7 @@ def normalise(source: object) -> dict:
         raise ValueError("Expected v1 demo or github snapshot")
     generated = utc_timestamp(source.get("generated_at"))
     user = source.get("user")
-    if not isinstance(user, dict) or not isinstance(user.get("login"), str) or len(user["login"]) > 120:
+    if not isinstance(user, dict) or not isinstance(user.get("login"), str) or not 1 <= len(user["login"]) <= 120:
         raise ValueError("Missing/invalid user.login")
     if not isinstance(source.get("repositories"), list) or not isinstance(source.get("activity"), list):
         raise ValueError("Expected repository and activity lists")
@@ -134,10 +134,24 @@ def plan(snapshot: dict) -> dict:
     today = snapshot["generated"].date()
     sunday = today - timedelta(days=(today.weekday() + 1) % 7)
     start = sunday - timedelta(weeks=WEEKS - 1)
-    repo_list = snapshot["repos"][:MAX_REPOS]
+    # Select stations with events in the displayed period before inactive ones.
+    # A historical repository must not displace a recently active station merely
+    # because it had an event years before this calendar window.
+    eligible = [x for x in snapshot["events"]
+                if start <= x["date"].date() <= today and x["date"] <= snapshot["generated"]]
+    first_visible = {}
+    for event in eligible:
+        first_visible.setdefault(event["repo"], event["date"])
+    repo_list = sorted(snapshot["repos"], key=lambda r: (
+        r["full_name"] not in first_visible,
+        first_visible.get(r["full_name"], datetime.max.replace(tzinfo=timezone.utc)),
+        r["full_name"],
+    ))[:MAX_REPOS]
     repo_names = {r["full_name"] for r in repo_list}
-    filtered = [x for x in snapshot["events"] if x["repo"] in repo_names][:MAX_EVENTS]
-    visible = [x for x in filtered if start <= x["date"].date() <= today]
+    # Retain recent source events if this snapshot exceeds the display cap.
+    # Filtering by an exact instant also excludes events later on the snapshot day.
+    selected = [x for x in eligible if x["repo"] in repo_names]
+    visible = selected[-MAX_EVENTS:]
     by_day = defaultdict(list)
     for ev in visible:
         by_day[ev["date"].date()].append(ev)

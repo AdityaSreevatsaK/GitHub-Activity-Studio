@@ -95,6 +95,48 @@ class CalendarContract(unittest.TestCase):
         self.assertEqual((len(plan(stress)['repos']),stress['event_total']),(17,34))
         self.assertIn('viewBox="0 0 1320 595"',render(stress))
 
+    def test_today_after_snapshot_time_not_reported_as_observed(self):
+        data = raw()
+        # Generated 16 Nov at 00:00 UTC: events from later that day are not observed.
+        data["activity"].append({**data["activity"][0], "id": "later-same-day",
+                                 "occurred_at": "2026-11-16T16:00:00Z"})
+        result = plan(normalise(data))
+        self.assertEqual(len(result["events"]), 10)
+        self.assertEqual(result["omitted_events"], 1)
+        self.assertNotIn("later-same-day", render(normalise(data)))
+
+    def test_in_window_repositories_prioritised_over_old_inactive_repos(self):
+        data = raw()
+        for i in range(30):
+            full = f"historic/archive-{i:02d}"
+            data["repositories"].append({"full_name": full, "name": f"archive-{i:02d}"})
+            data["activity"].append({"id": f"historic-{i:02d}", "repo_full_name": full,
+                                     "kind": "commit", "occurred_at": "2020-01-01T10:00:00Z", "count": 1})
+        result = plan(normalise(data))
+        self.assertEqual(len(result["repos"]), MAX_REPOS)
+        self.assertTrue(all(f"sample-dev/{name}" in {r["full_name"] for r in result["repos"]}
+                            for name in ("aurora", "atlas", "ember", "orbit", "harbour")))
+        self.assertEqual(len(result["events"]), 10)
+        self.assertEqual(result["omitted_repos"], 17)
+
+    def test_high_volume_prefers_recent_events_and_reports_cap(self):
+        data = raw()
+        data["activity"] = [
+            {"id": f"bulk-{i:03d}", "repo_full_name": "sample-dev/aurora", "kind": "commit",
+             "occurred_at": f"2026-10-{(i // 15) + 1:02d}T{(i % 15):02d}:00:00Z", "count": 1}
+            for i in range(300)
+        ]
+        result = plan(normalise(data))
+        self.assertEqual(len(result["events"]), MAX_EVENTS)
+        self.assertEqual(result["events"][0]["id"], "bulk-060")
+        self.assertEqual(result["events"][-1]["id"], "bulk-299")
+        self.assertEqual(result["omitted_events"], 60)
+
+    def test_empty_user_login_rejected(self):
+        data = raw()
+        data["user"]["login"] = ""
+        with self.assertRaises(ValueError): normalise(data)
+
     def test_limits_disclosed(self):
         data=raw()
         data['repositories'].extend({'full_name':f'other/repo-{i:02}', 'name':f'repo-{i:02}'} for i in range(25))

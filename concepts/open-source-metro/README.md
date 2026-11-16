@@ -56,10 +56,10 @@ For existing users of `metro.py`, its CLI delegates to the calendar-first genera
 
 ## Validation and limits
 
-- Offline, deterministic, Python standard-library renderer and **22 calendar tests** in addition to the existing legacy regression suite. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
+- Offline, deterministic, Python standard-library renderer and **26 calendar tests** in addition to the existing legacy regression suite. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
 - The supplied demonstration fixture has **five repositories and ten source events** across August to November 2026. It is intentionally sparse across a full 53-week calendar. The 17-station stress demo is separately labelled as synthetic.
 - The snapshot is **not** a complete GitHub contribution calendar. GitHub source APIs have differing coverage; a future public-data collector would need an independently reviewed data provenance and pagination contract.
-- The renderer limits the directory to the first **18 repositories** and the first **240 selected-repository source events**; omissions appear in the footer. Historical events outside the visible 53-week range or events dated beyond snapshot generation are also excluded and counted as omitted.
+- The renderer limits the directory to up to **18 repositories**, prioritising those active in the displayed year, and the **most recent 240 source events** from those repositories; omissions appear in the footer. Historical events outside the visible 53-week range or events dated beyond snapshot generation are also excluded and counted as omitted.
 - Browser links are opt-in via `render(..., browser_links=True)` for `source="github"` only, and only safe GitHub HTTPS links are allowed. Demonstration previews have no click-through links.
 - Static SVGs are the GitHub-compatible exports. A GitHub README render, mobile browser and screen-reader accessibility pass should be checked before installing on a public profile. SVG animation in GitHub is not guaranteed.
 
