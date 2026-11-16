@@ -1,32 +1,41 @@
 import {makeScene,normaliseSnapshot,KIND_META,REPO_COLOURS,PERIOD,phaseAt,timelineValues} from './scene.mjs';
 const GRID={"x":99,"y":128,"dx":17.25,"dy":16.6,"size":12.4,"weeks":53};
 const ONE_DAY=86400000;
-export function calendarData(scene,raw) {
-  const snap=normaliseSnapshot(raw),today=Date.parse(snap.generated_at.slice(0,10)+"T00:00:00Z"),generated=Date.parse(snap.generated_at);
-  const start=today-(new Date(today).getUTCDay()+52*7)*ONE_DAY;
-  const startDay=new Date(start).toISOString().slice(0,10);
-  const lastDay=new Date(today).toISOString().slice(0,10);
-  const daily=new Map(),validEventIds=new Set();let outside=0,future=0;
-  for(const e of snap.activity) {
-    const when=Date.parse(e.occurred_at);
-    if(when>generated){future++;continue;}
-    if(when<start){outside++;continue;}
-    validEventIds.add(e.id);
-    const day=e.occurred_at.slice(0,10);
-    const value=daily.get(day)||{date:day,events:0,units:0,kinds:{}};
-    value.events++;value.units+=e.count;value.kinds[e.kind]=(value.kinds[e.kind]||0)+1;
-    daily.set(day,value);
-  }
-  const days=[...daily.values()].sort((a,b)=>a.date.localeCompare(b.date));
-  const dateCell=(date)=> {
-    if(date>lastDay)return null;
-    const delta=Math.round((Date.parse(date+"T00:00:00Z")-start)/ONE_DAY);
-    if(delta<0||delta>=53*7)return null;
-    const week=Math.floor(delta/7),weekday=delta%7;
-    return {week,weekday,x:Number((GRID.x+week*GRID.dx+GRID.size/2).toFixed(2)),y:Number((GRID.y+weekday*GRID.dy+GRID.size/2).toFixed(2))};
-  };
-  const jobs=scene.jobs.filter(j=>validEventIds.has(j.id)).map(j=>({...j,date:j.occurred_at.slice(0,10),cell:dateCell(j.occurred_at.slice(0,10))}));
-  return {...scene,jobs,shown:jobs.length,calendar:{start:startDay,end:lastDay,generated_at:snap.generated_at,days,observed_days:days.length,window_events:validEventIds.size,outside_window_events:outside,future_events:future,semantics:"Source-observed events only; not GitHub's complete contributions graph."},truncated:scene.truncated||jobs.length!==scene.jobs.length||outside>0||future>0};
+export function calendarData(scene,raw){
+ const snap=normaliseSnapshot(raw),generated=Date.parse(snap.generated_at);
+ const today=Date.parse(snap.generated_at.slice(0,10)+"T00:00:00Z");
+ const start=today-(new Date(today).getUTCDay()+52*7)*ONE_DAY;
+ const startDay=new Date(start).toISOString().slice(0,10),lastDay=new Date(today).toISOString().slice(0,10);
+ const daily=new Map(),windowEvents=[];let outside=0,future=0;
+ for(const e of snap.activity){
+  const when=Date.parse(e.occurred_at);
+  if(when>generated){future++;continue;}
+  if(when<start){outside++;continue;}
+  windowEvents.push(e);
+  const date=e.occurred_at.slice(0,10),d=daily.get(date)||{date,events:0,units:0,kinds:{}};
+  d.events++;d.units+=e.count;d.kinds[e.kind]=(d.kinds[e.kind]||0)+1;daily.set(date,d);
+ }
+ const days=[...daily.values()].sort((a,b)=>a.date.localeCompare(b.date));
+ // Rank repositories and assign agents only after calendar-window filtering.
+ // Future and out-of-range events must not consume the limited visible slots.
+ const filtered=makeScene({...snap,activity:windowEvents});
+ const dateCell=date=>{
+  if(date>lastDay)return null;
+  const delta=Math.floor((Date.parse(date+"T00:00:00Z")-start)/ONE_DAY);
+  if(delta<0||delta>=53*7)return null;
+  const week=Math.floor(delta/7),weekday=delta%7;
+  return {week,weekday,x:Number((GRID.x+week*GRID.dx+GRID.size/2).toFixed(2)),y:Number((GRID.y+weekday*GRID.dy+GRID.size/2).toFixed(2))};
+ };
+ const jobs=filtered.jobs.map(j=>({...j,date:j.occurred_at.slice(0,10),cell:dateCell(j.occurred_at.slice(0,10))}));
+ const historical=snap.activity.filter(e=>Date.parse(e.occurred_at)<=generated);
+ const last=historical.at(-1),stale_days=last?Math.max(0,Math.floor((generated-Date.parse(last.occurred_at))/ONE_DAY)):null;
+ return {...filtered,event_total:snap.activity.length,repository_total:snap.repositories.length,
+  jobs,shown:jobs.length,stale_days,
+  calendar:{start:startDay,end:lastDay,generated_at:snap.generated_at,days,observed_days:days.length,
+   window_events:windowEvents.length,outside_window_events:outside,future_events:future,
+   semantics:"Source-observed events only; not GitHub's complete contributions graph."},
+  truncated:filtered.truncated||outside>0||future>0
+ };
 }
 
 export function agentAt(job,t,side) {

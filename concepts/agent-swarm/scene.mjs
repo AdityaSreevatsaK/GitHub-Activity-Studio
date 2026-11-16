@@ -35,7 +35,7 @@ export function escapeXml(value){return String(value).replace(/[&<>"']/g,c=>({"&
 
 export function shortLabel(value,max=17){const chars=Array.from(String(value));return chars.length<=max?chars.join(""):chars.slice(0,max-1).join("")+"…";}
 
-export function validTimestamp(value,field){assert(typeof value==="string"&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/.test(value)&&!Number.isNaN(Date.parse(value)),field+" must be ISO 8601 UTC");return value;}
+export function validTimestamp(value,field){assert(typeof value==="string"&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/.test(value),field+" must be ISO 8601 UTC");const millis=Date.parse(value);assert(Number.isFinite(millis)&&new Date(millis).toISOString().slice(0,19)===value.slice(0,19),field+" contains an invalid UTC calendar date or time");return value;}
 
 export function normaliseSnapshot(raw){
  assert(raw&&typeof raw==="object"&&!Array.isArray(raw),"Snapshot must be an object");

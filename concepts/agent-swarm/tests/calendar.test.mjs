@@ -71,3 +71,34 @@ test("both GIFs are deterministic profile-ready 14-second loops",()=>{
   assert.deepEqual([m.width,m.height,m.frames,m.duration_centi,m.looping],[800,250,4,1400,true]);
  }
 });
+
+test("invalid UTC calendar dates and impossible hours fail closed",()=>{
+ for(const invalid of ["2026-02-30T10:00:00Z","2026-11-31T10:00:00Z","2026-11-16T24:00:00Z","2026-04-31T10:00:00Z"]){
+  const raw=structuredClone(fixture);raw.activity[0].occurred_at=invalid;
+  assert.throws(()=>sceneFor(raw),/invalid UTC calendar date or time/);
+ }
+ const leap=structuredClone(fixture);leap.activity[0].occurred_at="2024-02-29T10:00:00Z";
+ assert.equal(sceneFor(leap).calendar.outside_window_events,1);
+});
+test("out-of-window and future source events do not displace valid jobs",()=>{
+ const raw=structuredClone(fixture);
+ for(let i=0;i<25;i++)raw.activity.push({id:"outlier-"+i,kind:"release",repo_full_name:"sample-dev/harbour",
+  occurred_at:i%2?"2027-01-01T00:00:00Z":"2022-01-01T00:00:00Z",count:1});
+ const result=sceneFor(raw);
+ assert.equal(result.shown,10);assert.equal(result.calendar.observed_days,10);
+ assert.equal(result.calendar.outside_window_events,13);
+ assert.equal(result.calendar.future_events,12);
+ assert.equal(result.event_total,35);
+ assert(result.jobs.every(job=>job.cell));
+});
+test("bursty in-window events show ten latest jobs without changing calendar truth",()=>{
+ const raw=structuredClone(fixture);
+ for(let i=0;i<50;i++)raw.activity.push({id:"in-"+i,kind:"commit",repo_full_name:"sample-dev/aurora",
+  occurred_at:"2026-11-15T10:00:00Z",count:2});
+ const result=sceneFor(raw);
+ assert.equal(result.calendar.window_events,60);
+ assert.equal(result.calendar.observed_days,11);
+ assert.equal(result.jobs.length,10);
+ assert(result.jobs.every(j=>j.date==="2026-11-15"));
+ assert(result.truncated);
+});
