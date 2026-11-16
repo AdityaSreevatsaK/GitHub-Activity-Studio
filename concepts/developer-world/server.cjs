@@ -1,6 +1,6 @@
 "use strict";
 const fs=require("node:fs"),path=require("node:path"),http=require("node:http");
-const root=path.resolve(__dirname,"../.."),mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".svg":"image/svg+xml",".css":"text/css; charset=utf-8"};
+const root=path.resolve(__dirname,"../.."),mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".svg":"image/svg+xml",".gif":"image/gif",".css":"text/css; charset=utf-8"};
 function createServer(dir=root){
  const base=path.resolve(dir);
  return http.createServer((req,res)=>{
