@@ -78,7 +78,7 @@ a{color:var(--accent)}
 <p><a href="README.md">Documentation and export instructions</a>. The full scene exports to a standalone 1200 × 430 SVG for use as a static GitHub README image.</p>
 </main>
 <script type="module">
-import {render,selectedModel,calendarModel,TYPES} from "./calendar-factory.mjs";
+import {render,selectedModel,calendarModel,dayMachines,TYPES} from "./calendar-factory.mjs";
 const $=id=>document.getElementById(id);
 const layout=$("layout"),theme=$("theme"),motion=$("motion"),week=$("week"),scene=$("scene"),status=$("status");
 let data,model,index;
@@ -92,7 +92,7 @@ function renderLedger(weekModel){
     heading.textContent=days[i]+" "+day.date.slice(8);
     if(day.future){li.className="empty";desc.textContent="Later than snapshot date";}
     else if(day.events.length===0){li.className="empty";desc.textContent="No recorded events";}
-    else desc.textContent=day.events.map(e=>e.repo.split("/").pop()+": "+TYPES[e.kind].verb+" ×"+e.count).join(" · ");
+    else {const grouped=dayMachines(day),sample=grouped.slice(0,4);desc.textContent=sample.map(g=>g.repo+": "+TYPES[g.kind].verb+" ×"+g.count+" ("+g.records+" record"+(g.records===1?"":"s")+")").join(" · ")+(grouped.length>4?" · +"+(grouped.length-4)+" more machine stages":"");}
     li.append(heading,desc);fragment.append(li);
   }
   $("events").replaceChildren(fragment);
