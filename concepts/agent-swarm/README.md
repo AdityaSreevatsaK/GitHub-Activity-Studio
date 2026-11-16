@@ -43,7 +43,7 @@ node concepts/agent-swarm/build.mjs
 node concepts/agent-swarm/serve.mjs
 ~~~
 
-4. Open **http://127.0.0.1:8000/**. Switch design and theme, pause/replay, scrub the timeline or inspect events. Press **Ctrl+C** to stop.
+4. Open **http://127.0.0.1:8000/**. Switch design and theme, pause/replay, scrub the timeline, inspect date cells with the mouse or use the keyboard-accessible recorded-day selector. Press **Ctrl+C** to stop.
 5. Run tests in another PowerShell window:
 
 ~~~powershell
@@ -85,7 +85,7 @@ The calendar covers **53 weeks** of observed events, while at most **five** rece
 - Data: the repository's shared/fixtures/demo-activity.json. The normalised contract is documented in docs/DATA_CONTRACT.md. No independently developed collector or invented activity data.
 - Geometry: bright recorded-day cells, controlled routes, event halos, and repository beacons. Mini robots add face screens, antennae, charging docks and paired approaches to activity cells. Both remain recognisable as calendar graphs.
 - Exports: detailed SVG and simplified pixel GIF from the **same calendar and task schedule**, not pixel-identical files. A native LZW encoder avoids extra dependencies.
-- Accessibility: descriptive SVG titles, descriptions, visible legend and demo label, keyboard-operable controls and static fallbacks. Reduced-motion preferences initially pause the browser animation. GIFs have no automatic reduced-motion adaptation; use stills where necessary.
+- Accessibility: descriptive SVG titles, descriptions, event-intensity legend, demo label, keyboard-operable recorded-date inspection, pause/replay controls and static fallbacks. Reduced-motion preferences initially pause the browser animation. GIFs have no automatic reduced-motion adaptation; use stills where necessary.
 - The preview server binds to 127.0.0.1 and only serves files within this concept directory. The inspector uses textContent, and export text is escaped.
 - Tests cover validation, determinism, deduplication, state transitions, agent assignment conflicts, truncation, provenance, escaping, themes, rendering and GIF integrity.
 

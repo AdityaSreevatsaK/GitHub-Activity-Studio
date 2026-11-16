@@ -52,7 +52,10 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <div class="stage" id="stage">
 <object id="art" type="image/svg+xml" data="exports/geometric-dark.svg" aria-label="Geometric swarm, source-backed symbolic tasks"><img src="exports/geometric-dark-still.svg" alt="A static diagram of activity hubs and symbolic helper agents"></object>
 </div>
-<p class="note" id="day-detail" aria-live="polite">Hover over a calendar cell to inspect its recorded events.</p>
+<div class="controls" style="margin-top:12px">
+<label for="recorded-date">Inspect recorded date <select id="recorded-date"><option value="">Choose a highlighted day</option></select></label>
+<p class="note" id="day-detail" aria-live="polite">Select a recorded date or hover over a calendar square to inspect its source events.</p>
+</div>
 <div class="motion"><label for="scrub" class="eyebrow">Replay</label><input id="scrub" type="range" min="0" max="140" step="1" value="0" aria-label="Scrub the fourteen-second replay"><time id="clock">0.0s / 14s</time></div>
 <p class="note">Pause or scrub to inspect event phases. The timeline is compressed choreography, not original event time. Reduced-motion preferences start paused. Static images are available below.</p>
 </section>
@@ -70,11 +73,26 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <script>
 "use strict";
 const el=id=>document.getElementById(id);
-let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0,lastSignature="";
+let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0,lastSignature="",selectedDate="";
 const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function phase(j,t){const d=((t%14)+14)%14-j.start;return d<0?"queued":d<.18?"assigned":d<.68?"travelling":d<1.56?"working":d<2.2?"complete":"delivered"}
 function svg(){try{return el("art").contentDocument.querySelector("svg")}catch{return null}}
 function setSvgTime(){const s=svg();if(!s)return;try{s.pauseAnimations();s.setCurrentTime(seconds);if(playing)s.unpauseAnimations()}catch{}}
+function inspectDate(date){
+ if(!scene)return;
+ const data=scene.calendar.days.find(d=>d.date===date);
+ if(!data){el("day-detail").textContent="Select a highlighted date to inspect recorded source events.";return;}
+ const kinds=Object.entries(data.kinds).map(([k,v])=>k.replaceAll("_"," ")+": "+v).join(" · ");
+ el("day-detail").textContent=date+" · "+data.events+" observed event(s) · "+data.units+" source units · "+kinds+". Other GitHub contributions may be absent from this snapshot.";
+}
+function highlightSelectedDate(){
+ const root=svg();if(!root)return;
+ for(const cell of root.querySelectorAll(".day-cell")){
+  const focus=selectedDate&&cell.dataset.date===selectedDate;
+  if(focus){cell.style.strokeWidth="3";cell.style.stroke="#f0b75a";}
+  else{cell.style.removeProperty("stroke-width");cell.style.removeProperty("stroke");}
+ }
+}
 function renderState(){
  el("scrub").value=String(Math.round(seconds*10));
  el("clock").textContent=seconds.toFixed(1)+"s / 14s";
@@ -90,7 +108,13 @@ function renderState(){
  }
 }
 function choose(next){style=next;el("geometric").setAttribute("aria-pressed",String(style==="geometric"));el("robots").setAttribute("aria-pressed",String(style==="robots"));loadArt()}
-function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{const root=svg();if(root)for(const cell of root.querySelectorAll(".day-cell")){cell.style.cursor="help";cell.addEventListener("pointerenter",()=>{el("day-detail").textContent=cell.dataset.date+": "+cell.dataset.events+" observed event(s), "+cell.dataset.units+" original activity units. This is not a complete GitHub contribution count."});}}catch{}};
+function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{
+ const root=svg();if(root)for(const cell of root.querySelectorAll(".day-cell")){
+  cell.style.cursor="help";
+  cell.addEventListener("pointerenter",()=>{inspectDate(cell.dataset.date);});
+ }
+ highlightSelectedDate();
+ }catch{}};
  el("gif").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+".gif";
  el("still").href="exports/"+(style==="robots"?"robots-light":"geometric-dark")+"-still.svg";
 }
@@ -101,6 +125,7 @@ el("theme").addEventListener("change",e=>{theme=e.target.value;loadArt()});
 el("play").addEventListener("click",()=>setPlaying(!playing));
 el("reset").addEventListener("click",()=>{seconds=0;renderState();setSvgTime()});
 el("scrub").addEventListener("input",e=>{seconds=Math.min(13.99,Number(e.target.value)/10);renderState();setSvgTime()});
+el("recorded-date").addEventListener("change",e=>{selectedDate=e.target.value;inspectDate(selectedDate);highlightSelectedDate()});
 (async()=>{try{
  const response=await fetch("exports/scene.json",{cache:"no-store"});if(!response.ok)throw Error("scene.json not found. Run the build command.");
  scene=await response.json();
@@ -109,6 +134,8 @@ el("scrub").addEventListener("input",e=>{seconds=Math.min(13.99,Number(e.target.
  el("repos").textContent=scene.repositories.length+" / "+scene.repository_total+" hubs";
  el("units").textContent=scene.jobs.reduce((n,j)=>n+j.count,0)+" animated units";
  el("days").textContent=scene.calendar.observed_days+" observed days";
+ const daySelect=el("recorded-date");
+ for(const d of scene.calendar.days){const option=document.createElement("option");option.value=d.date;option.textContent=d.date+" ("+d.events+" events)";daySelect.append(option);}
  el("limits").textContent=(scene.truncated?"Animated subset: five most recent repository beacons and up to ten latest eligible events. ":"Calendar covers observed events in the 53-week window. ")+(scene.stale_days>30?"Snapshot is stale by "+scene.stale_days+" days. ":"")+"Agents are illustrative, never operational.";
  renderState();setPlaying(!reduced);
  }catch(error){el("tasks").textContent="Could not load scene: "+error.message;el("events").textContent="Build required";setPlaying(false)}})();

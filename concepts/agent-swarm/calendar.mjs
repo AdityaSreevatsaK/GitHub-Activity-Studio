@@ -81,6 +81,10 @@ export function svgCalendar(scene,{style="geometric",theme="dark",animated=true,
   for(const [day,label] of [[1,"MON"],[3,"WED"],[5,"FRI"]]){
     out.push(txt(85,GRID.y+day*GRID.dy+9.8,label,8,c.muted,'text-anchor="end"'));
   }
+  // Visual legend is deliberately about OBSERVED events, never total contributions.
+  out.push(txt(627,98,"LESS",8,c.muted,'class="small"'));
+  for(let level=0;level<5;level++)out.push(rect(665+level*18,89,11,11,c.levels[level],2));
+  out.push(txt(761,98,"MORE",8,c.muted,'class="small"'));
   const byDay=new Map(scene.calendar.days.map(d=>[d.date,d]));
   for(let col=0;col<53;col++)for(let day=0;day<7;day++){
     const date=new Date(start+(col*7+day)*ONE_DAY).toISOString().slice(0,10),daily=byDay.get(date);
@@ -119,7 +123,12 @@ export function svgCalendar(scene,{style="geometric",theme="dark",animated=true,
     const active=phase!=="queued"&&phase!=="delivered";
     const tm=timelineValues(job);
     const px=Math.min(1009,x+16),py=Math.max(109,y-25);
-    out.push(`<g class="symbolic-task" data-event="${escapeText(job.id)}" opacity="${animated?0:active?1:0}"><circle cx="${x}" cy="${y}" r="${robot?19:16}" stroke="${colour}" fill="none" stroke-width="1.6" stroke-dasharray="2 4"/><circle cx="${x}" cy="${y}" r="25" stroke="${colour}" fill="none" stroke-width=".7" opacity=".5"/>${rect(px,py,45,15,c.panel,6,colour)}${txt(px+23,py+10,`${KIND_META[job.kind].glyph} ×${job.count}`,9,c.ink,'text-anchor="middle"')}${animated?`<animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="${tm}" dur="${PERIOD}s" repeatCount="indefinite"/>`:""}</g>`);
+    // Two agents converge on the same date and briefly radiate a coordinated work pulse.
+    const sparks=Array.from({length:6},(_,i)=>{
+      const angle=i*Math.PI/3,inner=robot?22:20,outer=robot?31:28;
+      return `<path d="M${(x+Math.cos(angle)*inner).toFixed(2)} ${(y+Math.sin(angle)*inner).toFixed(2)} L${(x+Math.cos(angle)*outer).toFixed(2)} ${(y+Math.sin(angle)*outer).toFixed(2)}" stroke="${colour}" stroke-width="${robot?2.1:1.4}" stroke-linecap="round"/>`;
+    }).join("");
+    out.push(`<g class="symbolic-task" data-event="${escapeText(job.id)}" opacity="${animated?0:active?1:0}"><circle cx="${x}" cy="${y}" r="${robot?19:16}" stroke="${colour}" fill="none" stroke-width="1.6" stroke-dasharray="2 4"/><circle cx="${x}" cy="${y}" r="25" stroke="${colour}" fill="none" stroke-width=".7" opacity=".5"/><g opacity=".8">${sparks}</g>${rect(px,py,45,15,c.panel,6,colour)}${txt(px+23,py+10,`${KIND_META[job.kind].glyph} ×${job.count}`,9,c.ink,'text-anchor="middle"')}${animated?`<animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="${tm}" dur="${PERIOD}s" repeatCount="indefinite"/>`:""}</g>`);
     for(let side=0;side<2;side++){
       const aid=job.agents[side],sx=157+aid*94,sy=290,hx=x+(side===0?-14:14),hy=y+(side===0?-14:14);
       const path=`M ${sx} ${sy} Q ${(sx+hx)/2} ${Math.min(sy,hy)-53} ${hx} ${hy} Q ${(hx+1021)/2} ${Math.min(290,hy)-57} 1021 290`;

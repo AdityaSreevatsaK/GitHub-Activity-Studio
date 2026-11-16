@@ -100,6 +100,10 @@ export function calendarGifFrame(scene,{style="geometric",theme="dark",time=0}={
  label(685,31,scene.source==="demo"?"DEMO DATA":"GITHUB",1,1);
  box(19,60,761,1,4);
  label(24,66,"53 WEEK CALENDAR",2,1);
+ label(575,67,"LESS",2,1);
+ const shadeKey=[11,15,17,10,5];
+ for(let i=0;i<5;i++)box(605+i*16,66,11,10,shadeKey[i]);
+ label(697,67,"MORE",2,1);
  const first=Date.parse(scene.calendar.start+"T00:00:00Z");
  for(let week=0;week<53;week++){
   const date=new Date(first+week*7*DAY),before=new Date(first+(week-1)*7*DAY);
@@ -137,11 +141,30 @@ export function calendarGifFrame(scene,{style="geometric",theme="dark",time=0}={
   const state=phaseAt(job,time);if(state==="queued"||state==="delivered")continue;
   const cx=Math.round(job.cell.x*WIDTH/1120),cy=Math.round(job.cell.y*HEIGHT/350),col=colour[job.kind];
   circle(cx,cy,robot?12:10,col);
-  if(state==="working"||state==="complete")circle(cx,cy,15,col);
+  if(state==="working"||state==="complete"){
+    circle(cx,cy,17,col);
+    const spin=time*4;
+    for(let k=0;k<6;k++){
+      const angle=spin+k*Math.PI/3;
+      const sx=cx+Math.cos(angle)*19,sy=cy+Math.sin(angle)*19;
+      line(sx,sy,sx+Math.cos(angle)*4,sy+Math.sin(angle)*4,col,2);
+    }
+  }
   box(Math.min(750,cx+11),Math.max(89,cy-16),29,11,3);border(Math.min(750,cx+11),Math.max(89,cy-16),29,11,col);
   label(Math.min(752,cx+13),Math.max(91,cy-14),KIND_META[job.kind].glyph+" "+job.count,1,1,5);
   for(let side=0;side<2;side++){
    const pos=agentAt(job,time,side),x=Math.round(pos.x*WIDTH/1120),y=Math.round(pos.y*HEIGHT/350);
+   // A short, dim-to-bright echo trail makes the helpers legible at README size.
+   // Trails follow the same deterministic path and cannot imply extra events.
+   if(state==="travelling"||state==="complete"){
+     for(let k=3;k>=1;k--){
+       const t=time-k*.045;
+       if(phaseAt(job,t)!==state&&state!=="complete")continue;
+       const old=agentAt(job,t,side);
+       const px=Math.round(old.x*WIDTH/1120),py=Math.round(old.y*HEIGHT/350);
+       circle(px,py,k===1?3:2,k===1?col:4,true);
+     }
+   }
    if(robot){
     box(x-6,y-6,13,13,1);border(x-6,y-6,13,13,col);
     box(x-3,y-2,7,4,13);pixel(x-2,y,col);pixel(x+2,y,col);
