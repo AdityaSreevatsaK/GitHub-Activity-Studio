@@ -169,3 +169,14 @@ test("legend and repository totals exclude events outside the chart window",()=>
  assert.match(world.render(f),/4 units · 2 events · stage 2/);
  assert.equal(c.outside,1);
 });
+
+test("both worlds include five distinct evolving repository landmark illustrations",()=>{
+ for(const layout of ["archipelago","village"]){
+  const first=world.render(fixture,{layout,progress:0,animated:false});
+  const final=world.render(fixture,{layout,animated:false});
+  assert.equal((final.match(/<ellipse cy="25" rx="20"/g)||[]).length,5);
+  assert.equal((first.match(/<ellipse cy="25" rx="20"/g)||[]).length,5);
+  assert.match(final,/Pinned to recorded day/);
+  assert.notEqual(first,final);
+ }
+});
