@@ -87,6 +87,8 @@ function calendarRender(raw,options={}){
  check(layout==="archipelago"||layout==="village","Invalid layout");
  check(theme==="light"||theme==="dark","Invalid theme");
  if(options.progress!==undefined)check(Number.isSafeInteger(options.progress)&&options.progress>=0,"Invalid progress");
+ const frame=options.frame===undefined?0:options.frame;
+ check(Number.isSafeInteger(frame)&&frame>=0&&frame<=10000,"Invalid animation frame");
  const grid=calendarFor(data,options.progress);
  const p=colours[theme],arch=layout==="archipelago",dark=theme==="dark",isDemo=data.source==="demo";
  const visible=data.repositories.slice(0,5),overflow=data.repositories.length-visible.length;
@@ -110,13 +112,13 @@ function calendarRender(raw,options={}){
  out.push(rect(0,61,1120,211,arch?"url(#dw-sea)":palette.sky));
  if(arch){
   for(let i=0;i<36;i++){
-   const wx=32+hash("sea-wave-"+i)%1050, wy=83+hash("sea-row-"+i)%178;
+   const wx=32+(hash("sea-wave-"+i)%1050+frame*3)%1050, wy=83+hash("sea-row-"+i)%178;
    out.push(line(`M${wx} ${wy}q5 -3 11 0t10 0`,palette.wave,1,`opacity=".35" class="dw-wave" style="animation-delay:-${i%11}s"`));
   }
  }else{
   out.push(path("M0 188Q78 167 152 191T305 191T465 187T635 190T795 181T950 187T1120 178V271H0Z",palette.grass2,`opacity=".25"`));
   for(let i=0;i<16;i++){
-   const cx=18+hash("cloud-x"+i)%1080,cy=90+hash("cloud-y"+i)%148;
+   const cx=18+(hash("cloud-x"+i)%1080+frame*2)%1080,cy=90+hash("cloud-y"+i)%148;
    if(i%4===0)out.push(`<g class="dw-cloud" opacity=".14" style="animation-delay:-${i}s">${circle(cx,cy,12,palette.wall)}${circle(cx+13,cy-7,15,palette.wall)}${rect(cx,cy,28,6,palette.wall,3)}</g>`);
   }
  }
@@ -132,6 +134,12 @@ function calendarRender(raw,options={}){
  }
  for(const m of monthLabels)out.push(textAt(x0+m.w*dx,87,m.month,9,palette.muted,700));
  for(const [d,name] of [[0,"Sun"],[2,"Tue"],[4,"Thu"],[6,"Sat"]])out.push(textAt(19,y0+d*dy+12,name,9,palette.muted,600));
+ out.push(textAt(740,76,"RECORDED UNITS",8,palette.muted,800));
+ for(const [i,label] of ["none","1–2","3–5","6–9","10+"].entries()){
+  const lx=834+i*51,shade=[palette.dim,palette.sand,palette.grass2,palette.grass,palette.bright][i];
+  out.push(rect(lx,67,10,10,shade,2,`stroke="${palette.stroke}" stroke-width=".7"`));
+  out.push(textAt(lx+13,76,label,8,palette.muted,600));
+ }
  const landmarkByDate=new Map();
  for(const [name,date] of grid.anchors){
   const i=visible.findIndex(r=>r.full_name===name);
@@ -196,6 +204,7 @@ function calendarRender(raw,options={}){
     out.push(textAt(mx,my+2,String(mark.index+1),6,palette.shade,900,`text-anchor="middle"`));
    }
   }
+  if(options.focusDate===cell.date)out.push(rect(x-2,y-2,tw+4,th+4,"none",3,`stroke="${palette.gold}" stroke-width="2"`));
   out.push("</g>");
  }
 function repositoryLandmarkSprite(i,units,x,y,p,tint){
@@ -255,8 +264,8 @@ function repositoryLandmarkSprite(i,units,x,y,p,tint){
 }
  // The environment is atmospheric. Only populated date cells indicate recorded activity.
  if(arch){
-  out.push(`<g class="dw-boat" opacity=".92">${path("M24 243h24l-6 7H30Z",palette.roof)}${line("M37 243v-17",palette.wall,1.4)}${path("M38 228l11 12H38Z",palette.wall)}</g>`);
-  out.push(`<g class="dw-boat" style="animation-delay:-3s" opacity=".68">${path("M1082 93h21l-5 6h-10Z",palette.roof)}${line("M1092 93v-15",palette.wall,1.4)}${path("M1093 79l9 11h-9Z",palette.wall)}</g>`);
+  out.push(`<g class="dw-boat" transform="translate(${(frame*3)%31} 0)" opacity=".92">${path("M24 243h24l-6 7H30Z",palette.roof)}${line("M37 243v-17",palette.wall,1.4)}${path("M38 228l11 12H38Z",palette.wall)}</g>`);
+  out.push(`<g class="dw-boat" transform="translate(${-(frame*2)%24} 0)" style="animation-delay:-3s" opacity=".68">${path("M1082 93h21l-5 6h-10Z",palette.roof)}${line("M1092 93v-15",palette.wall,1.4)}${path("M1093 79l9 11h-9Z",palette.wall)}</g>`);
  }else{
   out.push(line("M7 258Q145 252 285 258T565 258T845 258T1113 258",palette.sand,2,`opacity=".5"`));
  }
