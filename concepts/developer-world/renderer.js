@@ -198,6 +198,61 @@ function calendarRender(raw,options={}){
   }
   out.push("</g>");
  }
+function repositoryLandmarkSprite(i,units,x,y,p,tint){
+ const s=stage(units),windowColour=s>=1?p.gold:p.muted;
+ const rect=(x,y,w,h,c,r=0,extra="")=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${c}" ${extra}/>`;
+ const path=(d,c,attr="")=>`<path d="${d}" fill="${c}" ${attr}/>`;
+ const line=(d,c,n=1,extra="")=>`<path d="${d}" fill="none" stroke="${c}" stroke-width="${n}" stroke-linecap="round" stroke-linejoin="round" ${extra}/>`;
+ const circle=(x,y,r,c,a="")=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}" ${a}/>`;
+ let out=`<g transform="translate(${x} ${y})" aria-hidden="true">`;
+ out+=`<ellipse cy="25" rx="20" ry="3.5" fill="${p.shade}" opacity=".22"/>`;
+ if(i===0){
+  // Beacon keeper: circular sea lighthouse with stripes and a soft lantern
+  out+=rect(-9,0,18,24,p.wall,2)+path("M-11 0L0-9L11 0Z",p.roof);
+  out+=rect(-9,9,18,5,p.roof)+rect(-9,19,18,4,p.roof);
+  out+=rect(-3,1,6,7,windowColour,2,`class="${s?"dw-lantern":""}"`);
+  out+=rect(-3,17,6,7,p.shade,2);
+  if(s>=3)out+=line("M-11 3h22",p.gold,1.5);
+  if(s>=4)out+=line("M0-9v-7",p.wall,1.4)+path("M0-16l10 3-10 4Z",tint);
+ }else if(i===1){
+  // Wayfinder bridgeworks: a compact arch bridge and surveyor's frame
+  out+=rect(-14,8,28,13,p.wall,1)+path("M-16 8L0-1L16 8Z",p.roof);
+  out+=path("M-5 21V13Q0 7 5 13V21Z",p.shade);
+  out+=line("M-19 24h38M-16 22l7-5 9 5 9-5 7 5",p.gold,1.4);
+  out+=rect(-4,4,8,5,windowColour,1,`class="${s?"dw-lantern":""}"`);
+  if(s>=3)out+=line("M-14 0V-11h27M9-11v8",tint,1.6);
+  if(s>=4)out+=path("M12-11l7 3-7 2Z",tint);
+ }else if(i===2){
+  // Ember forge: a glowing kiln with a red chimney and curling smoke
+  out+=rect(-16,4,32,20,p.wall,2)+path("M-18 4l18-11 18 11Z",p.roof);
+  out+=rect(8,-13,6,13,p.roof,1)+rect(-7,10,14,14,p.shade,3);
+  out+=rect(-4,15,8,9,windowColour,2,`class="${s?"dw-lantern":""}"`);
+  out+=rect(-14,11,4,5,p.brick||p.roof,1)+rect(10,11,4,5,p.brick||p.roof,1);
+  if(s>=2)out+=circle(-14,23,3,p.grass2);
+  if(s>=3)out+=circle(11,-16,3,p.muted,`opacity=".65" class="dw-smoke"`);
+  if(s>=4)out+=circle(12,-25,2,tint);
+ }else if(i===3){
+  // Orbit observatory: domed starwatch tower and rotating telescope arm
+  out+=rect(-12,4,24,20,p.wall,2)+path("M-15 4Q-12-12 0-13Q12-12 15 4Z",p.roof);
+  out+=circle(0,-3,5,windowColour,`class="${s?"dw-lantern":""}"`);
+  out+=rect(-4,12,8,12,p.shade,3);
+  out+=line("M4-9l16-8",p.gold,2)+circle(18,-17,3,tint);
+  if(s>=2)out+=circle(-11,19,3,p.grass2);
+  if(s>=3)out+=line("M-12 7h24",p.gold,1.3);
+  if(s>=4)out+=path("M-16-16l2-5 2 5 5 2-5 2-2 5-2-5-5-2Z",tint);
+ }else{
+  // Harbour quay: dock warehouse with moored sailboat
+  out+=rect(-15,3,30,20,p.wall,2)+path("M-17 3L0-7L17 3Z",p.roof);
+  out+=rect(-9,9,7,14,windowColour,1,`class="${s?"dw-lantern":""}"`)+rect(4,9,7,14,windowColour,1);
+  out+=line("M-19 24h38",p.sand,2);
+  if(s>=2)out+=path("M-18 22h13l-3 4h-7Z",tint)+line("M-11 21v-11",p.wall,1)+path("M-11 10l7 10h-7Z",p.gold);
+  if(s>=3)out+=rect(13,9,3,15,p.roof);
+  if(s>=4)out+=path("M0-7l10 4-10 3Z",tint);
+ }
+ out+=circle(16,-4,6,tint,`stroke="${p.shade}" stroke-width="1"`);
+ out+=`<text x="16" y="-1" font-family="Arial,sans-serif" font-size="8" font-weight="900" text-anchor="middle" fill="${p.shade}">${i+1}</text>`;
+ return out+"</g>";
+}
  // The environment is atmospheric. Only populated date cells indicate recorded activity.
  if(arch){
   out.push(`<g class="dw-boat" opacity=".92">${path("M24 243h24l-6 7H30Z",palette.roof)}${line("M37 243v-17",palette.wall,1.4)}${path("M38 228l11 12H38Z",palette.wall)}</g>`);
@@ -210,12 +265,11 @@ function calendarRender(raw,options={}){
  visible.forEach((r,i)=>{
   const xx=24+i*218,st=grid.byRepo.get(r.full_name);
   out.push(rect(xx,284,207,54,theme==="dark"?"#223b50":"#f5f3e6",8,`stroke="${palette.stroke}" stroke-width=".7"`));
-  out.push(circle(xx+16,302,9,repoColours[i]));
-  out.push(textAt(xx+16,305,String(i+1),10,palette.shade,900,`text-anchor="middle"`));
-  const name=r.name.length>19?r.name.slice(0,17)+"…":r.name;
-  out.push(textAt(xx+31,303,name,12,palette.text,750));
-  out.push(textAt(xx+31,320,`${st.units} units · ${st.events} events · stage ${stage(st.units)}`,10,palette.muted,500));
-  out.push(textAt(xx+31,332,grid.anchors.has(r.full_name)?"Landmark on recorded day":"No in-range landmark",8,palette.muted,500));
+  out.push(repositoryLandmarkSprite(i,st.units,xx+25,300,palette,repoColours[i]));
+  const name=r.name.length>17?r.name.slice(0,15)+"…":r.name;
+  out.push(textAt(xx+51,303,name,12,palette.text,750));
+  out.push(textAt(xx+51,320,`${st.units} units · ${st.events} events · stage ${stage(st.units)}`,10,palette.muted,500));
+  out.push(textAt(xx+51,332,grid.anchors.has(r.full_name)?"Pinned to recorded day":"No in-range landmark",8,palette.muted,500));
  });
  if(!visible.length)out.push(textAt(560,315,"A quiet world awaits its first recorded event",15,palette.muted,600,`text-anchor="middle"`));
  out.push(textAt(1090,347,overflow?`+${overflow} repositories omitted`:grid.outside?`${grid.outside} events outside calendar window`:"53 weeks · Sunday to Saturday",8,palette.muted,500,`text-anchor="end"`));
