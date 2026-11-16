@@ -143,7 +143,182 @@ function render(raw,options={}){
  s+=T(1090,348,hidden?`+${hidden} repositories not shown`:data.source==="demo"?"SYNTHETIC FIXTURE":"SOURCE-BACKED INPUT",9,p.sub,650,`text-anchor="end" letter-spacing=".7"`);
  return s+"</g></svg>";
 }
-return {normalise,statsFor,stage,render,esc};
+function calendarFor(data,progress){
+ const seen=Math.min(data.activity.length,progress===undefined?data.activity.length:progress);
+ const asof=data.generated_at.slice(0,10), dayMs=86400000;
+ const anchor=Date.parse(asof+"T00:00:00Z");
+ const sunday=anchor-new Date(anchor).getUTCDay()*dayMs;
+ const first=sunday-52*7*dayMs;
+ const cells=[], lookup=new Map();
+ for(let w=0;w<53;w++)for(let d=0;d<7;d++){
+  const time=first+(w*7+d)*dayMs,date=new Date(time).toISOString().slice(0,10);
+  const item={date,w,d,future:date>asof,units:0,events:0,byKind:{commit:0,pr_opened:0,pr_merged:0,issue_opened:0,release:0},byRepo:{},level:0};
+  cells.push(item);lookup.set(date,item);
+ }
+ let outside=0;
+ for(const e of data.activity.slice(0,seen)){
+  const date=e.occurred_at.slice(0,10),cell=lookup.get(date);
+  if(!cell||cell.future){outside++;continue;}
+  cell.units+=e.count;cell.events++;cell.byKind[e.kind]+=e.count;cell.byRepo[e.repo_full_name]=(cell.byRepo[e.repo_full_name]||0)+e.count;
+ }
+ for(const cell of cells)cell.level=stage(cell.units);
+ const all=new Map();
+ for(const e of data.activity){
+  const date=e.occurred_at.slice(0,10),cell=lookup.get(date);
+  if(!cell||cell.future)continue;
+  let dates=all.get(e.repo_full_name);
+  if(!dates){dates=new Map();all.set(e.repo_full_name,dates);}
+  dates.set(date,(dates.get(date)||0)+e.count);
+ }
+ const anchors=new Map(),taken=new Set();
+ data.repositories.slice(0,5).forEach(r=>{
+  const ranked=[...(all.get(r.full_name)||new Map()).entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  const match=ranked.find(([date])=>!taken.has(date));
+  if(match){anchors.set(r.full_name,match[0]);taken.add(match[0]);}
+ });
+ return {cells,lookup,anchors,first,asof,seen,outside,observed:cells.reduce((s,c)=>s+c.units,0),activeDays:cells.filter(c=>c.units>0).length};
+}
+function calendarRender(raw,options={}){
+ const data=normalise(raw),layout=options.layout||"archipelago",theme=options.theme||"dark";
+ check(layout==="archipelago"||layout==="village","Invalid layout");
+ check(theme==="light"||theme==="dark","Invalid theme");
+ if(options.progress!==undefined)check(Number.isSafeInteger(options.progress)&&options.progress>=0,"Invalid progress");
+ const grid=calendarFor(data,options.progress),totals=statsFor(data,options.progress);
+ const p=colours[theme],arch=layout==="archipelago",dark=theme==="dark",isDemo=data.source==="demo";
+ const visible=data.repositories.slice(0,5),overflow=data.repositories.length-visible.length;
+ const x0=68,y0=99,dx=19,dy=21,tw=15,th=16;
+ const palette=dark?{base:"#102b42",panel:"#182d42",stroke:"#3f7081",dim:"#2a475a",sea:"#163e58",wave:"#4c8094",sand:"#d9bd86",grass:"#83b880",grass2:"#b3d797",bright:"#eacb91",wall:"#f0dcba",roof:"#c87773",shade:"#14283f",text:"#f1f5ed",muted:"#a8c6cb",sky:"#274d65",gold:"#f8d78d",water:"#24495f",path:"#d9d0a8"}:{base:"#e7f2ed",panel:"#fcf9ed",stroke:"#a3c7c5",dim:"#cdded7",sea:"#b6d8d5",wave:"#7caeac",sand:"#efd9a5",grass:"#a1c985",grass2:"#d1df9b",bright:"#d79069",wall:"#fff3d9",roof:"#b86f6b",shade:"#567179",text:"#304b53",muted:"#618188",sky:"#d6eae7",gold:"#d68a54",water:"#cce8e2",path:"#cfb992"};
+ const repoColours=["#f8c77e","#89cfaa","#ed9d9b","#97bce9","#d8b6e8"];
+ const out=[];
+ const rect=(x,y,w,h,fill,rx=0,other="")=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}" ${other}/>`;
+ const line=(d,stroke,width=1,extra="")=>`<path d="${d}" fill="none" stroke="${stroke}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round" ${extra}/>`;
+ const path=(d,fill,extra="")=>`<path d="${d}" fill="${fill}" ${extra}/>`;
+ const circle=(x,y,r,fill,extra="")=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" ${extra}/>`;
+ const textAt=(x,y,value,size=11,fill=palette.text,weight=600,extra="")=>`<text x="${x}" y="${y}" fill="${fill}" font-size="${size}" font-weight="${weight}" ${extra}>${esc(value)}</text>`;
+ out.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 350" width="1120" height="350" role="img" aria-labelledby="dw-title dw-desc">`);
+ out.push(`<title id="dw-title">Developer World: ${arch?"The Isles of Code":"The Little Buildtown"} contribution calendar</title>`);
+ out.push(`<desc id="dw-desc">${isDemo?"Synthetic demonstration. ":"Supplied public GitHub event snapshot. "}53 weeks by 7 weekdays ending ${esc(grid.asof)}; ${grid.activeDays} days with recorded events; ${grid.observed} activity units shown. Empty cells mean no events recorded in this snapshot, not proof of zero GitHub contributions. ${overflow} repositories omitted.</desc>`);
+ out.push(`<defs><linearGradient id="dw-bg" x2="0" y2="1"><stop stop-color="${palette.sky}"/><stop offset="1" stop-color="${palette.base}"/></linearGradient><linearGradient id="dw-sea" x2="0" y2="1"><stop stop-color="${palette.sea}"/><stop offset="1" stop-color="${palette.water}"/></linearGradient><clipPath id="dw-mask">${rect(0,0,1120,350,"white",16)}</clipPath></defs>`);
+ out.push(`<style>text{font-family:Trebuchet MS,Verdana,Arial,sans-serif}.dw-wave{animation:dw-wave 7s ease-in-out infinite alternate}.dw-lantern{animation:dw-glow 3s ease-in-out infinite alternate}.dw-cloud{animation:dw-drift 16s ease-in-out infinite alternate}.dw-boat{animation:dw-sail 8s ease-in-out infinite alternate}.dw-smoke{animation:dw-smoke 5s ease-out infinite}.dw-tile{transition:opacity .2s}.dw-tile:hover{opacity:.75}@keyframes dw-wave{to{transform:translateX(8px);opacity:.35}}@keyframes dw-glow{to{opacity:.55}}@keyframes dw-drift{to{transform:translateX(14px)}}@keyframes dw-sail{to{transform:translateX(11px)}}@keyframes dw-smoke{to{transform:translateY(-9px);opacity:0}}${options.animated===false?"*{animation:none!important;transition:none!important}":""}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}</style>`);
+ out.push(`<g clip-path="url(#dw-mask)">`);
+ out.push(rect(0,0,1120,350,"url(#dw-bg)"));
+ out.push(rect(0,0,1120,61,palette.panel));
+ out.push(rect(0,61,1120,211,arch?"url(#dw-sea)":palette.sky));
+ if(arch){
+  for(let i=0;i<36;i++){
+   const wx=32+hash("sea-wave-"+i)%1050, wy=83+hash("sea-row-"+i)%178;
+   out.push(line(`M${wx} ${wy}q5 -3 11 0t10 0`,palette.wave,1,`opacity=".35" class="dw-wave" style="animation-delay:-${i%11}s"`));
+  }
+ }else{
+  out.push(path("M0 188Q78 167 152 191T305 191T465 187T635 190T795 181T950 187T1120 178V271H0Z",palette.grass2,`opacity=".25"`));
+  for(let i=0;i<16;i++){
+   const cx=18+hash("cloud-x"+i)%1080,cy=90+hash("cloud-y"+i)%148;
+   if(i%4===0)out.push(`<g class="dw-cloud" opacity=".14" style="animation-delay:-${i}s">${circle(cx,cy,12,palette.wall)}${circle(cx+13,cy-7,15,palette.wall)}${rect(cx,cy,28,6,palette.wall,3)}</g>`);
+  }
+ }
+ out.push(textAt(29,20,"GITHUB ACTIVITY STUDIO  /  CONCEPT 05",9,palette.gold,800,`letter-spacing="1.9"`));
+ out.push(textAt(29,46,arch?"The Isles of Code":"The Little Buildtown",22,palette.text,800));
+ out.push(textAt(1090,22,isDemo?"SYNTHETIC DEMO  •  NOT REAL ACTIVITY":"RECORDED PUBLIC EVENTS",10,palette.gold,800,`text-anchor="end" letter-spacing="1"`));
+ out.push(textAt(1090,44,`${grid.activeDays} active dates  ·  ${grid.observed} recorded units  ·  ${grid.seen}/${data.activity.length} events`,11,palette.muted,500,`text-anchor="end"`));
+ const monthLabels=[];
+ for(let w=0;w<53;w++){
+  const sunday=new Date(grid.first+w*7*86400000), thursday=new Date(grid.first+(w*7+4)*86400000);
+  const month=thursday.toLocaleString("en-GB",{timeZone:"UTC",month:"short"});
+  if(!w||month!==monthLabels.at(-1)?.month)monthLabels.push({w,month});
+ }
+ for(const m of monthLabels)out.push(textAt(x0+m.w*dx,87,m.month,9,palette.muted,700));
+ for(const [d,name] of [[0,"Sun"],[2,"Tue"],[4,"Thu"],[6,"Sat"]])out.push(textAt(19,y0+d*dy+12,name,9,palette.muted,600));
+ const landmarkByDate=new Map();
+ for(const [name,date] of grid.anchors){
+  const i=visible.findIndex(r=>r.full_name===name);
+  if(i>=0)landmarkByDate.set(date,{index:i,name});
+ }
+ const activeFill=[palette.dim,palette.sand,palette.grass2,palette.grass,palette.bright];
+ // Tiles are strictly arranged in Sunday-to-Saturday rows and chronological week columns.
+ for(const cell of grid.cells){
+  const x=x0+cell.w*dx,y=y0+cell.d*dy,level=cell.level;
+  const marks=Object.entries(cell.byRepo).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+  const description=`${cell.date}: ${cell.units} recorded units from ${cell.events} distinct events${marks.length?"; "+marks.map(([k,v])=>k+" "+v).join(", "):"; no event recorded"}${cell.future?"; after snapshot":""}`;
+  out.push(`<g class="dw-tile" data-date="${cell.date}" data-level="${level}" data-units="${cell.units}" role="img" aria-label="${esc(description)}"><title>${esc(description)}</title>`);
+  if(cell.future){
+   out.push(rect(x,y,tw,th,palette.dim,3,`opacity=".23" stroke="${palette.stroke}" stroke-width=".7"`));
+   out.push(line(`M${x+4} ${y+5}l7 7`,palette.stroke,.8,`opacity=".5"`));
+  }else if(arch){
+   out.push(rect(x,y,tw,th,level?palette.wave:palette.sea,3,`stroke="${palette.stroke}" stroke-width=".7" opacity="${level?1:.84}"`));
+   if(!level){
+    if((hash(cell.date)%5)===0)out.push(line(`M${x+3} ${y+10}q3-2 6 0`,palette.wave,.9,`opacity=".5" class="dw-wave"`));
+   }else{
+    out.push(path(`M${x+3} ${y+4}l5-2 4 3 1 6-5 3-5-2-1-5Z`,activeFill[level]));
+    if(level>=2)out.push(rect(x+5,y+5,5,6,palette.grass,1));
+    if(level===2)out.push(circle(x+10,y+7,1.8,palette.grass2));
+    if(level>=3){
+     out.push(rect(x+4,y+6,8,6,palette.wall,1));
+     out.push(path(`M${x+3} ${y+6}l5-4 5 4Z`,palette.roof));
+     out.push(rect(x+7,y+8,2,3,palette.gold,.5,`class="dw-lantern"`));
+    }
+    if(level>=4)out.push(line(`M${x+11} ${y+4}v-4`,palette.wall,1.2)+path(`M${x+11} ${y}l4 1-4 2Z`,palette.gold));
+   }
+  }else{
+   out.push(rect(x,y,tw,th,level?palette.grass:palette.dim,2,`stroke="${palette.stroke}" stroke-width=".8" opacity="${level?1:.7}"`));
+   out.push(rect(x,y+12,tw,4,level?palette.sand:palette.shade,1,`opacity=".7"`));
+   if(!level){
+    if(hash(cell.date)%4===0)out.push(line(`M${x+5} ${y+11}l-1-2m1 2l2-3`,palette.muted,.7,`opacity=".7"`));
+   }else if(level===1){
+    out.push(line(`M${x+3} ${y+11}v-5m0 2l-2-2m2 2l2-2`,palette.grass2,1.5));
+    out.push(circle(x+11,y+9,2,palette.gold));
+   }else if(level===2){
+    out.push(rect(x+3,y+7,9,5,palette.wall,1));
+    out.push(path(`M${x+2} ${y+7}l6-5 6 5Z`,palette.roof));
+    out.push(circle(x+11,y+11,1.5,palette.gold,`class="dw-lantern"`));
+   }else{
+    out.push(rect(x+3,y+5,9,8,palette.wall,1));
+    out.push(path(`M${x+2} ${y+5}l6-5 6 5Z`,palette.roof));
+    out.push(rect(x+6,y+7,3,3,palette.gold,.7,`class="dw-lantern"`));
+    if(level===4){out.push(rect(x+10,y+1,2,4,palette.shade)+circle(x+11,y,2,palette.gold,`class="dw-smoke"`));}
+   }
+  }
+  // Event-specific decorations are sourced exclusively from each UTC day's actual events.
+  if(cell.units){
+   const k=cell.byKind;
+   if(k.release)out.push(circle(x+2,y+3,2,palette.gold,`class="dw-lantern"`));
+   else if(k.pr_merged)out.push(path(`M${x+1} ${y+14}l3-3 3 3 3-3 3 3`, "none",`stroke="${palette.wall}" stroke-width="1.3"`));
+   else if(k.pr_opened)out.push(line(`M${x+1} ${y+3}h4m-2-2v5`,palette.gold,1.3));
+   else if(k.issue_opened)out.push(rect(x+1,y+1,3,4,palette.gold,.6));
+   else if(k.commit>=3)out.push(circle(x+2,y+3,1.5,palette.grass2));
+   const mark=landmarkByDate.get(cell.date);
+   if(mark && (cell.byRepo[mark.name]||0)>0){
+    const mx=x+11,my=y+2;
+    out.push(circle(mx,my,4.4,repoColours[mark.index],`stroke="${palette.shade}" stroke-width="1"`));
+    out.push(textAt(mx,my+2,String(mark.index+1),6,palette.shade,900,`text-anchor="middle"`));
+   }
+  }
+  out.push("</g>");
+ }
+ // The environment is atmospheric. Only populated date cells indicate recorded activity.
+ if(arch){
+  out.push(`<g class="dw-boat" opacity=".92">${path("M24 243h24l-6 7H30Z",palette.roof)}${line("M37 243v-17",palette.wall,1.4)}${path("M38 228l11 12H38Z",palette.wall)}</g>`);
+  out.push(`<g class="dw-boat" style="animation-delay:-3s" opacity=".68">${path("M1082 93h21l-5 6h-10Z",palette.roof)}${line("M1092 93v-15",palette.wall,1.4)}${path("M1093 79l9 11h-9Z",palette.wall)}</g>`);
+ }else{
+  out.push(line("M7 258Q145 252 285 258T565 258T845 258T1113 258",palette.sand,2,`opacity=".5"`));
+ }
+ out.push(rect(0,272,1120,78,palette.panel));
+ out.push(line("M0 272H1120",palette.stroke,1));
+ visible.forEach((r,i)=>{
+  const xx=24+i*218,st=totals.repositories.find(s=>s.repository.full_name===r.full_name);
+  out.push(rect(xx,284,207,54,theme==="dark"?"#223b50":"#f5f3e6",8,`stroke="${palette.stroke}" stroke-width=".7"`));
+  out.push(circle(xx+16,302,9,repoColours[i]));
+  out.push(textAt(xx+16,305,String(i+1),10,palette.shade,900,`text-anchor="middle"`));
+  const name=r.name.length>19?r.name.slice(0,17)+"…":r.name;
+  out.push(textAt(xx+31,303,name,12,palette.text,750));
+  out.push(textAt(xx+31,320,`${st.units} units · ${st.events} events · stage ${st.stage}`,10,palette.muted,500));
+  out.push(textAt(xx+31,332,grid.anchors.has(r.full_name)?"Landmark on recorded day":"No in-range landmark",8,palette.muted,500));
+ });
+ if(!visible.length)out.push(textAt(560,315,"A quiet world awaits its first recorded event",15,palette.muted,600,`text-anchor="middle"`));
+ out.push(textAt(1090,347,overflow?`+${overflow} repositories omitted`:grid.outside?`${grid.outside} events outside calendar window`:"53 weeks · Sunday to Saturday",8,palette.muted,500,`text-anchor="end"`));
+ out.push("</g></svg>");
+ return out.join("");
+}
+return {normalise,statsFor,stage,render:calendarRender,calendarFor,esc};
 })();
 if (typeof module !== 'undefined' && module.exports) module.exports = DeveloperWorld;
 else if (typeof globalThis !== 'undefined') globalThis.DeveloperWorld = DeveloperWorld;
