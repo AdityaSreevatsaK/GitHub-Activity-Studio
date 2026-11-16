@@ -1,5 +1,7 @@
 # GitHub Constellation · A calendar written in stars
 
+> **DESIGN RESET, 16 November 2026:** The visuals below are **legacy experiments**, not the owner's approved final direction. The next agent must build **three distinct GitHub contribution-calendar-first prototypes**: **Comet Streaks**, **Celestial Cartographer** and **Starforge**. Read [scoped agent instructions](AGENTS.md) and the [implementation specification](NEXT_ITERATION.md) before touching code. Keep all changes on `concept/constellation` and PR #1 in draft. **These three new designs have not yet been implemented.**
+
 **Prototype on `concept/constellation` only. No changes to the GitHub profile or `master`.**
 
 > **Synthetic demonstration, NOT the owner's GitHub contribution history.** This 53-week chart shows only **events present in the shared fixture**. Empty squares mean *no event recorded by this input*, NOT proof of zero GitHub contributions.
