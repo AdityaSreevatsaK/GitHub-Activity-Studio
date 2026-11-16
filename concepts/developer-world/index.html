@@ -44,7 +44,7 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 <label for="layout">World<select id="layout"><option value="archipelago">The Isles of Code · Archipelago</option><option value="village">The Little Buildtown · Village</option></select></label>
 <label for="theme">Palette<select id="theme"><option value="dark">Moonlit</option><option value="light">Daybreak</option></select></label>
 <label for="file">Input JSON<input id="file" type="file" accept=".json,application/json"></label>
-<div class="actions"><button id="motion" aria-pressed="true">Pause motion</button><button id="still">Download still</button><button id="save" class="primary">Download animated SVG</button></div>
+<div class="actions"><button id="motion" aria-pressed="true">Pause motion</button><button id="still">Download still</button><button id="save">Download SVG</button><button id="gif" class="primary">Download animated GIF</button></div>
 </div>
 <div id="scene" class="scene" aria-label="53-week activity calendar, decorated as a miniature world"></div><p class="hint" style="margin:0;padding:0 22px 12px;background:#223951">53 chronological week columns × 7 weekday rows. Hover a day to inspect recorded source events. A quiet cell means no events were supplied for that date, not a verified zero contribution day.</p>
 <div class="timeline"><button id="play" type="button">▶ Play events</button><label for="progress">Timeline</label><input id="progress" type="range" min="0" max="0" value="0" step="1"><output id="counter" for="progress">0 of 0 events</output></div>
@@ -66,6 +66,7 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 <p class="hint">Only five repository landmarks are shown in the compact legend. The calendar is an event-log visualisation, not the complete GitHub Contributions API calendar. Reduced-motion preferences are respected. The demo is synthetic, not the owner's history.</p>
 </main>
 <script src="./renderer.js"></script>
+<script src="./gif.js"></script>
 <script>
 (function(){
 "use strict";
@@ -138,6 +139,42 @@ function save(moving){
  var a=document.createElement("a");a.href=url;a.download="developer-world-"+el("layout").value+"-"+el("theme").value+(moving?"":"-still")+".svg";
  document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
 }
+async function exportGif(){
+ if(!source)return;
+ stop();var button=el("gif");button.disabled=true;
+ var layout=el("layout").value,theme=el("theme").value;
+ var count=Math.min(16,Math.max(8,normal.activity.length+1));
+ var width=896,height=280;
+ var canvas=document.createElement("canvas");canvas.width=width;canvas.height=height;
+ var context=canvas.getContext("2d",{willReadFrequently:true});
+ try{
+  if(!context)throw Error("Canvas 2D unavailable");
+  var frames=[];
+  for(var i=0;i<count;i++){
+   var step=Math.round(i*normal.activity.length/(count-1));
+   var svg=DeveloperWorld.render(source,{layout:layout,theme:theme,animated:false,progress:step,frame:i});
+   var url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml;charset=utf-8"}));
+   try{
+    var img=new Image();
+    await new Promise(function(resolve,reject){img.onload=resolve;img.onerror=function(){reject(Error("SVG image could not render"));};img.src=url;});
+    context.clearRect(0,0,width,height);
+    context.drawImage(img,0,0,width,height);
+    frames.push(context.getImageData(0,0,width,height).data.slice());
+   }finally{URL.revokeObjectURL(url);}
+   el("status").textContent="Encoding "+(i+1)+" of "+count+" GIF frames…";
+   await new Promise(function(resolve){setTimeout(resolve,0);});
+  }
+  var gif=DeveloperWorldGif.createGif(frames,width,height,45);
+  var download=URL.createObjectURL(new Blob([gif],{type:"image/gif"}));
+  var link=document.createElement("a");
+  link.href=download;
+  link.download="developer-world-"+layout+"-"+theme+(normal.source==="demo"?"-demo":"")+".gif";
+  document.body.appendChild(link);link.click();link.remove();
+  setTimeout(function(){URL.revokeObjectURL(download);},5000);
+  el("status").textContent="GIF created ("+Math.round(gif.length/1024)+" KiB). Generated only from the supplied snapshot.";
+ }catch(err){el("status").textContent="GIF export failed: "+err.message;}
+ finally{button.disabled=false;}
+}
 el("layout").addEventListener("change",render);el("theme").addEventListener("change",render);
 el("scene").addEventListener("click",function(event){var tile=event.target.closest?.("[data-date]");if(tile)chooseDate(tile.getAttribute("data-date"));});
 el("day-date").addEventListener("change",function(){chooseDate(el("day-date").value);});
@@ -146,6 +183,7 @@ el("next-day").addEventListener("click",function(){shiftDay(1);});
 el("progress").addEventListener("input",function(){stop();render();});
 el("motion").addEventListener("click",function(){animated=!animated;el("motion").textContent=animated?"Pause motion":"Resume motion";el("motion").setAttribute("aria-pressed",String(animated));render();});
 el("still").addEventListener("click",function(){save(false);});el("save").addEventListener("click",function(){save(true);});
+el("gif").addEventListener("click",exportGif);
 el("play").addEventListener("click",function(){
  if(timer!==null){stop();return;}if(!normal)return;
  if(Number(el("progress").value)>=normal.activity.length)el("progress").value="0";
