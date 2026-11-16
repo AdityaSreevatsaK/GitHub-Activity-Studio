@@ -102,3 +102,17 @@ test("bursty in-window events show ten latest jobs without changing calendar tru
  assert(result.jobs.every(j=>j.date==="2026-11-15"));
  assert(result.truncated);
 });
+
+test("all style/theme combinations have a matching GIF and static SVG",()=>{
+ const scene=sceneFor(fixture);
+ for(const style of ["geometric","robots"])for(const theme of ["dark","light"]){
+  const still=svgCalendar(scene,{style,theme,animated:false});
+  const animated=svgCalendar(scene,{style,theme});
+  assert(!still.includes("<animateMotion"));
+  assert(animated.includes("<animateMotion"));
+  const gif=renderCalendarGif(scene,{style,theme,frames:2});
+  const meta=readGifMetadata(gif);
+  assert.equal(meta.duration_centi,1400);
+  assert.equal(meta.frames,2);
+ }
+});

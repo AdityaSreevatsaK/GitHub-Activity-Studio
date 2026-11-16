@@ -60,9 +60,9 @@ You can specify --out for a custom export directory. The browser preview reads f
 
 ## Outputs
 
-- exports/geometric-dark.gif and exports/robots-light.gif: real, self-contained looping 14-second GIFs for a GitHub README.
+- exports/{geometric,robots}-{dark,light}.gif: four self-contained looping 14-second GIFs for GitHub READMEs.
 - exports/geometric-dark.svg, geometric-light.svg, robots-dark.svg and robots-light.svg: detailed 14-second animated SVGs.
-- exports/geometric-dark-still.svg and robots-light-still.svg: static, accessible alternatives.
+- exports/{geometric,robots}-{dark,light}-still.svg: four matching static, accessible alternatives.
 - exports/scene.json: the precise input-derived event choreography. The browser uses this for its phase inspector.
 
 Sample markdown (only use after reviewing the design):
@@ -85,7 +85,7 @@ The calendar covers **53 weeks** of observed events, while at most **five** rece
 - Data: the repository's shared/fixtures/demo-activity.json. The normalised contract is documented in docs/DATA_CONTRACT.md. No independently developed collector or invented activity data.
 - Geometry: bright recorded-day cells, controlled routes, event halos, and repository beacons. Mini robots add face screens, antennae, charging docks and paired approaches to activity cells. Both remain recognisable as calendar graphs.
 - Exports: detailed SVG and simplified pixel GIF from the **same calendar and task schedule**, not pixel-identical files. A native LZW encoder avoids extra dependencies.
-- Accessibility: descriptive SVG titles, descriptions, event-intensity legend, demo label, keyboard-operable recorded-date inspection, pause/replay controls and static fallbacks. Reduced-motion preferences initially pause the browser animation. GIFs have no automatic reduced-motion adaptation; use stills where necessary.
+- Accessibility: descriptive SVG titles, descriptions, event-intensity legend, demo label, keyboard-operable recorded-date inspection, pause/replay controls and static fallbacks. Reduced-motion preferences initially pause the browser animation. GIFs have no automatic reduced-motion adaptation; use the matching still for each style/theme when necessary.
 - The preview server binds to 127.0.0.1 and only serves files within this concept directory. The inspector uses textContent, and export text is escaped.
 - Tests cover validation, determinism, deduplication, state transitions, agent assignment conflicts, truncation, provenance, escaping, themes, rendering and GIF integrity.
 

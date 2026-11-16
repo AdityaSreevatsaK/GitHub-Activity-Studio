@@ -22,17 +22,14 @@ mkdirSync(out, { recursive: true });
 writeFileSync(join(out, "scene.json"), JSON.stringify(scene, null, 2) + "\n", "utf8");
 for (const style of ["geometric", "robots"]) {
   for (const theme of ["dark", "light"]) {
-    const name = style + "-" + theme + ".svg";
-    writeFileSync(join(out, name), svgCalendar(scene, {style, theme}), "utf8");
-    console.log("SVG  " + name);
+    const prefix=style+"-"+theme;
+    const svg=svgCalendar(scene,{style,theme});
+    writeFileSync(join(out,prefix+".svg"),svg,"utf8");
+    writeFileSync(join(out,prefix+"-still.svg"),svgCalendar(scene,{style,theme,animated:false,time:5.2}),"utf8");
+    const gif=renderCalendarGif(scene,{style,theme});
+    writeFileSync(join(out,prefix+".gif"),Buffer.from(gif));
+    console.log("SVG / STILL / GIF  "+prefix);
   }
-}
-writeFileSync(join(out,"geometric-dark-still.svg"),svgCalendar(scene,{style:"geometric",theme:"dark",animated:false,time:5.2}),"utf8");
-writeFileSync(join(out,"robots-light-still.svg"),svgCalendar(scene,{style:"robots",theme:"light",animated:false,time:9.5}),"utf8");
-for (const [style,theme] of [["geometric","dark"],["robots","light"]]) {
-  const name = style + "-" + theme + ".gif";
-  writeFileSync(join(out,name),Buffer.from(renderCalendarGif(scene,{style,theme})));
-  console.log("GIF  " + name);
 }
 console.log("Rendered " + scene.shown + " / " + scene.event_total + " event packets; " +
   scene.repositories.length + " / " + scene.repository_total + " repository hubs.");
