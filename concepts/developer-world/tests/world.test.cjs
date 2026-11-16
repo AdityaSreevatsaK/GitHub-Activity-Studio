@@ -229,3 +229,19 @@ test("mixed-precision ISO timestamps sort in true UTC order and respect exact sn
  assert.ok(world.compareUtc("2026-11-16T00:00:00Z","2026-11-16T00:00:00.100Z")<0);
  assert.ok(world.compareUtc("2026-11-16T00:00:00.101Z","2026-11-16T00:00:00.1Z")>0);
 });
+
+test("top-five landmarks follow full in-window activity, not alphabetical first five",()=>{
+ const n=world.normalise(fixture),calendar=world.calendarFor(n);
+ const expected=["sample-dev/orbit","sample-dev/harbour","sample-dev/aurora","sample-dev/ember","sample-dev/atlas"];
+ assert.deepEqual(calendar.featured,expected);
+ assert.deepEqual(world.calendarFor(n,0).featured,expected);
+ assert.deepEqual(world.calendarFor(n,4).featured,expected);
+ const extended=copy(fixture);
+ extended.repositories.push({full_name:"sample-dev/zeta",name:"zeta",url:"https://github.com/example"});
+ extended.activity.push({id:"zeta-event",kind:"commit",repo_full_name:"sample-dev/zeta",occurred_at:"2026-11-15T08:00:00Z",count:50});
+ const c=world.calendarFor(world.normalise(extended));
+ assert.equal(c.featured[0],"sample-dev/zeta");
+ assert.equal(c.featured.length,5);
+ assert.ok(!c.featured.includes("sample-dev/atlas"));
+ assert.match(world.render(extended),/\+1 repositories omitted/);
+});
