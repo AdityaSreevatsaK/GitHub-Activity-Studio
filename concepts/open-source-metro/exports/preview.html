@@ -20,6 +20,16 @@ object{width:100%;display:block;aspect-ratio:1320/540}
 .tile{background:#112736;border:1px solid #2c4558;padding:20px;border-radius:12px}
 .tile b{display:block;margin-bottom:7px}.tile p{color:#afc2d0;line-height:1.5;font-size:.9rem;margin:0}
 a{color:#84e9d1}
+
+.audit{margin:22px 0;padding:18px;background:#112736;border:1px solid #2c4558;border-radius:12px}
+.audit h2{font-size:1.12rem;margin:0 0 12px;letter-spacing:-.015em}
+.ledger summary{cursor:pointer;font-weight:700;color:#b9e8e1;padding:7px 0}
+.ledger summary:focus-visible{outline:2px solid #84e9d1;outline-offset:3px}
+.table-scroll{max-width:100%;overflow-x:auto;margin-top:10px}
+.audit table{border-collapse:collapse;width:100%;min-width:650px;text-align:left;font-size:.85rem;font-variant-numeric:tabular-nums}
+.audit caption{font-size:.78rem;color:#acc1d0;text-align:left;padding-bottom:10px}
+.audit th,.audit td{padding:9px 10px;border-bottom:1px solid #2c4558}
+.audit th{color:#84e9d1}.audit td{color:#d8e8f0}
 @media(max-width:700px){body{padding:12px}.figure{padding:2px}select{max-width:100%}.map-viewport object{min-width:1050px}.mobile-hint{display:block}}
 </style></head><body><main>
 <div class="eyebrow">Concept 04 / Synthetic demo / Offline</div><h1>Open Source Metro</h1>
@@ -35,6 +45,7 @@ a{color:#84e9d1}
 <div class="tiles"><div class="tile"><b>The grid is the canvas</b><p>53 Sunday-to-Saturday columns, weekdays, month labels and observed-event density. No fabricated history.</p></div>
 <div class="tile"><b>Transit routes are factual</b><p>Five event-type services call only at dated source events. Trains, when enabled, traverse those routes.</p></div>
 <div class="tile"><b>Stations are real identifiers</b><p>Named repositories, exact event IDs and UTC dates are disclosed in calendar-cell tooltips and accessible labels.</p></div></div>
+<section class="audit" aria-labelledby="events-heading"><h2 id="events-heading">Recorded source events</h2><details class="ledger"><summary>10 included source events; 0 outside the selected view</summary><div class="table-scroll"><table><caption>UTC event provenance from the supplied snapshot, not a complete GitHub contributions graph</caption><thead><tr><th scope="col">UTC date</th><th scope="col">Event ID</th><th scope="col">Repository</th><th scope="col">Type</th><th scope="col">Units</th></tr></thead><tbody><tr><td><time>03 Aug 2026 10:20 UTC</time></td><td>demo-001</td><td>sample-dev/aurora</td><td>commit</td><td>3</td></tr><tr><td><time>21 Aug 2026 09:15 UTC</time></td><td>demo-002</td><td>sample-dev/atlas</td><td>pr_opened</td><td>1</td></tr><tr><td><time>06 Sep 2026 20:45 UTC</time></td><td>demo-003</td><td>sample-dev/ember</td><td>commit</td><td>2</td></tr><tr><td><time>12 Sep 2026 13:00 UTC</time></td><td>demo-004</td><td>sample-dev/atlas</td><td>pr_merged</td><td>1</td></tr><tr><td><time>28 Sep 2026 06:30 UTC</time></td><td>demo-005</td><td>sample-dev/orbit</td><td>issue_opened</td><td>1</td></tr><tr><td><time>17 Oct 2026 18:25 UTC</time></td><td>demo-006</td><td>sample-dev/orbit</td><td>commit</td><td>5</td></tr><tr><td><time>24 Oct 2026 11:00 UTC</time></td><td>demo-007</td><td>sample-dev/aurora</td><td>release</td><td>1</td></tr><tr><td><time>04 Nov 2026 15:10 UTC</time></td><td>demo-008</td><td>sample-dev/harbour</td><td>pr_merged</td><td>1</td></tr><tr><td><time>09 Nov 2026 07:45 UTC</time></td><td>demo-009</td><td>sample-dev/harbour</td><td>commit</td><td>4</td></tr><tr><td><time>13 Nov 2026 09:00 UTC</time></td><td>demo-010</td><td>sample-dev/ember</td><td>pr_opened</td><td>1</td></tr></tbody></table></div></details></section>
 <p class="small">No token, external API, JavaScript library, external fonts or paid service required. Animated SVG playback in GitHub README previews is not guaranteed.</p>
 <script>
 const style=document.getElementById('style'),scheme=document.getElementById('scheme'),motion=document.getElementById('motion'),scenario=document.getElementById('scenario'),map=document.getElementById('map'),fig=document.getElementById('figure'),caption=document.getElementById('caption');

@@ -380,8 +380,32 @@ def render(snapshot: dict, *, style: str = "modern", scheme: str = "dark", anima
     return '\n'.join(f)+'\n'
 
 
-def preview_html() -> str:
-    return '''<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+def event_ledger(snapshot: dict | None) -> str:
+    """Accessible, escaped provenance for exactly the events visible on this map."""
+    if snapshot is None:
+        return '<p class="small">Generate this preview from a normalised snapshot to see its source events.</p>'
+    p = plan(snapshot)
+    rows = []
+    for event in p["events"]:
+        when = event["date"].strftime("%d %b %Y %H:%M UTC")
+        rows.append(
+            '<tr><td><time>' + s(when) + '</time></td><td>' + s(event["id"]) +
+            '</td><td>' + s(event["repo"]) + '</td><td>' + s(event["kind"]) +
+            '</td><td>' + str(event["count"]) + '</td></tr>'
+        )
+    if not rows:
+        rows.append('<tr><td colspan="5">No recorded events in the displayed calendar.</td></tr>')
+    heading = f'{len(p["events"])} included source events; {p["omitted_events"]} outside the selected view'
+    return (
+        '<details class="ledger"><summary>' + s(heading) + '</summary>'
+        '<div class="table-scroll"><table><caption>UTC event provenance from the supplied snapshot, not a complete GitHub contributions graph</caption>'
+        '<thead><tr><th scope="col">UTC date</th><th scope="col">Event ID</th><th scope="col">Repository</th><th scope="col">Type</th><th scope="col">Units</th></tr></thead>'
+        '<tbody>' + ''.join(rows) + '</tbody></table></div></details>'
+    )
+
+
+def preview_html(snapshot: dict | None = None) -> str:
+    markup = '''<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Open Source Metro | Calendar + Transit Studio</title>
 <style>
 :root{color-scheme:dark;background:#08111d;color:#ecf5fc;font:16px system-ui,Segoe UI,sans-serif}
@@ -403,6 +427,16 @@ object{width:100%;display:block;aspect-ratio:1320/540}
 .tile{background:#112736;border:1px solid #2c4558;padding:20px;border-radius:12px}
 .tile b{display:block;margin-bottom:7px}.tile p{color:#afc2d0;line-height:1.5;font-size:.9rem;margin:0}
 a{color:#84e9d1}
+
+.audit{margin:22px 0;padding:18px;background:#112736;border:1px solid #2c4558;border-radius:12px}
+.audit h2{font-size:1.12rem;margin:0 0 12px;letter-spacing:-.015em}
+.ledger summary{cursor:pointer;font-weight:700;color:#b9e8e1;padding:7px 0}
+.ledger summary:focus-visible{outline:2px solid #84e9d1;outline-offset:3px}
+.table-scroll{max-width:100%;overflow-x:auto;margin-top:10px}
+.audit table{border-collapse:collapse;width:100%;min-width:650px;text-align:left;font-size:.85rem;font-variant-numeric:tabular-nums}
+.audit caption{font-size:.78rem;color:#acc1d0;text-align:left;padding-bottom:10px}
+.audit th,.audit td{padding:9px 10px;border-bottom:1px solid #2c4558}
+.audit th{color:#84e9d1}.audit td{color:#d8e8f0}
 @media(max-width:700px){body{padding:12px}.figure{padding:2px}select{max-width:100%}.map-viewport object{min-width:1050px}.mobile-hint{display:block}}
 </style></head><body><main>
 <div class="eyebrow">Concept 04 / Synthetic demo / Offline</div><h1>Open Source Metro</h1>
@@ -418,6 +452,7 @@ a{color:#84e9d1}
 <div class="tiles"><div class="tile"><b>The grid is the canvas</b><p>53 Sunday-to-Saturday columns, weekdays, month labels and observed-event density. No fabricated history.</p></div>
 <div class="tile"><b>Transit routes are factual</b><p>Five event-type services call only at dated source events. Trains, when enabled, traverse those routes.</p></div>
 <div class="tile"><b>Stations are real identifiers</b><p>Named repositories, exact event IDs and UTC dates are disclosed in calendar-cell tooltips and accessible labels.</p></div></div>
+<section class="audit" aria-labelledby="events-heading"><h2 id="events-heading">Recorded source events</h2><!--EVENT_LEDGER--></section>
 <p class="small">No token, external API, JavaScript library, external fonts or paid service required. Animated SVG playback in GitHub README previews is not guaranteed.</p>
 <script>
 const style=document.getElementById('style'),scheme=document.getElementById('scheme'),motion=document.getElementById('motion'),scenario=document.getElementById('scenario'),map=document.getElementById('map'),fig=document.getElementById('figure'),caption=document.getElementById('caption');
@@ -450,6 +485,7 @@ for(const select of [scheme,motion,scenario])select.addEventListener('change',re
 refresh();
 </script></main></body></html>
 '''
+    return markup.replace('<!--EVENT_LEDGER-->', event_ledger(snapshot))
 
 
 def generate(source: Path, destination: Path) -> list[Path]:
@@ -478,7 +514,7 @@ def generate(source: Path, destination: Path) -> list[Path]:
         dest.write_text(render(stress),encoding='utf-8')
         outputs.append(dest)
     dest=destination/'preview.html'
-    dest.write_text(preview_html(),encoding='utf-8')
+    dest.write_text(preview_html(snap),encoding='utf-8')
     outputs.append(dest)
     return outputs
 
