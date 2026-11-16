@@ -1,77 +1,120 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { normalise, render } from '../calendar-factory.mjs';
-const fixture = JSON.parse(readFileSync(new URL('../../../shared/fixtures/demo-activity.json', import.meta.url), 'utf8'));
-const clone = x => structuredClone(x);
-test('demo fixture is deduplicated, counts remain typed and accurate', () => {
-  const scene = normalise(fixture);
-  assert.equal(scene.events.length, 10);
-  assert.equal(scene.repoTotal, 5);
-  assert.deepEqual(scene.sums, {commit:14, pr_opened:2, pr_merged:2, issue_opened:1, release:1});
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { validSnapshot,calendarModel,selectedModel,render,TYPES } from "../calendar-factory.mjs";
+const fixture=JSON.parse(readFileSync(new URL("../../../shared/fixtures/demo-activity.json",import.meta.url),"utf8"));
+const clone=v=>structuredClone(v);
+test("shared fixture is real input to normaliser",()=>{
+ const m=calendarModel(fixture);
+ assert.equal(m.events.length,10);
+ assert.equal(m.repos.size,5);
+ assert.equal(m.outside,0);
+ assert.equal(m.weeks.length,53);
 });
-test('every theme and layout produces distinct, profile-sized calendar exports', () => {
-  for (const layout of ['isometric','pixel']) for (const theme of ['dark','light']) {
-    for (const animated of [true,false]) {
-      const svg=render(fixture,{layout,theme,animated});
-      assert.match(svg,/viewBox="0 0 1000 320"/);
-      assert.match(svg,/52-WEEK ACTIVITY GRID/);
-      assert.match(svg,/SYNTHETIC DEMO/);
-      assert.match(svg,/<\/svg>\s*$/);
-      assert.equal(svg.includes('<animateMotion'),animated);
-      assert.equal(svg.includes('not official contribution totals'),true);
-    }
-  }
-  assert.notEqual(render(fixture,{layout:'pixel'}),render(fixture,{layout:'isometric'}));
+test("default selects latest active week, not a random showcase week",()=>{
+ const m=selectedModel(fixture);
+ assert.equal(m.weekIndex,51);
+ assert.equal(m.week.start,Date.parse("2026-11-08T00:00:00Z"));
+ assert.equal(m.week.records,2);
+ assert.equal(m.week.units,5);
+ assert.deepEqual([...m.activeRepos].sort(),["sample-dev/ember","sample-dev/harbour"]);
+ assert.deepEqual(m.week.days.map(d=>d.units),[0,4,0,0,0,1,0]);
+ assert.equal(m.stages.get("commit"),4);
+ assert.equal(m.stages.get("pr_opened"),1);
 });
-test('render is deterministic and independent of incoming event order', () => {
-  const other=clone(fixture);
-  other.activity.reverse();
-  assert.equal(render(other),render(fixture));
+test("current incomplete week stays blank rather than inventing activity",()=>{
+ const m=selectedModel(fixture,52);
+ assert.equal(m.week.records,0);
+ assert.equal(m.activeRepos.size,0);
+ assert.equal(m.week.days.filter(d=>d.future).length,6);
+ assert.match(render(fixture,{selectedWeek:52}),/IDLE LANE/);
+ assert.doesNotMatch(render(fixture,{selectedWeek:52}),/data-repo=/);
 });
-test('identical duplicate events cannot inflate counts, conflicting IDs fail', () => {
-  const dup=clone(fixture); dup.activity.push(clone(dup.activity[0]));
-  assert.equal(normalise(dup).events.length,10);
-  dup.activity.at(-1).count=99;
-  assert.throws(()=>normalise(dup),/conflicting event/);
+test("only repositories with selected-week events become machines",()=>{
+ const svg=render(fixture,{selectedWeek:51});
+ assert.match(svg,/data-repo="sample-dev\/harbour"/);
+ assert.match(svg,/data-repo="sample-dev\/ember"/);
+ assert.doesNotMatch(svg,/data-repo="sample-dev\/orbit"/);
+ assert.doesNotMatch(svg,/data-repo="sample-dev\/atlas"/);
+ assert.match(svg,/2026-11-09: 4 recorded units/);
+ assert.match(svg,/2026-11-13: 1 recorded units/);
 });
-test('empty repository/activity sets create an honest idle factory', () => {
-  const empty=clone(fixture);empty.repositories=[];empty.activity=[];
-  assert.match(render(empty),/EMPTY FACTORY/);
-  const one=clone(fixture);one.repositories=one.repositories.slice(0,1);one.activity=[];
-  assert.match(render(one),/IDLE SHIFT/);
-  assert.doesNotMatch(render(one),/<animateMotion/);
+test("event vocabulary has five distinct stages, without conflating PR opening and merger",()=>{
+ const m=selectedModel(fixture,51);
+ assert.equal(m.week.days[1].events[0].kind,"commit");
+ assert.equal(m.week.days[5].events[0].kind,"pr_opened");
+ assert.equal(Object.keys(TYPES).length,5);
+ assert.notEqual(TYPES.pr_opened.verb,TYPES.pr_merged.verb);
+ assert.match(render(fixture,{selectedWeek:51}),/ASSEMBLY 1/);
+ assert.match(render(fixture,{selectedWeek:51}),/SEALED 0/);
 });
-test('full names preserve owners even if short names collide', () => {
-  const data=clone(fixture);
-  data.repositories[0].name='duplicate';
-  data.repositories[1].name='duplicate';
-  assert.equal(normalise(data).repos.size,5);
+test("date-based selection follows source event time, not file order",()=>{
+ const other=clone(fixture);other.activity.reverse();
+ assert.equal(render(other),render(fixture));
+ assert.equal(calendarModel(other).defaultWeek,51);
 });
-test('unsafe repository names are XML escaped', () => {
-  const data=clone(fixture);
-  data.repositories[0].name='<img src=x onerror=alert(1)>';
-  const svg=render(data);
-  assert.doesNotMatch(svg,/<img /);
-  assert.doesNotMatch(svg,/onerror="/);
+test("both layouts, both themes and both motion states render deterministic standalone SVGs",()=>{
+ for(const layout of ["isometric","pixel"])for(const theme of ["dark","light"])for(const animated of [true,false]){
+  const svg=render(fixture,{layout,theme,animated});
+  assert.match(svg,/viewBox="0 0 1200 430"/);
+  assert.match(svg,/52-WEEK ACTIVITY CALENDAR/);
+  assert.match(svg,/SYNTHETIC DEMO/);
+  assert.match(svg,/<\/svg>\s*$/);
+  assert.equal(svg.includes('class="travelling"'),animated);
+  assert.equal(svg,render(clone(fixture),{layout,theme,animated}));
+ }
+ assert.notEqual(render(fixture,{layout:"pixel"}),render(fixture,{layout:"isometric"}));
 });
-test('invalid data and time zone offsets are rejected',()=>{
-  for (const mutate of [
-    d=>d.schema_version='x',d=>d.source='private',d=>d.generated_at='2026-02-30T00:00:00Z',
-    d=>d.activity[0].count=true,d=>d.activity[0].count=-1,d=>d.activity[0].kind='deployment',
-    d=>d.activity[0].occurred_at='2026-11-01T10:00:00+05:30',
-    d=>d.activity[0].repo_full_name='other/repo',
-    d=>d.repositories[0].full_name='invalid',d=>d.repositories.push(clone(d.repositories[0])),
-  ]) {const data=clone(fixture);mutate(data);assert.throws(()=>normalise(data));}
+test("duplicate IDs do not increase calendar units",()=>{
+ const d=clone(fixture);d.activity.push(clone(d.activity[0]));
+ assert.equal(validSnapshot(d).events.length,10);
+ assert.equal(selectedModel(d).week.units,5);
+ d.activity.at(-1).count=100;
+ assert.throws(()=>validSnapshot(d),/conflicting duplicate/);
 });
-test('calendar includes all valid events even if parcel and machine display is truncated',()=>{
-  const d=clone(fixture);
-  d.activity=Array.from({length:24},(_,i)=>({...d.activity[0],id:'extra-'+i,occurred_at:'2026-10-'+String(i+1).padStart(2,'0')+'T10:00:00Z'}));
-  const svg=render(d);
-  assert.match(svg,/Showing 5\/5 stations · 9\/24 packages/);
-  assert.match(svg,/2026-10-01: 3 recorded event units/);
+test("names are XML escaped even in tooltip and aria text",()=>{
+ const d=clone(fixture);
+ d.repositories.find(r=>r.name==="harbour").name='<img src=x onerror="bad">';
+ const svg=render(d);
+ assert.doesNotMatch(svg,/<img/);
+ assert.doesNotMatch(svg,/onerror="/);
+ assert.match(svg,/&lt;img/);
 });
-test('render invalid options fail instead of silently changing output',()=>{
-  assert.throws(()=>render(fixture,{theme:'purple'}));
-  assert.throws(()=>render(fixture,{layout:'3d'}));
+test("many activities on one day are represented by bounded machines and an overflow label",()=>{
+ const d=clone(fixture);
+ d.activity.push(...[0,1,2,3].map(i=>({...d.activity[0],id:"extra"+i,repo_full_name:i%2?"sample-dev/atlas":"sample-dev/orbit",occurred_at:"2026-11-09T12:00:00Z"})));
+ const svg=render(d,{selectedWeek:51});
+ assert.match(svg,/\+3 more recorded events/);
+ assert.match(svg,/9 UNITS/);
+ assert.equal(selectedModel(d).week.days[1].events.length,5);
+});
+test("activity outside window and after generated_at is excluded",()=>{
+ const d=clone(fixture);
+ d.activity.push({...d.activity[0],id:"future",occurred_at:"2026-11-17T00:00:00Z"});
+ d.activity.push({...d.activity[0],id:"historic",occurred_at:"2020-01-01T00:00:00Z"});
+ const m=selectedModel(d);
+ assert.equal(m.outside,2);
+ assert.equal(m.week.units,5);
+ assert.match(render(d),/Excluded 2 records/);
+});
+test("no repository and no events is an empty, honest calendar",()=>{
+ const d=clone(fixture);d.repositories=[];d.activity=[];
+ const m=selectedModel(d);
+ assert.equal(m.defaultWeek,52);
+ assert.equal(m.activeRepos.size,0);
+ assert.match(render(d),/IDLE LANE/);
+ assert.doesNotMatch(render(d),/data-repo=/);
+});
+test("malformed contract inputs and week indices are rejected",()=>{
+ for(const f of [
+ d=>d.schema_version="2",d=>d.source="private",d=>d.generated_at="2026-11-16T05:30:00+05:30",
+ d=>d.activity[0].count=true,d=>d.activity[0].count=0,d=>d.activity[0].kind="deployment",
+ d=>d.activity[0].occurred_at="2026-02-30T10:00:00Z",
+ d=>d.activity[0].repo_full_name="unknown/x",
+ d=>d.repositories[0].full_name="invalid",
+ d=>d.repositories.push(clone(d.repositories[0])),
+ ]){const d=clone(fixture);f(d);assert.throws(()=>validSnapshot(d));}
+ for(const selectedWeek of [-1,53,1.5,"51",null])assert.throws(()=>selectedModel(fixture,selectedWeek),/week index/);
+ assert.throws(()=>render(fixture,{layout:"3d"}));
+ assert.throws(()=>render(fixture,{theme:"purple"}));
 });
