@@ -69,7 +69,14 @@
       "agents": [
         0,
         1
-      ]
+      ],
+      "date": "2026-08-03",
+      "cell": {
+        "week": 37,
+        "weekday": 1,
+        "x": 743.45,
+        "y": 150.8
+      }
     },
     {
       "id": "demo-002",
@@ -83,7 +90,14 @@
       "agents": [
         2,
         3
-      ]
+      ],
+      "date": "2026-08-21",
+      "cell": {
+        "week": 39,
+        "weekday": 5,
+        "x": 777.95,
+        "y": 217.2
+      }
     },
     {
       "id": "demo-003",
@@ -97,7 +111,14 @@
       "agents": [
         4,
         5
-      ]
+      ],
+      "date": "2026-09-06",
+      "cell": {
+        "week": 42,
+        "weekday": 0,
+        "x": 829.7,
+        "y": 134.2
+      }
     },
     {
       "id": "demo-004",
@@ -111,7 +132,14 @@
       "agents": [
         6,
         7
-      ]
+      ],
+      "date": "2026-09-12",
+      "cell": {
+        "week": 42,
+        "weekday": 6,
+        "x": 829.7,
+        "y": 233.8
+      }
     },
     {
       "id": "demo-005",
@@ -125,7 +153,14 @@
       "agents": [
         0,
         1
-      ]
+      ],
+      "date": "2026-09-28",
+      "cell": {
+        "week": 45,
+        "weekday": 1,
+        "x": 881.45,
+        "y": 150.8
+      }
     },
     {
       "id": "demo-006",
@@ -139,7 +174,14 @@
       "agents": [
         2,
         3
-      ]
+      ],
+      "date": "2026-10-17",
+      "cell": {
+        "week": 47,
+        "weekday": 6,
+        "x": 915.95,
+        "y": 233.8
+      }
     },
     {
       "id": "demo-007",
@@ -153,7 +195,14 @@
       "agents": [
         4,
         5
-      ]
+      ],
+      "date": "2026-10-24",
+      "cell": {
+        "week": 48,
+        "weekday": 6,
+        "x": 933.2,
+        "y": 233.8
+      }
     },
     {
       "id": "demo-008",
@@ -167,7 +216,14 @@
       "agents": [
         6,
         7
-      ]
+      ],
+      "date": "2026-11-04",
+      "cell": {
+        "week": 50,
+        "weekday": 3,
+        "x": 967.7,
+        "y": 184
+      }
     },
     {
       "id": "demo-009",
@@ -181,7 +237,14 @@
       "agents": [
         0,
         1
-      ]
+      ],
+      "date": "2026-11-09",
+      "cell": {
+        "week": 51,
+        "weekday": 1,
+        "x": 984.95,
+        "y": 150.8
+      }
     },
     {
       "id": "demo-010",
@@ -195,11 +258,110 @@
       "agents": [
         2,
         3
-      ]
+      ],
+      "date": "2026-11-13",
+      "cell": {
+        "week": 51,
+        "weekday": 5,
+        "x": 984.95,
+        "y": 217.2
+      }
     }
   ],
   "shown": 10,
   "truncated": false,
   "stale_days": 2,
-  "note": "Visual metaphor only. Agents do not perform GitHub actions."
+  "note": "Visual metaphor only. Agents do not perform GitHub actions.",
+  "calendar": {
+    "start": "2025-11-16",
+    "end": "2026-11-16",
+    "generated_at": "2026-11-16T00:00:00Z",
+    "days": [
+      {
+        "date": "2026-08-03",
+        "events": 1,
+        "units": 3,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-08-21",
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_opened": 1
+        }
+      },
+      {
+        "date": "2026-09-06",
+        "events": 1,
+        "units": 2,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-09-12",
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_merged": 1
+        }
+      },
+      {
+        "date": "2026-09-28",
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        }
+      },
+      {
+        "date": "2026-10-17",
+        "events": 1,
+        "units": 5,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-10-24",
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "release": 1
+        }
+      },
+      {
+        "date": "2026-11-04",
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_merged": 1
+        }
+      },
+      {
+        "date": "2026-11-09",
+        "events": 1,
+        "units": 4,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-11-13",
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_opened": 1
+        }
+      }
+    ],
+    "observed_days": 10,
+    "window_events": 10,
+    "outside_window_events": 0,
+    "future_events": 0,
+    "semantics": "Source-observed events only; not GitHub's complete contributions graph."
+  }
 }
