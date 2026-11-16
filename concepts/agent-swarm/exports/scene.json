@@ -64,19 +64,19 @@
       "repo_index": 2,
       "count": 3,
       "occurred_at": "2026-08-03T10:20:00Z",
-      "start": 0.55,
-      "duration": 2.2,
-      "agents": [
-        0,
-        1
-      ],
       "date": "2026-08-03",
       "cell": {
         "week": 37,
         "weekday": 1,
         "x": 743.45,
         "y": 150.8
-      }
+      },
+      "start": 0.55,
+      "duration": 2.2,
+      "agents": [
+        0,
+        1
+      ]
     },
     {
       "id": "demo-002",
@@ -85,19 +85,19 @@
       "repo_index": 4,
       "count": 1,
       "occurred_at": "2026-08-21T09:15:00Z",
-      "start": 1.75,
-      "duration": 2.2,
-      "agents": [
-        2,
-        3
-      ],
       "date": "2026-08-21",
       "cell": {
         "week": 39,
         "weekday": 5,
         "x": 777.95,
         "y": 217.2
-      }
+      },
+      "start": 1.75,
+      "duration": 2.2,
+      "agents": [
+        2,
+        3
+      ]
     },
     {
       "id": "demo-003",
@@ -106,19 +106,19 @@
       "repo_index": 0,
       "count": 2,
       "occurred_at": "2026-09-06T20:45:00Z",
-      "start": 2.95,
-      "duration": 2.2,
-      "agents": [
-        4,
-        5
-      ],
       "date": "2026-09-06",
       "cell": {
         "week": 42,
         "weekday": 0,
         "x": 829.7,
         "y": 134.2
-      }
+      },
+      "start": 2.95,
+      "duration": 2.2,
+      "agents": [
+        4,
+        5
+      ]
     },
     {
       "id": "demo-004",
@@ -127,19 +127,19 @@
       "repo_index": 4,
       "count": 1,
       "occurred_at": "2026-09-12T13:00:00Z",
-      "start": 4.15,
-      "duration": 2.2,
-      "agents": [
-        6,
-        7
-      ],
       "date": "2026-09-12",
       "cell": {
         "week": 42,
         "weekday": 6,
         "x": 829.7,
         "y": 233.8
-      }
+      },
+      "start": 4.15,
+      "duration": 2.2,
+      "agents": [
+        6,
+        7
+      ]
     },
     {
       "id": "demo-005",
@@ -148,19 +148,19 @@
       "repo_index": 3,
       "count": 1,
       "occurred_at": "2026-09-28T06:30:00Z",
-      "start": 5.35,
-      "duration": 2.2,
-      "agents": [
-        0,
-        1
-      ],
       "date": "2026-09-28",
       "cell": {
         "week": 45,
         "weekday": 1,
         "x": 881.45,
         "y": 150.8
-      }
+      },
+      "start": 5.35,
+      "duration": 2.2,
+      "agents": [
+        0,
+        1
+      ]
     },
     {
       "id": "demo-006",
@@ -169,19 +169,19 @@
       "repo_index": 3,
       "count": 5,
       "occurred_at": "2026-10-17T18:25:00Z",
-      "start": 6.55,
-      "duration": 2.2,
-      "agents": [
-        2,
-        3
-      ],
       "date": "2026-10-17",
       "cell": {
         "week": 47,
         "weekday": 6,
         "x": 915.95,
         "y": 233.8
-      }
+      },
+      "start": 6.55,
+      "duration": 2.2,
+      "agents": [
+        2,
+        3
+      ]
     },
     {
       "id": "demo-007",
@@ -190,19 +190,19 @@
       "repo_index": 2,
       "count": 1,
       "occurred_at": "2026-10-24T11:00:00Z",
-      "start": 7.75,
-      "duration": 2.2,
-      "agents": [
-        4,
-        5
-      ],
       "date": "2026-10-24",
       "cell": {
         "week": 48,
         "weekday": 6,
         "x": 933.2,
         "y": 233.8
-      }
+      },
+      "start": 7.75,
+      "duration": 2.2,
+      "agents": [
+        4,
+        5
+      ]
     },
     {
       "id": "demo-008",
@@ -211,19 +211,19 @@
       "repo_index": 1,
       "count": 1,
       "occurred_at": "2026-11-04T15:10:00Z",
-      "start": 8.95,
-      "duration": 2.2,
-      "agents": [
-        6,
-        7
-      ],
       "date": "2026-11-04",
       "cell": {
         "week": 50,
         "weekday": 3,
         "x": 967.7,
         "y": 184
-      }
+      },
+      "start": 8.95,
+      "duration": 2.2,
+      "agents": [
+        6,
+        7
+      ]
     },
     {
       "id": "demo-009",
@@ -232,19 +232,19 @@
       "repo_index": 1,
       "count": 4,
       "occurred_at": "2026-11-09T07:45:00Z",
-      "start": 10.15,
-      "duration": 2.2,
-      "agents": [
-        0,
-        1
-      ],
       "date": "2026-11-09",
       "cell": {
         "week": 51,
         "weekday": 1,
         "x": 984.95,
         "y": 150.8
-      }
+      },
+      "start": 10.15,
+      "duration": 2.2,
+      "agents": [
+        0,
+        1
+      ]
     },
     {
       "id": "demo-010",
@@ -253,19 +253,19 @@
       "repo_index": 0,
       "count": 1,
       "occurred_at": "2026-11-13T09:00:00Z",
-      "start": 11.35,
-      "duration": 2.2,
-      "agents": [
-        2,
-        3
-      ],
       "date": "2026-11-13",
       "cell": {
         "week": 51,
         "weekday": 5,
         "x": 984.95,
         "y": 217.2
-      }
+      },
+      "start": 11.35,
+      "duration": 2.2,
+      "agents": [
+        2,
+        3
+      ]
     }
   ],
   "shown": 10,
@@ -362,6 +362,6 @@
     "window_events": 10,
     "outside_window_events": 0,
     "future_events": 0,
-    "semantics": "Source-observed events only; not GitHub's complete contributions graph."
+    "semantics": "Source-observed events only; not GitHub's complete contributions graph. Choreography is time-stratified."
   }
 }
