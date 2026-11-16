@@ -40,10 +40,13 @@ py -3 .\concepts\open-source-metro\calendar_metro.py
 Start-Process .\concepts\open-source-metro\exports\preview.html
 ```
 
-Browser controls select **design, colour scheme, still/animated replay and a 5- or 17-station scenario**. All combinations are included as generated SVGs when running the command above. For automated tests:
+Browser controls select **design, colour scheme, still/animated replay and a 5- or 17-station scenario**. All combinations are included as generated SVGs when running the command above. If you open the checked-in browser preview without first generating all variants, it shows the nearest available sample and explains which export is missing. On narrow screens, **swipe the map horizontally inside its own scrollable panel** rather than shrinking the 53-week grid to illegibility. Expand **Recorded source events** below the map to inspect the exact UTC dates, repository names, event IDs, categories and source units used for the routes.
+
+For automated tests:
 
 ```powershell
 py -3 -m unittest discover -s .\concepts\open-source-metro\tests -v
+py -3 .\concepts\open-source-metro\tools\verify_readme_exports.py
 ```
 
 To render your own **public, normalised** JSON snapshot matching [`docs/DATA_CONTRACT.md`](../../docs/DATA_CONTRACT.md):
@@ -56,7 +59,7 @@ For existing users of `metro.py`, its CLI delegates to the calendar-first genera
 
 ## Validation and limits
 
-- Offline, deterministic, Python standard-library renderer and **26 calendar tests** in addition to the existing legacy regression suite. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
+- Offline, deterministic, Python standard-library renderer and **26 calendar tests**, **7 checked-in SVG gate tests**, and **6 browser-preview contract tests**, in addition to the existing legacy regression suite. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
 - The supplied demonstration fixture has **five repositories and ten source events** across August to November 2026. It is intentionally sparse across a full 53-week calendar. The 17-station stress demo is separately labelled as synthetic.
 - The snapshot is **not** a complete GitHub contribution calendar. GitHub source APIs have differing coverage; a future public-data collector would need an independently reviewed data provenance and pagination contract.
 - The renderer limits the directory to up to **18 repositories**, prioritising those active in the displayed year, and the **most recent 240 source events** from those repositories; omissions appear in the footer. Historical events outside the visible 53-week range or events dated beyond snapshot generation are also excluded and counted as omitted.
@@ -64,3 +67,5 @@ For existing users of `metro.py`, its CLI delegates to the calendar-first genera
 - Static SVGs are the GitHub-compatible exports. A GitHub README render, mobile browser and screen-reader accessibility pass should be checked before installing on a public profile. SVG animation in GitHub is not guaranteed.
 
 **Scope:** changes are confined to this concept and the **branch-only landing README**. Other concepts, `master`, and the profile repository remain untouched. The draft PR remains unmerged.
+
+**Browser verification note:** This environment's automated Chromium was blocked from loading even a local `data:` page. The responsive browser behaviour is covered by offline code contracts, but a real mobile-browser and GitHub image-proxy check is still required before release.
