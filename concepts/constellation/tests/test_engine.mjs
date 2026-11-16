@@ -5,7 +5,7 @@ import {constellationEngine} from '../engine.mjs';
 const api=constellationEngine();
 const here=new URL('../fixtures/',import.meta.url);
 const stress=JSON.parse(readFileSync(new URL('streak-demo.json',here),'utf8'));
-const shared=JSON.parse(readFileSync(new URL('sample-fixture-local.json',here),'utf8'));
+const shared=JSON.parse(readFileSync(new URL('../../../shared/fixtures/demo-activity.json',import.meta.url),'utf8'));
 const clone=o=>structuredClone(o);
 const event=(id,date,extra={})=>({id,kind:'commit',repo_full_name:'sample-dev/aurora',occurred_at:date+'T12:00:00Z',url:'https://github.com/example',count:1,...extra});
 const base=(dates=[],generated='2026-11-16T00:00:00Z')=>({...clone(shared),generated_at:generated,activity:dates.map((d,i)=>event('e'+i,d))});
