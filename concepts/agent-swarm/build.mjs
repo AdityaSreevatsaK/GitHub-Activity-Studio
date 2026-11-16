@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { makeScene } from "./scene.mjs";
 import { calendarData, svgCalendar } from "./calendar.mjs";
 import { renderCalendarGif } from "./calendar-gif.mjs";
+import { showcaseData } from "./showcase.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -31,6 +32,22 @@ for (const style of ["geometric", "robots"]) {
     console.log("SVG / STILL / GIF  "+prefix);
   }
 }
+
+// Optional richer synthetic demo, useful for judging the swarm's choreography
+// on a populated chart. Never substitute it for genuine GitHub contributions.
+const synthetic=showcaseData();
+const richer=calendarData(makeScene(synthetic),synthetic);
+const demoOut=join(out,"showcase");
+mkdirSync(demoOut,{recursive:true});
+writeFileSync(join(demoOut,"scene.json"),JSON.stringify(richer,null,2)+"\n","utf8");
+for(const [style,theme] of [["geometric","dark"],["robots","light"]]){
+ const prefix=style+"-"+theme;
+ writeFileSync(join(demoOut,prefix+".svg"),svgCalendar(richer,{style,theme}),"utf8");
+ writeFileSync(join(demoOut,prefix+"-still.svg"),svgCalendar(richer,{style,theme,animated:false,time:8.3}),"utf8");
+ writeFileSync(join(demoOut,prefix+".gif"),Buffer.from(renderCalendarGif(richer,{style,theme})));
+ console.log("SYNTHETIC SHOWCASE  "+prefix);
+}
+
 console.log("Rendered " + scene.shown + " / " + scene.event_total + " event packets; " +
   scene.repositories.length + " / " + scene.repository_total + " repository hubs.");
 console.log("Files available under " + out);

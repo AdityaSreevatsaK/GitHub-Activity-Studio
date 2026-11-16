@@ -26,6 +26,20 @@ If animations are disabled, see the [geometric still](exports/geometric-dark-sti
 
 The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar can display events from all repositories in the input, whilst the animated swarm selects up to five recently active repository beacons and ten sampled source events. Animations target source-backed calendar dates; the 14-second replay remains a visual metaphor.
 
+## A richer, explicitly fictional visual showcase
+
+The canonical source remains the shared, ten-event demonstration fixture. For design evaluation, there is a separate **synthetic showcase** with 327 deterministically generated demonstration events across 187 days. It is visibly labelled **SYNTHETIC SHOWCASE**, and **does not represent your actual GitHub contribution history**. Its higher activity density makes the swarm choreography easier to judge.
+
+**Geometric showcase:**
+
+![Geometric Agent Swarm on a rich synthetic contributions-style calendar, not real user activity](exports/showcase/geometric-dark.gif)
+
+**Miniature-robot showcase:**
+
+![Little robot Agent Swarm on a rich synthetic contributions-style calendar, not real user activity](exports/showcase/robots-light.gif)
+
+[See the dedicated showcase gallery](showcase.html). Both designs use exactly the same simulated source events and source-backed task mapping. The live-data collector is still out of scope.
+
 ## Windows: start to finish
 
 **Beforehand:** install [Node.js 20 or later](https://nodejs.org/) and clone or download this repository. No tokens or extra packages are needed.
@@ -37,13 +51,13 @@ The 53-week, seven-day grid is **date-accurate for events present in the normali
 node concepts/agent-swarm/build.mjs
 ~~~
 
-3. Start the private local preview server:
+3. Start the private local preview server (the build also regenerates the optional synthetic showcase assets):
 
 ~~~powershell
 node concepts/agent-swarm/serve.mjs
 ~~~
 
-4. Open **http://127.0.0.1:8000/**. Switch design and theme, pause/replay, scrub the timeline, inspect date cells with the mouse or use the keyboard-accessible recorded-day selector. Press **Ctrl+C** to stop.
+4. Open **http://127.0.0.1:8000/** (or **http://127.0.0.1:8000/showcase.html** for the richer fictional gallery). Switch design and theme, pause/replay, scrub the timeline, inspect date cells with the mouse or use the keyboard-accessible recorded-day selector. Press **Ctrl+C** to stop.
 5. Run tests in another PowerShell window:
 
 ~~~powershell
