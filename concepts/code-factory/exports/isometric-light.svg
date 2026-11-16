@@ -1,177 +1,428 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img" aria-labelledby="factory-title factory-desc">
-<title id="factory-title">Code Factory | isometric | SYNTHETIC DEMO</title>
-<desc id="factory-desc">Code Factory isometric illustration. SYNTHETIC DEMO. 5 repositories, 10 unique event records. 14 commit, 2 pr opened, 2 pr merged, 1 issue opened, 1 release. Factory processes are visual metaphors only, not build or deployment status.</desc>
-<defs>
-<pattern id="bolts" width="28" height="16" patternUnits="userSpaceOnUse"><path d="M0 14h6" stroke="#657c8a" opacity=".45" stroke-width="2"/></pattern>
-<clipPath id="belt-clip"><rect x="80" y="208" width="838" height="54"/></clipPath>
-</defs>
-<rect x="0" y="0" width="1000" height="310" rx="0" fill="#f6efde" />
-<rect x="16" y="13" width="968" height="283" rx="15" fill="#fdf7e9" stroke="#bccabb" stroke-width="1" opacity=".96"/>
-<text x="39" y="46" font-size="24" fill="#24394b" font-weight="900" letter-spacing="3">CODE FACTORY</text>
-<text x="40" y="66" font-size="12" fill="#627786" >a little production line of open-source activity</text>
-<rect x="780" y="27" width="174" height="26" rx="13" fill="#e0d7c4" />
-<text x="867" y="45" font-size="11" fill="#24394b" text-anchor="middle" font-weight="bold" letter-spacing="1">SYNTHETIC DEMO</text>
-<text x="40" y="88" font-size="10" fill="#b77946" font-weight="bold" letter-spacing="1.5">FLOOR 01 / ISOMETRIC</text>
-<text x="957" y="87" font-size="10" fill="#627786" text-anchor="end">LIVE LOOP</text>
-<style>@keyframes rolling{from{transform:translateX(-32px)}to{transform:translateX(0)}}.belt-lines{animation:rolling .9s linear infinite}.blink{animation:glow 1.8s ease-in-out infinite}@keyframes glow{0%,100%{opacity:.35}50%{opacity:1}}@media(prefers-reduced-motion:reduce){.belt-lines,.blink{animation:none!important}.steam{display:none}}</style>
-<path d="M56 210 L170 142 862 142 961 210 860 269 151 269 Z" fill="#cfc5b0" />
-<path d="M56 210 L170 142 862 142 961 210" fill="none" stroke="#657c8a" stroke-width="3"/>
-<path d="M150 269 L860 269" fill="none" stroke="#4d5964" stroke-width="4"/>
-<path d="M88 195 l80 -47 693 0 69 47" fill="none" stroke="#bccabb" stroke-width="2" opacity=".8"/>
-<path d="M59 208 L167 147 M962 209 L862 146" fill="none" stroke="#bccabb" stroke-width="2"/>
-<path d="M60 209 L962 209" fill="none" stroke="#657c8a" stroke-width="1" opacity=".4"/>
-<path d="M81 206 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
-<path d="M83 160 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
-<path d="M83 160 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
-<path d="M128 182 l45 -24 v53 l-45 24 z" fill="#4d5964" />
-<path d="M91 191 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
-<path d="M137 193 l25 -13 v18 l-25 13 z" fill="#bccabb" />
-<path d="M93 193 l10 5 v9 l-10 -5 z" fill="#55cbb9" />
-<path d="M106 200 l10 5 v9 l-10 -5 z" fill="#f6d187" />
-<path d="M124 138 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
-<path d="M123 122 l13 -7 10 5 -13 7 z" fill="#55cbb9" />
-<path d="M152 156 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
-<path d="M148 132 l12 -7 9 5 -12 7 z" fill="#657c8a" />
-<text x="122" y="106" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">orbit</text>
-<rect x="145" y="188" width="7" height="7" rx="2" fill="#f6d187" />
-<path d="M148 190 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
-<path d="M87 165 l3 1 M166 165 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
-<g class="steam"><circle cx="156" cy="120" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="120;101;120" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
-<path d="M149 147 l6 -3 6 3 -6 3z" fill="#55cbb9" />
-<path d="M108 153 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
-<circle cx="152" cy="138" r="4" fill="#55cbb9" class="blink"/>
-<path d="M248 198 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
-<path d="M250 152 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
-<path d="M250 152 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
-<path d="M295 174 l45 -24 v53 l-45 24 z" fill="#4d5964" />
-<path d="M258 183 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
-<path d="M304 185 l25 -13 v18 l-25 13 z" fill="#bccabb" />
-<path d="M260 185 l10 5 v9 l-10 -5 z" fill="#83a7ed" />
-<path d="M273 192 l10 5 v9 l-10 -5 z" fill="#f6d187" />
-<path d="M291 130 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
-<path d="M290 114 l13 -7 10 5 -13 7 z" fill="#83a7ed" />
-<path d="M319 148 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
-<path d="M315 124 l12 -7 9 5 -12 7 z" fill="#657c8a" />
-<text x="289" y="98" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">harbour</text>
-<rect x="312" y="180" width="7" height="7" rx="2" fill="#f6d187" />
-<path d="M315 182 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
-<path d="M254 157 l3 1 M333 157 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
-<g class="steam"><circle cx="323" cy="112" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="112;93;112" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
-<path d="M316 139 l6 -3 6 3 -6 3z" fill="#83a7ed" />
-<path d="M275 145 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
-<circle cx="319" cy="130" r="4" fill="#83a7ed" class="blink"/>
-<path d="M415 206 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
-<path d="M417 160 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
-<path d="M417 160 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
-<path d="M462 182 l45 -24 v53 l-45 24 z" fill="#4d5964" />
-<path d="M425 191 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
-<path d="M471 193 l25 -13 v18 l-25 13 z" fill="#bccabb" />
-<path d="M427 193 l10 5 v9 l-10 -5 z" fill="#e6af62" />
-<path d="M440 200 l10 5 v9 l-10 -5 z" fill="#f6d187" />
-<path d="M458 138 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
-<path d="M457 122 l13 -7 10 5 -13 7 z" fill="#e6af62" />
-<path d="M486 156 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
-<path d="M482 132 l12 -7 9 5 -12 7 z" fill="#657c8a" />
-<text x="456" y="106" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">aurora</text>
-<rect x="479" y="188" width="7" height="7" rx="2" fill="#f6d187" />
-<path d="M482 190 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
-<path d="M421 165 l3 1 M500 165 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
-<g class="steam"><circle cx="490" cy="120" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="120;101;120" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
-<path d="M483 147 l6 -3 6 3 -6 3z" fill="#e6af62" />
-<path d="M442 153 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
-<circle cx="486" cy="138" r="4" fill="#e6af62" class="blink"/>
-<path d="M582 198 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
-<path d="M584 152 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
-<path d="M584 152 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
-<path d="M629 174 l45 -24 v53 l-45 24 z" fill="#4d5964" />
-<path d="M592 183 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
-<path d="M638 185 l25 -13 v18 l-25 13 z" fill="#bccabb" />
-<path d="M594 185 l10 5 v9 l-10 -5 z" fill="#e78f97" />
-<path d="M607 192 l10 5 v9 l-10 -5 z" fill="#f6d187" />
-<path d="M625 130 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
-<path d="M624 114 l13 -7 10 5 -13 7 z" fill="#e78f97" />
-<path d="M653 148 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
-<path d="M649 124 l12 -7 9 5 -12 7 z" fill="#657c8a" />
-<text x="623" y="98" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">ember</text>
-<rect x="646" y="180" width="7" height="7" rx="2" fill="#f6d187" />
-<path d="M649 182 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
-<path d="M588 157 l3 1 M667 157 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
-<g class="steam"><circle cx="657" cy="112" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="112;93;112" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
-<path d="M650 139 l6 -3 6 3 -6 3z" fill="#e78f97" />
-<path d="M609 145 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
-<circle cx="653" cy="130" r="4" fill="#e78f97" class="blink"/>
-<path d="M749 206 l41 -21 67 32 -42 22 z" fill="#4d5964" opacity=".45"/>
-<path d="M751 160 l45 -24 45 22 -45 24 z" fill="#b5cad0" />
-<path d="M751 160 l45 22 v53 l-45 -22 z" fill="#8eaab5" />
-<path d="M796 182 l45 -24 v53 l-45 24 z" fill="#4d5964" />
-<path d="M759 191 l30 15 v18 l-30 -15 z" fill="#e0d7c4" />
-<path d="M805 193 l25 -13 v18 l-25 13 z" fill="#bccabb" />
-<path d="M761 193 l10 5 v9 l-10 -5 z" fill="#bc9ce8" />
-<path d="M774 200 l10 5 v9 l-10 -5 z" fill="#f6d187" />
-<path d="M792 138 l11 -6 v-16 l-11 6 z" fill="#4d5964" />
-<path d="M791 122 l13 -7 10 5 -13 7 z" fill="#bc9ce8" />
-<path d="M820 156 l8 -4 v-23 l-8 4 z" fill="#4d5964" />
-<path d="M816 132 l12 -7 9 5 -12 7 z" fill="#657c8a" />
-<text x="790" y="106" font-size="12" fill="#24394b" text-anchor="middle" font-weight="bold">atlas</text>
-<rect x="813" y="188" width="7" height="7" rx="2" fill="#f6d187" />
-<path d="M816 190 l3 1" fill="none" stroke="#4d5964" stroke-width="1"/>
-<path d="M755 165 l3 1 M834 165 l3 -2" fill="none" stroke="#f6d187" stroke-width="1.5"/>
-<g class="steam"><circle cx="824" cy="120" r="3" fill="#627786" opacity=".4"><animate attributeName="cy" values="120;101;120" dur="3.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.45;0" dur="3.6s" repeatCount="indefinite"/></circle></g>
-<path d="M817 147 l6 -3 6 3 -6 3z" fill="#bc9ce8" />
-<path d="M776 153 l11 -6 10 5 -11 6z" fill="#f6d187" opacity=".8"/>
-<circle cx="820" cy="138" r="4" fill="#bc9ce8" class="blink"/>
-<path d="M78 218 L910 218 938 251 105 251 Z" fill="#4d5964" />
-<path d="M83 219 L905 219 921 235 99 235 Z" fill="#657c8a" />
-<path d="M87 221 L905 221 914 231 96 231 Z" fill="#e0d7c4" />
-<path d="M102 252 L938 252 934 259 100 259 Z" fill="#8eaab5" />
-<path d="M113 251 l11 0 -2 16 -11 0z M876 251 l13 0 4 16 -13 0z" fill="#4d5964" />
-<path d="M106 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M138 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M170 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M202 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M234 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M266 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M298 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M330 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M362 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M394 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M426 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M458 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M490 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M522 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M554 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M586 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M618 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M650 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M682 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M714 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M746 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M778 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M810 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M842 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M874 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<path d="M906 228 l12 0" fill="none" stroke="#24394b" stroke-width="2" opacity=".30"/>
-<g opacity=".35" clip-path="url(#belt-clip)"><g class="belt-lines"><path d="M78 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M110 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M142 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M174 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M206 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M238 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M270 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M302 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M334 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M366 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M398 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M430 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M462 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M494 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M526 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M558 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M590 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M622 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M654 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M686 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M718 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M750 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M782 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M814 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M846 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M878 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M910 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/><path d="M942 235 l14 0" fill="none" stroke="#b77946" stroke-width="3"/></g></g>
-<g><title>sample-dev/aurora | commit ×3 | 2026-08-03T10:20:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#e6af62" /><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×3</text><animateMotion dur="12s" begin="0.00s" repeatCount="indefinite" path="M444,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/atlas | pr_opened ×1 | 2026-08-21T09:15:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#83a7ed" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#83a7ed" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◇</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#bc9ce8" /><animateMotion dur="12s" begin="0.74s" repeatCount="indefinite" path="M778,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/ember | commit ×2 | 2026-09-06T20:45:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#e78f97" /><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×2</text><animateMotion dur="12s" begin="1.48s" repeatCount="indefinite" path="M611,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/atlas | pr_merged ×1 | 2026-09-12T13:00:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#e6af62" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#e6af62" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◆</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#bc9ce8" /><animateMotion dur="12s" begin="2.22s" repeatCount="indefinite" path="M778,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/orbit | issue_opened ×1 | 2026-09-28T06:30:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#e78f97" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#e78f97" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">!</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#55cbb9" /><animateMotion dur="12s" begin="2.96s" repeatCount="indefinite" path="M110,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/orbit | commit ×5 | 2026-10-17T18:25:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#55cbb9" /><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×5</text><animateMotion dur="12s" begin="3.70s" repeatCount="indefinite" path="M110,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/aurora | release ×1 | 2026-10-24T11:00:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#bc9ce8" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#bc9ce8" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">✦</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#e6af62" /><animateMotion dur="12s" begin="4.44s" repeatCount="indefinite" path="M444,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/harbour | pr_merged ×1 | 2026-11-04T15:10:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#e6af62" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#e6af62" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◆</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#83a7ed" /><animateMotion dur="12s" begin="5.18s" repeatCount="indefinite" path="M277,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/harbour | commit ×4 | 2026-11-09T07:45:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#55cbb9" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#55cbb9" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">●</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#83a7ed" /><rect x="8" y="-21" width="27" height="13" rx="5" fill="#4d5964" /><text x="21" y="-11" font-size="10" fill="#24394b" text-anchor="middle" font-weight="bold">×4</text><animateMotion dur="12s" begin="5.92s" repeatCount="indefinite" path="M277,224 L965,224" calcMode="linear"/></g></g>
-<g><title>sample-dev/ember | pr_opened ×1 | 2026-11-13T09:00:00+00:00</title><g><path d="M-10 -8 l20 0 6 5 -20 0z" fill="#83a7ed" /><path d="M-10 -8 l6 5 v15 l-6 -5z" fill="#4d5964" /><path d="M-4 -3 l20 0 v15 l-20 0z" fill="#83a7ed" /><text x="6" y="9" font-size="14" fill="#4d5964" text-anchor="middle" font-weight="900">◇</text><rect x="-12" y="-15" width="5" height="5" rx="0" fill="#e78f97" /><animateMotion dur="12s" begin="6.66s" repeatCount="indefinite" path="M611,224 L965,224" calcMode="linear"/></g></g>
-<rect x="28" y="273" width="944" height="16" rx="4" fill="#fdf7e9" />
-<rect x="44" y="275" width="13" height="11" rx="2" fill="#55cbb9" />
-<text x="62" y="285" font-size="10" fill="#24394b" font-weight="bold">PARTS  14</text>
-<rect x="227" y="275" width="13" height="11" rx="2" fill="#83a7ed" />
-<text x="245" y="285" font-size="10" fill="#24394b" font-weight="bold">ASSEMBLE  2</text>
-<rect x="410" y="275" width="13" height="11" rx="2" fill="#e6af62" />
-<text x="428" y="285" font-size="10" fill="#24394b" font-weight="bold">SEALED  2</text>
-<rect x="593" y="275" width="13" height="11" rx="2" fill="#e78f97" />
-<text x="611" y="285" font-size="10" fill="#24394b" font-weight="bold">INSPECT  1</text>
-<rect x="776" y="275" width="13" height="11" rx="2" fill="#bc9ce8" />
-<text x="794" y="285" font-size="10" fill="#24394b" font-weight="bold">DISPATCH  1</text>
-<text x="965" y="305" font-size="9" fill="#627786" text-anchor="end">METAPHOR ONLY · NOT CI OR DEPLOYMENT STATUS</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-labelledby="codefactory-title codefactory-desc">
+<title id="codefactory-title">Code Factory · isometric · SYNTHETIC DEMO</title><desc id="codefactory-desc">52-week calendar grid of 10 unique observed event records across 5 repositories. This synthetic demo is a partial activity snapshot, not the official GitHub contribution calendar. Isometric or pixel factory machines represent the selected repositories. Events appear as coloured packages, and counts are recorded units rather than a count of commits.</desc>
+<defs><clipPath id="scene-belt"><rect x="30" y="274" width="940" height="14"/></clipPath><pattern id="floor-dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="#859da4" opacity=".26"/></pattern></defs>
+<style>@keyframes lamp{0%,100%{opacity:.3}50%{opacity:1}}@keyframes belt{to{transform:translateX(16px)}}.machine-light{animation:lamp 2s ease-in-out infinite}.belt-ticks{animation:belt .9s linear infinite}@media(prefers-reduced-motion:reduce){.machine-light,.belt-ticks{animation:none!important}.moving-package{display:none!important}.pulse-dot{display:none!important}}</style>
+<rect x="0" y="0" width="1000" height="320" rx="0" fill="#eee6d6" />
+<rect x="13" y="12" width="974" height="296" rx="14" fill="#fbf7e9" stroke="#bcc7bb" stroke-width="1"/>
+<text x="35" y="44" font-size="23" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="900" letter-spacing="2.2">CODE FACTORY</text>
+<text x="36" y="63" font-size="11" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">GitHub activity, built into a miniature world</text>
+<rect x="801" y="28" width="160" height="25" rx="12" fill="#e9e8dd" stroke="#bcc7bb"/>
+<text x="881" y="45" font-size="11" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" text-anchor="middle" font-weight="700">SYNTHETIC DEMO</text>
+<rect x="29" y="76" width="942" height="140" rx="10" fill="#e9e8dd" stroke="#bcc7bb" stroke-width="1"/>
+<text x="45" y="93" font-size="11" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" letter-spacing=".7">52-WEEK ACTIVITY GRID</text>
+<text x="955" y="93" font-size="10" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Recorded event units · not official contribution totals</text>
+<g><title>2025-11-16: 0 recorded event units</title><rect x="127.00" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-17: 0 recorded event units</title><rect x="127.00" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-18: 0 recorded event units</title><rect x="127.00" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-19: 0 recorded event units</title><rect x="127.00" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-20: 0 recorded event units</title><rect x="127.00" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-21: 0 recorded event units</title><rect x="127.00" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-22: 0 recorded event units</title><rect x="127.00" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-23: 0 recorded event units</title><rect x="141.15" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-24: 0 recorded event units</title><rect x="141.15" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-25: 0 recorded event units</title><rect x="141.15" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-26: 0 recorded event units</title><rect x="141.15" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-27: 0 recorded event units</title><rect x="141.15" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-28: 0 recorded event units</title><rect x="141.15" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-29: 0 recorded event units</title><rect x="141.15" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-11-30: 0 recorded event units</title><rect x="155.30" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-01: 0 recorded event units</title><rect x="155.30" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-02: 0 recorded event units</title><rect x="155.30" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-03: 0 recorded event units</title><rect x="155.30" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-04: 0 recorded event units</title><rect x="155.30" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-05: 0 recorded event units</title><rect x="155.30" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-06: 0 recorded event units</title><rect x="155.30" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="169.45" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Dec</text>
+<g><title>2025-12-07: 0 recorded event units</title><rect x="169.45" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-08: 0 recorded event units</title><rect x="169.45" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-09: 0 recorded event units</title><rect x="169.45" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-10: 0 recorded event units</title><rect x="169.45" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-11: 0 recorded event units</title><rect x="169.45" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-12: 0 recorded event units</title><rect x="169.45" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-13: 0 recorded event units</title><rect x="169.45" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-14: 0 recorded event units</title><rect x="183.60" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-15: 0 recorded event units</title><rect x="183.60" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-16: 0 recorded event units</title><rect x="183.60" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-17: 0 recorded event units</title><rect x="183.60" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-18: 0 recorded event units</title><rect x="183.60" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-19: 0 recorded event units</title><rect x="183.60" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-20: 0 recorded event units</title><rect x="183.60" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-21: 0 recorded event units</title><rect x="197.75" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-22: 0 recorded event units</title><rect x="197.75" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-23: 0 recorded event units</title><rect x="197.75" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-24: 0 recorded event units</title><rect x="197.75" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-25: 0 recorded event units</title><rect x="197.75" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-26: 0 recorded event units</title><rect x="197.75" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-27: 0 recorded event units</title><rect x="197.75" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-28: 0 recorded event units</title><rect x="211.90" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-29: 0 recorded event units</title><rect x="211.90" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-30: 0 recorded event units</title><rect x="211.90" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2025-12-31: 0 recorded event units</title><rect x="211.90" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-01: 0 recorded event units</title><rect x="211.90" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-02: 0 recorded event units</title><rect x="211.90" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-03: 0 recorded event units</title><rect x="211.90" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="226.05" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Jan</text>
+<g><title>2026-01-04: 0 recorded event units</title><rect x="226.05" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-05: 0 recorded event units</title><rect x="226.05" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-06: 0 recorded event units</title><rect x="226.05" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-07: 0 recorded event units</title><rect x="226.05" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-08: 0 recorded event units</title><rect x="226.05" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-09: 0 recorded event units</title><rect x="226.05" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-10: 0 recorded event units</title><rect x="226.05" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-11: 0 recorded event units</title><rect x="240.20" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-12: 0 recorded event units</title><rect x="240.20" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-13: 0 recorded event units</title><rect x="240.20" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-14: 0 recorded event units</title><rect x="240.20" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-15: 0 recorded event units</title><rect x="240.20" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-16: 0 recorded event units</title><rect x="240.20" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-17: 0 recorded event units</title><rect x="240.20" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-18: 0 recorded event units</title><rect x="254.35" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-19: 0 recorded event units</title><rect x="254.35" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-20: 0 recorded event units</title><rect x="254.35" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-21: 0 recorded event units</title><rect x="254.35" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-22: 0 recorded event units</title><rect x="254.35" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-23: 0 recorded event units</title><rect x="254.35" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-24: 0 recorded event units</title><rect x="254.35" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-25: 0 recorded event units</title><rect x="268.50" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-26: 0 recorded event units</title><rect x="268.50" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-27: 0 recorded event units</title><rect x="268.50" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-28: 0 recorded event units</title><rect x="268.50" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-29: 0 recorded event units</title><rect x="268.50" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-30: 0 recorded event units</title><rect x="268.50" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-01-31: 0 recorded event units</title><rect x="268.50" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="282.65" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Feb</text>
+<g><title>2026-02-01: 0 recorded event units</title><rect x="282.65" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-02: 0 recorded event units</title><rect x="282.65" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-03: 0 recorded event units</title><rect x="282.65" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-04: 0 recorded event units</title><rect x="282.65" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-05: 0 recorded event units</title><rect x="282.65" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-06: 0 recorded event units</title><rect x="282.65" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-07: 0 recorded event units</title><rect x="282.65" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-08: 0 recorded event units</title><rect x="296.80" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-09: 0 recorded event units</title><rect x="296.80" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-10: 0 recorded event units</title><rect x="296.80" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-11: 0 recorded event units</title><rect x="296.80" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-12: 0 recorded event units</title><rect x="296.80" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-13: 0 recorded event units</title><rect x="296.80" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-14: 0 recorded event units</title><rect x="296.80" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-15: 0 recorded event units</title><rect x="310.95" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-16: 0 recorded event units</title><rect x="310.95" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-17: 0 recorded event units</title><rect x="310.95" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-18: 0 recorded event units</title><rect x="310.95" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-19: 0 recorded event units</title><rect x="310.95" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-20: 0 recorded event units</title><rect x="310.95" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-21: 0 recorded event units</title><rect x="310.95" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-22: 0 recorded event units</title><rect x="325.10" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-23: 0 recorded event units</title><rect x="325.10" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-24: 0 recorded event units</title><rect x="325.10" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-25: 0 recorded event units</title><rect x="325.10" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-26: 0 recorded event units</title><rect x="325.10" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-27: 0 recorded event units</title><rect x="325.10" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-02-28: 0 recorded event units</title><rect x="325.10" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="339.25" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Mar</text>
+<g><title>2026-03-01: 0 recorded event units</title><rect x="339.25" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-02: 0 recorded event units</title><rect x="339.25" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-03: 0 recorded event units</title><rect x="339.25" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-04: 0 recorded event units</title><rect x="339.25" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-05: 0 recorded event units</title><rect x="339.25" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-06: 0 recorded event units</title><rect x="339.25" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-07: 0 recorded event units</title><rect x="339.25" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-08: 0 recorded event units</title><rect x="353.40" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-09: 0 recorded event units</title><rect x="353.40" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-10: 0 recorded event units</title><rect x="353.40" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-11: 0 recorded event units</title><rect x="353.40" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-12: 0 recorded event units</title><rect x="353.40" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-13: 0 recorded event units</title><rect x="353.40" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-14: 0 recorded event units</title><rect x="353.40" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-15: 0 recorded event units</title><rect x="367.55" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-16: 0 recorded event units</title><rect x="367.55" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-17: 0 recorded event units</title><rect x="367.55" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-18: 0 recorded event units</title><rect x="367.55" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-19: 0 recorded event units</title><rect x="367.55" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-20: 0 recorded event units</title><rect x="367.55" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-21: 0 recorded event units</title><rect x="367.55" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-22: 0 recorded event units</title><rect x="381.70" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-23: 0 recorded event units</title><rect x="381.70" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-24: 0 recorded event units</title><rect x="381.70" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-25: 0 recorded event units</title><rect x="381.70" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-26: 0 recorded event units</title><rect x="381.70" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-27: 0 recorded event units</title><rect x="381.70" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-28: 0 recorded event units</title><rect x="381.70" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-29: 0 recorded event units</title><rect x="395.85" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-30: 0 recorded event units</title><rect x="395.85" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-03-31: 0 recorded event units</title><rect x="395.85" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-01: 0 recorded event units</title><rect x="395.85" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-02: 0 recorded event units</title><rect x="395.85" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-03: 0 recorded event units</title><rect x="395.85" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-04: 0 recorded event units</title><rect x="395.85" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="410" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Apr</text>
+<g><title>2026-04-05: 0 recorded event units</title><rect x="410.00" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-06: 0 recorded event units</title><rect x="410.00" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-07: 0 recorded event units</title><rect x="410.00" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-08: 0 recorded event units</title><rect x="410.00" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-09: 0 recorded event units</title><rect x="410.00" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-10: 0 recorded event units</title><rect x="410.00" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-11: 0 recorded event units</title><rect x="410.00" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-12: 0 recorded event units</title><rect x="424.15" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-13: 0 recorded event units</title><rect x="424.15" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-14: 0 recorded event units</title><rect x="424.15" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-15: 0 recorded event units</title><rect x="424.15" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-16: 0 recorded event units</title><rect x="424.15" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-17: 0 recorded event units</title><rect x="424.15" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-18: 0 recorded event units</title><rect x="424.15" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-19: 0 recorded event units</title><rect x="438.30" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-20: 0 recorded event units</title><rect x="438.30" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-21: 0 recorded event units</title><rect x="438.30" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-22: 0 recorded event units</title><rect x="438.30" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-23: 0 recorded event units</title><rect x="438.30" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-24: 0 recorded event units</title><rect x="438.30" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-25: 0 recorded event units</title><rect x="438.30" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-26: 0 recorded event units</title><rect x="452.45" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-27: 0 recorded event units</title><rect x="452.45" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-28: 0 recorded event units</title><rect x="452.45" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-29: 0 recorded event units</title><rect x="452.45" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-04-30: 0 recorded event units</title><rect x="452.45" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-01: 0 recorded event units</title><rect x="452.45" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-02: 0 recorded event units</title><rect x="452.45" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="466.6" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">May</text>
+<g><title>2026-05-03: 0 recorded event units</title><rect x="466.60" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-04: 0 recorded event units</title><rect x="466.60" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-05: 0 recorded event units</title><rect x="466.60" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-06: 0 recorded event units</title><rect x="466.60" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-07: 0 recorded event units</title><rect x="466.60" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-08: 0 recorded event units</title><rect x="466.60" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-09: 0 recorded event units</title><rect x="466.60" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-10: 0 recorded event units</title><rect x="480.75" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-11: 0 recorded event units</title><rect x="480.75" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-12: 0 recorded event units</title><rect x="480.75" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-13: 0 recorded event units</title><rect x="480.75" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-14: 0 recorded event units</title><rect x="480.75" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-15: 0 recorded event units</title><rect x="480.75" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-16: 0 recorded event units</title><rect x="480.75" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-17: 0 recorded event units</title><rect x="494.90" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-18: 0 recorded event units</title><rect x="494.90" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-19: 0 recorded event units</title><rect x="494.90" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-20: 0 recorded event units</title><rect x="494.90" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-21: 0 recorded event units</title><rect x="494.90" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-22: 0 recorded event units</title><rect x="494.90" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-23: 0 recorded event units</title><rect x="494.90" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-24: 0 recorded event units</title><rect x="509.05" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-25: 0 recorded event units</title><rect x="509.05" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-26: 0 recorded event units</title><rect x="509.05" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-27: 0 recorded event units</title><rect x="509.05" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-28: 0 recorded event units</title><rect x="509.05" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-29: 0 recorded event units</title><rect x="509.05" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-30: 0 recorded event units</title><rect x="509.05" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-05-31: 0 recorded event units</title><rect x="523.20" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-01: 0 recorded event units</title><rect x="523.20" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-02: 0 recorded event units</title><rect x="523.20" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-03: 0 recorded event units</title><rect x="523.20" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-04: 0 recorded event units</title><rect x="523.20" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-05: 0 recorded event units</title><rect x="523.20" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-06: 0 recorded event units</title><rect x="523.20" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="537.35" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Jun</text>
+<g><title>2026-06-07: 0 recorded event units</title><rect x="537.35" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-08: 0 recorded event units</title><rect x="537.35" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-09: 0 recorded event units</title><rect x="537.35" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-10: 0 recorded event units</title><rect x="537.35" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-11: 0 recorded event units</title><rect x="537.35" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-12: 0 recorded event units</title><rect x="537.35" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-13: 0 recorded event units</title><rect x="537.35" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-14: 0 recorded event units</title><rect x="551.50" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-15: 0 recorded event units</title><rect x="551.50" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-16: 0 recorded event units</title><rect x="551.50" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-17: 0 recorded event units</title><rect x="551.50" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-18: 0 recorded event units</title><rect x="551.50" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-19: 0 recorded event units</title><rect x="551.50" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-20: 0 recorded event units</title><rect x="551.50" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-21: 0 recorded event units</title><rect x="565.65" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-22: 0 recorded event units</title><rect x="565.65" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-23: 0 recorded event units</title><rect x="565.65" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-24: 0 recorded event units</title><rect x="565.65" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-25: 0 recorded event units</title><rect x="565.65" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-26: 0 recorded event units</title><rect x="565.65" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-27: 0 recorded event units</title><rect x="565.65" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-28: 0 recorded event units</title><rect x="579.80" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-29: 0 recorded event units</title><rect x="579.80" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-06-30: 0 recorded event units</title><rect x="579.80" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-01: 0 recorded event units</title><rect x="579.80" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-02: 0 recorded event units</title><rect x="579.80" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-03: 0 recorded event units</title><rect x="579.80" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-04: 0 recorded event units</title><rect x="579.80" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="593.95" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Jul</text>
+<g><title>2026-07-05: 0 recorded event units</title><rect x="593.95" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-06: 0 recorded event units</title><rect x="593.95" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-07: 0 recorded event units</title><rect x="593.95" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-08: 0 recorded event units</title><rect x="593.95" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-09: 0 recorded event units</title><rect x="593.95" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-10: 0 recorded event units</title><rect x="593.95" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-11: 0 recorded event units</title><rect x="593.95" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-12: 0 recorded event units</title><rect x="608.10" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-13: 0 recorded event units</title><rect x="608.10" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-14: 0 recorded event units</title><rect x="608.10" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-15: 0 recorded event units</title><rect x="608.10" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-16: 0 recorded event units</title><rect x="608.10" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-17: 0 recorded event units</title><rect x="608.10" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-18: 0 recorded event units</title><rect x="608.10" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-19: 0 recorded event units</title><rect x="622.25" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-20: 0 recorded event units</title><rect x="622.25" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-21: 0 recorded event units</title><rect x="622.25" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-22: 0 recorded event units</title><rect x="622.25" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-23: 0 recorded event units</title><rect x="622.25" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-24: 0 recorded event units</title><rect x="622.25" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-25: 0 recorded event units</title><rect x="622.25" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-26: 0 recorded event units</title><rect x="636.40" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-27: 0 recorded event units</title><rect x="636.40" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-28: 0 recorded event units</title><rect x="636.40" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-29: 0 recorded event units</title><rect x="636.40" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-30: 0 recorded event units</title><rect x="636.40" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-07-31: 0 recorded event units</title><rect x="636.40" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-01: 0 recorded event units</title><rect x="636.40" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="650.5500000000001" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Aug</text>
+<g><title>2026-08-02: 0 recorded event units</title><rect x="650.55" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-03: 3 recorded event units (Parts)</title><rect x="650.55" y="129.80" width="10.7" height="10.7" rx="2" fill="#7bbd92" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-08-04: 0 recorded event units</title><rect x="650.55" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-05: 0 recorded event units</title><rect x="650.55" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-06: 0 recorded event units</title><rect x="650.55" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-07: 0 recorded event units</title><rect x="650.55" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-08: 0 recorded event units</title><rect x="650.55" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-09: 0 recorded event units</title><rect x="664.70" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-10: 0 recorded event units</title><rect x="664.70" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-11: 0 recorded event units</title><rect x="664.70" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-12: 0 recorded event units</title><rect x="664.70" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-13: 0 recorded event units</title><rect x="664.70" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-14: 0 recorded event units</title><rect x="664.70" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-15: 0 recorded event units</title><rect x="664.70" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-16: 0 recorded event units</title><rect x="678.85" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-17: 0 recorded event units</title><rect x="678.85" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-18: 0 recorded event units</title><rect x="678.85" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-19: 0 recorded event units</title><rect x="678.85" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-20: 0 recorded event units</title><rect x="678.85" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-21: 1 recorded event unit (Assembly)</title><rect x="678.85" y="181.00" width="10.7" height="10.7" rx="2" fill="#b1d4b4" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-08-22: 0 recorded event units</title><rect x="678.85" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-23: 0 recorded event units</title><rect x="693.00" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-24: 0 recorded event units</title><rect x="693.00" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-25: 0 recorded event units</title><rect x="693.00" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-26: 0 recorded event units</title><rect x="693.00" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-27: 0 recorded event units</title><rect x="693.00" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-28: 0 recorded event units</title><rect x="693.00" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-29: 0 recorded event units</title><rect x="693.00" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-30: 0 recorded event units</title><rect x="707.15" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-08-31: 0 recorded event units</title><rect x="707.15" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-01: 0 recorded event units</title><rect x="707.15" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-02: 0 recorded event units</title><rect x="707.15" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-03: 0 recorded event units</title><rect x="707.15" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-04: 0 recorded event units</title><rect x="707.15" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-05: 0 recorded event units</title><rect x="707.15" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="721.3000000000001" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Sept</text>
+<g><title>2026-09-06: 2 recorded event units (Parts)</title><rect x="721.30" y="117.00" width="10.7" height="10.7" rx="2" fill="#7bbd92" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-09-07: 0 recorded event units</title><rect x="721.30" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-08: 0 recorded event units</title><rect x="721.30" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-09: 0 recorded event units</title><rect x="721.30" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-10: 0 recorded event units</title><rect x="721.30" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-11: 0 recorded event units</title><rect x="721.30" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-12: 1 recorded event unit (Sealed)</title><rect x="721.30" y="193.80" width="10.7" height="10.7" rx="2" fill="#b1d4b4" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-09-13: 0 recorded event units</title><rect x="735.45" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-14: 0 recorded event units</title><rect x="735.45" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-15: 0 recorded event units</title><rect x="735.45" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-16: 0 recorded event units</title><rect x="735.45" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-17: 0 recorded event units</title><rect x="735.45" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-18: 0 recorded event units</title><rect x="735.45" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-19: 0 recorded event units</title><rect x="735.45" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-20: 0 recorded event units</title><rect x="749.60" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-21: 0 recorded event units</title><rect x="749.60" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-22: 0 recorded event units</title><rect x="749.60" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-23: 0 recorded event units</title><rect x="749.60" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-24: 0 recorded event units</title><rect x="749.60" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-25: 0 recorded event units</title><rect x="749.60" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-26: 0 recorded event units</title><rect x="749.60" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-27: 0 recorded event units</title><rect x="763.75" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-28: 1 recorded event unit (Inspect)</title><rect x="763.75" y="129.80" width="10.7" height="10.7" rx="2" fill="#b1d4b4" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-09-29: 0 recorded event units</title><rect x="763.75" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-09-30: 0 recorded event units</title><rect x="763.75" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-01: 0 recorded event units</title><rect x="763.75" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-02: 0 recorded event units</title><rect x="763.75" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-03: 0 recorded event units</title><rect x="763.75" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="777.9" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Oct</text>
+<g><title>2026-10-04: 0 recorded event units</title><rect x="777.90" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-05: 0 recorded event units</title><rect x="777.90" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-06: 0 recorded event units</title><rect x="777.90" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-07: 0 recorded event units</title><rect x="777.90" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-08: 0 recorded event units</title><rect x="777.90" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-09: 0 recorded event units</title><rect x="777.90" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-10: 0 recorded event units</title><rect x="777.90" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-11: 0 recorded event units</title><rect x="792.05" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-12: 0 recorded event units</title><rect x="792.05" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-13: 0 recorded event units</title><rect x="792.05" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-14: 0 recorded event units</title><rect x="792.05" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-15: 0 recorded event units</title><rect x="792.05" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-16: 0 recorded event units</title><rect x="792.05" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-17: 5 recorded event units (Parts)</title><rect x="792.05" y="193.80" width="10.7" height="10.7" rx="2" fill="#51a77b" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-10-18: 0 recorded event units</title><rect x="806.20" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-19: 0 recorded event units</title><rect x="806.20" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-20: 0 recorded event units</title><rect x="806.20" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-21: 0 recorded event units</title><rect x="806.20" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-22: 0 recorded event units</title><rect x="806.20" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-23: 0 recorded event units</title><rect x="806.20" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-24: 1 recorded event unit (Dispatch)</title><rect x="806.20" y="193.80" width="10.7" height="10.7" rx="2" fill="#b1d4b4" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-10-25: 0 recorded event units</title><rect x="820.35" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-26: 0 recorded event units</title><rect x="820.35" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-27: 0 recorded event units</title><rect x="820.35" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-28: 0 recorded event units</title><rect x="820.35" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-29: 0 recorded event units</title><rect x="820.35" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-30: 0 recorded event units</title><rect x="820.35" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-10-31: 0 recorded event units</title><rect x="820.35" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="834.5" y="111" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif">Nov</text>
+<g><title>2026-11-01: 0 recorded event units</title><rect x="834.50" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-02: 0 recorded event units</title><rect x="834.50" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-03: 0 recorded event units</title><rect x="834.50" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-04: 1 recorded event unit (Sealed)</title><rect x="834.50" y="155.40" width="10.7" height="10.7" rx="2" fill="#b1d4b4" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-11-05: 0 recorded event units</title><rect x="834.50" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-06: 0 recorded event units</title><rect x="834.50" y="181.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-07: 0 recorded event units</title><rect x="834.50" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-08: 0 recorded event units</title><rect x="848.65" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-09: 4 recorded event units (Parts)</title><rect x="848.65" y="129.80" width="10.7" height="10.7" rx="2" fill="#51a77b" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-11-10: 0 recorded event units</title><rect x="848.65" y="142.60" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-11: 0 recorded event units</title><rect x="848.65" y="155.40" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-12: 0 recorded event units</title><rect x="848.65" y="168.20" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-13: 1 recorded event unit (Assembly)</title><rect x="848.65" y="181.00" width="10.7" height="10.7" rx="2" fill="#b1d4b4" stroke="#253d46" stroke-opacity=".2" stroke-width=".5"/></g>
+<g><title>2026-11-14: 0 recorded event units</title><rect x="848.65" y="193.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-15: 0 recorded event units</title><rect x="862.80" y="117.00" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<g><title>2026-11-16: 0 recorded event units</title><rect x="862.80" y="129.80" width="10.7" height="10.7" rx="2" fill="#d4ded5" /></g>
+<text x="93" y="137.8" font-size="10" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Mon</text>
+<text x="93" y="163.4" font-size="10" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Wed</text>
+<text x="93" y="189" font-size="10" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Fri</text>
+<text x="950" y="192" font-size="10" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">10 records · 5 repositories</text>
+<text x="949" y="206" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">0 outside displayed window</text>
+<rect x="31" y="219" width="938" height="66" rx="6" fill="#e5e6da" />
+<rect x="31" y="219" width="938" height="66" rx="6" fill="url(#floor-dots)" />
+<path d="M37 278L955 278" fill="none" stroke="#566c73" stroke-width="9" stroke-linecap="round"/>
+<path d="M37 278L955 278" fill="none" stroke="#859da4" stroke-width="5" stroke-linecap="round"/>
+<g clip-path="url(#scene-belt)"><g class="belt-ticks"><path d="M40 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M58 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M76 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M94 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M112 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M130 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M148 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M166 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M184 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M202 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M220 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M238 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M256 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M274 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M292 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M310 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M328 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M346 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M364 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M382 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M400 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M418 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M436 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M454 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M472 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M490 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M508 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M526 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M544 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M562 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M580 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M598 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M616 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M634 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M652 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M670 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M688 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M706 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M724 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M742 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M760 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M778 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M796 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M814 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M832 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M850 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M868 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M886 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M904 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M922 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M940 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M958 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M976 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M994 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/><path d="M1012 276l7 0" fill="none" stroke="#253d46" stroke-opacity=".35" stroke-width="2"/></g></g>
+<g><text x="114" y="229" font-size="11" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">orbit</text><path d="M39 265l62 -20 87 19 -63 20z" fill="#566c73" opacity=".8"/><path d="M52 260l54 -17 73 16 -54 18z" fill="#8aafb8" /><path d="M90 244l23 -11 31 12 -24 10z" fill="#bbd0c7" /><path d="M90 244l30 11v20l-30 -11z" fill="#8aafb8" /><path d="M120 255l24 -10v20l-24 10z" fill="#566c73" /><path d="M97 251l12 5v9l-12 -5z" fill="#57d9bd" /><path d="M115 258l11 4v9l-11 -4z" fill="#ac7548" /><path d="M130 236l8 -4v-13l-8 4z" fill="#566c73" /><path d="M129 223l10 -5 6 4 -9 4z" fill="#57d9bd" /><path d="M61 256l18 -6 8 4 -17 6z" fill="#bbd0c7" /><path d="M150 255l12 -5v10l-12 6z" fill="#859da4" /><circle cx="162" cy="249" r="3" fill="#57d9bd" class="machine-light"/><title>sample-dev/orbit · recorded activity</title></g>
+<g><text x="305" y="229" font-size="11" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">harbour</text><path d="M230 265l62 -20 87 19 -63 20z" fill="#566c73" opacity=".8"/><path d="M243 260l54 -17 73 16 -54 18z" fill="#8aafb8" /><path d="M281 244l23 -11 31 12 -24 10z" fill="#bbd0c7" /><path d="M281 244l30 11v20l-30 -11z" fill="#8aafb8" /><path d="M311 255l24 -10v20l-24 10z" fill="#566c73" /><path d="M288 251l12 5v9l-12 -5z" fill="#8cb5ff" /><path d="M306 258l11 4v9l-11 -4z" fill="#ac7548" /><path d="M321 236l8 -4v-13l-8 4z" fill="#566c73" /><path d="M320 223l10 -5 6 4 -9 4z" fill="#8cb5ff" /><path d="M252 256l18 -6 8 4 -17 6z" fill="#bbd0c7" /><path d="M341 255l12 -5v10l-12 6z" fill="#859da4" /><circle cx="353" cy="249" r="3" fill="#8cb5ff" class="machine-light"/><title>sample-dev/harbour · recorded activity</title></g>
+<g><text x="496" y="229" font-size="11" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">aurora</text><path d="M421 265l62 -20 87 19 -63 20z" fill="#566c73" opacity=".8"/><path d="M434 260l54 -17 73 16 -54 18z" fill="#8aafb8" /><path d="M472 244l23 -11 31 12 -24 10z" fill="#bbd0c7" /><path d="M472 244l30 11v20l-30 -11z" fill="#8aafb8" /><path d="M502 255l24 -10v20l-24 10z" fill="#566c73" /><path d="M479 251l12 5v9l-12 -5z" fill="#ffbd76" /><path d="M497 258l11 4v9l-11 -4z" fill="#ac7548" /><path d="M512 236l8 -4v-13l-8 4z" fill="#566c73" /><path d="M511 223l10 -5 6 4 -9 4z" fill="#ffbd76" /><path d="M443 256l18 -6 8 4 -17 6z" fill="#bbd0c7" /><path d="M532 255l12 -5v10l-12 6z" fill="#859da4" /><circle cx="544" cy="249" r="3" fill="#ffbd76" class="machine-light"/><title>sample-dev/aurora · recorded activity</title></g>
+<g><text x="687" y="229" font-size="11" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">ember</text><path d="M612 265l62 -20 87 19 -63 20z" fill="#566c73" opacity=".8"/><path d="M625 260l54 -17 73 16 -54 18z" fill="#8aafb8" /><path d="M663 244l23 -11 31 12 -24 10z" fill="#bbd0c7" /><path d="M663 244l30 11v20l-30 -11z" fill="#8aafb8" /><path d="M693 255l24 -10v20l-24 10z" fill="#566c73" /><path d="M670 251l12 5v9l-12 -5z" fill="#ff8e9d" /><path d="M688 258l11 4v9l-11 -4z" fill="#ac7548" /><path d="M703 236l8 -4v-13l-8 4z" fill="#566c73" /><path d="M702 223l10 -5 6 4 -9 4z" fill="#ff8e9d" /><path d="M634 256l18 -6 8 4 -17 6z" fill="#bbd0c7" /><path d="M723 255l12 -5v10l-12 6z" fill="#859da4" /><circle cx="735" cy="249" r="3" fill="#ff8e9d" class="machine-light"/><title>sample-dev/ember · recorded activity</title></g>
+<g><text x="878" y="229" font-size="11" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" text-anchor="middle">atlas</text><path d="M803 265l62 -20 87 19 -63 20z" fill="#566c73" opacity=".8"/><path d="M816 260l54 -17 73 16 -54 18z" fill="#8aafb8" /><path d="M854 244l23 -11 31 12 -24 10z" fill="#bbd0c7" /><path d="M854 244l30 11v20l-30 -11z" fill="#8aafb8" /><path d="M884 255l24 -10v20l-24 10z" fill="#566c73" /><path d="M861 251l12 5v9l-12 -5z" fill="#c3a4ff" /><path d="M879 258l11 4v9l-11 -4z" fill="#ac7548" /><path d="M894 236l8 -4v-13l-8 4z" fill="#566c73" /><path d="M893 223l10 -5 6 4 -9 4z" fill="#c3a4ff" /><path d="M825 256l18 -6 8 4 -17 6z" fill="#bbd0c7" /><path d="M914 255l12 -5v10l-12 6z" fill="#859da4" /><circle cx="926" cy="249" r="3" fill="#c3a4ff" class="machine-light"/><title>sample-dev/atlas · recorded activity</title></g>
+<g class="moving-package"><title>sample-dev/atlas | pr_opened ×1</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#8cb5ff" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">◇</text><animateMotion begin="0.00s" dur="11s" repeatCount="indefinite" path="M878,277 L956,277"/><animate attributeName="opacity" begin="0.00s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/ember | commit ×2</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#57d9bd" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">●</text><text x="17" y="-9" text-anchor="middle" font-size="9" fill="#253d46">×2</text><animateMotion begin="0.95s" dur="11s" repeatCount="indefinite" path="M687,277 L956,277"/><animate attributeName="opacity" begin="0.95s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/atlas | pr_merged ×1</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#ffbd76" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">◆</text><animateMotion begin="1.90s" dur="11s" repeatCount="indefinite" path="M878,277 L956,277"/><animate attributeName="opacity" begin="1.90s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/orbit | issue_opened ×1</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#ff8e9d" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">!</text><animateMotion begin="2.85s" dur="11s" repeatCount="indefinite" path="M114,277 L956,277"/><animate attributeName="opacity" begin="2.85s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/orbit | commit ×5</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#57d9bd" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">●</text><text x="17" y="-9" text-anchor="middle" font-size="9" fill="#253d46">×5</text><animateMotion begin="3.80s" dur="11s" repeatCount="indefinite" path="M114,277 L956,277"/><animate attributeName="opacity" begin="3.80s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/aurora | release ×1</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#c3a4ff" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">✦</text><animateMotion begin="4.75s" dur="11s" repeatCount="indefinite" path="M496,277 L956,277"/><animate attributeName="opacity" begin="4.75s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/harbour | pr_merged ×1</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#ffbd76" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">◆</text><animateMotion begin="5.70s" dur="11s" repeatCount="indefinite" path="M305,277 L956,277"/><animate attributeName="opacity" begin="5.70s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/harbour | commit ×4</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#57d9bd" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">●</text><text x="17" y="-9" text-anchor="middle" font-size="9" fill="#253d46">×4</text><animateMotion begin="6.65s" dur="11s" repeatCount="indefinite" path="M305,277 L956,277"/><animate attributeName="opacity" begin="6.65s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<g class="moving-package"><title>sample-dev/ember | pr_opened ×1</title><g><path d="M-9 -7l15 0 5 5 -15 0z" fill="#ac7548" /><path d="M-9 -7l5 5v12l-5 -4z" fill="#566c73" /><path d="M-4 -2l15 0v12l-15 0z" fill="#8cb5ff" /><text x="3" y="7" font-size="10" fill="#566c73" text-anchor="middle" font-weight="900">◇</text><animateMotion begin="7.60s" dur="11s" repeatCount="indefinite" path="M687,277 L956,277"/><animate attributeName="opacity" begin="7.60s" dur="11s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;.06;.92;1"/></g></g>
+<text x="956" y="240" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">Showing 5/5 stations · 9/10 packages</text>
+<rect x="42" y="294" width="12" height="10" rx="2" fill="#57d9bd" />
+<text x="59" y="303" font-size="10" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Parts 14</text>
+<rect x="222" y="294" width="12" height="10" rx="2" fill="#8cb5ff" />
+<text x="239" y="303" font-size="10" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Assembly 2</text>
+<rect x="402" y="294" width="12" height="10" rx="2" fill="#ffbd76" />
+<text x="419" y="303" font-size="10" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Sealed 2</text>
+<rect x="582" y="294" width="12" height="10" rx="2" fill="#ff8e9d" />
+<text x="599" y="303" font-size="10" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Inspect 1</text>
+<rect x="762" y="294" width="12" height="10" rx="2" fill="#c3a4ff" />
+<text x="779" y="303" font-size="10" fill="#253d46" font-family="system-ui,Segoe UI,sans-serif" font-weight="650">Dispatch 1</text>
+<text x="961" y="316" font-size="9" fill="#60747b" font-family="system-ui,Segoe UI,sans-serif" text-anchor="end">ISOMETRIC WORKSHOP · FACTORY METAPHOR ONLY</text>
 </svg>
