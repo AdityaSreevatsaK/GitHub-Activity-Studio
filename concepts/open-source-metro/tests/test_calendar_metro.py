@@ -37,6 +37,30 @@ class CalendarContract(unittest.TestCase):
         data['activity'].append(copy.deepcopy(data['activity'][0]))
         self.assertEqual(normalise(data)['events'],self.snap['events'])
 
+    def test_conflicting_duplicate_event_ids_rejected(self):
+        data = raw()
+        conflict = copy.deepcopy(data['activity'][0])
+        conflict['count'] += 1
+        data['activity'].append(conflict)
+        with self.assertRaisesRegex(ValueError, 'Conflicting source records'):
+            normalise(data)
+
+    def test_conflicting_duplicate_ids_rejected_independent_of_input_order(self):
+        data = raw()
+        conflict = copy.deepcopy(data['activity'][0])
+        conflict['repo_full_name'] = data['repositories'][1]['full_name']
+        data['activity'].append(conflict)
+        with self.assertRaises(ValueError):
+            normalise(data)
+        data['activity'].reverse()
+        with self.assertRaises(ValueError):
+            normalise(data)
+
+    def test_duplicate_ids_with_identical_values_remain_idempotent(self):
+        data = raw()
+        data['activity'].insert(0, copy.deepcopy(data['activity'][0]))
+        self.assertEqual(normalise(data)['events'], self.snap['events'])
+
     def test_rejects_malformed_and_unknown_events(self):
         for key,value in [('kind','unreviewed'),('repo_full_name','other/repository'),('count',False),('count',0),('count',-7),('occurred_at','yesterday'),('occurred_at','2026-05-01T10:00:00+05:30')]:
             data=raw();data['activity'][0][key]=value

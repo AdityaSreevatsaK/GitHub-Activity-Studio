@@ -87,24 +87,36 @@ def normalise(source: object) -> dict:
         if not isinstance(name, str) or not 1 <= len(name) <= 200:
             raise ValueError("Invalid repository name")
         repos[full] = {"full_name": full, "name": name, "url": safe_url(row.get("url"))}
-    events, seen = [], set()
+    events, seen = [], {}
     kinds = {x[0] for x in SERVICES}
     for row in source["activity"]:
         if not isinstance(row, dict) or not isinstance(row.get("id"), str) or not 1 <= len(row["id"]) <= 160:
             raise ValueError("Invalid event ID")
-        if row["id"] in seen:
-            continue
-        seen.add(row["id"])
         if row.get("kind") not in kinds or row.get("repo_full_name") not in repos:
             raise ValueError("Unsupported event type or unknown repository")
         count = row.get("count", 1)
         if type(count) is not int or not 1 <= count <= 100000:
             raise ValueError("Event count must be a positive integer")
-        events.append({"id": row["id"], "kind": row["kind"], "repo": row["repo_full_name"],
-                       "date": utc_timestamp(row.get("occurred_at")), "count": count, "url": safe_url(row.get("url"))})
+        record = {"id": row["id"], "kind": row["kind"], "repo": row["repo_full_name"],
+                  "date": utc_timestamp(row.get("occurred_at")), "count": count, "url": safe_url(row.get("url"))}
+        # Identical duplicates are idempotent, but a conflicting duplicate ID
+        # cannot silently change the meaning of a recorded event.
+        if record["id"] in seen:
+            if seen[record["id"]] != record:
+                raise ValueError("Conflicting source records share an event ID")
+            continue
+        seen[record["id"]] = record
+        events.append(record)
     events.sort(key=lambda x: (x["date"], x["id"]))
-    first = {k: min((v["date"] for v in events if v["repo"] == k), default=datetime.max.replace(tzinfo=timezone.utc)) for k in repos}
-    ordered = sorted(repos.values(), key=lambda x: (first[x["full_name"]], x["full_name"]))
+    # The chronological list is sorted already. This is O(events) rather than
+    # scanning the event list separately for every repository.
+    first = {}
+    for event in events:
+        first.setdefault(event["repo"], event["date"])
+    ordered = sorted(repos.values(), key=lambda x: (
+        first.get(x["full_name"], datetime.max.replace(tzinfo=timezone.utc)),
+        x["full_name"],
+    ))
     return {"generated": generated, "source": source["source"], "user": user["login"], "repos": ordered,
             "events": events, "repo_total": len(ordered), "event_total": len(events)}
 
