@@ -84,13 +84,14 @@ function render(){
  el("counter").textContent=f.eventCount+" of "+f.totalEvents+" events · "+calendar.observed+" calendar units";
  inspectDay(calendar,opts.progress);
  el("repos").replaceChildren();
- f.repositories.slice(0,5).forEach(function(item){
+ var featured=calendar.featured.map(function(name){return f.repositories.find(function(item){return item.repository.full_name===name;});});
+ featured.forEach(function(item){
  var card=document.createElement("div"),name=document.createElement("strong"),detail=document.createElement("span");
  card.className="repo";name.textContent=item.repository.full_name;
- var observed=calendar.byRepo.get(item.repository.full_name);detail.textContent="Landmark "+(f.repositories.indexOf(item)+1)+" · "+observed.units+" calendar units · "+observed.events+" events";
+ var observed=calendar.byRepo.get(item.repository.full_name);detail.textContent="Landmark "+(featured.indexOf(item)+1)+" · "+observed.units+" calendar units · "+observed.events+" events";
  card.append(name,detail);el("repos").appendChild(card);
  });
- var hidden=Math.max(0,f.repositories.length-5);
+ var hidden=Math.max(0,f.repositories.length-featured.length);
  el("overflow").textContent=hidden?"+"+hidden+" repositories omitted from the compact scene.":"All repositories shown.";
  el("status").textContent=normal.source==="demo"?"SYNTHETIC DEMO: "+calendar.activeDays+" dates contain recorded demo events. Not actual GitHub contributions.":"SUPPLIED PUBLIC EVENTS: "+calendar.activeDays+" days contain recorded events. No-event days are unverified, not necessarily zero contributions.";
  }catch(err){el("status").textContent="Rendering error: "+err.message;}
