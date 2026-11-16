@@ -11,7 +11,7 @@ from datetime import date, datetime, timedelta, timezone
 from hashlib import sha256
 from html import escape
 import json
-from math import sqrt
+from math import sqrt, sin, pi
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -21,8 +21,8 @@ DEMO = ROOT / "shared" / "fixtures" / "demo-activity.json"
 KINDS = {"commit", "pr_opened", "pr_merged", "issue_opened", "release"}
 REPO_COLOURS = ("#71ded3", "#f6bb6b", "#c2a3ff", "#f18fa6", "#95b8ff", "#b6d27c", "#e3b0e5")
 PALETTES = {
-    "night": {"bg":"#090f21", "bg2":"#16223d", "ink":"#eef3ff", "muted":"#9facc9", "hair":"#364966", "cell":"#23304b", "cell_border":"#364866", "panel":"#101d35", "accent":"#a6ebdb", "spark":"#eff8e6", "grid":"#384b69"},
-    "paper": {"bg":"#f6f3e9", "bg2":"#e9eadd", "ink":"#27384a", "muted":"#657785", "hair":"#c7cdbc", "cell":"#dfe6dc", "cell_border":"#cad4c7", "panel":"#fcfbf4", "accent":"#237f7e", "spark":"#fffdf3", "grid":"#bdc9bc"},
+    "night": {"bg":"#050a1b", "bg2":"#181c41", "ink":"#f6f5ff", "muted":"#a5b6d1", "hair":"#435377", "cell":"#1a2541", "cell_border":"#405474", "panel":"#101d35", "accent":"#8ff5e5", "spark":"#fff8d9", "grid":"#384b69"},
+    "paper": {"bg":"#fbf7e9", "bg2":"#e8ecdf", "ink":"#23374c", "muted":"#627787", "hair":"#b8c9c6", "cell":"#e4eae1", "cell_border":"#b7c7bf", "panel":"#fcfbf4", "accent":"#1a8084", "spark":"#fffdf3", "grid":"#bdc9bc"},
 }
 X0, Y0, STEP_X, STEP_Y, N_COLS, N_ROWS, CELL = 298, 116, 15.1, 20.6, 53, 7, 12.8
 
@@ -144,38 +144,55 @@ def render(model: dict, layout: str = 'atlas', theme: str = 'night', *, animated
     active_days = sorted(daily)
     in_view_events = [ev for day in active_days for ev in daily[day]]
     # Static derived fill levels deliberately use only provided source activity.
-    bins = {1:('#315566' if theme=='night' else '#bddbd4'),2:('#386a78' if theme=='night' else '#91c6b9'),3:('#459b9c' if theme=='night' else '#4aa89b'),4:('#93ead5' if theme=='night' else '#287b7b')}
+    bins = {1:('#356480' if theme=='night' else '#b5dfd6'),2:('#358a9f' if theme=='night' else '#81c5bf'),3:('#32b8c3' if theme=='night' else '#40a5a3'),4:('#94f1de' if theme=='night' else '#198587')}
     label = 'SYNTHETIC DEMO · NOT REAL CONTRIBUTIONS' if model['source']=='demo' else 'PUBLIC SNAPSHOT · NOT FULL GITHUB CONTRIBUTIONS'
     intro = f'{"Synthetic demo" if model["source"]=="demo" else "Public event snapshot"} for {model["login"]}; calendar shows 53 weeks, with {len(active_days)} days containing {len(in_view_events)} sourced events. Empty cells mean no recorded event, not a verified zero. Connected dates belong to the same repository.'
-    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 375" width="1200" height="375" role="img" aria-labelledby="sky-title sky-desc" data-source="{model["source"]}" data-layout="{layout}" data-theme="{theme}" data-weeks="53" data-days="371" data-active-days="{len(active_days)}" data-events="{len(in_view_events)}">',
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 425" width="1200" height="425" role="img" aria-labelledby="sky-title sky-desc" data-source="{model["source"]}" data-layout="{layout}" data-theme="{theme}" data-weeks="53" data-days="371" data-active-days="{len(active_days)}" data-events="{len(in_view_events)}">',
         f'<title id="sky-title">Activity Constellation · {e(layout)} · {e(theme)}</title>',
         f'<desc id="sky-desc">{e(intro)}</desc>',
-        '<defs>',f'<linearGradient id="background" x2="1" y2="1"><stop stop-color="{p["bg"]}"/><stop offset="1" stop-color="{p["bg2"]}"/></linearGradient>',
-        f'<radialGradient id="halo"><stop stop-color="{p["accent"]}" stop-opacity=".55"/><stop offset="1" stop-color="{p["accent"]}" stop-opacity="0"/></radialGradient>',
+        '<defs>',f'<linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="{p["bg"]}"/><stop offset=".57" stop-color="{p["bg2"]}"/><stop offset="1" stop-color="{p["bg"]}"/></linearGradient>',
+        f'<radialGradient id="halo"><stop stop-color="{p["accent"]}" stop-opacity=".68"/><stop offset=".34" stop-color="{p["accent"]}" stop-opacity=".24"/><stop offset="1" stop-color="{p["accent"]}" stop-opacity="0"/></radialGradient>',
+        '<radialGradient id="aurora-violet"><stop stop-color="#8c6af7" stop-opacity=".62"/><stop offset=".52" stop-color="#6258e3" stop-opacity=".22"/><stop offset="1" stop-color="#33359a" stop-opacity="0"/></radialGradient>',
+        '<radialGradient id="aurora-teal"><stop stop-color="#1ccfbf" stop-opacity=".53"/><stop offset=".58" stop-color="#1a9eaa" stop-opacity=".15"/><stop offset="1" stop-color="#1a9eaa" stop-opacity="0"/></radialGradient>',
+        '<radialGradient id="aurora-amber"><stop stop-color="#ffc589" stop-opacity=".40"/><stop offset="1" stop-color="#ffc589" stop-opacity="0"/></radialGradient>',
+        '<linearGradient id="wave" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#849ffa" stop-opacity="0"/><stop offset=".3" stop-color="#74f3e2" stop-opacity=".45"/><stop offset=".65" stop-color="#9a83ff" stop-opacity=".25"/><stop offset="1" stop-color="#fcd2a1" stop-opacity="0"/></linearGradient>',
+        '<filter id="light-glow" x="-180%" y="-180%" width="460%" height="460%"><feGaussianBlur stdDeviation="3.5"/></filter>',
         '<style><![CDATA[',
-        'text{font-family:Inter,ui-sans-serif,system-ui,"Segoe UI",sans-serif} .day-link{cursor:pointer}.day-link:hover .cell-frame,.day-link:focus .cell-frame{stroke-width:2;stroke-opacity:1}.echo{opacity:0;animation:pulse 16s ease-out infinite;transform-box:fill-box;transform-origin:center}.flicker{animation:twinkle 16s ease-in-out infinite}@keyframes pulse{0%,8%,100%{opacity:0;transform:scale(.6)}11%{opacity:.85;transform:scale(1.1)}19%{opacity:0;transform:scale(2.8)}}@keyframes twinkle{0%,100%{opacity:.82}50%{opacity:1}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important}.tracer{display:none!important}}',
+        'text{font-family:Inter,ui-sans-serif,system-ui,"Segoe UI",sans-serif} .day-link{cursor:pointer}.day-link:hover .cell-frame,.day-link:focus .cell-frame{stroke-width:2.5;stroke-opacity:1}.echo{opacity:0;animation:pulse 16s ease-out infinite;transform-box:fill-box;transform-origin:center}.flicker{animation:twinkle 6s ease-in-out infinite}.nebula-breath{animation:breath 16s ease-in-out infinite}.data-trail{animation:trail-light 16s ease-in-out infinite}@keyframes pulse{0%,8%,100%{opacity:0;transform:scale(.65)}11%{opacity:.95;transform:scale(1.2)}19%{opacity:0;transform:scale(3.1)}}@keyframes twinkle{0%,100%{opacity:.84}50%{opacity:1}}@keyframes breath{0%,100%{opacity:.8}50%{opacity:1}}@keyframes trail-light{0%,100%{stroke-opacity:.48}50%{stroke-opacity:.82}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important}.tracer{display:none!important}}',
         ']]></style></defs>',
-        '<rect width="1200" height="375" rx="19" fill="url(#background)"/>',
-        f'<rect x="10" y="10" width="1180" height="355" rx="13" fill="none" stroke="{p["hair"]}" stroke-opacity=".75"/>',
-        f'<path d="M265 32 V327" stroke="{p["hair"]}" stroke-width="1" opacity=".65"/>',
-        f'<text x="38" y="48" font-size="10" font-weight="700" letter-spacing="2.2" fill="{p["accent"]}">GITHUB ACTIVITY STUDIO / 01</text>',
-        f'<text x="38" y="100" font-size="33" font-family="Georgia,serif" fill="{p["ink"]}">Constellation</text>',
-        f'<text x="39" y="123" font-size="12" fill="{p["muted"]}">A calendar written in stars.</text>',
-        f'<path d="M39 146 H236" stroke="{p["hair"]}"/>',
+        '<rect width="1200" height="425" rx="19" fill="url(#background)"/>',
+        f'<rect x="10" y="10" width="1180" height="405" rx="13" fill="none" stroke="{p["hair"]}" stroke-opacity=".75"/>',
+        # Atmosphere has no stars posing as contributions. The nebula is tied to the
+        # centre of mass of actual recorded days. An empty snapshot has no bloom.
+        *([f'<ellipse class="nebula-breath" cx="{sum(xy(d,start)[0] for d in active_days)/len(active_days):.1f}" cy="190" rx="250" ry="170" fill="url(#aurora-violet)" opacity=".75"/>',
+           f'<ellipse class="nebula-breath" cx="{sum(xy(d,start)[0] for d in active_days)/len(active_days)+60:.1f}" cy="247" rx="225" ry="116" fill="url(#aurora-teal)" opacity=".62"/>'] if theme=='night' and active_days else []),
+        *([f'<ellipse cx="{sum(xy(d,start)[0] for d in active_days)/len(active_days):.1f}" cy="208" rx="305" ry="174" fill="url(#aurora-teal)" opacity=".17"/>'] if theme=='paper' and active_days else []),
+        *([f'<path d="M283 {y} C478 {y-48}, 695 {y+45}, 1171 {y-11}" stroke="url(#wave)" stroke-width="{w}" opacity="{o}" fill="none"/>' for y,w,o in [(90,1,.7),(320,.7,.65)]] if theme=='night' else []),
+        f'<path d="M265 32 V386" stroke="{p["hair"]}" stroke-width="1" opacity=".65"/>',
+        f'<path d="M39 39 L45 53 L52 39 L45 25 Z" fill="{p["accent"]}" opacity=".95"/>',
+        f'<text x="62" y="44" font-size="9" font-weight="750" letter-spacing="2.0" fill="{p["accent"]}">GITHUB / THE CELESTIAL ATLAS</text>',
+        f'<text x="38" y="96" font-size="35" font-family="Georgia,serif" letter-spacing="-1.4" fill="{p["ink"]}">Constellation</text>',
+        f'<text x="39" y="121" font-size="12" letter-spacing=".35" fill="{p["muted"]}">A year of code, written in light.</text>',
+        f'<path d="M39 144 H236" stroke="{p["hair"]}"/>',
         f'<text x="39" y="174" font-size="10" letter-spacing="1.5" fill="{p["muted"]}">{e(short(model["login"].upper(),28))}</text>',
-        f'<text x="39" y="208" font-size="28" fill="{p["ink"]}">{len(active_days):02d}<tspan dx="8" font-size="12" fill="{p["muted"]}">recorded days</tspan></text>',
-        f'<text x="39" y="229" font-size="12" fill="{p["muted"]}">{len(in_view_events)} events · {sum(x["count"] for x in in_view_events)} activity units</text>',
-        f'<text x="39" y="264" font-size="11" fill="{p["accent"]}">+  <tspan fill="{p["muted"]}">bright cell = activity</tspan></text>',
-        f'<text x="39" y="284" font-size="11" fill="{p["accent"]}">~  <tspan fill="{p["muted"]}">path = same repository</tspan></text>',
-        f'<text x="39" y="304" font-size="11" fill="{p["accent"]}">o  <tspan fill="{p["muted"]}">pulse = recorded event</tspan></text>',
-        f'<text x="298" y="53" font-size="14" font-family="Georgia,serif" fill="{p["ink"]}">The last 53 calendar weeks</text>',
-        f'<text x="1102" y="53" text-anchor="end" font-size="10" fill="{p["muted"]}">SUN → SAT  ·  UTC DATES</text>',
+        f'<text x="37" y="219" font-size="47" font-weight="250" letter-spacing="-2" fill="{p["ink"]}">{len(active_days):02d}</text>',
+        f'<text x="113" y="204" font-size="10" font-weight="650" letter-spacing="1.1" fill="{p["accent"]}">ILLUMINATED</text>',
+        f'<text x="113" y="220" font-size="10" letter-spacing="1.1" fill="{p["muted"]}">RECORDED DAYS</text>',
+        f'<text x="39" y="246" font-size="11" fill="{p["muted"]}">{len(in_view_events)} events / {sum(x["count"] for x in in_view_events)} activity units</text>',
+        f'<path d="M39 261 H236" stroke="{p["hair"]}" opacity=".6"/>',
+        f'<text x="39" y="282" font-size="10" fill="{p["muted"]}"><tspan fill="{p["accent"]}">01</tspan>    BRIGHT DAY / RECORDED EVENT</text>',
+        f'<text x="39" y="302" font-size="10" fill="{p["muted"]}"><tspan fill="{p["accent"]}">02</tspan>    TRAIL / SAME REPOSITORY</text>',
+        f'<text x="298" y="52" font-size="14" font-family="Georgia,serif" fill="{p["ink"]}">THE CONTRIBUTION SKY</text>',
+        f'<text x="1102" y="53" text-anchor="end" font-size="10" letter-spacing="1" fill="{p["muted"]}">53 WEEKS / SEVEN DAYS / UTC</text>',
     ]
     if theme=='night':
-        for i in range(55):
+        # These tiny pinpricks are explicitly atmospheric dust and never appear
+        # inside any calendar cell or in its data-date metadata.
+        for i in range(115):
             h=sha256(f'constellation-sky-background-{i}'.encode()).digest()
-            x=299+h[0]/255*800; y=57+h[1]/255*240
-            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r=".6" fill="{p["accent"]}" opacity=".11"/>')
+            x=299+h[0]/255*800; y=58+h[1]/255*255
+            r=.3+(h[2]/255)*.78
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r:.2f}" fill="{p["accent"]}" opacity="{.05+h[3]/255*.18:.2f}"/>')
     else:
         for week in range(N_COLS):
             if week%4==0:
@@ -215,7 +232,9 @@ def render(model: dict, layout: str = 'atlas', theme: str = 'night', *, animated
     for repo,a,b,path in rendered_paths:
         colour=cal['colours'][repo]
         dash='3 5' if layout=='atlas' else '1 4'
-        parts.append(f'<path d="{path}" fill="none" stroke="{colour}" stroke-width="{1.1 if layout=="atlas" else 1.55}" stroke-opacity="{.24 if layout=="atlas" else .37}" stroke-dasharray="{dash}" stroke-linecap="round" data-relation="same-repository" data-repository="{e(repo)}"><title>{e(repo)}: {a.isoformat()} to {b.isoformat()}</title></path>')
+        if theme == 'night':
+            parts.append(f'<path class="trail-halo" d="{path}" fill="none" stroke="{colour}" stroke-width="7" stroke-opacity=".21" filter="url(#light-glow)"/>')
+        parts.append(f'<path class="data-trail" d="{path}" fill="none" stroke="{colour}" stroke-width="{1.65 if layout=="atlas" else 2.0}" stroke-opacity="{.68 if theme=="night" else .60}" stroke-dasharray="{dash if layout=="atlas" else "none"}" stroke-linecap="round" data-relation="same-repository" data-repository="{e(repo)}"><title>{e(repo)}: {a.isoformat()} to {b.isoformat()}</title></path>')
     for col in range(N_COLS):
         for row in range(N_ROWS):
             day=start+timedelta(days=col*7+row)
@@ -226,8 +245,10 @@ def render(model: dict, layout: str = 'atlas', theme: str = 'night', *, animated
             tier=intensity(units)
             colour=bins[tier] if tier else p['cell']
             if future:colour=p['bg2']
+            if units and theme=='night':
+                parts.append(f'<circle cx="{x+CELL/2:.1f}" cy="{y+CELL/2:.1f}" r="19" fill="{cal["colours"][sorted(entries,key=lambda ev:(-ev["count"],ev["repo_full_name"]))[0]["repo_full_name"]]}" opacity=".32" filter="url(#light-glow)"/>')
             if layout=='atlas':
-                parts.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{CELL:.1f}" height="{CELL:.1f}" rx="2.5" fill="{colour}" stroke="{p["cell_border"]}" stroke-width=".55" stroke-opacity="{.5 if not future else .22}" data-date="{day.isoformat()}" data-units="{units}" data-future="{str(future).lower()}"/>')
+                parts.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{CELL:.1f}" height="{CELL:.1f}" rx="2.5" fill="{colour}" fill-opacity="{.82 if units else .55}" stroke="{p["cell_border"]}" stroke-width="{.85 if units else .35}" stroke-opacity="{.85 if units else .32 if not future else .15}" data-date="{day.isoformat()}" data-units="{units}" data-future="{str(future).lower()}"/>')
             else:
                 # A visible 53×7 lattice persists, but uses tiny diamonds/celestial marks.
                 parts.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{CELL:.1f}" height="{CELL:.1f}" rx="3" fill="{p["cell"]}" fill-opacity=".57" stroke="{p["cell_border"]}" stroke-opacity=".3" data-date="{day.isoformat()}" data-units="{units}" data-future="{str(future).lower()}"/>')
@@ -242,13 +263,15 @@ def render(model: dict, layout: str = 'atlas', theme: str = 'night', *, animated
                 kinds=','.join(sorted({v['kind'] for v in entries}))
                 details=f'{day.isoformat()}: {len(entries)} recorded events, {units} activity units, {", ".join(names)}'
                 # Focusable transparent hit target does not erase the calendar cell beneath it.
-                parts.append(f'<a class="day-link" href="{e(link)}" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="{e(details)}" data-day="{day.isoformat()}" data-units="{units}" data-repos="{e(", ".join(names))}" data-kinds="{e(kinds)}" data-detail="{e(details)}">')
+                parts.append(f'<a class="day-link" href="{e(link)}" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="{e(details)}" data-day="{day.isoformat()}" data-units="{units}" data-repos="{e(", ".join(names))}" data-repo-ids="{e(json.dumps(names,ensure_ascii=True))}" data-kinds="{e(kinds)}" data-detail="{e(details)}">')
                 if layout=='atlas':
-                    parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{2.0+min(2.0,sqrt(units)*.8):.1f}" fill="{cal["colours"][primary["repo_full_name"]]}"/>')
+                    parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{2.7+min(2.0,sqrt(units)*.8):.1f}" fill="{cal["colours"][primary["repo_full_name"]]}"/>')
                     parts.append(f'<path d="M{cx:.1f} {cy-4.5:.1f} V{cy+4.5:.1f} M{cx-4.5:.1f} {cy:.1f} H{cx+4.5:.1f}" stroke="{p["spark"]}" stroke-width=".7" stroke-opacity=".9"/>')
                 else:
-                    parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="4.5" fill="{cal["colours"][primary["repo_full_name"]]}" fill-opacity=".8"/>')
+                    parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="5.6" fill="{cal["colours"][primary["repo_full_name"]]}" fill-opacity=".95"/>')
                     parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="1.8" fill="{p["spark"]}"/>')
+                parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{10+tier*.9:.1f}" fill="none" stroke="{cal["colours"][primary["repo_full_name"]]}" stroke-opacity="{.48 if theme=="night" else .52}" stroke-width=".8" stroke-dasharray="1.5 4.5"/>')
+                parts.append(f'<path d="M{cx-10:.1f} {cy:.1f} H{cx-6.5:.1f} M{cx+6.5:.1f} {cy:.1f} H{cx+10:.1f} M{cx:.1f} {cy-10:.1f} V{cy-6.5:.1f} M{cx:.1f} {cy+6.5:.1f} V{cy+10:.1f}" stroke="{cal["colours"][primary["repo_full_name"]]}" stroke-width=".9" opacity=".88"/>')
                 parts.append(f'<rect class="cell-frame" x="{x-.6:.1f}" y="{y-.6:.1f}" width="{CELL+1.2:.1f}" height="{CELL+1.2:.1f}" rx="3" fill="transparent" stroke="{p["spark"]}" stroke-opacity=".25"/>')
                 parts.append(f'<title>{e(details)}</title></a>')
     if animated and in_view_events:
@@ -264,17 +287,71 @@ def render(model: dict, layout: str = 'atlas', theme: str = 'night', *, animated
             parts.append(f'<circle class="tracer" r="2.4" fill="{cal["colours"][repo]}" opacity="0"><animateMotion path="{path}" dur="16s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;{offset:.3f};{finish:.3f};1" calcMode="linear"/><animate attributeName="opacity" dur="16s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;{offset:.3f};{(offset+finish)/2:.3f};{finish:.3f};1"/></circle>')
     # Small but semantic repository star index. Display at most five, explicitly named.
     if cal['colours']:
-        parts.append(f'<text x="298" y="284" font-size="10" font-weight="700" letter-spacing="1.2" fill="{p["muted"]}">REPOSITORIES / STAR COLOURS</text>')
+        latest = max(daily)
+        latest_entry = sorted(daily[latest],key=lambda ev:(-ev['count'],ev['repo_full_name']))[0]
+        parts.append(f'<text x="298" y="271" font-size="10" font-weight="700" letter-spacing="1.2" fill="{p["accent"]}">REPOSITORY SIGNATURES / {min(5,len(cal["colours"]))} OF {len(cal["colours"])}</text>')
+        parts.append(f'<text x="1156" y="270" text-anchor="end" font-size="10" fill="{p["muted"]}">LATEST SIGNAL  /  {e(latest.strftime("%d %b %Y").upper())}</text>')
         for i,name in enumerate(sorted(cal['colours'])[:5]):
-            x=300+(i%5)*158;y=303
+            x=300+(i%5)*158;y=289
+            parts.append(f'<circle cx="{x:.1f}" cy="{y-4}" r="6.4" fill="{cal["colours"][name]}" opacity=".24"/>')
             parts.append(f'<circle cx="{x:.1f}" cy="{y-4}" r="3.8" fill="{cal["colours"][name]}"/>')
             parts.append(f'<text x="{x+10:.1f}" y="{y:.1f}" font-size="10.5" fill="{p["ink"]}">{e(short(name.split("/")[-1],16))}</text>')
     else:
         parts.append(f'<text x="690" y="288" text-anchor="middle" font-size="12" fill="{p["muted"]}">No recorded activity in this snapshot window</text>')
+    # Magnified, capped same-data view: one glyph per repository/date, even if
+    # that date contains many events. No extra or inferred contribution days.
+    if in_view_events:
+        grouped=defaultdict(list)
+        for event in in_view_events:
+            grouped[(event['when'].date(),event['repo_full_name'])].append(event)
+        all_signals=sorted(grouped)
+        shown=all_signals[-80:]
+        # Rank by source-backed units; never silently lose dense-lens repositories.
+        repo_total=Counter()
+        for day,name in shown:
+            repo_total[name]+=sum(event['count'] for event in grouped[(day,name)])
+        lens_names=sorted(repo_total,key=lambda name:(-repo_total[name],name))[:7]
+        visible_signals=[(day,name) for day,name in shown if name in lens_names]
+        lo,hi=shown[0][0],shown[-1][0]
+        span=max(1,(hi-lo).days)
+        lanes={name:328 + j*10.7 for j,name in enumerate(lens_names)}
+        def lens_x(day):return 325+(day-lo).days/span*825
+        parts.append(f'<path d="M287 305 H1168" stroke="{p["hair"]}" stroke-opacity=".55"/>')
+        notice=f'LAST {len(shown)}/{len(all_signals)} REPO-DAYS' if len(shown)<len(all_signals) else 'SOURCE-BACKED REPO-DAYS'
+        parts.append(f'<text x="298" y="318" font-size="10" font-weight="700" letter-spacing="1.0" fill="{p["accent"]}">THE SIGNAL LENS  /  {notice}</text>')
+        omission=f' · {len(repo_total)-len(lens_names)} REPOS HIDDEN' if len(repo_total)>len(lens_names) else ''
+        parts.append(f'<text x="1155" y="318" text-anchor="end" font-size="10" fill="{p["muted"]}">{e(lo.strftime("%d %b %Y").upper())} — {e(hi.strftime("%d %b %Y").upper())}{omission}</text>')
+        for j,name in enumerate(lens_names):
+            y=lanes[name];colour=cal['colours'][name]
+            parts.append(f'<path d="M300 {y:.1f} H1156" stroke="{p["hair"]}" stroke-opacity=".17" stroke-width=".7"/>')
+            parts.append(f'<circle cx="301" cy="{y:.1f}" r="2.3" fill="{colour}"/>')
+            days=[day for day,repo in visible_signals if repo==name]
+            for before,after in zip(days,days[1:]):
+                x1,x2=lens_x(before),lens_x(after)
+                bend=-11 if j%2==0 else 10
+                path=f'M{x1:.1f} {y:.1f} Q{(x1+x2)/2:.1f} {y+bend:.1f} {x2:.1f} {y:.1f}'
+                if theme=='night':parts.append(f'<path class="trail-halo" data-repository="{e(name)}" d="{path}" fill="none" stroke="{colour}" stroke-width="5" stroke-opacity=".2" filter="url(#light-glow)"/>')
+                parts.append(f'<path class="data-trail" data-repository="{e(name)}" d="{path}" fill="none" stroke="{colour}" stroke-opacity=".67" stroke-width="1.5"/>')
+            for day in days:
+                entries=grouped[(day,name)];units=sum(ev['count'] for ev in entries)
+                kinds=', '.join(sorted({ev['kind'] for ev in entries}))
+                x=lens_x(day);size=2.8+min(2.4,sqrt(units)*.7)
+                details=f'{len(entries)} recorded events / {units} activity units'
+                link=entries[0]['url']
+                parts.append(f'<a class="lens-link" href="{e(link)}" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="{day.isoformat()}: {e(name)} {e(details)}" data-day="{day.isoformat()}" data-units="{units}" data-repos="{e(name)}" data-repo-ids="{e(json.dumps([name],ensure_ascii=True))}" data-kinds="{e(kinds)}" data-detail="{e(name)}: {e(details)}">')
+                if theme=='night':parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="11" fill="{colour}" opacity=".26" filter="url(#light-glow)"/>')
+                parts.append(f'<circle class="lens-core" cx="{x:.1f}" cy="{y:.1f}" r="{size:.1f}" fill="{colour}" stroke="{p["spark"]}" stroke-width=".7"/>')
+                parts.append(f'<path d="M{x-6:.1f} {y:.1f} H{x+6:.1f} M{x:.1f} {y-6:.1f} V{y+6:.1f}" stroke="{p["spark"]}" stroke-width=".6" opacity=".78"/>')
+                parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="9" fill="transparent"/>')
+                parts.append(f'<title>{e(name)} · {day.isoformat()} · {e(kinds)} · {e(details)}</title></a>')
+    else:
+        parts.append(f'<text x="298" y="340" font-size="12" fill="{p["muted"]}">No recorded activity in the signal lens</text>')
     parts += [
-        f'<path d="M30 329 H1170" stroke="{p["hair"]}" opacity=".75"/>',
-        f'<text x="39" y="350" font-size="10" font-weight="700" letter-spacing=".8" fill="{p["accent"]}">{e(label)}</text>',
-        f'<text x="1157" y="350" text-anchor="end" font-size="10" fill="{p["muted"]}">{e(layout.upper())} · 53 × 7 · {e(start.isoformat())} → {e(end.isoformat())} · empty ≠ verified zero</text>',
+        f'<text x="39" y="349" font-size="10" font-weight="700" letter-spacing="1.0" fill="{p["accent"]}">NO INFERRED DAYS</text>',
+        f'<text x="39" y="370" font-size="10" fill="{p["muted"]}">Only sourced dates glow.</text>',
+        f'<path d="M30 390 H1170" stroke="{p["hair"]}" opacity=".75"/>',
+        f'<text x="39" y="410" font-size="10" font-weight="700" letter-spacing=".8" fill="{p["accent"]}">{e(label)}</text>',
+        f'<text x="1157" y="410" text-anchor="end" font-size="10" fill="{p["muted"]}">{e(layout.upper())} · 53 × 7 · {e(start.isoformat())} → {e(end.isoformat())} · empty ≠ verified zero</text>',
         '</svg>']
     return '\n'.join(parts)+'\n'
 

@@ -24,6 +24,13 @@
     button{appearance:none;background:var(--button);border:1px solid transparent;color:var(--ink);cursor:pointer;font:inherit;font-size:12px;padding:8px 11px;border-radius:8px;white-space:nowrap}
     button:hover,button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}button[aria-pressed="true"]{background:var(--teal);color:var(--bg);font-weight:700}
     .actions{display:flex;gap:8px}
+    .spotlight{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:11px 16px;background:var(--surface2);border:1px solid var(--line);border-top:0}
+    .spotlight>span{font-size:10px;text-transform:uppercase;font-weight:700;letter-spacing:1.3px;color:var(--mute)}
+    .repo-pills{display:flex;flex-wrap:wrap;gap:5px}.repo-pills button{font-size:11px;border-radius:999px;padding:5px 11px;background:transparent;border:1px solid var(--line)}
+    .repo-pills button[aria-pressed="true"]{color:var(--bg);background:var(--teal);border-color:var(--teal)}
+    #visual .dimmed{opacity:.13;transition:opacity .25s}#visual .day-link:hover,#visual .day-link:focus,#visual .lens-link:hover,#visual .lens-link:focus{opacity:1}
+    #visual .lens-link:hover .lens-core,#visual .lens-link:focus .lens-core{stroke-width:2.5}
+    .hide-trails .data-trail,.hide-trails .trail-halo,.hide-trails .tracer{opacity:0!important;display:none!important}
     .frame{border:1px solid var(--line);border-top:0;background:var(--surface);border-radius:0 0 16px 16px;padding:8px}
     #visual{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}#visual.dual{grid-template-columns:repeat(2,minmax(0,1fr))}
     #visual svg{width:100%;height:auto;display:block;border-radius:12px}
@@ -44,18 +51,19 @@
 <body>
 <div class="wrap">
   <header><div class="brand"><b>✦</b>GitHub Activity Studio <span style="color:var(--mute)"> / Constellation</span></div><div class="sub">Concept 01 / Calendar-first</div></header>
-  <section class="hero"><div><h1>A calendar <em>written in stars.</em></h1><p class="intro">Your familiar 53-week contribution chart, transformed into a miniature night sky. Every bright date and every connecting path has an explanation in the underlying activity snapshot.</p></div><span id="source" class="demo">SYNTHETIC DEMONSTRATION DATA</span></section>
+  <section class="hero"><div><h1>Contributions <em>become constellations.</em></h1><p class="intro">The full GitHub-shaped calendar remains intact. Watch verified dates ignite, then explore the magnified signal lens to follow each repository’s path through time.</p></div><span id="source" class="demo">SYNTHETIC DEMONSTRATION DATA</span></section>
   <div class="toolbar" role="group" aria-label="Constellation controls">
     <div class="controls">
       <div class="field"><span class="label">Layout</span><div><button data-layout="atlas" aria-pressed="true">Star chart</button> <button data-layout="trails" aria-pressed="false">Comet trails</button></div></div>
       <div class="field"><span class="label">Theme</span><div><button data-theme="night" aria-pressed="true">Night sky</button> <button data-theme="paper" aria-pressed="false">Paper chart</button></div></div>
     </div>
-    <div class="actions"><button id="compare" aria-pressed="false">Compare layouts</button><button id="play" aria-pressed="true">Pause animation</button></div>
+    <div class="actions"><button id="compare" aria-pressed="false">Compare layouts</button><button id="trails-toggle" aria-pressed="true">Hide trails</button><button id="play" aria-pressed="true">Pause animation</button></div>
   </div>
+  <div class="spotlight" aria-label="Spotlight a repository"><span>Repository spotlight</span><div id="repo-filters" class="repo-pills"><button type="button" aria-pressed="true">All repositories</button></div></div>
   <section class="frame"><div id="visual" role="group" aria-label="53-week GitHub calendar constellation" aria-live="polite"></div><p id="status" role="status">Loading calendar…</p></section>
   <section class="details">
     <div class="panel inspector" aria-live="polite"><div class="eyebrow">Explore an active day</div><h2 id="inspector-day">Choose a bright date</h2><p id="inspector-summary">Hover over an active cell or use Tab to focus it.</p><p id="inspector-repos">The day’s repositories and event kinds will appear here.</p></div>
-    <div class="panel"><div class="eyebrow">How to read the sky</div><h2>Real dates. Meaningful light.</h2><p>Columns are weeks, rows are Sunday through Saturday. Brighter tiles mean more recorded activity units on that UTC date. A curved line connects distinct dated events from the <strong>same repository</strong>. Subtle pulses replay those timestamped events.</p><p>Unlike GitHub’s official contribution calendar, this demo records only events supplied in the shared fixture. An unlit day does <strong>not</strong> prove there were zero contributions.</p></div>
+    <div class="panel"><div class="eyebrow">How to read the sky</div><h2>A sky with a memory.</h2><p>The upper chart preserves all 53 weeks; the lower signal lens magnifies only recorded events, revealing long repository journeys without inventing activity. Spotlight a repository to trace its work. Columns are weeks, rows are Sunday through Saturday. Brighter tiles mean more recorded activity units on that UTC date. A curved line connects distinct dated events from the <strong>same repository</strong>. Subtle pulses replay those timestamped events.</p><p>Unlike GitHub’s official contribution calendar, this demo records only events supplied in the shared fixture. An unlit day does <strong>not</strong> prove there were zero contributions.</p></div>
   </section>
   <footer>Offline-ready · No tokens or tracking · <a href="assets/calendar-atlas-night-still.svg" download>Static profile-ready SVG</a> · <a href="README.md">Documentation and Windows instructions</a></footer>
 </div>
@@ -64,7 +72,7 @@
   'use strict';
   const visual=document.getElementById('visual'), status=document.getElementById('status');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const state={layout:'atlas',theme:'night',compare:false,playing:!reduced};
+  const state={layout:'atlas',theme:'night',compare:false,playing:!reduced,repo:null,trails:true};
   const cache=new Map();let generation=0;
   function buttons(selector,key){document.querySelectorAll(selector).forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset[key]===state[key])))}
   async function asset(layout,theme){
@@ -89,19 +97,57 @@
       visual.classList.toggle('dual',state.compare);
       document.body.classList.toggle('paper',state.theme==='paper');
       document.body.classList.toggle('paused',!state.playing);
+      document.body.classList.toggle('hide-trails',!state.trails);
+      updateRepoFilters();
+      applySpotlight();
       document.getElementById('source').textContent=svgs[0].dataset.source==='demo'?'SYNTHETIC DEMONSTRATION DATA':'PUBLIC EVENT SNAPSHOT';
       status.textContent=`${state.compare?'Both layouts':state.layout==='atlas'?'Star chart':'Comet trails'} · ${state.theme==='night'?'Night sky':'Paper chart'} · 53 weeks × 7 days · ${svgs[0].dataset.activeDays} recorded days · ${svgs[0].dataset.events} distinct events`;
     }catch(error){if(request===generation)status.textContent=`Unable to display preview: ${error.message}`}
   }
   function inspect(event){
-    const link=event.target.closest('.day-link');if(!link)return;
+    const link=event.target.closest('.day-link, .lens-link');if(!link)return;
     document.getElementById('inspector-day').textContent=link.dataset.day;
     document.getElementById('inspector-summary').textContent=`${link.dataset.units} recorded activity units · ${link.dataset.kinds.replaceAll('_',' ')}`;
     document.getElementById('inspector-repos').textContent=link.dataset.repos;
   }
+  function availableRepositories(){
+    return [...new Set([...visual.querySelectorAll('.lens-link')].map(link=>{
+      try{return JSON.parse(link.dataset.repoIds||'[]')}catch{return []}
+    }).flat())].sort();
+  }
+  function updateRepoFilters(){
+    const area=document.getElementById('repo-filters');
+    const names=availableRepositories();
+    if(state.repo&&!names.includes(state.repo))state.repo=null;
+    area.replaceChildren();
+    for(const repo of [null,...names]){
+      const button=document.createElement('button');
+      button.type='button';
+      button.textContent=repo?repo.split('/').at(-1):'All repositories';
+      button.setAttribute('aria-pressed',String(state.repo===repo));
+      button.setAttribute('aria-label',repo?`Spotlight ${repo}`:'Show all repositories');
+      button.addEventListener('click',()=>{
+        state.repo=repo;
+        for(const child of area.children)child.setAttribute('aria-pressed',String(child===button));
+        applySpotlight();
+      });
+      area.append(button);
+    }
+  }
+  function applySpotlight(){
+    for(const link of visual.querySelectorAll('.day-link, .lens-link')){
+      let repos=[];
+      try{repos=JSON.parse(link.dataset.repoIds||'[]')}catch{}
+      link.classList.toggle('dimmed',Boolean(state.repo&&!repos.includes(state.repo)));
+    }
+    for(const path of visual.querySelectorAll('.data-trail,.trail-halo,.tracer')){
+      path.classList.toggle('dimmed',Boolean(state.repo&&path.dataset.repository!==state.repo));
+    }
+  }
   document.querySelectorAll('[data-layout]').forEach(button=>button.addEventListener('click',()=>{state.layout=button.dataset.layout;buttons('[data-layout]','layout');draw()}));
   document.querySelectorAll('[data-theme]').forEach(button=>button.addEventListener('click',()=>{state.theme=button.dataset.theme;buttons('[data-theme]','theme');draw()}));
   document.getElementById('compare').addEventListener('click',function(){state.compare=!state.compare;this.setAttribute('aria-pressed',String(state.compare));this.textContent=state.compare?'Single layout':'Compare layouts';draw()});
+  document.getElementById('trails-toggle').addEventListener('click',function(){state.trails=!state.trails;this.setAttribute('aria-pressed',String(state.trails));this.textContent=state.trails?'Hide trails':'Show trails';document.body.classList.toggle('hide-trails',!state.trails)});
   document.getElementById('play').addEventListener('click',function(){state.playing=!state.playing;this.setAttribute('aria-pressed',String(state.playing));this.textContent=state.playing?'Pause animation':'Resume animation';draw()});
   visual.addEventListener('pointerover',inspect);visual.addEventListener('focusin',inspect);
   if(reduced){const button=document.getElementById('play');button.setAttribute('aria-pressed','false');button.textContent='Resume animation'}

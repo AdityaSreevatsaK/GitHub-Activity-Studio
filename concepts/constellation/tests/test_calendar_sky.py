@@ -30,11 +30,14 @@ class CalendarSkyTests(unittest.TestCase):
                 for moving in (True,False):
                     s=sky.render(model,layout,theme,animated=moving)
                     root=ET.fromstring(s)
-                    self.assertEqual(root.attrib['viewBox'],'0 0 1200 375')
+                    self.assertEqual(root.attrib['viewBox'],'0 0 1200 425')
                     self.assertEqual((root.attrib['data-weeks'],root.attrib['data-days']),('53','371'))
                     self.assertIn('SYNTHETIC DEMO',s)
                     self.assertEqual(s.count('data-date='),371)
                     self.assertEqual(s.count('class="day-link"'),10)
+                    self.assertEqual(s.count('class="lens-link"'),10)
+                    self.assertIn('THE SIGNAL LENS',s)
+                    self.assertIn('data-repo-ids=',s)
                     self.assertEqual(s.count('data-relation="same-repository"'),5)
                     self.assertEqual(s.count('class="echo"'),10 if moving else 0)
                     self.assertEqual(s.count('class="tracer"'),5 if moving else 0)
@@ -54,6 +57,7 @@ class CalendarSkyTests(unittest.TestCase):
         svg=sky.render(sky.normalise(payload))
         ET.fromstring(svg)
         self.assertIn('No recorded activity',svg)
+        self.assertEqual(svg.count('class="lens-link"'),0)
         payload['activity']=[FIXTURE['activity'][0]]
         self.assertEqual(sky.render(sky.normalise(payload)).count('class="day-link"'),1)
     def test_same_day_multiple_repos_aggregate_and_escape(self):
@@ -86,6 +90,31 @@ class CalendarSkyTests(unittest.TestCase):
         s=sky.render(sky.normalise(p))
         self.assertEqual(s.count('class="echo"'),150)
         self.assertEqual(s.count('class="day-link"'),1)
+        self.assertEqual(s.count('class="lens-link"'),1)
+        self.assertIn('170 recorded events',s)
+    def test_signal_lens_groups_same_day_repo_and_preserves_units(self):
+        payload=copy.deepcopy(FIXTURE)
+        payload['activity'].append(dict(payload['activity'][0],id='same-day-extra',count=7))
+        svg=sky.render(sky.normalise(payload),animated=False)
+        self.assertEqual(svg.count('class="lens-link"'),10)
+        self.assertIn('2 recorded events / 10 activity units',svg)
+        root=ET.fromstring(svg)
+        nodes=[a for a in root.iter() if a.attrib.get('class')=='lens-link']
+        self.assertEqual(sum(int(a.attrib['data-units']) for a in nodes),27)
+        self.assertEqual(len(nodes),10)
+
+    def test_lens_capped_without_invented_dates(self):
+        payload=copy.deepcopy(FIXTURE)
+        original=payload['activity'][0]
+        # Distinct repo-days spanning the calendar, with no fabricated dates.
+        origin=sky.utc_timestamp('2026-03-01T12:00:00Z')
+        payload['activity']=[dict(original,id=f'cap-{i}',occurred_at=(origin+timedelta(days=i)).strftime('%Y-%m-%dT%H:%M:%SZ')) for i in range(120)]
+        svg=sky.render(sky.normalise(payload),animated=False)
+        self.assertEqual(svg.count('class="lens-link"'),80)
+        self.assertIn('LAST 80/120 REPO-DAYS',svg)
+        self.assertEqual(svg.count('class="day-link"'),120)
+        self.assertEqual(svg.count('data-date='),371)
+
     def test_build_eight_svg_exports(self):
         with tempfile.TemporaryDirectory() as temp:
             path=Path(temp)/'fixture.json'
