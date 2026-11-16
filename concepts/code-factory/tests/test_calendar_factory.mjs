@@ -163,3 +163,36 @@ test("day machine light intensity follows source-backed units",()=>{
  assert.match(render(higher),/data-units="1"/);
  assert.notEqual(render(higher),render(data));
 });
+
+test("renders a source-backed release and inspection week without unrelated machinery",()=>{
+ const release=render(fixture,{selectedWeek:48,layout:"isometric",theme:"light"});
+ assert.match(release,/data-kind="release"/);
+ assert.match(release,/data-repo="sample-dev\/aurora"/);
+ assert.doesNotMatch(release,/data-kind="pr_opened"/);
+ assert.match(release,/DISPATCH 1/);
+ const inspect=render(fixture,{selectedWeek:45,layout:"pixel",theme:"dark"});
+ assert.match(inspect,/data-kind="issue_opened"/);
+ assert.match(inspect,/data-repo="sample-dev\/orbit"/);
+ assert.match(inspect,/INSPECT 1/);
+ assert.doesNotMatch(inspect,/data-kind="release"/);
+});
+test("future same-day timestamps are not silently counted in activity calendar",()=>{
+ const d=clone(fixture);
+ d.generated_at="2026-11-16T00:00:00Z";
+ d.activity.push({...d.activity[0],id:"after-snapshot",occurred_at:"2026-11-16T01:00:00Z"});
+ const model=selectedModel(d);
+ assert.equal(model.outside,1);
+ assert.equal(model.week.units,5);
+});
+test("heavy input preserves 10k valid source records with bounded SVG complexity",()=>{
+ const d=clone(fixture);
+ const prototype=d.activity[0];
+ d.activity=Array.from({length:10000},(_,i)=>({...prototype,id:"large-"+i,occurred_at:"2026-11-09T09:00:00Z"}));
+ const model=selectedModel(d);
+ assert.equal(model.week.units,30000);
+ assert.equal(model.week.records,10000);
+ assert.equal(dayMachines(model.week.days[1]).length,1);
+ const svg=render(d);
+ assert.match(svg,/data-records="10000" data-units="30000"/);
+ assert.ok(svg.length<150000,"SVG should remain compact under heavy activity");
+});
