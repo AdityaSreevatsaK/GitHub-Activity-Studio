@@ -1,54 +1,67 @@
-# Code Factory
+# Code Factory: contribution calendar × miniature factory
 
-Two tiny, original, procedurally illustrated GitHub activity factories. **Prototype using synthetic demonstration data**, not a live contribution history. **Not deployed to any GitHub profile.**
+**Prototype. Synthetic demonstration activity only.** This concept is **not** installed on the owner's GitHub profile, and it is **not** an official GitHub contributions graph.
 
-| Isometric workshop (primary) | Side-scrolling pixel works |
-| --- | --- |
-| ![Demo isometric factory, dark theme](exports/isometric-dark-still.svg) | ![Demo pixel factory, light theme](exports/pixel-light-still.svg) |
+The **recognisable 53-column × 7-day GitHub-style calendar is now the centrepiece**. The factories are a second, charming layer: repository machines sit underneath the calendar, feeding a small conveyor with event-specific parcels. No fabricated events or production metrics.
 
-**Animated exports:** [Isometric, dark](exports/isometric-dark.svg) · [Isometric, light](exports/isometric-light.svg) · [Pixel, dark](exports/pixel-dark.svg) · [Pixel, light](exports/pixel-light.svg)
+## Rendered previews
 
-## Windows PowerShell quick start
+### Isometric workshop, night shift
 
-Requires **Python 3.11+** and a local checkout. No API tokens, paid services, external JavaScript libraries or Python packages are needed.
+![Synthetic demo calendar heatmap with a detailed isometric miniature code factory and five repository machines](exports/isometric-dark-still.svg)
+
+### Side-scrolling pixel factory, day shift
+
+![Synthetic demo calendar heatmap with a pixel-art miniature code factory below the activity grid](exports/pixel-light-still.svg)
+
+Also available: [isometric day](exports/isometric-light-still.svg) · [pixel night](exports/pixel-dark-still.svg).
+
+Animated versions (optional): [isometric night](exports/isometric-dark.svg) · [isometric day](exports/isometric-light.svg) · [pixel night](exports/pixel-dark.svg) · [pixel day](exports/pixel-light.svg).
+
+**For an actual GitHub README, use a still SVG first.** These stills are intentionally embedded above so that the design can be reviewed without animation. Animated-SVG playback through GitHub's image proxy is not yet verified.
+
+## What the calendar and factory mean
+
+- **Columns are weeks; rows are Sunday to Saturday**, using the final 53 calendar-week columns as at the snapshot's `generated_at` timestamp. The last week may be incomplete.
+- **Green squares mark days with recorded events** from the input. Shade represents the total recorded **event units** for that day, *not necessarily GitHub contribution counts*.
+- **Repositories become named machines.** The five busiest stations (by recorded units) are selected, with explicit overflow if necessary.
+- **Events become parcels** on the lower conveyor: commits = parts (teal), PR opened = assembly (blue), PR merged = sealed (amber), issues opened = inspection (coral), releases = dispatch (purple). The visual metaphor does **not** suggest actual CI, builds, deployments or shipping.
+- A source-backed event with `count: N` produces **one parcel marked ×N**, not N invented activity records. The graph deduplicates identical event IDs, rejects conflicting IDs and sorts chronologically.
+- The 52-week window includes only dates at/before `generated_at`. Recorded events outside that window are disclosed. An empty square means no **recorded event in this snapshot**, **not** proven inactivity on GitHub.
+
+The snapshot is deliberately **partial**. GitHub's official contributions heatmap uses more nuanced contribution rules, eligibility, privacy and source coverage. Do not claim this visual is an exact copy of that heatmap without a future shared, verified collector.
+
+## Run locally on Windows
+
+Requires **Node.js 20+**, no packages, no tokens, and no external network access after cloning. From PowerShell:
 
 ```powershell
 git clone https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio.git
 cd GitHub-Activity-Studio
 git switch concept/code-factory
-python concepts/code-factory/factory.py
+node concepts/code-factory/calendar-factory.mjs
+node --test concepts/code-factory/tests/test_calendar_factory.mjs
 python -m unittest discover -s concepts/code-factory/tests -v
 python -m http.server 8000
 ```
 
-Open **http://localhost:8000/concepts/code-factory/preview.html** in your browser. Press **Ctrl+C** to stop the server. The preview has layout, theme, motion and replay controls. Your browser's reduced-motion preference starts in still mode.
+Open **http://localhost:8000/concepts/code-factory/preview.html**. Choose either layout, light/dark colour theme or still/animated motion. The preview starts in **still mode**, including on mobile.
 
-To render your **own public-source normalised snapshot** (same [shared contract](../../docs/DATA_CONTRACT.md)):
+To export from your own v1 normalised snapshot:
 
 ```powershell
-python concepts/code-factory/factory.py --input "C:\path\to\snapshot.json"
+node concepts/code-factory/calendar-factory.mjs "C:\path\to\snapshot.json" "C:\path\to\exports"
 ```
 
-Supported options: `--layout isometric|pixel|both`, `--theme dark|light|both`, `--output PATH`. Files are deterministically regenerated and include 4 animated SVGs plus 4 still SVGs. **No GitHub collection or token access is implemented** in this concept.
+This regenerates the **eight** profile-sized standalone SVGs: two styles × two themes × animated/still. The original `factory.py` remains as a historical experiment; it **does not produce this calendar-first version**. Do not run it over the new exports.
 
-## What moves, and why
+## Engineering and design notes
 
-- **Repository → station.** Five busiest repositories are shown. Ranking uses summed event units for visual selection only, never labelled as commit count.
-- **Commit → mint parts** (teal), **PR opened → assemble** (blue), **PR merged → sealed crate** (amber), **issue opened → inspection ticket** (coral), **release → dispatch package** (violet). These are *metaphors*. A merge is never described as a deployment, nor an issue as a confirmed bug.
-- Every displayed event gets exactly one moving package emerging from its repository station, with a **×N** badge for source `count`. Original timestamps determine ordering; playback compresses event time into a 12-second ambient loop. The loop does **not** claim real-time spacing or a CI pipeline.
-- Legend counts use all unique, valid events, split by kind. Duplicate identical event IDs are ignored; conflicting IDs raise an error. This avoids double-counting.
-- Overflow is **explicit**: at most five busiest repository stations and fifteen latest qualifying event records are drawn; the image announces how many records are shown. The legend still counts all valid event units.
-- All activity is rendered offline from the snapshot; links and arbitrary HTML are never embedded from input.
+- One deterministic source of truth: `calendar-factory.mjs`, with no third-party sprites, fonts, APIs or dependencies.
+- All names and event tooltips are XML-escaped; unsupported kinds, malformed timestamps, invalid counts and conflicting duplicate IDs are rejected.
+- Mobile renders scale the 1000 × 320 SVG without horizontal overflow. At narrow sizes, month and station labels become small; the HTML preview provides a larger view.
+- SVGs contain accessible title/description text. Static versions have no motion; animated versions use CSS and SVG SMIL, with reduced-motion styling.
+- The five-station limit and nine-parcel limit affect only the factory strip. The **calendar still reflects all valid records within the displayed date window**.
+- This branch is a prototype. A future verified public-only GitHub collector should be shared between all concepts rather than improvised here.
 
-## Profile integration and limitations
-
-- Primary: `exports/isometric-dark.svg`, a standalone 1000 × 310 animated SVG, with `exports/isometric-dark-still.svg` as the motion-free fallback. Light-theme and pixel variants are included. All eight committed SVGs can be used as Markdown images with informative alt text.
-- **GitHub README animation has not yet been visually verified on GitHub.** SVG animation support can vary with GitHub image delivery, browser and motion settings. Test a temporary README in a separate sandbox before selecting a design. If animation fails, use the shipped still SVG. Avoid implying a static SVG is animated on GitHub.
-- Browser preview's JavaScript is **not** embedded in the SVG. GitHub does not execute it in a README. Pure SVG exports use SVG animation and CSS only. No hover interaction is required. Browser preview provides native controls and readable explanations.
-- Preview scene is 1000 × 310 and responsively scales down. On very narrow screens, individual repository names may be hard to read; use the accessible description and preview for detail.
-- The output mirrors only the event types present in the input. It cannot infer complete GitHub contribution history, build health, CI runs, deployments, commits from unobserved sources or missing API pages.
-- Original assets are drawn with SVG primitives, without third-party sprites, fonts or dependencies. No private repo data or API credentials are bundled.
-
-## Follow-up before public release
-
-Verify animated SVG delivery in a rendered GitHub README, compare both themes at mobile width, consider an optional GIF renderer for environments that strip SVG motion, and evaluate multi-repository name collisions at tiny scale. Keep the prototype separate from the live profile until explicitly approved.
+**Remaining before release:** visually verify both variants in GitHub's rendered README at mobile width, run Windows-native test commands, and confirm the optional animated SVG behaviour in GitHub's image delivery. Keep this PR as **draft**; do not merge or modify the live profile.
