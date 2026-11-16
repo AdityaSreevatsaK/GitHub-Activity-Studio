@@ -1,0 +1,550 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 375" width="1200" height="375" role="img" aria-labelledby="sky-title sky-desc" data-source="demo" data-layout="atlas" data-theme="night" data-weeks="53" data-days="371" data-active-days="10" data-events="10">
+<title id="sky-title">Activity Constellation · atlas · night</title>
+<desc id="sky-desc">Synthetic demo for sample-dev; calendar shows 53 weeks, with 10 days containing 10 sourced events. Empty cells mean no recorded event, not a verified zero. Connected dates belong to the same repository.</desc>
+<defs>
+<linearGradient id="background" x2="1" y2="1"><stop stop-color="#090f21"/><stop offset="1" stop-color="#16223d"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#a6ebdb" stop-opacity=".55"/><stop offset="1" stop-color="#a6ebdb" stop-opacity="0"/></radialGradient>
+<style><![CDATA[
+text{font-family:Inter,ui-sans-serif,system-ui,"Segoe UI",sans-serif} .day-link{cursor:pointer}.day-link:hover .cell-frame,.day-link:focus .cell-frame{stroke-width:2;stroke-opacity:1}.echo{opacity:0;animation:pulse 16s ease-out infinite;transform-box:fill-box;transform-origin:center}.flicker{animation:twinkle 16s ease-in-out infinite}@keyframes pulse{0%,8%,100%{opacity:0;transform:scale(.6)}11%{opacity:.85;transform:scale(1.1)}19%{opacity:0;transform:scale(2.8)}}@keyframes twinkle{0%,100%{opacity:.82}50%{opacity:1}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important}.tracer{display:none!important}}
+]]></style></defs>
+<rect width="1200" height="375" rx="19" fill="url(#background)"/>
+<rect x="10" y="10" width="1180" height="355" rx="13" fill="none" stroke="#364966" stroke-opacity=".75"/>
+<path d="M265 32 V327" stroke="#364966" stroke-width="1" opacity=".65"/>
+<text x="38" y="48" font-size="10" font-weight="700" letter-spacing="2.2" fill="#a6ebdb">GITHUB ACTIVITY STUDIO / 01</text>
+<text x="38" y="100" font-size="33" font-family="Georgia,serif" fill="#eef3ff">Constellation</text>
+<text x="39" y="123" font-size="12" fill="#9facc9">A calendar written in stars.</text>
+<path d="M39 146 H236" stroke="#364966"/>
+<text x="39" y="174" font-size="10" letter-spacing="1.5" fill="#9facc9">SAMPLE-DEV</text>
+<text x="39" y="208" font-size="28" fill="#eef3ff">10<tspan dx="8" font-size="12" fill="#9facc9">recorded days</tspan></text>
+<text x="39" y="229" font-size="12" fill="#9facc9">10 events · 20 activity units</text>
+<text x="39" y="264" font-size="11" fill="#a6ebdb">+  <tspan fill="#9facc9">bright cell = activity</tspan></text>
+<text x="39" y="284" font-size="11" fill="#a6ebdb">~  <tspan fill="#9facc9">path = same repository</tspan></text>
+<text x="39" y="304" font-size="11" fill="#a6ebdb">o  <tspan fill="#9facc9">pulse = recorded event</tspan></text>
+<text x="298" y="53" font-size="14" font-family="Georgia,serif" fill="#eef3ff">The last 53 calendar weeks</text>
+<text x="1102" y="53" text-anchor="end" font-size="10" fill="#9facc9">SUN → SAT  ·  UTC DATES</text>
+<circle cx="832.3" cy="184.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="970.4" cy="129.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="967.2" cy="71.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="459.0" cy="166.2" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="408.8" cy="150.2" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="926.5" cy="124.8" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="553.1" cy="129.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1048.8" cy="244.3" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="368.0" cy="109.7" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="424.5" cy="121.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="741.4" cy="70.2" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="713.1" cy="88.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="521.7" cy="243.4" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="339.8" cy="233.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="932.7" cy="85.2" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1017.4" cy="63.6" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="339.8" cy="272.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="728.8" cy="148.3" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="299.0" cy="156.8" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1067.6" cy="84.3" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="352.3" cy="228.3" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="474.7" cy="280.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="788.4" cy="214.2" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="697.4" cy="128.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1067.6" cy="279.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1020.6" cy="240.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="945.3" cy="113.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="757.0" cy="85.2" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="885.7" cy="290.4" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1070.8" cy="127.6" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="393.1" cy="199.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="854.3" cy="158.6" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1080.2" cy="296.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="465.3" cy="187.8" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="647.2" cy="106.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="917.0" cy="105.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="481.0" cy="88.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="396.3" cy="191.6" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="691.2" cy="138.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="656.6" cy="234.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1011.2" cy="91.8" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="675.5" cy="100.3" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="606.5" cy="214.2" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="380.6" cy="63.6" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="857.4" cy="160.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="835.5" cy="57.0" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="459.0" cy="196.3" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1026.8" cy="199.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="816.6" cy="243.4" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="355.5" cy="116.3" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="405.7" cy="80.5" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="593.9" cy="186.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="1080.2" cy="167.1" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="766.5" cy="73.9" r=".6" fill="#a6ebdb" opacity=".11"/>
+<circle cx="935.9" cy="83.4" r=".6" fill="#a6ebdb" opacity=".11"/>
+<text x="328.2" y="96" font-size="10" font-weight="500" fill="#9facc9">Dec</text>
+<text x="388.6" y="96" font-size="10" font-weight="500" fill="#9facc9">Jan</text>
+<text x="464.1" y="96" font-size="10" font-weight="500" fill="#9facc9">Feb</text>
+<text x="524.5" y="96" font-size="10" font-weight="500" fill="#9facc9">Mar</text>
+<text x="584.9" y="96" font-size="10" font-weight="500" fill="#9facc9">Apr</text>
+<text x="645.3" y="96" font-size="10" font-weight="500" fill="#9facc9">May</text>
+<text x="720.8" y="96" font-size="10" font-weight="500" fill="#9facc9">Jun</text>
+<text x="781.2" y="96" font-size="10" font-weight="500" fill="#9facc9">Jul</text>
+<text x="841.6" y="96" font-size="10" font-weight="500" fill="#9facc9">Aug</text>
+<text x="917.1" y="96" font-size="10" font-weight="500" fill="#9facc9">Sep</text>
+<text x="977.5" y="96" font-size="10" font-weight="500" fill="#9facc9">Oct</text>
+<text x="1053.0" y="96" font-size="10" font-weight="500" fill="#9facc9">Nov</text>
+<text x="287" y="145.6" font-size="10" text-anchor="end" fill="#9facc9">Mon</text>
+<text x="287" y="186.8" font-size="10" text-anchor="end" fill="#9facc9">Wed</text>
+<text x="287" y="228.0" font-size="10" text-anchor="end" fill="#9facc9">Fri</text>
+<path d="M893.3 225.4 Q915.9 198.3 938.6 246.0" fill="none" stroke="#71ded3" stroke-width="1.1" stroke-opacity="0.24" stroke-dasharray="3 5" stroke-linecap="round" data-relation="same-repository" data-repository="sample-dev/atlas"><title>sample-dev/atlas: 2026-08-21 to 2026-09-12</title></path>
+<path d="M863.1 143.0 Q946.1 105.1 1029.2 246.0" fill="none" stroke="#f6bb6b" stroke-width="1.1" stroke-opacity="0.24" stroke-dasharray="3 5" stroke-linecap="round" data-relation="same-repository" data-repository="sample-dev/aurora"><title>sample-dev/aurora: 2026-08-03 to 2026-10-24</title></path>
+<path d="M938.6 122.4 Q1006.5 87.2 1074.5 225.4" fill="none" stroke="#c2a3ff" stroke-width="1.1" stroke-opacity="0.24" stroke-dasharray="3 5" stroke-linecap="round" data-relation="same-repository" data-repository="sample-dev/ember"><title>sample-dev/ember: 2026-09-06 to 2026-11-13</title></path>
+<path d="M1059.4 184.2 Q1067.0 118.6 1074.5 143.0" fill="none" stroke="#f18fa6" stroke-width="1.1" stroke-opacity="0.24" stroke-dasharray="3 5" stroke-linecap="round" data-relation="same-repository" data-repository="sample-dev/harbour"><title>sample-dev/harbour: 2026-11-04 to 2026-11-09</title></path>
+<path d="M983.9 143.0 Q999.0 117.3 1014.1 246.0" fill="none" stroke="#95b8ff" stroke-width="1.1" stroke-opacity="0.24" stroke-dasharray="3 5" stroke-linecap="round" data-relation="same-repository" data-repository="sample-dev/orbit"><title>sample-dev/orbit: 2026-09-28 to 2026-10-17</title></path>
+<rect x="298.0" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-16" data-units="0" data-future="false"/>
+<rect x="298.0" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-17" data-units="0" data-future="false"/>
+<rect x="298.0" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-18" data-units="0" data-future="false"/>
+<rect x="298.0" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-19" data-units="0" data-future="false"/>
+<rect x="298.0" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-20" data-units="0" data-future="false"/>
+<rect x="298.0" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-21" data-units="0" data-future="false"/>
+<rect x="298.0" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-22" data-units="0" data-future="false"/>
+<rect x="313.1" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-23" data-units="0" data-future="false"/>
+<rect x="313.1" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-24" data-units="0" data-future="false"/>
+<rect x="313.1" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-25" data-units="0" data-future="false"/>
+<rect x="313.1" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-26" data-units="0" data-future="false"/>
+<rect x="313.1" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-27" data-units="0" data-future="false"/>
+<rect x="313.1" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-28" data-units="0" data-future="false"/>
+<rect x="313.1" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-29" data-units="0" data-future="false"/>
+<rect x="328.2" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-11-30" data-units="0" data-future="false"/>
+<rect x="328.2" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-01" data-units="0" data-future="false"/>
+<rect x="328.2" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-02" data-units="0" data-future="false"/>
+<rect x="328.2" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-03" data-units="0" data-future="false"/>
+<rect x="328.2" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-04" data-units="0" data-future="false"/>
+<rect x="328.2" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-05" data-units="0" data-future="false"/>
+<rect x="328.2" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-06" data-units="0" data-future="false"/>
+<rect x="343.3" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-07" data-units="0" data-future="false"/>
+<rect x="343.3" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-08" data-units="0" data-future="false"/>
+<rect x="343.3" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-09" data-units="0" data-future="false"/>
+<rect x="343.3" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-10" data-units="0" data-future="false"/>
+<rect x="343.3" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-11" data-units="0" data-future="false"/>
+<rect x="343.3" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-12" data-units="0" data-future="false"/>
+<rect x="343.3" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-13" data-units="0" data-future="false"/>
+<rect x="358.4" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-14" data-units="0" data-future="false"/>
+<rect x="358.4" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-15" data-units="0" data-future="false"/>
+<rect x="358.4" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-16" data-units="0" data-future="false"/>
+<rect x="358.4" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-17" data-units="0" data-future="false"/>
+<rect x="358.4" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-18" data-units="0" data-future="false"/>
+<rect x="358.4" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-19" data-units="0" data-future="false"/>
+<rect x="358.4" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-20" data-units="0" data-future="false"/>
+<rect x="373.5" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-21" data-units="0" data-future="false"/>
+<rect x="373.5" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-22" data-units="0" data-future="false"/>
+<rect x="373.5" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-23" data-units="0" data-future="false"/>
+<rect x="373.5" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-24" data-units="0" data-future="false"/>
+<rect x="373.5" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-25" data-units="0" data-future="false"/>
+<rect x="373.5" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-26" data-units="0" data-future="false"/>
+<rect x="373.5" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-27" data-units="0" data-future="false"/>
+<rect x="388.6" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-28" data-units="0" data-future="false"/>
+<rect x="388.6" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-29" data-units="0" data-future="false"/>
+<rect x="388.6" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-30" data-units="0" data-future="false"/>
+<rect x="388.6" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2025-12-31" data-units="0" data-future="false"/>
+<rect x="388.6" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-01" data-units="0" data-future="false"/>
+<rect x="388.6" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-02" data-units="0" data-future="false"/>
+<rect x="388.6" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-03" data-units="0" data-future="false"/>
+<rect x="403.7" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-04" data-units="0" data-future="false"/>
+<rect x="403.7" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-05" data-units="0" data-future="false"/>
+<rect x="403.7" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-06" data-units="0" data-future="false"/>
+<rect x="403.7" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-07" data-units="0" data-future="false"/>
+<rect x="403.7" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-08" data-units="0" data-future="false"/>
+<rect x="403.7" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-09" data-units="0" data-future="false"/>
+<rect x="403.7" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-10" data-units="0" data-future="false"/>
+<rect x="418.8" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-11" data-units="0" data-future="false"/>
+<rect x="418.8" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-12" data-units="0" data-future="false"/>
+<rect x="418.8" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-13" data-units="0" data-future="false"/>
+<rect x="418.8" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-14" data-units="0" data-future="false"/>
+<rect x="418.8" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-15" data-units="0" data-future="false"/>
+<rect x="418.8" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-16" data-units="0" data-future="false"/>
+<rect x="418.8" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-17" data-units="0" data-future="false"/>
+<rect x="433.9" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-18" data-units="0" data-future="false"/>
+<rect x="433.9" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-19" data-units="0" data-future="false"/>
+<rect x="433.9" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-20" data-units="0" data-future="false"/>
+<rect x="433.9" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-21" data-units="0" data-future="false"/>
+<rect x="433.9" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-22" data-units="0" data-future="false"/>
+<rect x="433.9" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-23" data-units="0" data-future="false"/>
+<rect x="433.9" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-24" data-units="0" data-future="false"/>
+<rect x="449.0" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-25" data-units="0" data-future="false"/>
+<rect x="449.0" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-26" data-units="0" data-future="false"/>
+<rect x="449.0" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-27" data-units="0" data-future="false"/>
+<rect x="449.0" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-28" data-units="0" data-future="false"/>
+<rect x="449.0" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-29" data-units="0" data-future="false"/>
+<rect x="449.0" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-30" data-units="0" data-future="false"/>
+<rect x="449.0" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-01-31" data-units="0" data-future="false"/>
+<rect x="464.1" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-01" data-units="0" data-future="false"/>
+<rect x="464.1" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-02" data-units="0" data-future="false"/>
+<rect x="464.1" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-03" data-units="0" data-future="false"/>
+<rect x="464.1" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-04" data-units="0" data-future="false"/>
+<rect x="464.1" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-05" data-units="0" data-future="false"/>
+<rect x="464.1" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-06" data-units="0" data-future="false"/>
+<rect x="464.1" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-07" data-units="0" data-future="false"/>
+<rect x="479.2" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-08" data-units="0" data-future="false"/>
+<rect x="479.2" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-09" data-units="0" data-future="false"/>
+<rect x="479.2" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-10" data-units="0" data-future="false"/>
+<rect x="479.2" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-11" data-units="0" data-future="false"/>
+<rect x="479.2" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-12" data-units="0" data-future="false"/>
+<rect x="479.2" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-13" data-units="0" data-future="false"/>
+<rect x="479.2" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-14" data-units="0" data-future="false"/>
+<rect x="494.3" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-15" data-units="0" data-future="false"/>
+<rect x="494.3" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-16" data-units="0" data-future="false"/>
+<rect x="494.3" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-17" data-units="0" data-future="false"/>
+<rect x="494.3" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-18" data-units="0" data-future="false"/>
+<rect x="494.3" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-19" data-units="0" data-future="false"/>
+<rect x="494.3" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-20" data-units="0" data-future="false"/>
+<rect x="494.3" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-21" data-units="0" data-future="false"/>
+<rect x="509.4" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-22" data-units="0" data-future="false"/>
+<rect x="509.4" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-23" data-units="0" data-future="false"/>
+<rect x="509.4" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-24" data-units="0" data-future="false"/>
+<rect x="509.4" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-25" data-units="0" data-future="false"/>
+<rect x="509.4" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-26" data-units="0" data-future="false"/>
+<rect x="509.4" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-27" data-units="0" data-future="false"/>
+<rect x="509.4" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-02-28" data-units="0" data-future="false"/>
+<rect x="524.5" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-01" data-units="0" data-future="false"/>
+<rect x="524.5" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-02" data-units="0" data-future="false"/>
+<rect x="524.5" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-03" data-units="0" data-future="false"/>
+<rect x="524.5" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-04" data-units="0" data-future="false"/>
+<rect x="524.5" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-05" data-units="0" data-future="false"/>
+<rect x="524.5" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-06" data-units="0" data-future="false"/>
+<rect x="524.5" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-07" data-units="0" data-future="false"/>
+<rect x="539.6" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-08" data-units="0" data-future="false"/>
+<rect x="539.6" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-09" data-units="0" data-future="false"/>
+<rect x="539.6" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-10" data-units="0" data-future="false"/>
+<rect x="539.6" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-11" data-units="0" data-future="false"/>
+<rect x="539.6" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-12" data-units="0" data-future="false"/>
+<rect x="539.6" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-13" data-units="0" data-future="false"/>
+<rect x="539.6" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-14" data-units="0" data-future="false"/>
+<rect x="554.7" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-15" data-units="0" data-future="false"/>
+<rect x="554.7" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-16" data-units="0" data-future="false"/>
+<rect x="554.7" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-17" data-units="0" data-future="false"/>
+<rect x="554.7" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-18" data-units="0" data-future="false"/>
+<rect x="554.7" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-19" data-units="0" data-future="false"/>
+<rect x="554.7" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-20" data-units="0" data-future="false"/>
+<rect x="554.7" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-21" data-units="0" data-future="false"/>
+<rect x="569.8" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-22" data-units="0" data-future="false"/>
+<rect x="569.8" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-23" data-units="0" data-future="false"/>
+<rect x="569.8" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-24" data-units="0" data-future="false"/>
+<rect x="569.8" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-25" data-units="0" data-future="false"/>
+<rect x="569.8" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-26" data-units="0" data-future="false"/>
+<rect x="569.8" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-27" data-units="0" data-future="false"/>
+<rect x="569.8" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-28" data-units="0" data-future="false"/>
+<rect x="584.9" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-29" data-units="0" data-future="false"/>
+<rect x="584.9" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-30" data-units="0" data-future="false"/>
+<rect x="584.9" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-03-31" data-units="0" data-future="false"/>
+<rect x="584.9" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-01" data-units="0" data-future="false"/>
+<rect x="584.9" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-02" data-units="0" data-future="false"/>
+<rect x="584.9" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-03" data-units="0" data-future="false"/>
+<rect x="584.9" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-04" data-units="0" data-future="false"/>
+<rect x="600.0" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-05" data-units="0" data-future="false"/>
+<rect x="600.0" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-06" data-units="0" data-future="false"/>
+<rect x="600.0" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-07" data-units="0" data-future="false"/>
+<rect x="600.0" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-08" data-units="0" data-future="false"/>
+<rect x="600.0" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-09" data-units="0" data-future="false"/>
+<rect x="600.0" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-10" data-units="0" data-future="false"/>
+<rect x="600.0" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-11" data-units="0" data-future="false"/>
+<rect x="615.1" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-12" data-units="0" data-future="false"/>
+<rect x="615.1" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-13" data-units="0" data-future="false"/>
+<rect x="615.1" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-14" data-units="0" data-future="false"/>
+<rect x="615.1" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-15" data-units="0" data-future="false"/>
+<rect x="615.1" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-16" data-units="0" data-future="false"/>
+<rect x="615.1" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-17" data-units="0" data-future="false"/>
+<rect x="615.1" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-18" data-units="0" data-future="false"/>
+<rect x="630.2" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-19" data-units="0" data-future="false"/>
+<rect x="630.2" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-20" data-units="0" data-future="false"/>
+<rect x="630.2" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-21" data-units="0" data-future="false"/>
+<rect x="630.2" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-22" data-units="0" data-future="false"/>
+<rect x="630.2" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-23" data-units="0" data-future="false"/>
+<rect x="630.2" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-24" data-units="0" data-future="false"/>
+<rect x="630.2" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-25" data-units="0" data-future="false"/>
+<rect x="645.3" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-26" data-units="0" data-future="false"/>
+<rect x="645.3" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-27" data-units="0" data-future="false"/>
+<rect x="645.3" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-28" data-units="0" data-future="false"/>
+<rect x="645.3" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-29" data-units="0" data-future="false"/>
+<rect x="645.3" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-04-30" data-units="0" data-future="false"/>
+<rect x="645.3" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-01" data-units="0" data-future="false"/>
+<rect x="645.3" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-02" data-units="0" data-future="false"/>
+<rect x="660.4" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-03" data-units="0" data-future="false"/>
+<rect x="660.4" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-04" data-units="0" data-future="false"/>
+<rect x="660.4" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-05" data-units="0" data-future="false"/>
+<rect x="660.4" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-06" data-units="0" data-future="false"/>
+<rect x="660.4" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-07" data-units="0" data-future="false"/>
+<rect x="660.4" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-08" data-units="0" data-future="false"/>
+<rect x="660.4" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-09" data-units="0" data-future="false"/>
+<rect x="675.5" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-10" data-units="0" data-future="false"/>
+<rect x="675.5" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-11" data-units="0" data-future="false"/>
+<rect x="675.5" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-12" data-units="0" data-future="false"/>
+<rect x="675.5" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-13" data-units="0" data-future="false"/>
+<rect x="675.5" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-14" data-units="0" data-future="false"/>
+<rect x="675.5" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-15" data-units="0" data-future="false"/>
+<rect x="675.5" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-16" data-units="0" data-future="false"/>
+<rect x="690.6" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-17" data-units="0" data-future="false"/>
+<rect x="690.6" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-18" data-units="0" data-future="false"/>
+<rect x="690.6" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-19" data-units="0" data-future="false"/>
+<rect x="690.6" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-20" data-units="0" data-future="false"/>
+<rect x="690.6" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-21" data-units="0" data-future="false"/>
+<rect x="690.6" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-22" data-units="0" data-future="false"/>
+<rect x="690.6" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-23" data-units="0" data-future="false"/>
+<rect x="705.7" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-24" data-units="0" data-future="false"/>
+<rect x="705.7" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-25" data-units="0" data-future="false"/>
+<rect x="705.7" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-26" data-units="0" data-future="false"/>
+<rect x="705.7" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-27" data-units="0" data-future="false"/>
+<rect x="705.7" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-28" data-units="0" data-future="false"/>
+<rect x="705.7" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-29" data-units="0" data-future="false"/>
+<rect x="705.7" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-30" data-units="0" data-future="false"/>
+<rect x="720.8" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-05-31" data-units="0" data-future="false"/>
+<rect x="720.8" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-01" data-units="0" data-future="false"/>
+<rect x="720.8" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-02" data-units="0" data-future="false"/>
+<rect x="720.8" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-03" data-units="0" data-future="false"/>
+<rect x="720.8" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-04" data-units="0" data-future="false"/>
+<rect x="720.8" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-05" data-units="0" data-future="false"/>
+<rect x="720.8" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-06" data-units="0" data-future="false"/>
+<rect x="735.9" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-07" data-units="0" data-future="false"/>
+<rect x="735.9" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-08" data-units="0" data-future="false"/>
+<rect x="735.9" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-09" data-units="0" data-future="false"/>
+<rect x="735.9" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-10" data-units="0" data-future="false"/>
+<rect x="735.9" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-11" data-units="0" data-future="false"/>
+<rect x="735.9" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-12" data-units="0" data-future="false"/>
+<rect x="735.9" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-13" data-units="0" data-future="false"/>
+<rect x="751.0" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-14" data-units="0" data-future="false"/>
+<rect x="751.0" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-15" data-units="0" data-future="false"/>
+<rect x="751.0" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-16" data-units="0" data-future="false"/>
+<rect x="751.0" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-17" data-units="0" data-future="false"/>
+<rect x="751.0" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-18" data-units="0" data-future="false"/>
+<rect x="751.0" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-19" data-units="0" data-future="false"/>
+<rect x="751.0" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-20" data-units="0" data-future="false"/>
+<rect x="766.1" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-21" data-units="0" data-future="false"/>
+<rect x="766.1" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-22" data-units="0" data-future="false"/>
+<rect x="766.1" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-23" data-units="0" data-future="false"/>
+<rect x="766.1" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-24" data-units="0" data-future="false"/>
+<rect x="766.1" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-25" data-units="0" data-future="false"/>
+<rect x="766.1" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-26" data-units="0" data-future="false"/>
+<rect x="766.1" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-27" data-units="0" data-future="false"/>
+<rect x="781.2" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-28" data-units="0" data-future="false"/>
+<rect x="781.2" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-29" data-units="0" data-future="false"/>
+<rect x="781.2" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-06-30" data-units="0" data-future="false"/>
+<rect x="781.2" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-01" data-units="0" data-future="false"/>
+<rect x="781.2" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-02" data-units="0" data-future="false"/>
+<rect x="781.2" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-03" data-units="0" data-future="false"/>
+<rect x="781.2" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-04" data-units="0" data-future="false"/>
+<rect x="796.3" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-05" data-units="0" data-future="false"/>
+<rect x="796.3" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-06" data-units="0" data-future="false"/>
+<rect x="796.3" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-07" data-units="0" data-future="false"/>
+<rect x="796.3" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-08" data-units="0" data-future="false"/>
+<rect x="796.3" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-09" data-units="0" data-future="false"/>
+<rect x="796.3" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-10" data-units="0" data-future="false"/>
+<rect x="796.3" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-11" data-units="0" data-future="false"/>
+<rect x="811.4" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-12" data-units="0" data-future="false"/>
+<rect x="811.4" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-13" data-units="0" data-future="false"/>
+<rect x="811.4" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-14" data-units="0" data-future="false"/>
+<rect x="811.4" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-15" data-units="0" data-future="false"/>
+<rect x="811.4" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-16" data-units="0" data-future="false"/>
+<rect x="811.4" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-17" data-units="0" data-future="false"/>
+<rect x="811.4" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-18" data-units="0" data-future="false"/>
+<rect x="826.5" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-19" data-units="0" data-future="false"/>
+<rect x="826.5" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-20" data-units="0" data-future="false"/>
+<rect x="826.5" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-21" data-units="0" data-future="false"/>
+<rect x="826.5" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-22" data-units="0" data-future="false"/>
+<rect x="826.5" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-23" data-units="0" data-future="false"/>
+<rect x="826.5" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-24" data-units="0" data-future="false"/>
+<rect x="826.5" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-25" data-units="0" data-future="false"/>
+<rect x="841.6" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-26" data-units="0" data-future="false"/>
+<rect x="841.6" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-27" data-units="0" data-future="false"/>
+<rect x="841.6" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-28" data-units="0" data-future="false"/>
+<rect x="841.6" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-29" data-units="0" data-future="false"/>
+<rect x="841.6" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-30" data-units="0" data-future="false"/>
+<rect x="841.6" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-07-31" data-units="0" data-future="false"/>
+<rect x="841.6" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-01" data-units="0" data-future="false"/>
+<rect x="856.7" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-02" data-units="0" data-future="false"/>
+<rect x="856.7" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#386a78" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-03" data-units="3" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-08-03: 1 recorded events, 3 activity units, sample-dev/aurora" data-day="2026-08-03" data-units="3" data-repos="sample-dev/aurora" data-kinds="commit" data-detail="2026-08-03: 1 recorded events, 3 activity units, sample-dev/aurora">
+<circle cx="863.1" cy="143.0" r="3.4" fill="#f6bb6b"/>
+<path d="M863.1 138.5 V147.5 M858.6 143.0 H867.6" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="856.1" y="136.0" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-08-03: 1 recorded events, 3 activity units, sample-dev/aurora</title></a>
+<rect x="856.7" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-04" data-units="0" data-future="false"/>
+<rect x="856.7" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-05" data-units="0" data-future="false"/>
+<rect x="856.7" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-06" data-units="0" data-future="false"/>
+<rect x="856.7" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-07" data-units="0" data-future="false"/>
+<rect x="856.7" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-08" data-units="0" data-future="false"/>
+<rect x="871.8" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-09" data-units="0" data-future="false"/>
+<rect x="871.8" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-10" data-units="0" data-future="false"/>
+<rect x="871.8" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-11" data-units="0" data-future="false"/>
+<rect x="871.8" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-12" data-units="0" data-future="false"/>
+<rect x="871.8" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-13" data-units="0" data-future="false"/>
+<rect x="871.8" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-14" data-units="0" data-future="false"/>
+<rect x="871.8" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-15" data-units="0" data-future="false"/>
+<rect x="886.9" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-16" data-units="0" data-future="false"/>
+<rect x="886.9" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-17" data-units="0" data-future="false"/>
+<rect x="886.9" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-18" data-units="0" data-future="false"/>
+<rect x="886.9" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-19" data-units="0" data-future="false"/>
+<rect x="886.9" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-20" data-units="0" data-future="false"/>
+<rect x="886.9" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#315566" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-21" data-units="1" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-08-21: 1 recorded events, 1 activity units, sample-dev/atlas" data-day="2026-08-21" data-units="1" data-repos="sample-dev/atlas" data-kinds="pr_opened" data-detail="2026-08-21: 1 recorded events, 1 activity units, sample-dev/atlas">
+<circle cx="893.3" cy="225.4" r="2.8" fill="#71ded3"/>
+<path d="M893.3 220.9 V229.9 M888.8 225.4 H897.8" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="886.3" y="218.4" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-08-21: 1 recorded events, 1 activity units, sample-dev/atlas</title></a>
+<rect x="886.9" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-22" data-units="0" data-future="false"/>
+<rect x="902.0" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-23" data-units="0" data-future="false"/>
+<rect x="902.0" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-24" data-units="0" data-future="false"/>
+<rect x="902.0" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-25" data-units="0" data-future="false"/>
+<rect x="902.0" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-26" data-units="0" data-future="false"/>
+<rect x="902.0" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-27" data-units="0" data-future="false"/>
+<rect x="902.0" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-28" data-units="0" data-future="false"/>
+<rect x="902.0" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-29" data-units="0" data-future="false"/>
+<rect x="917.1" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-30" data-units="0" data-future="false"/>
+<rect x="917.1" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-08-31" data-units="0" data-future="false"/>
+<rect x="917.1" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-01" data-units="0" data-future="false"/>
+<rect x="917.1" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-02" data-units="0" data-future="false"/>
+<rect x="917.1" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-03" data-units="0" data-future="false"/>
+<rect x="917.1" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-04" data-units="0" data-future="false"/>
+<rect x="917.1" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-05" data-units="0" data-future="false"/>
+<rect x="932.2" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#386a78" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-06" data-units="2" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-09-06: 1 recorded events, 2 activity units, sample-dev/ember" data-day="2026-09-06" data-units="2" data-repos="sample-dev/ember" data-kinds="commit" data-detail="2026-09-06: 1 recorded events, 2 activity units, sample-dev/ember">
+<circle cx="938.6" cy="122.4" r="3.1" fill="#c2a3ff"/>
+<path d="M938.6 117.9 V126.9 M934.1 122.4 H943.1" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="931.6" y="115.4" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-09-06: 1 recorded events, 2 activity units, sample-dev/ember</title></a>
+<rect x="932.2" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-07" data-units="0" data-future="false"/>
+<rect x="932.2" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-08" data-units="0" data-future="false"/>
+<rect x="932.2" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-09" data-units="0" data-future="false"/>
+<rect x="932.2" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-10" data-units="0" data-future="false"/>
+<rect x="932.2" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-11" data-units="0" data-future="false"/>
+<rect x="932.2" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#315566" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-12" data-units="1" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-09-12: 1 recorded events, 1 activity units, sample-dev/atlas" data-day="2026-09-12" data-units="1" data-repos="sample-dev/atlas" data-kinds="pr_merged" data-detail="2026-09-12: 1 recorded events, 1 activity units, sample-dev/atlas">
+<circle cx="938.6" cy="246.0" r="2.8" fill="#71ded3"/>
+<path d="M938.6 241.5 V250.5 M934.1 246.0 H943.1" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="931.6" y="239.0" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-09-12: 1 recorded events, 1 activity units, sample-dev/atlas</title></a>
+<rect x="947.3" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-13" data-units="0" data-future="false"/>
+<rect x="947.3" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-14" data-units="0" data-future="false"/>
+<rect x="947.3" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-15" data-units="0" data-future="false"/>
+<rect x="947.3" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-16" data-units="0" data-future="false"/>
+<rect x="947.3" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-17" data-units="0" data-future="false"/>
+<rect x="947.3" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-18" data-units="0" data-future="false"/>
+<rect x="947.3" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-19" data-units="0" data-future="false"/>
+<rect x="962.4" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-20" data-units="0" data-future="false"/>
+<rect x="962.4" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-21" data-units="0" data-future="false"/>
+<rect x="962.4" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-22" data-units="0" data-future="false"/>
+<rect x="962.4" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-23" data-units="0" data-future="false"/>
+<rect x="962.4" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-24" data-units="0" data-future="false"/>
+<rect x="962.4" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-25" data-units="0" data-future="false"/>
+<rect x="962.4" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-26" data-units="0" data-future="false"/>
+<rect x="977.5" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-27" data-units="0" data-future="false"/>
+<rect x="977.5" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#315566" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-28" data-units="1" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-09-28: 1 recorded events, 1 activity units, sample-dev/orbit" data-day="2026-09-28" data-units="1" data-repos="sample-dev/orbit" data-kinds="issue_opened" data-detail="2026-09-28: 1 recorded events, 1 activity units, sample-dev/orbit">
+<circle cx="983.9" cy="143.0" r="2.8" fill="#95b8ff"/>
+<path d="M983.9 138.5 V147.5 M979.4 143.0 H988.4" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="976.9" y="136.0" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-09-28: 1 recorded events, 1 activity units, sample-dev/orbit</title></a>
+<rect x="977.5" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-29" data-units="0" data-future="false"/>
+<rect x="977.5" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-09-30" data-units="0" data-future="false"/>
+<rect x="977.5" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-01" data-units="0" data-future="false"/>
+<rect x="977.5" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-02" data-units="0" data-future="false"/>
+<rect x="977.5" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-03" data-units="0" data-future="false"/>
+<rect x="992.6" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-04" data-units="0" data-future="false"/>
+<rect x="992.6" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-05" data-units="0" data-future="false"/>
+<rect x="992.6" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-06" data-units="0" data-future="false"/>
+<rect x="992.6" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-07" data-units="0" data-future="false"/>
+<rect x="992.6" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-08" data-units="0" data-future="false"/>
+<rect x="992.6" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-09" data-units="0" data-future="false"/>
+<rect x="992.6" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-10" data-units="0" data-future="false"/>
+<rect x="1007.7" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-11" data-units="0" data-future="false"/>
+<rect x="1007.7" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-12" data-units="0" data-future="false"/>
+<rect x="1007.7" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-13" data-units="0" data-future="false"/>
+<rect x="1007.7" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-14" data-units="0" data-future="false"/>
+<rect x="1007.7" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-15" data-units="0" data-future="false"/>
+<rect x="1007.7" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-16" data-units="0" data-future="false"/>
+<rect x="1007.7" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#459b9c" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-17" data-units="5" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-10-17: 1 recorded events, 5 activity units, sample-dev/orbit" data-day="2026-10-17" data-units="5" data-repos="sample-dev/orbit" data-kinds="commit" data-detail="2026-10-17: 1 recorded events, 5 activity units, sample-dev/orbit">
+<circle cx="1014.1" cy="246.0" r="3.8" fill="#95b8ff"/>
+<path d="M1014.1 241.5 V250.5 M1009.6 246.0 H1018.6" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="1007.1" y="239.0" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-10-17: 1 recorded events, 5 activity units, sample-dev/orbit</title></a>
+<rect x="1022.8" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-18" data-units="0" data-future="false"/>
+<rect x="1022.8" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-19" data-units="0" data-future="false"/>
+<rect x="1022.8" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-20" data-units="0" data-future="false"/>
+<rect x="1022.8" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-21" data-units="0" data-future="false"/>
+<rect x="1022.8" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-22" data-units="0" data-future="false"/>
+<rect x="1022.8" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-23" data-units="0" data-future="false"/>
+<rect x="1022.8" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#315566" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-24" data-units="1" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-10-24: 1 recorded events, 1 activity units, sample-dev/aurora" data-day="2026-10-24" data-units="1" data-repos="sample-dev/aurora" data-kinds="release" data-detail="2026-10-24: 1 recorded events, 1 activity units, sample-dev/aurora">
+<circle cx="1029.2" cy="246.0" r="2.8" fill="#f6bb6b"/>
+<path d="M1029.2 241.5 V250.5 M1024.7 246.0 H1033.7" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="1022.2" y="239.0" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-10-24: 1 recorded events, 1 activity units, sample-dev/aurora</title></a>
+<rect x="1037.9" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-25" data-units="0" data-future="false"/>
+<rect x="1037.9" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-26" data-units="0" data-future="false"/>
+<rect x="1037.9" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-27" data-units="0" data-future="false"/>
+<rect x="1037.9" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-28" data-units="0" data-future="false"/>
+<rect x="1037.9" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-29" data-units="0" data-future="false"/>
+<rect x="1037.9" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-30" data-units="0" data-future="false"/>
+<rect x="1037.9" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-10-31" data-units="0" data-future="false"/>
+<rect x="1053.0" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-01" data-units="0" data-future="false"/>
+<rect x="1053.0" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-02" data-units="0" data-future="false"/>
+<rect x="1053.0" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-03" data-units="0" data-future="false"/>
+<rect x="1053.0" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#315566" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-04" data-units="1" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-11-04: 1 recorded events, 1 activity units, sample-dev/harbour" data-day="2026-11-04" data-units="1" data-repos="sample-dev/harbour" data-kinds="pr_merged" data-detail="2026-11-04: 1 recorded events, 1 activity units, sample-dev/harbour">
+<circle cx="1059.4" cy="184.2" r="2.8" fill="#f18fa6"/>
+<path d="M1059.4 179.7 V188.7 M1054.9 184.2 H1063.9" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="1052.4" y="177.2" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-11-04: 1 recorded events, 1 activity units, sample-dev/harbour</title></a>
+<rect x="1053.0" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-05" data-units="0" data-future="false"/>
+<rect x="1053.0" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-06" data-units="0" data-future="false"/>
+<rect x="1053.0" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-07" data-units="0" data-future="false"/>
+<rect x="1068.1" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-08" data-units="0" data-future="false"/>
+<rect x="1068.1" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#459b9c" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-09" data-units="4" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-11-09: 1 recorded events, 4 activity units, sample-dev/harbour" data-day="2026-11-09" data-units="4" data-repos="sample-dev/harbour" data-kinds="commit" data-detail="2026-11-09: 1 recorded events, 4 activity units, sample-dev/harbour">
+<circle cx="1074.5" cy="143.0" r="3.6" fill="#f18fa6"/>
+<path d="M1074.5 138.5 V147.5 M1070.0 143.0 H1079.0" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="1067.5" y="136.0" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-11-09: 1 recorded events, 4 activity units, sample-dev/harbour</title></a>
+<rect x="1068.1" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-10" data-units="0" data-future="false"/>
+<rect x="1068.1" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-11" data-units="0" data-future="false"/>
+<rect x="1068.1" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-12" data-units="0" data-future="false"/>
+<rect x="1068.1" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#315566" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-13" data-units="1" data-future="false"/>
+<a class="day-link" href="https://github.com/example" target="_blank" rel="noopener noreferrer" tabindex="0" aria-label="2026-11-13: 1 recorded events, 1 activity units, sample-dev/ember" data-day="2026-11-13" data-units="1" data-repos="sample-dev/ember" data-kinds="pr_opened" data-detail="2026-11-13: 1 recorded events, 1 activity units, sample-dev/ember">
+<circle cx="1074.5" cy="225.4" r="2.8" fill="#c2a3ff"/>
+<path d="M1074.5 220.9 V229.9 M1070.0 225.4 H1079.0" stroke="#eff8e6" stroke-width=".7" stroke-opacity=".9"/>
+<rect class="cell-frame" x="1067.5" y="218.4" width="14.0" height="14.0" rx="3" fill="transparent" stroke="#eff8e6" stroke-opacity=".25"/>
+<title>2026-11-13: 1 recorded events, 1 activity units, sample-dev/ember</title></a>
+<rect x="1068.1" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-14" data-units="0" data-future="false"/>
+<rect x="1083.2" y="116.0" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-15" data-units="0" data-future="false"/>
+<rect x="1083.2" y="136.6" width="12.8" height="12.8" rx="2.5" fill="#23304b" stroke="#364866" stroke-width=".55" stroke-opacity="0.5" data-date="2026-11-16" data-units="0" data-future="false"/>
+<rect x="1083.2" y="157.2" width="12.8" height="12.8" rx="2.5" fill="#16223d" stroke="#364866" stroke-width=".55" stroke-opacity="0.22" data-date="2026-11-17" data-units="0" data-future="true"/>
+<rect x="1083.2" y="177.8" width="12.8" height="12.8" rx="2.5" fill="#16223d" stroke="#364866" stroke-width=".55" stroke-opacity="0.22" data-date="2026-11-18" data-units="0" data-future="true"/>
+<rect x="1083.2" y="198.4" width="12.8" height="12.8" rx="2.5" fill="#16223d" stroke="#364866" stroke-width=".55" stroke-opacity="0.22" data-date="2026-11-19" data-units="0" data-future="true"/>
+<rect x="1083.2" y="219.0" width="12.8" height="12.8" rx="2.5" fill="#16223d" stroke="#364866" stroke-width=".55" stroke-opacity="0.22" data-date="2026-11-20" data-units="0" data-future="true"/>
+<rect x="1083.2" y="239.6" width="12.8" height="12.8" rx="2.5" fill="#16223d" stroke="#364866" stroke-width=".55" stroke-opacity="0.22" data-date="2026-11-21" data-units="0" data-future="true"/>
+<circle class="echo" cx="863.1" cy="143.0" r="7.3" fill="none" stroke="#f6bb6b" stroke-width="1.3" style="animation-delay:-0.000s" data-event="demo-001"><title>commit · 3 units</title></circle>
+<circle class="echo" cx="893.3" cy="225.4" r="6.3" fill="none" stroke="#71ded3" stroke-width="1.3" style="animation-delay:-1.600s" data-event="demo-002"><title>pr_opened · 1 units</title></circle>
+<circle class="echo" cx="938.6" cy="122.4" r="6.8" fill="none" stroke="#c2a3ff" stroke-width="1.3" style="animation-delay:-3.200s" data-event="demo-003"><title>commit · 2 units</title></circle>
+<circle class="echo" cx="938.6" cy="246.0" r="6.3" fill="none" stroke="#71ded3" stroke-width="1.3" style="animation-delay:-4.800s" data-event="demo-004"><title>pr_merged · 1 units</title></circle>
+<circle class="echo" cx="983.9" cy="143.0" r="6.3" fill="none" stroke="#95b8ff" stroke-width="1.3" style="animation-delay:-6.400s" data-event="demo-005"><title>issue_opened · 1 units</title></circle>
+<circle class="echo" cx="1014.1" cy="246.0" r="7.9" fill="none" stroke="#95b8ff" stroke-width="1.3" style="animation-delay:-8.000s" data-event="demo-006"><title>commit · 5 units</title></circle>
+<circle class="echo" cx="1029.2" cy="246.0" r="6.3" fill="none" stroke="#f6bb6b" stroke-width="1.3" style="animation-delay:-9.600s" data-event="demo-007"><title>release · 1 units</title></circle>
+<circle class="echo" cx="1059.4" cy="184.2" r="6.3" fill="none" stroke="#f18fa6" stroke-width="1.3" style="animation-delay:-11.200s" data-event="demo-008"><title>pr_merged · 1 units</title></circle>
+<circle class="echo" cx="1074.5" cy="143.0" r="7.6" fill="none" stroke="#f18fa6" stroke-width="1.3" style="animation-delay:-12.800s" data-event="demo-009"><title>commit · 4 units</title></circle>
+<circle class="echo" cx="1074.5" cy="225.4" r="6.3" fill="none" stroke="#c2a3ff" stroke-width="1.3" style="animation-delay:-14.400s" data-event="demo-010"><title>pr_opened · 1 units</title></circle>
+<circle class="tracer" r="2.4" fill="#71ded3" opacity="0"><animateMotion path="M893.3 225.4 Q915.9 198.3 938.6 246.0" dur="16s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.030;0.075;1" calcMode="linear"/><animate attributeName="opacity" dur="16s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;0.030;0.052;0.075;1"/></circle>
+<circle class="tracer" r="2.4" fill="#f6bb6b" opacity="0"><animateMotion path="M863.1 143.0 Q946.1 105.1 1029.2 246.0" dur="16s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.210;0.255;1" calcMode="linear"/><animate attributeName="opacity" dur="16s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;0.210;0.232;0.255;1"/></circle>
+<circle class="tracer" r="2.4" fill="#c2a3ff" opacity="0"><animateMotion path="M938.6 122.4 Q1006.5 87.2 1074.5 225.4" dur="16s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.390;0.435;1" calcMode="linear"/><animate attributeName="opacity" dur="16s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;0.390;0.412;0.435;1"/></circle>
+<circle class="tracer" r="2.4" fill="#f18fa6" opacity="0"><animateMotion path="M1059.4 184.2 Q1067.0 118.6 1074.5 143.0" dur="16s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.570;0.615;1" calcMode="linear"/><animate attributeName="opacity" dur="16s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;0.570;0.593;0.615;1"/></circle>
+<circle class="tracer" r="2.4" fill="#95b8ff" opacity="0"><animateMotion path="M983.9 143.0 Q999.0 117.3 1014.1 246.0" dur="16s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.750;0.795;1" calcMode="linear"/><animate attributeName="opacity" dur="16s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0;0.750;0.772;0.795;1"/></circle>
+<text x="298" y="284" font-size="10" font-weight="700" letter-spacing="1.2" fill="#9facc9">REPOSITORIES / STAR COLOURS</text>
+<circle cx="300.0" cy="299" r="3.8" fill="#71ded3"/>
+<text x="310.0" y="303.0" font-size="10.5" fill="#eef3ff">atlas</text>
+<circle cx="458.0" cy="299" r="3.8" fill="#f6bb6b"/>
+<text x="468.0" y="303.0" font-size="10.5" fill="#eef3ff">aurora</text>
+<circle cx="616.0" cy="299" r="3.8" fill="#c2a3ff"/>
+<text x="626.0" y="303.0" font-size="10.5" fill="#eef3ff">ember</text>
+<circle cx="774.0" cy="299" r="3.8" fill="#f18fa6"/>
+<text x="784.0" y="303.0" font-size="10.5" fill="#eef3ff">harbour</text>
+<circle cx="932.0" cy="299" r="3.8" fill="#95b8ff"/>
+<text x="942.0" y="303.0" font-size="10.5" fill="#eef3ff">orbit</text>
+<path d="M30 329 H1170" stroke="#364966" opacity=".75"/>
+<text x="39" y="350" font-size="10" font-weight="700" letter-spacing=".8" fill="#a6ebdb">SYNTHETIC DEMO · NOT REAL CONTRIBUTIONS</text>
+<text x="1157" y="350" text-anchor="end" font-size="10" fill="#9facc9">ATLAS · 53 × 7 · 2025-11-16 → 2026-11-21 · empty ≠ verified zero</text>
+</svg>
