@@ -1,7 +1,4 @@
-import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
-import { fileURLToPath, pathToFileURL } from "node:url";
-import path from "node:path";
-
+// Browser-safe calendar renderer: Node-only imports are loaded on CLI execution.
 // Calendar-driven Code Factory. All event-derived machinery is selected-week only.
 // Counts represent units in a normalised event snapshot, NOT GitHub's official totals.
 const DAY=86400000;
@@ -66,7 +63,11 @@ if(m.outside)v.push(`<desc id="outside">Excluded ${m.outside} records outside di
 v.push(`</svg>`);return v.join("\n")+"\n";}
 export {validSnapshot,calendarModel,selectedModel,render,TYPES};
 
-if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+if (typeof process !== "undefined" && process.argv?.[1]) {
+  const [{readFileSync,mkdirSync,writeFileSync},{fileURLToPath,pathToFileURL},pathModule] = await Promise.all([import("node:fs"),import("node:url"),import("node:path")]);
+  const path=pathModule.default;
+  if(import.meta.url !== pathToFileURL(path.resolve(process.argv[1])).href){ /* imported by tests */ }
+  else {
   const args=process.argv.slice(2);
   const weekPos=args.indexOf("--week-index");
   let selectedWeek;
@@ -81,5 +82,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
     const file=`${layout}-${theme}${animated?"":"-still"}.svg`;
     writeFileSync(path.join(output,file),render(data,{layout,theme,animated,selectedWeek}),"utf8");
     console.log(path.join(output,file));
+  }
   }
 }
