@@ -395,12 +395,15 @@ select{padding:10px 15px;border-radius:8px;border:1px solid #3c5e73;background:#
 .figure{border:1px solid #2c4558;background:#0d1c29;border-radius:20px;padding:13px;box-shadow:0 20px 70px #0005}
 object{width:100%;display:block;aspect-ratio:1320/540}
 .figure.stress object{aspect-ratio:1320/595}
+.map-viewport{max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-gutter:stable;scrollbar-color:#56869a #112736;touch-action:pan-x pan-y}
+.map-viewport:focus-visible{outline:2px solid #48dfbc;outline-offset:2px}
+.mobile-hint{display:none}
 .small{color:#acc1d0;font-size:.86rem;line-height:1.65;margin:15px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:22px 0}
 .tile{background:#112736;border:1px solid #2c4558;padding:20px;border-radius:12px}
 .tile b{display:block;margin-bottom:7px}.tile p{color:#afc2d0;line-height:1.5;font-size:.9rem;margin:0}
 a{color:#84e9d1}
-@media(max-width:700px){body{padding:12px}.figure{padding:2px}select{max-width:100%}}
+@media(max-width:700px){body{padding:12px}.figure{padding:2px}select{max-width:100%}.map-viewport object{min-width:1050px}.mobile-hint{display:block}}
 </style></head><body><main>
 <div class="eyebrow">Concept 04 / Synthetic demo / Offline</div><h1>Open Source Metro</h1>
 <p class="lede">The GitHub-style <strong>53-week by 7-day contribution grid is the foundation</strong>. Metro services weave through actual recorded days; repository stations are indexed below. The supplied fixture is intentionally sparse. Empty days are <em>not evidence</em> of zero GitHub contributions.</p>
@@ -408,8 +411,10 @@ a{color:#84e9d1}
 <label for="scheme">Canvas<select id="scheme"><option value="dark">Night</option><option value="light">Day</option></select></label>
 <label for="motion">Replay<select id="motion"><option value="still">Still (GitHub-friendly)</option><option value="animated">Animated</option></select></label>
 <label for="scenario">Dataset<select id="scenario"><option value="normal">Shared fixture: 5 stations</option><option value="stress">Synthetic 17-station stress test</option></select></label></div>
-<div class="figure" id="figure"><object id="map" data="modern-dark-still.svg" type="image/svg+xml" aria-label="GitHub-style contribution calendar crossed by source-backed metro routes">Open the SVG export directly if your browser does not display it.</object></div>
+<div class="figure" id="figure"><div class="map-viewport" tabindex="0" role="region" aria-label="Contribution calendar metro map, scroll horizontally on small screens"><object id="map" data="modern-dark-still.svg" type="image/svg+xml" aria-label="GitHub-style contribution calendar crossed by source-backed metro routes">Open the SVG export directly if your browser does not display it.</object></div></div>
+<p class="small mobile-hint">Swipe sideways to inspect the complete 53-week map. The map scrolls inside this panel, not across the whole page.</p>
 <p class="small" id="caption">Illustration from the shared synthetic fixture, not the owner's actual GitHub contributions.</p>
+<p class="small" id="asset-note" role="status" aria-live="polite">All alternative palettes can be generated locally with Python 3.11+. The included README SVGs work without any setup.</p>
 <div class="tiles"><div class="tile"><b>The grid is the canvas</b><p>53 Sunday-to-Saturday columns, weekdays, month labels and observed-event density. No fabricated history.</p></div>
 <div class="tile"><b>Transit routes are factual</b><p>Five event-type services call only at dated source events. Trains, when enabled, traverse those routes.</p></div>
 <div class="tile"><b>Stations are real identifiers</b><p>Named repositories, exact event IDs and UTC dates are disclosed in calendar-cell tooltips and accessible labels.</p></div></div>
@@ -417,8 +422,32 @@ a{color:#84e9d1}
 <script>
 const style=document.getElementById('style'),scheme=document.getElementById('scheme'),motion=document.getElementById('motion'),scenario=document.getElementById('scenario'),map=document.getElementById('map'),fig=document.getElementById('figure'),caption=document.getElementById('caption');
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)motion.value='still';
-function refresh(){let stress=scenario.value==='stress';let sample=stress?'stress-':'';let name=sample+style.value+'-'+scheme.value+(motion.value==='still'?'-still':'-animated')+'.svg';map.data=name;fig.classList.toggle('stress',stress);map.style.aspectRatio=stress?'1320/595':'1320/540';caption.textContent=(stress?'17-station synthetic scale scenario':'Five repositories from the shared synthetic fixture')+' / source-observed events only / not a complete GitHub contributions history.';}
-for(const select of [style,scheme,motion,scenario])select.addEventListener('change',refresh);refresh();
+const assetNote=document.getElementById('asset-note');
+const bundled=new Set(['modern-dark-still.svg','modern-dark.svg','vintage-light-still.svg','vintage-light.svg','stress-modern-dark-still.svg']);
+const aliases={'modern-dark-animated.svg':'modern-dark.svg','vintage-light-animated.svg':'vintage-light.svg'};
+let selection=0;
+function refresh(){
+  const stress=scenario.value==='stress';
+  const stem=(stress?'stress-':'')+style.value+'-'+scheme.value+(motion.value==='still'?'-still':'-animated')+'.svg';
+  const candidate=aliases[stem]||stem;
+  const fallback=stress?'stress-modern-dark-still.svg':(style.value==='vintage'?'vintage-light-still.svg':'modern-dark-still.svg');
+  const token=++selection;
+  fig.classList.toggle('stress',stress);
+  map.style.aspectRatio=stress?'1320/595':'1320/540';
+  caption.textContent=(stress?'17-station synthetic scale scenario':'Five repositories from the shared synthetic fixture')+' / source-observed events only / not a complete GitHub contributions history.';
+  if(bundled.has(candidate)){
+    map.data=candidate;
+    assetNote.textContent='Showing a checked-in sample export. Generate all combinations locally to explore additional themes and stress variants.';
+    return;
+  }
+  const probe=new Image();
+  probe.onload=()=>{if(token!==selection)return;map.data=candidate;assetNote.textContent='Showing the locally generated variant: '+candidate;};
+  probe.onerror=()=>{if(token!==selection)return;map.data=fallback;assetNote.textContent='The selected variant has not been generated yet. Showing '+fallback+' instead. Run the Python generator to create every combination.';};
+  probe.src=candidate;
+}
+style.addEventListener('change',()=>{scheme.value=style.value==='vintage'?'light':'dark';refresh();});
+for(const select of [scheme,motion,scenario])select.addEventListener('change',refresh);
+refresh();
 </script></main></body></html>
 '''
 
