@@ -25,16 +25,16 @@
 <body>
 <main>
   <h1>Code Factory</h1>
-  <p>Miniature animated workshops powered by the common <strong>synthetic demo</strong> snapshot. Browse two original production floors, switch themes, or freeze the scene.</p>
+  <p>A familiar 52-week GitHub-style contribution calendar, connected to miniature repository workshops. <strong>Synthetic demo</strong> only, not an official GitHub contribution graph. Explore both factory styles below.</p>
   <div class="controls">
     <label>Factory layout<select id="layout"><option value="isometric">Isometric workshop</option><option value="pixel">Side-scrolling pixel works</option></select></label>
     <label>Colour theme<select id="theme"><option value="dark">Night shift</option><option value="light">Day shift</option></select></label>
-    <label>Motion<select id="motion"><option value="animated">Animated</option><option value="still">Still / reduced motion</option></select></label>
+    <label>Motion<select id="motion"><option value="animated">Animated</option><option value="still" selected>Still / reduced motion</option></select></label>
     <button type="button" id="replay">Replay animation</button>
   </div>
   <figure>
-    <img id="scene" src="exports/isometric-dark.svg" alt="Isometric Code Factory. Five labelled repository workshops feed a conveyor with illustrated GitHub events. Synthetic demo data; no real CI or deployments.">
-    <figcaption id="caption" aria-live="polite">Isometric factory · dark theme · animated · synthetic demo</figcaption>
+    <img id="scene" src="exports/isometric-dark-still.svg" alt="Isometric Code Factory. A 52-week calendar sits above five repository workshops and an event conveyor. Synthetic demo data; no real CI or deployments.">
+    <figcaption id="caption" aria-live="polite">Isometric factory · dark theme · still · synthetic demo</figcaption>
   </figure>
   <p class="note">These machines are <strong>metaphors</strong>. A merged pull request makes a sealed crate, not a deployed application. Only the five contract event types appear. Counts are source-recorded units, not invented measurements.</p>
   <h2>Production vocabulary</h2>
