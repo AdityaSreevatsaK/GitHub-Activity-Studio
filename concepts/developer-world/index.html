@@ -46,7 +46,7 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 <label for="file">Input JSON<input id="file" type="file" accept=".json,application/json"></label>
 <div class="actions"><button id="motion" aria-pressed="true">Pause motion</button><button id="still">Download still</button><button id="save">Download SVG</button><button id="gif" class="primary">Download animated GIF</button></div>
 </div>
-<div id="scene" class="scene" aria-label="53-week activity calendar, decorated as a miniature world"></div><p class="hint" style="margin:0;padding:0 22px 12px;background:#223951">53 chronological week columns × 7 weekday rows. Hover a day to inspect recorded source events. A quiet cell means no events were supplied for that date, not a verified zero contribution day.</p>
+<div id="scene" class="scene" aria-label="53-week activity calendar, decorated as a miniature world"></div><p class="hint" style="margin:0;padding:0 22px 12px;background:#223951">53 chronological week columns × 7 weekday rows. Click a day or use the UTC date picker to inspect recorded events. The date controls work on mobile. A quiet cell means no events were supplied for that date, not a verified zero contribution day.</p>
 <div class="timeline"><button id="play" type="button">▶ Play events</button><label for="progress">Timeline</label><input id="progress" type="range" min="0" max="0" value="0" step="1"><output id="counter" for="progress">0 of 0 events</output></div>
 <section class="day-panel" aria-label="Inspect one calendar date">
 <div class="day-head"><div><strong id="day-heading">Inspect a day</strong><p id="day-summary">Select a calendar tile to inspect recorded source events.</p></div>
