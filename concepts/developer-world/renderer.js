@@ -7,7 +7,7 @@ const colours={
 };
 const esc=x=>String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&apos;");
 const check=(ok,message)=>{if(!ok)throw new Error(message);};
-const utc=v=>typeof v==="string"&&/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?Z$/.test(v)&&Number.isFinite(Date.parse(v));
+const utc=v=>typeof v==="string"&&/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?Z$/.test(v)&&Number.isFinite(Date.parse(v))&&new Date(Date.parse(v)).toISOString().slice(0,19)===v.slice(0,19);
 const safeUrl=v=>typeof v==="string"&&v.length<=2048&&/^https:\/\/[a-z0-9][a-z0-9.-]*(?:[/:?#]|$)/i.test(v)?v:"";
 function normalise(raw){
  check(raw&&typeof raw==="object"&&!Array.isArray(raw),"Invalid snapshot");
@@ -61,7 +61,7 @@ function calendarFor(data,progress){
  let outside=0;
  for(const e of data.activity.slice(0,seen)){
   const date=e.occurred_at.slice(0,10),cell=lookup.get(date);
-  if(!cell||cell.future){outside++;continue;}
+  if(!cell||cell.future||e.occurred_at>data.generated_at){outside++;continue;}
   cell.units+=e.count;cell.events++;cell.byKind[e.kind]+=e.count;cell.byRepo[e.repo_full_name]=(cell.byRepo[e.repo_full_name]||0)+e.count;
   const observed=byRepo.get(e.repo_full_name);observed.units+=e.count;observed.events++;
  }
@@ -69,7 +69,7 @@ function calendarFor(data,progress){
  const all=new Map();
  for(const e of data.activity){
   const date=e.occurred_at.slice(0,10),cell=lookup.get(date);
-  if(!cell||cell.future)continue;
+  if(!cell||cell.future||e.occurred_at>data.generated_at)continue;
   let dates=all.get(e.repo_full_name);
   if(!dates){dates=new Map();all.set(e.repo_full_name,dates);}
   dates.set(date,(dates.get(date)||0)+e.count);
