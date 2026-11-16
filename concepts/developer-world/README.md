@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | ![DEMO calendar before events](previews/archipelago-start.svg) | ![DEMO calendar after four events](previews/archipelago-mid.svg) | ![DEMO calendar after ten events](previews/archipelago-dark.svg) |
 
-All exports are self-contained SVGs with no external resources. The static fallback disables all motion.
+SVG exports are self-contained and use no external resources. The static fallback disables motion. **The browser preview also exports real animated GIF89a files**, a more reliable choice for GitHub README animation than CSS animation inside SVG. GIF frames are rasterised locally from the same SVG renderer and event timeline, using the bundled original dependency-free encoder.
 
 ## What each piece means
 
@@ -41,13 +41,13 @@ git switch concept/developer-world
 node concepts/developer-world/server.cjs
 ~~~
 
-Open **http://127.0.0.1:8787/**. Choose archipelago/village, dark/light, move the event timeline, pause animation, inspect dates by hover, or upload your own normalised public-data JSON (locally, without uploading it to a service).
+Open **http://127.0.0.1:8787/**. Choose archipelago/village and dark/light, scrub the event timeline, click a day on the grid or use the accessible UTC date picker and recorded-day buttons, or upload your own normalised public-data JSON (locally, without sending it to a service). To export a **profile-ready animated GIF**, click **Download animated GIF** in the browser. It samples 8–16 timeline frames at 896 × 280 pixels with moving scenery and a 450 ms frame delay.
 
 In another PowerShell window:
 
 ~~~powershell
 node concepts/developer-world/export.cjs
-node --test concepts/developer-world/tests/world.test.cjs
+node --test concepts/developer-world/tests/world.test.cjs concepts/developer-world/tests/gif.test.cjs
 ~~~
 
 Exports appear in `concepts/developer-world/exports/`. To export one layout with custom data:
@@ -64,11 +64,12 @@ Use `--progress 0` to see the quiet starting calendar, `--progress 4` to show fo
 - Validates source format and event counts; escapes SVG labels, supports long names and empty datasets, honours `prefers-reduced-motion`, and uses no external artwork.
 - Deterministic for an identical snapshot and timeline step. The layout uses the same 53×7 date coordinates irrespective of activity, unlike a free-form world layout.
 - Supports up to 500 repository records and 20,000 event records, but only five compact legend landmarks. Month labels and cell detail remain readable in the browser; the wide SVG naturally scales down on a mobile README.
-- The optional HTML browser preview provides the event slider and controls. **HTML/JavaScript cannot be embedded as interactive GitHub README content.** SVG animation through GitHub's image proxy is not guaranteed. Use the [static archipelago fallback](previews/archipelago-still.svg) if animation is suppressed.
+- The optional HTML browser preview provides date inspection, the event slider and local GIF download. **HTML/JavaScript cannot be embedded in a GitHub README.** The downloaded GIF is a standard GIF89a animation and remains animated without CSS or JavaScript. SVG animation through GitHub's image proxy is not guaranteed. The GIF may move even for viewers requesting reduced motion, so provide the [static archipelago alternative](previews/archipelago-still.svg) alongside any GIF. Browser-based GIF conversion still needs cross-browser testing.
+- Events with timestamps later than the snapshot timestamp are not visualised, even if on the same UTC day. Calendar dates use strict Gregorian UTC validation. Activity outside the displayed period is disclosed and excluded from calendar totals.
 - A future collector would need to declare coverage, pagination, recency and access restrictions. This renderer does **not** claim complete GraphQL contribution-calendar coverage from a sparse REST event log.
 
 ## Trade-offs and review
 
 The overhead archipelago is the preferred profile candidate because its islands preserve square calendar cells especially clearly. The village adds a second, distinctly architectural rendering without changing dates or counts. Small cells constrain the amount of sprite detail; dense or multi-repository days prioritise one visible landmark marker, with full event detail remaining in the SVG accessible labels and browser list.
 
-**Preview and GitHub embedding behaviour still need human visual review.** Do not install this on the owner's profile or merge into `master` without approval.
+**Preview and GitHub embedding behaviour still need human visual review.** The actual full Node suite and GitHub image-proxy integration have not been run in this execution environment; direct renderer and GIF-code behavioural checks were performed independently. Do not install this on the owner's profile or merge into `master` without approval.
