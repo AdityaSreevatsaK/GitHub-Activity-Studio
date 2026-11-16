@@ -14,7 +14,7 @@ h2{font-size:1.1rem;margin:0 0 15px}.eyebrow{text-transform:uppercase;letter-spa
 .panel,.box{border:1px solid #445c73;background:#1c2e43;border-radius:17px;box-shadow:0 16px 40px #07111c33}
 .panel{overflow:hidden}.controls{display:flex;gap:15px;align-items:flex-end;flex-wrap:wrap;padding:18px 21px}
 label{font-size:11px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:#b9ccd2;display:grid;gap:6px}
-button,select,input[type=file]{background:#2b4158;border:1px solid #718796;border-radius:9px;padding:10px;color:#f5f0e6;font:inherit}
+button,select,input[type=file],input[type=date]{background:#2b4158;border:1px solid #718796;border-radius:9px;padding:10px;color:#f5f0e6;font:inherit}
 button{cursor:pointer}button:hover{background:#405d70}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f3c789;outline-offset:2px}
 select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
 .primary{background:#ddb182;border-color:#ddb182;color:#273040;font-weight:700}.primary:hover{background:#f0c899}
@@ -23,6 +23,14 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 .timeline input{flex:1;accent-color:#ebbd83;min-width:110px}.timeline output{font-size:12px;color:#d0dfdc;font-variant-numeric:tabular-nums}
 .details{margin:18px 0;display:grid;grid-template-columns:1.3fr 1fr;gap:16px}.box{padding:23px}
 #repos{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:9px}.repo{border:1px solid #546b80;background:#293f55;border-radius:10px;padding:10px;min-width:0}.repo strong{display:block;overflow-wrap:anywhere;font-size:13px}.repo span{display:block;font-size:11px;color:#bccdd1;margin-top:5px}
+.day-panel{background:#172d41;border-top:1px solid #405c73;padding:17px 22px;display:grid;gap:11px}
+.day-head{display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.day-head strong{font-size:15px;color:#fff3d8}.day-head p{font-size:12px;color:#c4d7d4;margin:5px 0 0}
+.day-controls{display:flex;gap:9px;align-items:end;flex-wrap:wrap}
+.day-controls input{width:156px}.day-controls button{font-size:12px}.day-controls button:disabled{cursor:not-allowed;opacity:.4}
+#day-events{display:flex;gap:8px;flex-wrap:wrap;min-height:22px;align-items:center}
+.day-event{border:1px solid #597b88;background:#29485c;border-radius:7px;padding:7px 10px;font-size:12px;color:#f3eadc}
+.day-muted{font-size:12px;color:#c1d0d3}
 .rules{font-size:13px;color:#d0d9d9;padding-left:20px;line-height:1.6}.rules li{margin-bottom:7px}
 #status{min-height:25px;font-size:12px;color:#ffe1aa;margin:14px 2px}.hint{font-size:12px;line-height:1.6}
 @media(max-width:780px){.details{grid-template-columns:1fr}.controls{padding:15px}.scene{padding:9px}main{width:calc(100% - 16px)}}
@@ -40,7 +48,11 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 </div>
 <div id="scene" class="scene" aria-label="53-week activity calendar, decorated as a miniature world"></div><p class="hint" style="margin:0;padding:0 22px 12px;background:#223951">53 chronological week columns × 7 weekday rows. Hover a day to inspect recorded source events. A quiet cell means no events were supplied for that date, not a verified zero contribution day.</p>
 <div class="timeline"><button id="play" type="button">▶ Play events</button><label for="progress">Timeline</label><input id="progress" type="range" min="0" max="0" value="0" step="1"><output id="counter" for="progress">0 of 0 events</output></div>
-</section>
+<section class="day-panel" aria-label="Inspect one calendar date">
+<div class="day-head"><div><strong id="day-heading">Inspect a day</strong><p id="day-summary">Select a calendar tile to inspect recorded source events.</p></div>
+<div class="day-controls"><button id="prev-day" type="button">← Recorded day</button><label for="day-date">UTC date<input id="day-date" type="date"></label><button id="next-day" type="button">Recorded day →</button></div></div>
+<div id="day-events" aria-live="polite"></div>
+</section></section>
 <p id="status" role="status" aria-live="polite">Loading labelled synthetic demonstration…</p>
 <div class="details">
 <section class="box"><h2>Repository landmarks</h2><div id="repos"></div><p id="overflow" class="hint"></p></section>
@@ -58,15 +70,18 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 (function(){
 "use strict";
 var el=id=>document.getElementById(id);
-var source=null,normal=null,animated=true,timer=null;
+var source=null,normal=null,animated=true,timer=null,selectedDate=null;
 function stop(){if(timer!==null){clearInterval(timer);timer=null;}el("play").textContent="▶ Play events";}
 function render(){
  if(!source)return;
  try{
  var opts={layout:el("layout").value,theme:el("theme").value,progress:Number(el("progress").value),animated:animated};
- el("scene").innerHTML=DeveloperWorld.render(source,opts);
  var f=DeveloperWorld.statsFor(normal,opts.progress),calendar=DeveloperWorld.calendarFor(normal,opts.progress);
- el("counter").textContent=f.eventCount+" of "+f.totalEvents+" events · "+f.units+" units";
+ if(!selectedDate)selectedDate=calendar.cells.filter(function(c){return c.units>0;}).slice(-1)[0]?.date||calendar.asof;
+ opts.focusDate=selectedDate;
+ el("scene").innerHTML=DeveloperWorld.render(source,opts);
+ el("counter").textContent=f.eventCount+" of "+f.totalEvents+" events · "+calendar.observed+" calendar units";
+ inspectDay(calendar,opts.progress);
  el("repos").replaceChildren();
  f.repositories.slice(0,5).forEach(function(item){
  var card=document.createElement("div"),name=document.createElement("strong"),detail=document.createElement("span");
@@ -79,8 +94,41 @@ function render(){
  el("status").textContent=normal.source==="demo"?"SYNTHETIC DEMO: "+calendar.activeDays+" dates contain recorded demo events. Not actual GitHub contributions.":"SUPPLIED PUBLIC EVENTS: "+calendar.activeDays+" days contain recorded events. No-event days are unverified, not necessarily zero contributions.";
  }catch(err){el("status").textContent="Rendering error: "+err.message;}
 }
+function inspectDay(calendar,progress){
+ var date=calendar.lookup.has(selectedDate)?selectedDate:calendar.asof;
+ selectedDate=date;
+ var cell=calendar.lookup.get(date);
+ var events=normal.activity.slice(0,progress).filter(function(e){return e.occurred_at.slice(0,10)===date&&e.occurred_at<=normal.generated_at;});
+ el("day-date").min=calendar.cells[0].date;el("day-date").max=calendar.asof;el("day-date").value=date;
+ var nice=new Date(date+"T12:00:00Z").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
+ el("day-heading").textContent=nice+" · "+cell.units+" recorded units";
+ el("day-summary").textContent=cell.future?"After the snapshot date.":events.length?events.length+" distinct recorded events. Growth stage "+cell.level+"/4.":"No event supplied for this date. This does not prove zero GitHub contributions.";
+ var host=el("day-events");host.replaceChildren();
+ if(!events.length){var t=document.createElement("span");t.className="day-muted";t.textContent="No source event to display.";host.appendChild(t);}
+ events.forEach(function(e){
+  var chip=document.createElement("span");chip.className="day-event";
+  chip.textContent=e.kind.replace(/_/g," ")+" · "+e.count+" unit"+(e.count===1?"":"s")+" · "+e.repo_full_name;
+  host.appendChild(chip);
+ });
+ var active=calendar.cells.filter(function(c){return c.units>0;}).map(function(c){return c.date;});
+ el("prev-day").disabled=!active.some(function(d){return d<date;});
+ el("next-day").disabled=!active.some(function(d){return d>date;});
+}
+function chooseDate(date){
+ if(!normal)return;
+ var calendar=DeveloperWorld.calendarFor(normal,Number(el("progress").value));
+ if(!calendar.lookup.has(date)||date>calendar.asof)return;
+ selectedDate=date;render();
+}
+function shiftDay(direction){
+ if(!normal)return;
+ var calendar=DeveloperWorld.calendarFor(normal,Number(el("progress").value));
+ var dates=calendar.cells.filter(function(c){return c.units>0;}).map(function(c){return c.date;});
+ var next=direction<0?dates.filter(function(d){return d<selectedDate;}).slice(-1)[0]:dates.find(function(d){return d>selectedDate;});
+ if(next)chooseDate(next);
+}
 function load(value){
- var next=DeveloperWorld.normalise(value);stop();source=value;normal=next;
+ var next=DeveloperWorld.normalise(value);stop();source=value;normal=next;selectedDate=null;
  el("progress").max=String(next.activity.length);el("progress").value=String(next.activity.length);render();
 }
 function save(moving){
@@ -91,6 +139,10 @@ function save(moving){
  document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
 }
 el("layout").addEventListener("change",render);el("theme").addEventListener("change",render);
+el("scene").addEventListener("click",function(event){var tile=event.target.closest?.("[data-date]");if(tile)chooseDate(tile.getAttribute("data-date"));});
+el("day-date").addEventListener("change",function(){chooseDate(el("day-date").value);});
+el("prev-day").addEventListener("click",function(){shiftDay(-1);});
+el("next-day").addEventListener("click",function(){shiftDay(1);});
 el("progress").addEventListener("input",function(){stop();render();});
 el("motion").addEventListener("click",function(){animated=!animated;el("motion").textContent=animated?"Pause motion":"Resume motion";el("motion").setAttribute("aria-pressed",String(animated));render();});
 el("still").addEventListener("click",function(){save(false);});el("save").addEventListener("click",function(){save(true);});
