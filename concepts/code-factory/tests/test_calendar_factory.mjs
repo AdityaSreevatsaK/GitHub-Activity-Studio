@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { validSnapshot,calendarModel,selectedModel,render,TYPES } from "../calendar-factory.mjs";
+import { validSnapshot,calendarModel,selectedModel,dayMachines,render,TYPES } from "../calendar-factory.mjs";
 const fixture=JSON.parse(readFileSync(new URL("../../../shared/fixtures/demo-activity.json",import.meta.url),"utf8"));
 const clone=v=>structuredClone(v);
 test("shared fixture is real input to normaliser",()=>{
@@ -84,7 +84,7 @@ test("many activities on one day are represented by bounded machines and an over
  const d=clone(fixture);
  d.activity.push(...[0,1,2,3].map(i=>({...d.activity[0],id:"extra"+i,repo_full_name:i%2?"sample-dev/atlas":"sample-dev/orbit",occurred_at:"2026-11-09T12:00:00Z"})));
  const svg=render(d,{selectedWeek:51});
- assert.match(svg,/\+3 more recorded events/);
+ assert.match(svg,/\+2 more records \(1 stages\)/);
  assert.match(svg,/16 UNITS/);
  assert.equal(selectedModel(d).week.days[1].events.length,5);
 });
@@ -117,4 +117,49 @@ test("malformed contract inputs and week indices are rejected",()=>{
  for(const selectedWeek of [-1,53,1.5,"51",null])assert.throws(()=>selectedModel(fixture,selectedWeek),/week index/);
  assert.throws(()=>render(fixture,{layout:"3d"}));
  assert.throws(()=>render(fixture,{theme:"purple"}));
+});
+
+test("multiple records at one repository and stage reuse one machine with truthful totals",()=>{
+ const d=clone(fixture);
+ d.activity.push({...d.activity[8],id:"more-harbour-commits",count:2});
+ const selected=selectedModel(d);
+ const parts=dayMachines(selected.week.days[1]);
+ assert.equal(parts.length,1);
+ assert.equal(parts[0].records,2);
+ assert.equal(parts[0].count,6);
+ assert.deepEqual(parts[0].ids,["demo-009","more-harbour-commits"]);
+ const svg=render(d);
+ assert.match(svg,/data-records="2" data-units="6"/);
+ assert.match(svg,/6 UNITS/);
+ assert.equal((svg.match(/data-repo="sample-dev\/harbour"/g)||[]).length,1);
+});
+test("similarly named repositories from different owners remain separate machines",()=>{
+ const d=clone(fixture);
+ d.repositories[0].name="identical";
+ d.repositories[1].name="identical";
+ d.activity.push({...d.activity[0],id:"owner-a",occurred_at:"2026-11-11T10:00:00Z"});
+ d.activity.push({...d.activity[1],id:"owner-b",occurred_at:"2026-11-11T12:00:00Z"});
+ const selected=selectedModel(d);
+ const svg=render(d,{selectedWeek:selected.weekIndex});
+ assert.match(svg,/data-repo="sample-dev\/aurora"/);
+ assert.match(svg,/data-repo="sample-dev\/atlas"/);
+ assert.match(svg,/sample-dev\/aurora/);
+ assert.match(svg,/sample-dev\/atlas/);
+});
+test("units outside snapshot window are disclosed visibly, not only in SVG metadata",()=>{
+ const d=clone(fixture);
+ d.activity.push({...d.activity[0],id:"historical",occurred_at:"2010-01-01T10:00:00Z"});
+ const svg=render(d);
+ assert.match(svg,/1 outside calendar/);
+});
+test("day machine light intensity follows source-backed units",()=>{
+ const data=clone(fixture);
+ const m=selectedModel(data);
+ const d=m.week.days[1];
+ assert.equal(dayMachines(d)[0].count,4);
+ assert.match(render(data),/data-units="4"/);
+ const higher=clone(data);
+ higher.activity[8].count=1;
+ assert.match(render(higher),/data-units="1"/);
+ assert.notEqual(render(higher),render(data));
 });
