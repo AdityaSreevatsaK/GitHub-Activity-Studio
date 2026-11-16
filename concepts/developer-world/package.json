@@ -1,0 +1,14 @@
+{
+  "name": "developer-world-prototype",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A GitHub-style activity calendar that evolves into miniature archipelago and village worlds",
+  "scripts": {
+    "test": "node --test ./tests/world.test.cjs ./tests/gif.test.cjs",
+    "preview": "node ./server.cjs",
+    "export": "node ./export.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
