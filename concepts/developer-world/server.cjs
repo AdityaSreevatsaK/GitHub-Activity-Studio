@@ -6,7 +6,7 @@ function createServer(dir=root){
  return http.createServer((req,res)=>{
   if(!["GET","HEAD"].includes(req.method)){res.writeHead(405,{"Allow":"GET, HEAD"});res.end();return;}
   let pathname;try{pathname=decodeURIComponent(new URL(req.url,"http://localhost").pathname);}catch{res.writeHead(400);res.end();return;}
-  if(pathname==="/")pathname="/concepts/developer-world/index.html";
+  if(pathname==="/"){res.writeHead(302,{"Location":"/concepts/developer-world/index.html","Cache-Control":"no-store"});res.end();return;}
   const file=path.resolve(base,"."+pathname),relative=path.relative(base,file),ext=path.extname(file).toLowerCase();
   if(relative.startsWith("..")||path.isAbsolute(relative)||pathname.includes("\\")||!mime[ext]||relative.split(path.sep).some(x=>x.startsWith("."))){res.writeHead(403);res.end("Forbidden");return;}
   fs.stat(file,(err,stat)=>{
