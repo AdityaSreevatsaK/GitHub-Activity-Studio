@@ -64,14 +64,20 @@ git switch concept/code-factory
 # Regenerate all eight SVGs from the common synthetic fixture
 node concepts/code-factory/calendar-factory.mjs
 
-# Run the contract, week-mapping and SVG tests
+# Re-run both native test suites with one command
+.\concepts\code-factory\verify.ps1
+
+# Or run each separately
 node --test concepts/code-factory/tests/test_calendar_factory.mjs
+python -m unittest discover -s concepts/code-factory/tests -v
 
 # Explore and click any of the 53 calendar-week columns
 python -m http.server 8000
 ```
 
 Open **http://localhost:8000/concepts/code-factory/preview.html**.
+
+**Optional:** `.\concepts\code-factory\verify.ps1 -Regenerate` refreshes the eight main SVGs before running both suites. The two historical sample stills are source-backed committed gallery assets.
 
 To render another **normalised v1 snapshot** and choose a specific calendar-week column (0–52):
 
@@ -101,7 +107,7 @@ The **README embeds still SVGs**, so the design can be judged without relying on
 ### Verification status
 
 - **21 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
-- Native `node --test`, Windows PowerShell execution, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes.
+- Native `node --test`, the PowerShell verification script, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes. All ten regenerated SVGs were independently compared byte-for-byte with the committed exports and passed structural tag-balance and no-external-code checks.
 - The pull request remains draft. **No changes to `master` or the owner's profile.**
 - The two artwork styles use different factory floors and machinery, with crisp-edged geometry for pixel art; both retain the same exact calendar data.
 
