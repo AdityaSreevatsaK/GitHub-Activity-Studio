@@ -216,3 +216,16 @@ test("selecting an inspected date only outlines its tile, not its source values"
  const level=svg=>svg.match(/data-date="2026-11-09" data-level="([^"]+)" data-units="([^"]+)"/).slice(1);
  assert.deepEqual(level(base),level(focus));
 });
+
+test("mixed-precision ISO timestamps sort in true UTC order and respect exact snapshot",()=>{
+ const f=copy(fixture);f.generated_at="2026-11-16T10:00:00Z";
+ f.activity.push({id:"same",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-16T10:00:00Z",count:1});
+ f.activity.push({id:"later",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-16T10:00:00.100Z",count:50});
+ f.activity.push({id:"earlier",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-16T09:59:59.999Z",count:2});
+ const n=world.normalise(f),c=world.calendarFor(n);
+ assert.equal(c.observed,23);assert.equal(c.outside,1);
+ assert.ok(n.activity.findIndex(x=>x.id==="same")<n.activity.findIndex(x=>x.id==="later"));
+ assert.equal(world.compareUtc("2026-11-16T00:00:00.1000Z","2026-11-16T00:00:00.1Z"),0);
+ assert.ok(world.compareUtc("2026-11-16T00:00:00Z","2026-11-16T00:00:00.100Z")<0);
+ assert.ok(world.compareUtc("2026-11-16T00:00:00.101Z","2026-11-16T00:00:00.1Z")>0);
+});
