@@ -99,7 +99,7 @@ function inspectDay(calendar,progress){
  var date=calendar.lookup.has(selectedDate)?selectedDate:calendar.asof;
  selectedDate=date;
  var cell=calendar.lookup.get(date);
- var events=normal.activity.slice(0,progress).filter(function(e){return e.occurred_at.slice(0,10)===date&&e.occurred_at<=normal.generated_at;});
+ var events=normal.activity.slice(0,progress).filter(function(e){return e.occurred_at.slice(0,10)===date&&DeveloperWorld.compareUtc(e.occurred_at,normal.generated_at)<=0;});
  el("day-date").min=calendar.cells[0].date;el("day-date").max=calendar.asof;el("day-date").value=date;
  var nice=new Date(date+"T12:00:00Z").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
  el("day-heading").textContent=nice+" · "+cell.units+" recorded units";
