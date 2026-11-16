@@ -31,21 +31,21 @@ test("stable rendering irrespective of source list order",()=>{
 test("two distinct layouts with light and dark styles",()=>{
  const a=world.render(fixture,{layout:"archipelago",theme:"dark"});
  const b=world.render(fixture,{layout:"village",theme:"light"});
- assert.match(a,/Isles of Making/);assert.match(b,/Little Buildtown/);
- assert.match(a,/water-gradient/);assert.match(b,/sky-gradient/);assert.notEqual(a,b);
+ assert.match(a,/Isles of Code/);assert.match(b,/Little Buildtown/);
+ assert.match(a,/dw-sea/);assert.match(b,/dw-bg/);assert.notEqual(a,b);
  assert.match(a,/DEMO DATA/);assert.match(b,/prefers-reduced-motion/);
 });
 test("empty input creates a safe quiet world",()=>{
  const input=copy(fixture);input.activity=[];input.repositories=[];
  for(const layout of ["archipelago","village"]){
-  const svg=world.render(input,{layout});assert.match(svg,/waiting for its first repository/);assert.match(svg,/0 activity units/);
+  const svg=world.render(input,{layout});assert.match(svg,/quiet world awaits its first recorded event/);assert.match(svg,/0 recorded units/);
  }
 });
 test("single repository and large source count reach growth four",()=>{
  const input=copy(fixture);input.repositories=input.repositories.slice(0,1);
  input.activity=[{id:"large",kind:"commit",repo_full_name:input.repositories[0].full_name,occurred_at:"2026-11-01T00:00:00Z",count:20}];
  assert.equal(world.statsFor(world.normalise(input)).repositories[0].stage,4);
- assert.match(world.render(input),/growth 4\/4/);
+ assert.match(world.render(input),/stage 4/);
 });
 test("invalid schema, timestamps, kinds, counts and repos are rejected",()=>{
  const cases=[
@@ -62,7 +62,7 @@ test("untrusted names are XML escaped",()=>{
 });
 test("overflow is disclosed explicitly",()=>{
  const input=copy(fixture);input.repositories.push({full_name:"sample-dev/zeta",name:"zeta"});
- assert.match(world.render(input),/\+1 repositories not shown/);
+ assert.match(world.render(input),/\+1 repositories omitted/);
 });
 test("invalid rendering options are rejected",()=>{
  assert.throws(()=>world.render(fixture,{layout:"map"}));assert.throws(()=>world.render(fixture,{progress:-1}));
@@ -94,4 +94,68 @@ test("local server serves preview and fixture but blocks private dotfiles",async
   const data=await get("/shared/fixtures/demo-activity.json");assert.equal(data.code,200);assert.equal(JSON.parse(data.body).source,"demo");
   assert.equal((await get("/.git/config")).code,403);
  }finally{await new Promise(resolve=>server.close(resolve));}
+});
+
+test("contribution calendar is an actual 53-week by 7-day UTC grid",()=>{
+ const data=world.normalise(fixture),calendar=world.calendarFor(data);
+ assert.equal(calendar.cells.length,371);
+ assert.equal(calendar.cells[0].date,"2025-11-16");
+ assert.equal(calendar.cells.at(-1).date,"2026-11-21");
+ assert.equal(calendar.cells[0].d,0);
+ for(let w=0;w<53;w++)for(let d=0;d<7;d++){
+  const c=calendar.cells[w*7+d];assert.equal(c.w,w);assert.equal(c.d,d);
+  assert.equal(new Date(c.date+"T00:00:00Z").getUTCDay(),d);
+ }
+ assert.equal(calendar.activeDays,10);
+ assert.equal(calendar.observed,20);
+ assert.equal(calendar.outside,0);
+});
+test("daily buckets use source event counts, not inferred GitHub contribution totals",()=>{
+ const data=world.normalise(fixture),c=world.calendarFor(data);
+ assert.equal(c.lookup.get("2026-10-17").units,5);
+ assert.equal(c.lookup.get("2026-10-17").level,2);
+ assert.equal(c.lookup.get("2026-11-09").byKind.commit,4);
+ assert.equal(c.lookup.get("2026-11-09").byRepo["sample-dev/harbour"],4);
+ assert.equal(c.lookup.get("2026-08-21").byKind.pr_opened,1);
+ assert.equal(c.lookup.get("2026-11-16").units,0);
+ assert.equal(c.activeDays,10);
+});
+test("partial timeline changes intensity without shifting repo landmark dates",()=>{
+ const data=world.normalise(fixture);
+ const empty=world.calendarFor(data,0),part=world.calendarFor(data,4),full=world.calendarFor(data,10);
+ assert.equal(empty.observed,0);assert.equal(empty.activeDays,0);
+ assert.equal(part.observed,7);assert.equal(part.activeDays,4);
+ assert.deepEqual([...empty.anchors],[...full.anchors]);
+ assert.equal(full.anchors.size,5);
+ assert.equal(new Set(full.anchors.values()).size,5);
+});
+test("events outside calendar and after snapshot are not painted as observed days",()=>{
+ const f=copy(fixture);
+ f.activity.push({id:"outside-window",kind:"release",repo_full_name:"sample-dev/aurora",occurred_at:"2025-01-01T00:00:00Z",count:99});
+ f.activity.push({id:"future-event",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-20T00:00:00Z",count:100});
+ const c=world.calendarFor(world.normalise(f));
+ assert.equal(c.observed,20);assert.equal(c.outside,2);assert.equal(c.activeDays,10);
+ assert.equal(c.lookup.get("2026-11-20").future,true);
+ assert.equal(c.lookup.get("2026-11-20").units,0);
+ assert.match(world.render(f),/2 events outside calendar window/);
+});
+test("calendar render has every date once, clear source disclosure and no script tags",()=>{
+ for(const layout of ["archipelago","village"])for(const theme of ["light","dark"]){
+  const svg=world.render(fixture,{layout,theme,animated:false});
+  assert.equal((svg.match(/data-date="/g)||[]).length,371);
+  assert.equal((svg.match(/<g\b/g)||[]).length,(svg.match(/<\/g>/g)||[]).length);
+  assert.match(svg,/SYNTHETIC DEMO/);
+  assert.match(svg,/Empty cells mean no events recorded/);
+  assert.match(svg,/animation:none!important/);
+  assert.doesNotMatch(svg,/<script[\s>]/i);
+  assert.ok(Buffer.byteLength(svg,"utf8")<350000);
+ }
+});
+test("high activity changes calendar tile level and preserves calendar geometry",()=>{
+ const f=copy(fixture);
+ f.activity.push({id:"bonus",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-15T08:00:00Z",count:12});
+ const calendar=world.calendarFor(world.normalise(f));
+ const cell=calendar.lookup.get("2026-11-15");
+ assert.equal(cell.level,4);assert.equal(cell.units,12);
+ assert.match(world.render(f),/data-date="2026-11-15" data-level="4"/);
 });
