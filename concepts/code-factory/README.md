@@ -87,20 +87,20 @@ The old `factory.py` remains for historical comparison. **It is not the source o
 
 - The normalised snapshot follows [the shared data contract](../../docs/DATA_CONTRACT.md). No concept-specific GitHub collector has been added.
 - Calendar columns are **53 Sunday-start weeks**, covering approximately the previous 52 weeks plus the current incomplete week. Days after `generated_at` are not treated as zero contributions, and events after the snapshot's UTC timestamp are excluded.
-- Event IDs are deduplicated, conflicts rejected, repository ownership preserved using `full_name`, and timestamps handled as UTC. Text is escaped before becoming SVG attributes or labels.
+- Event IDs are deduplicated, conflicts rejected, repository ownership preserved using `full_name`, and timestamps handled as UTC, including optional millisecond precision. Text is escaped before becoming SVG attributes or labels.
 - Colour intensity reflects *recorded event units* across the day. Because the shared fixture is sparse, an empty calendar cell means **no input record**, not proof that no contributions occurred.
 - A selected day has one miniature machine per visible event; to stay readable at 1200 × 430 px, only the first **two distinct repository-stage machines per day** are drawn, with total hidden records and stages disclosed.
 - All artwork uses original procedural SVG geometry, with different isometric and pixel-art drawings; no external imagery, fonts or third-party sprites.
 
 ## Accessibility and GitHub behaviour
 
-The browser preview provides an accessible week selector, previous/next buttons, a bounded source-backed event ledger, a static default and optional motion. Each SVG contains a title, description and event-specific machine titles. Browser reduced-motion preferences are respected, and a static SVG can always be used instead.
+The browser preview provides an accessible week selector, previous/next buttons, a bounded source-backed event ledger, a static default, an optional detail zoom for mobile and optional motion. Each SVG contains a title, description and event-specific machine titles. Browser reduced-motion preferences are respected, and a static SVG can always be used instead.
 
 The **README embeds still SVGs**, so the design can be judged without relying on GitHub SVG animation support. CSS/SMIL animation in GitHub's image proxy is not claimed as verified. Labels will be smaller on mobile because the complete 53-week chart shares a single wide image.
 
 ### Verification status
 
-- **20 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
+- **21 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
 - Native `node --test`, Windows PowerShell execution, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes.
 - The pull request remains draft. **No changes to `master` or the owner's profile.**
 - The two artwork styles use different factory floors and machinery, with crisp-edged geometry for pixel art; both retain the same exact calendar data.
