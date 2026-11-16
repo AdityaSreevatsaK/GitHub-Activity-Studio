@@ -84,13 +84,18 @@ function calendarFor(data,progress){
   if(!dates){dates=new Map();all.set(e.repo_full_name,dates);}
   dates.set(date,(dates.get(date)||0)+e.count);
  }
+ // Feature the most recorded in-window repositories, fixed from the full snapshot
+ // so timeline playback never reassigns a landmark or changes its number.
+ const featured=data.repositories.map(r=>({
+  name:r.full_name,units:[...(all.get(r.full_name)||new Map()).values()].reduce((sum,n)=>sum+n,0)
+ })).sort((a,b)=>b.units-a.units||(a.name<b.name?-1:a.name>b.name?1:0)).slice(0,5).map(r=>r.name);
  const anchors=new Map(),taken=new Set();
- data.repositories.slice(0,5).forEach(r=>{
-  const ranked=[...(all.get(r.full_name)||new Map()).entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
+ featured.forEach(name=>{
+  const ranked=[...(all.get(name)||new Map()).entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
   const match=ranked.find(([date])=>!taken.has(date));
-  if(match){anchors.set(r.full_name,match[0]);taken.add(match[0]);}
+  if(match){anchors.set(name,match[0]);taken.add(match[0]);}
  });
- return {cells,lookup,anchors,byRepo,first,asof,seen,outside,observed:cells.reduce((s,c)=>s+c.units,0),activeDays:cells.filter(c=>c.units>0).length};
+ return {cells,lookup,anchors,featured,byRepo,first,asof,seen,outside,observed:cells.reduce((s,c)=>s+c.units,0),activeDays:cells.filter(c=>c.units>0).length};
 }
 function calendarRender(raw,options={}){
  const data=normalise(raw),layout=options.layout||"archipelago",theme=options.theme||"dark";
@@ -101,7 +106,7 @@ function calendarRender(raw,options={}){
  check(Number.isSafeInteger(frame)&&frame>=0&&frame<=10000,"Invalid animation frame");
  const grid=calendarFor(data,options.progress);
  const p=colours[theme],arch=layout==="archipelago",dark=theme==="dark",isDemo=data.source==="demo";
- const visible=data.repositories.slice(0,5),overflow=data.repositories.length-visible.length;
+ const visible=grid.featured.map(name=>data.repositories.find(r=>r.full_name===name)),overflow=data.repositories.length-visible.length;
  const x0=68,y0=99,dx=19,dy=21,tw=15,th=16;
  const palette=dark?{base:"#102b42",panel:"#182d42",stroke:"#3f7081",dim:"#2a475a",sea:"#163e58",wave:"#4c8094",sand:"#d9bd86",grass:"#83b880",grass2:"#b3d797",bright:"#eacb91",wall:"#f0dcba",roof:"#c87773",shade:"#14283f",text:"#f1f5ed",muted:"#a8c6cb",sky:"#274d65",gold:"#f8d78d",water:"#24495f",path:"#d9d0a8"}:{base:"#e7f2ed",panel:"#fcf9ed",stroke:"#a3c7c5",dim:"#cdded7",sea:"#b6d8d5",wave:"#7caeac",sand:"#efd9a5",grass:"#a1c985",grass2:"#d1df9b",bright:"#d79069",wall:"#fff3d9",roof:"#b86f6b",shade:"#567179",text:"#304b53",muted:"#618188",sky:"#d6eae7",gold:"#d68a54",water:"#cce8e2",path:"#cfb992"};
  const repoColours=["#f8c77e","#89cfaa","#ed9d9b","#97bce9","#d8b6e8"];
