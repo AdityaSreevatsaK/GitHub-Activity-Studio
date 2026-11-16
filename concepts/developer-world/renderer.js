@@ -295,7 +295,7 @@ function repositoryLandmarkSprite(i,units,x,y,p,tint){
  out.push("</g></svg>");
  return out.join("");
 }
-return {normalise,statsFor,stage,render:calendarRender,calendarFor,esc};
+return {normalise,statsFor,stage,render:calendarRender,calendarFor,compareUtc,esc};
 })();
 if (typeof module !== 'undefined' && module.exports) module.exports = DeveloperWorld;
 else if (typeof globalThis !== 'undefined') globalThis.DeveloperWorld = DeveloperWorld;
