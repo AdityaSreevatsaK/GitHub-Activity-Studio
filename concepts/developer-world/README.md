@@ -1,92 +1,74 @@
 # Developer World
 
-**Two miniature worlds, one transparent activity contract.** Five original repository landmarks grow from the recorded GitHub events in the shared snapshot. No tokens, third-party sprites, libraries or paid services.
+**A GitHub-style contribution calendar that becomes a miniature, evolving world.** Both original worlds use the same 53-week × 7-day UTC calendar. The archipelago turns each recorded day into an island plot; the village turns it into a tiny street-side lot. A day always stays in its original column and weekday row.
 
-## Visual previews
+> **SYNTHETIC DEMO.** All bundled examples use `shared/fixtures/demo-activity.json`, not the owner's contribution history. This is an **event-log calendar**, not an official complete GitHub contribution calendar.
 
-| Overhead archipelago (primary) | Side-view village |
-| :--: | :--: |
-| ![Synthetic demo: miniature islands and landmarks](previews/archipelago-dark.svg) | ![Synthetic demo: miniature side-view village](previews/village-light.svg) |
-| [Daybreak](previews/archipelago-light.svg) · [Still image](previews/archipelago-still.svg) | [Moonlit](previews/village-dark.svg) |
+## See both worlds
 
-**These images use deliberately synthetic data. They do not show the owner's actual GitHub activity.**
+| The Isles of Code: overhead archipelago (primary) | The Little Buildtown: side-view village |
+| --- | --- |
+| ![DEMO, overhead contribution calendar built from tiny islands](previews/archipelago-dark.svg) | ![DEMO, side-view contribution calendar made of village plots](previews/village-light.svg) |
+| [Daybreak](previews/archipelago-light.svg) · [Still SVG](previews/archipelago-still.svg) | [Moonlit](previews/village-dark.svg) |
 
-The **archipelago** is the proposed profile layout: visually separate islands make repository boundaries clear. The **village** has a distinct skyline, roof shapes and environmental scenery, but more limited vertical room for tall buildings.
+### Growth snapshots
 
-## Windows setup
+| Quiet calendar | First four recorded events | Entire synthetic fixture |
+| --- | --- | --- |
+| ![DEMO calendar before events](previews/archipelago-start.svg) | ![DEMO calendar after four events](previews/archipelago-mid.svg) | ![DEMO calendar after ten events](previews/archipelago-dark.svg) |
 
-Prerequisites: **Git**, **Node.js 18+** and a browser. No `npm install`, Python, cloud service or token required.
+All exports are self-contained SVGs with no external resources. The static fallback disables all motion.
 
-1. Open **PowerShell** and paste:
+## What each piece means
 
-   ```powershell
-   git clone https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio.git
-   cd GitHub-Activity-Studio
-   git switch concept/developer-world
-   node concepts/developer-world/server.cjs
-   ```
+- **53 columns × 7 rows:** chronological Sunday-to-Saturday weeks ending in the week of `generated_at` (UTC). The six unused future days of the current week are muted. Month names and weekday labels remain visible.
+- **One tile = one UTC date.** Its colour and physical growth come from recorded source events on that date only. The same activity is shown in both layouts.
+- **Daily activity stages:** 0 units = quiet tile; 1–2 = sandy islet / field; 3–5 = greenery / cottage; 6–9 = workshop / building; 10+ = banner / tower. All quantities are source event `count` units, **not** guessed GitHub contributions.
+- **Event-kind details:** release = beacon; PR merged = bridge detail; PR opened = work sign; issue opened = notice; commits = plant growth. These are visual motifs, not additional records.
+- **Repositories:** up to five alphabetical `full_name` identities receive numbered markers and legend entries. Markers anchor to each repository's highest-unit, non-conflicting recorded date within the displayed window, selected using all snapshot events. Markers appear on the grid only once their associated date has that repository's visible activity. Unmappable repositories stay in the legend without a made-up date.
+- **Transparency:** dates with no supplied events mean **no recorded event in this snapshot**, not proven zero contributions. Events outside the calendar window, including dates after the snapshot, do not colour tiles and are counted in the footer. More than five repositories are disclosed as omitted.
 
-2. Open **http://127.0.0.1:8787/**. Select a world, palette, activity timeline and animation setting. Upload your own normalised public-data JSON to replace the demo.
-3. In a **second PowerShell window**, create all four animated exports and four matching still images:
+The shared fixture has **five repositories, ten distinct events and 20 recorded event units on ten dates**. The calendar is intentionally sparse because the fixture is sparse. We never fill cells with invented events.
 
-   ```powershell
-   node concepts/developer-world/export.cjs
-   ```
+## Windows PowerShell
 
-4. Run the automated tests:
+Requires Git, Node.js 18+ and any modern browser. No `npm install`, Python, tokens, API requests or paid services.
 
-   ```powershell
-   node --test concepts/developer-world/tests/world.test.cjs
-   ```
+~~~powershell
+git clone https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio.git
+cd GitHub-Activity-Studio
+git switch concept/developer-world
+node concepts/developer-world/server.cjs
+~~~
 
-Generated files appear under `concepts/developer-world/exports/`.
+Open **http://127.0.0.1:8787/**. Choose archipelago/village, dark/light, move the event timeline, pause animation, inspect dates by hover, or upload your own normalised public-data JSON (locally, without uploading it to a service).
 
-Custom export:
+In another PowerShell window:
 
-```powershell
-node concepts/developer-world/export.cjs --input .\activity.json --layout archipelago --theme light
-```
+~~~powershell
+node concepts/developer-world/export.cjs
+node --test concepts/developer-world/tests/world.test.cjs
+~~~
 
-For more options: `node concepts/developer-world/export.cjs --help`.
+Exports appear in `concepts/developer-world/exports/`. To export one layout with custom data:
 
-## Progression based on recorded data
+~~~powershell
+node concepts/developer-world/export.cjs --input .\activity.json --layout archipelago --theme dark
+~~~
 
-Input uses [the shared v1 JSON contract](../../docs/DATA_CONTRACT.md). Events are sorted by their UTC timestamp and then ID; duplicate IDs are counted once. A timeline step represents **one distinct recorded event**, while the world grows by the source event's positive `count`. Different activity kinds are **never all called commits**.
+Use `--progress 0` to see the quiet starting calendar, `--progress 4` to show four events, and `--still` for motion-free export.
 
-| Recorded units for a repository | Stage | Visual result |
-| ---: | :---: | --- |
-| 0 | 0 | Quiet home |
-| 1–2 | 1 | Lit windows and lanterns |
-| 3–5 | 2 | Garden paths and flowers |
-| 6–9 | 3 | Upgraded roof |
-| 10+ | 4 | Pennant at the roof |
+## Contract, limits and compatibility
 
-Kind-specific decorations give events meaning independently of growth tiers: **3 commit units** plant a garden; **opened PRs** raise scaffolding; **merged PRs** add a boat (islands) or bridge decoration (village); **issues** put up noticeboards; **releases** create a beacon.
+- Consumes the shared [v1 normalised event snapshot](../../docs/DATA_CONTRACT.md). Deduplicates event IDs and sorts by UTC timestamp then ID. It does not treat all types of events as commits.
+- Validates source format and event counts; escapes SVG labels, supports long names and empty datasets, honours `prefers-reduced-motion`, and uses no external artwork.
+- Deterministic for an identical snapshot and timeline step. The layout uses the same 53×7 date coordinates irrespective of activity, unlike a free-form world layout.
+- Supports up to 500 repository records and 20,000 event records, but only five compact legend landmarks. Month labels and cell detail remain readable in the browser; the wide SVG naturally scales down on a mobile README.
+- The optional HTML browser preview provides the event slider and controls. **HTML/JavaScript cannot be embedded as interactive GitHub README content.** SVG animation through GitHub's image proxy is not guaranteed. Use the [static archipelago fallback](previews/archipelago-still.svg) if animation is suppressed.
+- A future collector would need to declare coverage, pagination, recency and access restrictions. This renderer does **not** claim complete GraphQL contribution-calendar coverage from a sparse REST event log.
 
-**See it develop:** set the browser timeline to **0**, then **4**, then **10** to see the demo progress. To test stage 4, provide a normalised source event with at least 10 recorded units for one repository. Growth never invents missing events or achievements.
+## Trade-offs and review
 
-## Scope and limits
+The overhead archipelago is the preferred profile candidate because its islands preserve square calendar cells especially clearly. The village adds a second, distinctly architectural rendering without changing dates or counts. Small cells constrain the amount of sprite detail; dense or multi-repository days prioritise one visible landmark marker, with full event detail remaining in the SVG accessible labels and browser list.
 
-- Only the **five alphabetically first** repositories, sorted by `full_name`, appear as miniature landmarks. Further repositories are explicitly reported, not silently misrepresented. Upper limits: 500 repositories and 20,000 input events.
-- Positions and artwork are deterministic for the same repository set and event prefix. Adding or removing repositories can change the slots, but changing activity alone does not reposition them.
-- All repository names in descriptions are escaped; displayed names longer than 18 characters are truncated in the wide SVG, with the full names retained in the browser's accessible list. The SVG includes a `title` and `desc`.
-- Light and dark images are exported separately. SVG CSS animation works without JavaScript; `prefers-reduced-motion` disables animation. Still SVGs contain an explicit animation override and remain readable when CSS animation is blocked.
-- No live collector is included, per the parallel-session agreement. `source: "github"` means that a trusted upstream collector supplied a *public* snapshot. Coverage is limited by that collector's API access, pagination, visibility and recency. There is **no claim** of a complete GitHub contributions graph.
-- No private repository metadata, GitHub tokens, cloud APIs, API calls or paid services are used in the demo or tests. The optional browser file upload stays within the local browser.
-- Mobile browsers scale the wide SVG down; the accompanying textual repository list remains readable. The fixed 16:5 composition favours a profile-sized landscape over dense metadata.
-
-## GitHub README export
-
-Proposed still-image embed, **not to be installed on the profile until approved**:
-
-```markdown
-![Developer World, synthetic example](https://raw.githubusercontent.com/AdityaSreevatsaK/GitHub-Activity-Studio/refs/heads/concept/developer-world/concepts/developer-world/previews/archipelago-still.svg)
-```
-
-**GitHub README rendering has not been independently verified.** GitHub's image proxy may restrict SVG animations; use the still SVG if animation is suppressed. The browser preview uses JavaScript and cannot be embedded inside GitHub README pages. An animated GIF was not added to keep the base toolchain dependency-free.
-
-### Trade-offs and next improvements
-
-The archipelago currently favours clarity over detailed roof silhouettes; the village prioritises atmospheric storytelling. High repository counts need filtering or paging in a later version. Before release: confirm the actual GitHub-rendered SVG behaviour, test mobile screenshots in several browsers, and evaluate a shared public GitHub collector. No changes have been made to the profile or `master`.
-
-**Status: isolated concept prototype, pending draft PR review.**
+**Preview and GitHub embedding behaviour still need human visual review.** Do not install this on the owner's profile or merge into `master` without approval.
