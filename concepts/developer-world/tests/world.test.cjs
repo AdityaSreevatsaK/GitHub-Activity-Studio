@@ -90,7 +90,9 @@ test("local server serves preview and fixture but blocks private dotfiles",async
     let body="";res.on("data",part=>body+=part);res.on("end",()=>resolve({code:res.statusCode,body,headers:res.headers}));
    }).on("error",reject);
   });
-  const page=await get("/");assert.equal(page.code,200);assert.match(page.body,/Developer World/);
+  const entry=await get("/");assert.equal(entry.code,302);
+  assert.equal(entry.headers.location,"/concepts/developer-world/index.html");
+  const page=await get(entry.headers.location);assert.equal(page.code,200);assert.match(page.body,/Developer World/);
   assert.match(page.headers["content-security-policy"],/img-src 'self' data: blob:/);
   const gifModule=await get("/concepts/developer-world/gif.js");assert.equal(gifModule.code,200);
   assert.match(gifModule.headers["content-type"],/javascript/);
