@@ -26,15 +26,30 @@ export function calendarData(scene,raw){
   const week=Math.floor(delta/7),weekday=delta%7;
   return {week,weekday,x:Number((GRID.x+week*GRID.dx+GRID.size/2).toFixed(2)),y:Number((GRID.y+weekday*GRID.dy+GRID.size/2).toFixed(2))};
  };
- const jobs=filtered.jobs.map(j=>({...j,date:j.occurred_at.slice(0,10),cell:dateCell(j.occurred_at.slice(0,10))}));
+ // Assign representative observed events across the time span, not just the
+ // most recent week, so distant calendar cells receive meaningful swarm visits.
+ const knownRepos=new Map(filtered.repositories.map(r=>[r.full_name,r.index]));
+ const eligible=windowEvents.filter(e=>knownRepos.has(e.repo_full_name));
+ const maxJobs=10;
+ const picked=eligible.length<=maxJobs?eligible:
+  Array.from({length:maxJobs},(_,i)=>eligible[Math.round(i*(eligible.length-1)/(maxJobs-1))]);
+ const spacing=picked.length>1?10.8/(picked.length-1):0;
+ const jobs=picked.map((e,i)=>({
+  id:e.id,kind:e.kind,repo_full_name:e.repo_full_name,
+  repo_index:knownRepos.get(e.repo_full_name),count:e.count,
+  occurred_at:e.occurred_at,date:e.occurred_at.slice(0,10),
+  cell:dateCell(e.occurred_at.slice(0,10)),
+  start:Number((.55+i*spacing).toFixed(4)),duration:2.2,
+  agents:[(i%4)*2,(i%4)*2+1]
+ }));
  const historical=snap.activity.filter(e=>Date.parse(e.occurred_at)<=generated);
  const last=historical.at(-1),stale_days=last?Math.max(0,Math.floor((generated-Date.parse(last.occurred_at))/ONE_DAY)):null;
  return {...filtered,event_total:snap.activity.length,repository_total:snap.repositories.length,
   jobs,shown:jobs.length,stale_days,
   calendar:{start:startDay,end:lastDay,generated_at:snap.generated_at,days,observed_days:days.length,
    window_events:windowEvents.length,outside_window_events:outside,future_events:future,
-   semantics:"Source-observed events only; not GitHub's complete contributions graph."},
-  truncated:filtered.truncated||outside>0||future>0
+   semantics:"Source-observed events only; not GitHub's complete contributions graph. Choreography is time-stratified."},
+  truncated:filtered.repositories.length<snap.repositories.length||eligible.length>jobs.length||outside>0||future>0
  };
 }
 

@@ -24,7 +24,7 @@ If animations are disabled, see the [geometric still](exports/geometric-dark-sti
 
 ## Calendar interpretation
 
-The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar can display events from all repositories in the input, whilst the animated swarm selects up to five recently active repository beacons and the ten latest eligible events. Animations target source-backed calendar dates; the 14-second replay remains a visual metaphor.
+The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar can display events from all repositories in the input, whilst the animated swarm selects up to five recently active repository beacons and ten sampled source events. Animations target source-backed calendar dates; the 14-second replay remains a visual metaphor.
 
 ## Windows: start to finish
 

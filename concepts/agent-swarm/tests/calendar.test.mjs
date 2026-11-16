@@ -99,7 +99,7 @@ test("bursty in-window events show ten latest jobs without changing calendar tru
  assert.equal(result.calendar.window_events,60);
  assert.equal(result.calendar.observed_days,11);
  assert.equal(result.jobs.length,10);
- assert(result.jobs.every(j=>j.date==="2026-11-15"));
+ assert(result.jobs.some(j=>j.date==="2026-11-15"));
  assert(result.truncated);
 });
 
@@ -115,4 +115,18 @@ test("all style/theme combinations have a matching GIF and static SVG",()=>{
   assert.equal(meta.duration_centi,1400);
   assert.equal(meta.frames,2);
  }
+});
+
+test("stratified choreography reaches distant calendar weeks",()=>{
+ const raw=structuredClone(fixture);
+ for(let week=0;week<40;week++){
+  const date=new Date(Date.UTC(2026,0,1)+week*7*86400000).toISOString().slice(0,10)+"T12:00:00Z";
+  raw.activity.push({id:"weekly-"+week,kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:date,count:1});
+ }
+ const scene=sceneFor(raw);
+ const weeks=new Set(scene.jobs.map(j=>j.cell.week));
+ assert.equal(scene.jobs.length,10);
+ assert(weeks.size>=6);
+ assert(scene.jobs.some(j=>j.cell.week<20));
+ assert(scene.jobs.some(j=>j.cell.week>35));
 });
