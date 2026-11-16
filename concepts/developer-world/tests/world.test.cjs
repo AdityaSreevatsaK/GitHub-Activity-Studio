@@ -33,7 +33,7 @@ test("two distinct layouts with light and dark styles",()=>{
  const b=world.render(fixture,{layout:"village",theme:"light"});
  assert.match(a,/Isles of Code/);assert.match(b,/Little Buildtown/);
  assert.match(a,/dw-sea/);assert.match(b,/dw-bg/);assert.notEqual(a,b);
- assert.match(a,/DEMO DATA/);assert.match(b,/prefers-reduced-motion/);
+ assert.match(a,/SYNTHETIC DEMO/);assert.match(b,/prefers-reduced-motion/);
 });
 test("empty input creates a safe quiet world",()=>{
  const input=copy(fixture);input.activity=[];input.repositories=[];
