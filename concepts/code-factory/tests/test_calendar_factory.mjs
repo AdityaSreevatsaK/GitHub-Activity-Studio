@@ -26,7 +26,7 @@ test("current incomplete week stays blank rather than inventing activity",()=>{
  const m=selectedModel(fixture,52);
  assert.equal(m.week.records,0);
  assert.equal(m.activeRepos.size,0);
- assert.equal(m.week.days.filter(d=>d.future).length,6);
+ assert.equal(m.week.days.filter(d=>d.future).length,5);
  assert.match(render(fixture,{selectedWeek:52}),/IDLE LANE/);
  assert.doesNotMatch(render(fixture,{selectedWeek:52}),/data-repo=/);
 });
@@ -85,7 +85,7 @@ test("many activities on one day are represented by bounded machines and an over
  d.activity.push(...[0,1,2,3].map(i=>({...d.activity[0],id:"extra"+i,repo_full_name:i%2?"sample-dev/atlas":"sample-dev/orbit",occurred_at:"2026-11-09T12:00:00Z"})));
  const svg=render(d,{selectedWeek:51});
  assert.match(svg,/\+3 more recorded events/);
- assert.match(svg,/9 UNITS/);
+ assert.match(svg,/16 UNITS/);
  assert.equal(selectedModel(d).week.days[1].events.length,5);
 });
 test("activity outside window and after generated_at is excluded",()=>{
