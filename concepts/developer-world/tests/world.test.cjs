@@ -159,3 +159,13 @@ test("high activity changes calendar tile level and preserves calendar geometry"
  assert.equal(cell.level,4);assert.equal(cell.units,12);
  assert.match(world.render(f),/data-date="2026-11-15" data-level="4"/);
 });
+
+test("legend and repository totals exclude events outside the chart window",()=>{
+ const f=copy(fixture);
+ f.activity.push({id:"outside-extra",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2025-01-01T00:00:00Z",count:100});
+ const c=world.calendarFor(world.normalise(f));
+ assert.equal(c.byRepo.get("sample-dev/aurora").units,4);
+ assert.equal(c.byRepo.get("sample-dev/aurora").events,2);
+ assert.match(world.render(f),/4 units · 2 events · stage 2/);
+ assert.equal(c.outside,1);
+});
