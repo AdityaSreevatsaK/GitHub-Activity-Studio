@@ -87,10 +87,13 @@ test("local server serves preview and fixture but blocks private dotfiles",async
   const port=server.address().port;
   const get=pathname=>new Promise((resolve,reject)=>{
    http.get({hostname:"127.0.0.1",port,path:pathname},res=>{
-    let body="";res.on("data",part=>body+=part);res.on("end",()=>resolve({code:res.statusCode,body}));
+    let body="";res.on("data",part=>body+=part);res.on("end",()=>resolve({code:res.statusCode,body,headers:res.headers}));
    }).on("error",reject);
   });
   const page=await get("/");assert.equal(page.code,200);assert.match(page.body,/Developer World/);
+  assert.match(page.headers["content-security-policy"],/img-src 'self' data: blob:/);
+  const gifModule=await get("/concepts/developer-world/gif.js");assert.equal(gifModule.code,200);
+  assert.match(gifModule.headers["content-type"],/javascript/);
   const data=await get("/shared/fixtures/demo-activity.json");assert.equal(data.code,200);assert.equal(JSON.parse(data.body).source,"demo");
   assert.equal((await get("/.git/config")).code,403);
  }finally{await new Promise(resolve=>server.close(resolve));}
