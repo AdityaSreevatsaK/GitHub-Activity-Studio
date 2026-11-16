@@ -314,10 +314,10 @@ def export(snapshot: dict, output: Path, layouts: tuple[str, ...] = ("isometric"
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Export original GitHub Code Factory illustrations")
+    parser = argparse.ArgumentParser(description="Export LEGACY pre-calendar Code Factory art into exports-legacy by default")
     root = Path(__file__).resolve().parents[2]
     parser.add_argument("--input", type=Path, default=root / "shared/fixtures/demo-activity.json")
-    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "exports")
+    parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent / "exports-legacy")
     parser.add_argument("--layout", choices=("isometric", "pixel", "both"), default="both")
     parser.add_argument("--theme", choices=("dark", "light", "both"), default="both")
     args = parser.parse_args()
