@@ -1,212 +1,569 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 376" width="1200" height="376" role="img" aria-labelledby="metroTitle metroDesc">
-<title id="metroTitle">Open Source Metro, vintage light visualisation</title>
-<desc id="metroDesc">Synthetic demo metro map. Repositories are stations; five colour-coded lines represent commits, pull requests opened, pull requests merged, issues opened, and releases. Animated trains replay recorded events in UTC timestamp order. Lines show shared event types, not repository dependencies.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1320 540" width="1320" height="540" role="img" aria-labelledby="title description">
+<title id="title">Open Source Metro, vintage light: annual contribution-calendar-inspired event map</title>
+<desc id="description">Synthetic demo. A fifty-three-week, seven-day contribution-style grid displays ONLY source-observed event units, not a complete GitHub contributions history. Five coloured metro services trace recorded event types in chronological UTC order. Repo station names appear below the map.</desc>
 <defs><style><![CDATA[
-.headline{font:700 28px Georgia,serif;letter-spacing:1.3px;fill:#322F2C}
-.kicker{font:700 10px system-ui,sans-serif;letter-spacing:3px;fill:#746D63}
-.station{font:600 14px Georgia,serif;fill:#322F2C}
-.small{font:600 9px system-ui,sans-serif;letter-spacing:1px;fill:#746D63}
-.line-name{font:700 11px system-ui,sans-serif;letter-spacing:1px;fill:#322F2C}
-.detail{font:500 10px system-ui,sans-serif;fill:#746D63}
-.stop:focus{outline:none}.stop:focus .focus-ring{stroke-width:4;opacity:1}
-@media (prefers-reduced-motion:reduce){.train,.pulse{display:none}}
+.mast{font:800 35px Georgia,serif;fill:#3A332F;letter-spacing:-.8px}
+.sub{font:600 11px system-ui,sans-serif;fill:#766C60;letter-spacing:1px}
+.micro{font:700 9px system-ui,sans-serif;fill:#766C60;letter-spacing:.6px}
+.month{font:700 11px system-ui,sans-serif;fill:#766C60}
+.name{font:700 13px Georgia,serif;fill:#3A332F}
+.detail{font:500 11px system-ui,sans-serif;fill:#766C60}
+.day:focus .focus{stroke-width:3;opacity:1}.day:focus{outline:none}
+@media(prefers-reduced-motion:reduce){.train,.pulse{display:none!important}}
 ]]></style></defs>
-<rect width="1200" height="376" fill="#F0E8D9"/>
-<rect x="18" y="18" width="1164" height="340" rx="4" fill="#FBF4E5" stroke="#CCBFA9" stroke-width="1.5"/>
-<path d="M30 78H1170 M30 329H1170" stroke="#CCBFA9" stroke-width="2"/>
-<path d="M32 80H1168" stroke="#746D63" stroke-opacity=".4" stroke-width=".5"/>
-<circle cx="1137" cy="103" r="13" stroke="#746D63" stroke-width="1" fill="none" opacity=".5"/>
-<text x="1137" y="106" class="small" text-anchor="middle" >OS</text>
-<text x="52" y="48" class="headline" text-anchor="start" >OPEN SOURCE METRO</text>
-<text x="54" y="67" class="kicker" text-anchor="start" >AN ACTIVITY TRANSIT DIAGRAM  /  EVENT-TYPE SERVICES</text>
-<text x="1142" y="39" class="kicker" text-anchor="end" >SYNTHETIC DEMO</text>
-<text x="1142" y="57" class="detail" text-anchor="end" >5 repos   ·   10 source events</text>
-<text x="54" y="112" class="kicker" text-anchor="start" >DISTRICT 01</text>
-<g class="station-node"><title>sample-dev/aurora</title>
-<path d="M330.4 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
-<rect x="326.4" y="133" width="8" height="8" transform="rotate(45 330.4 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
-<text x="330.4" y="129" class="station" text-anchor="middle" >aurora</text>
+<rect width="1320" height="540" fill="#E9DFCB"/>
+<rect x="18" y="16" width="1284" height="508" rx="9" fill="#F7EEDC" stroke="#CDBEA7" stroke-width="2"/>
+<rect x="28" y="26" width="1264" height="488" rx="3" fill="none" stroke="#CDBEA7" stroke-width="1.1"/>
+<path d="M43 111H1277 M43 488H1277" stroke="#CDBEA7" stroke-width="2"/>
+<text x="1230" y="64" font-size="29" font-family="Georgia,serif" fill="#766C60" text-anchor="end" opacity=".3">M</text>
+<text x="67.0" y="69.0" class="mast" text-anchor="start">OPEN SOURCE METRO</text>
+<text x="69.0" y="89.0" class="sub" text-anchor="start">A CONTRIBUTION CALENDAR REIMAGINED AS A TRANSIT NETWORK</text>
+<text x="1174.0" y="54.0" class="micro" text-anchor="end">SYNTHETIC DEMONSTRATION</text>
+<text x="1174.0" y="75.0" class="detail" text-anchor="end">10 observed events   /   5 repository stations</text>
+<rect x="77" y="117" width="1167" height="256" rx="5" fill="#FCF5E8" stroke="#CDBEA7" stroke-width="1.2"/>
+<text x="100.0" y="137.0" class="micro" text-anchor="start">53-WEEK EVENT CALENDAR</text>
+<text x="1219.0" y="137.0" class="micro" text-anchor="end">UTC  •  SUN → SAT  •  SNAPSHOT EVENTS ONLY</text>
+<text x="119.0" y="159.0" class="month" text-anchor="start">NOV</text>
+<text x="159.5" y="159.0" class="month" text-anchor="start">DEC</text>
+<text x="240.5" y="159.0" class="month" text-anchor="start">JAN</text>
+<text x="341.8" y="159.0" class="month" text-anchor="start">FEB</text>
+<text x="422.8" y="159.0" class="month" text-anchor="start">MAR</text>
+<text x="503.8" y="159.0" class="month" text-anchor="start">APR</text>
+<text x="584.8" y="159.0" class="month" text-anchor="start">MAY</text>
+<text x="686.0" y="159.0" class="month" text-anchor="start">JUN</text>
+<text x="767.0" y="159.0" class="month" text-anchor="start">JUL</text>
+<text x="848.0" y="159.0" class="month" text-anchor="start">AUG</text>
+<text x="949.2" y="159.0" class="month" text-anchor="start">SEP</text>
+<text x="1030.2" y="159.0" class="month" text-anchor="start">OCT</text>
+<text x="1131.5" y="159.0" class="month" text-anchor="start">NOV</text>
+<text x="105.0" y="205.2" class="micro" text-anchor="end">Mon</text>
+<text x="105.0" y="245.8" class="micro" text-anchor="end">Wed</text>
+<text x="105.0" y="286.2" class="micro" text-anchor="end">Fri</text>
+<g class="line-commit"><title>Commit activity service; 4 recorded events</title>
+<path d="M 876.40 202.40 H 916.90 L 937.15 182.15 H 977.65 H 1078.90 V 303.65 H 1159.90 V 202.40" fill="none" stroke="#F7EEDC" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<path d="M 876.40 202.40 H 916.90 L 937.15 182.15 H 977.65 H 1078.90 V 303.65 H 1159.90 V 202.40" fill="none" stroke="#3C8572" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+<path d="M 876.40 202.40 H 916.90 L 937.15 182.15 H 977.65 H 1078.90 V 303.65 H 1159.90 V 202.40" fill="none" stroke="#F7EEDC" stroke-width=".75" stroke-dasharray="2 3" opacity=".65"/>
+<g class="train" aria-hidden="true"><circle r="6.5" fill="#3C8572" stroke="#3A332F" stroke-width="1.4"/><circle r="2" fill="#F7EEDC"/><animateMotion dur="16.0s" repeatCount="indefinite" path="M 876.40 202.40 H 916.90 L 937.15 182.15 H 977.65 H 1078.90 V 303.65 H 1159.90 V 202.40"/></g>
 </g>
-<g class="station-node"><title>sample-dev/atlas</title>
-<path d="M497.2 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
-<rect x="493.2" y="133" width="8" height="8" transform="rotate(45 497.2 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
-<text x="497.2" y="129" class="station" text-anchor="middle" >atlas</text>
+<g class="line-pr_opened"><title>Pull requests opened service; 2 recorded events</title>
+<path d="M 916.90 283.40 H 1038.40 L 1038.40 283.40 H 1159.90" fill="none" stroke="#F7EEDC" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<path d="M 916.90 283.40 H 1038.40 L 1038.40 283.40 H 1159.90" fill="none" stroke="#B9676E" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+<path d="M 916.90 283.40 H 1038.40 L 1038.40 283.40 H 1159.90" fill="none" stroke="#F7EEDC" stroke-width=".75" stroke-dasharray="2 3" opacity=".65"/>
+<g class="train" aria-hidden="true"><circle r="6.5" fill="#B9676E" stroke="#3A332F" stroke-width="1.4"/><circle r="2" fill="#F7EEDC"/><animateMotion dur="16.0s" repeatCount="indefinite" path="M 916.90 283.40 H 1038.40 L 1038.40 283.40 H 1159.90"/></g>
 </g>
-<g class="station-node"><title>sample-dev/ember</title>
-<path d="M664 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
-<rect x="660" y="133" width="8" height="8" transform="rotate(45 664 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
-<text x="664" y="129" class="station" text-anchor="middle" >ember</text>
+<g class="line-pr_merged"><title>Pull requests merged service; 2 recorded events</title>
+<path d="M 977.65 303.65 H 1028.28 L 1089.03 242.90 H 1139.65" fill="none" stroke="#F7EEDC" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+<path d="M 977.65 303.65 H 1028.28 L 1089.03 242.90 H 1139.65" fill="none" stroke="#80629A" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+<path d="M 977.65 303.65 H 1028.28 L 1089.03 242.90 H 1139.65" fill="none" stroke="#F7EEDC" stroke-width=".75" stroke-dasharray="2 3" opacity=".65"/>
+<g class="train" aria-hidden="true"><circle r="6.5" fill="#80629A" stroke="#3A332F" stroke-width="1.4"/><circle r="2" fill="#F7EEDC"/><animateMotion dur="16.0s" repeatCount="indefinite" path="M 977.65 303.65 H 1028.28 L 1089.03 242.90 H 1139.65"/></g>
 </g>
-<g class="station-node"><title>sample-dev/orbit</title>
-<path d="M830.8 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
-<rect x="826.8" y="133" width="8" height="8" transform="rotate(45 830.8 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
-<text x="830.8" y="129" class="station" text-anchor="middle" >orbit</text>
+<g class="line-issue_opened"><title>Issues opened service; 1 recorded events</title>
 </g>
-<g class="station-node"><title>sample-dev/harbour</title>
-<path d="M997.6 143V309" stroke="#CCBFA9" stroke-width="1.2" stroke-dasharray="3 7"/>
-<rect x="993.6" y="133" width="8" height="8" transform="rotate(45 997.6 137)" fill="#FBF4E5" stroke="#322F2C" stroke-width="1.7"/>
-<text x="997.6" y="129" class="station" text-anchor="middle" >harbour</text>
+<g class="line-release"><title>Releases service; 1 recorded events</title>
 </g>
-<g class="line-commit">
-<rect x="45" y="144" width="9" height="17" rx="4.5" fill="#398174"/>
-<text x="66" y="159" class="line-name" text-anchor="start" >CODE</text>
-<path d="M197 155H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
-<path d="M197 155H1141" fill="none" stroke="#398174" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
-<path d="M197 155H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
-<g class="stop" tabindex="0" aria-label="sample-dev/aurora · Commits: demo-001 (03 Aug 2026 10:20 UTC, 3 unit(s))">
-<title>sample-dev/aurora · Commits: demo-001 (03 Aug 2026 10:20 UTC, 3 unit(s))</title>
-<circle class="focus-ring" cx="330.4" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
-<rect x="322.4" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 330.4 155)"/>
-<circle cx="330.4" cy="155" r="3.5" fill="#398174"/>
-<text x="343.4" y="146" class="small" text-anchor="start" >3</text>
+<rect class="day-empty" data-date="2025-11-16" x="119.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-11-17" x="119.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-18" x="119.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-19" x="119.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-20" x="119.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-21" x="119.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-11-22" x="119.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-23" x="139.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-24" x="139.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-25" x="139.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-26" x="139.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-27" x="139.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-11-28" x="139.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-29" x="139.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-11-30" x="159.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-01" x="159.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-02" x="159.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-03" x="159.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-12-04" x="159.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-05" x="159.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-06" x="159.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-07" x="179.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-08" x="179.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-09" x="179.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-12-10" x="179.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-11" x="179.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-12" x="179.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-13" x="179.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-14" x="200.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-15" x="200.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-12-16" x="200.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-17" x="200.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-18" x="200.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-19" x="200.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-20" x="200.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-12-21" x="220.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-12-22" x="220.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-23" x="220.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-24" x="220.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-25" x="220.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-26" x="220.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2025-12-27" x="220.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-28" x="240.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-29" x="240.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-30" x="240.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2025-12-31" x="240.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-01" x="240.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-01-02" x="240.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-03" x="240.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-04" x="260.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-05" x="260.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-06" x="260.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-07" x="260.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-01-08" x="260.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-09" x="260.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-10" x="260.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-11" x="281.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-12" x="281.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-13" x="281.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-01-14" x="281.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-15" x="281.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-16" x="281.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-17" x="281.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-18" x="301.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-19" x="301.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-01-20" x="301.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-21" x="301.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-22" x="301.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-23" x="301.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-24" x="301.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-01-25" x="321.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-01-26" x="321.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-27" x="321.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-28" x="321.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-29" x="321.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-01-30" x="321.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-01-31" x="321.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-01" x="341.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-02" x="341.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-03" x="341.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-04" x="341.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-05" x="341.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-02-06" x="341.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-07" x="341.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-08" x="362.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-09" x="362.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-10" x="362.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-11" x="362.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-02-12" x="362.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-13" x="362.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-14" x="362.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-15" x="382.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-16" x="382.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-17" x="382.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-02-18" x="382.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-19" x="382.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-20" x="382.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-21" x="382.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-22" x="402.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-23" x="402.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-02-24" x="402.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-25" x="402.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-26" x="402.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-27" x="402.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-02-28" x="402.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-03-01" x="422.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-03-02" x="422.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-03" x="422.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-04" x="422.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-05" x="422.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-06" x="422.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-03-07" x="422.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-08" x="443.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-09" x="443.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-10" x="443.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-11" x="443.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-12" x="443.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-03-13" x="443.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-14" x="443.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-15" x="463.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-16" x="463.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-17" x="463.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-18" x="463.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-03-19" x="463.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-20" x="463.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-21" x="463.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-22" x="483.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-23" x="483.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-24" x="483.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-03-25" x="483.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-26" x="483.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-27" x="483.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-28" x="483.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-29" x="503.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-03-30" x="503.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-03-31" x="503.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-01" x="503.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-02" x="503.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-03" x="503.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-04" x="503.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-04-05" x="524.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-04-06" x="524.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-07" x="524.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-08" x="524.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-09" x="524.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-10" x="524.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-04-11" x="524.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-12" x="544.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-13" x="544.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-14" x="544.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-15" x="544.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-16" x="544.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-04-17" x="544.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-18" x="544.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-19" x="564.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-20" x="564.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-21" x="564.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-22" x="564.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-04-23" x="564.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-24" x="564.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-25" x="564.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-26" x="584.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-27" x="584.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-28" x="584.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-04-29" x="584.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-04-30" x="584.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-01" x="584.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-02" x="584.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-03" x="605.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-04" x="605.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-05-05" x="605.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-06" x="605.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-07" x="605.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-08" x="605.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-09" x="605.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-05-10" x="625.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-05-11" x="625.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-12" x="625.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-13" x="625.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-14" x="625.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-15" x="625.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-05-16" x="625.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-17" x="645.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-18" x="645.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-19" x="645.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-20" x="645.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-21" x="645.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-05-22" x="645.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-23" x="645.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-24" x="665.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-25" x="665.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-26" x="665.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-27" x="665.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-05-28" x="665.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-29" x="665.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-30" x="665.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-05-31" x="686.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-01" x="686.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-02" x="686.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-06-03" x="686.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-04" x="686.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-05" x="686.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-06" x="686.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-07" x="706.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-08" x="706.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-06-09" x="706.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-10" x="706.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-11" x="706.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-12" x="706.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-13" x="706.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-06-14" x="726.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-06-15" x="726.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-16" x="726.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-17" x="726.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-18" x="726.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-19" x="726.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-06-20" x="726.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-21" x="746.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-22" x="746.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-23" x="746.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-24" x="746.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-25" x="746.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-06-26" x="746.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-27" x="746.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-28" x="767.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-29" x="767.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-06-30" x="767.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-01" x="767.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-07-02" x="767.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-03" x="767.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-04" x="767.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-05" x="787.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-06" x="787.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-07" x="787.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-07-08" x="787.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-09" x="787.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-10" x="787.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-11" x="787.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-12" x="807.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-13" x="807.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-07-14" x="807.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-15" x="807.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-16" x="807.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-17" x="807.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-18" x="807.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-07-19" x="827.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-07-20" x="827.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-21" x="827.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-22" x="827.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-23" x="827.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-24" x="827.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-07-25" x="827.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-26" x="848.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-27" x="848.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-28" x="848.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-29" x="848.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-07-30" x="848.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-07-31" x="848.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-01" x="848.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-02" x="868.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-08-03" data-units="3" tabindex="0" role="group" aria-label="2026-08-03: demo-001 / sample-dev/aurora / commit / 3 source units">
+<title>2026-08-03: demo-001 / sample-dev/aurora / commit / 3 source units</title>
+<rect x="868.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#96BD9E" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="867.25" y="193.25" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="876.40" cy="202.40" r="7" fill="#F7EEDC" stroke="#3C8572" stroke-width="1.25"/>
+<text x="876.40" y="204.80" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">01</text>
+<rect x="869.45" y="208.45" width="3.0" height="1.6" fill="#3C8572"/>
+<rect class="pulse" x="867.25" y="193.25" width="18.3" height="18.3" rx="3" fill="none" stroke="#3C8572" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="1.75s" repeatCount="indefinite"/></rect>
 </g>
-<g class="stop" tabindex="0" aria-label="sample-dev/ember · Commits: demo-003 (06 Sep 2026 20:45 UTC, 2 unit(s))">
-<title>sample-dev/ember · Commits: demo-003 (06 Sep 2026 20:45 UTC, 2 unit(s))</title>
-<circle class="focus-ring" cx="664" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
-<rect x="656" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 664 155)"/>
-<circle cx="664" cy="155" r="3.5" fill="#398174"/>
-<text x="677" y="146" class="small" text-anchor="start" >2</text>
+<rect class="day-empty" data-date="2026-08-04" x="868.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-05" x="868.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-08-06" x="868.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-07" x="868.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-08" x="868.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-09" x="888.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-10" x="888.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-11" x="888.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-08-12" x="888.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-13" x="888.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-14" x="888.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-15" x="888.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-16" x="908.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-17" x="908.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-08-18" x="908.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-19" x="908.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-20" x="908.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-08-21" data-units="1" tabindex="0" role="group" aria-label="2026-08-21: demo-002 / sample-dev/atlas / pr_opened / 1 source units">
+<title>2026-08-21: demo-002 / sample-dev/atlas / pr_opened / 1 source units</title>
+<rect x="908.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#C5D5BE" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="907.75" y="274.25" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="916.90" cy="283.40" r="7" fill="#F7EEDC" stroke="#B9676E" stroke-width="1.25"/>
+<text x="916.90" y="285.80" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">02</text>
+<rect x="909.95" y="289.45" width="3.0" height="1.6" fill="#B9676E"/>
+<rect class="pulse" x="907.75" y="274.25" width="18.3" height="18.3" rx="3" fill="none" stroke="#B9676E" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="2.45s" repeatCount="indefinite"/></rect>
 </g>
-<g class="stop" tabindex="0" aria-label="sample-dev/orbit · Commits: demo-006 (17 Oct 2026 18:25 UTC, 5 unit(s))">
-<title>sample-dev/orbit · Commits: demo-006 (17 Oct 2026 18:25 UTC, 5 unit(s))</title>
-<circle class="focus-ring" cx="830.8" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
-<rect x="822.8" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 830.8 155)"/>
-<circle cx="830.8" cy="155" r="3.5" fill="#398174"/>
-<text x="843.8" y="146" class="small" text-anchor="start" >5</text>
+<rect class="day-empty" data-date="2026-08-22" x="908.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-08-23" x="929.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-08-24" x="929.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-25" x="929.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-26" x="929.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-27" x="929.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-28" x="929.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-08-29" x="929.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-30" x="949.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-08-31" x="949.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-01" x="949.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-02" x="949.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-03" x="949.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-09-04" x="949.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-05" x="949.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-09-06" data-units="2" tabindex="0" role="group" aria-label="2026-09-06: demo-003 / sample-dev/ember / commit / 2 source units">
+<title>2026-09-06: demo-003 / sample-dev/ember / commit / 2 source units</title>
+<rect x="969.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#C5D5BE" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="968.50" y="173.00" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="977.65" cy="182.15" r="7" fill="#F7EEDC" stroke="#3C8572" stroke-width="1.25"/>
+<text x="977.65" y="184.55" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">03</text>
+<rect x="970.70" y="188.20" width="3.0" height="1.6" fill="#3C8572"/>
+<rect class="pulse" x="968.50" y="173.00" width="18.3" height="18.3" rx="3" fill="none" stroke="#3C8572" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="0.70s" repeatCount="indefinite"/></rect>
 </g>
-<g class="stop" tabindex="0" aria-label="sample-dev/harbour · Commits: demo-009 (09 Nov 2026 07:45 UTC, 4 unit(s))">
-<title>sample-dev/harbour · Commits: demo-009 (09 Nov 2026 07:45 UTC, 4 unit(s))</title>
-<circle class="focus-ring" cx="997.6" cy="155" r="13" fill="none" stroke="#398174" stroke-width="0" opacity=".85"/>
-<rect x="989.6" y="147" width="16" height="16" fill="#FBF4E5" stroke="#398174" stroke-width="2.8" transform="rotate(45 997.6 155)"/>
-<circle cx="997.6" cy="155" r="3.5" fill="#398174"/>
-<text x="1010.6" y="146" class="small" text-anchor="start" >4</text>
+<rect class="day-empty" data-date="2026-09-07" x="969.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-08" x="969.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-09" x="969.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-09-10" x="969.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-11" x="969.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-09-12" data-units="1" tabindex="0" role="group" aria-label="2026-09-12: demo-004 / sample-dev/atlas / pr_merged / 1 source units">
+<title>2026-09-12: demo-004 / sample-dev/atlas / pr_merged / 1 source units</title>
+<rect x="969.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#C5D5BE" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="968.50" y="294.50" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="977.65" cy="303.65" r="7" fill="#F7EEDC" stroke="#80629A" stroke-width="1.25"/>
+<text x="977.65" y="306.05" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">02</text>
+<rect x="970.70" y="309.70" width="3.0" height="1.6" fill="#80629A"/>
+<rect class="pulse" x="968.50" y="294.50" width="18.3" height="18.3" rx="3" fill="none" stroke="#80629A" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="0.70s" repeatCount="indefinite"/></rect>
 </g>
-<g class="train" aria-hidden="true">
-<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#398174" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
-<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<animateMotion dur="12s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;0.166625;0.583313;0.791656;1.000000;1.000000" keyTimes="0.000000;0.200000;0.400000;0.600000;0.800000;1.000000" path="M 197,155 L 330.4,155 L 664,155 L 830.8,155 L 997.6,155"/>
+<rect class="day-empty" data-date="2026-09-13" x="989.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-14" x="989.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-15" x="989.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-09-16" x="989.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-17" x="989.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-18" x="989.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-19" x="989.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-20" x="1010.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-21" x="1010.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-09-22" x="1010.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-23" x="1010.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-24" x="1010.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-25" x="1010.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-26" x="1010.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-09-27" x="1030.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<g class="day" data-date="2026-09-28" data-units="1" tabindex="0" role="group" aria-label="2026-09-28: demo-005 / sample-dev/orbit / issue_opened / 1 source units">
+<title>2026-09-28: demo-005 / sample-dev/orbit / issue_opened / 1 source units</title>
+<rect x="1030.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#C5D5BE" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="1029.25" y="193.25" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="1038.40" cy="202.40" r="7" fill="#F7EEDC" stroke="#B0853F" stroke-width="1.25"/>
+<text x="1038.40" y="204.80" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">04</text>
+<rect x="1031.45" y="208.45" width="3.0" height="1.6" fill="#B0853F"/>
+<rect class="pulse" x="1029.25" y="193.25" width="18.3" height="18.3" rx="3" fill="none" stroke="#B0853F" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="1.75s" repeatCount="indefinite"/></rect>
 </g>
-<circle class="pulse" cx="330.4" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="2.4s" repeatCount="indefinite"/>
-</circle>
-<circle class="pulse" cx="664" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="4.8s" repeatCount="indefinite"/>
-</circle>
-<circle class="pulse" cx="830.8" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="7.2s" repeatCount="indefinite"/>
-</circle>
-<circle class="pulse" cx="997.6" cy="155" r="17" fill="none" stroke="#398174" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="9.6s" repeatCount="indefinite"/>
-</circle>
+<rect class="day-empty" data-date="2026-09-29" x="1030.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-09-30" x="1030.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-01" x="1030.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-02" x="1030.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-10-03" x="1030.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-04" x="1050.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-05" x="1050.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-06" x="1050.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-07" x="1050.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-08" x="1050.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-10-09" x="1050.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-10" x="1050.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-11" x="1070.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-12" x="1070.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-13" x="1070.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-14" x="1070.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-10-15" x="1070.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-16" x="1070.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-10-17" data-units="5" tabindex="0" role="group" aria-label="2026-10-17: demo-006 / sample-dev/orbit / commit / 5 source units">
+<title>2026-10-17: demo-006 / sample-dev/orbit / commit / 5 source units</title>
+<rect x="1070.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#679980" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="1069.75" y="294.50" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="1078.90" cy="303.65" r="7" fill="#F7EEDC" stroke="#3C8572" stroke-width="1.25"/>
+<text x="1078.90" y="306.05" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">04</text>
+<rect x="1071.95" y="309.70" width="3.0" height="1.6" fill="#3C8572"/>
+<rect class="pulse" x="1069.75" y="294.50" width="18.3" height="18.3" rx="3" fill="none" stroke="#3C8572" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="2.45s" repeatCount="indefinite"/></rect>
 </g>
-<g class="line-pr_opened">
-<rect x="45" y="181" width="9" height="17" rx="4.5" fill="#B86658"/>
-<text x="66" y="196" class="line-name" text-anchor="start" >PROPOSE</text>
-<path d="M197 192H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
-<path d="M197 192H1141" fill="none" stroke="#B86658" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
-<path d="M197 192H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
-<g class="stop" tabindex="0" aria-label="sample-dev/atlas · PRs opened: demo-002 (21 Aug 2026 09:15 UTC, 1 unit(s))">
-<title>sample-dev/atlas · PRs opened: demo-002 (21 Aug 2026 09:15 UTC, 1 unit(s))</title>
-<circle class="focus-ring" cx="497.2" cy="192" r="13" fill="none" stroke="#B86658" stroke-width="0" opacity=".85"/>
-<rect x="489.2" y="184" width="16" height="16" fill="#FBF4E5" stroke="#B86658" stroke-width="2.8" transform="rotate(45 497.2 192)"/>
-<circle cx="497.2" cy="192" r="3.5" fill="#B86658"/>
+<rect class="day-empty" data-date="2026-10-18" x="1091.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-19" x="1091.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-20" x="1091.00" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-10-21" x="1091.00" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-22" x="1091.00" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-23" x="1091.00" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-10-24" data-units="1" tabindex="0" role="group" aria-label="2026-10-24: demo-007 / sample-dev/aurora / release / 1 source units">
+<title>2026-10-24: demo-007 / sample-dev/aurora / release / 1 source units</title>
+<rect x="1091.00" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#C5D5BE" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="1090.00" y="294.50" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="1099.15" cy="303.65" r="7" fill="#F7EEDC" stroke="#527FAD" stroke-width="1.25"/>
+<text x="1099.15" y="306.05" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">01</text>
+<rect x="1092.20" y="309.70" width="3.0" height="1.6" fill="#527FAD"/>
+<rect class="pulse" x="1090.00" y="294.50" width="18.3" height="18.3" rx="3" fill="none" stroke="#527FAD" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="0.00s" repeatCount="indefinite"/></rect>
 </g>
-<g class="stop" tabindex="0" aria-label="sample-dev/ember · PRs opened: demo-010 (13 Nov 2026 09:00 UTC, 1 unit(s))">
-<title>sample-dev/ember · PRs opened: demo-010 (13 Nov 2026 09:00 UTC, 1 unit(s))</title>
-<circle class="focus-ring" cx="664" cy="192" r="13" fill="none" stroke="#B86658" stroke-width="0" opacity=".85"/>
-<rect x="656" y="184" width="16" height="16" fill="#FBF4E5" stroke="#B86658" stroke-width="2.8" transform="rotate(45 664 192)"/>
-<circle cx="664" cy="192" r="3.5" fill="#B86658"/>
+<rect class="day-empty" data-date="2026-10-25" x="1111.25" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-26" x="1111.25" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-10-27" x="1111.25" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-28" x="1111.25" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-29" x="1111.25" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-30" x="1111.25" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-10-31" x="1111.25" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-11-01" x="1131.50" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-11-02" x="1131.50" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-11-03" x="1131.50" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-11-04" data-units="1" tabindex="0" role="group" aria-label="2026-11-04: demo-008 / sample-dev/harbour / pr_merged / 1 source units">
+<title>2026-11-04: demo-008 / sample-dev/harbour / pr_merged / 1 source units</title>
+<rect x="1131.50" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#C5D5BE" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="1130.50" y="233.75" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="1139.65" cy="242.90" r="7" fill="#F7EEDC" stroke="#80629A" stroke-width="1.25"/>
+<text x="1139.65" y="245.30" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">05</text>
+<rect x="1132.70" y="248.95" width="3.0" height="1.6" fill="#80629A"/>
+<rect class="pulse" x="1130.50" y="233.75" width="18.3" height="18.3" rx="3" fill="none" stroke="#80629A" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="0.70s" repeatCount="indefinite"/></rect>
 </g>
-<g class="train" aria-hidden="true">
-<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#B86658" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
-<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;0.642827;1.000000;1.000000" keyTimes="0.000000;0.333333;0.666667;1.000000" path="M 197,192 L 497.2,192 L 664,192"/>
+<rect class="day-empty" data-date="2026-11-05" x="1131.50" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-11-06" x="1131.50" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<rect class="day-empty" data-date="2026-11-07" x="1131.50" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-11-08" x="1151.75" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<g class="day" data-date="2026-11-09" data-units="4" tabindex="0" role="group" aria-label="2026-11-09: demo-009 / sample-dev/harbour / commit / 4 source units">
+<title>2026-11-09: demo-009 / sample-dev/harbour / commit / 4 source units</title>
+<rect x="1151.75" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#96BD9E" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="1150.75" y="193.25" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="1159.90" cy="202.40" r="7" fill="#F7EEDC" stroke="#3C8572" stroke-width="1.25"/>
+<text x="1159.90" y="204.80" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">05</text>
+<rect x="1152.95" y="208.45" width="3.0" height="1.6" fill="#3C8572"/>
+<rect class="pulse" x="1150.75" y="193.25" width="18.3" height="18.3" rx="3" fill="none" stroke="#3C8572" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="1.05s" repeatCount="indefinite"/></rect>
 </g>
-<circle class="pulse" cx="497.2" cy="192" r="17" fill="none" stroke="#B86658" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="3s" repeatCount="indefinite"/>
-</circle>
-<circle class="pulse" cx="664" cy="192" r="17" fill="none" stroke="#B86658" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="6s" repeatCount="indefinite"/>
-</circle>
+<rect class="day-empty" data-date="2026-11-10" x="1151.75" y="214.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-11-11" x="1151.75" y="234.75" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-11-12" x="1151.75" y="255.00" width="16.3" height="16.3" rx="1.4" fill="#FCF5E8"/>
+<g class="day" data-date="2026-11-13" data-units="1" tabindex="0" role="group" aria-label="2026-11-13: demo-010 / sample-dev/ember / pr_opened / 1 source units">
+<title>2026-11-13: demo-010 / sample-dev/ember / pr_opened / 1 source units</title>
+<rect x="1151.75" y="275.25" width="16.3" height="16.3" rx="1.4" fill="#C5D5BE" stroke="#F7EEDC" stroke-width=".65"/>
+<rect class="focus" x="1150.75" y="274.25" width="18.30" height="18.30" rx="2" fill="none" stroke="#3A332F" stroke-width="1.6" opacity=".4"/>
+<circle cx="1159.90" cy="283.40" r="7" fill="#F7EEDC" stroke="#B9676E" stroke-width="1.25"/>
+<text x="1159.90" y="285.80" text-anchor="middle" fill="#3A332F" font-family="system-ui,sans-serif" font-size="6.6" font-weight="800">03</text>
+<rect x="1152.95" y="289.45" width="3.0" height="1.6" fill="#B9676E"/>
+<rect class="pulse" x="1150.75" y="274.25" width="18.3" height="18.3" rx="3" fill="none" stroke="#B9676E" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="1.05s" repeatCount="indefinite"/></rect>
 </g>
-<g class="line-pr_merged">
-<rect x="45" y="218" width="9" height="17" rx="4.5" fill="#89759E"/>
-<text x="66" y="233" class="line-name" text-anchor="start" >MERGE</text>
-<path d="M197 229H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
-<path d="M197 229H1141" fill="none" stroke="#89759E" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
-<path d="M197 229H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
-<g class="stop" tabindex="0" aria-label="sample-dev/atlas · PRs merged: demo-004 (12 Sep 2026 13:00 UTC, 1 unit(s))">
-<title>sample-dev/atlas · PRs merged: demo-004 (12 Sep 2026 13:00 UTC, 1 unit(s))</title>
-<circle class="focus-ring" cx="497.2" cy="229" r="13" fill="none" stroke="#89759E" stroke-width="0" opacity=".85"/>
-<rect x="489.2" y="221" width="16" height="16" fill="#FBF4E5" stroke="#89759E" stroke-width="2.8" transform="rotate(45 497.2 229)"/>
-<circle cx="497.2" cy="229" r="3.5" fill="#89759E"/>
+<rect class="day-empty" data-date="2026-11-14" x="1151.75" y="295.50" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-11-15" x="1172.00" y="174.00" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<rect class="day-empty" data-date="2026-11-16" x="1172.00" y="194.25" width="16.3" height="16.3" rx="1.4" fill="#E6DCCC"/>
+<text x="99.0" y="333.0" class="micro" text-anchor="start">CALENDAR = OBSERVED SOURCE UNITS  /  BLANK ≠ VERIFIED ZERO</text>
+<text x="1069.0" y="333.0" class="micro" text-anchor="end">LESS</text>
+<rect x="1078" y="324" width="13" height="13" rx="1" fill="#E6DCCC"/>
+<rect x="1101" y="324" width="13" height="13" rx="1" fill="#C5D5BE"/>
+<rect x="1124" y="324" width="13" height="13" rx="1" fill="#96BD9E"/>
+<rect x="1147" y="324" width="13" height="13" rx="1" fill="#679980"/>
+<rect x="1170" y="324" width="13" height="13" rx="1" fill="#3C7368"/>
+<text x="1212.0" y="334.0" class="micro" text-anchor="end">MORE</text>
+<path d="M92 342H1228" stroke="#CDBEA7" stroke-width="1"/>
+<rect x="101" y="351" width="14" height="14" transform="rotate(45 108 358)" fill="#F7EEDC" stroke="#3C8572" stroke-width="2.4"/>
+<text x="126.0" y="361.0" class="micro" text-anchor="start">CODE</text>
+<rect x="331" y="351" width="14" height="14" transform="rotate(45 338 358)" fill="#F7EEDC" stroke="#B9676E" stroke-width="2.4"/>
+<text x="356.0" y="361.0" class="micro" text-anchor="start">PROPOSE</text>
+<rect x="561" y="351" width="14" height="14" transform="rotate(45 568 358)" fill="#F7EEDC" stroke="#80629A" stroke-width="2.4"/>
+<text x="586.0" y="361.0" class="micro" text-anchor="start">MERGE</text>
+<rect x="791" y="351" width="14" height="14" transform="rotate(45 798 358)" fill="#F7EEDC" stroke="#B0853F" stroke-width="2.4"/>
+<text x="816.0" y="361.0" class="micro" text-anchor="start">DISCUSS</text>
+<rect x="1021" y="351" width="14" height="14" transform="rotate(45 1028 358)" fill="#F7EEDC" stroke="#527FAD" stroke-width="2.4"/>
+<text x="1046.0" y="361.0" class="micro" text-anchor="start">SHIP</text>
+<text x="91.0" y="401.0" class="micro" text-anchor="start">STATION DIRECTORY  /  REPOSITORIES</text>
+<text x="1226.0" y="400.0" class="micro" text-anchor="end">MARKERS = RECORDED EVENTS   •   ROUTES = EVENT TYPES</text>
+<g class="repository" data-repository="sample-dev/aurora"><title>sample-dev/aurora: 2 recorded events</title>
+<rect x="90.00" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
+<rect x="97.00" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<text x="110.0" y="436.0" class="micro" text-anchor="middle">01</text>
+<text x="132.0" y="432.0" class="name" text-anchor="start">aurora</text>
+<text x="132.0" y="447.0" class="detail" text-anchor="start">2 events  ·  4 units</text>
 </g>
-<g class="stop" tabindex="0" aria-label="sample-dev/harbour · PRs merged: demo-008 (04 Nov 2026 15:10 UTC, 1 unit(s))">
-<title>sample-dev/harbour · PRs merged: demo-008 (04 Nov 2026 15:10 UTC, 1 unit(s))</title>
-<circle class="focus-ring" cx="997.6" cy="229" r="13" fill="none" stroke="#89759E" stroke-width="0" opacity=".85"/>
-<rect x="989.6" y="221" width="16" height="16" fill="#FBF4E5" stroke="#89759E" stroke-width="2.8" transform="rotate(45 997.6 229)"/>
-<circle cx="997.6" cy="229" r="3.5" fill="#89759E"/>
+<g class="repository" data-repository="sample-dev/atlas"><title>sample-dev/atlas: 2 recorded events</title>
+<rect x="318.80" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
+<rect x="325.80" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<text x="338.8" y="436.0" class="micro" text-anchor="middle">02</text>
+<text x="360.8" y="432.0" class="name" text-anchor="start">atlas</text>
+<text x="360.8" y="447.0" class="detail" text-anchor="start">2 events  ·  2 units</text>
 </g>
-<g class="train" aria-hidden="true">
-<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#89759E" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
-<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;0.374969;1.000000;1.000000" keyTimes="0.000000;0.333333;0.666667;1.000000" path="M 197,229 L 497.2,229 L 997.6,229"/>
+<g class="repository" data-repository="sample-dev/ember"><title>sample-dev/ember: 2 recorded events</title>
+<rect x="547.60" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
+<rect x="554.60" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<text x="567.6" y="436.0" class="micro" text-anchor="middle">03</text>
+<text x="589.6" y="432.0" class="name" text-anchor="start">ember</text>
+<text x="589.6" y="447.0" class="detail" text-anchor="start">2 events  ·  3 units</text>
 </g>
-<circle class="pulse" cx="497.2" cy="229" r="17" fill="none" stroke="#89759E" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="3s" repeatCount="indefinite"/>
-</circle>
-<circle class="pulse" cx="997.6" cy="229" r="17" fill="none" stroke="#89759E" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="6s" repeatCount="indefinite"/>
-</circle>
+<g class="repository" data-repository="sample-dev/orbit"><title>sample-dev/orbit: 2 recorded events</title>
+<rect x="776.40" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
+<rect x="783.40" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<text x="796.4" y="436.0" class="micro" text-anchor="middle">04</text>
+<text x="818.4" y="432.0" class="name" text-anchor="start">orbit</text>
+<text x="818.4" y="447.0" class="detail" text-anchor="start">2 events  ·  6 units</text>
 </g>
-<g class="line-issue_opened">
-<rect x="45" y="255" width="9" height="17" rx="4.5" fill="#B38445"/>
-<text x="66" y="270" class="line-name" text-anchor="start" >DISCUSS</text>
-<path d="M197 266H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
-<path d="M197 266H1141" fill="none" stroke="#B38445" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
-<path d="M197 266H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
-<g class="stop" tabindex="0" aria-label="sample-dev/orbit · Issues opened: demo-005 (28 Sep 2026 06:30 UTC, 1 unit(s))">
-<title>sample-dev/orbit · Issues opened: demo-005 (28 Sep 2026 06:30 UTC, 1 unit(s))</title>
-<circle class="focus-ring" cx="830.8" cy="266" r="13" fill="none" stroke="#B38445" stroke-width="0" opacity=".85"/>
-<rect x="822.8" y="258" width="16" height="16" fill="#FBF4E5" stroke="#B38445" stroke-width="2.8" transform="rotate(45 830.8 266)"/>
-<circle cx="830.8" cy="266" r="3.5" fill="#B38445"/>
+<g class="repository" data-repository="sample-dev/harbour"><title>sample-dev/harbour: 2 recorded events</title>
+<rect x="1005.20" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
+<rect x="1012.20" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<text x="1025.2" y="436.0" class="micro" text-anchor="middle">05</text>
+<text x="1047.2" y="432.0" class="name" text-anchor="start">harbour</text>
+<text x="1047.2" y="447.0" class="detail" text-anchor="start">2 events  ·  5 units</text>
 </g>
-<g class="train" aria-hidden="true">
-<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#B38445" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
-<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;1.000000;1.000000" keyTimes="0.000000;0.500000;1.000000" path="M 197,266 L 830.8,266"/>
-</g>
-<circle class="pulse" cx="830.8" cy="266" r="17" fill="none" stroke="#B38445" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="4.5s" repeatCount="indefinite"/>
-</circle>
-</g>
-<g class="line-release">
-<rect x="45" y="292" width="9" height="17" rx="4.5" fill="#607D9A"/>
-<text x="66" y="307" class="line-name" text-anchor="start" >SHIP</text>
-<path d="M197 303H1141" fill="none" stroke="#CCBFA9" stroke-width="9" stroke-linecap="round" opacity=".45"/>
-<path d="M197 303H1141" fill="none" stroke="#607D9A" stroke-width="6" stroke-linecap="square" opacity="0.85"/>
-<path d="M197 303H1141" fill="none" stroke="#FBF4E5" stroke-width="1.2" opacity=".65"/>
-<g class="stop" tabindex="0" aria-label="sample-dev/aurora · Releases: demo-007 (24 Oct 2026 11:00 UTC, 1 unit(s))">
-<title>sample-dev/aurora · Releases: demo-007 (24 Oct 2026 11:00 UTC, 1 unit(s))</title>
-<circle class="focus-ring" cx="330.4" cy="303" r="13" fill="none" stroke="#607D9A" stroke-width="0" opacity=".85"/>
-<rect x="322.4" y="295" width="16" height="16" fill="#FBF4E5" stroke="#607D9A" stroke-width="2.8" transform="rotate(45 330.4 303)"/>
-<circle cx="330.4" cy="303" r="3.5" fill="#607D9A"/>
-</g>
-<g class="train" aria-hidden="true">
-<rect x="-13" y="-8" width="26" height="16" rx="6" fill="#607D9A" stroke="#322F2C" stroke-opacity=".35" stroke-width="1"/>
-<rect x="-7" y="-5" width="7" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<rect x="3" y="-5" width="5" height="5" rx="1.5" fill="#F0E8D9" opacity=".85"/>
-<animateMotion dur="9s" repeatCount="indefinite" calcMode="linear" keyPoints="0.000000;1.000000;1.000000" keyTimes="0.000000;0.500000;1.000000" path="M 197,303 L 330.4,303"/>
-</g>
-<circle class="pulse" cx="330.4" cy="303" r="17" fill="none" stroke="#607D9A" stroke-width="2" opacity="0" aria-hidden="true">
-<animate attributeName="opacity" values="0;.85;0" dur="1.1s" begin="4.5s" repeatCount="indefinite"/>
-</circle>
-</g>
-<path d="M43 317H1156" stroke="#CCBFA9" stroke-width="1"/>
-<text x="54" y="337" class="small" text-anchor="start" >LINES = EVENT TYPES   ·   TRAIN JOURNEYS = UTC-ORDERED REPLAYS   ·   STATIONS = REPOSITORIES</text>
-<text x="1140" y="337" class="small" text-anchor="end" >REPLAY  /  DEMO ONLY</text>
+<path d="M91 491H1229" stroke="#CDBEA7" stroke-width=".8"/>
+<text x="93.0" y="505.0" class="micro" text-anchor="start">DEMO • NOT AN ACTUAL GITHUB CONTRIBUTION GRAPH</text>
+<text x="1227.0" y="505.0" class="micro" text-anchor="end">ALL SUPPLIED EVENTS IN VIEW</text>
 </svg>

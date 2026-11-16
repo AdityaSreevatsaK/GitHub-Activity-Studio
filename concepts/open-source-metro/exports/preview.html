@@ -1,27 +1,39 @@
-<!doctype html>
-<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Open Source Metro | Design laboratory</title>
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Source Metro | Calendar + Transit Studio</title>
 <style>
-:root{color-scheme:dark;font-family:system-ui,Segoe UI,sans-serif;background:#081521;color:#e9f4fa}
-*{box-sizing:border-box}body{margin:0;padding:clamp(18px,4vw,55px)}main{max-width:1400px;margin:auto}
-.eyebrow{color:#61deca;text-transform:uppercase;letter-spacing:.22em;font-size:.75rem;font-weight:800}
-h1{font-size:clamp(2rem,5vw,3.8rem);letter-spacing:-.05em;margin:.3em 0}.lede{max-width:65ch;color:#a7bbc9;line-height:1.65}
-.controls{display:flex;flex-wrap:wrap;gap:15px;margin:30px 0;align-items:end}label{display:grid;gap:7px;color:#a7bbc9;font-size:.78rem;text-transform:uppercase;letter-spacing:.13em}
-select{background:#152838;color:#fff;padding:10px 28px 10px 12px;border:1px solid #3c5666;border-radius:8px;font:600 1rem system-ui}
-.figure{padding:15px;border:1px solid #2b4152;border-radius:18px;background:#0e2030;box-shadow:0 20px 70px #0004}
-object{width:100%;height:auto;aspect-ratio:1200/376;display:block}.figure.stress object{aspect-ratio:1200/892}
-.caption{font-size:.84rem;color:#a7bbc9;margin:12px 4px 2px}p{line-height:1.6}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:24px 0}.tile{padding:18px;background:#102535;border:1px solid #2b4152;border-radius:12px}.tile strong{display:block;margin-bottom:5px}.tile span{color:#a7bbc9;font-size:.9rem}
-a{color:#7de3d2}@media(max-width:700px){body{padding:14px}.figure{padding:2px}.figure object{min-width:0}}
-</style></head><body><main><span class="eyebrow">Concept 04 · Demonstration data</span><h1>Open Source Metro</h1>
-<p class="lede">Repositories become stations. Five event types have dedicated services. Trains replay the recorded event sequence on each service. Tracks imply <strong>shared event types only</strong>, never dependencies between repositories.</p>
-<div class="controls"><label for="style">Visual language<select id="style"><option value="modern">Contemporary metro</option><option value="vintage">Vintage diagram</option></select></label><label for="scheme">Colour scheme<select id="scheme"><option value="dark">Night</option><option value="light">Day</option></select></label><label for="motion">Motion<select id="motion"><option value="animated">Animated replay</option><option value="still">Still / reduced motion</option></select></label><label for="scenario">Network<select id="scenario"><option value="normal">5 stations</option><option value="stress">17-station stress test</option></select></label></div>
-<div class="figure" id="figure"><object id="map" type="image/svg+xml" data="modern-dark.svg" aria-label="Metro map generated from synthetic GitHub activity">Your browser cannot display SVG. Open the SVG file directly.</object><p class="caption" id="caption">Five synthetic repositories · hover or keyboard-focus stations for event details · playback is illustrative.</p></div>
-<div class="tiles"><div class="tile"><strong>Routes are factual categories</strong><span>Commit, opened PR, merged PR, opened issue and release services remain distinct.</span></div><div class="tile"><strong>Replays are deterministic</strong><span>Events are ordered by UTC timestamp then stable ID. Multiple events may call at the same station.</span></div><div class="tile"><strong>Profile-safe fallback</strong><span>Still SVG is available for reduced-motion and GitHub renderers that do not animate inline SVGs.</span></div></div>
-<p class="lede">This is a <strong>synthetic demonstration</strong>, not a record of the profile owner's actual contributions. No GitHub token, API request, external font or remote library is required.</p>
+:root{color-scheme:dark;background:#08111d;color:#ecf5fc;font:16px system-ui,Segoe UI,sans-serif}
+*{box-sizing:border-box}body{margin:0;padding:clamp(15px,3vw,42px)}main{max-width:1450px;margin:auto}
+h1{font-weight:800;letter-spacing:-.045em;font-size:clamp(2rem,4.5vw,4rem);margin:4px 0 8px}
+.eyebrow{color:#48dfbc;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+.lede{max-width:72ch;color:#b0c2d0;line-height:1.55}
+.controls{display:flex;gap:15px;flex-wrap:wrap;margin:24px 0}
+label{display:grid;gap:6px;font-size:.78rem;letter-spacing:.1em;font-weight:700;text-transform:uppercase;color:#abc5d7}
+select{padding:10px 15px;border-radius:8px;border:1px solid #3c5e73;background:#142b3c;color:#fff;font:600 1rem system-ui}
+.figure{border:1px solid #2c4558;background:#0d1c29;border-radius:20px;padding:13px;box-shadow:0 20px 70px #0005}
+object{width:100%;display:block;aspect-ratio:1320/540}
+.figure.stress object{aspect-ratio:1320/595}
+.small{color:#acc1d0;font-size:.86rem;line-height:1.65;margin:15px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:22px 0}
+.tile{background:#112736;border:1px solid #2c4558;padding:20px;border-radius:12px}
+.tile b{display:block;margin-bottom:7px}.tile p{color:#afc2d0;line-height:1.5;font-size:.9rem;margin:0}
+a{color:#84e9d1}
+@media(max-width:700px){body{padding:12px}.figure{padding:2px}select{max-width:100%}}
+</style></head><body><main>
+<div class="eyebrow">Concept 04 / Synthetic demo / Offline</div><h1>Open Source Metro</h1>
+<p class="lede">The GitHub-style <strong>53-week by 7-day contribution grid is the foundation</strong>. Metro services weave through actual recorded days; repository stations are indexed below. The supplied fixture is intentionally sparse. Empty days are <em>not evidence</em> of zero GitHub contributions.</p>
+<div class="controls"><label for="style">Art direction<select id="style"><option value="modern">Metropolitan</option><option value="vintage">Vintage transport</option></select></label>
+<label for="scheme">Canvas<select id="scheme"><option value="dark">Night</option><option value="light">Day</option></select></label>
+<label for="motion">Replay<select id="motion"><option value="still">Still (GitHub-friendly)</option><option value="animated">Animated</option></select></label>
+<label for="scenario">Dataset<select id="scenario"><option value="normal">Shared fixture: 5 stations</option><option value="stress">Synthetic 17-station stress test</option></select></label></div>
+<div class="figure" id="figure"><object id="map" data="modern-dark-still.svg" type="image/svg+xml" aria-label="GitHub-style contribution calendar crossed by source-backed metro routes">Open the SVG export directly if your browser does not display it.</object></div>
+<p class="small" id="caption">Illustration from the shared synthetic fixture, not the owner's actual GitHub contributions.</p>
+<div class="tiles"><div class="tile"><b>The grid is the canvas</b><p>53 Sunday-to-Saturday columns, weekdays, month labels and observed-event density. No fabricated history.</p></div>
+<div class="tile"><b>Transit routes are factual</b><p>Five event-type services call only at dated source events. Trains, when enabled, traverse those routes.</p></div>
+<div class="tile"><b>Stations are real identifiers</b><p>Named repositories, exact event IDs and UTC dates are disclosed in calendar-cell tooltips and accessible labels.</p></div></div>
+<p class="small">No token, external API, JavaScript library, external fonts or paid service required. Animated SVG playback in GitHub README previews is not guaranteed.</p>
 <script>
-const style=document.getElementById('style'),scheme=document.getElementById('scheme'),motion=document.getElementById('motion'),scenario=document.getElementById('scenario'),map=document.getElementById('map'),figure=document.getElementById('figure'),caption=document.getElementById('caption');
+const style=document.getElementById('style'),scheme=document.getElementById('scheme'),motion=document.getElementById('motion'),scenario=document.getElementById('scenario'),map=document.getElementById('map'),fig=document.getElementById('figure'),caption=document.getElementById('caption');
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)motion.value='still';
-function sync(){const stress=scenario.value==='stress';const name=stress?'stress-'+style.value+'-'+scheme.value+'-'+(motion.value==='still'?'still':'animated')+'.svg':style.value+'-'+scheme.value+(motion.value==='still'?'-still':'')+'.svg';map.data=name;map.style.aspectRatio=stress?'1200 / 892':'1200 / 376';figure.classList.toggle('stress',stress);caption.textContent=(stress?'17-station synthetic stress scenario':'5-station shared synthetic fixture')+' · hover or keyboard-focus platforms for source-event IDs · not real GitHub contributions.';}
-[style,scheme,motion,scenario].forEach(el=>el.addEventListener('change',sync));sync();
+function refresh(){let stress=scenario.value==='stress';let sample=stress?'stress-':'';let name=sample+style.value+'-'+scheme.value+(motion.value==='still'?'-still':'-animated')+'.svg';map.data=name;fig.classList.toggle('stress',stress);map.style.aspectRatio=stress?'1320/595':'1320/540';caption.textContent=(stress?'17-station synthetic scale scenario':'Five repositories from the shared synthetic fixture')+' / source-observed events only / not a complete GitHub contributions history.';}
+for(const select of [style,scheme,motion,scenario])select.addEventListener('change',refresh);refresh();
 </script></main></body></html>

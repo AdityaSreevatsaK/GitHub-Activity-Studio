@@ -351,4 +351,6 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    # The public CLI now uses the calendar-first GitHub contribution-map design.
+    from calendar_metro import main as calendar_main
+    calendar_main()
