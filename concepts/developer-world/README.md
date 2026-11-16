@@ -21,18 +21,18 @@ SVG exports are self-contained and use no external resources. The static fallbac
 
 ## What each piece means
 
-- **53 columns × 7 rows:** chronological Sunday-to-Saturday weeks ending in the week of `generated_at` (UTC). The six unused future days of the current week are muted. Month names and weekday labels remain visible.
+- **53 columns × 7 rows:** chronological Sunday-to-Saturday weeks ending in the week of `generated_at` (UTC). Remaining days after the UTC snapshot date are muted. Month names and weekday labels remain visible.
 - **One tile = one UTC date.** Its colour and physical growth come from recorded source events on that date only. The same activity is shown in both layouts.
 - **Daily activity stages:** 0 units = quiet tile; 1–2 = sandy islet / field; 3–5 = greenery / cottage; 6–9 = workshop / building; 10+ = banner / tower. All quantities are source event `count` units, **not** guessed GitHub contributions.
 - **Event-kind details:** release = beacon; PR merged = bridge detail; PR opened = work sign; issue opened = notice; commits = plant growth. These are visual motifs, not additional records.
-- **Repositories:** up to five alphabetical `full_name` identities receive numbered markers and legend entries. Markers anchor to each repository's highest-unit, non-conflicting recorded date within the displayed window, selected using all snapshot events. Markers appear on the grid only once their associated date has that repository's visible activity. Unmappable repositories stay in the legend without a made-up date.
+- **Repositories:** up to five repositories with the most **recorded in-window event units** receive numbered landmarks and legend entries; ties use alphabetical `full_name` order. The selection is computed from the full snapshot, so timeline playback never reorders buildings. Markers anchor to each repository's highest-unit, non-conflicting recorded date within the displayed window, selected using all eligible in-window snapshot events. Markers appear on the grid only once their associated date has that repository's visible activity. Unmappable repositories stay in the legend without a made-up date.
 - **Transparency:** dates with no supplied events mean **no recorded event in this snapshot**, not proven zero contributions. Events outside the calendar window, including dates after the snapshot, do not colour tiles and are counted in the footer. More than five repositories are disclosed as omitted.
 
 The shared fixture has **five repositories, ten distinct events and 20 recorded event units on ten dates**. The calendar is intentionally sparse because the fixture is sparse. We never fill cells with invented events.
 
 ## Windows PowerShell
 
-Requires Git, Node.js 18+ and any modern browser. No `npm install`, Python, tokens, API requests or paid services.
+Requires Git, Node.js 18+ and any modern browser. No `npm install`, Python, tokens, API requests or paid services. You can optionally run `npm run preview`, `npm run export` and `npm test` directly from `concepts/developer-world/`.
 
 ~~~powershell
 git clone https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio.git
@@ -60,7 +60,7 @@ Use `--progress 0` to see the quiet starting calendar, `--progress 4` to show fo
 
 ## Contract, limits and compatibility
 
-- Consumes the shared [v1 normalised event snapshot](../../docs/DATA_CONTRACT.md). Deduplicates event IDs and sorts by UTC timestamp then ID. It does not treat all types of events as commits.
+- Consumes the shared [v1 normalised event snapshot](../../docs/DATA_CONTRACT.md). Deduplicates event IDs and sorts by the **true UTC chronology**, including timestamps with different fractional-second precision, then by ID. It does not treat all types of events as commits.
 - Validates source format and event counts; escapes SVG labels, supports long names and empty datasets, honours `prefers-reduced-motion`, and uses no external artwork.
 - Deterministic for an identical snapshot and timeline step. The layout uses the same 53×7 date coordinates irrespective of activity, unlike a free-form world layout.
 - Supports up to 500 repository records and 20,000 event records, but only five compact legend landmarks. Month labels and cell detail remain readable in the browser; the wide SVG naturally scales down on a mobile README.
