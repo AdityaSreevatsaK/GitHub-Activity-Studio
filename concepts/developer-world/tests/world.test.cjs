@@ -158,7 +158,7 @@ test("calendar render has every date once, clear source disclosure and no script
   assert.equal((svg.match(/data-date="/g)||[]).length,371);
   assert.equal((svg.match(/<g\b/g)||[]).length,(svg.match(/<\/g>/g)||[]).length);
   assert.match(svg,/SYNTHETIC DEMO/);
-  assert.match(svg,/Empty cells mean no events recorded/);
+  assert.match(svg,/Unrecorded dates are not proof of zero GitHub contributions/);
   assert.match(svg,/animation:none!important/);
   assert.doesNotMatch(svg,/<script[\s>]/i);
   assert.ok(Buffer.byteLength(svg,"utf8")<350000);
