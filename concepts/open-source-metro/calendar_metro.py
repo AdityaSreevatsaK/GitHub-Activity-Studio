@@ -29,7 +29,7 @@ SERVICE_COLOURS = {
 THEMES = {
     ("modern", "dark"): dict(bg="#08111D", paper="#101D2A", panel="#111F2C", ink="#E9F4FF", muted="#97ADC2", faint="#4E6880", rule="#263B4D", empty="#1A2A38", greens=("#204E4A", "#237B68", "#2AAA84", "#4DE7B2")),
     ("modern", "light"): dict(bg="#E7F0F5", paper="#FFFFFF", panel="#F8FCFF", ink="#123245", muted="#527184", faint="#7D9BAA", rule="#D2DFE7", empty="#E5EEF3", greens=("#C2EFDA", "#88DAB5", "#47B98E", "#17845F")),
-    ("vintage", "light"): dict(bg="#E9DFCB", paper="#F7EEDC", panel="#FCF5E8", ink="#3A332F", muted="#766C60", faint="#9C8C78", rule="#CDBEA7", empty="#E6DCCC", greens=("#C5D5BE", "#96BD9E", "#679980", "#3C7368")),
+    ("vintage", "light"): dict(bg="#E9DFCB", paper="#F7EEDC", panel="#FCF5E8", ink="#3A332F", muted="#73685B", faint="#9C8C78", rule="#CDBEA7", empty="#E6DCCC", greens=("#C5D5BE", "#96BD9E", "#679980", "#3C7368")),
     ("vintage", "dark"): dict(bg="#22292A", paper="#303638", panel="#343C3B", ink="#F1E8D4", muted="#B2AC9B", faint="#878D7B", rule="#606658", empty="#404B47", greens=("#496959", "#5A8672", "#77A487", "#B0CE9E")),
 }
 WEEKS = 53

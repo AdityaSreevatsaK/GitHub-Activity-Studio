@@ -3,11 +3,11 @@
 <desc id="description">Synthetic demo. A fifty-three-week, seven-day contribution-style grid displays ONLY source-observed event units, not a complete GitHub contributions history. Five coloured metro services trace recorded event types in chronological UTC order. Repo station names appear below the map.</desc>
 <defs><style><![CDATA[
 .mast{font:800 35px Georgia,serif;fill:#3A332F;letter-spacing:-.8px}
-.sub{font:600 11px system-ui,sans-serif;fill:#766C60;letter-spacing:1px}
-.micro{font:700 9px system-ui,sans-serif;fill:#766C60;letter-spacing:.6px}
-.month{font:700 11px system-ui,sans-serif;fill:#766C60}
+.sub{font:600 11px system-ui,sans-serif;fill:#73685B;letter-spacing:1px}
+.micro{font:700 9px system-ui,sans-serif;fill:#73685B;letter-spacing:.6px}
+.month{font:700 11px system-ui,sans-serif;fill:#73685B}
 .name{font:700 13px Georgia,serif;fill:#3A332F}
-.detail{font:500 11px system-ui,sans-serif;fill:#766C60}
+.detail{font:500 11px system-ui,sans-serif;fill:#73685B}
 .day:focus .focus{stroke-width:3;opacity:1}.day:focus{outline:none}
 @media(prefers-reduced-motion:reduce){.train,.pulse{display:none!important}}
 ]]></style></defs>
@@ -15,7 +15,7 @@
 <rect x="18" y="16" width="1284" height="508" rx="9" fill="#F7EEDC" stroke="#CDBEA7" stroke-width="2"/>
 <rect x="28" y="26" width="1264" height="488" rx="3" fill="none" stroke="#CDBEA7" stroke-width="1.1"/>
 <path d="M43 111H1277 M43 488H1277" stroke="#CDBEA7" stroke-width="2"/>
-<text x="1230" y="64" font-size="29" font-family="Georgia,serif" fill="#766C60" text-anchor="end" opacity=".3">M</text>
+<text x="1230" y="64" font-size="29" font-family="Georgia,serif" fill="#73685B" text-anchor="end" opacity=".3">M</text>
 <text x="67.0" y="69.0" class="mast" text-anchor="start">OPEN SOURCE METRO</text>
 <text x="69.0" y="89.0" class="sub" text-anchor="start">A CONTRIBUTION CALENDAR REIMAGINED AS A TRANSIT NETWORK</text>
 <text x="1174.0" y="54.0" class="micro" text-anchor="end">SYNTHETIC DEMONSTRATION</text>
@@ -517,35 +517,35 @@
 <text x="1226.0" y="400.0" class="micro" text-anchor="end">MARKERS = RECORDED EVENTS   •   ROUTES = EVENT TYPES</text>
 <g class="repository" data-repository="sample-dev/aurora"><title>sample-dev/aurora: 2 recorded events</title>
 <rect x="90.00" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
-<rect x="97.00" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<rect x="97.00" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#73685B" stroke-width="1.4"/>
 <text x="110.0" y="436.0" class="micro" text-anchor="middle">01</text>
 <text x="132.0" y="432.0" class="name" text-anchor="start">aurora</text>
 <text x="132.0" y="447.0" class="detail" text-anchor="start">2 events  ·  4 units</text>
 </g>
 <g class="repository" data-repository="sample-dev/atlas"><title>sample-dev/atlas: 2 recorded events</title>
 <rect x="318.80" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
-<rect x="325.80" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<rect x="325.80" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#73685B" stroke-width="1.4"/>
 <text x="338.8" y="436.0" class="micro" text-anchor="middle">02</text>
 <text x="360.8" y="432.0" class="name" text-anchor="start">atlas</text>
 <text x="360.8" y="447.0" class="detail" text-anchor="start">2 events  ·  2 units</text>
 </g>
 <g class="repository" data-repository="sample-dev/ember"><title>sample-dev/ember: 2 recorded events</title>
 <rect x="547.60" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
-<rect x="554.60" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<rect x="554.60" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#73685B" stroke-width="1.4"/>
 <text x="567.6" y="436.0" class="micro" text-anchor="middle">03</text>
 <text x="589.6" y="432.0" class="name" text-anchor="start">ember</text>
 <text x="589.6" y="447.0" class="detail" text-anchor="start">2 events  ·  3 units</text>
 </g>
 <g class="repository" data-repository="sample-dev/orbit"><title>sample-dev/orbit: 2 recorded events</title>
 <rect x="776.40" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
-<rect x="783.40" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<rect x="783.40" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#73685B" stroke-width="1.4"/>
 <text x="796.4" y="436.0" class="micro" text-anchor="middle">04</text>
 <text x="818.4" y="432.0" class="name" text-anchor="start">orbit</text>
 <text x="818.4" y="447.0" class="detail" text-anchor="start">2 events  ·  6 units</text>
 </g>
 <g class="repository" data-repository="sample-dev/harbour"><title>sample-dev/harbour: 2 recorded events</title>
 <rect x="1005.20" y="412" width="222.80" height="48" rx="3" fill="#FCF5E8" stroke="#CDBEA7" stroke-width=".9"/>
-<rect x="1012.20" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#766C60" stroke-width="1.4"/>
+<rect x="1012.20" y="420" width="25" height="25" rx="2" fill="#F7EEDC" stroke="#73685B" stroke-width="1.4"/>
 <text x="1025.2" y="436.0" class="micro" text-anchor="middle">05</text>
 <text x="1047.2" y="432.0" class="name" text-anchor="start">harbour</text>
 <text x="1047.2" y="447.0" class="detail" text-anchor="start">2 events  ·  5 units</text>
