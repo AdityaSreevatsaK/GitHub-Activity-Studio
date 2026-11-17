@@ -254,3 +254,13 @@ test("moving cargo fades at the loop boundaries but static images do not rely on
  assert.doesNotMatch(still,/attributeName="opacity"/);
  assert.equal((still.match(/data-package="/g)||[]).length,2);
 });
+
+test("seven calendar-to-factory signals reflect each selected day's actual recorded units",()=>{
+ const active=render(fixture,{selectedWeek:51});
+ assert.match(active,/<title>2026-11-09: 4 recorded units<\/title>/);
+ assert.match(active,/<title>2026-11-13: 1 recorded units<\/title>/);
+ assert.match(active,/<title>2026-11-10: 0 recorded units<\/title>/);
+ const idle=render(fixture,{selectedWeek:52});
+ assert.doesNotMatch(idle,/data-package="/);
+ assert.match(idle,/<title>2026-11-16: 0 recorded units<\/title>/);
+});
