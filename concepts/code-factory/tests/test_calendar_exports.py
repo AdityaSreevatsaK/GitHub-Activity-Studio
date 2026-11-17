@@ -27,6 +27,10 @@ class TestCalendarExports(unittest.TestCase):
             "pixel-dark-still.svg", "pixel-light-still.svg",
             "isometric-light-release-week-still.svg",
             "pixel-dark-inspection-week-still.svg",
+            "account-isometric-dark-still.svg",
+            "account-isometric-light-still.svg",
+            "account-pixel-dark-still.svg",
+            "account-pixel-light-still.svg",
         )
         for name in names:
             with self.subTest(name=name):
@@ -41,7 +45,30 @@ class TestCalendarExports(unittest.TestCase):
                 self.assertLess(file.stat().st_size, 150_000)
                 self.assertFalse(list(root.iter(f"{NS}script")))
                 self.assertFalse(list(root.iter(f"{NS}foreignObject")))
-                self.assertIn("SYNTHETIC DEMO", file.read_text(encoding="utf-8"))
+                content = file.read_text(encoding="utf-8")
+                if name.startswith("account-"):
+                    self.assertIn("PUBLIC GITHUB SNAPSHOT", content)
+                    self.assertIn("@AdityaSreevatsaK", content)
+                    self.assertNotIn("SYNTHETIC DEMO", content)
+                else:
+                    self.assertIn("SYNTHETIC DEMO", content)
+
+    def test_personal_account_stills_have_source_backed_cargo(self):
+        import json
+        snapshot_path = ROOT / "fixtures" / "adityasreevatsak-public-activity.json"
+        snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+        self.assertEqual(snapshot["source"], "github")
+        self.assertEqual(snapshot["user"]["login"], "AdityaSreevatsaK")
+        self.assertGreater(len(snapshot["activity"]), 100)
+        for layout in ("isometric", "pixel"):
+            for theme in ("dark", "light"):
+                file = EXPORTS / f"account-{layout}-{theme}-still.svg"
+                root = ET.parse(file).getroot()
+                parcels = [el.attrib for el in root.iter() if "data-package" in el.attrib]
+                self.assertGreater(len(parcels), 0)
+                self.assertLessEqual(len(parcels), 14)
+                self.assertTrue(all(item["data-repo"].count("/") == 1 for item in parcels))
+                self.assertTrue(all(not item["data-repo"].startswith("sample-dev/") for item in parcels))
 
     def test_stills_are_motion_free(self):
         for file in EXPORTS.glob("*still.svg"):
