@@ -19,3 +19,14 @@ test("preview exposes keyboard controls, date selection and reduced-motion guida
  assert.match(markup,/courier/);
  assert.match(markup,/builder/);
 });
+
+test("account mode uses its own media and scene rather than the demo artwork",()=>{
+ assert.match(markup,/accountView\?\"exports\/account\/\":\"exports\/\"/);
+ assert.match(markup,/fetch\(assetRoot\+\"scene\.json\"/);
+ assert.match(markup,/renderState\(\);loadArt\(\);setPlaying\(!reduced\)/);
+ const start=markup.indexOf("function loadArt()"),end=markup.indexOf("function setPlaying(",start);
+ assert(start>0&&end>start);
+ const load=markup.slice(start,end);
+ assert(load.includes('art.data=assetRoot+style+"-"+theme+".svg"'));
+ assert(load.includes('el("gif").href=assetRoot+style+"-"+theme+".gif"'));
+});

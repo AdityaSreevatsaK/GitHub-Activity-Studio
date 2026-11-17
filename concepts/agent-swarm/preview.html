@@ -144,7 +144,7 @@ el("recorded-date").addEventListener("change",e=>{selectedDate=e.target.value;in
  const daySelect=el("recorded-date");
  for(const d of scene.calendar.days){const option=document.createElement("option");option.value=d.date;option.textContent=d.date+" ("+d.events+" events)";daySelect.append(option);}
  el("limits").textContent=(scene.truncated?"Animated subset: five most recent repository beacons and up to ten time-stratified eligible events. ":"Calendar covers observed events in the 53-week window. ")+(scene.stale_days>30?"Snapshot is stale by "+scene.stale_days+" days. ":"")+"Agents are illustrative, never operational.";
- renderState();setPlaying(!reduced);
+ renderState();loadArt();setPlaying(!reduced);
  }catch(error){el("tasks").textContent="Could not load scene: "+error.message;el("events").textContent="Build required";setPlaying(false)}})();
 document.addEventListener("visibilitychange",()=>{if(document.hidden&&playing)setPlaying(false)});
 </script>

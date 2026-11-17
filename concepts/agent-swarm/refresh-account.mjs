@@ -129,6 +129,7 @@ export function githubRequest(token=process.env.GITHUB_TOKEN||""){
    "X-GitHub-Api-Version":"2022-11-28"};
   if(token)headers.Authorization="Bearer "+token;
   const response=await fetch("https://api.github.com"+path,{headers,signal:AbortSignal.timeout(20000)});
+  if(response.status===409&&path.includes("/commits?"))return []; // empty public Git repository
   if(!response.ok){
    const retry=response.headers.get("retry-after");
    throw Error("GitHub public API HTTP "+response.status+(retry?"; retry-after "+retry+"s":"")+
