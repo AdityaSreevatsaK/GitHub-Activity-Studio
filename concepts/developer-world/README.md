@@ -1,8 +1,23 @@
 # Developer World
 
+## Real account: AdityaSreevatsaK
+
+**The primary goal is your real GitHub contribution calendar, not a demonstration.** These five previews are generated using GitHub's GraphQL contribution calendar for [AdityaSreevatsaK](https://github.com/AdityaSreevatsaK). The last 365 dates supplied by GitHub determine daily tile growth; recent public GitHub events add optional repository decorations, but never replace the contribution counts.
+
+| Your archipelago | Your village |
+|:---:|:---:|
+| ![Real AdityaSreevatsaK GitHub contribution calendar as archipelago](previews/real-archipelago-dark.svg) | ![Real AdityaSreevatsaK GitHub contribution calendar as village](previews/real-village-light.svg) |
+| [Light theme](previews/real-archipelago-light.svg) · [Still/reduced-motion image](previews/real-archipelago-still.svg) | [Dark theme](previews/real-village-dark.svg) |
+
+**[Explore your real contribution data in the browser](http://127.0.0.1:8787/?sample=real)** after running the local preview. It loads `real-activity.json` by default, with synthetic datasets available as labelled alternatives.
+
+The [real-account GitHub Actions workflow](../../.github/workflows/developer-world-live.yml) collects the public GitHub-visible calendar using its built-in `GITHUB_TOKEN`, validates it, and writes five SVGs directly into this concept branch. It does **not** modify your GitHub profile or other concepts. If those files are not yet present, the collector has not published them; the preview never substitutes synthetic values silently. Public event details are capped by the REST API and are not a full year's event ledger. GitHub GraphQL visibility may exclude private contributions unless they are visible to the workflow identity. Missing API dates are displayed as unknown, not as zero activity.
+
+---
+
 **A GitHub-style contribution calendar that becomes a miniature, evolving world.** Both original worlds use the same 53-week × 7-day UTC calendar. The archipelago turns each recorded day into an island plot; the village turns it into a tiny street-side lot. A day always stays in its original column and weekday row.
 
-> **SYNTHETIC DEMO.** All bundled examples use `shared/fixtures/demo-activity.json`, not the owner's contribution history. This is an **event-log calendar**, not an official complete GitHub contribution calendar.
+> **SYNTHETIC EXAMPLES BELOW.** The following sample galleries use `shared/fixtures/demo-activity.json`, not the owner's contribution history. This is an **event-log calendar**, not an official complete GitHub contribution calendar.
 
 ## See both worlds
 
@@ -47,7 +62,7 @@ git switch concept/developer-world
 node concepts/developer-world/server.cjs
 ~~~
 
-Open **http://127.0.0.1:8787/**. The server preserves safe, allowlisted URL options through its initial redirect, so you can go directly to **http://127.0.0.1:8787/?sample=showcase&layout=archipelago&theme=dark** or **http://127.0.0.1:8787/?sample=showcase&layout=village&theme=light**. Switch between the **unchanged shared synthetic fixture (default)** and the **optional richer synthetic showcase**, then choose archipelago/village and dark/light, scrub the event timeline, click a day on the grid or use the accessible UTC date picker and recorded-day buttons, or upload your own normalised public-data JSON (locally, without sending it to a service). To export a **profile-ready animated GIF**, click **Download animated GIF** in the browser. It samples 8–16 timeline frames at 896 × 280 pixels with moving scenery and a 450 ms frame delay.
+Open **http://127.0.0.1:8787/**. The server preserves safe, allowlisted URL options through its initial redirect, so you can go directly to **http://127.0.0.1:8787/?sample=showcase&layout=archipelago&theme=dark** or **http://127.0.0.1:8787/?sample=showcase&layout=village&theme=light**. The **real account calendar is the default**. You can also switch to the **unchanged shared synthetic fixture** or the **optional richer synthetic showcase**, then choose archipelago/village and dark/light, scrub the event timeline, click a day on the grid or use the accessible UTC date picker and recorded-day buttons, or upload your own normalised public-data JSON (locally, without sending it to a service). To export a **profile-ready animated GIF**, click **Download animated GIF** in the browser. It samples 8–16 timeline frames at 896 × 280 pixels with moving scenery and a 450 ms frame delay.
 
 In another PowerShell window:
 
@@ -72,7 +87,7 @@ Use `--progress 0` to see the quiet starting calendar, `--progress 4` to show fo
 - Supports up to 500 repository records and 20,000 event records, but only five compact legend landmarks. Month labels and cell detail remain readable in the browser; the wide SVG naturally scales down on a mobile README.
 - The optional HTML browser preview provides date inspection, the event slider and local GIF download. **HTML/JavaScript cannot be embedded in a GitHub README.** The downloaded GIF is a standard GIF89a animation and remains animated without CSS or JavaScript. SVG animation through GitHub's image proxy is not guaranteed. The GIF may move even for viewers requesting reduced motion, so provide the [static archipelago alternative](previews/archipelago-still.svg) alongside any GIF. Browser-based GIF conversion still needs cross-browser testing.
 - Events with timestamps later than the snapshot timestamp are not visualised, even if on the same UTC day. Calendar dates use strict Gregorian UTC validation. Activity outside the displayed period is disclosed and excluded from calendar totals.
-- A future collector would need to declare coverage, pagination, recency and access restrictions. This renderer does **not** claim complete GraphQL contribution-calendar coverage from a sparse REST event log.
+- The concept-local [real account collector](collect-github.cjs) now uses the authoritative **GitHub GraphQL contributionsCollection** for each daily contribution count and GitHub REST **public events** only for recent named repository decorations (up to 300 API events). It records explicit coverage, validates the calendar and refuses to substitute inferred zeroes or synthetic history. The two sources are not added together.
 
 ## Trade-offs and review
 
