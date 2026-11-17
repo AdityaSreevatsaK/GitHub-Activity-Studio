@@ -211,6 +211,12 @@ el("file").addEventListener("change",async function(){
   load(value);el("sample").querySelector('option[value="custom"]').disabled=false;el("sample").value="custom";
  }catch(err){el("status").textContent="Input rejected: "+err.message;}
 });
-loadPreset("shared");
+// Query parameters are strictly allowlisted; no remote data URLs are accepted.
+var params=new URLSearchParams(window.location.search);
+if(["archipelago","village"].includes(params.get("layout")))el("layout").value=params.get("layout");
+if(["dark","light"].includes(params.get("theme")))el("theme").value=params.get("theme");
+var selectedPreset=params.get("sample")==="showcase"?"showcase":"shared";
+el("sample").value=selectedPreset;
+loadPreset(selectedPreset);
 })();
 </script></body></html>
