@@ -115,10 +115,10 @@ The `--verify` command checks all generated files byte-for-byte without changing
 - exports/{geometric,robots}-{dark,light}-still.svg: four matching static, accessible alternatives.
 - exports/scene.json: the precise input-derived event choreography. The browser uses this for its phase inspector.
 
-Sample markdown (only use after reviewing the design):
+Sample markdown for your public account (only use after reviewing the design):
 
 ~~~markdown
-![Agent Swarm: synthetic demo activity rendered as a symbolic choreography](https://raw.githubusercontent.com/AdityaSreevatsaK/GitHub-Activity-Studio/concept/agent-swarm/concepts/agent-swarm/exports/geometric-dark.gif)
+![Agent Swarm for AdityaSreevatsaK: public GitHub activity](https://raw.githubusercontent.com/AdityaSreevatsaK/GitHub-Activity-Studio/concept/agent-swarm/concepts/agent-swarm/exports/account/geometric-dark.gif)
 ~~~
 
 GIF is supported as an image format in GitHub READMEs. Animated SVGs may behave differently when served via GitHub's image proxy. **Actual rendered GitHub README verification has not yet been performed.** Neither design has been installed on any profile.
@@ -127,12 +127,12 @@ GIF is supported as an image format in GitHub READMEs. Animated SVGs may behave 
 
 Each observed GitHub event corresponds to **one** symbolic task, not one task per commit. The event timestamp selects a calendar cell; its repository becomes a secondary beacon. The kind determines a separate glyph: commit (C), PR opened (P+), PR merged (PM), issue opened (?), release (R). Its count appears explicitly as source-backed **units within the packet**, never disguised as commits. Each task pairs a **courier** that carries the symbolic event packet with a **builder** that processes it at the recorded-day cell. Both return to the dock. State transitions are queued → assigned → travelling → working → complete → delivered. The entire sequence is a metaphor; the original events were not made by AI agents, and its compressed timeline does not represent actual elapsed time.
 
-The calendar covers **53 weeks** of observed events, while at most **five** recently active repository beacons and **ten latest** event packets are animated. Clipping and out-of-window events are disclosed. Other repository histories are not inferred or invented. Source event IDs are deduplicated, and names are escaped. Empty data, one repository, missing optional metadata, bursty load, long names, invalid input and stale snapshots are handled. A 30-day stale warning is relative to the snapshot's generated timestamp. The account snapshot was collected from public GitHub searches and authored default-branch commits; it is a dated snapshot, not a live streaming connection.
+The calendar covers **53 weeks** of observed events, while at most **five** recently active repository beacons and **ten chronologically sampled** event packets are animated. Clipping and out-of-window events are disclosed. Other repository histories are not inferred or invented. Source event IDs are deduplicated, and names are escaped. Empty data, one repository, missing optional metadata, bursty load, long names, invalid input and stale snapshots are handled. A 30-day stale warning is relative to the snapshot's generated timestamp. The account snapshot was collected from public GitHub searches and authored default-branch commits; it is a dated snapshot, not a live streaming connection.
 
 ## Technical notes and trade-offs
 
-- Engine: standalone deterministic Node.js ES modules, standard library only. Calendar and GIF implementations live in `calendar.mjs` and `calendar-gif.mjs`. No API calls, paid providers, tokens or third-party fonts.
-- Data: the repository's shared/fixtures/demo-activity.json. The normalised contract is documented in docs/DATA_CONTRACT.md. No independently developed collector or invented activity data.
+- Engine: deterministic offline Node.js ES modules using only the standard library. The separate optional `refresh-account.mjs` reads public GitHub API data; no paid providers, stored tokens or third-party fonts.
+- Data: `data/adityasreevatsak-public.json` provides your dated account snapshot; `shared/fixtures/demo-activity.json` and `showcase.mjs` remain synthetic examples. The shared input contract is in docs/DATA_CONTRACT.md. Public refresh logic is contained entirely within Agent Swarm.
 - Geometry: bright recorded-day cells, controlled routes, event halos, and repository beacons. Mini robots add face screens, antennae, charging docks, faint links between adjacent observed days, busy-day markers and paired approaches to activity cells. Both remain recognisable as calendar graphs.
 - Exports: detailed SVG and simplified pixel GIF from the **same calendar and task schedule**, not pixel-identical files. A native LZW encoder avoids extra dependencies.
 - Accessibility: descriptive SVG titles, descriptions, event-intensity legend, demo label, keyboard-operable recorded-date inspection, pause/replay controls and static fallbacks. Reduced-motion preferences initially pause the browser animation. GIFs have no automatic reduced-motion adaptation; use the matching still for each style/theme when necessary.
