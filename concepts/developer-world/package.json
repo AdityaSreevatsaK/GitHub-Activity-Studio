@@ -4,10 +4,11 @@
   "private": true,
   "description": "A GitHub-style activity calendar that evolves into miniature archipelago and village worlds",
   "scripts": {
-    "test": "node --test ./tests/world.test.cjs ./tests/gif.test.cjs ./tests/showcase.test.cjs",
+    "test": "node --test ./tests/world.test.cjs ./tests/gif.test.cjs ./tests/showcase.test.cjs ./tests/real-account.test.cjs",
     "preview": "node ./server.cjs",
     "export": "node ./export.cjs",
-    "showcase": "node ./generate-showcase.cjs"
+    "showcase": "node ./generate-showcase.cjs",
+    "collect-real": "node ./collect-github.cjs"
   },
   "engines": {
     "node": ">=18"
