@@ -83,7 +83,7 @@ async function main(){
    return info?.dates===371&&info.status?.includes("212 dates")?info:null;
   },"synthetic showcase and calendar DOM",30000);
   if(ready.sample!=="showcase"||ready.layout!=="archipelago")throw Error("Incorrect browser preset: "+JSON.stringify(ready));
-  await evaluate('(() => {window.__gifSmoke=null;const original=window.DeveloperWorldGif.createGif;window.DeveloperWorldGif.createGif=function(frames,width,height,delay){const bytes=original.apply(this,arguments);window.__gifSmoke={magic:Array.from(bytes.slice(0,6),b=>String.fromCharCode(b)).join(""),size:bytes.length,frames:frames.length,width,height,delay};return bytes;};document.querySelector("#gif").click();return true;})()');
+  await evaluate('(() => {window.__gifSmoke=null;const original=window.DeveloperWorldGif.createGif;window.DeveloperWorldGif.createGif=function(frames,width,height,delay){const bytes=original.apply(this,arguments);window.__gifSmoke={magic:Array.from(bytes.slice(0,6),b=>String.fromCharCode(b)).join(""),size:bytes.length,frames:frames.length,width,height,delay};window.__gifSmokeBytes=bytes;return bytes;};document.querySelector("#gif").click();return true;})()');
   const gif=await until(async()=>{
    const info=await evaluate('({data:window.__gifSmoke,status:document.querySelector("#status")?.textContent,busy:document.querySelector("#gif")?.disabled})');
    if(info.status?.startsWith("GIF export failed:"))throw Error(info.status);
@@ -93,7 +93,14 @@ async function main(){
      gif.frames!==16||gif.size<5000||gif.size>12*1024*1024){
     throw Error("GIF export metadata unexpected: "+JSON.stringify(gif));
   }
-  console.log("Browser GIF export passed:",JSON.stringify(gif));
+  // Keep one real browser-produced GIF as a downloadable, profile-ready CI artifact.
+  const encoded=await evaluate('(() => {const bytes=window.__gifSmokeBytes;if(!bytes)throw Error("GIF capture missing");let parts=[];for(let i=0;i<bytes.length;i+=16384)parts.push(String.fromCharCode(...bytes.subarray(i,i+16384)));return btoa(parts.join(""));})()');
+  const sample=Buffer.from(encoded,"base64");
+  if(sample.length!==gif.size||sample.subarray(0,6).toString("ascii")!=="GIF89a")throw Error("Browser GIF bytes invalid");
+  const output=path.resolve(__dirname,"../exports/archipelago-showcase.gif");
+  fs.mkdirSync(path.dirname(output),{recursive:true});
+  fs.writeFileSync(output,sample);
+  console.log("Browser GIF export passed:",JSON.stringify(gif),"saved:",output);
  }finally{
   if(connection)connection.socket.close();
   if(chrome&&chrome.exitCode===null){
