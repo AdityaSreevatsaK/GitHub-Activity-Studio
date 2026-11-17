@@ -6,7 +6,7 @@ Three **implemented** GitHub contribution-calendar animations on the isolated [`
 
 ## Three concepts, directly rendered on GitHub
 
-Click any still for its self-contained animated SVG. The table contains **six separate actual exports**; use the full-width previews below for detail.
+Six static comparison images appear in the table, while the three full-width showcases below now **animate natively as GIFs in GitHub Markdown**. Each GIF is a 16-second synthetic demonstration with a linked motionless still. Both night and paper GIFs are committed for every concept.
 
 | | Comet Streaks | Celestial Cartographer | Starforge |
 |:--|:--|:--|:--|
@@ -15,27 +15,27 @@ Click any still for its self-contained animated SVG. The table contains **six se
 
 ### A. Comet Streaks: the meaningful motion
 
-[![SYNTHETIC STRESS TEST: full-width dark GitHub contribution chart, adjacent active days linked into restrained comet paths](assets/stress/comet-night-still.svg)](assets/stress/comet-night-animated.svg)
+[![SYNTHETIC STRESS TEST animated GIF: dark contribution calendar and factual consecutive-day comet streaks](assets/stress/comet-night.gif)](assets/stress/comet-night-still.svg)
 
 **Stars = recorded active days. Brighter = more activity units. Comets = uninterrupted streaks.** A single isolated date stays a star. Missing dates break the run. A Saturday-to-Sunday run stays chronological, but the drawn trail wraps to the next column without a misleading diagonal through unrecorded cells.
 
-[Animated night](assets/stress/comet-night-animated.svg) · [Animated paper](assets/stress/comet-paper-animated.svg) · [Shared ten-event static](assets/comet-night-still.svg)
+[Night GIF](assets/stress/comet-night.gif) · [Paper GIF](assets/stress/comet-paper.gif) · [Night SVG animation](assets/stress/comet-night-animated.svg) · [Paper SVG animation](assets/stress/comet-paper-animated.svg) · [Motionless still](assets/stress/comet-night-still.svg) · [Shared ten-event static](assets/comet-night-still.svg)
 
 ### B. Celestial Cartographer: the editorial survey
 
-[![SYNTHETIC STRESS TEST: paper contribution calendar and a miniature telescope revealing recorded dates as stars](assets/stress/cartographer-paper-still.svg)](assets/stress/cartographer-paper-animated.svg)
+[![SYNTHETIC STRESS TEST animated GIF: paper observatory sweeping recorded contribution dates](assets/stress/cartographer-paper.gif)](assets/stress/cartographer-paper-still.svg)
 
 The small original observatory stays outside the lattice. A moving meridian sweeps **chronologically by week**, revealing only already recorded dates. The final still keeps every real date at exactly the same position.
 
-[Animated night](assets/stress/cartographer-night-animated.svg) · [Animated paper](assets/stress/cartographer-paper-animated.svg) · [Shared ten-event static](assets/cartographer-paper-still.svg)
+[Night GIF](assets/stress/cartographer-night.gif) · [Paper GIF](assets/stress/cartographer-paper.gif) · [Night SVG animation](assets/stress/cartographer-night-animated.svg) · [Paper SVG animation](assets/stress/cartographer-paper-animated.svg) · [Motionless still](assets/stress/cartographer-night-still.svg) · [Shared ten-event static](assets/cartographer-paper-still.svg)
 
 ### C. Starforge: the stellar foundry
 
-[![SYNTHETIC STRESS TEST: dark contribution calendar and a tiny forge that sends sparks to precisely dated cells](assets/stress/starforge-night-still.svg)](assets/stress/starforge-night-animated.svg)
+[![SYNTHETIC STRESS TEST animated GIF: foundry sparks reaching their recorded calendar dates](assets/stress/starforge-night.gif)](assets/stress/starforge-night-still.svg)
 
 A tiny foundry casts **one spark per recorded active date**, ending on its true cell and brightening the star as it arrives. Multiple source events on one day resolve into a single day-star. The spark's brightness depends on the **summed recorded activity units**, not a fictitious number of contributions.
 
-[Animated night](assets/stress/starforge-night-animated.svg) · [Animated paper](assets/stress/starforge-paper-animated.svg) · [Shared ten-event static](assets/starforge-night-still.svg)
+[Night GIF](assets/stress/starforge-night.gif) · [Paper GIF](assets/stress/starforge-paper.gif) · [Night SVG animation](assets/stress/starforge-night-animated.svg) · [Paper SVG animation](assets/stress/starforge-paper-animated.svg) · [Motionless still](assets/stress/starforge-night-still.svg) · [Shared ten-event static](assets/starforge-night-still.svg)
 
 ### Complete source-fixture exports
 
@@ -70,17 +70,18 @@ Open <http://localhost:8000/concepts/constellation/preview.html>. The export CLI
 
 ### Optional GitHub-native animated GIFs
 
-For a reliable animated GitHub README image, use the [optional GIF exporter](export_gif.py) to generate native GIFs from the source-backed SVGs. This uses Pillow and Playwright only when generating GIFs, and is not needed for the normal zero-dependency SVG pipeline.
+Six **native GIFs are committed** in [`assets/stress/`](assets/stress/): three distinct designs, both themes, 720 × 234 pixels, 16 seconds each, under 1.8 MiB per file. They are generated from the same labelled synthetic snapshot as the SVG previews. The [GIF exporter](export_gif.py) uses Pillow and Playwright only for generation; the original SVG pipeline remains dependency-free. A full-duration timing regression guards against GIF encoders silently dropping repeated terminal frames.
 
 ```powershell
 py -3 -m pip install Pillow playwright
 py -3 -m playwright install chromium
 py -3 concepts/constellation/export_gif.py
-py -3 concepts/constellation/export_gif.py --theme paper
+py -3 concepts/constellation/export_gif.py # Regenerate all six GIFs
+py -3 -m unittest concepts/constellation/tests/test_gif.py -v
 py -3 concepts/constellation/tests/browser_smoke.py
 ```
 
-GIFs are generated locally, not yet bundled into the branch. The committed still SVGs are reliable README fallbacks.
+All six GIFs are committed alongside the static SVG fallbacks. GIF images animate in ordinary GitHub Markdown; live browser rendering on GitHub's image proxy has not been independently measured. For reduced-motion viewing, use the linked motionless SVGs.
 
 ## Accuracy, accessibility and GitHub compatibility
 
@@ -88,11 +89,11 @@ GIFs are generated locally, not yet bundled into the branch. The committed still
 - Intensity thresholds for recorded activity **units**: **1, 2–3, 4–6, 7+**. Unlit means **no event in this input**. Mixed-kind unit totals must not be mistaken for official GitHub contribution counts.
 - A 16-second motion cycle uses data-backed cell positions. Comets join consecutive dates only; Cartographer's weekly sweep reveals known active dates; Starforge replays one particle per active date, bounded to 95 particles for very large inputs without hiding cells.
 - All exports are self-contained 1200 × 390 SVGs with accessible `<title>`, `<desc>`, inspectable source-backed links, no external assets or scripts, and truly static alternatives. The browser preview offers keyboard navigation and controls, horizontal scrolling on small screens and `prefers-reduced-motion`.
-- **GitHub rendering limitation:** the six static showcase files are embedded as standard Markdown images and their relative links are present in this branch. **Animated SVG playback through GitHub's image proxy is not verified**; GitHub may rasterise or suppress SVG motion. Open the linked animated `.svg` directly in a compatible browser. The static versions are the reliable README fallback.
+- **GitHub rendering limitation:** native GIFs are embedded as standard Markdown images, with static SVG previews and explicit motionless links. Embedded GIF animation is GitHub-compatible; actual playback through GitHub's image proxy has not been independently browser-verified here. **Animated SVG** motion through GitHub's proxy also remains unverified. Open an animated `.svg` directly in a compatible browser when needed.
 - This remains **an event-sample renderer**, not an official annual contribution collector. GitHub's GraphQL `contributionsCollection.contributionCalendar` is a separate future source contract and must not be conflated with these mixed-event counts.
 
 ## Verification
 
-Locally verified: **28/28 Node regression tests**, SVG XML parsing, image rasterisation, and Chromium browser interactions at **1280 px and 390 px** (all choices, theme, compare, pause, keyboard focus, both fixtures, no document overflow). Browser smoke used an in-memory content server because outbound/local navigation was restricted in the test environment. **Live GitHub-hosted animation rendering has not been independently confirmed.**
+Locally verified: **28/28 Node regression tests**, **5/5 Python GIF regression tests**, six valid animated GIFs (each 16,000 ms with changing frames), SVG XML parsing, image rasterisation, and Chromium browser interactions at **1280 px and 390 px** (all choices, theme, compare, pause, keyboard focus, both fixtures, no document overflow). Browser smoke used an in-memory content server because outbound/local navigation was restricted in the test environment. **Live GitHub-hosted animation rendering has not been independently confirmed.**
 
 Legacy experiments (`calendar_sky.py`, `constellation.py` and their earlier SVG assets/tests) remain in place for comparison, but they are **not** the three new implementations. The existing [draft PR #1](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/1) is for review only; do not merge or edit the owner's live profile without approval.
