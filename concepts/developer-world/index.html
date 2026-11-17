@@ -43,6 +43,7 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 <div class="controls">
 <label for="layout">World<select id="layout"><option value="archipelago">The Isles of Code · Archipelago</option><option value="village">The Little Buildtown · Village</option></select></label>
 <label for="theme">Palette<select id="theme"><option value="dark">Moonlit</option><option value="light">Daybreak</option></select></label>
+<label for="sample">Activity dataset<select id="sample"><option value="shared">Shared synthetic fixture (10 days)</option><option value="showcase">Synthetic world showcase (212 days)</option><option value="custom" disabled>Local upload</option></select></label>
 <label for="file">Input JSON<input id="file" type="file" accept=".json,application/json"></label>
 <div class="actions"><button id="motion" aria-pressed="true">Pause motion</button><button id="still">Download still</button><button id="save">Download SVG</button><button id="gif" class="primary">Download animated GIF</button></div>
 </div>
@@ -63,7 +64,7 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 <li>Repository markers 1–5 identify actual source repositories on their most active distinct recorded dates. Commit, PR, issue and release symbols remain distinct.</li></ul>
 <p class="hint">Upload any normalised public-activity JSON snapshot to replace the demo. No API, token or external service is used.</p></section>
 </div>
-<p class="hint">Only five repository landmarks are shown in the compact legend. The calendar is an event-log visualisation, not the complete GitHub Contributions API calendar. Reduced-motion preferences are respected. The demo is synthetic, not the owner's history.</p>
+<p class="hint">Try the optional 212-day synthetic showcase to judge a busier world; the original 10-day shared fixture remains the default. Only five repository landmarks are shown in the compact legend. The calendar is an event-log visualisation, not the complete GitHub Contributions API calendar. Reduced-motion preferences are respected. The demo is synthetic, not the owner's history.</p>
 </main>
 <script src="./renderer.js"></script>
 <script src="./gif.js"></script>
@@ -71,7 +72,7 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 (function(){
 "use strict";
 var el=id=>document.getElementById(id);
-var source=null,normal=null,animated=true,timer=null,selectedDate=null;
+var source=null,normal=null,animated=true,timer=null,selectedDate=null,requestSerial=0;
 function stop(){if(timer!==null){clearInterval(timer);timer=null;}el("play").textContent="▶ Play events";}
 function render(){
  if(!source)return;
@@ -191,10 +192,25 @@ el("play").addEventListener("click",function(){
  el("play").textContent="❚❚ Pause events";
  timer=setInterval(function(){var n=Number(el("progress").value)+1;if(n>normal.activity.length){stop();return;}el("progress").value=String(n);render();},950);
 });
-el("file").addEventListener("change",async function(){try{
- var file=el("file").files[0];if(!file)return;if(file.size>2*1024*1024)throw Error("Maximum input 2 MB");
- load(JSON.parse(await file.text()));
-}catch(err){el("status").textContent="Input rejected: "+err.message;}});
-fetch("../../shared/fixtures/demo-activity.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();}).then(load).catch(function(e){el("status").textContent="Unable to open demo fixture: "+e.message+". Use the bundled Node server.";});
+function loadPreset(selection){
+ if(selection!=="shared"&&selection!=="showcase")return;
+ var serial=++requestSerial;
+ var filename=selection==="shared"?"../../shared/fixtures/demo-activity.json":"./showcase-activity.json";
+ el("status").textContent=selection==="shared"?"Loading shared synthetic fixture…":"Loading optional synthetic showcase…";
+ fetch(filename,{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();})
+ .then(function(next){if(serial!==requestSerial)return;load(next);})
+ .catch(function(err){if(serial===requestSerial)el("status").textContent="Cannot open dataset: "+err.message+". Run the bundled Node server.";});
+}
+el("sample").addEventListener("change",function(){if(el("sample").value!=="custom")loadPreset(el("sample").value);});
+el("file").addEventListener("change",async function(){
+ var serial=++requestSerial;
+ try{
+  var file=el("file").files[0];if(!file)return;if(file.size>2*1024*1024)throw Error("Maximum input 2 MB");
+  var value=JSON.parse(await file.text());
+  if(serial!==requestSerial)return;
+  load(value);el("sample").querySelector('option[value="custom"]').disabled=false;el("sample").value="custom";
+ }catch(err){el("status").textContent="Input rejected: "+err.message;}
+});
+loadPreset("shared");
 })();
 </script></body></html>
