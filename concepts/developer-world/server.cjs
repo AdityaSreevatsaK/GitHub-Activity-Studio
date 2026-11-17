@@ -5,8 +5,17 @@ function createServer(dir=root){
  const base=path.resolve(dir);
  return http.createServer((req,res)=>{
   if(!["GET","HEAD"].includes(req.method)){res.writeHead(405,{"Allow":"GET, HEAD"});res.end();return;}
-  let pathname;try{pathname=decodeURIComponent(new URL(req.url,"http://localhost").pathname);}catch{res.writeHead(400);res.end();return;}
-  if(pathname==="/"){res.writeHead(302,{"Location":"/concepts/developer-world/index.html","Cache-Control":"no-store"});res.end();return;}
+  let pathname,requestUrl;try{requestUrl=new URL(req.url,"http://localhost");pathname=decodeURIComponent(requestUrl.pathname);}catch{res.writeHead(400);res.end();return;}
+  if(pathname==="/"){
+   // Preserve only known preview options. Arbitrary query strings are never reflected.
+   const accepted={sample:["shared","showcase"],layout:["archipelago","village"],theme:["dark","light"]},params=new URLSearchParams();
+   for(const [key,values] of Object.entries(accepted)){
+    const value=requestUrl.searchParams.get(key);
+    if(value!==null&&values.includes(value))params.set(key,value);
+   }
+   const target="/concepts/developer-world/index.html"+(params.size?"?"+params.toString():"");
+   res.writeHead(302,{"Location":target,"Cache-Control":"no-store"});res.end();return;
+  }
   const file=path.resolve(base,"."+pathname),relative=path.relative(base,file),ext=path.extname(file).toLowerCase();
   if(relative.startsWith("..")||path.isAbsolute(relative)||pathname.includes("\\")||!mime[ext]||relative.split(path.sep).some(x=>x.startsWith("."))){res.writeHead(403);res.end("Forbidden");return;}
   fs.stat(file,(err,stat)=>{
