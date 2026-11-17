@@ -50,10 +50,11 @@ a{color:var(--accent)}
 </head>
 <body>
 <main>
-<div class="kicker">Prototype · Synthetic demonstration</div>
+<div class="kicker" id="sourceKicker">Public GitHub activity · @AdityaSreevatsaK</div>
 <h1>Code Factory</h1>
-<p class="deck">Select a week in the familiar contribution calendar (click a column, or use the week selector and arrow keys). Its seven day cells <strong>directly power the miniature workshop below</strong>. An idle day has no working machine. Only repositories and event types recorded during that week appear.</p>
+<p class="deck">Explore <strong>@AdityaSreevatsaK’s observed public GitHub activity</strong> in a contribution-style calendar. Select a week using the chart or keyboard; its seven day cells directly power the miniature factory below. You can also switch to the synthetic demo. This is a partial public-events snapshot, not the official GitHub contribution calendar.</p>
 <div class="controls" aria-label="Preview controls">
+  <label>Activity source<select id="dataset"><option value="account" selected>@AdityaSreevatsaK · public</option><option value="demo">Synthetic demo</option></select></label>
   <label>Art direction<select id="layout"><option value="isometric">Isometric foundry</option><option value="pixel">Pixel works</option></select></label>
   <label>Theme<select id="theme"><option value="dark">Night shift</option><option value="light">Day shift</option></select></label>
   <label>Motion<select id="motion"><option value="still" selected>Still image</option><option value="animated">Subtle motion</option></select></label>
@@ -64,10 +65,10 @@ a{color:var(--accent)}
 <p class="status" id="status" role="status">Loading the shared demonstration fixture…</p>
 <p class="hint">On mobile, choose <strong>Readable detail</strong> and scroll the factory horizontally to inspect individual machines.</p>
 <figure aria-label="Code Factory calendar and selected week workshop">
-<div id="scene"><img src="exports/isometric-dark-still.svg" alt="Code Factory with an activity calendar and a linked seven-day factory for the latest recorded week. Synthetic demo, not official GitHub totals."></div>
-<figcaption id="caption">Seven-day workshop expanded from the selected calendar week. Synthetic demo only.</figcaption>
+<div id="scene"><img src="exports/account-isometric-dark-still.svg" alt="Observed public activity of @AdityaSreevatsaK across 53 calendar-week columns, with a source-linked miniature factory for the selected November week. Not official GitHub contribution totals."></div>
+<figcaption id="caption">Account-specific public activity snapshot captured 17 November 2026, with the selected week powering seven real event lanes.</figcaption>
 </figure>
-<div class="note"><strong>How to read:</strong> coloured squares represent recorded event units, not GitHub's official contributions total. The highlighted calendar column is the week displayed below it. Each coloured machine corresponds to an actual event record for that date and repository. A sealed crate represents a merged pull request, <strong>not a deployment</strong>. This preview does not collect live GitHub activity.</div>
+<div class="note"><strong id="noteSource">PUBLIC ACCOUNT SNAPSHOT</strong> · Coloured squares represent observed event/stage units, <strong>not official GitHub contribution totals</strong>. The highlighted column powers the seven corresponding day lanes. PR opening and merging are distinct events, and a sealed crate is <strong>not a deployment</strong>. No live GitHub requests, private repository data or API credentials are used by this preview.</div>
 <h2>Day-by-day ledger</h2>
 <p>The ledger explains exactly which input records power the seven workshop lanes.</p>
 <ul id="events" class="events" aria-label="Events in selected week"><li>Loading demo activity…</li></ul>
@@ -84,7 +85,7 @@ a{color:var(--accent)}
 <script type="module">
 import {render,selectedModel,calendarModel,dayMachines,TYPES} from "./calendar-factory.mjs";
 const $=id=>document.getElementById(id);
-const layout=$("layout"),theme=$("theme"),motion=$("motion"),week=$("week"),zoom=$("zoom"),scene=$("scene"),status=$("status");
+const dataset=$("dataset"),layout=$("layout"),theme=$("theme"),motion=$("motion"),week=$("week"),zoom=$("zoom"),scene=$("scene"),status=$("status");
 let data,model,index;
 const days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const label=ms=>new Date(ms).toLocaleDateString("en-GB",{timeZone:"UTC",day:"numeric",month:"short",year:"numeric"});
@@ -108,7 +109,8 @@ function update(){
   const selected=selectedModel(data,index),w=selected.week;
   scene.innerHTML=render(data,{layout:layout.value,theme:theme.value,animated:motion.value==="animated",selectedWeek:index});
   scene.dataset.zoom=zoom.value;
-  $("caption").textContent="Week "+label(w.start)+" to "+label(w.start+6*86400000)+" · "+w.records+" event records, "+w.units+" recorded units · "+layout.options[layout.selectedIndex].text+" · synthetic demo";
+  const sourceText=data.source==="github"?"@"+data.user.login+" · public activity snapshot":"Synthetic demo";
+  $("caption").textContent="Week "+label(w.start)+" to "+label(w.start+6*86400000)+" · "+w.records+" observed events · "+layout.options[layout.selectedIndex].text+" · "+sourceText;
   status.textContent="Select a calendar column or choose a week. "+w.records+" recorded events drive this workshop.";
   $("previous").disabled=index===0;$("next").disabled=index===52;
   renderLedger(selected);
@@ -137,21 +139,48 @@ scene.addEventListener("keydown",event=>{
 $("previous").addEventListener("click",()=>{week.value=String(Math.max(0,index-1));update();});
 $("next").addEventListener("click",()=>{week.value=String(Math.min(52,index+1));update();});
 $("replay").addEventListener("click",()=>{motion.value="animated";update();});
-try{
-  const response=await fetch("../../shared/fixtures/demo-activity.json",{cache:"no-store"});
-  if(!response.ok)throw Error("HTTP "+response.status);
-  data=await response.json();
-  model=calendarModel(data);
-  const options=document.createDocumentFragment();
-  for(const w of model.weeks){
-    const option=document.createElement("option");
-    option.value=String(w.index);
-    option.textContent=label(w.start)+" to "+label(w.start+6*86400000)+" · "+w.records+" records";
-    options.append(option);
+const SOURCES={
+  account:{path:"fixtures/adityasreevatsak-public-activity.json",fallback:"exports/account-isometric-dark-still.svg"},
+  demo:{path:"../../shared/fixtures/demo-activity.json",fallback:"exports/isometric-dark-still.svg"}
+};
+let requestSerial=0;
+async function loadDataset(){
+  const current=++requestSerial,which=dataset.value,config=SOURCES[which];
+  status.textContent="Loading "+(which==="account"?"public account snapshot":"synthetic demonstration")+"…";
+  week.disabled=true;
+  try{
+    const response=await fetch(config.path,{cache:"no-store"});
+    if(!response.ok)throw Error("HTTP "+response.status);
+    const incoming=await response.json();
+    const built=calendarModel(incoming);
+    if(current!==requestSerial)return;
+    data=incoming;model=built;
+    const options=document.createDocumentFragment();
+    for(const w of built.weeks){
+      const option=document.createElement("option");
+      option.value=String(w.index);
+      option.textContent=label(w.start)+" to "+label(w.start+6*86400000)+" · "+w.records+" records";
+      options.append(option);
+    }
+    week.replaceChildren(options);
+    // An already completed week has all seven days available and makes a
+    // stable, readable showcase. Never claim the current partial week is idle.
+    const latestCompleted=built.weeks.filter(w=>w.index<52&&w.records>0).at(-1);
+    week.value=String(which==="account"?(latestCompleted?.index??built.defaultWeek):built.defaultWeek);
+    week.disabled=false;
+    $("sourceKicker").textContent=which==="account"?"Public GitHub activity · @"+incoming.user.login:"Synthetic demonstration · no real GitHub data";
+    $("noteSource").textContent=which==="account"?"PUBLIC ACCOUNT SNAPSHOT":"SYNTHETIC DEMO";
+    update();
+  }catch(error){
+    if(current!==requestSerial)return;
+    data=null;week.disabled=true;$("previous").disabled=true;$("next").disabled=true;
+    $("sourceKicker").textContent="Unable to load snapshot";
+    scene.replaceChildren(Object.assign(document.createElement("img"),{src:config.fallback,alt:"Committed static Code Factory preview"}));
+    status.textContent="Could not load selected activity snapshot: "+String(error)+". A committed static preview is shown.";
   }
-  week.replaceChildren(options);week.value=String(model.defaultWeek);index=model.defaultWeek;
-  update();
-}catch(error){status.textContent="Live preview could not load the shared fixture: "+String(error)+". The committed static SVG fallback remains visible.";week.disabled=true;$("previous").disabled=true;$("next").disabled=true;}
+}
+dataset.addEventListener("change",loadDataset);
+await loadDataset();
 </script>
 </body>
 </html>
