@@ -50,7 +50,7 @@ Five production metaphors are deliberately distinct:
 - `issue_opened` → **inspection lens** (coral), *not necessarily a bug*
 - `release` → **dispatch crane** (violet)
 
-Each active repository and event stage creates **one machine per day**. Repeated records with the same repository and stage share that machine: record count and total recorded units remain visible, and ×N represents those units. Five small machine lights scale with the recorded units. A day with more than two distinct machine stages displays two and a truthful overflow marker counting the hidden records and stages. The entire calendar still reflects **all eligible records**, not only the two visible machines. The week highlight, daily machines and browser ledger use the same source model.
+Each active repository and event stage creates **one machine and one matching parcel per day**, even in the static SVG used in GitHub's README. Repeated records with the same repository and stage share that machine: record count and total recorded units remain visible, and ×N represents those units. Five small machine lights scale with the recorded units. A day with more than two distinct machine stages displays two and a truthful overflow marker counting the hidden records and stages. The entire calendar still reflects **all eligible records**, not only the two visible machines. The week highlight, daily machines and browser ledger use the same source model.
 
 ## Windows PowerShell quick start
 
@@ -106,8 +106,8 @@ The **README embeds still SVGs**, so the design can be judged without relying on
 
 ### Verification status
 
-- **21 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
-- Native `node --test`, the PowerShell verification script, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes. All ten regenerated SVGs were independently compared byte-for-byte with the committed exports and passed structural tag-balance and no-external-code checks.
+- **25 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
+- Native `node --test`, the PowerShell verification script, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes. All ten SVGs were previously matched byte-for-byte with the renderer and passed structural checks; the current revisions also have deterministic JavaScript coverage. The verifier now checks all ten committed SVGs against freshly regenerated copies without changing the repository.
 - The pull request remains draft. **No changes to `master` or the owner's profile.**
 - The two artwork styles use different factory floors and machinery, with crisp-edged geometry for pixel art; both retain the same exact calendar data.
 
