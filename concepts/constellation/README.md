@@ -53,7 +53,7 @@ node concepts/constellation/export.mjs
 node concepts/constellation/export.mjs --input concepts/constellation/fixtures/streak-demo.json --out concepts/constellation/assets/stress --label "SYNTHETIC STREAK STRESS TEST"
 
 # Run all 28 zero-dependency JavaScript regression tests
-node --test concepts/constellation/tests/test_*.mjs
+node --test concepts/constellation/tests/test_engine.mjs concepts/constellation/tests/test_motion.mjs
 
 # Existing Python prototype regression suite (unchanged)
 py -3 -m unittest discover -s concepts/constellation/tests -p "test_*.py" -v
