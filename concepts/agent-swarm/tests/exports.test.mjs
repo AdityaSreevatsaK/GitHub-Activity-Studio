@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {makeScene} from "../scene.mjs";
 import {calendarData,svgCalendar} from "../calendar.mjs";
-import {renderCalendarGif} from "../calendar-gif.mjs";
-import {readGifMetadata} from "../gif.mjs";
+import {calendarGifFrame,renderCalendarGif} from "../calendar-gif.mjs";
+import {readGifMetadata,lzwDecode} from "../gif.mjs";
 import {showcaseData} from "../showcase.mjs";
 
 const path=name=>new URL("../"+name,import.meta.url);
@@ -57,4 +57,66 @@ test("embedded README links and accessibility fallbacks are present",()=>{
  }
  assert.match(gallery,/SYNTHETIC SHOWCASE/);
  assert.match(gallery,/prefers-reduced-motion:reduce/);
+});
+
+
+// Verify decoded pixel content, not merely GIF dimensions and frame count.
+// This parses real GIF data subblocks and checks deterministic source-frame fidelity.
+function decodeChosenFrames(data,indices){
+ let at=13+3*(1<<((data[10]&7)+1));
+ const chosen=new Map(),selected=new Set(indices);
+ let index=0;
+ const u16=pos=>data[pos]|(data[pos+1]<<8);
+ while(at<data.length){
+  const type=data[at++];
+  if(type===0x3b)break;
+  if(type===0x21){
+   const extension=data[at++];
+   if(extension===0xf9){
+    const length=data[at++];
+    assert.equal(length,4);at+=length+1;continue;
+   }
+   const length=data[at++];at+=length;
+   for(;;){const chunk=data[at++];if(!chunk)break;at+=chunk;}
+   continue;
+  }
+  assert.equal(type,0x2c);
+  const width=u16(at+4),height=u16(at+6),packed=data[at+8];at+=9;
+  if(packed&0x80)at+=3*(1<<((packed&7)+1));
+  const minCodeSize=data[at++],chunks=[];let size=0;
+  for(;;){
+   const length=data[at++];
+   if(!length)break;
+   if(selected.has(index)){chunks.push(data.subarray(at,at+length));size+=length;}
+   at+=length;
+  }
+  if(selected.has(index)){
+   const compressed=new Uint8Array(size);let offset=0;
+   for(const c of chunks){compressed.set(c,offset);offset+=c.length;}
+   const raw=lzwDecode(compressed,minCodeSize);
+   assert.equal(raw.length,width*height);
+   chosen.set(index,raw);
+  }
+  index++;
+ }
+ assert.equal(index,70);
+ assert.equal(chosen.size,indices.length);
+ return chosen;
+}
+test("encoded GIF pixel content matches the deterministic renderer at multiple phases",()=>{
+ const variants=[
+  {path:"exports/geometric-dark.gif",scene:canonical,style:"geometric",theme:"dark"},
+  {path:"exports/robots-light.gif",scene:canonical,style:"robots",theme:"light"},
+  {path:"exports/showcase/geometric-dark.gif",scene:richer,style:"geometric",theme:"dark"},
+  {path:"exports/showcase/robots-light.gif",scene:richer,style:"robots",theme:"light"}
+ ];
+ for(const entry of variants){
+  const samples=decodeChosenFrames(read(entry.path),[0,23,69]);
+  for(const [i,actual] of samples){
+   const expected=calendarGifFrame(entry.scene,{
+    style:entry.style,theme:entry.theme,time:i*entry.scene.period/70
+   });
+   assert.deepEqual(Buffer.from(actual),Buffer.from(expected),entry.path+" frame "+i);
+  }
+ }
 });
