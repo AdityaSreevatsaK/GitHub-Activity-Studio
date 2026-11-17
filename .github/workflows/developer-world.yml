@@ -23,11 +23,11 @@ jobs:
         working-directory: concepts/developer-world
     steps:
       - name: Check out branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
       - name: Run offline unit and HTTP integration tests
@@ -62,7 +62,7 @@ jobs:
         run: node tests/browser-gif-smoke.cjs
       - name: Upload real animated GIF for review
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: developer-world-animated-gif
           path: concepts/developer-world/exports/archipelago-showcase.gif
@@ -70,7 +70,7 @@ jobs:
           retention-days: 7
       - name: Upload browser screenshots for review
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: developer-world-browser-screenshots
           path: concepts/developer-world/screenshots/*.png
@@ -78,7 +78,7 @@ jobs:
           retention-days: 7
       - name: Upload sample exports for design review
         if: matrix.os == 'ubuntu-latest'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: developer-world-svg-previews
           path: concepts/developer-world/exports/*.svg
