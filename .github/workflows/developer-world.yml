@@ -36,6 +36,32 @@ jobs:
         run: npm run export
       - name: Verify all exported SVG variants
         run: node tests/verify-exports.cjs
+      - name: Render browser screenshots (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        shell: bash
+        run: |
+          set -euo pipefail
+          node server.cjs > "$RUNNER_TEMP/developer-world-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8787/concepts/developer-world/index.html > /dev/null; then break; fi
+            sleep 1
+          done
+          chrome=$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)
+          test -n "$chrome" || { echo 'Chrome/Chromium is unavailable'; exit 1; }
+          mkdir -p screenshots
+          "$chrome" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --window-size=1280,930 --virtual-time-budget=4500 --screenshot="$PWD/screenshots/archipelago-showcase.png" "http://127.0.0.1:8787/?sample=showcase&layout=archipelago&theme=dark"
+          "$chrome" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --window-size=1280,930 --virtual-time-budget=4500 --screenshot="$PWD/screenshots/village-showcase.png" "http://127.0.0.1:8787/?sample=showcase&layout=village&theme=light"
+          node -e "const fs=require('fs');for(const file of ['archipelago-showcase','village-showcase']){const p='screenshots/'+file+'.png';const b=fs.readFileSync(p);if(b.length<15000||b.subarray(0,8).toString('hex')!=='89504e470d0a1a0a')throw Error('Screenshot invalid: '+p);console.log(p,b.length+' bytes');}"
+      - name: Upload browser screenshots for review
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: developer-world-browser-screenshots
+          path: concepts/developer-world/screenshots/*.png
+          if-no-files-found: error
+          retention-days: 7
       - name: Upload sample exports for design review
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
