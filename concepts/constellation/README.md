@@ -37,6 +37,10 @@ A tiny foundry casts **one spark per recorded active date**, ending on its true 
 
 [Animated night](assets/stress/starforge-night-animated.svg) · [Animated paper](assets/stress/starforge-paper-animated.svg) · [Shared ten-event static](assets/starforge-night-still.svg)
 
+### Complete source-fixture exports
+
+The branch now includes **all 24 generated SVGs**: 12 (six still, six animated) from the unchanged ten-event shared synthetic fixture, and 12 from the clearly labelled synthetic streak fixture. In the ten-event fixture, [Comet Streaks (night)](assets/comet-night-animated.svg) correctly contains **no travelling comet**, while [Cartographer (paper)](assets/cartographer-paper-animated.svg) and [Starforge (night)](assets/starforge-night-animated.svg) animate only the ten recorded days.
+
 ## Interactive browser comparison
 
 Open [`preview.html`](preview.html) through a local HTTP server to switch between all three designs, night/paper, shared/stress datasets, **Compare all three**, and **Pause/Resume**. Focus or hover any illuminated calendar cell for its *date, source event kinds, repositories and activity units*. The comparison adapts to phones with an internally scrollable calendar rather than overflowing the page. Reduced-motion preferences are respected.
