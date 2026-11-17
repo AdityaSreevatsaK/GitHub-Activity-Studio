@@ -56,6 +56,20 @@ The separate testing fixture remains the shared, ten-event synthetic demonstrati
 
 [See the dedicated showcase gallery](showcase.html). Both designs use exactly the same simulated source events and source-backed task mapping. Account-specific assets are generated from a checked-in public snapshot. The synthetic gallery is deliberately separate.
 
+## Refresh your public account snapshot
+
+To update the dated real-data artwork from public GitHub only (Node.js 20+, no packages):
+
+~~~powershell
+node concepts/agent-swarm/refresh-account.mjs
+node concepts/agent-swarm/build.mjs --account
+node concepts/agent-swarm/build.mjs --account --verify
+~~~
+
+The collector uses the official GitHub public REST endpoints for PRs, issues and default-branch commits. An optional read-only `GITHUB_TOKEN` environment variable helps with GitHub rate limits, but no credentials are written to files or required for offline tests. The collector refuses partial API results and writes the updated JSON only when collection succeeds. It **never** requests private repositories or changes GitHub data.
+
+Commit the refreshed JSON and generated account exports to the feature branch after reviewing them. The artwork remains a dated public-activity snapshot, not the complete official GitHub contributions grid.
+
 ## Windows: start to finish
 
 **Beforehand:** install [Node.js 20 or later](https://nodejs.org/) and clone or download this repository. No tokens or extra packages are needed.
@@ -80,7 +94,7 @@ node concepts/agent-swarm/serve.mjs
 5. Run tests in another PowerShell window:
 
 ~~~powershell
-node --test concepts/agent-swarm/tests/scene.test.mjs concepts/agent-swarm/tests/calendar.test.mjs concepts/agent-swarm/tests/showcase.test.mjs concepts/agent-swarm/tests/exports.test.mjs concepts/agent-swarm/tests/server.test.mjs concepts/agent-swarm/tests/preview.test.mjs
+node --test concepts/agent-swarm/tests/scene.test.mjs concepts/agent-swarm/tests/calendar.test.mjs concepts/agent-swarm/tests/showcase.test.mjs concepts/agent-swarm/tests/exports.test.mjs concepts/agent-swarm/tests/server.test.mjs concepts/agent-swarm/tests/preview.test.mjs concepts/agent-swarm/tests/collector.test.mjs concepts/agent-swarm/tests/account.test.mjs
 ~~~
 
 To use a different, already-normalised public snapshot:
