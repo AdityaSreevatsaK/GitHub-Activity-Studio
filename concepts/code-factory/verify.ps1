@@ -39,13 +39,15 @@ function Invoke-Export {
     if ($LASTEXITCODE -ne 0) { throw "Renderer failed for week $Week" }
 }
 
-function Assert-SameHash {
+function Assert-SameContent {
     param([string]$ExpectedFile, [string]$ActualFile)
     if (-not (Test-Path -LiteralPath $ExpectedFile)) { throw "Missing committed asset: $ExpectedFile" }
     if (-not (Test-Path -LiteralPath $ActualFile)) { throw "Missing generated asset: $ActualFile" }
-    $expected = (Get-FileHash -LiteralPath $ExpectedFile -Algorithm SHA256).Hash
-    $actual = (Get-FileHash -LiteralPath $ActualFile -Algorithm SHA256).Hash
-    if ($expected -ne $actual) { throw "Stale export: $ExpectedFile. Regenerate and inspect the diff." }
+    # Windows Git can check out SVG text as CRLF; the exporter writes LF.
+    # Normalise only newlines, preserving all other SVG content for comparison.
+    $expected = [System.IO.File]::ReadAllText($ExpectedFile).Replace("`r`n", "`n")
+    $actual = [System.IO.File]::ReadAllText($ActualFile).Replace("`r`n", "`n")
+    if ($expected -cne $actual) { throw "Stale export: $ExpectedFile. Regenerate and inspect the diff." }
 }
 
 Push-Location $repo
@@ -79,18 +81,18 @@ try {
         foreach ($theme in @('dark','light')) {
             foreach ($suffix in @('', '-still')) {
                 $name = "$layout-$theme$suffix.svg"
-                Assert-SameHash -ExpectedFile (Join-Path $exports $name) -ActualFile (Join-Path $main $name)
+                Assert-SameContent -ExpectedFile (Join-Path $exports $name) -ActualFile (Join-Path $main $name)
             }
         }
     }
 
     $release = Join-Path $temporary 'release'
     Invoke-Export -OutputDirectory $release -Week 48
-    Assert-SameHash -ExpectedFile (Join-Path $exports 'isometric-light-release-week-still.svg') -ActualFile (Join-Path $release 'isometric-light-still.svg')
+    Assert-SameContent -ExpectedFile (Join-Path $exports 'isometric-light-release-week-still.svg') -ActualFile (Join-Path $release 'isometric-light-still.svg')
 
     $inspection = Join-Path $temporary 'inspection'
     Invoke-Export -OutputDirectory $inspection -Week 45
-    Assert-SameHash -ExpectedFile (Join-Path $exports 'pixel-dark-inspection-week-still.svg') -ActualFile (Join-Path $inspection 'pixel-dark-still.svg')
+    Assert-SameContent -ExpectedFile (Join-Path $exports 'pixel-dark-inspection-week-still.svg') -ActualFile (Join-Path $inspection 'pixel-dark-still.svg')
 
     Write-Host 'Verified: native tests and all ten committed SVG exports match the renderer.' -ForegroundColor Green
 }
