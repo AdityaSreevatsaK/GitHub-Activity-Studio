@@ -18,6 +18,7 @@ $repo = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $factory = Join-Path $repo 'concepts\code-factory'
 $renderer = Join-Path $factory 'calendar-factory.mjs'
 $fixture = Join-Path $repo 'shared\fixtures\demo-activity.json'
+$accountFixture = Join-Path $factory 'fixtures\adityasreevatsak-public-activity.json'
 $tests = Join-Path $factory 'tests'
 $exports = Join-Path $factory 'exports'
 
@@ -39,6 +40,12 @@ function Invoke-Export {
     if ($LASTEXITCODE -ne 0) { throw "Renderer failed for week $Week" }
 }
 
+function Invoke-AccountExport {
+    param([string]$OutputDirectory)
+    & node $renderer $accountFixture $OutputDirectory '--week-index' '51'
+    if ($LASTEXITCODE -ne 0) { throw 'Account-specific renderer failed.' }
+}
+
 function Assert-SameContent {
     param([string]$ExpectedFile, [string]$ActualFile)
     if (-not (Test-Path -LiteralPath $ExpectedFile)) { throw "Missing committed asset: $ExpectedFile" }
@@ -53,7 +60,7 @@ function Assert-SameContent {
 Push-Location $repo
 try {
     if ($Regenerate) {
-        Write-Host 'Regenerating all ten committed SVG exports...' -ForegroundColor Cyan
+        Write-Host 'Regenerating all fourteen committed SVG exports...' -ForegroundColor Cyan
         & node $renderer
         if ($LASTEXITCODE -ne 0) { throw 'Primary SVG regeneration failed.' }
         New-Item -Path $temporary -ItemType Directory -Force | Out-Null
@@ -63,6 +70,14 @@ try {
         $inspectionSource = Join-Path $temporary 'refresh-inspection'
         Invoke-Export -OutputDirectory $inspectionSource -Week 45
         Copy-Item -LiteralPath (Join-Path $inspectionSource 'pixel-dark-still.svg') -Destination (Join-Path $exports 'pixel-dark-inspection-week-still.svg') -Force
+        $accountSource = Join-Path $temporary 'refresh-account'
+        Invoke-AccountExport -OutputDirectory $accountSource
+        foreach ($layout in @('isometric','pixel')) {
+            foreach ($theme in @('dark','light')) {
+                $basename = "$layout-$theme-still.svg"
+                Copy-Item -LiteralPath (Join-Path $accountSource $basename) -Destination (Join-Path $exports "account-$basename") -Force
+            }
+        }
     }
 
     Write-Host 'Running Node.js regression tests...' -ForegroundColor Cyan
@@ -94,7 +109,16 @@ try {
     Invoke-Export -OutputDirectory $inspection -Week 45
     Assert-SameContent -ExpectedFile (Join-Path $exports 'pixel-dark-inspection-week-still.svg') -ActualFile (Join-Path $inspection 'pixel-dark-still.svg')
 
-    Write-Host 'Verified: native tests and all ten committed SVG exports match the renderer.' -ForegroundColor Green
+    $account = Join-Path $temporary 'account'
+    Invoke-AccountExport -OutputDirectory $account
+    foreach ($layout in @('isometric','pixel')) {
+        foreach ($theme in @('dark','light')) {
+            $basename = "$layout-$theme-still.svg"
+            Assert-SameContent -ExpectedFile (Join-Path $exports "account-$basename") -ActualFile (Join-Path $account $basename)
+        }
+    }
+
+    Write-Host 'Verified: native tests and all fourteen committed SVG exports match the renderer.' -ForegroundColor Green
 }
 finally {
     Pop-Location
