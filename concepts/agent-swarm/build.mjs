@@ -11,11 +11,18 @@ const args = process.argv.slice(2);
 let input = resolve(here, "../../shared/fixtures/demo-activity.json");
 let out = join(here, "exports");
 let verify = false;
+let includeShowcase = true;
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "--verify") verify = true;
+  else if (args[i] === "--account") {
+    input = join(here, "data", "adityasreevatsak-public.json");
+    out = join(here, "exports", "account");
+    includeShowcase = false;
+  }
+  else if (args[i] === "--no-showcase") includeShowcase = false;
   else if (args[i] === "--input" && args[i + 1]) input = resolve(args[++i]);
   else if (args[i] === "--out" && args[i + 1]) out = resolve(args[++i]);
-  else throw new Error("Usage: node concepts/agent-swarm/build.mjs [--input file.json] [--out directory] [--verify]");
+  else throw new Error("Usage: node concepts/agent-swarm/build.mjs [--input file.json] [--out directory] [--verify] [--account] [--no-showcase]");
 }
 let payload;
 try { payload = JSON.parse(readFileSync(input, "utf8")); }
@@ -51,6 +58,7 @@ for (const style of ["geometric", "robots"]) {
 
 // Optional richer synthetic demo, useful for judging the swarm's choreography
 // on a populated chart. Never substitute it for genuine GitHub contributions.
+if(includeShowcase){
 const synthetic=showcaseData();
 const richer=calendarData(makeScene(synthetic),synthetic);
 const demoOut=join(out,"showcase");
@@ -64,6 +72,7 @@ for(const [style,theme] of [["geometric","dark"],["robots","light"]]){
  console.log("SYNTHETIC SHOWCASE  "+prefix);
 }
 
+}
 console.log("Rendered " + scene.shown + " / " + scene.event_total + " event packets; " +
   scene.repositories.length + " / " + scene.repository_total + " repository hubs.");
 console.log((verify?"Verified existing assets in ":"Files available under ") + out);

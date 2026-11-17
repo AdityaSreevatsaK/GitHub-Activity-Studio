@@ -73,6 +73,8 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <script>
 "use strict";
 const el=id=>document.getElementById(id);
+const accountView=new URLSearchParams(window.location.search).get("source")==="account";
+const assetRoot=accountView?"exports/account/":"exports/";
 let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0,lastSignature="",selectedDate="";
 const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function phase(j,t){const d=((t%14)+14)%14-j.start;return d<0?"queued":d<.18?"assigned":d<.68?"travelling":d<1.56?"working":d<2.2?"complete":"delivered"}
@@ -108,16 +110,16 @@ function renderState(){
  }
 }
 function choose(next){style=next;el("geometric").setAttribute("aria-pressed",String(style==="geometric"));el("robots").setAttribute("aria-pressed",String(style==="robots"));loadArt()}
-function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+style+"-"+theme+"-still.svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{
+function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src=assetRoot+style+"-"+theme+"-still.svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{
  const root=svg();if(root)for(const cell of root.querySelectorAll(".day-cell")){
   cell.style.cursor="help";
   cell.addEventListener("pointerenter",()=>{inspectDate(cell.dataset.date);});
  }
  highlightSelectedDate();
  }catch{}};
- art.data="exports/"+style+"-"+theme+".svg";
- el("gif").href="exports/"+style+"-"+theme+".gif";
- el("still").href="exports/"+style+"-"+theme+"-still.svg";
+ art.data=assetRoot+style+"-"+theme+".svg";
+ el("gif").href=assetRoot+style+"-"+theme+".gif";
+ el("still").href=assetRoot+style+"-"+theme+"-still.svg";
 }
 function setPlaying(value){playing=value;el("play").textContent=playing?"Pause":"Play";el("play").setAttribute("aria-label",playing?"Pause animation":"Play animation");previous=performance.now();setSvgTime();if(playing)raf=requestAnimationFrame(tick);else cancelAnimationFrame(raf)}
 function tick(now){if(!playing)return;seconds=(seconds+(now-previous)/1000)%14;previous=now;renderState();raf=requestAnimationFrame(tick)}
@@ -128,9 +130,13 @@ el("reset").addEventListener("click",()=>{seconds=0;renderState();setSvgTime()})
 el("scrub").addEventListener("input",e=>{seconds=Math.min(13.99,Number(e.target.value)/10);renderState();setSvgTime()});
 el("recorded-date").addEventListener("change",e=>{selectedDate=e.target.value;inspectDate(selectedDate);highlightSelectedDate()});
 (async()=>{try{
- const response=await fetch("exports/scene.json",{cache:"no-store"});if(!response.ok)throw Error("scene.json not found. Run the build command.");
+ const response=await fetch(assetRoot+"scene.json",{cache:"no-store"});if(!response.ok)throw Error("scene.json not found. Run the build command.");
  scene=await response.json();
- el("provenance").textContent=scene.source==="demo"?"● DEMO DATA":"● GITHUB SNAPSHOT";
+ el("provenance").textContent=scene.source==="demo"?"● DEMO DATA":"● PUBLIC GITHUB EVENTS";
+ if(scene.source==="github"){
+   document.querySelector("h1").textContent="Agent Swarm · @"+scene.user.login;
+   document.querySelector("footer").textContent="Public GitHub activity snapshot for @"+scene.user.login+". PRs, issues and authored public default-branch commits only. Not GitHub's complete contribution calendar. No tokens or autonomous actions.";
+ }
  el("events").textContent=scene.shown+" / "+scene.event_total+" events shown";
  el("repos").textContent=scene.repositories.length+" / "+scene.repository_total+" hubs";
  el("units").textContent=scene.jobs.reduce((n,j)=>n+j.count,0)+" animated units";

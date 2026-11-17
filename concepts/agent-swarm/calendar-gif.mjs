@@ -95,7 +95,7 @@ export function calendarGifFrame(scene,{style="geometric",theme="dark",time=0}={
  border(9,9,782,232,4);
  box(11,11,778,43,3);
  label(23,21,robot?"TINY BOT SWARM":"AGENT SWARM",1,2);
- label(24,42,"OBSERVED ACTIVITY / REAL DATES / METAPHOR",2,1);
+ label(24,42,scene.source==="github"?"@"+String(scene.user?.login||"UNKNOWN").toUpperCase()+" / PUBLIC EVENTS":"OBSERVED ACTIVITY / REAL DATES / METAPHOR",2,1);
  box(677,22,100,24,12);border(677,22,100,24,8);
  label(685,31,scene.source==="demo"?"DEMO DATA":"GITHUB",1,1);
  box(19,60,761,1,4);

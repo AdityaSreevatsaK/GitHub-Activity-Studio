@@ -10122,5 +10122,24 @@
       "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library/pull/54",
       "count": 1
     }
-  ]
+  ],
+  "coverage": {
+    "account": "AdityaSreevatsaK",
+    "public_only": true,
+    "snapshot_at": "2026-11-17T08:58:09Z",
+    "kinds": [
+      "public_pr_opened",
+      "public_pr_merged",
+      "public_issue_opened",
+      "authored_commits_on_default_branches_of_public_owned_repositories"
+    ],
+    "caveats": [
+      "Not equivalent to GitHub's contribution calendar",
+      "Private repository details excluded",
+      "Public commits on other organisations' default branches may be incomplete",
+      "PR merged is a separate symbolic event, not a separate GitHub contribution count",
+      "Snapshot will become stale; run the public collector to refresh"
+    ],
+    "method": "GitHub public issue/PR search (is:public) plus authored commits via public owned repository default branches; unique source IDs and URLs"
+  }
 }

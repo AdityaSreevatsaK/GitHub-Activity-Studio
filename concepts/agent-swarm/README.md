@@ -6,21 +6,37 @@ A pair of original, deterministic **visual metaphors** of GitHub activity. Eight
 | --- | --- |
 | **Geometric:** luminous activity cells, elegant paths and geometric swarm choreography | **Mini robots:** expressive helpers, charging docks and miniature task-cell workshops |
 
-All sample data is explicitly marked **synthetic demo**.
+The account-specific exports use verified public records. All separate sample data is clearly marked **synthetic demo**.
 
-## Watch the animations directly on GitHub
+## Your account: @AdityaSreevatsaK
 
-These are **synthetic demonstration data**, not the owner's real GitHub contributions. Both GIFs are embedded below so they can be inspected in GitHub's rendered README without running anything locally.
+These animations use **your actual publicly visible GitHub activity**, recorded on 17 November 2026. Events include public PR openings and merges, issues you opened, and commits authored by you on public repository default branches. No fictional events appear in these two animations.
 
-### Geometric swarm (primary)
+### Geometric Agent Swarm (your account)
 
-![Animated geometric Agent Swarm showing demo GitHub events mapped to symbolic helper movement](exports/geometric-dark.gif)
+![Geometric agents working on publicly recorded GitHub activity for AdityaSreevatsaK](exports/account/geometric-dark.gif)
 
-### Miniature robot swarm (alternative)
+### Miniature Robot Swarm (your account)
 
-![Animated miniature robot Agent Swarm showing demo GitHub events mapped to symbolic workshop tasks](exports/robots-light.gif)
+![Miniature courier and builder robots processing public GitHub activity for AdityaSreevatsaK](exports/account/robots-light.gif)
 
-If animations are disabled, see the [geometric still](exports/geometric-dark-still.svg) and [robot still](exports/robots-light-still.svg). **These animations are visual metaphors, not real AI agents.**
+[Geometric still](exports/account/geometric-dark-still.svg) · [Robot still](exports/account/robots-light-still.svg)
+
+**Coverage:** This is a calendar of **observed public events**, not GitHub's authoritative contribution-heatmap totals. GitHub may omit private activity, commits on other people's branches, and other contribution types from these collected sources. A blank square means no matching *collected* public event, not inactivity. Each contribution/task shown is backed by a GitHub URL in [the committed account snapshot](data/adityasreevatsak-public.json).
+
+To inspect the account preview on Windows, run the server and open **http://127.0.0.1:8000/preview.html?source=account**.
+
+## Separate synthetic examples
+
+The canonical ten-event fixture and the fictional 327-event showcase are retained **only for tests and design comparison**, clearly labelled as demonstration data.
+
+**Synthetic geometric fixture**
+
+![Synthetic geometric Agent Swarm demonstration](exports/geometric-dark.gif)
+
+**Synthetic robot fixture**
+
+![Synthetic robot Agent Swarm demonstration](exports/robots-light.gif)
 
 ## Calendar interpretation
 
@@ -28,7 +44,7 @@ The 53-week, seven-day grid is **date-accurate for events present in the normali
 
 ## A richer, explicitly fictional visual showcase
 
-The canonical source remains the shared, ten-event demonstration fixture. For design evaluation, there is a separate **synthetic showcase** with 327 deterministically generated demonstration events across 187 days. It is visibly labelled **SYNTHETIC SHOWCASE**, and **does not represent your actual GitHub contribution history**. Its higher activity density makes the swarm choreography easier to judge.
+The separate testing fixture remains the shared, ten-event synthetic demonstration dataset. For design evaluation, there is a separate **synthetic showcase** with 327 deterministically generated demonstration events across 187 days. It is visibly labelled **SYNTHETIC SHOWCASE**, and **does not represent your actual GitHub contribution history**. Its higher activity density makes the swarm choreography easier to judge.
 
 **Geometric showcase:**
 
@@ -38,7 +54,7 @@ The canonical source remains the shared, ten-event demonstration fixture. For de
 
 ![Little robot Agent Swarm on a rich synthetic contributions-style calendar, not real user activity](exports/showcase/robots-light.gif)
 
-[See the dedicated showcase gallery](showcase.html). Both designs use exactly the same simulated source events and source-backed task mapping. The live-data collector is still out of scope.
+[See the dedicated showcase gallery](showcase.html). Both designs use exactly the same simulated source events and source-backed task mapping. Account-specific assets are generated from a checked-in public snapshot. The synthetic gallery is deliberately separate.
 
 ## Windows: start to finish
 
@@ -50,6 +66,8 @@ The canonical source remains the shared, ten-event demonstration fixture. For de
 ~~~powershell
 node concepts/agent-swarm/build.mjs
 node concepts/agent-swarm/build.mjs --verify
+node concepts/agent-swarm/build.mjs --account
+node concepts/agent-swarm/build.mjs --account --verify
 ~~~
 
 3. Start the private local preview server (the build also regenerates the optional synthetic showcase assets):
@@ -77,6 +95,7 @@ The `--verify` command checks all generated files byte-for-byte without changing
 
 ## Outputs
 
+- exports/account/{geometric,robots}-{dark,light}.gif: your public GitHub account activity.
 - exports/{geometric,robots}-{dark,light}.gif: four self-contained looping 14-second GIFs for GitHub READMEs.
 - exports/geometric-dark.svg, geometric-light.svg, robots-dark.svg and robots-light.svg: detailed 14-second animated SVGs.
 - exports/{geometric,robots}-{dark,light}-still.svg: four matching static, accessible alternatives.
@@ -94,7 +113,7 @@ GIF is supported as an image format in GitHub READMEs. Animated SVGs may behave 
 
 Each observed GitHub event corresponds to **one** symbolic task, not one task per commit. The event timestamp selects a calendar cell; its repository becomes a secondary beacon. The kind determines a separate glyph: commit (C), PR opened (P+), PR merged (PM), issue opened (?), release (R). Its count appears explicitly as source-backed **units within the packet**, never disguised as commits. Each task pairs a **courier** that carries the symbolic event packet with a **builder** that processes it at the recorded-day cell. Both return to the dock. State transitions are queued → assigned → travelling → working → complete → delivered. The entire sequence is a metaphor; the original events were not made by AI agents, and its compressed timeline does not represent actual elapsed time.
 
-The calendar covers **53 weeks** of observed events, while at most **five** recently active repository beacons and **ten latest** event packets are animated. Clipping and out-of-window events are disclosed. Other repository histories are not inferred or invented. Source event IDs are deduplicated, and names are escaped. Empty data, one repository, missing optional metadata, bursty load, long names, invalid input and stale snapshots are handled. A 30-day stale warning is relative to the snapshot's generated timestamp.
+The calendar covers **53 weeks** of observed events, while at most **five** recently active repository beacons and **ten latest** event packets are animated. Clipping and out-of-window events are disclosed. Other repository histories are not inferred or invented. Source event IDs are deduplicated, and names are escaped. Empty data, one repository, missing optional metadata, bursty load, long names, invalid input and stale snapshots are handled. A 30-day stale warning is relative to the snapshot's generated timestamp. The account snapshot was collected from public GitHub searches and authored default-branch commits; it is a dated snapshot, not a live streaming connection.
 
 ## Technical notes and trade-offs
 
