@@ -62,6 +62,27 @@ class ExportGateTests(unittest.TestCase):
             issues = verify.validate_gallery(root)
             self.assertEqual(sum("does not embed" in issue for issue in issues), 3)
 
+
+    def test_reproducible_fixture_exports(self):
+        root = Path(__file__).resolve().parents[1]
+        self.assertEqual(verify.validate_reproducibility(root), [])
+
+    def test_reproducibility_detects_tampered_export(self):
+        root = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as temp:
+            concept = Path(temp) / "concepts" / "open-source-metro"
+            exports = concept / "exports"
+            exports.mkdir(parents=True)
+            (concept / "calendar_metro.py").write_bytes((root / "calendar_metro.py").read_bytes())
+            for name in verify.PRIMARY:
+                (exports / name).write_bytes((root / "exports" / name).read_bytes())
+            (exports / "modern-dark-still.svg").write_text(
+                "<svg/>", encoding="utf-8")
+            fixture = root.parents[1] / "shared" / "fixtures" / "demo-activity.json"
+            issues = verify.validate_reproducibility(concept, fixture=fixture)
+            self.assertTrue(any("Stale README export: modern-dark-still.svg" in issue
+                                for issue in issues), issues)
+
     def test_checked_in_previews(self):
         root = Path(__file__).resolve().parents[1]
         self.assertEqual(verify.validate_gallery(root), [])

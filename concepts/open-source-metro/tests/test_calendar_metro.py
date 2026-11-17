@@ -10,7 +10,7 @@ from datetime import timedelta
 from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from calendar_metro import MAX_EVENTS, MAX_REPOS, WEEKS, density, demo_stress, generate, normalise, plan, point, preview_html, render, safe_url, segments
+from calendar_metro import MAX_EVENTS, MAX_REPOS, SERVICE_COLOURS, WEEKS, density, demo_stress, generate, normalise, plan, point, preview_html, render, safe_url, segments
 
 DEMO = Path(__file__).resolve().parents[3]/'shared/fixtures/demo-activity.json'
 
@@ -232,6 +232,22 @@ class CalendarRendering(unittest.TestCase):
         self.assertNotIn('<animateMotion',still)
         self.assertIn('prefers-reduced-motion:reduce',active)
         self.assertIn('class="train"',active)
+
+
+    def test_all_five_service_colours_survive_shared_day_interchange(self):
+        data = raw()
+        for item in data["activity"]:
+            item["occurred_at"] = "2026-11-13T09:00:00Z"
+        snap = normalise(data)
+        self.assertEqual(len(plan(snap)["by_day"]), 1)
+        for style in ("modern", "vintage"):
+            with self.subTest(style=style):
+                svg = ET.fromstring(render(snap, style=style, animated=False))
+                day = next(el for el in svg.iter()
+                           if el.get("class") == "day" and el.get("data-date") == "2026-11-13")
+                present = {rect.attrib.get("fill") for rect in day.iter()
+                           if rect.tag.endswith("rect")}
+                self.assertTrue(set(SERVICE_COLOURS[style]).issubset(present), present)
 
     def test_same_day_interchange_and_script_escaping(self):
         data=raw()

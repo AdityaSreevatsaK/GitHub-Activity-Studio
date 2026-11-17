@@ -6,6 +6,7 @@ network calls or GitHub credentials are required.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 from pathlib import Path
 import re
 import sys
@@ -74,16 +75,61 @@ def validate_gallery(root: Path) -> list[str]:
     return errors
 
 
+
+def validate_reproducibility(concept: Path, fixture: Path | None = None) -> list[str]:
+    """Compare committed profile previews byte-for-byte with the current renderer.
+
+    Both the fixture and the source live inside the checkout. This does not use
+    GitHub APIs or depend on a running browser, third-party fonts or packages.
+    """
+    source = concept / "calendar_metro.py"
+    fixture = fixture or concept.parents[1] / "shared" / "fixtures" / "demo-activity.json"
+    if not source.is_file():
+        return [f"Missing renderer for reproducibility audit: {source}"]
+    if not fixture.is_file():
+        return [f"Missing shared fixture for reproducibility audit: {fixture}"]
+
+    spec = importlib.util.spec_from_file_location("_verified_metro_renderer", source)
+    if spec is None or spec.loader is None:
+        return ["Unable to load the calendar renderer for reproducibility audit"]
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+        snapshot = module.read(fixture)
+        stressed = module.demo_stress(snapshot)
+        candidates = (
+            ("modern-dark-still.svg", snapshot, "modern", "dark"),
+            ("vintage-light-still.svg", snapshot, "vintage", "light"),
+            ("stress-modern-dark-still.svg", stressed, "modern", "dark"),
+        )
+        issues = []
+        for name, data, style, scheme in candidates:
+            output = concept / "exports" / name
+            if not output.is_file():
+                issues.append(f"Cannot compare missing generated export: {name}")
+                continue
+            expected = module.render(data, style=style, scheme=scheme, animated=False)
+            if output.read_text(encoding="utf-8") != expected:
+                issues.append(f"Stale README export: {name}; regenerate with calendar_metro.py")
+        return issues
+    except (OSError, ValueError, ImportError) as exc:
+        return [f"Unable to reproduce README exports: {exc}"]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit static metro README exports offline")
     parser.add_argument("--concept", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--skip-reproducibility", action="store_true",
+                        help="Only validate SVG structure; skip comparison with the renderer")
     args = parser.parse_args()
     errors = validate_gallery(args.concept)
+    if not args.skip_reproducibility:
+        errors += validate_reproducibility(args.concept)
     if errors:
         for error in errors:
             print(f"FAIL: {error}", file=sys.stderr)
         return 1
-    print("PASS: all 3 README exports are accessible, self-contained, valid SVGs")
+    print("PASS: all 3 README exports are safe SVGs and meet requested reproducibility checks")
     return 0
 
 

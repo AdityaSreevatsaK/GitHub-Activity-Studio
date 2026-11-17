@@ -345,9 +345,11 @@ def render(snapshot: dict, *, style: str = "modern", scheme: str = "dark", anima
                 # repositories, NOT evidence of a dependency between them.
                 f.append(f'<circle cx="{centre_x:.2f}" cy="{centre_y:.2f}" r="6.4" fill="{t["paper"]}" stroke="{colours[0]}" stroke-width="1.25"/>')
                 f.append(f'<text x="{centre_x:.2f}" y="{centre_y+2.1:.2f}" text-anchor="middle" fill="{t["ink"]}" font-family="system-ui,sans-serif" font-size="7" font-weight="800">{len(repo_set)}</text>')
-            for k, kind in enumerate(kinds[:4]):
+            # All five source event types must remain visible at an interchange.
+            # Fit five narrow service stripes inside the original 16.3px cell.
+            for k, kind in enumerate(kinds):
                 index = [z[0] for z in SERVICES].index(kind)
-                f.append(f'<rect x="{x+1.2+k*3.5:.2f}" y="{y+CELL-2.1:.2f}" width="3.0" height="1.6" fill="{colours[index]}"/>')
+                f.append(f'<rect x="{x+1.05+k*3.1:.2f}" y="{y+CELL-2.25:.2f}" width="2.5" height="1.9" fill="{colours[index]}"/>')
             if animated:
                 f.append(f'<rect class="pulse" x="{x-1:.2f}" y="{y-1:.2f}" width="{CELL+2}" height="{CELL+2}" rx="3" fill="none" stroke="{colours[[z[0] for z in SERVICES].index(events[0]["kind"])]}" opacity="0" aria-hidden="true"><animate attributeName="opacity" values="0;0.9;0" dur="1.4s" begin="{(week % 8)*.35:.2f}s" repeatCount="indefinite"/></rect>')
         f.append('</g>')
