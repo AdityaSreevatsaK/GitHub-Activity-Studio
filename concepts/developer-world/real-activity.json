@@ -1,0 +1,2161 @@
+{
+  "schema_version": "1",
+  "source": "github",
+  "generated_at": "2026-11-17T08:13:26.239Z",
+  "user": {
+    "login": "AdityaSreevatsaK",
+    "url": "https://github.com/AdityaSreevatsaK"
+  },
+  "repositories": [
+    {
+      "full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "name": "Taiyou-Novels-Storage-Controller",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller"
+    },
+    {
+      "full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "name": "Taiyous-Personal-Library",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library"
+    },
+    {
+      "full_name": "AdityaSreevatsaK/tracker",
+      "name": "tracker",
+      "url": "https://github.com/AdityaSreevatsaK/tracker"
+    },
+    {
+      "full_name": "AdityaSreevatsaK/wheelgap",
+      "name": "wheelgap",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap"
+    },
+    {
+      "full_name": "wheelgap/tracker",
+      "name": "tracker",
+      "url": "https://github.com/wheelgap/tracker"
+    },
+    {
+      "full_name": "wheelgap/wheelgap",
+      "name": "wheelgap",
+      "url": "https://github.com/wheelgap/wheelgap"
+    }
+  ],
+  "activity": [
+    {
+      "id": "public-20237323742",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-16T07:04:06Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20244734105",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-16T08:39:37Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    },
+    {
+      "id": "public-20251886429",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/wheelgap",
+      "occurred_at": "2026-11-16T10:00:02Z",
+      "url": "https://github.com/wheelgap/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20252049635",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/wheelgap",
+      "occurred_at": "2026-11-16T10:01:48Z",
+      "url": "https://github.com/wheelgap/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20252218920",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/wheelgap",
+      "occurred_at": "2026-11-16T10:03:37Z",
+      "url": "https://github.com/wheelgap/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20255518074",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-16T10:40:20Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    },
+    {
+      "id": "public-20258451958",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-16T11:13:43Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20258453971",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-16T11:13:46Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20258459526",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-16T11:13:49Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20276089869",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-16T14:27:04Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    },
+    {
+      "id": "public-20276108340",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-16T14:27:12Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20276264733",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-16T14:28:44Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20276656188",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-16T14:32:39Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20279222473",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/wheelgap",
+      "occurred_at": "2026-11-16T14:59:05Z",
+      "url": "https://github.com/wheelgap/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20279291031",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/wheelgap",
+      "occurred_at": "2026-11-16T14:59:48Z",
+      "url": "https://github.com/wheelgap/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20283214446",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-16T15:41:13Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    },
+    {
+      "id": "public-20283889138",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/tracker",
+      "occurred_at": "2026-11-16T15:48:12Z",
+      "url": "https://github.com/AdityaSreevatsaK/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20285710707",
+      "kind": "issue_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "occurred_at": "2026-11-16T16:07:01Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "count": 1
+    },
+    {
+      "id": "public-20286798462",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/tracker",
+      "occurred_at": "2026-11-16T16:15:33Z",
+      "url": "https://github.com/wheelgap/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20286964118",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "occurred_at": "2026-11-16T16:16:54Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "count": 1
+    },
+    {
+      "id": "public-20288924768",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-16T16:33:16Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    },
+    {
+      "id": "public-20357914174",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/tracker",
+      "occurred_at": "2026-11-17T06:10:50Z",
+      "url": "https://github.com/AdityaSreevatsaK/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20358000688",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/tracker",
+      "occurred_at": "2026-11-17T06:12:00Z",
+      "url": "https://github.com/AdityaSreevatsaK/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20358124065",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/tracker",
+      "occurred_at": "2026-11-17T06:13:36Z",
+      "url": "https://github.com/AdityaSreevatsaK/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20358442025",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-17T06:18:01Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20358573225",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "occurred_at": "2026-11-17T06:19:51Z",
+      "url": "https://github.com/AdityaSreevatsaK/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20360146852",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-17T06:41:05Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    },
+    {
+      "id": "public-20360659315",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/tracker",
+      "occurred_at": "2026-11-17T06:47:55Z",
+      "url": "https://github.com/wheelgap/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20360713996",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/tracker",
+      "occurred_at": "2026-11-17T06:48:39Z",
+      "url": "https://github.com/wheelgap/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20360769642",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/tracker",
+      "occurred_at": "2026-11-17T06:49:25Z",
+      "url": "https://github.com/wheelgap/tracker",
+      "count": 1
+    },
+    {
+      "id": "public-20361010871",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/wheelgap",
+      "occurred_at": "2026-11-17T06:52:41Z",
+      "url": "https://github.com/wheelgap/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20361039552",
+      "kind": "pr_opened",
+      "repo_full_name": "wheelgap/wheelgap",
+      "occurred_at": "2026-11-17T06:53:04Z",
+      "url": "https://github.com/wheelgap/wheelgap",
+      "count": 1
+    },
+    {
+      "id": "public-20361938735",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-17T07:05:00Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    },
+    {
+      "id": "public-20366354216",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "occurred_at": "2026-11-17T08:02:14Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "count": 1
+    },
+    {
+      "id": "public-20366429155",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/Taiyous-Personal-Library",
+      "occurred_at": "2026-11-17T08:03:14Z",
+      "url": "https://github.com/AdityaSreevatsaK/Taiyous-Personal-Library",
+      "count": 1
+    }
+  ],
+  "contribution_calendar": {
+    "from": "2025-11-18",
+    "to": "2026-11-17",
+    "total_contributions": 1550,
+    "days": [
+      {
+        "date": "2025-11-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-24",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-11-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-11-29",
+        "count": 4,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-11-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-02",
+        "count": 6,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-03",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-05",
+        "count": 8,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-10",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-20",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-23",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-26",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-29",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2025-12-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2025-12-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-01-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-01",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-02-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-06",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-02-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-11",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-02-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-22",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-02-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-25",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-02-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-02-28",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-01",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-03",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-06",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-08",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-09",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-11",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-13",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-14",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-15",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-16",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-17",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-18",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-19",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-20",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-22",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-23",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-03-25",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-26",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-27",
+        "count": 4,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-28",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-29",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-30",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-03-31",
+        "count": 5,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-01",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-02",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-04",
+        "count": 4,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-05",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-06",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-07",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-08",
+        "count": 6,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-09",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-10",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-13",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-14",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-20",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-04-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-04-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-05-30",
+        "count": 4,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-05-31",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-06-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-06-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-24",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-07-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-26",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-07-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-28",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-07-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-02",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-04",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-05",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-08",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-15",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-17",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-18",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-21",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-23",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-25",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-26",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-08-28",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-29",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-30",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-08-31",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-09-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-02",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-09-03",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-09-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-05",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-09-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-10",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-09-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-16",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-20",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-24",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-25",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-26",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-27",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-28",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-09-29",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-09-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-03",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-04",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-05",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-06",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-07",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-08",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-09",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-10",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-11",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-12",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-13",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-14",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-15",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-16",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-17",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-18",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-19",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-20",
+        "count": 1,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-21",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-22",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-23",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-24",
+        "count": 6,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-25",
+        "count": 41,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-26",
+        "count": 3,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-27",
+        "count": 17,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-28",
+        "count": 7,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-29",
+        "count": 2,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-10-30",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-10-31",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-01",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-02",
+        "count": 0,
+        "level": "NONE"
+      },
+      {
+        "date": "2026-11-03",
+        "count": 4,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-04",
+        "count": 4,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-05",
+        "count": 21,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-06",
+        "count": 16,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-07",
+        "count": 21,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-08",
+        "count": 34,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-09",
+        "count": 113,
+        "level": "SECOND_QUARTILE"
+      },
+      {
+        "date": "2026-11-10",
+        "count": 77,
+        "level": "SECOND_QUARTILE"
+      },
+      {
+        "date": "2026-11-11",
+        "count": 79,
+        "level": "SECOND_QUARTILE"
+      },
+      {
+        "date": "2026-11-12",
+        "count": 55,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-13",
+        "count": 55,
+        "level": "FIRST_QUARTILE"
+      },
+      {
+        "date": "2026-11-14",
+        "count": 274,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-15",
+        "count": 269,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-16",
+        "count": 248,
+        "level": "FOURTH_QUARTILE"
+      },
+      {
+        "date": "2026-11-17",
+        "count": 52,
+        "level": "FIRST_QUARTILE"
+      }
+    ]
+  },
+  "coverage": {
+    "calendar": "GitHub GraphQL contributionsCollection, visible to the workflow token",
+    "events": "GitHub REST public events, up to 300 most recent events; incomplete by design",
+    "rest_events_checked": 300,
+    "public_event_warning": null
+  }
+}
