@@ -17,7 +17,7 @@ Click any still for its self-contained animated SVG. The table contains **six se
 
 [![SYNTHETIC STRESS TEST: full-width dark GitHub contribution chart, adjacent active days linked into restrained comet paths](assets/stress/comet-night-still.svg)](assets/stress/comet-night-animated.svg)
 
-**Stars = recorded active days. Brighter = more activity units. Comets = uninterrupted streaks.** A single isolated date stays a star. Missing days always break the trail, including across week boundaries.
+**Stars = recorded active days. Brighter = more activity units. Comets = uninterrupted streaks.** A single isolated date stays a star. Missing dates break the run. A Saturday-to-Sunday run stays chronological, but the drawn trail wraps to the next column without a misleading diagonal through unrecorded cells.
 
 [Animated night](assets/stress/comet-night-animated.svg) · [Animated paper](assets/stress/comet-paper-animated.svg) · [Shared ten-event static](assets/comet-night-still.svg)
 
@@ -33,7 +33,7 @@ The small original observatory stays outside the lattice. A moving meridian swee
 
 [![SYNTHETIC STRESS TEST: dark contribution calendar and a tiny forge that sends sparks to precisely dated cells](assets/stress/starforge-night-still.svg)](assets/stress/starforge-night-animated.svg)
 
-A tiny foundry casts **one spark per recorded active date**, ending on its true cell. Multiple source events on one day resolve into a single day-star. The spark's brightness depends on the **summed recorded activity units**, not a fictitious number of contributions.
+A tiny foundry casts **one spark per recorded active date**, ending on its true cell and brightening the star as it arrives. Multiple source events on one day resolve into a single day-star. The spark's brightness depends on the **summed recorded activity units**, not a fictitious number of contributions.
 
 [Animated night](assets/stress/starforge-night-animated.svg) · [Animated paper](assets/stress/starforge-paper-animated.svg) · [Shared ten-event static](assets/starforge-night-still.svg)
 
@@ -52,8 +52,8 @@ node concepts/constellation/export.mjs
 # Render an explicitly synthetic, longer streak sample, another 12 exports
 node concepts/constellation/export.mjs --input concepts/constellation/fixtures/streak-demo.json --out concepts/constellation/assets/stress --label "SYNTHETIC STREAK STRESS TEST"
 
-# Run the 24 new zero-dependency regression tests
-node --test concepts/constellation/tests/test_engine.mjs
+# Run all 28 zero-dependency JavaScript regression tests
+node --test concepts/constellation/tests/test_*.mjs
 
 # Existing Python prototype regression suite (unchanged)
 py -3 -m unittest discover -s concepts/constellation/tests -p "test_*.py" -v
@@ -63,6 +63,20 @@ py -3 -m http.server 8000
 ```
 
 Open <http://localhost:8000/concepts/constellation/preview.html>. The export CLI accepts `--input`, `--out` and `--label`. Identical snapshot + options produce byte-for-byte identical SVGs. No network, token, fonts or paid services are needed for generation or tests.
+
+### Optional GitHub-native animated GIFs
+
+For a reliable animated GitHub README image, use the [optional GIF exporter](export_gif.py) to generate native GIFs from the source-backed SVGs. This uses Pillow and Playwright only when generating GIFs, and is not needed for the normal zero-dependency SVG pipeline.
+
+```powershell
+py -3 -m pip install Pillow playwright
+py -3 -m playwright install chromium
+py -3 concepts/constellation/export_gif.py
+py -3 concepts/constellation/export_gif.py --theme paper
+py -3 concepts/constellation/tests/browser_smoke.py
+```
+
+GIFs are generated locally, not yet bundled into the branch. The committed still SVGs are reliable README fallbacks.
 
 ## Accuracy, accessibility and GitHub compatibility
 
@@ -75,6 +89,6 @@ Open <http://localhost:8000/concepts/constellation/preview.html>. The export CLI
 
 ## Verification
 
-Locally verified: **24/24 Node regression tests**, SVG XML parsing, image rasterisation, and Chromium browser interactions at **1280 px and 390 px** (all choices, theme, compare, pause, keyboard focus, both fixtures, no document overflow). Browser smoke used an in-memory content server because outbound/local navigation was restricted in the test environment. **Live GitHub-hosted animation rendering has not been independently confirmed.**
+Locally verified: **28/28 Node regression tests**, SVG XML parsing, image rasterisation, and Chromium browser interactions at **1280 px and 390 px** (all choices, theme, compare, pause, keyboard focus, both fixtures, no document overflow). Browser smoke used an in-memory content server because outbound/local navigation was restricted in the test environment. **Live GitHub-hosted animation rendering has not been independently confirmed.**
 
 Legacy experiments (`calendar_sky.py`, `constellation.py` and their earlier SVG assets/tests) remain in place for comparison, but they are **not** the three new implementations. The existing [draft PR #1](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/1) is for review only; do not merge or edit the owner's live profile without approval.

@@ -77,10 +77,18 @@ export function constellationEngine() {
     if(design==='comet'){
       for(let k=0;k<model.streaks.length;k++){
         const run=model.streaks[k],pts=run.map(d=>pos(d));let path=`M${n(pts[0].x)} ${n(pts[0].y)}`;
-        for(let j=1;j<pts.length;j++)path+=` L${n(pts[j].x)} ${n(pts[j].y)}`;
+        for(let j=1;j<pts.length;j++)path+=` ${run[j].col===run[j-1].col?'L':'M'}${n(pts[j].x)} ${n(pts[j].y)}`;
+        // A Saturday-to-Sunday wrap must not draw across unrecorded weekdays.
+        for(let j=1;j<run.length;j++)if(run[j].col!==run[j-1].col){const a=pts[j-1],b=pts[j];add(`<circle class='week-wrap' data-wrap='${run[j-1].date}/${run[j].date}' cx='${n(a.x)}' cy='${n(a.y)}' r='3.4' stroke='${p.accent}' stroke-width='1.2' fill='none'/><circle class='week-wrap' cx='${n(b.x)}' cy='${n(b.y)}' r='3.4' stroke='${p.accent}' stroke-width='1.2' fill='none'/>`);}
         add(`<path data-streak="${k}" data-length="${run.length}" data-start="${run[0].date}" data-end="${run.at(-1).date}" d="${path}" fill="none" stroke="${p.accent}" stroke-opacity=".25" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`);
         if(animated){const start=.7+k*11/Math.max(1,model.streaks.length),dur=Math.min(2.9,.9+run.length*.17),finish=start+dur;
-          const t0=n(start/LOOP),tm=n((start+dur*.5)/LOOP),t1=n(finish/LOOP);
+          const t0=(start/LOOP).toFixed(4),tm=((start+dur*.5)/LOOP).toFixed(4),t1=(finish/LOOP).toFixed(4);
+          if(run.length===2&&run[0].col!==run[1].col){
+            for(let j=0;j<2;j++){const d=run[j],point=pts[j];const a=(start+j*dur/2)/LOOP,b=(start+(j+.5)*dur/2)/LOOP,c=(start+(j+1)*dur/2)/LOOP;
+              add(`<circle class='shoot' data-wrap-pulse='${d.date}' cx='${n(point.x)}' cy='${n(point.y)}' r='3.7' fill='${p.flame}' opacity='0'><animate attributeName='opacity' values='0;0;1;0;0' keyTimes='0;${a.toFixed(4)};${b.toFixed(4)};${c.toFixed(4)};1' dur='16s' repeatCount='indefinite'/></circle>`);
+            }
+            continue;
+          }
           add(`<path d="${path}" fill="none" stroke="url(#ribbon)" stroke-width="3.3" stroke-linecap="round" opacity=".8" stroke-dasharray="4 110"><animate attributeName="stroke-dashoffset" values="110;110;-110;-110" keyTimes="0;${t0};${t1};1" dur="16s" repeatCount="indefinite"/></path>`);
           add(`<circle class="shoot" r="3.8" fill="${p.flame}"><animateMotion path="${path}" dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;${t0};${t1};1"/><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;${t0};${tm};${t1};1" dur="16s" repeatCount="indefinite"/></circle>`);
         }
@@ -94,6 +102,7 @@ export function constellationEngine() {
         add(`<g class="beam" pointer-events="none"><path d="M149 131 L172 131 L178 285 L143 285 Z" fill="${p.accent}" opacity=".11"/><path d="M159 133 V282" stroke="${p.accent}" stroke-opacity=".58" stroke-width="1.6" stroke-dasharray="3 6"/><animateTransform attributeName="transform" type="translate" values="0 0;970 0;970 0" keyTimes="0;.82;1" dur="16s" repeatCount="indefinite"/></g>`);
       }
     }
+    const forgeArrivals=new Map();
     if(design==='starforge'){
       add(`<g transform="translate(35 193)" stroke="${p.sub}" stroke-width="2" stroke-linejoin="round" fill="none"><path d="M6 50 L45 50 L55 68 L2 68 Z" fill="${p.paper?'#e3d6c0':'#253c54'}"/><path d="M14 47 L21 25 L38 25 L46 47 Z" fill="${p.paper?'#dccbb3':'#193148'}"/><path d="M19 42 Q28 28 39 42" stroke="${p.flame}" stroke-width="4"/><path d="M28 13 V24 M15 18 L22 26 M41 18 L35 26" stroke="${p.flame}" stroke-width="2"/><path d="M11 70 L7 80 M45 70 L50 80"/><circle cx="28" cy="37" r="3" fill="${p.flame}" stroke="none"/></g>`);
       if(animated){
@@ -105,6 +114,7 @@ export function constellationEngine() {
           const path=`M${from.x} ${from.y} Q${n((from.x+target.x)/2)} ${n(Math.min(from.y,target.y)-bend)} ${n(target.x)} ${n(target.y)}`;
           const begin=.65+j*12/Math.max(1,picked.length),finish=begin+.75;
           const t0=(begin/LOOP).toFixed(4),tm=((begin+.35)/LOOP).toFixed(4),t1=(finish/LOOP).toFixed(4);
+          forgeArrivals.set(day.date,finish);
           add(`<circle class="shoot" data-target="${day.date}" r="${n(2+day.level*.3)}" fill="${p.flame}" opacity="0"><animateMotion path="${path}" dur="16s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;${t0};${t1};1"/><animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;${t0};${tm};${t1};1" dur="16s" repeatCount="indefinite"/></circle>`);
         }
       }
@@ -120,7 +130,9 @@ export function constellationEngine() {
         const moment=.03+day.col/52*.79,stop=Math.min(.98,moment+.02);
         add(`<path class="data-star" d="${starPath(x,y,size,4)}" fill="${p.paper?p.text:'#eefaff'}" stroke="${colour}" stroke-width="1.3">${animated?`<animate attributeName="opacity" values=".17;.17;1;1" keyTimes="0;${moment.toFixed(4)};${stop.toFixed(4)};1" dur="16s" repeatCount="indefinite"/>`:''}</path><circle cx="${n(x)}" cy="${n(y)}" r="${n(size+1.4)}" stroke="${colour}" stroke-opacity=".6" stroke-width=".7" fill="none"/>`);
       } else {
-        add(`<circle cx="${n(x)}" cy="${n(y)}" r="${n(size+1.2)}" fill="none" stroke="${colour}" stroke-opacity=".68" stroke-width=".9"/><path class="data-star" d="${starPath(x,y,size,6)}" fill="${p.flame}" stroke="${p.paper?p.text:'#fff5cd'}" stroke-width=".7" ${animated?`style="animation:flare 4s ease-in-out infinite;animation-delay:-${n(day.index%9*.35)}s"`:''}/>`);
+        const arrival=forgeArrivals.get(day.date);
+        const reveal=arrival===undefined?'':`<animate attributeName='opacity' values='.25;.25;1;1' keyTimes='0;${(arrival/LOOP).toFixed(4)};${Math.min(.999,(arrival+.07)/LOOP).toFixed(4)};1' dur='16s' repeatCount='indefinite'/>`;
+        add(`<circle cx="${n(x)}" cy="${n(y)}" r="${n(size+1.2)}" fill="none" stroke="${colour}" stroke-opacity=".68" stroke-width=".9"/><path class="data-star" d="${starPath(x,y,size,6)}" fill="${p.flame}" stroke="${p.paper?p.text:'#fff5cd'}" stroke-width=".7">${reveal}</path>`);
       }
       add(`<rect class="focus" x="${n(day.x-1)}" y="${n(day.y-1)}" width="${n(CELL+2)}" height="${n(CELL+2)}" rx="3" fill="none" stroke="${p.accent}" stroke-opacity="0"/><rect x="${n(day.x-2)}" y="${n(day.y-2)}" width="${n(CELL+4)}" height="${n(CELL+4)}" fill="transparent"/></a>`);
     }
