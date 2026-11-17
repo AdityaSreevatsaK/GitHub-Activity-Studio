@@ -113,11 +113,24 @@ export function calendarGifFrame(scene,{style="geometric",theme="dark",time=0}={
   }
  }
  const shades=[11,15,17,10,5],byDate=new Map(scene.calendar.days.map(d=>[d.date,d]));
+ // Fine source-backed streak connectors, drawn behind the day squares.
+ for(let week=0;week<53;week++)for(let row=0;row<6;row++){
+  const millis=first+(week*7+row)*DAY;
+  const a=new Date(millis).toISOString().slice(0,10);
+  const b=new Date(millis+DAY).toISOString().slice(0,10);
+  if(!byDate.has(a)||!byDate.has(b))continue;
+  const x=Math.round((GRID.x+week*GRID.dx+GRID.size/2)*WIDTH/1120);
+  const y1=Math.round((GRID.y+row*GRID.dy+GRID.size+1)*HEIGHT/350);
+  const y2=Math.round((GRID.y+(row+1)*GRID.dy-1)*HEIGHT/350);
+  line(x,y1,x,y2,theme==="dark"?15:17,robot?2:1);
+ }
+
  for(let col=0;col<53;col++)for(let row=0;row<7;row++){
   const day=new Date(first+(col*7+row)*DAY).toISOString().slice(0,10),record=byDate.get(day);
   const level=record?(record.events>=5?4:record.events>=3?3:record.events>=2?2:1):0;
   const x=Math.round((GRID.x+col*GRID.dx)*WIDTH/1120),y=Math.round((GRID.y+row*GRID.dy)*HEIGHT/350);
   box(x,y,9,9,day>scene.calendar.end?4:shades[level]);
+  if(record&&record.events>=3)pixel(x+7,y+2,theme==="dark"?12:1);
   if(record&&robot){pixel(x+1,y+1,1);pixel(x+7,y+7,1);}
  }
  label(27,101,"M",2);label(27,125,"W",2);label(27,149,"F",2);

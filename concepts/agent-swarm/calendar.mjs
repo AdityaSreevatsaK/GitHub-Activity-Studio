@@ -64,7 +64,11 @@ export function agentAt(job,t,side) {
   return{x:target.x+(end.x-target.x)*v,y:target.y+(end.y-target.y)*v-24*Math.sin(Math.PI*k)};
 }
 
-export function escapeText(s) {return String(s).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;"}[ch]));}
+export function escapeText(s) {
+ // XML 1.0 forbids several control code points even when attribute text is escaped.
+ return String(s).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g,"")
+  .replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&apos;"}[ch]));
+}
 
 export function svgCalendar(scene,{style="geometric",theme="dark",animated=true,time=5.2}={}) {
   if(!["geometric","robots"].includes(style)||!["dark","light"].includes(theme))throw Error("Unknown variant");
@@ -78,7 +82,7 @@ export function svgCalendar(scene,{style="geometric",theme="dark",animated=true,
   `<title id="swarm-title">${escapeText(tag)} · ${scene.source==="demo"?"demonstration":"source-observed"} activity calendar</title>`,
   `<desc id="swarm-desc">GitHub-style calendar of observed source events, with a deterministic swarm of ${robot?"tiny robots":"geometric helpers"} ferrying symbolic work to recorded event dates. This does not represent the complete GitHub contribution graph or autonomous GitHub actions.</desc>`,
   `<defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${c.bg}"/><stop offset="1" stop-color="${c.end}"/></linearGradient><filter id="halo" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4"/></filter></defs>`,
-  `<style>text{font-weight:500}.small{letter-spacing:1.2px;font-weight:700}@media(prefers-reduced-motion:reduce){.swarm-motion{display:none!important}}</style>`,
+  `<style>text{font-weight:500}.small{letter-spacing:1.2px;font-weight:700}@media(prefers-reduced-motion:reduce){.swarm-motion,.symbolic-task{display:none!important}}</style>`,
   rect(0,0,1120,350,"url(#sky)"),rect(14,13,1092,324,"none",19,c.edge,1),
   txt(39,45,tag,robot?22:24,c.ink,'font-weight="800" letter-spacing="1.5"'),
   txt(40,64,"SOURCE-OBSERVED EVENTS · THE AGENTS ARE A VISUAL METAPHOR",10,c.muted,'class="small"'),
@@ -101,11 +105,36 @@ export function svgCalendar(scene,{style="geometric",theme="dark",animated=true,
   for(let level=0;level<5;level++)out.push(rect(665+level*18,89,11,11,c.levels[level],2));
   out.push(txt(761,98,"MORE",8,c.muted,'class="small"'));
   const byDay=new Map(scene.calendar.days.map(d=>[d.date,d]));
+  // Source-backed neighbouring dates create delicate workshop connections.
+  // Connect only dates with observed events, and only within the same week.
+  const streakStroke=robot?(dark?"#5a9d86":"#609a81"):(dark?"#66d1a7":"#4e9f78");
+  let streaks=0;
+  for(let week=0;week<GRID.weeks;week++)for(let row=0;row<6;row++){
+    const base=Date.parse(scene.calendar.start+"T00:00:00Z")+(week*7+row)*ONE_DAY;
+    const dayA=new Date(base).toISOString().slice(0,10);
+    const dayB=new Date(base+ONE_DAY).toISOString().slice(0,10);
+    if(!byDay.has(dayA)||!byDay.has(dayB))continue;
+    const cx=GRID.x+week*GRID.dx+GRID.size/2;
+    const y1=GRID.y+row*GRID.dy+GRID.size+1;
+    const y2=GRID.y+(row+1)*GRID.dy-1;
+    out.push(`<path class="observed-link" d="M ${cx.toFixed(2)} ${y1.toFixed(2)} L ${cx.toFixed(2)} ${y2.toFixed(2)}" stroke="${streakStroke}" stroke-opacity="${robot?".44":".28"}" stroke-width="${robot?2.3:1.3}" stroke-linecap="round"><title>Adjacent recorded activity: ${dayA} and ${dayB}</title></path>`);
+    streaks++;
+  }
+  
   for(let col=0;col<53;col++)for(let day=0;day<7;day++){
     const date=new Date(start+(col*7+day)*ONE_DAY).toISOString().slice(0,10),daily=byDay.get(date);
     const intensity=daily?(daily.events>=5?4:daily.events>=3?3:daily.events>=2?2:1):0;
     const x=(GRID.x+col*GRID.dx).toFixed(2),y=(GRID.y+day*GRID.dy).toFixed(2);
     out.push(`<rect class="day-cell" data-date="${date}" data-events="${daily?.events||0}" data-units="${daily?.units||0}" x="${x}" y="${y}" width="${GRID.size}" height="${GRID.size}" rx="${robot?3.5:2.2}" fill="${c.levels[intensity]}" fill-opacity="${date>scene.calendar.end?.26:1}" stroke="${daily?c.levels[4]:"none"}" stroke-opacity=".6" stroke-width=".6"><title>${date}: ${daily?`${daily.events} observed event(s), ${daily.units} original activity units`:"no recorded events in input snapshot"}</title></rect>`);
+  }
+  // The extra marker is displayed only on genuinely busy days, not empty cells.
+  for(const day of scene.calendar.days){
+    if(day.events<3)continue;
+    const offset=Math.floor((Date.parse(day.date+"T00:00:00Z")-start)/ONE_DAY);
+    const week=Math.floor(offset/7),weekday=offset%7;
+    const x=GRID.x+week*GRID.dx+GRID.size-2.2;
+    const y=GRID.y+weekday*GRID.dy+2.3;
+    out.push(`<circle class="busy-day-indicator" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${robot?1.8:1.6}" fill="${dark?"#f2d88f":"#235747"}"><title>${day.date}: ${day.events} observed events</title></circle>`);
   }
   if(scene.repositories.length===0)out.push(txt(560,192,"Awaiting repositories",20,c.muted,'text-anchor="middle"'));
   if(scene.calendar.days.length===0)out.push(txt(560,241,"NO OBSERVED EVENTS IN THIS CALENDAR WINDOW",11,c.muted,'text-anchor="middle" class="small"'));

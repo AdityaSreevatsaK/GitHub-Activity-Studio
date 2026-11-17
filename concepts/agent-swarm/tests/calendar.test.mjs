@@ -130,3 +130,35 @@ test("stratified choreography reaches distant calendar weeks",()=>{
  assert(scene.jobs.some(j=>j.cell.week<20));
  assert(scene.jobs.some(j=>j.cell.week>35));
 });
+
+test("observed-day links use only consecutive recorded dates",()=>{
+ const raw=structuredClone(fixture);
+ raw.activity=[
+  {id:"a",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-09T09:00:00Z",count:1},
+  {id:"b",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-10T09:00:00Z",count:1},
+  {id:"c",kind:"commit",repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-12T09:00:00Z",count:1}
+ ];
+ const svg=svgCalendar(sceneFor(raw),{style:"geometric",theme:"dark"});
+ assert.equal((svg.match(/class="observed-link"/g)||[]).length,1);
+ assert(svg.includes("Adjacent recorded activity: 2026-11-09 and 2026-11-10"));
+ assert(!svg.includes("Adjacent recorded activity: 2026-11-10 and 2026-11-12"));
+});
+test("invalid XML control characters are excluded from SVG text and attributes",()=>{
+ const raw=structuredClone(fixture);
+ raw.repositories[0].name="test\\u0000\\u0001\\u000bname";
+ raw.activity[0].id="event\\u0001id";
+ const svg=svgCalendar(sceneFor(raw));
+ assert(!svg.includes("\\u0000"));assert(!svg.includes("\\u0001"));assert(!svg.includes("\\u000b"));
+});
+test("reduced-motion SVG hides all movement and task pulse layers",()=>{
+ const svg=svgCalendar(sceneFor(fixture));
+ assert.match(svg,/prefers-reduced-motion:reduce/);
+ assert.match(svg,/\\.swarm-motion,\\.symbolic-task\\{display:none!important\\}/);
+});
+test("high-density source days receive indicators, not invented activity",()=>{
+ const raw=structuredClone(fixture);
+ for(let i=0;i<3;i++)raw.activity.push({id:"dense-"+i,kind:"commit",
+  repo_full_name:"sample-dev/aurora",occurred_at:"2026-11-15T08:00:00Z",count:1});
+ const s=svgCalendar(sceneFor(raw));
+ assert.equal((s.match(/class="busy-day-indicator"/g)||[]).length,1);
+});
