@@ -27,7 +27,7 @@ py -3 .\concepts\open-source-metro\metro_atlas.py
 py -3 -m unittest discover -s .\concepts\open-source-metro\tests -v
 ```
 
-The renderer uses Python 3.11+ and the shared v1 JSON snapshot, with no network calls or paid dependencies. The output is static SVG designed to be embedded in GitHub README files. This concept is still for review and has **not been applied to the live profile**.
+The renderer uses Python 3.11+ and the shared v1 JSON snapshot, with no network calls or paid dependencies. The wide profile layout shows **five featured repositories**, and discloses when additional repositories are not displayed. For a public source snapshot, the heading states **PUBLIC EVENT SNAPSHOT**, rather than labelling real events synthetic; it remains an incomplete GitHub contributions record. The output is static SVG designed to be embedded in GitHub README files. This concept is still for review and has **not been applied to the live profile**.
 
 ---
 
