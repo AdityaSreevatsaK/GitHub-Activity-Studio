@@ -51,7 +51,8 @@ async function main(){
  try{
   await new Promise(resolve=>server.listen(0,"127.0.0.1",resolve));
   const port=server.address().port;
-  const url="http://127.0.0.1:"+port+"/?sample=showcase&layout=archipelago&theme=dark";
+  const mode=process.env.DW_SAMPLE==="real"?"real":"showcase";
+  const url="http://127.0.0.1:"+port+"/?sample="+mode+"&layout=archipelago&theme=dark";
   chrome=spawn(chromeExecutable(),[
    "--headless=new","--no-sandbox","--disable-gpu","--disable-dev-shm-usage",
    "--disable-extensions","--no-first-run","--no-default-browser-check",
@@ -80,9 +81,9 @@ async function main(){
   };
   const ready=await until(async()=>{
    const info=await evaluate('({dates:document.querySelectorAll("svg [data-date]").length,sample:document.querySelector("#sample")?.value,layout:document.querySelector("#layout")?.value,status:document.querySelector("#status")?.textContent})');
-   return info?.dates===371&&info.status?.includes("212 dates")?info:null;
-  },"synthetic showcase and calendar DOM",30000);
-  if(ready.sample!=="showcase"||ready.layout!=="archipelago")throw Error("Incorrect browser preset: "+JSON.stringify(ready));
+   return info?.dates===371&&info.status?.includes(mode==="real"?"REAL GITHUB CONTRIBUTIONS":"212 dates")?info:null;
+  },"GitHub contribution calendar DOM",30000);
+  if(ready.sample!==mode||ready.layout!=="archipelago")throw Error("Incorrect browser preset: "+JSON.stringify(ready));
   await evaluate('(() => {window.__gifSmoke=null;const original=window.DeveloperWorldGif.createGif;window.DeveloperWorldGif.createGif=function(frames,width,height,delay){const bytes=original.apply(this,arguments);window.__gifSmoke={magic:Array.from(bytes.slice(0,6),b=>String.fromCharCode(b)).join(""),size:bytes.length,frames:frames.length,width,height,delay};window.__gifSmokeBytes=bytes;return bytes;};document.querySelector("#gif").click();return true;})()');
   const gif=await until(async()=>{
    const info=await evaluate('({data:window.__gifSmoke,status:document.querySelector("#status")?.textContent,busy:document.querySelector("#gif")?.disabled})');
@@ -97,7 +98,7 @@ async function main(){
   const encoded=await evaluate('(() => {const bytes=window.__gifSmokeBytes;if(!bytes)throw Error("GIF capture missing");let parts=[];for(let i=0;i<bytes.length;i+=16384)parts.push(String.fromCharCode(...bytes.subarray(i,i+16384)));return btoa(parts.join(""));})()');
   const sample=Buffer.from(encoded,"base64");
   if(sample.length!==gif.size||sample.subarray(0,6).toString("ascii")!=="GIF89a")throw Error("Browser GIF bytes invalid");
-  const output=path.resolve(__dirname,"../exports/archipelago-showcase.gif");
+  const output=path.resolve(__dirname,"../"+(mode==="real"?"previews/real-archipelago.gif":"exports/archipelago-showcase.gif"));
   fs.mkdirSync(path.dirname(output),{recursive:true});
   fs.writeFileSync(output,sample);
   console.log("Browser GIF export passed:",JSON.stringify(gif),"saved:",output);
