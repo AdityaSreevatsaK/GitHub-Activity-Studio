@@ -51,7 +51,7 @@ a{color:var(--accent)}
 <main>
 <div class="kicker">Prototype · Synthetic demonstration</div>
 <h1>Code Factory</h1>
-<p class="deck">Select a week in the familiar contribution calendar. Its seven day cells <strong>directly power the miniature workshop below</strong>. An idle day has no working machine. Only repositories and event types recorded during that week appear.</p>
+<p class="deck">Select a week in the familiar contribution calendar (click a column, or use the week selector and arrow keys). Its seven day cells <strong>directly power the miniature workshop below</strong>. An idle day has no working machine. Only repositories and event types recorded during that week appear.</p>
 <div class="controls" aria-label="Preview controls">
   <label>Art direction<select id="layout"><option value="isometric">Isometric foundry</option><option value="pixel">Pixel works</option></select></label>
   <label>Theme<select id="theme"><option value="dark">Night shift</option><option value="light">Day shift</option></select></label>
@@ -118,6 +118,20 @@ scene.addEventListener("click",event=>{
   const hit=event.target.closest("[data-week-index]");
   if(!hit)return;
   week.value=hit.getAttribute("data-week-index");update();
+});
+scene.addEventListener("keydown",event=>{
+  const hit=event.target.closest("[data-week-index]");
+  if(!hit)return;
+  const current=Number(hit.getAttribute("data-week-index"));
+  let next=current;
+  if(event.key==="ArrowLeft")next=Math.max(0,current-1);
+  else if(event.key==="ArrowRight")next=Math.min(52,current+1);
+  else if(event.key==="Home")next=0;
+  else if(event.key==="End")next=52;
+  else if(event.key!=="Enter"&&event.key!==" ")return;
+  event.preventDefault();
+  week.value=String(next);update();
+  scene.querySelector('[data-week-index="'+next+'"]')?.focus();
 });
 $("previous").addEventListener("click",()=>{week.value=String(Math.max(0,index-1));update();});
 $("next").addEventListener("click",()=>{week.value=String(Math.min(52,index+1));update();});
