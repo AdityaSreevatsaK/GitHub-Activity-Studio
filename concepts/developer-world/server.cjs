@@ -8,7 +8,7 @@ function createServer(dir=root){
   let pathname,requestUrl;try{requestUrl=new URL(req.url,"http://localhost");pathname=decodeURIComponent(requestUrl.pathname);}catch{res.writeHead(400);res.end();return;}
   if(pathname==="/"){
    // Preserve only known preview options. Arbitrary query strings are never reflected.
-   const accepted={sample:["shared","showcase"],layout:["archipelago","village"],theme:["dark","light"]},params=new URLSearchParams();
+   const accepted={sample:["real","shared","showcase"],layout:["archipelago","village"],theme:["dark","light"]},params=new URLSearchParams();
    for(const [key,values] of Object.entries(accepted)){
     const value=requestUrl.searchParams.get(key);
     if(value!==null&&values.includes(value))params.set(key,value);
