@@ -1,0 +1,1992 @@
+{
+  "schema_version": "1",
+  "source": "demo",
+  "generated_at": "2026-11-16T00:00:00Z",
+  "user": {
+    "login": "showcase-dev",
+    "url": "https://github.com/example"
+  },
+  "repositories": [
+    {
+      "full_name": "sample-dev/aurora",
+      "name": "aurora",
+      "url": "https://github.com/example",
+      "language": "Python",
+      "stars": 12
+    },
+    {
+      "full_name": "sample-dev/atlas",
+      "name": "atlas",
+      "url": "https://github.com/example",
+      "language": "TypeScript",
+      "stars": 4
+    },
+    {
+      "full_name": "sample-dev/ember",
+      "name": "ember",
+      "url": "https://github.com/example",
+      "language": "Rust",
+      "stars": 2
+    },
+    {
+      "full_name": "sample-dev/orbit",
+      "name": "orbit",
+      "url": "https://github.com/example",
+      "language": "Python",
+      "stars": 7
+    },
+    {
+      "full_name": "sample-dev/harbour",
+      "name": "harbour",
+      "url": "https://github.com/example",
+      "language": "Go",
+      "stars": 0
+    }
+  ],
+  "activity": [
+    {
+      "id": "showcase-0001",
+      "kind": "release",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2025-11-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0002",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2025-11-21T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0003",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2025-11-22T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0004",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2025-11-23T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0005",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2025-11-24T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0006",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2025-11-25T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0007",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2025-11-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0008",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2025-12-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0009",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2025-12-02T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0010",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2025-12-10T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0011",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2025-12-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0012",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2025-12-12T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0013",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2025-12-13T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0014",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2025-12-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0015",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2025-12-18T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0016",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2025-12-21T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0017",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2025-12-22T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0018",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2025-12-22T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0019",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2025-12-23T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 7
+    },
+    {
+      "id": "showcase-0020",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2025-12-24T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0021",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2025-12-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 14
+    },
+    {
+      "id": "showcase-0022",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-01-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0023",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-01-03T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0024",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-01-04T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0025",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-01-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0026",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-01-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0027",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-01-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0028",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-01-07T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0029",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-01-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 14
+    },
+    {
+      "id": "showcase-0030",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-01-11T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0031",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-01-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0032",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-01-23T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0033",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-01-23T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0034",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-01-25T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0035",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-01-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0036",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-02-01T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0037",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-02-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0038",
+      "kind": "release",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-02-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0039",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-02-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 7
+    },
+    {
+      "id": "showcase-0040",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-02-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0041",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-02-10T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0042",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-02-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0043",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-02-13T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0044",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-02-13T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0045",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-02-15T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0046",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-02-15T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0047",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-02-16T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0048",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-02-17T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0049",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-02-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0050",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-02-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0051",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-02-25T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0052",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-02-25T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0053",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-02-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 7
+    },
+    {
+      "id": "showcase-0054",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-02-27T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0055",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-03-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0056",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-03-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0057",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-03-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0058",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-03-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0059",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-03-07T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0060",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-03-10T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0061",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-03-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0062",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-03-12T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 14
+    },
+    {
+      "id": "showcase-0063",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-03-13T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0064",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-03-14T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0065",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-03-17T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0066",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-03-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0067",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-03-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0068",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-03-19T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0069",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-03-25T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0070",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-03-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0071",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-03-27T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0072",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-03-28T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0073",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-03-29T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0074",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-03-30T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 7
+    },
+    {
+      "id": "showcase-0075",
+      "kind": "release",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-04-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 12
+    },
+    {
+      "id": "showcase-0076",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-04-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0077",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-04-04T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0078",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-04-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0079",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-04-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 11
+    },
+    {
+      "id": "showcase-0080",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-04-09T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0081",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-04-10T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0082",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-04-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0083",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-04-15T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0084",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-04-16T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0085",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-04-17T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 14
+    },
+    {
+      "id": "showcase-0086",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-04-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 9
+    },
+    {
+      "id": "showcase-0087",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-04-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0088",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-04-19T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0089",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-04-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0090",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-04-21T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0091",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-04-22T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0092",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-04-23T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0093",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-04-27T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0094",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-04-30T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0095",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-05-01T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0096",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-05-01T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0097",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-05-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0098",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-05-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0099",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-05-04T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0100",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-05-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 11
+    },
+    {
+      "id": "showcase-0101",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-05-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 9
+    },
+    {
+      "id": "showcase-0102",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-05-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0103",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-05-08T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0104",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-05-10T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0105",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-05-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0106",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-05-12T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 9
+    },
+    {
+      "id": "showcase-0107",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-05-13T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0108",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-05-13T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0109",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-05-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0110",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-05-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0111",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-05-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0112",
+      "kind": "release",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-05-21T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0113",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-05-21T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0114",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-05-24T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0115",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-05-25T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0116",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-05-25T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0117",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-05-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0118",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-05-27T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0119",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-05-29T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0120",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-05-31T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0121",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-06-01T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0122",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-06-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0123",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-06-04T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0124",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-06-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0125",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-06-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0126",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-06-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0127",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-06-08T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0128",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-06-09T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0129",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-06-15T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0130",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-06-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0131",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-06-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0132",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-06-19T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0133",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-06-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0134",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-06-22T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0135",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-06-23T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0136",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-06-24T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 7
+    },
+    {
+      "id": "showcase-0137",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-06-25T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0138",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-06-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0139",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-06-27T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 12
+    },
+    {
+      "id": "showcase-0140",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-06-28T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 7
+    },
+    {
+      "id": "showcase-0141",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-06-29T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0142",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-06-30T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0143",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-07-01T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0144",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-07-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0145",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-07-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 10
+    },
+    {
+      "id": "showcase-0146",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-07-04T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0147",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-07-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0148",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-07-07T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0149",
+      "kind": "release",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-07-09T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0150",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-07-10T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0151",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-07-12T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0152",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-07-13T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0153",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-07-13T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0154",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-07-14T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0155",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-07-15T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0156",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-07-17T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0157",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-07-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0158",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-07-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0159",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-07-21T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0160",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-07-22T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0161",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-07-24T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 12
+    },
+    {
+      "id": "showcase-0162",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-07-25T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0163",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-07-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0164",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-07-27T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0165",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-07-28T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 9
+    },
+    {
+      "id": "showcase-0166",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-07-29T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0167",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-07-29T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0168",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-08-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0169",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-08-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0170",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-08-04T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0171",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-08-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 9
+    },
+    {
+      "id": "showcase-0172",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-08-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0173",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-08-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0174",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-08-09T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0175",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-08-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 10
+    },
+    {
+      "id": "showcase-0176",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-08-12T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0177",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-08-14T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0178",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-08-14T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0179",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-08-16T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0180",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-08-16T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0181",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-08-17T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0182",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-08-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0183",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-08-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0184",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-08-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0185",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-08-23T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0186",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-08-23T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0187",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-08-28T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0188",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-08-29T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0189",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-08-30T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0190",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-09-01T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0191",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-09-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0192",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-09-04T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0193",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-09-04T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0194",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-09-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0195",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-09-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0196",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-09-08T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0197",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-09-08T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0198",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-09-09T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0199",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-09-12T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0200",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-09-13T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 12
+    },
+    {
+      "id": "showcase-0201",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-09-14T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0202",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-09-15T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0203",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-09-16T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0204",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-09-17T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0205",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-09-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0206",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-09-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0207",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-09-21T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 12
+    },
+    {
+      "id": "showcase-0208",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-09-22T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0209",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-09-23T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 7
+    },
+    {
+      "id": "showcase-0210",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-09-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 8
+    },
+    {
+      "id": "showcase-0211",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-09-28T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0212",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-09-28T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    },
+    {
+      "id": "showcase-0213",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-10-03T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0214",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-10-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0215",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-10-08T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0216",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-10-09T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0217",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-10-10T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 11
+    },
+    {
+      "id": "showcase-0218",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-10-10T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0219",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-10-11T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0220",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-10-12T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0221",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-10-15T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0222",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-10-16T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0223",
+      "kind": "release",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-10-17T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0224",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-10-18T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0225",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-10-18T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0226",
+      "kind": "pr_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-10-19T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 10
+    },
+    {
+      "id": "showcase-0227",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-10-20T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0228",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-10-21T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0229",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-10-22T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0230",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-10-26T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 6
+    },
+    {
+      "id": "showcase-0231",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-10-29T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0232",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-10-30T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0233",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-10-30T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0234",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-10-31T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0235",
+      "kind": "pr_merged",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-11-01T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0236",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-11-02T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0237",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-11-05T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0238",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/ember",
+      "occurred_at": "2026-11-06T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0239",
+      "kind": "issue_opened",
+      "repo_full_name": "sample-dev/aurora",
+      "occurred_at": "2026-11-07T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 5
+    },
+    {
+      "id": "showcase-0240",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-11-08T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 3
+    },
+    {
+      "id": "showcase-0241",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/harbour",
+      "occurred_at": "2026-11-09T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 2
+    },
+    {
+      "id": "showcase-0242",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/atlas",
+      "occurred_at": "2026-11-14T09:00:00Z",
+      "url": "https://github.com/example",
+      "count": 4
+    },
+    {
+      "id": "showcase-0243",
+      "kind": "commit",
+      "repo_full_name": "sample-dev/orbit",
+      "occurred_at": "2026-11-14T10:00:00Z",
+      "url": "https://github.com/example",
+      "count": 1
+    }
+  ]
+}
