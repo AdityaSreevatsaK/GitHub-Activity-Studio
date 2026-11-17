@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { validSnapshot,calendarModel,selectedModel,dayMachines,render,TYPES } from "../calendar-factory.mjs";
 const fixture=JSON.parse(readFileSync(new URL("../../../shared/fixtures/demo-activity.json",import.meta.url),"utf8"));
+const publicAccount=JSON.parse(readFileSync(new URL("../fixtures/adityasreevatsak-public-activity.json",import.meta.url),"utf8"));
 const clone=v=>structuredClone(v);
 test("shared fixture is real input to normaliser",()=>{
  const m=calendarModel(fixture);
@@ -263,4 +264,39 @@ test("seven calendar-to-factory signals reflect each selected day's actual recor
  const idle=render(fixture,{selectedWeek:52});
  assert.doesNotMatch(idle,/data-package="/);
  assert.match(idle,/<title>2026-11-16: 0 recorded units<\/title>/);
+});
+
+test("personal snapshot comes from public GitHub records rather than the demonstration",()=>{
+ const snap=validSnapshot(publicAccount);
+ assert.equal(snap.source,"github");
+ assert.equal(snap.userLogin,"AdityaSreevatsaK");
+ assert.notEqual(publicAccount.generated_at,fixture.generated_at);
+ assert.ok(snap.events.length>100);
+ assert.ok(snap.repos.size>5);
+ assert.ok(snap.events.every(e=>publicAccount.repositories.some(r=>r.full_name===e.repo)));
+ assert.ok(publicAccount.activity.every(e=>e.url.startsWith("https://github.com/")));
+ assert.ok(publicAccount.repositories.every(r=>r.url.startsWith("https://github.com/")));
+ assert.ok(!publicAccount.access_token&&!publicAccount.token);
+});
+test("account-specific stills display the actual username and only selected-week events",()=>{
+ const model=calendarModel(publicAccount);
+ const selected=model.weeks[51];
+ assert.ok(selected.records>0);
+ const activeRepos=[...new Set(selected.days.flatMap(day=>day.events.map(e=>e.repo)))];
+ assert.ok(activeRepos.length>=2);
+ for(const layout of ["isometric","pixel"])for(const theme of ["dark","light"]){
+   const svg=render(publicAccount,{layout,theme,selectedWeek:51,animated:false});
+   assert.match(svg,/@AdityaSreevatsaK/);
+   assert.match(svg,/PUBLIC GITHUB SNAPSHOT/);
+   assert.doesNotMatch(svg,/SYNTHETIC DEMO/);
+   assert.match(svg,/aria-pressed="true"/);
+   assert.equal((svg.match(/data-week-index="/g)||[]).length,53);
+   assert.equal((svg.match(/data-package="/g)||[]).length,selected.days.reduce((total,d)=>total+Math.min(2,dayMachines(d).length),0));
+   assert.doesNotMatch(svg,/<animateMotion/);
+ }
+});
+test("unsafe account labels cannot become SVG markup",()=>{
+ const data=clone(publicAccount);
+ data.user.login="<svg onload=alert(1)>";
+ assert.throws(()=>render(data),/invalid public username/);
 });
