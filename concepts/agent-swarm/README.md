@@ -49,6 +49,7 @@ The canonical source remains the shared, ten-event demonstration fixture. For de
 
 ~~~powershell
 node concepts/agent-swarm/build.mjs
+node concepts/agent-swarm/build.mjs --verify
 ~~~
 
 3. Start the private local preview server (the build also regenerates the optional synthetic showcase assets):
@@ -71,6 +72,8 @@ node concepts/agent-swarm/build.mjs --input .\path\to\activity.json
 ~~~
 
 You can specify --out for a custom export directory. The browser preview reads from this concept's default exports directory.
+
+The `--verify` command checks all generated files byte-for-byte without changing them. It exits with an error if an asset is missing or stale. Run it after editing the renderer or the source fixture.
 
 ## Outputs
 
