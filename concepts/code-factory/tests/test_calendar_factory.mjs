@@ -210,3 +210,38 @@ test("mixed ISO UTC precision sorts chronologically and equivalent timestamps de
  assert.deepEqual(snap.events.map(e=>e.id),["earlier","later"]);
  assert.match(render(d),/6 UNITS/);
 });
+
+test("README still exports contain source-backed packages, including correct day, repo and units",()=>{
+ const still=render(fixture,{animated:false});
+ const packages=[...still.matchAll(/data-package="([^"]+)" data-day="([^"]+)" data-repo="([^"]+)" data-units="([^"]+)"/g)];
+ assert.deepEqual(packages.map(x=>x.slice(1)),[
+  ["commit","2026-11-09","sample-dev/harbour","4"],
+  ["pr_opened","2026-11-13","sample-dev/ember","1"]
+ ]);
+ assert.doesNotMatch(still,/<animateMotion/);
+ assert.equal(packages.length,2);
+});
+test("animated packages only originate from the same visible selected-week machine groups",()=>{
+ const animation=render(fixture,{animated:true,selectedWeek:51});
+ assert.equal((animation.match(/data-package="/g)||[]).length,2);
+ assert.equal((animation.match(/<animateMotion/g)||[]).length,2);
+ const idle=render(fixture,{animated:true,selectedWeek:52});
+ assert.doesNotMatch(idle,/data-package="/);
+ assert.doesNotMatch(idle,/<animateMotion/);
+});
+test("unsafe XML controls and directional overrides cannot corrupt exported SVG",()=>{
+ for(const bad of ["\u0000","\u0001","\u001f","\u007f","\u202e","\u2066","\ud800","\ufffe"]){
+  const d=clone(fixture);d.repositories[0].name="repo"+bad+"test";
+  assert.throws(()=>render(d),/unsafe XML/);
+ }
+ const d=clone(fixture);d.activity[0].id="e\u0007vil";
+ assert.throws(()=>render(d),/unsafe XML/);
+});
+test("only selected calendar week is focusable and every column is discoverable",()=>{
+ const svg=render(fixture,{selectedWeek:51});
+ assert.equal((svg.match(/data-week-index="/g)||[]).length,53);
+ assert.equal((svg.match(/role="button" tabindex="0"/g)||[]).length,1);
+ assert.equal((svg.match(/role="button" tabindex="-1"/g)||[]).length,52);
+ assert.match(svg,/data-week-index="51" role="button" tabindex="0"/);
+ assert.match(svg,/aria-pressed="true"/);
+});
