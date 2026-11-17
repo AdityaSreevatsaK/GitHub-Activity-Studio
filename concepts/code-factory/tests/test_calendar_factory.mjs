@@ -131,7 +131,7 @@ test("multiple records at one repository and stage reuse one machine with truthf
  const svg=render(d);
  assert.match(svg,/data-records="2" data-units="6"/);
  assert.match(svg,/6 UNITS/);
- assert.equal((svg.match(/data-repo="sample-dev\/harbour"/g)||[]).length,1);
+ assert.equal((svg.match(/class="active" data-repo="sample-dev\/harbour"/g)||[]).length,1);
 });
 test("similarly named repositories from different owners remain separate machines",()=>{
  const d=clone(fixture);
