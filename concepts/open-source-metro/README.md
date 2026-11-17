@@ -26,7 +26,7 @@ The still SVGs above are the intended GitHub README embeds. [Animated metropolit
 - **Event units, not complete GitHub contributions.** Cells only count the source-backed `count` values in the normalised snapshot, even when they represent different event types. A filled cell indicates recorded activity; blank cells mean no event appears in this supplied snapshot. This is not a live API contribution graph.
 - **Repository stations.** An active cell contains a small roundel numbered to match a repository in the station directory. If several repositories have activity on the same date, the calendar cell becomes an interchange and its numeral shows how many distinct repositories are present. Event IDs, source units and UTC dates are in accessible SVG titles.
 - **Five meaningful metro services.** `CODE` = commits, `PROPOSE` = PRs opened, `MERGE` = PRs merged, `DISCUSS` = issues opened, `SHIP` = releases. Each line connects only chronological event stops **of its own type**. The diagram does not claim any relationship between repositories, nor does it treat a PR opened as a PR merged.
-- **Two art directions.** Metropolitan uses luminous transit roundels and a restrained midnight palette. Vintage uses paper-coloured cells, double outlines, serif signage and diamond-line medallions. Both also offer light/dark variants.
+- **Two art directions.** Metropolitan uses luminous transit roundels and a restrained midnight palette. Vintage uses paper-coloured cells, double outlines, serif signage and diamond-line medallions. Both also offer light/dark variants. Secondary text in every theme is checked against the paper and panel surfaces at WCAG AA's 4.5:1 contrast threshold.
 
 ## Windows PowerShell: generate and view
 
@@ -42,12 +42,13 @@ Start-Process .\concepts\open-source-metro\exports\preview.html
 
 Browser controls select **design, colour scheme, still/animated replay and a 5- or 17-station scenario**. All combinations are included as generated SVGs when running the command above. If you open the checked-in browser preview without first generating all variants, it shows the nearest available sample and explains which export is missing. On narrow screens, **swipe the map horizontally inside its own scrollable panel** rather than shrinking the 53-week grid to illegibility. Expand **Recorded source events** below the map to inspect the exact UTC dates, repository names, event IDs, categories and source units used for the routes.
 
-For automated tests:
+For the complete **offline release preflight** on Windows (Python 3.11+):
 
 ```powershell
-py -3 -m unittest discover -s .\concepts\open-source-metro\tests -v
-py -3 .\concepts\open-source-metro\tools\verify_readme_exports.py
+py -3 .\concepts\open-source-metro\tools\preflight.py
 ```
+
+This command discovers every concept-owned test, checks all three README SVGs for unsafe content and verifies they match the renderer output from the shared fixture. It returns a non-zero exit code on any failure. It neither accesses the network nor changes repository files. The underlying checks can also be run separately with `py -3 -m unittest discover -s .\concepts\open-source-metro\tests -v` and `py -3 .\concepts\open-source-metro\tools\verify_readme_exports.py`.
 
 To render your own **public, normalised** JSON snapshot matching [`docs/DATA_CONTRACT.md`](../../docs/DATA_CONTRACT.md):
 
@@ -59,7 +60,7 @@ For existing users of `metro.py`, its CLI delegates to the calendar-first genera
 
 ## Validation and limits
 
-- Offline, deterministic, Python standard-library renderer and **30 calendar test cases**, **7 checked-in SVG gate tests**, and **6 browser-preview contract tests**, in addition to the existing 21 legacy regression tests. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
+- Offline, deterministic, Python standard-library renderer and **75 test cases defined:** 34 calendar, 21 legacy compatibility, 9 SVG safety/reproducibility, 6 browser-preview, 3 preflight, and 2 WCAG AA colour-contrast tests. XML validity, Sunday alignment, UTC ordering, duplicate IDs, empty and single-repository cases, safe links, complete browser export variants, and the 17-station stress scenario are covered.
 - The supplied demonstration fixture has **five repositories and ten source events** across August to November 2026. It is intentionally sparse across a full 53-week calendar. The 17-station stress demo is separately labelled as synthetic.
 - The snapshot is **not** a complete GitHub contribution calendar. GitHub source APIs have differing coverage; a future public-data collector would need an independently reviewed data provenance and pagination contract.
 - The renderer limits the directory to up to **18 repositories**, preferring those with more recorded in-window events when the 18-station cap is exceeded, and the **most recent 240 source events** from those repositories; omissions appear in the footer. Historical events outside the visible 53-week range or events dated beyond snapshot generation are also excluded and counted as omitted.
@@ -68,4 +69,4 @@ For existing users of `metro.py`, its CLI delegates to the calendar-first genera
 
 **Scope:** changes are confined to this concept and the **branch-only landing README**. Other concepts, `master`, and the profile repository remain untouched. The draft PR remains unmerged.
 
-**Verification status:** Seven SVG integrity gate tests and the checked-in SVG audit passed locally. Twenty-six calendar tests had passed before these latest changes. The additional calendar and browser-preview tests have been added but have not yet run under CI. Automated Chromium was blocked from loading even a local `data:` page, so a real mobile-browser, full-suite and GitHub README render check are still required before release.
+**Verification status:** The three static README previews passed independent XML/security inspection, and vintage-light secondary text now measures about 4.72:1 against the main paper surface. The full 75-test suite and byte-for-byte export reproducibility gate have been added but have not yet run together under CI. Browser automation was previously blocked from loading local pages, so a real mobile-browser, screen-reader and GitHub README-image render check are still required before release.
