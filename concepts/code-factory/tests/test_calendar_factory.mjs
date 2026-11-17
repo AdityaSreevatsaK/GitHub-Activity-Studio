@@ -245,3 +245,12 @@ test("only selected calendar week is focusable and every column is discoverable"
  assert.match(svg,/data-week-index="51" role="button" tabindex="0"/);
  assert.match(svg,/aria-pressed="true"/);
 });
+
+test("moving cargo fades at the loop boundaries but static images do not rely on animation",()=>{
+ const animated=render(fixture,{animated:true});
+ const still=render(fixture,{animated:false});
+ const fades=[...animated.matchAll(/<animate attributeName="opacity" values="0;1;1;0"/g)];
+ assert.equal(fades.length,2);
+ assert.doesNotMatch(still,/attributeName="opacity"/);
+ assert.equal((still.match(/data-package="/g)||[]).length,2);
+});
