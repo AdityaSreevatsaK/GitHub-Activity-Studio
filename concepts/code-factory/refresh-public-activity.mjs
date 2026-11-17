@@ -75,6 +75,7 @@ async function collect({request,now=new Date(),since,login=ACCOUNT}) {
         if(item.user?.login?.toLowerCase()!==login.toLowerCase())continue;
         const full=sourceRepo(item.repository_url);
         if(kind==="pr"){
+          if(item.pull_request?.merged_at&&Date.parse(item.pull_request.merged_at)<Date.parse(item.created_at))throw Error("Merged public PR predates its opening: "+full+"#"+item.number);
           add("pr_opened",full,item.created_at,"pr-opened:"+full+"#"+item.number,item.html_url);
           if(item.pull_request?.merged_at)add("pr_merged",full,item.pull_request.merged_at,"pr-merged:"+full+"#"+item.number,item.html_url);
         }else add("issue_opened",full,item.created_at,"issue-opened:"+full+"#"+item.number,item.html_url);
