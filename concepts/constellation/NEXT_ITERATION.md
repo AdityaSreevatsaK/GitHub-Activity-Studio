@@ -1,6 +1,6 @@
 # Next iteration: three unmistakably GitHub-first constellation prototypes
 
-**Status: IMPLEMENTED, 16 November 2026.** Comet Streaks, Celestial Cartographer and Starforge are built with one deterministic 53-week calendar engine, 24 new passing Node tests, a responsive interactive preview and GitHub-compatible night/paper SVG exports. The original design instructions below remain as the accepted specification; previous illustrations are legacy only. See [README.md](README.md) for real previews, source-honesty limits, Windows commands and verified/unverified checks.
+**Status: IMPLEMENTED AND HARDENED, 17 November 2026.** Comet Streaks, Celestial Cartographer and Starforge use one deterministic 53-week calendar engine, 28 regression checks, a responsive interactive preview and self-contained night/paper animated and still SVG exports. The second engineering iteration corrected temporal precision and calendar week-wrap paths, linked Starforge reveals to actual spark arrivals, regenerated the affected assets, and added optional Chromium smoke and native GIF-generation tooling. GitHub-hosted animated SVG playback remains unverified and generated GIF files are not yet committed. The original design instructions below remain as the accepted specification; previous illustrations are legacy only. See [README.md](README.md) for real previews, source-honesty limits, Windows commands and verified/unverified checks.
 
 **Branch:** `concept/constellation`  
 **PR:** https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/1 (must stay draft)  
