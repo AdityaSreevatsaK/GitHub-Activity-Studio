@@ -1,0 +1,46 @@
+name: Developer World prototype
+
+on:
+  pull_request:
+    paths:
+      - 'concepts/developer-world/**'
+      - '.github/workflows/developer-world.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  developer-world:
+    name: Tests and exports (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: concepts/developer-world
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run offline unit and HTTP integration tests
+        run: npm test
+      - name: Generate GitHub-compatible SVG files
+        run: npm run export
+      - name: Verify all exported SVG variants
+        run: node tests/verify-exports.cjs
+      - name: Upload sample exports for design review
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: developer-world-svg-previews
+          path: concepts/developer-world/exports/*.svg
+          if-no-files-found: error
+          retention-days: 7
