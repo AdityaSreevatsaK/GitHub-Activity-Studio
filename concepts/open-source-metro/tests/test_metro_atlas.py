@@ -52,6 +52,23 @@ class AtlasTests(unittest.TestCase):
         source=raw();source['source']='github'
         with self.assertRaises(ValueError):expand_showcase(source)
 
+    def test_public_snapshot_never_masquerades_as_a_synthetic_fixture(self):
+        data=raw();data["source"]="github"
+        svg=render(data)
+        self.assertIn("PUBLIC EVENT SNAPSHOT",svg)
+        self.assertIn("incomplete GitHub coverage",svg)
+        self.assertNotIn("SHARED SYNTHETIC FIXTURE",svg)
+
+    def test_unfeatured_repositories_are_disclosed_not_silently_mapped(self):
+        data=raw()
+        data["repositories"].append({"full_name":"sample-dev/sixth","name":"sixth"})
+        data["activity"].append({"id":"sixth-event","kind":"commit",
+            "repo_full_name":"sample-dev/sixth","occurred_at":"2026-10-08T12:00:00Z","count":3})
+        svg=render(data)
+        self.assertIn("ONLY 5 OF 6 REPOSITORIES SHOWN",svg)
+        self.assertNotIn("sixth-event",svg)
+        self.assertEqual(svg.count('class="terminal"'),5)
+
     def test_five_routes_and_calendar_tiles_are_present(self):
         svg=render(expand_showcase(raw()))
         root=ET.fromstring(svg)

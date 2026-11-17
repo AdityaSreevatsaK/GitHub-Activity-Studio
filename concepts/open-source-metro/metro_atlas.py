@@ -125,7 +125,9 @@ def render(data: dict, theme: str='midnight') -> str:
     dates=[d for d in dates if d<=today]
     positions={d:(i//7,i%7) for i,d in enumerate(dates)}
     points={d:(GX+week*GAP+CELL/2,GY+day*GAP+CELL/2) for d,(week,day) in positions.items()}
-    events=[ev for ev in snap['events'] if ev['date']<=snap['generated'] and ev['date'].date() in positions]
+    featured = {repo['full_name'] for repo in data['repositories'][:5]}
+    omitted_repositories = max(0, len(data['repositories']) - len(featured))
+    events=[ev for ev in snap['events'] if ev['repo'] in featured and ev['date']<=snap['generated'] and ev['date'].date() in positions]
     if len(events)>240:
         events=events[-240:]
     daily=defaultdict(list)
@@ -133,10 +135,13 @@ def render(data: dict, theme: str='midnight') -> str:
         daily[ev['date'].date()].append(ev)
     repo_counts=Counter(ev['repo'] for ev in events)
     totals=Counter({d:sum(e['count'] for e in evs) for d,evs in daily.items()})
-    repo_idx={r['full_name']:i+1 for i,r in enumerate(data['repositories'][:7])}
+    repo_idx={r['full_name']:i+1 for i,r in enumerate(data['repositories'][:5])}
     show=bool(data.get('_showcase'))
-    mark='SYNTHETIC DENSITY SHOWCASE' if show else 'SHARED SYNTHETIC FIXTURE'
-    note=(f'{data.get("_illustrative_count",0)} invented design-only events + {len(snap["events"])-data.get("_illustrative_count",0)} fixture events' if show else '10 recorded fixture events • No invented contributions')
+    mark=('SYNTHETIC DENSITY SHOWCASE' if show else
+          'SHARED SYNTHETIC FIXTURE' if data['source']=='demo' else 'PUBLIC EVENT SNAPSHOT')
+    note=(f'{data.get("_illustrative_count",0)} invented design-only events + {len(snap["events"])-data.get("_illustrative_count",0)} fixture events' if show else
+          f'{len(events)} recorded fixture events • No invented contributions' if data["source"]=="demo" else
+          f'{len(events)} observed public events • incomplete GitHub coverage')
     titlefont='Georgia,serif' if vintage else 'system-ui,Segoe UI,sans-serif'
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="{WIDTH}" height="{HEIGHT}" role="img" aria-labelledby="title description">',
         f'<title id="title">Open Source Metro: {theme} GitHub-style contribution calendar</title>',
@@ -268,7 +273,9 @@ def render(data: dict, theme: str='midnight') -> str:
         svg.append(f'<rect x="{x+48}" y="537" width="{min(171, 20+cnt*2.0):.1f}" height="2.7" fill="{col}" opacity=".75"/>')
     svg.append(f'<path d="M81 558H1360" stroke="{t["line"]}" stroke-width=".8"/>')
     svg.append(text(82,574,f'{mark}  /  {note}','tag'))
-    svg.append(text(1358,574,'NOT A COMPLETE GITHUB CONTRIBUTION HISTORY','tag','end'))
+    svg.append(text(1358,574,
+       (f'ONLY 5 OF {len(data["repositories"])} REPOSITORIES SHOWN / ' if omitted_repositories else '') +
+       'NOT A COMPLETE GITHUB CONTRIBUTION HISTORY','tag','end'))
     svg.append('</svg>')
     return '\n'.join(svg)+'\n'
 
