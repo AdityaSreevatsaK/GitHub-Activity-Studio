@@ -22,27 +22,9 @@ The redesigned **Metro Atlas** preserves the recognisable GitHub contribution gr
 
 ---
 
-## Open Source Metro | Contribution calendar × transit network
+### Previous Metro prototype
 
-**Concept 04, shown only on this branch.** The original standalone route diagram has been redesigned around the **GitHub-style 53-week × 7-day contribution grid**. Coloured metro services connect real dates from the supplied synthetic fixture, and numbered station markers identify repositories. **All events shown are synthetic demonstration data, not the owner's GitHub history.**
-
-### Contemporary metropolitan: Midnight
-
-![A GitHub-style 53-week daily-square calendar in midnight blue; numbered repository stations and five neon metro services trace supplied synthetic event dates.](concepts/open-source-metro/exports/modern-dark-still.svg)
-
-### Refined vintage transport: Parchment
-
-![A paper-coloured 53-week contribution-style calendar with vintage transit lines, numbered repository stations, and a classical station directory; synthetic demo data.](concepts/open-source-metro/exports/vintage-light-still.svg)
-
-### Stress preview: 17 synthetic stations
-
-![Seventeen synthetic repositories represented as a station directory beneath a calendar-first source-event metro diagram.](concepts/open-source-metro/exports/stress-modern-dark-still.svg)
-
-**How to read it:** A coloured route denotes one event kind (commits, PRs opened, PRs merged, issues opened or releases), and each station stop is on a dated source event. Green cells show **observed units in the supplied snapshot**, not GitHub's complete contribution count. Blank days are **unknown, not verified zero contributions**. No line claims relationships between repositories.
-
-[Full design explanation and Windows instructions](concepts/open-source-metro/README.md) · [Animated contemporary SVG](concepts/open-source-metro/exports/modern-dark.svg) · [Animated vintage SVG](concepts/open-source-metro/exports/vintage-light.svg) · [Draft PR #4](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/4)
-
-**GitHub view:** Still SVGs above are appropriate for rendered README previews. Browser controls require running the local generator. GitHub image-proxy playback of SVG motion is not guaranteed.
+The earlier, sparsely populated design remains available for comparison in the [concept archive and generator documentation](concepts/open-source-metro/README.md#earlier-calendar-metro-prototype). The new Metro Atlas illustrations above are the current exploration.
 
 ---
 
