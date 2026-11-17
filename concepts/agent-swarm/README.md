@@ -62,7 +62,7 @@ node concepts/agent-swarm/serve.mjs
 5. Run tests in another PowerShell window:
 
 ~~~powershell
-node --test concepts/agent-swarm/tests/scene.test.mjs concepts/agent-swarm/tests/calendar.test.mjs concepts/agent-swarm/tests/showcase.test.mjs concepts/agent-swarm/tests/exports.test.mjs
+node --test concepts/agent-swarm/tests/scene.test.mjs concepts/agent-swarm/tests/calendar.test.mjs concepts/agent-swarm/tests/showcase.test.mjs concepts/agent-swarm/tests/exports.test.mjs concepts/agent-swarm/tests/server.test.mjs
 ~~~
 
 To use a different, already-normalised public snapshot:
@@ -103,7 +103,7 @@ The calendar covers **53 weeks** of observed events, while at most **five** rece
 - Geometry: bright recorded-day cells, controlled routes, event halos, and repository beacons. Mini robots add face screens, antennae, charging docks, faint links between adjacent observed days, busy-day markers and paired approaches to activity cells. Both remain recognisable as calendar graphs.
 - Exports: detailed SVG and simplified pixel GIF from the **same calendar and task schedule**, not pixel-identical files. A native LZW encoder avoids extra dependencies.
 - Accessibility: descriptive SVG titles, descriptions, event-intensity legend, demo label, keyboard-operable recorded-date inspection, pause/replay controls and static fallbacks. Reduced-motion preferences initially pause the browser animation. GIFs have no automatic reduced-motion adaptation; use the matching still for each style/theme when necessary.
-- The preview server binds to 127.0.0.1 and only serves files within this concept directory. The inspector uses textContent, and export text is escaped.
+- The preview server binds to 127.0.0.1 and only serves two preview pages and generated media. It denies arbitrary source, .env files, malformed paths and symlink escapes. The inspector uses textContent, and export text is escaped.
 - Tests cover validation, determinism, deduplication, state transitions, agent assignment conflicts, truncation, provenance, escaping, themes, rendering and GIF integrity.
 
 **Before a profile release:** review readability at small sizes, inspect an actual GitHub README render, compare GIF sizes/contrast and decide which theme/design to keep. Leave master and all other concepts untouched.
