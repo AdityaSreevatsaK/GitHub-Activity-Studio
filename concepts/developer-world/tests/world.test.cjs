@@ -92,11 +92,19 @@ test("local server serves preview and fixture but blocks private dotfiles",async
   });
   const entry=await get("/");assert.equal(entry.code,302);
   assert.equal(entry.headers.location,"/concepts/developer-world/index.html");
+  const configured=await get("/?sample=showcase&layout=village&theme=light");
+  assert.equal(configured.code,302);
+  assert.equal(configured.headers.location,"/concepts/developer-world/index.html?sample=showcase&layout=village&theme=light");
+  const ignored=await get("/?sample=invalid&layout=archipelago&extra=untrusted");
+  assert.equal(ignored.headers.location,"/concepts/developer-world/index.html?layout=archipelago");
   const page=await get(entry.headers.location);assert.equal(page.code,200);assert.match(page.body,/Developer World/);
   assert.match(page.headers["content-security-policy"],/img-src 'self' data: blob:/);
   const gifModule=await get("/concepts/developer-world/gif.js");assert.equal(gifModule.code,200);
   assert.match(gifModule.headers["content-type"],/javascript/);
   const data=await get("/shared/fixtures/demo-activity.json");assert.equal(data.code,200);assert.equal(JSON.parse(data.body).source,"demo");
+  const showcase=await get("/concepts/developer-world/showcase-activity.json");
+  assert.equal(showcase.code,200);
+  assert.equal(JSON.parse(showcase.body).activity.length,243);
   assert.equal((await get("/.git/config")).code,403);
  }finally{await new Promise(resolve=>server.close(resolve));}
 });
