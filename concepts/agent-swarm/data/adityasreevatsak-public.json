@@ -8,6 +8,11 @@
   },
   "repositories": [
     {
+      "full_name": "AdityaSreevatsaK/100DaysOfCode_Python",
+      "name": "100DaysOfCode_Python",
+      "url": "https://github.com/AdityaSreevatsaK/100DaysOfCode_Python"
+    },
+    {
       "full_name": "AdityaSreevatsaK/AdityaSreevatsaK",
       "name": "AdityaSreevatsaK",
       "url": "https://github.com/AdityaSreevatsaK/AdityaSreevatsaK"
@@ -31,6 +36,11 @@
       "full_name": "AdityaSreevatsaK/AlphaAgent",
       "name": "AlphaAgent",
       "url": "https://github.com/AdityaSreevatsaK/AlphaAgent"
+    },
+    {
+      "full_name": "AdityaSreevatsaK/AlphaAgent-Phase1-Baseline",
+      "name": "AlphaAgent-Phase1-Baseline",
+      "url": "https://github.com/AdityaSreevatsaK/AlphaAgent-Phase1-Baseline"
     },
     {
       "full_name": "AdityaSreevatsaK/Applied-AI-Lab",
@@ -68,6 +78,16 @@
       "url": "https://github.com/AdityaSreevatsaK/logfire"
     },
     {
+      "full_name": "AdityaSreevatsaK/MongoDB-Mechanics",
+      "name": "MongoDB-Mechanics",
+      "url": "https://github.com/AdityaSreevatsaK/MongoDB-Mechanics"
+    },
+    {
+      "full_name": "AdityaSreevatsaK/NLP-Navigator",
+      "name": "NLP-Navigator",
+      "url": "https://github.com/AdityaSreevatsaK/NLP-Navigator"
+    },
+    {
       "full_name": "AdityaSreevatsaK/PySpark-Pipeline",
       "name": "PySpark-Pipeline",
       "url": "https://github.com/AdityaSreevatsaK/PySpark-Pipeline"
@@ -81,6 +101,11 @@
       "full_name": "AdityaSreevatsaK/RAG-Foundry",
       "name": "RAG-Foundry",
       "url": "https://github.com/AdityaSreevatsaK/RAG-Foundry"
+    },
+    {
+      "full_name": "AdityaSreevatsaK/RL-RampUp",
+      "name": "RL-RampUp",
+      "url": "https://github.com/AdityaSreevatsaK/RL-RampUp"
     },
     {
       "full_name": "AdityaSreevatsaK/rossjrw",
@@ -9079,6 +9104,14 @@
       "repo_full_name": "AdityaSreevatsaK/AdityaSreevatsaK",
       "occurred_at": "2026-11-15T19:18:56Z",
       "url": "https://github.com/AdityaSreevatsaK/AdityaSreevatsaK/pull/1",
+      "count": 1
+    },
+    {
+      "id": "commit:AdityaSreevatsaK/SmartFlow@d3d82707fc0940db6b8fecef8a57d28cc02e4aa7",
+      "kind": "commit",
+      "repo_full_name": "AdityaSreevatsaK/SmartFlow",
+      "occurred_at": "2026-11-15T19:19:37Z",
+      "url": "https://github.com/AdityaSreevatsaK/SmartFlow/commit/d3d82707fc0940db6b8fecef8a57d28cc02e4aa7",
       "count": 1
     },
     {
