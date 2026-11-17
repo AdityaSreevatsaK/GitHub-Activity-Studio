@@ -195,6 +195,13 @@ def plan(snapshot: dict) -> dict:
     # Filtering by an exact instant also excludes events later on the snapshot day.
     selected = [x for x in eligible if x["repo"] in repo_names]
     visible = selected[-MAX_EVENTS:]
+    # Never colour a date with only a subset of its known source events.
+    # If the retention cut lands inside a day, omit that entire boundary
+    # day rather than presenting an understated contribution-intensity square.
+    if len(selected) > MAX_EVENTS and visible:
+        first_day = visible[0]["date"].date()
+        if selected[-MAX_EVENTS - 1]["date"].date() == first_day:
+            visible = [event for event in visible if event["date"].date() != first_day]
     by_day = defaultdict(list)
     for ev in visible:
         by_day[ev["date"].date()].append(ev)

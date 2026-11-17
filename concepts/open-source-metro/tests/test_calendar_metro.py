@@ -211,6 +211,37 @@ class CalendarContract(unittest.TestCase):
         data["activity"].reverse()
         self.assertEqual(expected, {r["full_name"] for r in plan(normalise(data))["repos"]})
 
+
+    def test_high_volume_cutoff_never_exposes_partial_day(self):
+        data = raw()
+        data["activity"] = [
+            {"id": f"burst-{i:03d}", "repo_full_name": "sample-dev/aurora",
+             "kind": "commit", "count": 1,
+             "occurred_at": f"2026-10-01T{i // 60:02d}:{i % 60:02d}:00Z"}
+            for i in range(MAX_EVENTS + 1)
+        ]
+        selected = plan(normalise(data))
+        self.assertEqual(len(selected["events"]), 0)
+        self.assertEqual(selected["omitted_events"], MAX_EVENTS + 1)
+
+    def test_cap_preserves_newer_complete_day_without_partial_old_day(self):
+        data = raw()
+        data["activity"] = [
+            {"id": f"older-{i:03d}", "repo_full_name": "sample-dev/aurora",
+             "kind": "commit", "count": 1,
+             "occurred_at": f"2026-10-01T{i // 60:02d}:{i % 60:02d}:00Z"}
+            for i in range(120)
+        ] + [
+            {"id": f"newer-{i:03d}", "repo_full_name": "sample-dev/aurora",
+             "kind": "commit", "count": 1,
+             "occurred_at": f"2026-10-02T{i // 60:02d}:{i % 60:02d}:00Z"}
+            for i in range(150)
+        ]
+        selected = plan(normalise(data))
+        self.assertEqual(len(selected["events"]), 150)
+        self.assertEqual(selected["omitted_events"], 120)
+        self.assertEqual({e["date"].date().isoformat() for e in selected["events"]}, {"2026-10-02"})
+
     def test_empty_user_login_rejected(self):
         data = raw()
         data["user"]["login"] = ""
