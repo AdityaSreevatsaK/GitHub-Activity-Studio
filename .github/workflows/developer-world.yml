@@ -60,6 +60,14 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         timeout-minutes: 4
         run: node tests/browser-gif-smoke.cjs
+      - name: Upload real animated GIF for review
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: developer-world-animated-gif
+          path: concepts/developer-world/exports/archipelago-showcase.gif
+          if-no-files-found: error
+          retention-days: 7
       - name: Upload browser screenshots for review
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
