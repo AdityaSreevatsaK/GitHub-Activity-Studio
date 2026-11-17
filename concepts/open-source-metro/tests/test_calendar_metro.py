@@ -10,7 +10,7 @@ from datetime import timedelta
 from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-from calendar_metro import MAX_EVENTS, MAX_REPOS, SERVICE_COLOURS, WEEKS, density, demo_stress, generate, normalise, plan, point, preview_html, render, safe_url, segments
+from calendar_metro import MAX_EVENTS, MAX_REPOS, SERVICE_COLOURS, WEEKS, density, demo_stress, generate, normalise, plan, point, preview_html, render, safe_label, safe_url, segments
 
 DEMO = Path(__file__).resolve().parents[3]/'shared/fixtures/demo-activity.json'
 
@@ -72,6 +72,40 @@ class CalendarContract(unittest.TestCase):
             with self.subTest(key=key),self.assertRaises(ValueError):normalise(data)
         data=raw();data['repositories'].append(copy.deepcopy(data['repositories'][0]))
         with self.assertRaises(ValueError):normalise(data)
+
+    def test_rejects_xml_invalid_and_spoofed_identifiers(self):
+        for bad in ("\x00", "\x1f", "\x7f", "\ud800", "\ufffe", "\u202e", "\u2066"):
+            with self.subTest(codepoint=repr(bad)):
+                self.assertFalse(safe_label("valid" + bad, 200))
+                data = raw()
+                data["repositories"][0]["name"] = "name" + bad
+                with self.assertRaises(ValueError):
+                    normalise(data)
+                data = raw()
+                data["activity"][0]["id"] = "event" + bad
+                with self.assertRaises(ValueError):
+                    normalise(data)
+                data = raw()
+                data["user"]["login"] = "user" + bad
+                with self.assertRaises(ValueError):
+                    normalise(data)
+
+    def test_printable_international_names_are_preserved_and_escaped(self):
+        data = raw()
+        data["repositories"][0]["name"] = "日本語 & <demo>"
+        data["activity"][0]["id"] = "épreuve-001"
+        svg = render(normalise(data))
+        ET.fromstring(svg)
+        self.assertIn("日本語 &amp; &lt;demo&gt;", svg)
+        self.assertIn("épreuve-001", svg)
+        self.assertTrue(safe_label("駅-東京", 200))
+
+    def test_unsafe_unicode_in_public_urls_is_rejected(self):
+        for value in ("https://github.com/org/repo\x00",
+                      "https://github.com/org/\ud800",
+                      "https://github.com/org/\u202eadmin"):
+            with self.subTest(value=repr(value)):
+                self.assertIsNone(safe_url(value))
 
     def test_sanitised_browser_links(self):
         for bad in ('javascript:alert(1)','https://github.com.evil/a','http://github.com/a','https://github.com:555/a','https://attacker.test/','https://github.com/a\nInjected'):

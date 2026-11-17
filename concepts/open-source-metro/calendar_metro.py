@@ -53,8 +53,27 @@ def utc_timestamp(value: object) -> datetime:
     return stamp.astimezone(timezone.utc)
 
 
+
+def safe_label(value: object, limit: int) -> bool:
+    """Accept printable Unicode identifiers safe in SVG text and attributes.
+
+    XML escaping does not make NUL, isolated UTF-16 surrogates or XML
+    noncharacters valid. Reject direction-override controls as they can make
+    event IDs or station names visually impersonate different identifiers.
+    """
+    if not isinstance(value, str) or not 1 <= len(value) <= limit:
+        return False
+    for char in value:
+        cp = ord(char)
+        if (cp < 32 or 127 <= cp <= 159 or 0xD800 <= cp <= 0xDFFF
+                or 0xFDD0 <= cp <= 0xFDEF or cp & 0xFFFE == 0xFFFE
+                or 0x202A <= cp <= 0x202E or 0x2066 <= cp <= 0x2069):
+            return False
+    return True
+
+
 def safe_url(value: object) -> str | None:
-    if not isinstance(value, str) or len(value) > 2048 or any(ord(c) < 32 for c in value):
+    if not safe_label(value, 2048):
         return None
     try:
         parsed = urlsplit(value)
@@ -70,7 +89,7 @@ def normalise(source: object) -> dict:
         raise ValueError("Expected v1 demo or github snapshot")
     generated = utc_timestamp(source.get("generated_at"))
     user = source.get("user")
-    if not isinstance(user, dict) or not isinstance(user.get("login"), str) or not 1 <= len(user["login"]) <= 120:
+    if not isinstance(user, dict) or not safe_label(user.get("login"), 120):
         raise ValueError("Missing/invalid user.login")
     if not isinstance(source.get("repositories"), list) or not isinstance(source.get("activity"), list):
         raise ValueError("Expected repository and activity lists")
@@ -79,18 +98,18 @@ def normalise(source: object) -> dict:
         if not isinstance(row, dict):
             raise ValueError("Invalid repository row")
         full = row.get("full_name")
-        if not isinstance(full, str) or len(full) > 200 or not re.fullmatch(r"[^/\s]+/[^/\s]+", full):
+        if not safe_label(full, 200) or not re.fullmatch(r"[^/\s]+/[^/\s]+", full):
             raise ValueError("Invalid repository full_name")
         if full in repos:
             raise ValueError("Duplicate repository")
         name = row.get("name", full.split("/", 1)[1])
-        if not isinstance(name, str) or not 1 <= len(name) <= 200:
+        if not safe_label(name, 200):
             raise ValueError("Invalid repository name")
         repos[full] = {"full_name": full, "name": name, "url": safe_url(row.get("url"))}
     events, seen = [], {}
     kinds = {x[0] for x in SERVICES}
     for row in source["activity"]:
-        if not isinstance(row, dict) or not isinstance(row.get("id"), str) or not 1 <= len(row["id"]) <= 160:
+        if not isinstance(row, dict) or not safe_label(row.get("id"), 160):
             raise ValueError("Invalid event ID")
         if row.get("kind") not in kinds or row.get("repo_full_name") not in repos:
             raise ValueError("Unsupported event type or unknown repository")
