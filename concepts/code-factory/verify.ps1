@@ -82,7 +82,9 @@ try {
 
     Write-Host 'Running Node.js regression tests...' -ForegroundColor Cyan
     & node --test (Join-Path $tests 'test_calendar_factory.mjs')
-    if ($LASTEXITCODE -ne 0) { throw 'Node.js regression tests failed.' }
+    if ($LASTEXITCODE -ne 0) { throw 'Node.js rendering regression tests failed.' }
+    & node --test (Join-Path $tests 'test_public_refresh.mjs')
+    if ($LASTEXITCODE -ne 0) { throw 'Node.js public collector regression tests failed.' }
 
     Write-Host 'Running Python SVG integrity tests...' -ForegroundColor Cyan
     & python -m unittest discover -s $tests -v
