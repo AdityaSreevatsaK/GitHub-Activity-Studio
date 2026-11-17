@@ -43,11 +43,11 @@ select{min-width:155px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:
 <div class="controls">
 <label for="layout">World<select id="layout"><option value="archipelago">The Isles of Code · Archipelago</option><option value="village">The Little Buildtown · Village</option></select></label>
 <label for="theme">Palette<select id="theme"><option value="dark">Moonlit</option><option value="light">Daybreak</option></select></label>
-<label for="sample">Activity dataset<select id="sample"><option value="shared">Shared synthetic fixture (10 days)</option><option value="showcase">Synthetic world showcase (212 days)</option><option value="custom" disabled>Local upload</option></select></label>
+<label for="sample">Activity dataset<select id="sample"><option value="real">Your real GitHub contributions</option><option value="shared">Shared synthetic fixture (10 days)</option><option value="showcase">Synthetic world showcase (212 days)</option><option value="custom" disabled>Local upload</option></select></label>
 <label for="file">Input JSON<input id="file" type="file" accept=".json,application/json"></label>
 <div class="actions"><button id="motion" aria-pressed="true">Pause motion</button><button id="still">Download still</button><button id="save">Download SVG</button><button id="gif" class="primary">Download animated GIF</button></div>
 </div>
-<div id="scene" class="scene" aria-label="53-week activity calendar, decorated as a miniature world"></div><p class="hint" style="margin:0;padding:0 22px 12px;background:#223951">53 chronological week columns × 7 weekday rows. Click a day or use the UTC date picker to inspect recorded events. The date controls work on mobile. A quiet cell means no events were supplied for that date, not a verified zero contribution day.</p>
+<div id="scene" class="scene" aria-label="53-week activity calendar, decorated as a miniature world"></div><p class="hint" style="margin:0;padding:0 22px 12px;background:#223951">53 chronological week columns × 7 weekday rows. Click a day or use the UTC date picker to inspect recorded events. The date controls work on mobile. For real data, coloured cells are actual GitHub-visible daily contributions. Recent public events only decorate those cells. Unavailable dates remain muted.</p>
 <div class="timeline"><button id="play" type="button">▶ Play events</button><label for="progress">Timeline</label><input id="progress" type="range" min="0" max="0" value="0" step="1"><output id="counter" for="progress">0 of 0 events</output></div>
 <section class="day-panel" aria-label="Inspect one calendar date">
 <div class="day-head"><div><strong id="day-heading">Inspect a day</strong><p id="day-summary">Select a calendar tile to inspect recorded source events.</p></div>
@@ -82,19 +82,19 @@ function render(){
  if(!selectedDate)selectedDate=calendar.cells.filter(function(c){return c.units>0;}).slice(-1)[0]?.date||calendar.asof;
  opts.focusDate=selectedDate;
  el("scene").innerHTML=DeveloperWorld.render(source,opts);
- el("counter").textContent=f.eventCount+" of "+f.totalEvents+" events · "+calendar.observed+" calendar units";
+ el("counter").textContent=calendar.hasOfficialCalendar?calendar.observed+" GitHub contributions · "+f.eventCount+"/"+f.totalEvents+" recent public events":f.eventCount+" of "+f.totalEvents+" events · "+calendar.observed+" recorded units";
  inspectDay(calendar,opts.progress);
  el("repos").replaceChildren();
  var featured=calendar.featured.map(function(name){return f.repositories.find(function(item){return item.repository.full_name===name;});});
  featured.forEach(function(item){
  var card=document.createElement("div"),name=document.createElement("strong"),detail=document.createElement("span");
  card.className="repo";name.textContent=item.repository.full_name;
- var observed=calendar.byRepo.get(item.repository.full_name);detail.textContent="Landmark "+(featured.indexOf(item)+1)+" · "+observed.units+" calendar units · "+observed.events+" events";
+ var observed=calendar.byRepo.get(item.repository.full_name);detail.textContent="Landmark "+(featured.indexOf(item)+1)+" · "+observed.units+" recent public-event units · "+observed.events+" events";
  card.append(name,detail);el("repos").appendChild(card);
  });
  var hidden=Math.max(0,f.repositories.length-featured.length);
  el("overflow").textContent=hidden?"+"+hidden+" repositories omitted from the compact scene.":"All repositories shown.";
- el("status").textContent=normal.source==="demo"?"SYNTHETIC DEMO: "+calendar.activeDays+" dates contain recorded demo events. Not actual GitHub contributions.":"SUPPLIED PUBLIC EVENTS: "+calendar.activeDays+" days contain recorded events. No-event days are unverified, not necessarily zero contributions.";
+ el("status").textContent=normal.source==="demo"?"SYNTHETIC DEMO: "+calendar.activeDays+" dates contain recorded demo events. Not actual GitHub contributions.":calendar.hasOfficialCalendar?"REAL GITHUB CONTRIBUTIONS ("+normal.user.login+"): "+calendar.activeDays+" active dates, "+calendar.observed+" contributions. "+calendar.unknownDays+" earlier dates outside GraphQL coverage. Recent public events are partial.":"SUPPLIED PUBLIC EVENTS: "+calendar.activeDays+" days contain recorded events. No-event days are unverified, not necessarily zero contributions.";
  }catch(err){el("status").textContent="Rendering error: "+err.message;}
 }
 function inspectDay(calendar,progress){
@@ -104,8 +104,8 @@ function inspectDay(calendar,progress){
  var events=normal.activity.slice(0,progress).filter(function(e){return e.occurred_at.slice(0,10)===date&&DeveloperWorld.compareUtc(e.occurred_at,normal.generated_at)<=0;});
  el("day-date").min=calendar.cells[0].date;el("day-date").max=calendar.asof;el("day-date").value=date;
  var nice=new Date(date+"T12:00:00Z").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
- el("day-heading").textContent=nice+" · "+cell.units+" recorded units";
- el("day-summary").textContent=cell.future?"After the snapshot date.":events.length?events.length+" distinct recorded events. Growth stage "+cell.level+"/4.":"No event supplied for this date. This does not prove zero GitHub contributions.";
+ el("day-heading").textContent=nice+" · "+cell.units+(calendar.hasOfficialCalendar?" GitHub contributions":" recorded units");
+ el("day-summary").textContent=cell.future?"After the snapshot date.":cell.unknown?"No GraphQL calendar coverage for this date; activity is unknown.":calendar.hasOfficialCalendar?cell.units+" GitHub-visible contributions. "+events.length+" recent public events available; these are not the complete activity log.":events.length?events.length+" distinct recorded events. Growth stage "+cell.level+"/4.":"No event supplied for this date. This does not prove zero GitHub contributions.";
  var host=el("day-events");host.replaceChildren();
  if(!events.length){var t=document.createElement("span");t.className="day-muted";t.textContent="No source event to display.";host.appendChild(t);}
  events.forEach(function(e){
@@ -193,13 +193,13 @@ el("play").addEventListener("click",function(){
  timer=setInterval(function(){var n=Number(el("progress").value)+1;if(n>normal.activity.length){stop();return;}el("progress").value=String(n);render();},950);
 });
 function loadPreset(selection){
- if(selection!=="shared"&&selection!=="showcase")return;
+ if(!["real","shared","showcase"].includes(selection))return;
  var serial=++requestSerial;
- var filename=selection==="shared"?"../../shared/fixtures/demo-activity.json":"./showcase-activity.json";
- el("status").textContent=selection==="shared"?"Loading shared synthetic fixture…":"Loading optional synthetic showcase…";
+ var filename=selection==="real"?"./real-activity.json":selection==="shared"?"../../shared/fixtures/demo-activity.json":"./showcase-activity.json";
+ el("status").textContent=selection==="real"?"Loading your actual GitHub contribution calendar…":selection==="shared"?"Loading shared synthetic fixture…":"Loading optional synthetic showcase…";
  fetch(filename,{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();})
  .then(function(next){if(serial!==requestSerial)return;load(next);})
- .catch(function(err){if(serial===requestSerial)el("status").textContent="Cannot open dataset: "+err.message+". Run the bundled Node server.";});
+ .catch(function(err){if(serial===requestSerial)el("status").textContent="Cannot load "+selection+" data: "+err.message+(selection==="real"?". Real account collection has not succeeded yet; no synthetic fallback is shown.":". Run the bundled Node server.");});
 }
 el("sample").addEventListener("change",function(){if(el("sample").value!=="custom")loadPreset(el("sample").value);});
 el("file").addEventListener("change",async function(){
@@ -215,7 +215,7 @@ el("file").addEventListener("change",async function(){
 var params=new URLSearchParams(window.location.search);
 if(["archipelago","village"].includes(params.get("layout")))el("layout").value=params.get("layout");
 if(["dark","light"].includes(params.get("theme")))el("theme").value=params.get("theme");
-var selectedPreset=params.get("sample")==="showcase"?"showcase":"shared";
+var selectedPreset=["real","showcase","shared"].includes(params.get("sample"))?params.get("sample"):"real";
 el("sample").value=selectedPreset;
 loadPreset(selectedPreset);
 })();
