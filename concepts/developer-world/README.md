@@ -6,10 +6,16 @@
 
 ## See both worlds
 
+**Showcase gallery:** an explicitly synthetic, richer **212-active-day** event log displays the worlds at a more representative visual density. It is **not** the owner's contribution history and is **not** the browser's default. The primary shared fixture stays unchanged.
+
 | The Isles of Code: overhead archipelago (primary) | The Little Buildtown: side-view village |
 | --- | --- |
-| ![DEMO, overhead contribution calendar built from tiny islands](previews/archipelago-dark.svg) | ![DEMO, side-view contribution calendar made of village plots](previews/village-light.svg) |
-| [Daybreak](previews/archipelago-light.svg) · [Still SVG](previews/archipelago-still.svg) | [Moonlit](previews/village-dark.svg) |
+| ![SYNTHETIC SHOWCASE: overhead 53-week contribution grid evolving into islands](previews/archipelago-showcase-dark.svg) | ![SYNTHETIC SHOWCASE: side-view 53-week contribution grid growing into village buildings](previews/village-showcase-light.svg) |
+| [Daybreak showcase](previews/archipelago-showcase-light.svg) · [Motion-free showcase](previews/archipelago-showcase-still.svg) | [Moonlit showcase](previews/village-showcase-dark.svg) |
+
+**Original shared-fixture gallery:** [10-day archipelago](previews/archipelago-dark.svg) · [10-day village](previews/village-light.svg) · [Static shared-fixture SVG](previews/archipelago-still.svg). These sparse images remain the reproducibility baseline.
+
+The showcase is generated deterministically with [`generate-showcase.cjs`](generate-showcase.cjs), stored separately as [`showcase-activity.json`](showcase-activity.json), and clearly labelled `source: "demo"`. It contains **243 synthetic events, 212 active dates and 1,050 event units**, all from the same five fictional repositories. Every event has an explicit invented-for-demo ID, UTC timestamp, type and count. It never fills unrecorded dates in actual user data.
 
 ### Growth snapshots
 
@@ -41,7 +47,7 @@ git switch concept/developer-world
 node concepts/developer-world/server.cjs
 ~~~
 
-Open **http://127.0.0.1:8787/**. Choose archipelago/village and dark/light, scrub the event timeline, click a day on the grid or use the accessible UTC date picker and recorded-day buttons, or upload your own normalised public-data JSON (locally, without sending it to a service). To export a **profile-ready animated GIF**, click **Download animated GIF** in the browser. It samples 8–16 timeline frames at 896 × 280 pixels with moving scenery and a 450 ms frame delay.
+Open **http://127.0.0.1:8787/**. Switch between the **unchanged shared synthetic fixture (default)** and the **optional richer synthetic showcase**, then choose archipelago/village and dark/light, scrub the event timeline, click a day on the grid or use the accessible UTC date picker and recorded-day buttons, or upload your own normalised public-data JSON (locally, without sending it to a service). To export a **profile-ready animated GIF**, click **Download animated GIF** in the browser. It samples 8–16 timeline frames at 896 × 280 pixels with moving scenery and a 450 ms frame delay.
 
 In another PowerShell window:
 
