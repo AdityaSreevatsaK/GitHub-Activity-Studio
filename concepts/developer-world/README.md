@@ -47,13 +47,13 @@ git switch concept/developer-world
 node concepts/developer-world/server.cjs
 ~~~
 
-Open **http://127.0.0.1:8787/**. Switch between the **unchanged shared synthetic fixture (default)** and the **optional richer synthetic showcase**, then choose archipelago/village and dark/light, scrub the event timeline, click a day on the grid or use the accessible UTC date picker and recorded-day buttons, or upload your own normalised public-data JSON (locally, without sending it to a service). To export a **profile-ready animated GIF**, click **Download animated GIF** in the browser. It samples 8–16 timeline frames at 896 × 280 pixels with moving scenery and a 450 ms frame delay.
+Open **http://127.0.0.1:8787/**. The server preserves safe, allowlisted URL options through its initial redirect, so you can go directly to **http://127.0.0.1:8787/?sample=showcase&layout=archipelago&theme=dark** or **http://127.0.0.1:8787/?sample=showcase&layout=village&theme=light**. Switch between the **unchanged shared synthetic fixture (default)** and the **optional richer synthetic showcase**, then choose archipelago/village and dark/light, scrub the event timeline, click a day on the grid or use the accessible UTC date picker and recorded-day buttons, or upload your own normalised public-data JSON (locally, without sending it to a service). To export a **profile-ready animated GIF**, click **Download animated GIF** in the browser. It samples 8–16 timeline frames at 896 × 280 pixels with moving scenery and a 450 ms frame delay.
 
 In another PowerShell window:
 
 ~~~powershell
 node concepts/developer-world/export.cjs
-node --test concepts/developer-world/tests/world.test.cjs concepts/developer-world/tests/gif.test.cjs
+npm --prefix concepts/developer-world test
 ~~~
 
 Exports appear in `concepts/developer-world/exports/`. To export one layout with custom data:
@@ -78,4 +78,4 @@ Use `--progress 0` to see the quiet starting calendar, `--progress 4` to show fo
 
 The overhead archipelago is the preferred profile candidate because its islands preserve square calendar cells especially clearly. The village adds a second, distinctly architectural rendering without changing dates or counts. Small cells constrain the amount of sprite detail; dense or multi-repository days prioritise one visible landmark marker, with full event detail remaining in the SVG accessible labels and browser list.
 
-**Preview and GitHub embedding behaviour still need human visual review.** The actual full Node suite and GitHub image-proxy integration have not been run in this execution environment; direct renderer and GIF-code behavioural checks were performed independently. Do not install this on the owner's profile or merge into `master` without approval.
+**Verification:** [the isolated Developer World GitHub Actions workflow](../../.github/workflows/developer-world.yml) has passed the complete Node test suite and CLI export checks on **Windows and Linux**, and headless Chrome produced both rich showcase screenshots with the correct 371 date cells and 212 active dates. The screenshots are available as workflow artifacts. The browser GIF button also has an independent encoder test suite; the end-to-end browser GIF check is included in CI. **GitHub’s own proxied README animation remains unverified**, so the motion-free SVG is still the recommended fallback. Do not install this on the owner's profile or merge into `master` without approval.
