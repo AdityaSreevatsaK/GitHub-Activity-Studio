@@ -96,9 +96,18 @@ async function main(){
   console.log("Browser GIF export passed:",JSON.stringify(gif));
  }finally{
   if(connection)connection.socket.close();
-  if(chrome&&!chrome.killed)chrome.kill("SIGTERM");
+  if(chrome&&chrome.exitCode===null){
+   await new Promise(resolve=>{
+    const timeout=setTimeout(resolve,5000);
+    chrome.once("exit",()=>{clearTimeout(timeout);resolve();});
+    chrome.kill("SIGTERM");
+   });
+  }
   await new Promise(resolve=>server.close(resolve));
-  fs.rmSync(profile,{force:true,recursive:true,maxRetries:5,retryDelay:100});
+  // Some Chromium children briefly retain files after the parent exits.
+  // A cleanup race must never hide a successful rendering/GIF assertion.
+  try{fs.rmSync(profile,{force:true,recursive:true,maxRetries:20,retryDelay:200});}
+  catch(err){console.warn("Temporary Chromium profile cleanup skipped:",err.message);}
  }
 }
 main().catch(err=>{console.error(err.stack||err);process.exitCode=1;});
