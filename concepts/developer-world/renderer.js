@@ -35,7 +35,29 @@ function normalise(raw){
   ids.add(e.id);activity.push({id:e.id,kind:e.kind,repo_full_name:e.repo_full_name,occurred_at:e.occurred_at,count:e.count});
  });
  activity.sort((a,b)=>compareUtc(a.occurred_at,b.occurred_at)||a.id.localeCompare(b.id));
- return {source:raw.source,generated_at:raw.generated_at,user:{login:raw.user.login,url:safeUrl(raw.user.url)},repositories,activity};
+ // Optional authoritative calendar from GitHub GraphQL, separate from the
+ // partial, event-type-labelled REST activity log. Never infer one from the other.
+ let contribution_calendar=null;
+ if(raw.contribution_calendar!==undefined){
+  check(raw.source==="github","Only a GitHub snapshot may supply a contribution calendar");
+  const c=raw.contribution_calendar;
+  check(c&&typeof c==="object"&&!Array.isArray(c)&&Array.isArray(c.days)&&c.days.length<=371,"Invalid contribution calendar");
+  check(/^\d{4}-\d\d-\d\d$/.test(c.from)&&/^\d{4}-\d\d-\d\d$/.test(c.to)&&c.from<=c.to,"Invalid calendar coverage");
+  check(Number.isSafeInteger(c.total_contributions)&&c.total_contributions>=0,"Invalid calendar total");
+  const levels=["NONE","FIRST_QUARTILE","SECOND_QUARTILE","THIRD_QUARTILE","FOURTH_QUARTILE"],dateSet=new Set(),days=[];
+  for(const day of c.days){
+   check(day&&typeof day.date==="string"&&/^\d{4}-\d\d-\d\d$/.test(day.date)&&day.date>=c.from&&day.date<=c.to&&utc(day.date+"T00:00:00Z"),"Invalid calendar day");
+   check(!dateSet.has(day.date),"Duplicate calendar date");dateSet.add(day.date);
+   check(Number.isSafeInteger(day.count)&&day.count>=0&&day.count<=100000,"Invalid contribution count");
+   check(levels.includes(day.level),"Invalid contribution level");
+   check((day.count===0)===(day.level==="NONE"),"Inconsistent contribution level");
+   days.push({date:day.date,count:day.count,level:day.level});
+  }
+  days.sort((a,b)=>a.date.localeCompare(b.date));
+  check(days.reduce((n,d)=>n+d.count,0)===c.total_contributions,"Contribution calendar total mismatch");
+  contribution_calendar={from:c.from,to:c.to,total_contributions:c.total_contributions,days};
+ }
+ return {source:raw.source,generated_at:raw.generated_at,user:{login:raw.user.login,url:safeUrl(raw.user.url)},repositories,activity,contribution_calendar};
 }
 // UTC ISO-8601 strings can use different fractional precision. Compare them numerically,
 // rather than placing ".500Z" before "Z" in an ordinary string sort.
@@ -75,7 +97,17 @@ function calendarFor(data,progress){
   cell.units+=e.count;cell.events++;cell.byKind[e.kind]+=e.count;cell.byRepo[e.repo_full_name]=(cell.byRepo[e.repo_full_name]||0)+e.count;
   const observed=byRepo.get(e.repo_full_name);observed.units+=e.count;observed.events++;
  }
- for(const cell of cells)cell.level=stage(cell.units);
+ const hasOfficialCalendar=!!data.contribution_calendar;
+ if(hasOfficialCalendar){
+  const values=new Map(data.contribution_calendar.days.map(d=>[d.date,d]));
+  const rank={NONE:0,FIRST_QUARTILE:1,SECOND_QUARTILE:2,THIRD_QUARTILE:3,FOURTH_QUARTILE:4};
+  for(const cell of cells){
+   if(cell.future)continue;
+   const official=values.get(cell.date);
+   if(!official){cell.unknown=true;cell.units=0;cell.level=0;continue;}
+   cell.units=official.count;cell.level=rank[official.level];cell.verified=true;
+  }
+ }else for(const cell of cells)cell.level=stage(cell.units);
  const all=new Map();
  for(const e of data.activity){
   const date=e.occurred_at.slice(0,10),cell=lookup.get(date);
@@ -95,7 +127,7 @@ function calendarFor(data,progress){
   const match=ranked.find(([date])=>!taken.has(date));
   if(match){anchors.set(name,match[0]);taken.add(match[0]);}
  });
- return {cells,lookup,anchors,featured,byRepo,first,asof,seen,outside,observed:cells.reduce((s,c)=>s+c.units,0),activeDays:cells.filter(c=>c.units>0).length};
+ return {cells,lookup,anchors,featured,byRepo,first,asof,seen,outside,hasOfficialCalendar,unknownDays:cells.filter(c=>c.unknown).length,observed:cells.reduce((s,c)=>s+c.units,0),activeDays:cells.filter(c=>c.units>0).length};
 }
 function calendarRender(raw,options={}){
  const data=normalise(raw),layout=options.layout||"archipelago",theme=options.theme||"dark";
@@ -118,7 +150,7 @@ function calendarRender(raw,options={}){
  const textAt=(x,y,value,size=11,fill=palette.text,weight=600,extra="")=>`<text x="${x}" y="${y}" fill="${fill}" font-size="${size}" font-weight="${weight}" ${extra}>${esc(value)}</text>`;
  out.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 350" width="1120" height="350" role="img" aria-labelledby="dw-title dw-desc">`);
  out.push(`<title id="dw-title">Developer World: ${arch?"The Isles of Code":"The Little Buildtown"} contribution calendar</title>`);
- out.push(`<desc id="dw-desc">${isDemo?"Synthetic demonstration. ":"Supplied public GitHub event snapshot. "}53 weeks by 7 weekdays ending ${esc(grid.asof)}; ${grid.activeDays} days with recorded events; ${grid.observed} activity units shown. Empty cells mean no events recorded in this snapshot, not proof of zero GitHub contributions. ${overflow} repositories omitted.</desc>`);
+ out.push(`<desc id="dw-desc">${isDemo?"Synthetic demonstration. ":grid.hasOfficialCalendar?"Real GitHub contribution calendar. ":"Supplied public GitHub event snapshot. "}53 weeks by 7 weekdays ending ${esc(grid.asof)}; ${grid.activeDays} active dates; ${grid.observed} ${grid.hasOfficialCalendar?"GitHub-visible contributions":"recorded event units"}. ${grid.hasOfficialCalendar?grid.unknownDays+" days not covered by GraphQL, shown as unknown. Public event decorations are a recent partial sample.":"Unrecorded dates are not proof of zero GitHub contributions."} ${overflow} repositories omitted.</desc>`);
  out.push(`<defs><linearGradient id="dw-bg" x2="0" y2="1"><stop stop-color="${palette.sky}"/><stop offset="1" stop-color="${palette.base}"/></linearGradient><linearGradient id="dw-sea" x2="0" y2="1"><stop stop-color="${palette.sea}"/><stop offset="1" stop-color="${palette.water}"/></linearGradient><clipPath id="dw-mask">${rect(0,0,1120,350,"white",16)}</clipPath></defs>`);
  out.push(`<style>text{font-family:Trebuchet MS,Verdana,Arial,sans-serif}.dw-wave{animation:dw-wave 7s ease-in-out infinite alternate}.dw-lantern{animation:dw-glow 3s ease-in-out infinite alternate}.dw-cloud{animation:dw-drift 16s ease-in-out infinite alternate}.dw-boat{animation:dw-sail 8s ease-in-out infinite alternate}.dw-smoke{animation:dw-smoke 5s ease-out infinite}.dw-tile{transition:opacity .2s}.dw-tile:hover{opacity:.75}@keyframes dw-wave{to{transform:translateX(8px);opacity:.35}}@keyframes dw-glow{to{opacity:.55}}@keyframes dw-drift{to{transform:translateX(14px)}}@keyframes dw-sail{to{transform:translateX(11px)}}@keyframes dw-smoke{to{transform:translateY(-9px);opacity:0}}${options.animated===false?"*{animation:none!important;transition:none!important}":""}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}</style>`);
  out.push(`<g clip-path="url(#dw-mask)">`);
@@ -139,8 +171,8 @@ function calendarRender(raw,options={}){
  }
  out.push(textAt(29,20,"GITHUB ACTIVITY STUDIO  /  CONCEPT 05",9,palette.gold,800,`letter-spacing="1.9"`));
  out.push(textAt(29,46,arch?"The Isles of Code":"The Little Buildtown",22,palette.text,800));
- out.push(textAt(1090,22,isDemo?"SYNTHETIC DEMO  •  NOT REAL ACTIVITY":"RECORDED PUBLIC EVENTS",10,palette.gold,800,`text-anchor="end" letter-spacing="1"`));
- out.push(textAt(1090,44,`${grid.activeDays} active dates  ·  ${grid.observed} recorded units  ·  ${grid.seen}/${data.activity.length} events`,11,palette.muted,500,`text-anchor="end"`));
+ out.push(textAt(1090,22,isDemo?"SYNTHETIC DEMO  •  NOT REAL ACTIVITY":grid.hasOfficialCalendar?"REAL GITHUB CONTRIBUTIONS  •  "+data.user.login:"RECORDED PUBLIC EVENTS",10,palette.gold,800,`text-anchor="end" letter-spacing="1"`));
+ out.push(textAt(1090,44,`${grid.activeDays} active dates  ·  ${grid.observed} ${grid.hasOfficialCalendar?"contributions":"recorded units"}  ·  ${grid.hasOfficialCalendar?grid.unknownDays+" dates unavailable":grid.seen+"/"+data.activity.length+" events"}`,11,palette.muted,500,`text-anchor="end"`));
  const monthLabels=[];
  for(let w=0;w<53;w++){
   const sunday=new Date(grid.first+w*7*86400000), thursday=new Date(grid.first+(w*7+4)*86400000);
@@ -149,9 +181,9 @@ function calendarRender(raw,options={}){
  }
  for(const m of monthLabels)out.push(textAt(x0+m.w*dx,87,m.month,9,palette.muted,700));
  for(const [d,name] of [[0,"Sun"],[2,"Tue"],[4,"Thu"],[6,"Sat"]])out.push(textAt(19,y0+d*dy+12,name,9,palette.muted,600));
- out.push(textAt(740,76,"RECORDED UNITS",8,palette.muted,800));
+ out.push(textAt(740,76,grid.hasOfficialCalendar?"GITHUB CONTRIBUTION LEVEL":"RECORDED UNITS",8,palette.muted,800));
  for(const [i,label] of ["none","1–2","3–5","6–9","10+"].entries()){
-  const lx=834+i*51,shade=[palette.dim,palette.sand,palette.grass2,palette.grass,palette.bright][i];
+  const lx=(grid.hasOfficialCalendar?847:834)+i*(grid.hasOfficialCalendar?48:51),shade=[palette.dim,palette.sand,palette.grass2,palette.grass,palette.bright][i];
   out.push(rect(lx,67,10,10,shade,2,`stroke="${palette.stroke}" stroke-width=".7"`));
   out.push(textAt(lx+13,76,label,8,palette.muted,600));
  }
@@ -165,9 +197,11 @@ function calendarRender(raw,options={}){
  for(const cell of grid.cells){
   const x=x0+cell.w*dx,y=y0+cell.d*dy,level=cell.level;
   const marks=Object.entries(cell.byRepo).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
-  const description=`${cell.date}: ${cell.units} recorded units from ${cell.events} distinct events${marks.length?"; "+marks.map(([k,v])=>k+" "+v).join(", "):"; no event recorded"}${cell.future?"; after snapshot":""}`;
+  const description=grid.hasOfficialCalendar
+   ?`${cell.date}: ${cell.future?"after snapshot":cell.unknown?"GitHub calendar unavailable for this date":cell.units+" GitHub-visible contributions"}; ${cell.events} recent labelled public events${marks.length?"; "+marks.map(([k,v])=>k+" "+v).join(", "):""}`
+   :`${cell.date}: ${cell.units} recorded units from ${cell.events} distinct events${marks.length?"; "+marks.map(([k,v])=>k+" "+v).join(", "):"; no event recorded"}${cell.future?"; after snapshot":""}`;
   out.push(`<g class="dw-tile" data-date="${cell.date}" data-level="${level}" data-units="${cell.units}" role="img" aria-label="${esc(description)}"><title>${esc(description)}</title>`);
-  if(cell.future){
+  if(cell.future||cell.unknown){
    out.push(rect(x,y,tw,th,palette.dim,3,`opacity=".23" stroke="${palette.stroke}" stroke-width=".7"`));
    out.push(line(`M${x+4} ${y+5}l7 7`,palette.stroke,.8,`opacity=".5"`));
   }else if(arch){
@@ -296,7 +330,7 @@ function repositoryLandmarkSprite(i,units,x,y,p,tint){
   out.push(textAt(xx+51,332,grid.anchors.has(r.full_name)?"Pinned to recorded day":"No in-range landmark",8,palette.muted,500));
  });
  if(!visible.length)out.push(textAt(560,315,"A quiet world awaits its first recorded event",15,palette.muted,600,`text-anchor="middle"`));
- out.push(textAt(1090,347,overflow?`+${overflow} repositories omitted`:grid.outside?`${grid.outside} events outside calendar window`:"53 weeks · Sunday to Saturday",8,palette.muted,500,`text-anchor="end"`));
+ out.push(textAt(1090,347,grid.hasOfficialCalendar?`GitHub calendar · ${grid.unknownDays} dates outside API coverage`:overflow?`+${overflow} repositories omitted`:grid.outside?`${grid.outside} events outside calendar window`:"53 weeks · Sunday to Saturday",8,palette.muted,500,`text-anchor="end"`));
  out.push("</g></svg>");
  return out.join("");
 }
