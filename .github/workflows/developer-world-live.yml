@@ -1,0 +1,56 @@
+name: Developer World: real GitHub contributions
+
+on:
+  push:
+    branches:
+      - concept/developer-world
+    paths:
+      - 'concepts/developer-world/collect-github.cjs'
+      - 'concepts/developer-world/renderer.js'
+      - 'concepts/developer-world/publish-real.cjs'
+      - 'concepts/developer-world/tests/real-account.test.cjs'
+      - '.github/workflows/developer-world-live.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: developer-world-live-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  real-account:
+    name: Fetch actual public profile calendar, render and commit previews
+    runs-on: ubuntu-latest
+    if: github.repository == 'AdityaSreevatsaK/GitHub-Activity-Studio' && github.ref == 'refs/heads/concept/developer-world'
+    steps:
+      - name: Check out isolated concept branch
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: true
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - name: Run offline normalisation and collector tests
+        run: npm --prefix concepts/developer-world test
+      - name: Collect REAL GitHub-visible account calendar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node concepts/developer-world/collect-github.cjs --login AdityaSreevatsaK
+      - name: Render real-account worlds, never synthetic fallback
+        run: node concepts/developer-world/publish-real.cjs
+      - name: Commit only concept-local real data and SVG assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add concepts/developer-world/real-activity.json concepts/developer-world/previews/real-*.svg
+          if git diff --cached --quiet; then
+            echo "Real-account calendar unchanged."
+          else
+            git commit -m "data(developer-world): refresh actual GitHub account calendar [skip ci]"
+            git push origin HEAD:refs/heads/concept/developer-world
+          fi
