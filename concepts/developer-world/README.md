@@ -6,12 +6,12 @@
 
 | Your archipelago | Your village |
 |:---:|:---:|
-| ![Real AdityaSreevatsaK GitHub contribution calendar as archipelago](previews/real-archipelago-dark.svg) | ![Real AdityaSreevatsaK GitHub contribution calendar as village](previews/real-village-light.svg) |
-| [Light theme](previews/real-archipelago-light.svg) · [Still/reduced-motion image](previews/real-archipelago-still.svg) | [Dark theme](previews/real-village-dark.svg) |
+| ![Real AdityaSreevatsaK GitHub contribution history evolving as an animated archipelago](previews/real-archipelago.gif) | ![Real AdityaSreevatsaK GitHub contribution calendar as village](previews/real-village-light.svg) |
+| [Dark SVG](previews/real-archipelago-dark.svg) · [Light theme](previews/real-archipelago-light.svg) · [Still/reduced-motion SVG](previews/real-archipelago-still.svg) | [Dark theme](previews/real-village-dark.svg) |
 
 **[Explore your real contribution data in the browser](http://127.0.0.1:8787/?sample=real)** after running the local preview. It loads `real-activity.json` by default, with synthetic datasets available as labelled alternatives.
 
-The [real-account GitHub Actions workflow](../../.github/workflows/developer-world-live.yml) collects the public GitHub-visible calendar using its built-in `GITHUB_TOKEN`, validates it, and writes five SVGs directly into this concept branch. It does **not** modify your GitHub profile or other concepts. If those files are not yet present, the collector has not published them; the preview never substitutes synthetic values silently. Public event details are capped by the REST API and are not a full year's event ledger. GitHub GraphQL visibility may exclude private contributions unless they are visible to the workflow identity. Missing API dates are displayed as unknown, not as zero activity.
+The archipelago GIF reveals **actual historical contribution dates** in chronological order, with the original calendar values preserved. Motion-free SVGs are provided for accessibility. The [real-account GitHub Actions workflow](../../.github/workflows/developer-world-live.yml) collects the public GitHub-visible calendar using its built-in `GITHUB_TOKEN`, validates it, and writes five SVGs and a real browser-generated animated GIF directly into this concept branch. It does **not** modify your GitHub profile or other concepts. If those files are not yet present, the collector has not published them; the preview never substitutes synthetic values silently. Public event details are capped by the REST API and are not a full year's event ledger. GitHub GraphQL visibility may exclude private contributions unless they are visible to the workflow identity. Missing API dates are displayed as unknown, not as zero activity.
 
 ---
 
