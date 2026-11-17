@@ -162,6 +162,16 @@ export function svgCalendar(scene,{style="geometric",theme="dark",animated=true,
     if(robot)return `<g><path d="M-7 -7l-5 -4 M7 -7l5 -4 M0 -10v-5" stroke="${colour}" stroke-width="1.8" stroke-linecap="round"/><circle cx="0" cy="-16" r="2" fill="${colour}"/><rect x="-11" y="-9" width="22" height="20" rx="6" fill="${dark?"#e6f0ef":"#fffef9"}" stroke="${colour}" stroke-width="2"/><rect x="-7" y="-3" width="14" height="7" rx="3.5" fill="${dark?"#183a45":"#e9eee8"}"/><circle cx="-3.2" cy=".6" r="1.6" fill="${colour}"/><circle cx="3.2" cy=".6" r="1.6" fill="${colour}"/><path d="M-6 11l-3 4 M6 11l3 4" stroke="${colour}" stroke-width="2" stroke-linecap="round"/></g>`;
     return `<g><circle r="14" fill="${colour}" opacity=".18" filter="url(#halo)"/><path d="M0 -9L9 0 0 9-9 0Z" fill="${dark?"#122a38":"#ffffff"}" stroke="${colour}" stroke-width="2"/><circle r="2.7" fill="${colour}"/></g>`;
   };
+  // Distinct collaboration roles: a courier carries the event packet and a
+  // builder symbolically transforms it. Neither represents an autonomous action.
+  const roleOverlay=(colour,side)=>{
+    if(side===0)return robot?
+      '<rect x="-21" y="-2" width="9" height="10" rx="2" fill="'+colour+'" stroke="'+c.panel+'" stroke-width="1.1"/>':
+      '<rect x="-19" y="-4" width="7" height="8" rx="1" fill="'+c.panel+'" stroke="'+colour+'" stroke-width="1.7"/>';
+    return robot?
+      '<path d="M12 3l8 -8 4 4-8 8Z" fill="'+colour+'" stroke="'+c.panel+'" stroke-width="1"/><circle cx="22" cy="-7" r="2" fill="'+colour+'"/>':
+      '<circle cx="17" cy="0" r="4" fill="none" stroke="'+colour+'" stroke-width="1.5"/><path d="M18 -5l4 -4" stroke="'+colour+'" stroke-width="1.6"/>';
+  };
   for(const job of scene.jobs){
     const x=job.cell.x,y=job.cell.y,colour=KIND_META[job.kind].colour,phase=phaseAt(job,time);
     const active=phase!=="queued"&&phase!=="delivered";
@@ -177,8 +187,8 @@ export function svgCalendar(scene,{style="geometric",theme="dark",animated=true,
       const aid=job.agents[side],sx=157+aid*94,sy=290,hx=x+(side===0?-14:14),hy=y+(side===0?-14:14);
       const path=`M ${sx} ${sy} Q ${(sx+hx)/2} ${Math.min(sy,hy)-53} ${hx} ${hy} Q ${(hx+1021)/2} ${Math.min(290,hy)-57} 1021 290`;
       const pos=agentAt(job,time,side);
-      if(animated)out.push(`<g class="swarm-motion" data-agent="${aid}" data-task="${escapeText(job.id)}" opacity="0">${glyph(colour)}<animateMotion path="${path}" dur="${PERIOD}s" repeatCount="indefinite" keyTimes="${tm}" keyPoints="0;0;0;0.5;0.5;1;1" calcMode="linear"/><animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="${tm}" dur="${PERIOD}s" repeatCount="indefinite"/></g>`);
-      else if(active)out.push(`<g transform="translate(${pos.x.toFixed(2)} ${pos.y.toFixed(2)})">${glyph(colour)}</g>`);
+      if(animated)out.push(`<g class="swarm-motion" data-agent="${aid}" data-role="${side===0?"courier":"builder"}" data-task="${escapeText(job.id)}" opacity="0">${glyph(colour)}${roleOverlay(colour,side)}<animateMotion path="${path}" dur="${PERIOD}s" repeatCount="indefinite" keyTimes="${tm}" keyPoints="0;0;0;0.5;0.5;1;1" calcMode="linear"/><animate attributeName="opacity" values="0;0;1;1;1;0;0" keyTimes="${tm}" dur="${PERIOD}s" repeatCount="indefinite"/></g>`);
+      else if(active)out.push(`<g data-role="${side===0?"courier":"builder"}" transform="translate(${pos.x.toFixed(2)} ${pos.y.toFixed(2)})">${glyph(colour)}${roleOverlay(colour,side)}</g>`);
     }
   }
   let keyX=42;

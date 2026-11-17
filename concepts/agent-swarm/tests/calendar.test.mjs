@@ -162,3 +162,13 @@ test("high-density source days receive indicators, not invented activity",()=>{
  const s=svgCalendar(sceneFor(raw));
  assert.equal((s.match(/class="busy-day-indicator"/g)||[]).length,1);
 });
+
+test("each animated job assigns distinct courier and builder visual roles",()=>{
+ const scene=sceneFor(fixture),svg=svgCalendar(scene,{style:"robots",theme:"light"});
+ for(const job of scene.jobs){
+  assert(svg.includes('data-role="courier" data-task="'+job.id+'"'));
+  assert(svg.includes('data-role="builder" data-task="'+job.id+'"'));
+ }
+ const still=svgCalendar(scene,{style:"geometric",theme:"dark",animated:false,time:1.2});
+ assert(still.includes('data-role="courier"')||still.includes('data-role="builder"'));
+});

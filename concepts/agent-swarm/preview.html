@@ -102,7 +102,7 @@ function renderState(){
  for(const j of scene.jobs){
    const li=document.createElement("li"),summary=document.createElement("div"),name=document.createElement("strong"),meta=document.createElement("small"),state=document.createElement("span");
    name.textContent=j.repo_full_name.split("/").pop()+"  ·  "+j.kind.replaceAll("_"," ");
-   meta.textContent=j.id+" · "+j.count+" unit"+(j.count===1?"":"s")+" · agents "+j.agents.join(" & ");
+   meta.textContent=j.id+" · "+j.count+" unit"+(j.count===1?"":"s")+" · courier "+(j.agents[0]+1)+" + builder "+(j.agents[1]+1);
    const p=phase(j,seconds);state.className="status "+p;state.textContent=p;
    summary.append(name,meta);li.append(summary,state);list.append(li);
  }

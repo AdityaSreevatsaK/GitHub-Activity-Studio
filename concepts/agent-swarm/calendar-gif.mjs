@@ -179,15 +179,19 @@ export function calendarGifFrame(scene,{style="geometric",theme="dark",time=0}={
      }
    }
    if(robot){
-    box(x-6,y-6,13,13,1);border(x-6,y-6,13,13,col);
-    box(x-3,y-2,7,4,13);pixel(x-2,y,col);pixel(x+2,y,col);
-    line(x,y-7,x,y-11,col);circle(x,y-12,2,col,true);
-    line(x-4,y+7,x-6,y+10,col);line(x+4,y+7,x+6,y+10,col);
+    box(x-7,y-7,15,15,1);border(x-7,y-7,15,15,col);
+    box(x-4,y-3,9,5,13);pixel(x-2,y,col);pixel(x+3,y,col);
+    line(x,y-8,x,y-12,col);circle(x,y-13,2,col,true);
+    line(x-5,y+8,x-7,y+11,col,2);line(x+5,y+8,x+7,y+11,col,2);
+    if(side===0){box(x-13,y-1,6,8,col);border(x-13,y-1,6,8,1);}
+    else{line(x+8,y,x+13,y-5,col,2);circle(x+14,y-6,2,col,true);}
    }else{
-    circle(x,y,8,11,true);
-    line(x,y-7,x+7,y,col,2);line(x+7,y,x,y+7,col,2);
-    line(x,y+7,x-7,y,col,2);line(x-7,y,x,y-7,col,2);
-    circle(x,y,2,col,true);
+    circle(x,y,10,11,true);
+    line(x,y-9,x+9,y,col,2);line(x+9,y,x,y+9,col,2);
+    line(x,y+9,x-9,y,col,2);line(x-9,y,x,y-9,col,2);
+    circle(x,y,3,col,true);
+    if(side===0){box(x-15,y-3,5,7,col);border(x-15,y-3,5,7,1);}
+    else{circle(x+13,y,4,col);line(x+15,y-4,x+18,y-7,col);}
    }
   }
  }

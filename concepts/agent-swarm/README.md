@@ -1,6 +1,6 @@
 # Agent Swarm
 
-A pair of original, deterministic **visual metaphors** of GitHub activity. Eight symbolic helpers travel across a recognisable **53-week contribution-style calendar**, co-ordinating on recorded event days. Repository beacons remain secondary. **No LLM calls, no autonomous agents performing GitHub actions, and no write access.**
+A pair of original, deterministic **visual metaphors** of GitHub activity. Eight specialised helpers, paired as couriers and builders, travel across a recognisable **53-week contribution-style calendar**, co-ordinating on recorded event days. Repository beacons remain secondary. **No LLM calls, no autonomous agents performing GitHub actions, and no write access.**
 
 | Primary design | Alternative |
 | --- | --- |
@@ -89,7 +89,7 @@ GIF is supported as an image format in GitHub READMEs. Animated SVGs may behave 
 
 ## Trustworthy mapping
 
-Each observed GitHub event corresponds to **one** symbolic task, not one task per commit. The event timestamp selects a calendar cell; its repository becomes a secondary beacon. The kind determines a separate glyph: commit (C), PR opened (P+), PR merged (PM), issue opened (?), release (R). Its count appears explicitly as source-backed **units within the packet**, never disguised as commits. Two numbered illustrative helpers travel to a hub, perform an abstract collaborative transformation, and return to the dock. State transitions are queued → assigned → travelling → working → complete → delivered. The entire sequence is a metaphor; the original events were not made by AI agents, and its compressed timeline does not represent actual elapsed time.
+Each observed GitHub event corresponds to **one** symbolic task, not one task per commit. The event timestamp selects a calendar cell; its repository becomes a secondary beacon. The kind determines a separate glyph: commit (C), PR opened (P+), PR merged (PM), issue opened (?), release (R). Its count appears explicitly as source-backed **units within the packet**, never disguised as commits. Each task pairs a **courier** that carries the symbolic event packet with a **builder** that processes it at the recorded-day cell. Both return to the dock. State transitions are queued → assigned → travelling → working → complete → delivered. The entire sequence is a metaphor; the original events were not made by AI agents, and its compressed timeline does not represent actual elapsed time.
 
 The calendar covers **53 weeks** of observed events, while at most **five** recently active repository beacons and **ten latest** event packets are animated. Clipping and out-of-window events are disclosed. Other repository histories are not inferred or invented. Source event IDs are deduplicated, and names are escaped. Empty data, one repository, missing optional metadata, bursty load, long names, invalid input and stale snapshots are handled. A 30-day stale warning is relative to the snapshot's generated timestamp.
 
