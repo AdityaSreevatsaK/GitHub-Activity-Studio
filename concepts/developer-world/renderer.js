@@ -137,6 +137,13 @@ function calendarRender(raw,options={}){
  const frame=options.frame===undefined?0:options.frame;
  check(Number.isSafeInteger(frame)&&frame>=0&&frame<=10000,"Invalid animation frame");
  const grid=calendarFor(data,options.progress);
+ const revealDate=options.revealDate;
+ if(revealDate!==undefined){
+  check(typeof revealDate==="string"&&/^\d{4}-\d\d-\d\d$/.test(revealDate)&&utc(revealDate+"T00:00:00Z"),"Invalid reveal date");
+  check(revealDate>=grid.cells[0].date&&revealDate<=grid.asof,"Reveal date outside calendar");
+ }
+ const shown=grid.cells.filter(c=>!c.future&&!c.unknown&&(revealDate===undefined||c.date<=revealDate));
+ const shownUnits=shown.reduce((n,c)=>n+c.units,0),shownDays=shown.filter(c=>c.units>0).length;
  const p=colours[theme],arch=layout==="archipelago",dark=theme==="dark",isDemo=data.source==="demo";
  const visible=grid.featured.map(name=>data.repositories.find(r=>r.full_name===name)),overflow=data.repositories.length-visible.length;
  const x0=68,y0=99,dx=19,dy=21,tw=15,th=16;
@@ -172,7 +179,7 @@ function calendarRender(raw,options={}){
  out.push(textAt(29,20,"GITHUB ACTIVITY STUDIO  /  CONCEPT 05",9,palette.gold,800,`letter-spacing="1.9"`));
  out.push(textAt(29,46,arch?"The Isles of Code":"The Little Buildtown",22,palette.text,800));
  out.push(textAt(1090,22,isDemo?"SYNTHETIC DEMO  •  NOT REAL ACTIVITY":grid.hasOfficialCalendar?"REAL GITHUB CONTRIBUTIONS  •  "+data.user.login:"RECORDED PUBLIC EVENTS",10,palette.gold,800,`text-anchor="end" letter-spacing="1"`));
- out.push(textAt(1090,44,`${grid.activeDays} active dates  ·  ${grid.observed} ${grid.hasOfficialCalendar?"contributions":"recorded units"}  ·  ${grid.hasOfficialCalendar?grid.unknownDays+" dates unavailable":grid.seen+"/"+data.activity.length+" events"}`,11,palette.muted,500,`text-anchor="end"`));
+ out.push(textAt(1090,44,`${shownDays} active dates  ·  ${shownUnits} ${grid.hasOfficialCalendar?"contributions":"recorded units"}  ·  ${revealDate?"through "+revealDate:grid.hasOfficialCalendar?grid.unknownDays+" dates unavailable":grid.seen+"/"+data.activity.length+" events"}`,11,palette.muted,500,`text-anchor="end"`));
  const monthLabels=[];
  for(let w=0;w<53;w++){
   const sunday=new Date(grid.first+w*7*86400000), thursday=new Date(grid.first+(w*7+4)*86400000);
@@ -195,13 +202,13 @@ function calendarRender(raw,options={}){
  const activeFill=[palette.dim,palette.sand,palette.grass2,palette.grass,palette.bright];
  // Tiles are strictly arranged in Sunday-to-Saturday rows and chronological week columns.
  for(const cell of grid.cells){
-  const x=x0+cell.w*dx,y=y0+cell.d*dy,level=cell.level;
+  const x=x0+cell.w*dx,y=y0+cell.d*dy,unrevealed=revealDate!==undefined&&cell.date>revealDate&&!cell.future,level=unrevealed?0:cell.level;
   const marks=Object.entries(cell.byRepo).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]));
-  const description=grid.hasOfficialCalendar
+  const description=unrevealed?`${cell.date}: date not yet revealed in contribution history animation`:grid.hasOfficialCalendar
    ?`${cell.date}: ${cell.future?"after snapshot":cell.unknown?"GitHub calendar unavailable for this date":cell.units+" GitHub-visible contributions"}; ${cell.events} recent labelled public events${marks.length?"; "+marks.map(([k,v])=>k+" "+v).join(", "):""}`
    :`${cell.date}: ${cell.units} recorded units from ${cell.events} distinct events${marks.length?"; "+marks.map(([k,v])=>k+" "+v).join(", "):"; no event recorded"}${cell.future?"; after snapshot":""}`;
-  out.push(`<g class="dw-tile" data-date="${cell.date}" data-level="${level}" data-units="${cell.units}" role="img" aria-label="${esc(description)}"><title>${esc(description)}</title>`);
-  if(cell.future||cell.unknown){
+  out.push(`<g class="dw-tile" data-date="${cell.date}" data-level="${level}" data-units="${unrevealed?0:cell.units}" role="img" aria-label="${esc(description)}"><title>${esc(description)}</title>`);
+  if(cell.future||cell.unknown||unrevealed){
    out.push(rect(x,y,tw,th,palette.dim,3,`opacity=".23" stroke="${palette.stroke}" stroke-width=".7"`));
    out.push(line(`M${x+4} ${y+5}l7 7`,palette.stroke,.8,`opacity=".5"`));
   }else if(arch){
@@ -239,7 +246,7 @@ function calendarRender(raw,options={}){
    }
   }
   // Event-specific decorations are sourced exclusively from each UTC day's actual events.
-  if(cell.units){
+  if(cell.units&&!unrevealed){
    const k=cell.byKind;
    if(k.release)out.push(circle(x+2,y+3,2,palette.gold,`class="dw-lantern"`));
    else if(k.pr_merged)out.push(path(`M${x+1} ${y+14}l3-3 3 3 3-3 3 3`, "none",`stroke="${palette.wall}" stroke-width="1.3"`));
