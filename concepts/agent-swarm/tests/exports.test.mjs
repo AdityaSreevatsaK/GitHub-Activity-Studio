@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {spawnSync} from "node:child_process";
+import {fileURLToPath} from "node:url";
 import {makeScene} from "../scene.mjs";
 import {calendarData,svgCalendar} from "../calendar.mjs";
 import {calendarGifFrame,renderCalendarGif} from "../calendar-gif.mjs";
@@ -123,9 +124,9 @@ test("encoded GIF pixel content matches the deterministic renderer at multiple p
 });
 
 test("offline build verification agrees with all checked-in exports",()=>{
- const build=new URL("../build.mjs",import.meta.url);
- const result=spawnSync(process.execPath,[build.pathname,"--verify"],{
-  cwd:new URL("../../..",import.meta.url).pathname,encoding:"utf8",timeout:120000
+ const build=fileURLToPath(new URL("../build.mjs",import.meta.url));
+ const result=spawnSync(process.execPath,[build,"--verify"],{
+  cwd:fileURLToPath(new URL("../../../",import.meta.url)),encoding:"utf8",timeout:120000
  });
  assert.equal(result.status,0,"Asset verification failed: "+result.stderr+" "+result.stdout);
  assert.match(result.stdout,/Verified existing assets/);
