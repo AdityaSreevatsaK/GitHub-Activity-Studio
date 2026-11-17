@@ -35,6 +35,7 @@ jobs:
           node-version: '22'
       - name: Run offline normalisation and collector tests
         run: npm --prefix concepts/developer-world test
+      # The GraphQL calendar is authoritative; partial REST public events only decorate it.
       - name: Collect REAL GitHub-visible account calendar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
