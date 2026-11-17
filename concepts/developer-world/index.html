@@ -77,12 +77,15 @@ function stop(){if(timer!==null){clearInterval(timer);timer=null;}el("play").tex
 function render(){
  if(!source)return;
  try{
- var opts={layout:el("layout").value,theme:el("theme").value,progress:Number(el("progress").value),animated:animated};
+ var progress=Number(el("progress").value),days=normal.contribution_calendar?.days;
+ var opts={layout:el("layout").value,theme:el("theme").value,progress:days?normal.activity.length:progress,animated:animated};
+ if(days?.length)opts.revealDate=days[Math.min(progress,days.length-1)].date;
  var f=DeveloperWorld.statsFor(normal,opts.progress),calendar=DeveloperWorld.calendarFor(normal,opts.progress);
  if(!selectedDate)selectedDate=calendar.cells.filter(function(c){return c.units>0;}).slice(-1)[0]?.date||calendar.asof;
  opts.focusDate=selectedDate;
  el("scene").innerHTML=DeveloperWorld.render(source,opts);
- el("counter").textContent=calendar.hasOfficialCalendar?calendar.observed+" GitHub contributions · "+f.eventCount+"/"+f.totalEvents+" recent public events":f.eventCount+" of "+f.totalEvents+" events · "+calendar.observed+" recorded units";
+ var displayed=calendar.hasOfficialCalendar&&opts.revealDate?calendar.cells.filter(function(c){return c.date<=opts.revealDate;}).reduce(function(sum,c){return sum+c.units;},0):calendar.observed;
+ el("counter").textContent=calendar.hasOfficialCalendar?displayed+" of "+calendar.observed+" GitHub contributions · through "+opts.revealDate:f.eventCount+" of "+f.totalEvents+" events · "+calendar.observed+" recorded units";
  inspectDay(calendar,opts.progress);
  el("repos").replaceChildren();
  var featured=calendar.featured.map(function(name){return f.repositories.find(function(item){return item.repository.full_name===name;});});
@@ -132,11 +135,17 @@ function shiftDay(direction){
 }
 function load(value){
  var next=DeveloperWorld.normalise(value);stop();source=value;normal=next;selectedDate=null;
- el("progress").max=String(next.activity.length);el("progress").value=String(next.activity.length);render();
+ var maxStep=next.contribution_calendar?.days?.length?next.contribution_calendar.days.length-1:next.activity.length;
+ el("progress").max=String(maxStep);el("progress").value=String(maxStep);
+ el('progress').setAttribute("aria-label",next.contribution_calendar?"Reveal real contributions chronologically":"Replay recorded events");
+ render();
 }
 function save(moving){
  if(!source)return;
- var svg=DeveloperWorld.render(source,{layout:el("layout").value,theme:el("theme").value,progress:Number(el("progress").value),animated:moving});
+ var step=Number(el("progress").value),days=normal.contribution_calendar?.days;
+ var options={layout:el("layout").value,theme:el("theme").value,progress:days?normal.activity.length:step,animated:moving};
+ if(days?.length)options.revealDate=days[Math.min(step,days.length-1)].date;
+ var svg=DeveloperWorld.render(source,options);
  var url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml;charset=utf-8"}));
  var a=document.createElement("a");a.href=url;a.download="developer-world-"+el("layout").value+"-"+el("theme").value+(moving?"":"-still")+".svg";
  document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
@@ -153,8 +162,10 @@ async function exportGif(){
   if(!context)throw Error("Canvas 2D unavailable");
   var frames=[];
   for(var i=0;i<count;i++){
-   var step=Math.round(i*normal.activity.length/(count-1));
-   var svg=DeveloperWorld.render(source,{layout:layout,theme:theme,animated:false,progress:step,frame:i});
+   var step=Math.round(i*normal.activity.length/(count-1)),days=normal.contribution_calendar?.days;
+   var options={layout:layout,theme:theme,animated:false,progress:days?normal.activity.length:step,frame:i};
+   if(days?.length)options.revealDate=days[Math.round(i*(days.length-1)/(count-1))].date;
+   var svg=DeveloperWorld.render(source,options);
    var url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml;charset=utf-8"}));
    try{
     var img=new Image();
@@ -188,9 +199,14 @@ el("still").addEventListener("click",function(){save(false);});el("save").addEve
 el("gif").addEventListener("click",exportGif);
 el("play").addEventListener("click",function(){
  if(timer!==null){stop();return;}if(!normal)return;
- if(Number(el("progress").value)>=normal.activity.length)el("progress").value="0";
+ if(Number(el("progress").value)>=Number(el("progress").max))el("progress").value="0";
  el("play").textContent="❚❚ Pause events";
- timer=setInterval(function(){var n=Number(el("progress").value)+1;if(n>normal.activity.length){stop();return;}el("progress").value=String(n);render();},950);
+ var isReal=!!normal.contribution_calendar,increment=isReal?Math.max(1,Math.ceil(Number(el("progress").max)/45)):1;
+ timer=setInterval(function(){
+  var n=Number(el("progress").value)+increment,maximum=Number(el("progress").max);
+  if(n>maximum){el("progress").value=String(maximum);render();stop();return;}
+  el("progress").value=String(n);render();
+ },isReal?160:950);
 });
 function loadPreset(selection){
  if(!["real","shared","showcase"].includes(selection))return;
