@@ -1,14 +1,50 @@
-# Code Factory
+# Code Factory · @AdityaSreevatsaK
 
-### A living contribution calendar, not a factory pasted under a chart
+### Your public GitHub activity, turned into a miniature factory
 
-**Synthetic demonstration.** The images below use `shared/fixtures/demo-activity.json`. They are **not** the owner's real GitHub contributions, and the counts are recorded **event units**, not official GitHub contributions totals.
+**REAL PUBLIC ACTIVITY SNAPSHOT · 17 November 2026, 08:01 UTC.** These images were generated from observed public GitHub PRs, issues, merges and commits associated with [@AdityaSreevatsaK](https://github.com/AdityaSreevatsaK), **not synthetic demonstration records**.
+
+## Your account-specific factory
+
+### Isometric Foundry · Dark
+
+![AdityaSreevatsaK real public GitHub activity in a 53-week contribution-style heatmap with a selected November week powering an isometric factory](exports/account-isometric-dark-still.svg)
+
+### Pixel Works · Light
+
+![AdityaSreevatsaK real public GitHub activity in a 53-week contribution-style heatmap with a selected November week powering a pixel-art factory](exports/account-pixel-light-still.svg)
+
+Other account themes: [Isometric light](exports/account-isometric-light-still.svg) · [Pixel dark](exports/account-pixel-dark-still.svg).
+
+The selected full week is **8–14 November 2026**, with **652 observed public event records** distributed across all seven days. The highlighted column drives the named repository machines and source-backed parcels below it.
+
+| Public records in this snapshot | Count |
+| --- | ---: |
+| Authored commits found on scanned public owned default branches | 499 |
+| Pull requests opened in public repositories | 332 |
+| Those PRs merged within the observed period | 273 |
+| Issues opened in public repositories | 115 |
+| **Total observed event/stage records** | **1,219** |
+
+**Important scope:** this is **not GitHub's official contribution calendar**. Counts are observable **event/stage records**, not the number GitHub credits as contributions. A PR opening and its later merge are shown as separate factory events. The commit scan covers **30 public owned repositories on their default branches** and may omit other contributions, unmerged feature-branch commits, and activity outside the indexed search results. **No private repository data is included.**
+
+Raw, auditable source data: [public account snapshot](fixtures/adityasreevatsak-public-activity.json). Source: GitHub REST public PR/issue search and public-repository commit listings, captured at the timestamp above. The data is a **point-in-time export**, not a live updating graph.
+
+## How the factory works
+
+The highlighted **week** expands into a seven-day miniature production line directly below the chart. Each active calendar day powers a matching machine and parcel, with a source-backed label, while inactive days stay idle.
+
+The seven colour-coded signal links below the calendar match the individual days of the selected week: stronger recorded activity produces a brighter connection, while empty days remain muted. Static exports show machinery **and** parcels without requiring animation.
+
+## Synthetic demonstration (retained for tests)
+
+The previews below deliberately use `shared/fixtures/demo-activity.json`, **not the account snapshot**. They remain available so that changes to the renderer can be regression-tested without querying GitHub.
 
 The highlighted contribution **week** expands into a seven-day miniature production line directly below it. A day with no recorded activity stays idle. An active day displays only its actual repository and event-type machinery.
 
 The **seven colour-coded signal links** below the calendar match the individual days of the selected week: stronger recorded activity produces a brighter connection, while empty days remain muted. Static exports include the matching machine **and parcel** without requiring animation.
 
-## Rendered designs (still images)
+## Synthetic demo designs (still images)
 
 ### 1. Isometric Foundry · Night shift
 
@@ -30,7 +66,7 @@ These are two **additional, source-backed exports** using other active weeks of 
 
 **These are separate historical weeks, not extra activity added to the demonstration.**
 
-**[Open the browser preview](preview.html)** for theme switching and the selectable contribution weeks. On GitHub, this URL shows the source file: run the local server below to interact with the preview. GitHub README images cannot run JavaScript, so the committed stills show a deterministic **latest active week**.
+**[Open the browser preview](preview.html)** to switch between the **account snapshot and synthetic demo**, choose a calendar week, change the theme or layout and inspect actual day-to-machine mappings. On GitHub, this URL shows the source file: run the local server below to interact with the preview. GitHub README images cannot run JavaScript, so the committed stills show a deterministic **latest active week**.
 
 ## Proof the factory and calendar match
 
@@ -102,7 +138,7 @@ The old `factory.py` remains for historical comparison. **It is not the source o
 
 ## Accessibility and GitHub behaviour
 
-The browser preview provides an accessible week selector, previous/next buttons, keyboard arrow/Home/End navigation on the highlighted calendar column, a bounded source-backed event ledger, a static default, an optional detail zoom for mobile and optional motion. Each SVG contains a title, description and event-specific machine titles. Browser reduced-motion preferences are respected, and a static SVG can always be used instead.
+The browser preview defaults to the public account dataset and provides a demo switch, an accessible week selector, previous/next buttons, keyboard arrow/Home/End navigation on the highlighted calendar column, a bounded source-backed event ledger, a static default, an optional detail zoom for mobile and optional motion. Each SVG contains a title, description and event-specific machine titles. Browser reduced-motion preferences are respected, and a static SVG can always be used instead.
 
 The **README embeds still SVGs**, so the design can be judged without relying on GitHub SVG animation support. [GitHub's documentation](https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files) says inline SVG animation and scripting are unsupported in its file viewer. Treat optional animated SVGs as **local-browser previews**, not GitHub profile deliverables. Use the committed static SVGs in a README; a separately rendered GIF would be required for reliable animated playback. Labels will be smaller on mobile because the complete 53-week chart shares a single wide image.
 
@@ -113,4 +149,4 @@ The **README embeds still SVGs**, so the design can be judged without relying on
 - The pull request remains draft. **No changes to `master` or the owner's profile.**
 - The two artwork styles use different factory floors and machinery, with crisp-edged geometry for pixel art; both retain the same exact calendar data.
 
-The next review should focus on visual legibility, verifying the embedded still images on GitHub, and only then considering shared real-data integration with the other concepts.
+The account-specific previews are now in this README. Next verification priorities are actual browser/mobile rendering and improving the shared, reusable account-data refresh pipeline. No live profile changes are made.
