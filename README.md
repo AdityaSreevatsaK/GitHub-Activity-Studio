@@ -1,5 +1,27 @@
 # GitHub Activity Studio
 
+## Open Source Metro | Enhanced calendar-first visual
+
+The redesigned **Metro Atlas** preserves the recognisable GitHub contribution grid while making the five activity routes and repository stops more prominent. These are **synthetic design previews**, not the owner's actual contribution history.
+
+**Modern Metropolitan (invented demo events, explicitly labelled)**
+
+![Synthetic demonstration of calendar-first Open Source Metro, in midnight colours, with five activity lines and numbered repository stations.](concepts/open-source-metro/exports/atlas-midnight-showcase.svg)
+
+**Vintage Transit (the same invented demo events)**
+
+![Synthetic demonstration of a vintage parchment metro over the contribution grid.](concepts/open-source-metro/exports/atlas-parchment-showcase.svg)
+
+**The exact shared fixture, without any invented history**
+
+![Faithful ten-event Open Source Metro diagram using only the shared synthetic fixture.](concepts/open-source-metro/exports/atlas-midnight-fixture.svg)
+
+**How to read:** squares are days; brighter greens mean more observed source units; lines connect dated activity *of the same type*; numbered stops identify repositories beneath the map.
+
+[Technical documentation](concepts/open-source-metro/README.md) · [Draft PR #4](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/4)
+
+---
+
 ## Open Source Metro | Contribution calendar × transit network
 
 **Concept 04, shown only on this branch.** The original standalone route diagram has been redesigned around the **GitHub-style 53-week × 7-day contribution grid**. Coloured metro services connect real dates from the supplied synthetic fixture, and numbered station markers identify repositories. **All events shown are synthetic demonstration data, not the owner's GitHub history.**

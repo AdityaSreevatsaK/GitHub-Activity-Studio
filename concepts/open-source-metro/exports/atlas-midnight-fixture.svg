@@ -1,0 +1,576 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 602" width="1440" height="602" role="img" aria-labelledby="title description">
+<title id="title">Open Source Metro: midnight GitHub-style contribution calendar</title>
+<desc id="description">SHARED SYNTHETIC FIXTURE. Calendar tiles show synthetic source event units, coloured lines show five event kinds, roundels mark repo stations. Blank days do not prove zero actual GitHub contributions.</desc>
+<defs><style><![CDATA[
+.mast{font:800 36px system-ui,Segoe UI,sans-serif;letter-spacing:-1px;fill:#F2F8FE}
+.sub{font:600 12px system-ui,sans-serif;letter-spacing:1.4px;fill:#A9BED0}
+.tag{font:800 10px system-ui,sans-serif;letter-spacing:1.55px;fill:#A9BED0}
+.month{font:800 12px system-ui,sans-serif;letter-spacing:.65px;fill:#A9BED0}
+.legend{font:800 12px system-ui,sans-serif;letter-spacing:1px;fill:#F2F8FE}
+.detail{font:500 12px system-ui,sans-serif;fill:#A9BED0}
+.repo{font:700 15px system-ui,Segoe UI,sans-serif;fill:#F2F8FE}
+.tile-cell{width:15.5px;height:15.5px;rx:4px}
+.f0{fill:#1A2B3B}
+.f1{fill:#27574F}
+.f2{fill:#237B63}
+.f3{fill:#2BAA7F}
+.f4{fill:#69E6B1}
+.cell:focus .focus{stroke-width:2.4;opacity:1}
+@media(prefers-reduced-motion:reduce){.train{display:none}}
+]]></style></defs>
+<rect width="1440" height="602" fill="#080E18"/>
+<rect x="16" y="15" width="1408" height="572" rx="22" fill="#101C2B" stroke="#294255" stroke-width="1"/>
+<path d="M58 45V96" stroke="#4CE0B3" stroke-width="6" stroke-linecap="round"/>
+<circle cx="1359" cy="79" r="21" fill="none" stroke="#4CE0B3" stroke-width="1.6"/><circle cx="1359" cy="79" r="5" fill="#4CE0B3"/>
+<text x="79.0" y="70.0" class="mast" text-anchor="start">OPEN SOURCE METRO</text>
+<text x="80.0" y="94.0" class="sub" text-anchor="start">GITHUB CONTRIBUTION CALENDAR × TRANSIT MAP</text>
+<text x="1250.0" y="53.0" class="tag" text-anchor="end">SHARED SYNTHETIC FIXTURE</text>
+<text x="1250.0" y="77.0" class="detail" text-anchor="end">10 EVENTS   /   10 ACTIVE DAYS   /   5 STATIONS</text>
+<rect x="76" y="127" width="1288" height="247" rx="13" fill="#0B1724" stroke="#294255" stroke-width="1"/>
+<text x="101.0" y="147.0" class="tag" text-anchor="start">01 / THE CALENDAR</text>
+<text x="1332.0" y="147.0" class="tag" text-anchor="end">A SQUARE IS A DAY.  THE BRIGHTER IT IS, THE MORE OBSERVED UNITS.</text>
+<rect x="165" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="249" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="333" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="417" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="501" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="585" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="669" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="753" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="837" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="921" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="1005" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="1089" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="1173" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<rect x="1257" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
+<text x="170.0" y="177.0" class="month" text-anchor="start">NOV</text>
+<text x="233.0" y="177.0" class="month" text-anchor="start">DEC</text>
+<text x="317.0" y="177.0" class="month" text-anchor="start">JAN</text>
+<text x="401.0" y="177.0" class="month" text-anchor="start">FEB</text>
+<text x="485.0" y="177.0" class="month" text-anchor="start">MAR</text>
+<text x="590.0" y="177.0" class="month" text-anchor="start">APR</text>
+<text x="674.0" y="177.0" class="month" text-anchor="start">MAY</text>
+<text x="779.0" y="177.0" class="month" text-anchor="start">JUN</text>
+<text x="863.0" y="177.0" class="month" text-anchor="start">JUL</text>
+<text x="947.0" y="177.0" class="month" text-anchor="start">AUG</text>
+<text x="1052.0" y="177.0" class="month" text-anchor="start">SEP</text>
+<text x="1136.0" y="177.0" class="month" text-anchor="start">OCT</text>
+<text x="1220.0" y="177.0" class="month" text-anchor="start">NOV</text>
+<text x="151.0" y="227.0" class="tag" text-anchor="end">MON</text>
+<text x="151.0" y="269.0" class="tag" text-anchor="end">WED</text>
+<text x="151.0" y="311.0" class="tag" text-anchor="end">FRI</text>
+<rect class="tile-cell f0" x="170.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="170.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="170.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="170.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="170.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="170.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="170.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="191.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="191.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="191.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="191.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="191.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="191.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="191.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="212.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="212.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="212.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="212.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="212.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="212.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="212.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="233.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="233.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="233.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="233.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="233.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="233.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="233.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="254.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="254.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="254.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="254.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="254.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="254.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="254.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="275.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="275.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="275.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="275.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="275.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="275.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="275.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="296.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="296.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="296.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="296.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="296.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="296.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="296.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="317.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="317.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="317.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="317.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="317.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="317.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="317.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="338.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="338.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="338.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="338.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="338.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="338.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="338.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="359.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="359.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="359.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="359.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="359.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="359.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="359.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="380.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="380.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="380.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="380.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="380.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="380.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="380.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="401.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="401.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="401.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="401.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="401.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="401.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="401.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="422.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="422.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="422.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="422.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="422.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="422.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="422.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="443.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="443.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="443.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="443.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="443.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="443.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="443.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="464.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="464.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="464.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="464.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="464.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="464.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="464.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="485.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="485.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="485.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="485.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="485.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="485.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="485.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="506.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="506.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="506.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="506.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="506.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="506.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="506.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="527.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="527.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="527.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="527.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="527.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="527.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="527.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="548.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="548.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="548.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="548.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="548.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="548.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="548.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="569.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="569.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="569.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="569.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="569.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="569.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="569.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="590.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="590.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="590.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="590.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="590.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="590.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="590.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="611.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="611.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="611.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="611.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="611.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="611.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="611.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="632.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="632.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="632.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="632.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="632.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="632.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="632.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="653.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="653.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="653.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="653.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="653.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="653.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="653.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="674.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="674.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="674.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="674.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="674.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="674.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="674.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="695.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="695.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="695.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="695.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="695.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="695.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="695.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="716.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="716.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="716.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="716.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="716.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="716.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="716.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="737.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="737.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="737.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="737.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="737.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="737.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="737.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="758.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="758.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="758.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="758.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="758.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="758.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="758.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="779.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="779.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="779.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="779.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="779.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="779.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="779.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="800.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="800.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="800.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="800.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="800.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="800.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="800.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="821.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="821.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="821.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="821.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="821.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="821.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="821.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="842.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="842.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="842.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="842.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="842.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="842.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="842.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="863.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="863.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="863.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="863.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="863.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="863.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="863.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="884.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="884.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="884.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="884.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="884.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="884.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="884.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="905.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="905.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="905.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="905.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="905.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="905.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="905.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="926.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="926.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="926.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="926.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="926.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="926.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="926.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="947.0" y="195.0" opacity=".78"/>
+<g class="cell" data-date="2026-08-03" data-units="3" tabindex="0" aria-label="2026-08-03 : 3 observed demo units; demo-001">
+<title>2026-08-03 : 3 observed demo units; demo-001</title>
+<rect class="tile-cell f2" x="947.0" y="216.0"/>
+<rect class="focus" x="946.0" y="215.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="947.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="947.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="947.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="947.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="947.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="968.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="968.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="968.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="968.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="968.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="968.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="968.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="989.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="989.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="989.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="989.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="989.0" y="279.0" opacity=".78"/>
+<g class="cell" data-date="2026-08-21" data-units="1" tabindex="0" aria-label="2026-08-21 : 1 observed demo units; demo-002">
+<title>2026-08-21 : 1 observed demo units; demo-002</title>
+<rect class="tile-cell f1" x="989.0" y="300.0"/>
+<rect class="focus" x="988.0" y="299.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="989.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1010.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1010.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1010.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1010.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1010.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1010.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1010.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1031.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1031.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1031.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1031.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1031.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1031.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1031.0" y="321.0" opacity=".78"/>
+<g class="cell" data-date="2026-09-06" data-units="2" tabindex="0" aria-label="2026-09-06 : 2 observed demo units; demo-003">
+<title>2026-09-06 : 2 observed demo units; demo-003</title>
+<rect class="tile-cell f1" x="1052.0" y="195.0"/>
+<rect class="focus" x="1051.0" y="194.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1052.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1052.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1052.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1052.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1052.0" y="300.0" opacity=".78"/>
+<g class="cell" data-date="2026-09-12" data-units="1" tabindex="0" aria-label="2026-09-12 : 1 observed demo units; demo-004">
+<title>2026-09-12 : 1 observed demo units; demo-004</title>
+<rect class="tile-cell f1" x="1052.0" y="321.0"/>
+<rect class="focus" x="1051.0" y="320.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1073.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1073.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1073.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1073.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1073.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1073.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1073.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1094.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1094.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1094.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1094.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1094.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1094.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1094.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1115.0" y="195.0" opacity=".78"/>
+<g class="cell" data-date="2026-09-28" data-units="1" tabindex="0" aria-label="2026-09-28 : 1 observed demo units; demo-005">
+<title>2026-09-28 : 1 observed demo units; demo-005</title>
+<rect class="tile-cell f1" x="1115.0" y="216.0"/>
+<rect class="focus" x="1114.0" y="215.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1115.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1115.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1115.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1115.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1115.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1136.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1136.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1136.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1136.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1136.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1136.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1136.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1157.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1157.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1157.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1157.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1157.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1157.0" y="300.0" opacity=".78"/>
+<g class="cell" data-date="2026-10-17" data-units="5" tabindex="0" aria-label="2026-10-17 : 5 observed demo units; demo-006">
+<title>2026-10-17 : 5 observed demo units; demo-006</title>
+<rect class="tile-cell f2" x="1157.0" y="321.0"/>
+<rect class="focus" x="1156.0" y="320.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1178.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1178.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1178.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1178.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1178.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1178.0" y="300.0" opacity=".78"/>
+<g class="cell" data-date="2026-10-24" data-units="1" tabindex="0" aria-label="2026-10-24 : 1 observed demo units; demo-007">
+<title>2026-10-24 : 1 observed demo units; demo-007</title>
+<rect class="tile-cell f1" x="1178.0" y="321.0"/>
+<rect class="focus" x="1177.0" y="320.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1199.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1199.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1199.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1199.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1199.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1199.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1199.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1220.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1220.0" y="216.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1220.0" y="237.0" opacity=".78"/>
+<g class="cell" data-date="2026-11-04" data-units="1" tabindex="0" aria-label="2026-11-04 : 1 observed demo units; demo-008">
+<title>2026-11-04 : 1 observed demo units; demo-008</title>
+<rect class="tile-cell f1" x="1220.0" y="258.0"/>
+<rect class="focus" x="1219.0" y="257.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1220.0" y="279.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1220.0" y="300.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1220.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1241.0" y="195.0" opacity=".78"/>
+<g class="cell" data-date="2026-11-09" data-units="4" tabindex="0" aria-label="2026-11-09 : 4 observed demo units; demo-009">
+<title>2026-11-09 : 4 observed demo units; demo-009</title>
+<rect class="tile-cell f2" x="1241.0" y="216.0"/>
+<rect class="focus" x="1240.0" y="215.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1241.0" y="237.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1241.0" y="258.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1241.0" y="279.0" opacity=".78"/>
+<g class="cell" data-date="2026-11-13" data-units="1" tabindex="0" aria-label="2026-11-13 : 1 observed demo units; demo-010">
+<title>2026-11-13 : 1 observed demo units; demo-010</title>
+<rect class="tile-cell f1" x="1241.0" y="300.0"/>
+<rect class="focus" x="1240.0" y="299.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
+</g>
+<rect class="tile-cell f0" x="1241.0" y="321.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1262.0" y="195.0" opacity=".78"/>
+<rect class="tile-cell f0" x="1262.0" y="216.0" opacity=".78"/>
+<g class="route route-commit"><title>CODE service links recorded commit milestones by date, not repository dependencies</title>
+<path d="M954.8 223.8 H972.2 L1042.2 202.8 H1059.8 H1112.2 L1112.2 328.8 H1164.8 H1206.8 L1206.8 223.8 H1248.8" fill="none" stroke="#0B1724" stroke-width="7.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M954.8 223.8 H972.2 L1042.2 202.8 H1059.8 H1112.2 L1112.2 328.8 H1164.8 H1206.8 L1206.8 223.8 H1248.8" fill="none" stroke="#4CE0B3" stroke-width="3.1" stroke-linejoin="round" stroke-linecap="round" opacity=".86"/>
+</g>
+<g class="route route-pr_opened"><title>PROPOSE service links recorded pr_opened milestones by date, not repository dependencies</title>
+<path d="M996.8 307.8 H1003.8 L1241.8 307.8 H1248.8" fill="none" stroke="#0B1724" stroke-width="7.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M996.8 307.8 H1003.8 L1241.8 307.8 H1248.8" fill="none" stroke="#FF9E85" stroke-width="3.1" stroke-linejoin="round" stroke-linecap="round" opacity=".86"/>
+</g>
+<g class="route route-pr_merged"><title>MERGE service links recorded pr_merged milestones by date, not repository dependencies</title>
+<path d="M1059.8 328.8 H1098.2 L1189.2 265.8 H1227.8" fill="none" stroke="#0B1724" stroke-width="7.4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1059.8 328.8 H1098.2 L1189.2 265.8 H1227.8" fill="none" stroke="#A792FD" stroke-width="3.1" stroke-linejoin="round" stroke-linecap="round" opacity=".86"/>
+</g>
+<circle cx="954.8" cy="223.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/aurora: commit, 2026-08-03</title></circle>
+<circle cx="1059.8" cy="202.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/ember: commit, 2026-09-06</title></circle>
+<circle cx="1164.8" cy="328.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/orbit: commit, 2026-10-17</title></circle>
+<circle cx="1248.8" cy="223.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/harbour: commit, 2026-11-09</title></circle>
+<circle cx="996.8" cy="307.8" r="5.3" fill="#101C2B" stroke="#FF9E85" stroke-width="2.1"><title>sample-dev/atlas: pr_opened, 2026-08-21</title></circle>
+<circle cx="1248.8" cy="307.8" r="5.3" fill="#101C2B" stroke="#FF9E85" stroke-width="2.1"><title>sample-dev/ember: pr_opened, 2026-11-13</title></circle>
+<circle cx="1059.8" cy="328.8" r="5.3" fill="#101C2B" stroke="#A792FD" stroke-width="2.1"><title>sample-dev/atlas: pr_merged, 2026-09-12</title></circle>
+<circle cx="1227.8" cy="265.8" r="5.3" fill="#101C2B" stroke="#A792FD" stroke-width="2.1"><title>sample-dev/harbour: pr_merged, 2026-11-04</title></circle>
+<circle cx="1122.8" cy="223.8" r="5.3" fill="#101C2B" stroke="#FFD174" stroke-width="2.1"><title>sample-dev/orbit: issue_opened, 2026-09-28</title></circle>
+<circle cx="1185.8" cy="328.8" r="5.3" fill="#101C2B" stroke="#76BEFF" stroke-width="2.1"><title>sample-dev/aurora: release, 2026-10-24</title></circle>
+<g class="terminal" data-repo="sample-dev/aurora">
+<circle cx="1185.8" cy="328.8" r="11" fill="#101C2B" stroke="#76BEFF" stroke-width="3"/>
+<text x="1185.8" y="332.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">01</text>
+<title>Station 01: sample-dev/aurora; release on 2026-10-24</title></g>
+<g class="terminal" data-repo="sample-dev/ember">
+<circle cx="1059.8" cy="202.8" r="11" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
+<text x="1059.8" y="206.2" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">03</text>
+<title>Station 03: sample-dev/ember; commit on 2026-09-06</title></g>
+<g class="terminal" data-repo="sample-dev/orbit">
+<circle cx="1164.8" cy="328.8" r="11" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
+<text x="1164.8" y="332.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">04</text>
+<title>Station 04: sample-dev/orbit; commit on 2026-10-17</title></g>
+<g class="terminal" data-repo="sample-dev/harbour">
+<circle cx="1227.8" cy="265.8" r="11" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
+<text x="1227.8" y="269.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">05</text>
+<title>Station 05: sample-dev/harbour; pr_merged on 2026-11-04</title></g>
+<g class="terminal" data-repo="sample-dev/atlas">
+<circle cx="1059.8" cy="328.8" r="11" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
+<text x="1059.8" y="332.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">02</text>
+<title>Station 02: sample-dev/atlas; pr_merged on 2026-09-12</title></g>
+<text x="101.0" y="365.0" class="tag" text-anchor="start">CALENDAR DENSITY:   NONE / NO OBSERVATION</text>
+<text x="1210.0" y="365.0" class="tag" text-anchor="end">LOW</text>
+<rect x="1222" y="354" width="12" height="12" rx="3" fill="#1A2B3B"/>
+<rect x="1242" y="354" width="12" height="12" rx="3" fill="#27574F"/>
+<rect x="1262" y="354" width="12" height="12" rx="3" fill="#237B63"/>
+<rect x="1282" y="354" width="12" height="12" rx="3" fill="#2BAA7F"/>
+<rect x="1302" y="354" width="12" height="12" rx="3" fill="#69E6B1"/>
+<text x="1353.0" y="365.0" class="tag" text-anchor="end">HIGH</text>
+<text x="81.0" y="408.0" class="tag" text-anchor="start">02 / THE FIVE TRANSIT SERVICES</text>
+<text x="1359.0" y="408.0" class="tag" text-anchor="end">TRACKS LINK EVENTS OF THE SAME TYPE, IN CHRONOLOGICAL ORDER</text>
+<path d="M94 433H127" stroke="#4CE0B3" stroke-width="5" stroke-linecap="round"/>
+<circle cx="109" cy="433" r="8" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
+<text x="141.0" y="438.0" class="legend" text-anchor="start">CODE</text>
+<text x="142.0" y="449.0" class="tag" text-anchor="start">4 EVENTS</text>
+<path d="M359 433H392" stroke="#FF9E85" stroke-width="5" stroke-linecap="round"/>
+<circle cx="374" cy="433" r="8" fill="#101C2B" stroke="#FF9E85" stroke-width="3"/>
+<text x="406.0" y="438.0" class="legend" text-anchor="start">PROPOSE</text>
+<text x="407.0" y="449.0" class="tag" text-anchor="start">2 EVENTS</text>
+<path d="M624 433H657" stroke="#A792FD" stroke-width="5" stroke-linecap="round"/>
+<circle cx="639" cy="433" r="8" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
+<text x="671.0" y="438.0" class="legend" text-anchor="start">MERGE</text>
+<text x="672.0" y="449.0" class="tag" text-anchor="start">2 EVENTS</text>
+<path d="M889 433H922" stroke="#FFD174" stroke-width="5" stroke-linecap="round"/>
+<circle cx="904" cy="433" r="8" fill="#101C2B" stroke="#FFD174" stroke-width="3"/>
+<text x="936.0" y="438.0" class="legend" text-anchor="start">DISCUSS</text>
+<text x="937.0" y="449.0" class="tag" text-anchor="start">1 EVENTS</text>
+<path d="M1154 433H1187" stroke="#76BEFF" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1169" cy="433" r="8" fill="#101C2B" stroke="#76BEFF" stroke-width="3"/>
+<text x="1201.0" y="438.0" class="legend" text-anchor="start">SHIP</text>
+<text x="1202.0" y="449.0" class="tag" text-anchor="start">1 EVENTS</text>
+<path d="M81 453H1360" stroke="#294255"/>
+<text x="81.0" y="475.0" class="tag" text-anchor="start">03 / REPOSITORY TERMINALS</text>
+<text x="1359.0" y="475.0" class="tag" text-anchor="end">THE NUMBER ON A MAP STOP IDENTIFIES A REPOSITORY BELOW</text>
+<rect x="82" y="486" width="251" height="61" rx="11" fill="#142536" stroke="#294255" stroke-width="1"/>
+<circle cx="105" cy="517" r="15" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
+<text x="105.0" y="521.0" class="legend" text-anchor="middle">01</text>
+<text x="129.0" y="510.0" class="repo" text-anchor="start">aurora</text>
+<text x="129.0" y="528.0" class="detail" text-anchor="start">2 recorded events  /  sample-dev</text>
+<rect x="130" y="537" width="24.0" height="2.7" fill="#4CE0B3" opacity=".75"/>
+<rect x="347" y="486" width="251" height="61" rx="11" fill="#142536" stroke="#294255" stroke-width="1"/>
+<circle cx="370" cy="517" r="15" fill="#101C2B" stroke="#FF9E85" stroke-width="3"/>
+<text x="370.0" y="521.0" class="legend" text-anchor="middle">02</text>
+<text x="394.0" y="510.0" class="repo" text-anchor="start">atlas</text>
+<text x="394.0" y="528.0" class="detail" text-anchor="start">2 recorded events  /  sample-dev</text>
+<rect x="395" y="537" width="24.0" height="2.7" fill="#FF9E85" opacity=".75"/>
+<rect x="612" y="486" width="251" height="61" rx="11" fill="#142536" stroke="#294255" stroke-width="1"/>
+<circle cx="635" cy="517" r="15" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
+<text x="635.0" y="521.0" class="legend" text-anchor="middle">03</text>
+<text x="659.0" y="510.0" class="repo" text-anchor="start">ember</text>
+<text x="659.0" y="528.0" class="detail" text-anchor="start">2 recorded events  /  sample-dev</text>
+<rect x="660" y="537" width="24.0" height="2.7" fill="#A792FD" opacity=".75"/>
+<rect x="877" y="486" width="251" height="61" rx="11" fill="#142536" stroke="#294255" stroke-width="1"/>
+<circle cx="900" cy="517" r="15" fill="#101C2B" stroke="#FFD174" stroke-width="3"/>
+<text x="900.0" y="521.0" class="legend" text-anchor="middle">04</text>
+<text x="924.0" y="510.0" class="repo" text-anchor="start">orbit</text>
+<text x="924.0" y="528.0" class="detail" text-anchor="start">2 recorded events  /  sample-dev</text>
+<rect x="925" y="537" width="24.0" height="2.7" fill="#FFD174" opacity=".75"/>
+<rect x="1142" y="486" width="251" height="61" rx="11" fill="#142536" stroke="#294255" stroke-width="1"/>
+<circle cx="1165" cy="517" r="15" fill="#101C2B" stroke="#76BEFF" stroke-width="3"/>
+<text x="1165.0" y="521.0" class="legend" text-anchor="middle">05</text>
+<text x="1189.0" y="510.0" class="repo" text-anchor="start">harbour</text>
+<text x="1189.0" y="528.0" class="detail" text-anchor="start">2 recorded events  /  sample-dev</text>
+<rect x="1190" y="537" width="24.0" height="2.7" fill="#76BEFF" opacity=".75"/>
+<path d="M81 558H1360" stroke="#294255" stroke-width=".8"/>
+<text x="82.0" y="574.0" class="tag" text-anchor="start">SHARED SYNTHETIC FIXTURE  /  10 recorded fixture events • No invented contributions</text>
+<text x="1358.0" y="574.0" class="tag" text-anchor="end">NOT A COMPLETE GITHUB CONTRIBUTION HISTORY</text>
+</svg>

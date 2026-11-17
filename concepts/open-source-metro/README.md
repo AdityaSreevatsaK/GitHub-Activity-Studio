@@ -1,5 +1,38 @@
 # Open Source Metro
 
+## Metro Atlas | Visual redesign
+
+**A contribution calendar that also behaves like a metro map.** The 53-week × 7-day grid remains the principal visual. Coloured tracks connect *selected, dated events of the same type*. Numbered terminal roundels identify the repository in the station directory below the chart.
+
+The previous ten-event shared fixture leaves most of the year empty. The two large design previews therefore use **188 additional, deterministic, deliberately invented showcase events**, labelled as such throughout the images. The third preview shows **only the ten supplied fixture events**. Neither mode represents actual GitHub contributions.
+
+### Metropolitan / Midnight (synthetic density showcase)
+
+![Calendar-first midnight Metro Atlas with colourful dated service lines, green activity squares and numbered repository terminals. This is a synthetic density showcase containing 188 invented illustration events and 10 shared fixture events.](exports/atlas-midnight-showcase.svg)
+
+### Heritage / Parchment (same synthetic density showcase)
+
+![Vintage parchment Metro Atlas showing the same explicitly synthetic activity, five colour-coded transport lines and repository terminal index.](exports/atlas-parchment-showcase.svg)
+
+### Actual shared fixture / No invented history
+
+![Midnight Metro Atlas generated using exactly the ten original synthetic events and five repositories, with no fabricated historical activity.](exports/atlas-midnight-fixture.svg)
+
+**Read the image in three steps:** **01 Calendar:** every square is a day, and intensity reflects observed event units, not GitHub's complete contribution count. **02 Metro services:** CODE, PROPOSE, MERGE, DISCUSS and SHIP are separate event categories. Tracks connect a small chronological subset of events within each category, not relationships between repositories. **03 Repository terminals:** large numbered stops correspond to the named repositories beneath the chart.
+
+**Generate all three designs locally on Windows:**
+
+```powershell
+py -3 .\concepts\open-source-metro\metro_atlas.py
+py -3 -m unittest discover -s .\concepts\open-source-metro\tests -v
+```
+
+The renderer uses Python 3.11+ and the shared v1 JSON snapshot, with no network calls or paid dependencies. The output is static SVG designed to be embedded in GitHub README files. This concept is still for review and has **not been applied to the live profile**.
+
+---
+
+## Earlier calendar-metro prototype
+
 **A GitHub-style contribution calendar turned into a metro network.** The familiar **53-week × 7-day grid** remains the centrepiece, while dated public activity becomes brightly marked stations and five coloured transit services.
 
 The checked-in previews use the shared **synthetic demonstration fixture**, **not** the account owner's actual contributions. Only observed events from the supplied snapshot are plotted. A blank cell does **not** prove zero GitHub contributions.
