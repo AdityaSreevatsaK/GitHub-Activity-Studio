@@ -99,14 +99,15 @@ git clone https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio.git
 cd GitHub-Activity-Studio
 git switch concept/code-factory
 
-# Regenerate all eight SVGs from the common synthetic fixture
-node concepts/code-factory/calendar-factory.mjs
+# Run all tests and verify the 14 committed SVGs without changing files
+# (Use -Regenerate only when intentionally updating previews)
 
-# Re-run both native test suites with one command
+# Re-run the native test suites and verify source-backed exports
 .\concepts\code-factory\verify.ps1
 
 # Or run each separately
 node --test concepts/code-factory/tests/test_calendar_factory.mjs
+node --test concepts/code-factory/tests/test_public_refresh.mjs
 python -m unittest discover -s concepts/code-factory/tests -v
 
 # Explore and click any of the 53 calendar-week columns
@@ -115,7 +116,7 @@ python -m http.server 8000
 
 Open **http://localhost:8000/concepts/code-factory/preview.html**.
 
-**Optional:** `.\concepts\code-factory\verify.ps1 -Regenerate` refreshes all ten committed SVGs before running both suites. The two historical sample stills are source-backed committed gallery assets.
+**Optional:** `.\concepts\code-factory\verify.ps1 -Regenerate` refreshes all fourteen committed SVGs (ten demo and four account stills) before running the test suites. The two historical sample stills are source-backed committed gallery assets.
 
 To render another **normalised v1 snapshot** and choose a specific calendar-week column (0–52):
 
@@ -127,12 +128,34 @@ Without `--week-index`, the exporter automatically picks the most recent week wi
 
 The old `factory.py` remains for historical comparison. **It is not the source of these exports.** Its default output now goes to `exports-legacy/` to protect the calendar assets; explicitly targeting `exports/` with the old exporter would still overwrite them. Use the Node exporter for this design.
 
+## Refresh your public GitHub snapshot
+
+The committed account snapshot is a **fixed historical capture**, not a live API feed. To regenerate it later, the public-only Node collector uses GitHub REST and never reads private repositories. A read-only token is optional but helps with GitHub rate limits. It **fails without overwriting your existing snapshot** if a search is truncated or a request fails.
+
+From the repository root in PowerShell:
+
+```powershell
+# Optional: use GitHub CLI credentials temporarily
+$env:GITHUB_TOKEN = gh auth token
+
+# Public PRs/issues plus authored commits on public owned default branches
+node concepts/code-factory/refresh-public-activity.mjs
+
+# Regenerate all 14 exports and run checks
+.\concepts\code-factory\verify.ps1 -Regenerate
+
+# Clear the optional credential from this terminal
+Remove-Item Env:GITHUB_TOKEN
+```
+
+The refresh uses a rolling one-year window by default. It does **not** update your live GitHub profile, schedule a workflow, or automatically rewrite the dated statistics in this README. **Review the new capture date, source coverage and visible totals before committing refreshed previews.**
+
 ## How the data is handled
 
-- The normalised snapshot follows [the shared data contract](../../docs/DATA_CONTRACT.md). No concept-specific GitHub collector has been added.
+- Both datasets follow [the shared data contract](../../docs/DATA_CONTRACT.md). The public-only refresh command is confined to Code Factory; it does not modify the shared collector or other concepts.
 - Calendar columns are **53 Sunday-start weeks**, covering approximately the previous 52 weeks plus the current incomplete week. Days after `generated_at` are not treated as zero contributions, and events after the snapshot's UTC timestamp are excluded.
 - Event IDs are deduplicated, conflicts rejected, repository ownership preserved using `full_name`, and timestamps handled as UTC, including optional millisecond precision. Text is escaped before becoming SVG attributes or labels.
-- Colour intensity reflects *recorded event units* across the day. Because the shared fixture is sparse, an empty calendar cell means **no input record**, not proof that no contributions occurred.
+- Colour intensity reflects *recorded event units* across the day. For **either** dataset, an empty square means **no observed input record** rather than proof of no GitHub contributions.
 - A selected day has one miniature machine per visible event; to stay readable at 1200 × 430 px, only the first **two distinct repository-stage machines per day** are drawn, with total hidden records and stages disclosed.
 - All artwork uses original procedural SVG geometry, with different isometric and pixel-art drawings; no external imagery, fonts or third-party sprites.
 
@@ -144,8 +167,8 @@ The **README embeds still SVGs**, so the design can be judged without relying on
 
 ### Verification status
 
-- **27 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
-- Native `node --test`, the PowerShell verification script, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes. All ten SVGs were previously matched byte-for-byte with the renderer and passed structural checks; the current revisions also have deterministic JavaScript coverage. The verifier now checks all ten committed SVGs against freshly regenerated copies without changing the repository. It normalises Windows CRLF/LF line endings only, preventing false failures on Windows Git checkouts. A new loop-boundary regression ensures optional moving parcels fade rather than jumping; still exports include the same event parcels without motion.
+- **37 JavaScript scenarios passed in validation harnesses** (30 renderer tests plus seven public-collector tests), including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
+- Native `node --test`, the PowerShell verification script, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes. All fourteen SVGs were matched byte-for-byte with the renderer and passed structural checks; the current revisions also have deterministic JavaScript coverage. The verifier now checks all ten committed SVGs against freshly regenerated copies without changing the repository. It normalises Windows CRLF/LF line endings only, preventing false failures on Windows Git checkouts. A new loop-boundary regression ensures optional moving parcels fade rather than jumping; still exports include the same event parcels without motion.
 - The pull request remains draft. **No changes to `master` or the owner's profile.**
 - The two artwork styles use different factory floors and machinery, with crisp-edged geometry for pixel art; both retain the same exact calendar data.
 
