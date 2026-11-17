@@ -108,13 +108,14 @@ function renderState(){
  }
 }
 function choose(next){style=next;el("geometric").setAttribute("aria-pressed",String(style==="geometric"));el("robots").setAttribute("aria-pressed",String(style==="robots"));loadArt()}
-function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+style+"-"+theme+"-still.svg";art.data="exports/"+style+"-"+theme+".svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{
+function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src="exports/"+style+"-"+theme+"-still.svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{
  const root=svg();if(root)for(const cell of root.querySelectorAll(".day-cell")){
   cell.style.cursor="help";
   cell.addEventListener("pointerenter",()=>{inspectDate(cell.dataset.date);});
  }
  highlightSelectedDate();
  }catch{}};
+ art.data="exports/"+style+"-"+theme+".svg";
  el("gif").href="exports/"+style+"-"+theme+".gif";
  el("still").href="exports/"+style+"-"+theme+"-still.svg";
 }
