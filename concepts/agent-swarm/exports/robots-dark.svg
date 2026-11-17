@@ -2,7 +2,7 @@
 <title id="swarm-title">THE LITTLE SWARM WORKSHOP · demonstration activity calendar</title>
 <desc id="swarm-desc">GitHub-style calendar of observed source events, with a deterministic swarm of tiny robots ferrying symbolic work to recorded event dates. This does not represent the complete GitHub contribution graph or autonomous GitHub actions.</desc>
 <defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071523"/><stop offset="1" stop-color="#112b39"/></linearGradient><filter id="halo" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4"/></filter></defs>
-<style>text{font-weight:500}.small{letter-spacing:1.2px;font-weight:700}@media(prefers-reduced-motion:reduce){.swarm-motion{display:none!important}}</style>
+<style>text{font-weight:500}.small{letter-spacing:1.2px;font-weight:700}@media(prefers-reduced-motion:reduce){.swarm-motion,.symbolic-task{display:none!important}}</style>
 <rect x="0" y="0" width="1120" height="350" rx="0" fill="url(#sky)" stroke="none" stroke-width="1"/>
 <rect x="14" y="13" width="1092" height="324" rx="19" fill="none" stroke="#315062" stroke-width="1"/>
 <text x="39" y="45" fill="#e7f9ff" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="1.5">THE LITTLE SWARM WORKSHOP</text>

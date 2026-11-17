@@ -2,7 +2,7 @@
 <title id="swarm-title">THE LITTLE SWARM WORKSHOP · demonstration activity calendar</title>
 <desc id="swarm-desc">GitHub-style calendar of observed source events, with a deterministic swarm of tiny robots ferrying symbolic work to recorded event dates. This does not represent the complete GitHub contribution graph or autonomous GitHub actions.</desc>
 <defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3f4ee"/><stop offset="1" stop-color="#e0eee7"/></linearGradient><filter id="halo" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4"/></filter></defs>
-<style>text{font-weight:500}.small{letter-spacing:1.2px;font-weight:700}@media(prefers-reduced-motion:reduce){.swarm-motion{display:none!important}}</style>
+<style>text{font-weight:500}.small{letter-spacing:1.2px;font-weight:700}@media(prefers-reduced-motion:reduce){.swarm-motion,.symbolic-task{display:none!important}}</style>
 <rect x="0" y="0" width="1120" height="350" rx="0" fill="url(#sky)" stroke="none" stroke-width="1"/>
 <rect x="14" y="13" width="1092" height="324" rx="19" fill="none" stroke="#b6cacb" stroke-width="1"/>
 <text x="39" y="45" fill="#182d36" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="1.5">THE LITTLE SWARM WORKSHOP</text>
@@ -36,6 +36,110 @@
 <rect x="719" y="89" width="11" height="11" rx="2" fill="#34a375" stroke="none" stroke-width="1"/>
 <rect x="737" y="89" width="11" height="11" rx="2" fill="#17774d" stroke="none" stroke-width="1"/>
 <text x="761" y="98" fill="#536e77" font-family="Segoe UI,Arial,sans-serif" font-size="8" class="small">MORE</text>
+<path class="observed-link" d="M 105.20 191.20 L 105.20 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-11-19 and 2025-11-20</title></path>
+<path class="observed-link" d="M 105.20 207.80 L 105.20 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-11-20 and 2025-11-21</title></path>
+<path class="observed-link" d="M 122.45 158.00 L 122.45 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-11-24 and 2025-11-25</title></path>
+<path class="observed-link" d="M 139.70 141.40 L 139.70 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-11-30 and 2025-12-01</title></path>
+<path class="observed-link" d="M 139.70 158.00 L 139.70 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-01 and 2025-12-02</title></path>
+<path class="observed-link" d="M 139.70 174.60 L 139.70 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-02 and 2025-12-03</title></path>
+<path class="observed-link" d="M 139.70 191.20 L 139.70 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-03 and 2025-12-04</title></path>
+<path class="observed-link" d="M 156.95 174.60 L 156.95 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-09 and 2025-12-10</title></path>
+<path class="observed-link" d="M 156.95 191.20 L 156.95 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-10 and 2025-12-11</title></path>
+<path class="observed-link" d="M 156.95 207.80 L 156.95 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-11 and 2025-12-12</title></path>
+<path class="observed-link" d="M 174.20 191.20 L 174.20 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-17 and 2025-12-18</title></path>
+<path class="observed-link" d="M 191.45 174.60 L 191.45 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-23 and 2025-12-24</title></path>
+<path class="observed-link" d="M 191.45 191.20 L 191.45 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-24 and 2025-12-25</title></path>
+<path class="observed-link" d="M 191.45 207.80 L 191.45 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-25 and 2025-12-26</title></path>
+<path class="observed-link" d="M 208.70 158.00 L 208.70 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2025-12-29 and 2025-12-30</title></path>
+<path class="observed-link" d="M 208.70 207.80 L 208.70 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-01-01 and 2026-01-02</title></path>
+<path class="observed-link" d="M 208.70 224.40 L 208.70 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-01-02 and 2026-01-03</title></path>
+<path class="observed-link" d="M 225.95 224.40 L 225.95 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-01-09 and 2026-01-10</title></path>
+<path class="observed-link" d="M 243.20 158.00 L 243.20 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-01-12 and 2026-01-13</title></path>
+<path class="observed-link" d="M 243.20 207.80 L 243.20 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-01-15 and 2026-01-16</title></path>
+<path class="observed-link" d="M 260.45 141.40 L 260.45 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-01-18 and 2026-01-19</title></path>
+<path class="observed-link" d="M 277.70 191.20 L 277.70 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-01-28 and 2026-01-29</title></path>
+<path class="observed-link" d="M 294.95 191.20 L 294.95 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-02-04 and 2026-02-05</title></path>
+<path class="observed-link" d="M 294.95 207.80 L 294.95 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-02-05 and 2026-02-06</title></path>
+<path class="observed-link" d="M 312.20 174.60 L 312.20 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-02-10 and 2026-02-11</title></path>
+<path class="observed-link" d="M 312.20 191.20 L 312.20 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-02-11 and 2026-02-12</title></path>
+<path class="observed-link" d="M 312.20 207.80 L 312.20 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-02-12 and 2026-02-13</title></path>
+<path class="observed-link" d="M 346.70 174.60 L 346.70 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-02-24 and 2026-02-25</title></path>
+<path class="observed-link" d="M 363.95 174.60 L 363.95 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-03-03 and 2026-03-04</title></path>
+<path class="observed-link" d="M 363.95 191.20 L 363.95 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-03-04 and 2026-03-05</title></path>
+<path class="observed-link" d="M 363.95 207.80 L 363.95 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-03-05 and 2026-03-06</title></path>
+<path class="observed-link" d="M 363.95 224.40 L 363.95 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-03-06 and 2026-03-07</title></path>
+<path class="observed-link" d="M 415.70 207.80 L 415.70 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-03-26 and 2026-03-27</title></path>
+<path class="observed-link" d="M 432.95 174.60 L 432.95 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-03-31 and 2026-04-01</title></path>
+<path class="observed-link" d="M 450.20 141.40 L 450.20 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-05 and 2026-04-06</title></path>
+<path class="observed-link" d="M 450.20 158.00 L 450.20 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-06 and 2026-04-07</title></path>
+<path class="observed-link" d="M 450.20 174.60 L 450.20 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-07 and 2026-04-08</title></path>
+<path class="observed-link" d="M 467.45 207.80 L 467.45 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-16 and 2026-04-17</title></path>
+<path class="observed-link" d="M 467.45 224.40 L 467.45 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-17 and 2026-04-18</title></path>
+<path class="observed-link" d="M 484.70 174.60 L 484.70 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-21 and 2026-04-22</title></path>
+<path class="observed-link" d="M 484.70 191.20 L 484.70 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-22 and 2026-04-23</title></path>
+<path class="observed-link" d="M 484.70 207.80 L 484.70 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-23 and 2026-04-24</title></path>
+<path class="observed-link" d="M 484.70 224.40 L 484.70 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-24 and 2026-04-25</title></path>
+<path class="observed-link" d="M 501.95 191.20 L 501.95 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-04-29 and 2026-04-30</title></path>
+<path class="observed-link" d="M 519.20 207.80 L 519.20 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-07 and 2026-05-08</title></path>
+<path class="observed-link" d="M 519.20 224.40 L 519.20 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-08 and 2026-05-09</title></path>
+<path class="observed-link" d="M 536.45 158.00 L 536.45 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-11 and 2026-05-12</title></path>
+<path class="observed-link" d="M 536.45 174.60 L 536.45 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-12 and 2026-05-13</title></path>
+<path class="observed-link" d="M 536.45 224.40 L 536.45 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-15 and 2026-05-16</title></path>
+<path class="observed-link" d="M 553.70 141.40 L 553.70 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-17 and 2026-05-18</title></path>
+<path class="observed-link" d="M 570.95 191.20 L 570.95 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-27 and 2026-05-28</title></path>
+<path class="observed-link" d="M 588.20 141.40 L 588.20 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-05-31 and 2026-06-01</title></path>
+<path class="observed-link" d="M 588.20 158.00 L 588.20 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-06-01 and 2026-06-02</title></path>
+<path class="observed-link" d="M 588.20 174.60 L 588.20 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-06-02 and 2026-06-03</title></path>
+<path class="observed-link" d="M 605.45 158.00 L 605.45 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-06-08 and 2026-06-09</title></path>
+<path class="observed-link" d="M 605.45 174.60 L 605.45 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-06-09 and 2026-06-10</title></path>
+<path class="observed-link" d="M 622.70 207.80 L 622.70 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-06-18 and 2026-06-19</title></path>
+<path class="observed-link" d="M 657.20 158.00 L 657.20 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-06-29 and 2026-06-30</title></path>
+<path class="observed-link" d="M 657.20 174.60 L 657.20 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-06-30 and 2026-07-01</title></path>
+<path class="observed-link" d="M 657.20 191.20 L 657.20 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-01 and 2026-07-02</title></path>
+<path class="observed-link" d="M 657.20 207.80 L 657.20 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-02 and 2026-07-03</title></path>
+<path class="observed-link" d="M 674.45 174.60 L 674.45 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-07 and 2026-07-08</title></path>
+<path class="observed-link" d="M 674.45 191.20 L 674.45 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-08 and 2026-07-09</title></path>
+<path class="observed-link" d="M 674.45 207.80 L 674.45 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-09 and 2026-07-10</title></path>
+<path class="observed-link" d="M 691.70 141.40 L 691.70 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-12 and 2026-07-13</title></path>
+<path class="observed-link" d="M 691.70 158.00 L 691.70 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-13 and 2026-07-14</title></path>
+<path class="observed-link" d="M 691.70 174.60 L 691.70 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-14 and 2026-07-15</title></path>
+<path class="observed-link" d="M 691.70 191.20 L 691.70 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-15 and 2026-07-16</title></path>
+<path class="observed-link" d="M 691.70 207.80 L 691.70 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-16 and 2026-07-17</title></path>
+<path class="observed-link" d="M 708.95 191.20 L 708.95 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-22 and 2026-07-23</title></path>
+<path class="observed-link" d="M 726.20 141.40 L 726.20 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-26 and 2026-07-27</title></path>
+<path class="observed-link" d="M 726.20 158.00 L 726.20 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-27 and 2026-07-28</title></path>
+<path class="observed-link" d="M 726.20 207.80 L 726.20 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-07-30 and 2026-07-31</title></path>
+<path class="observed-link" d="M 743.45 174.60 L 743.45 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-04 and 2026-08-05</title></path>
+<path class="observed-link" d="M 743.45 191.20 L 743.45 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-05 and 2026-08-06</title></path>
+<path class="observed-link" d="M 743.45 207.80 L 743.45 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-06 and 2026-08-07</title></path>
+<path class="observed-link" d="M 760.70 158.00 L 760.70 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-10 and 2026-08-11</title></path>
+<path class="observed-link" d="M 760.70 174.60 L 760.70 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-11 and 2026-08-12</title></path>
+<path class="observed-link" d="M 760.70 191.20 L 760.70 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-12 and 2026-08-13</title></path>
+<path class="observed-link" d="M 760.70 207.80 L 760.70 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-13 and 2026-08-14</title></path>
+<path class="observed-link" d="M 760.70 224.40 L 760.70 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-14 and 2026-08-15</title></path>
+<path class="observed-link" d="M 777.95 158.00 L 777.95 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-17 and 2026-08-18</title></path>
+<path class="observed-link" d="M 777.95 207.80 L 777.95 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-20 and 2026-08-21</title></path>
+<path class="observed-link" d="M 777.95 224.40 L 777.95 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-21 and 2026-08-22</title></path>
+<path class="observed-link" d="M 795.20 174.60 L 795.20 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-25 and 2026-08-26</title></path>
+<path class="observed-link" d="M 795.20 191.20 L 795.20 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-26 and 2026-08-27</title></path>
+<path class="observed-link" d="M 812.45 141.40 L 812.45 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-30 and 2026-08-31</title></path>
+<path class="observed-link" d="M 812.45 158.00 L 812.45 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-08-31 and 2026-09-01</title></path>
+<path class="observed-link" d="M 812.45 174.60 L 812.45 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-01 and 2026-09-02</title></path>
+<path class="observed-link" d="M 812.45 191.20 L 812.45 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-02 and 2026-09-03</title></path>
+<path class="observed-link" d="M 829.70 174.60 L 829.70 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-08 and 2026-09-09</title></path>
+<path class="observed-link" d="M 829.70 224.40 L 829.70 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-11 and 2026-09-12</title></path>
+<path class="observed-link" d="M 846.95 158.00 L 846.95 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-14 and 2026-09-15</title></path>
+<path class="observed-link" d="M 846.95 174.60 L 846.95 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-15 and 2026-09-16</title></path>
+<path class="observed-link" d="M 864.20 141.40 L 864.20 143.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-20 and 2026-09-21</title></path>
+<path class="observed-link" d="M 864.20 158.00 L 864.20 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-21 and 2026-09-22</title></path>
+<path class="observed-link" d="M 864.20 207.80 L 864.20 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-24 and 2026-09-25</title></path>
+<path class="observed-link" d="M 864.20 224.40 L 864.20 226.60" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-25 and 2026-09-26</title></path>
+<path class="observed-link" d="M 881.45 174.60 L 881.45 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-09-29 and 2026-09-30</title></path>
+<path class="observed-link" d="M 898.70 207.80 L 898.70 210.00" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-10-08 and 2026-10-09</title></path>
+<path class="observed-link" d="M 933.20 174.60 L 933.20 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-10-20 and 2026-10-21</title></path>
+<path class="observed-link" d="M 967.70 174.60 L 967.70 176.80" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-11-03 and 2026-11-04</title></path>
+<path class="observed-link" d="M 967.70 191.20 L 967.70 193.40" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-11-04 and 2026-11-05</title></path>
+<path class="observed-link" d="M 984.95 158.00 L 984.95 160.20" stroke="#609a81" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"><title>Adjacent recorded activity: 2026-11-09 and 2026-11-10</title></path>
 <rect class="day-cell" data-date="2025-11-16" data-events="0" data-units="0" x="99.00" y="128.00" width="12.4" height="12.4" rx="3.5" fill="#e5ebe5" fill-opacity="1" stroke="none" stroke-opacity=".6" stroke-width=".6"><title>2025-11-16: no recorded events in input snapshot</title></rect>
 <rect class="day-cell" data-date="2025-11-17" data-events="0" data-units="0" x="99.00" y="144.60" width="12.4" height="12.4" rx="3.5" fill="#e5ebe5" fill-opacity="1" stroke="none" stroke-opacity=".6" stroke-width=".6"><title>2025-11-17: no recorded events in input snapshot</title></rect>
 <rect class="day-cell" data-date="2025-11-18" data-events="0" data-units="0" x="99.00" y="161.20" width="12.4" height="12.4" rx="3.5" fill="#e5ebe5" fill-opacity="1" stroke="none" stroke-opacity=".6" stroke-width=".6"><title>2025-11-18: no recorded events in input snapshot</title></rect>
@@ -407,6 +511,43 @@
 <rect class="day-cell" data-date="2026-11-19" data-events="0" data-units="0" x="996.00" y="194.40" width="12.4" height="12.4" rx="3.5" fill="#e5ebe5" fill-opacity="0.26" stroke="none" stroke-opacity=".6" stroke-width=".6"><title>2026-11-19: no recorded events in input snapshot</title></rect>
 <rect class="day-cell" data-date="2026-11-20" data-events="0" data-units="0" x="996.00" y="211.00" width="12.4" height="12.4" rx="3.5" fill="#e5ebe5" fill-opacity="0.26" stroke="none" stroke-opacity=".6" stroke-width=".6"><title>2026-11-20: no recorded events in input snapshot</title></rect>
 <rect class="day-cell" data-date="2026-11-21" data-events="0" data-units="0" x="996.00" y="227.60" width="12.4" height="12.4" rx="3.5" fill="#e5ebe5" fill-opacity="0.26" stroke="none" stroke-opacity=".6" stroke-width=".6"><title>2026-11-21: no recorded events in input snapshot</title></rect>
+<circle class="busy-day-indicator" cx="126.45" cy="163.50" r="1.8" fill="#235747"><title>2025-11-25: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="143.70" cy="180.10" r="1.8" fill="#235747"><title>2025-12-03: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="160.95" cy="163.50" r="1.8" fill="#235747"><title>2025-12-09: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="160.95" cy="180.10" r="1.8" fill="#235747"><title>2025-12-10: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="160.95" cy="213.30" r="1.8" fill="#235747"><title>2025-12-12: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="178.20" cy="180.10" r="1.8" fill="#235747"><title>2025-12-17: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="178.20" cy="196.70" r="1.8" fill="#235747"><title>2025-12-18: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="195.45" cy="163.50" r="1.8" fill="#235747"><title>2025-12-23: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="212.70" cy="196.70" r="1.8" fill="#235747"><title>2026-01-01: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="229.95" cy="213.30" r="1.8" fill="#235747"><title>2026-01-09: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="247.20" cy="146.90" r="1.8" fill="#235747"><title>2026-01-12: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="264.45" cy="130.30" r="1.8" fill="#235747"><title>2026-01-18: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="298.95" cy="213.30" r="1.8" fill="#235747"><title>2026-02-06: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="367.95" cy="213.30" r="1.8" fill="#235747"><title>2026-03-06: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="367.95" cy="229.90" r="1.8" fill="#235747"><title>2026-03-07: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="385.20" cy="146.90" r="1.8" fill="#235747"><title>2026-03-09: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="385.20" cy="196.70" r="1.8" fill="#235747"><title>2026-03-12: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="454.20" cy="213.30" r="1.8" fill="#235747"><title>2026-04-10: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="471.45" cy="196.70" r="1.8" fill="#235747"><title>2026-04-16: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="592.20" cy="130.30" r="1.8" fill="#235747"><title>2026-05-31: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="661.20" cy="180.10" r="1.8" fill="#235747"><title>2026-07-01: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="678.45" cy="180.10" r="1.8" fill="#235747"><title>2026-07-08: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="678.45" cy="213.30" r="1.8" fill="#235747"><title>2026-07-10: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="695.70" cy="146.90" r="1.8" fill="#235747"><title>2026-07-13: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="695.70" cy="196.70" r="1.8" fill="#235747"><title>2026-07-16: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="695.70" cy="213.30" r="1.8" fill="#235747"><title>2026-07-17: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="764.70" cy="163.50" r="1.8" fill="#235747"><title>2026-08-11: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="764.70" cy="180.10" r="1.8" fill="#235747"><title>2026-08-12: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="764.70" cy="229.90" r="1.8" fill="#235747"><title>2026-08-15: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="781.95" cy="163.50" r="1.8" fill="#235747"><title>2026-08-18: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="781.95" cy="196.70" r="1.8" fill="#235747"><title>2026-08-20: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="781.95" cy="229.90" r="1.8" fill="#235747"><title>2026-08-22: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="816.45" cy="180.10" r="1.8" fill="#235747"><title>2026-09-02: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="833.70" cy="180.10" r="1.8" fill="#235747"><title>2026-09-09: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="937.20" cy="163.50" r="1.8" fill="#235747"><title>2026-10-20: 3 observed events</title></circle>
+<circle class="busy-day-indicator" cx="954.45" cy="180.10" r="1.8" fill="#235747"><title>2026-10-28: 4 observed events</title></circle>
+<circle class="busy-day-indicator" cx="988.95" cy="163.50" r="1.8" fill="#235747"><title>2026-11-10: 4 observed events</title></circle>
 <path d="M44 110h20 M1054 110h20 M44 241h20 M1054 241h20" stroke="#f1c17c" opacity=".8" stroke-width="2"/>
 <g class="repository-beacon" data-repository="synthetic-showcase/trace-lantern"><circle cx="55" cy="260" r="5" fill="#60dcc1"/><text x="66" y="264" fill="#536e77" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700">trace-lantern</text></g>
 <g class="repository-beacon" data-repository="synthetic-showcase/context-forge"><circle cx="247" cy="260" r="5" fill="#8abaff"/><text x="258" y="264" fill="#536e77" font-family="Segoe UI,Arial,sans-serif" font-size="10" font-weight="700">context-forge</text></g>
