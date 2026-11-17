@@ -27,8 +27,8 @@
 <text x="1250.0" y="53.0" class="tag" text-anchor="end">SHARED SYNTHETIC FIXTURE</text>
 <text x="1250.0" y="77.0" class="detail" text-anchor="end">10 EVENTS   /   10 ACTIVE DAYS   /   5 STATIONS</text>
 <rect x="76" y="127" width="1288" height="247" rx="13" fill="#0B1724" stroke="#294255" stroke-width="1"/>
-<text x="101.0" y="147.0" class="tag" text-anchor="start">01 / THE CALENDAR</text>
-<text x="1332.0" y="147.0" class="tag" text-anchor="end">A SQUARE IS A DAY.  THE BRIGHTER IT IS, THE MORE OBSERVED UNITS.</text>
+<text x="101.0" y="147.0" class="tag" text-anchor="start">01 / CALENDAR CITY + FIVE METRO LINES</text>
+<text x="1332.0" y="147.0" class="tag" text-anchor="end">SQUARE = DAY    /    COLOURED RAIL = EVENT TYPE    /    DOT = ACTIVE WEEK</text>
 <rect x="165" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
 <rect x="249" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
 <rect x="333" y="182" width="79" height="164" rx="2" fill="#142536" opacity=".35"/>
@@ -322,6 +322,7 @@
 <g class="cell" data-date="2026-08-03" data-units="3" tabindex="0" aria-label="2026-08-03 : 3 observed demo units; demo-001">
 <title>2026-08-03 : 3 observed demo units; demo-001</title>
 <rect class="tile-cell f2" x="947.0" y="216.0"/>
+<rect class="day-service" data-kind="commit" x="948.1" y="229.2" width="2.4" height="1.65" fill="#4CE0B3"/>
 <rect class="focus" x="946.0" y="215.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="947.0" y="237.0" opacity=".78"/>
@@ -344,6 +345,7 @@
 <g class="cell" data-date="2026-08-21" data-units="1" tabindex="0" aria-label="2026-08-21 : 1 observed demo units; demo-002">
 <title>2026-08-21 : 1 observed demo units; demo-002</title>
 <rect class="tile-cell f1" x="989.0" y="300.0"/>
+<rect class="day-service" data-kind="pr_opened" x="990.1" y="313.1" width="2.4" height="1.65" fill="#FF9E85"/>
 <rect class="focus" x="988.0" y="299.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="989.0" y="321.0" opacity=".78"/>
@@ -364,6 +366,7 @@
 <g class="cell" data-date="2026-09-06" data-units="2" tabindex="0" aria-label="2026-09-06 : 2 observed demo units; demo-003">
 <title>2026-09-06 : 2 observed demo units; demo-003</title>
 <rect class="tile-cell f1" x="1052.0" y="195.0"/>
+<rect class="day-service" data-kind="commit" x="1053.1" y="208.2" width="2.4" height="1.65" fill="#4CE0B3"/>
 <rect class="focus" x="1051.0" y="194.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1052.0" y="216.0" opacity=".78"/>
@@ -374,6 +377,7 @@
 <g class="cell" data-date="2026-09-12" data-units="1" tabindex="0" aria-label="2026-09-12 : 1 observed demo units; demo-004">
 <title>2026-09-12 : 1 observed demo units; demo-004</title>
 <rect class="tile-cell f1" x="1052.0" y="321.0"/>
+<rect class="day-service" data-kind="pr_merged" x="1053.1" y="334.1" width="2.4" height="1.65" fill="#A792FD"/>
 <rect class="focus" x="1051.0" y="320.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1073.0" y="195.0" opacity=".78"/>
@@ -394,6 +398,7 @@
 <g class="cell" data-date="2026-09-28" data-units="1" tabindex="0" aria-label="2026-09-28 : 1 observed demo units; demo-005">
 <title>2026-09-28 : 1 observed demo units; demo-005</title>
 <rect class="tile-cell f1" x="1115.0" y="216.0"/>
+<rect class="day-service" data-kind="issue_opened" x="1116.1" y="229.2" width="2.4" height="1.65" fill="#FFD174"/>
 <rect class="focus" x="1114.0" y="215.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1115.0" y="237.0" opacity=".78"/>
@@ -417,6 +422,7 @@
 <g class="cell" data-date="2026-10-17" data-units="5" tabindex="0" aria-label="2026-10-17 : 5 observed demo units; demo-006">
 <title>2026-10-17 : 5 observed demo units; demo-006</title>
 <rect class="tile-cell f2" x="1157.0" y="321.0"/>
+<rect class="day-service" data-kind="commit" x="1158.1" y="334.1" width="2.4" height="1.65" fill="#4CE0B3"/>
 <rect class="focus" x="1156.0" y="320.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1178.0" y="195.0" opacity=".78"/>
@@ -428,6 +434,7 @@
 <g class="cell" data-date="2026-10-24" data-units="1" tabindex="0" aria-label="2026-10-24 : 1 observed demo units; demo-007">
 <title>2026-10-24 : 1 observed demo units; demo-007</title>
 <rect class="tile-cell f1" x="1178.0" y="321.0"/>
+<rect class="day-service" data-kind="release" x="1179.1" y="334.1" width="2.4" height="1.65" fill="#76BEFF"/>
 <rect class="focus" x="1177.0" y="320.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1199.0" y="195.0" opacity=".78"/>
@@ -443,6 +450,7 @@
 <g class="cell" data-date="2026-11-04" data-units="1" tabindex="0" aria-label="2026-11-04 : 1 observed demo units; demo-008">
 <title>2026-11-04 : 1 observed demo units; demo-008</title>
 <rect class="tile-cell f1" x="1220.0" y="258.0"/>
+<rect class="day-service" data-kind="pr_merged" x="1221.1" y="271.1" width="2.4" height="1.65" fill="#A792FD"/>
 <rect class="focus" x="1219.0" y="257.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1220.0" y="279.0" opacity=".78"/>
@@ -452,6 +460,7 @@
 <g class="cell" data-date="2026-11-09" data-units="4" tabindex="0" aria-label="2026-11-09 : 4 observed demo units; demo-009">
 <title>2026-11-09 : 4 observed demo units; demo-009</title>
 <rect class="tile-cell f2" x="1241.0" y="216.0"/>
+<rect class="day-service" data-kind="commit" x="1242.1" y="229.2" width="2.4" height="1.65" fill="#4CE0B3"/>
 <rect class="focus" x="1240.0" y="215.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1241.0" y="237.0" opacity=".78"/>
@@ -460,53 +469,77 @@
 <g class="cell" data-date="2026-11-13" data-units="1" tabindex="0" aria-label="2026-11-13 : 1 observed demo units; demo-010">
 <title>2026-11-13 : 1 observed demo units; demo-010</title>
 <rect class="tile-cell f1" x="1241.0" y="300.0"/>
+<rect class="day-service" data-kind="pr_opened" x="1242.1" y="313.1" width="2.4" height="1.65" fill="#FF9E85"/>
 <rect class="focus" x="1240.0" y="299.0" width="17.5" height="17.5" rx="4" fill="none" stroke="#F2F8FE" opacity="0"/>
 </g>
 <rect class="tile-cell f0" x="1241.0" y="321.0" opacity=".78"/>
 <rect class="tile-cell f0" x="1262.0" y="195.0" opacity=".78"/>
 <rect class="tile-cell f0" x="1262.0" y="216.0" opacity=".78"/>
-<g class="route route-commit"><title>CODE service links recorded commit milestones by date, not repository dependencies</title>
-<path d="M954.8 223.8 H972.2 L1042.2 202.8 H1059.8 H1112.2 L1112.2 328.8 H1164.8 H1206.8 L1206.8 223.8 H1248.8" fill="none" stroke="#0B1724" stroke-width="7.4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M954.8 223.8 H972.2 L1042.2 202.8 H1059.8 H1112.2 L1112.2 328.8 H1164.8 H1206.8 L1206.8 223.8 H1248.8" fill="none" stroke="#4CE0B3" stroke-width="3.1" stroke-linejoin="round" stroke-linecap="round" opacity=".86"/>
+<g class="service-route route-commit" data-kind="commit">
+<title>CODE: one straight rail for commit. Each stop marks a week with recorded events. The track between stops does not mean daily contributions.</title>
+<path class="service-track-halo" d="M954.8 213.2 H1248.8" fill="none" stroke="#0B1724" stroke-width="6.3" stroke-linecap="round"/>
+<path class="service-track" data-kind="commit" d="M954.8 213.2 H1248.8" fill="none" stroke="#4CE0B3" stroke-width="3.2" stroke-linecap="round"/>
+<circle class="service-stop" data-kind="commit" data-week="37" data-events="1" cx="954.8" cy="213.2" r="3.8" fill="#0B1724" stroke="#4CE0B3" stroke-width="1.9"><title>CODE: 1 recorded event(s) in calendar week 38</title></circle>
+<circle class="service-stop" data-kind="commit" data-week="42" data-events="1" cx="1059.8" cy="213.2" r="3.8" fill="#0B1724" stroke="#4CE0B3" stroke-width="1.9"><title>CODE: 1 recorded event(s) in calendar week 43</title></circle>
+<circle class="service-stop" data-kind="commit" data-week="47" data-events="1" cx="1164.8" cy="213.2" r="3.8" fill="#0B1724" stroke="#4CE0B3" stroke-width="1.9"><title>CODE: 1 recorded event(s) in calendar week 48</title></circle>
+<circle class="service-stop" data-kind="commit" data-week="51" data-events="1" cx="1248.8" cy="213.2" r="3.8" fill="#0B1724" stroke="#4CE0B3" stroke-width="1.9"><title>CODE: 1 recorded event(s) in calendar week 52</title></circle>
+<rect x="1291" y="206.2" width="40" height="14" rx="7" fill="#4CE0B3"/>
+<text x="1311" y="216.2" text-anchor="middle" font-size="8.5" font-weight="800" font-family="system-ui,sans-serif" fill="#0B1724">M1</text>
 </g>
-<g class="route route-pr_opened"><title>PROPOSE service links recorded pr_opened milestones by date, not repository dependencies</title>
-<path d="M996.8 307.8 H1003.8 L1241.8 307.8 H1248.8" fill="none" stroke="#0B1724" stroke-width="7.4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M996.8 307.8 H1003.8 L1241.8 307.8 H1248.8" fill="none" stroke="#FF9E85" stroke-width="3.1" stroke-linejoin="round" stroke-linecap="round" opacity=".86"/>
+<g class="service-route route-pr_opened" data-kind="pr_opened">
+<title>PROPOSE: one straight rail for pr_opened. Each stop marks a week with recorded events. The track between stops does not mean daily contributions.</title>
+<path class="service-track-halo" d="M996.8 234.2 H1248.8" fill="none" stroke="#0B1724" stroke-width="6.3" stroke-linecap="round"/>
+<path class="service-track" data-kind="pr_opened" d="M996.8 234.2 H1248.8" fill="none" stroke="#FF9E85" stroke-width="3.2" stroke-linecap="round"/>
+<circle class="service-stop" data-kind="pr_opened" data-week="39" data-events="1" cx="996.8" cy="234.2" r="3.8" fill="#0B1724" stroke="#FF9E85" stroke-width="1.9"><title>PROPOSE: 1 recorded event(s) in calendar week 40</title></circle>
+<circle class="service-stop" data-kind="pr_opened" data-week="51" data-events="1" cx="1248.8" cy="234.2" r="3.8" fill="#0B1724" stroke="#FF9E85" stroke-width="1.9"><title>PROPOSE: 1 recorded event(s) in calendar week 52</title></circle>
+<rect x="1291" y="227.2" width="40" height="14" rx="7" fill="#FF9E85"/>
+<text x="1311" y="237.2" text-anchor="middle" font-size="8.5" font-weight="800" font-family="system-ui,sans-serif" fill="#0B1724">M2</text>
 </g>
-<g class="route route-pr_merged"><title>MERGE service links recorded pr_merged milestones by date, not repository dependencies</title>
-<path d="M1059.8 328.8 H1098.2 L1189.2 265.8 H1227.8" fill="none" stroke="#0B1724" stroke-width="7.4" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M1059.8 328.8 H1098.2 L1189.2 265.8 H1227.8" fill="none" stroke="#A792FD" stroke-width="3.1" stroke-linejoin="round" stroke-linecap="round" opacity=".86"/>
+<g class="service-route route-pr_merged" data-kind="pr_merged">
+<title>MERGE: one straight rail for pr_merged. Each stop marks a week with recorded events. The track between stops does not mean daily contributions.</title>
+<path class="service-track-halo" d="M1059.8 255.2 H1227.8" fill="none" stroke="#0B1724" stroke-width="6.3" stroke-linecap="round"/>
+<path class="service-track" data-kind="pr_merged" d="M1059.8 255.2 H1227.8" fill="none" stroke="#A792FD" stroke-width="3.2" stroke-linecap="round"/>
+<circle class="service-stop" data-kind="pr_merged" data-week="42" data-events="1" cx="1059.8" cy="255.2" r="3.8" fill="#0B1724" stroke="#A792FD" stroke-width="1.9"><title>MERGE: 1 recorded event(s) in calendar week 43</title></circle>
+<circle class="service-stop" data-kind="pr_merged" data-week="50" data-events="1" cx="1227.8" cy="255.2" r="3.8" fill="#0B1724" stroke="#A792FD" stroke-width="1.9"><title>MERGE: 1 recorded event(s) in calendar week 51</title></circle>
+<rect x="1291" y="248.2" width="40" height="14" rx="7" fill="#A792FD"/>
+<text x="1311" y="258.2" text-anchor="middle" font-size="8.5" font-weight="800" font-family="system-ui,sans-serif" fill="#0B1724">M3</text>
 </g>
-<circle cx="954.8" cy="223.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/aurora: commit, 2026-08-03</title></circle>
-<circle cx="1059.8" cy="202.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/ember: commit, 2026-09-06</title></circle>
-<circle cx="1164.8" cy="328.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/orbit: commit, 2026-10-17</title></circle>
-<circle cx="1248.8" cy="223.8" r="5.3" fill="#101C2B" stroke="#4CE0B3" stroke-width="2.1"><title>sample-dev/harbour: commit, 2026-11-09</title></circle>
-<circle cx="996.8" cy="307.8" r="5.3" fill="#101C2B" stroke="#FF9E85" stroke-width="2.1"><title>sample-dev/atlas: pr_opened, 2026-08-21</title></circle>
-<circle cx="1248.8" cy="307.8" r="5.3" fill="#101C2B" stroke="#FF9E85" stroke-width="2.1"><title>sample-dev/ember: pr_opened, 2026-11-13</title></circle>
-<circle cx="1059.8" cy="328.8" r="5.3" fill="#101C2B" stroke="#A792FD" stroke-width="2.1"><title>sample-dev/atlas: pr_merged, 2026-09-12</title></circle>
-<circle cx="1227.8" cy="265.8" r="5.3" fill="#101C2B" stroke="#A792FD" stroke-width="2.1"><title>sample-dev/harbour: pr_merged, 2026-11-04</title></circle>
-<circle cx="1122.8" cy="223.8" r="5.3" fill="#101C2B" stroke="#FFD174" stroke-width="2.1"><title>sample-dev/orbit: issue_opened, 2026-09-28</title></circle>
-<circle cx="1185.8" cy="328.8" r="5.3" fill="#101C2B" stroke="#76BEFF" stroke-width="2.1"><title>sample-dev/aurora: release, 2026-10-24</title></circle>
+<g class="service-route route-issue_opened" data-kind="issue_opened">
+<title>DISCUSS: one straight rail for issue_opened. Each stop marks a week with recorded events. The track between stops does not mean daily contributions.</title>
+<path class="service-track-halo" d="M1115.8 276.2 H1129.8" fill="none" stroke="#0B1724" stroke-width="6.3" stroke-linecap="round"/>
+<path class="service-track" data-kind="issue_opened" d="M1115.8 276.2 H1129.8" fill="none" stroke="#FFD174" stroke-width="3.2" stroke-linecap="round"/>
+<circle class="service-stop" data-kind="issue_opened" data-week="45" data-events="1" cx="1122.8" cy="276.2" r="3.8" fill="#0B1724" stroke="#FFD174" stroke-width="1.9"><title>DISCUSS: 1 recorded event(s) in calendar week 46</title></circle>
+<rect x="1291" y="269.2" width="40" height="14" rx="7" fill="#FFD174"/>
+<text x="1311" y="279.2" text-anchor="middle" font-size="8.5" font-weight="800" font-family="system-ui,sans-serif" fill="#0B1724">M4</text>
+</g>
+<g class="service-route route-release" data-kind="release">
+<title>SHIP: one straight rail for release. Each stop marks a week with recorded events. The track between stops does not mean daily contributions.</title>
+<path class="service-track-halo" d="M1178.8 297.2 H1192.8" fill="none" stroke="#0B1724" stroke-width="6.3" stroke-linecap="round"/>
+<path class="service-track" data-kind="release" d="M1178.8 297.2 H1192.8" fill="none" stroke="#76BEFF" stroke-width="3.2" stroke-linecap="round"/>
+<circle class="service-stop" data-kind="release" data-week="48" data-events="1" cx="1185.8" cy="297.2" r="3.8" fill="#0B1724" stroke="#76BEFF" stroke-width="1.9"><title>SHIP: 1 recorded event(s) in calendar week 49</title></circle>
+<rect x="1291" y="290.2" width="40" height="14" rx="7" fill="#76BEFF"/>
+<text x="1311" y="300.2" text-anchor="middle" font-size="8.5" font-weight="800" font-family="system-ui,sans-serif" fill="#0B1724">M5</text>
+</g>
 <g class="terminal" data-repo="sample-dev/aurora">
-<circle cx="1185.8" cy="328.8" r="11" fill="#101C2B" stroke="#76BEFF" stroke-width="3"/>
+<circle cx="1185.8" cy="328.8" r="10.5" fill="#101C2B" stroke="#76BEFF" stroke-width="3"/>
 <text x="1185.8" y="332.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">01</text>
-<title>Station 01: sample-dev/aurora; release on 2026-10-24</title></g>
-<g class="terminal" data-repo="sample-dev/ember">
-<circle cx="1059.8" cy="202.8" r="11" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
-<text x="1059.8" y="206.2" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">03</text>
-<title>Station 03: sample-dev/ember; commit on 2026-09-06</title></g>
-<g class="terminal" data-repo="sample-dev/orbit">
-<circle cx="1164.8" cy="328.8" r="11" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
-<text x="1164.8" y="332.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">04</text>
-<title>Station 04: sample-dev/orbit; commit on 2026-10-17</title></g>
-<g class="terminal" data-repo="sample-dev/harbour">
-<circle cx="1227.8" cy="265.8" r="11" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
-<text x="1227.8" y="269.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">05</text>
-<title>Station 05: sample-dev/harbour; pr_merged on 2026-11-04</title></g>
+<title>Repository terminal 01: sample-dev/aurora; release on 2026-10-24</title></g>
 <g class="terminal" data-repo="sample-dev/atlas">
-<circle cx="1059.8" cy="328.8" r="11" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
+<circle cx="1059.8" cy="328.8" r="10.5" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
 <text x="1059.8" y="332.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">02</text>
-<title>Station 02: sample-dev/atlas; pr_merged on 2026-09-12</title></g>
+<title>Repository terminal 02: sample-dev/atlas; pr_merged on 2026-09-12</title></g>
+<g class="terminal" data-repo="sample-dev/ember">
+<circle cx="1059.8" cy="202.8" r="10.5" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
+<text x="1059.8" y="206.2" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">03</text>
+<title>Repository terminal 03: sample-dev/ember; commit on 2026-09-06</title></g>
+<g class="terminal" data-repo="sample-dev/orbit">
+<circle cx="1164.8" cy="328.8" r="10.5" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
+<text x="1164.8" y="332.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">04</text>
+<title>Repository terminal 04: sample-dev/orbit; commit on 2026-10-17</title></g>
+<g class="terminal" data-repo="sample-dev/harbour">
+<circle cx="1227.8" cy="265.8" r="10.5" fill="#101C2B" stroke="#A792FD" stroke-width="3"/>
+<text x="1227.8" y="269.1" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="#F2F8FE">05</text>
+<title>Repository terminal 05: sample-dev/harbour; pr_merged on 2026-11-04</title></g>
 <text x="101.0" y="365.0" class="tag" text-anchor="start">CALENDAR DENSITY:   NONE / NO OBSERVATION</text>
 <text x="1210.0" y="365.0" class="tag" text-anchor="end">LOW</text>
 <rect x="1222" y="354" width="12" height="12" rx="3" fill="#1A2B3B"/>
@@ -515,8 +548,8 @@
 <rect x="1282" y="354" width="12" height="12" rx="3" fill="#2BAA7F"/>
 <rect x="1302" y="354" width="12" height="12" rx="3" fill="#69E6B1"/>
 <text x="1353.0" y="365.0" class="tag" text-anchor="end">HIGH</text>
-<text x="81.0" y="408.0" class="tag" text-anchor="start">02 / THE FIVE TRANSIT SERVICES</text>
-<text x="1359.0" y="408.0" class="tag" text-anchor="end">TRACKS LINK EVENTS OF THE SAME TYPE, IN CHRONOLOGICAL ORDER</text>
+<text x="81.0" y="408.0" class="tag" text-anchor="start">02 / THE FIVE STRAIGHT TRANSIT LINES</text>
+<text x="1359.0" y="408.0" class="tag" text-anchor="end">M1–M5 RUN IN ROW GAPS. ROUNDELS MARK WEEKS WITH THAT EVENT TYPE.</text>
 <path d="M94 433H127" stroke="#4CE0B3" stroke-width="5" stroke-linecap="round"/>
 <circle cx="109" cy="433" r="8" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
 <text x="141.0" y="438.0" class="legend" text-anchor="start">CODE</text>
@@ -539,7 +572,7 @@
 <text x="1202.0" y="449.0" class="tag" text-anchor="start">1 EVENTS</text>
 <path d="M81 453H1360" stroke="#294255"/>
 <text x="81.0" y="475.0" class="tag" text-anchor="start">03 / REPOSITORY TERMINALS</text>
-<text x="1359.0" y="475.0" class="tag" text-anchor="end">THE NUMBER ON A MAP STOP IDENTIFIES A REPOSITORY BELOW</text>
+<text x="1359.0" y="475.0" class="tag" text-anchor="end">NUMBERED TERMINALS PIN REPOSITORIES TO EXACT OBSERVED DATES</text>
 <rect x="82" y="486" width="251" height="61" rx="11" fill="#142536" stroke="#294255" stroke-width="1"/>
 <circle cx="105" cy="517" r="15" fill="#101C2B" stroke="#4CE0B3" stroke-width="3"/>
 <text x="105.0" y="521.0" class="legend" text-anchor="middle">01</text>

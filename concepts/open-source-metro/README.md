@@ -1,24 +1,24 @@
 # Open Source Metro
 
-## Metro Atlas | Visual redesign
+## Metro Atlas | Straight-line redesign
 
-**A contribution calendar that also behaves like a metro map.** The 53-week × 7-day grid remains the principal visual. Coloured tracks connect *selected, dated events of the same type*. Numbered terminal roundels identify the repository in the station directory below the chart.
+**A contribution calendar that also behaves like a metro map.** The 53-week × 7-day grid remains the principal visual. Five **straight, parallel, colour-coded rails** run horizontally through the gaps between calendar rows. Their small stations mark **weeks with recorded activity of that type**, rather than tracing zigzags through unrelated dates. Numbered roundels pin each featured repository to a specific observed day, with matching station cards below.
 
 The previous ten-event shared fixture leaves most of the year empty. The two large design previews therefore use **188 additional, deterministic, deliberately invented showcase events**, labelled as such throughout the images. The third preview shows **only the ten supplied fixture events**. Neither mode represents actual GitHub contributions.
 
 ### Metropolitan / Midnight (synthetic density showcase)
 
-![Calendar-first midnight Metro Atlas with colourful dated service lines, green activity squares and numbered repository terminals. This is a synthetic density showcase containing 188 invented illustration events and 10 shared fixture events.](exports/atlas-midnight-showcase.svg)
+![Synthetic midnight GitHub contribution calendar with five straight parallel coloured metro rails in day-row gutters, round station dots for active weeks and numbered repository terminals. This showcase contains 188 invented illustration events and ten fixture events.](exports/atlas-midnight-showcase.svg)
 
 ### Heritage / Parchment (same synthetic density showcase)
 
-![Vintage parchment Metro Atlas showing the same explicitly synthetic activity, five colour-coded transport lines and repository terminal index.](exports/atlas-parchment-showcase.svg)
+![Vintage parchment GitHub contribution calendar with five straight non-intersecting metro rails, active-week platforms and a numbered repository station directory. Synthetic activity only.](exports/atlas-parchment-showcase.svg)
 
 ### Actual shared fixture / No invented history
 
-![Midnight Metro Atlas generated using exactly the ten original synthetic events and five repositories, with no fabricated historical activity.](exports/atlas-midnight-fixture.svg)
+![Midnight GitHub contribution calendar with five straight metro rails derived solely from ten original synthetic fixture events and five repository terminals, with no added history.](exports/atlas-midnight-fixture.svg)
 
-**Read the image in three steps:** **01 Calendar:** every square is a day, and intensity reflects observed event units, not GitHub's complete contribution count. **02 Metro services:** CODE, PROPOSE, MERGE, DISCUSS and SHIP are separate event categories. Tracks connect a small chronological subset of events within each category, not relationships between repositories. **03 Repository terminals:** large numbered stops correspond to the named repositories beneath the chart.
+**Read the image in three steps:** **01 Calendar:** every square is a day, and intensity reflects observed event units, not GitHub's complete contribution count. **02 Metro services:** CODE, PROPOSE, MERGE, DISCUSS and SHIP are separate event categories. The five non-intersecting rails run left to right, and **each stop dot identifies an active week of that category**. The fine coloured ticks on individual squares disclose which event types occurred on that exact day. The numbered repo terminals are separate from the weekly service stops. Continuous tracks are a schematic metaphor, **not a claim of contributions on every intervening day or of dependencies between repositories**. **03 Repository terminals:** large numbered stops correspond to the named repositories beneath the chart.
 
 **Generate all three designs locally on Windows:**
 
@@ -27,7 +27,7 @@ py -3 .\concepts\open-source-metro\metro_atlas.py
 py -3 -m unittest discover -s .\concepts\open-source-metro\tests -v
 ```
 
-The renderer uses Python 3.11+ and the shared v1 JSON snapshot, with no network calls or paid dependencies. The wide profile layout shows **five featured repositories**, and discloses when additional repositories are not displayed. For a public source snapshot, the heading states **PUBLIC EVENT SNAPSHOT**, rather than labelling real events synthetic; it remains an incomplete GitHub contributions record. The output is static SVG designed to be embedded in GitHub README files. This concept is still for review and has **not been applied to the live profile**.
+The renderer uses Python 3.11+ and the shared v1 JSON snapshot, with no network calls or paid dependencies. The wide profile layout shows **five featured repositories** and caps its event sample at 240, dropping any partially represented cut-off day rather than understating that date. It discloses omitted repositories and events. For a public source snapshot, the heading states **PUBLIC EVENT SNAPSHOT**, rather than labelling real events synthetic; it remains an incomplete GitHub contributions record. The output is static SVG designed to be embedded in GitHub README files. This concept is still for review and has **not been applied to the live profile**. **Four new straight-track/data-integrity checks** were added to the Metro Atlas tests; all **14 Metro Atlas tests passed locally**.
 
 ---
 

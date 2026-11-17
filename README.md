@@ -1,22 +1,22 @@
 # GitHub Activity Studio
 
-## Open Source Metro | Enhanced calendar-first visual
+## Open Source Metro | Five straight metro lines inside GitHub's contribution grid
 
-The redesigned **Metro Atlas** preserves the recognisable GitHub contribution grid while making the five activity routes and repository stops more prominent. These are **synthetic design previews**, not the owner's actual contribution history.
+The redesigned **Metro Atlas** keeps the familiar GitHub contribution calendar and overlays **five straight, parallel, non-intersecting activity lines** inside the gaps between day rows. Each colour-coded metro station marks a week with an event of that type. Numbered terminal markers identify repositories on specific activity dates. These are **synthetic design previews**, not the owner's actual contribution history.
 
 **Modern Metropolitan (invented demo events, explicitly labelled)**
 
-![Synthetic demonstration of calendar-first Open Source Metro, in midnight colours, with five activity lines and numbered repository stations.](concepts/open-source-metro/exports/atlas-midnight-showcase.svg)
+![Synthetic midnight contribution-calendar map with five straight horizontal activity lines in day-row gutters, weekly platform stops and numbered repository terminals.](concepts/open-source-metro/exports/atlas-midnight-showcase.svg)
 
 **Vintage Transit (the same invented demo events)**
 
-![Synthetic demonstration of a vintage parchment metro over the contribution grid.](concepts/open-source-metro/exports/atlas-parchment-showcase.svg)
+![Synthetic vintage parchment contribution calendar with five straight parallel colour-coded metro rails and dated weekly stops.](concepts/open-source-metro/exports/atlas-parchment-showcase.svg)
 
 **The exact shared fixture, without any invented history**
 
 ![Faithful ten-event Open Source Metro diagram using only the shared synthetic fixture.](concepts/open-source-metro/exports/atlas-midnight-fixture.svg)
 
-**How to read:** squares are days; brighter greens mean more observed source units; lines connect dated activity *of the same type*; numbered stops identify repositories beneath the map.
+**How to read:** squares are days; brighter greens mean more observed source units. **The five straight lines are CODE, PROPOSE, MERGE, DISCUSS and SHIP**. Small circles mark source-observed active weeks. **Numbered circles** mark specific repositories on actual recorded days. The rails between active weeks are schematic, not claims of daily activity.
 
 [Technical documentation](concepts/open-source-metro/README.md) · [Draft PR #4](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/4)
 

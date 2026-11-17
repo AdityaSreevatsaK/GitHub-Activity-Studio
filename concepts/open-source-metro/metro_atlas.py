@@ -94,22 +94,28 @@ def expand_showcase(snapshot: dict) -> dict:
     return base
 
 
-def _route(events, points):
-    seq=[]
-    for ev in events:
-        xy=points.get(ev['date'].date())
-        if xy and (not seq or xy!=seq[-1]):
-            seq.append(xy)
-    if len(seq)<2:
-        return ''
-    out=[f'M{seq[0][0]:.1f} {seq[0][1]:.1f}']
-    for (x,y),(xx,yy) in zip(seq,seq[1:]):
-        if xx>x+2:
-            bend=min((xx-x)/2,abs(yy-y)/2+7)
-            out.extend([f'H{x+bend:.1f}',f'L{xx-bend:.1f} {yy:.1f}',f'H{xx:.1f}'])
-        else:
-            out.extend([f'H{xx:.1f}',f'V{yy:.1f}'])
-    return ' '.join(out)
+def metro_track(events: list[dict], positions: dict, index: int) -> tuple[str, list[tuple[int, float, float, int]]]:
+    """Five deterministic, perfectly straight metro services in day-row gutters.
+
+    Track position encodes the activity *kind*, while weekly station positions
+    encode weeks with source-backed events. No track bends or interpolated daily
+    events. Empty weeks between stops are simply schematic track, not activity.
+    """
+    counts: Counter = Counter()
+    for event in events:
+        position = positions.get(event['date'].date())
+        if position is not None:
+            counts[position[0]] += 1
+    if not counts:
+        return '', []
+    y = GY + CELL + (GAP - CELL)/2 + index*GAP
+    stops = [(week, GX+week*GAP+CELL/2, y, counts[week]) for week in sorted(counts)]
+    left, right = stops[0][1], stops[-1][1]
+    if left == right:  # Single-station service: a short platform, no fictitious journey.
+        left -= 7
+        right += 7
+    return f'M{left:.1f} {y:.1f} H{right:.1f}', stops
+
 
 
 def render(data: dict, theme: str='midnight') -> str:
@@ -127,9 +133,14 @@ def render(data: dict, theme: str='midnight') -> str:
     points={d:(GX+week*GAP+CELL/2,GY+day*GAP+CELL/2) for d,(week,day) in positions.items()}
     featured = {repo['full_name'] for repo in data['repositories'][:5]}
     omitted_repositories = max(0, len(data['repositories']) - len(featured))
-    events=[ev for ev in snap['events'] if ev['repo'] in featured and ev['date']<=snap['generated'] and ev['date'].date() in positions]
-    if len(events)>240:
-        events=events[-240:]
+    eligible=[ev for ev in snap['events'] if ev['repo'] in featured and ev['date']<=snap['generated'] and ev['date'].date() in positions]
+    events=eligible[-240:]
+    # Avoid understating a date when the event cap cuts through it. A full day
+    # is either included or omitted, never represented with partial counts.
+    if len(eligible)>240 and events and eligible[-241]['date'].date()==events[0]['date'].date():
+        partial_date=events[0]['date'].date()
+        events=[ev for ev in events if ev['date'].date()!=partial_date]
+    omitted_events=len(snap['events'])-len(events)
     daily=defaultdict(list)
     for ev in events:
         daily[ev['date'].date()].append(ev)
@@ -142,6 +153,8 @@ def render(data: dict, theme: str='midnight') -> str:
     note=(f'{data.get("_illustrative_count",0)} invented design-only events + {len(snap["events"])-data.get("_illustrative_count",0)} fixture events' if show else
           f'{len(events)} recorded fixture events • No invented contributions' if data["source"]=="demo" else
           f'{len(events)} observed public events • incomplete GitHub coverage')
+    if omitted_events:
+        note += f' / {omitted_events} SOURCE EVENTS NOT SHOWN'
     titlefont='Georgia,serif' if vintage else 'system-ui,Segoe UI,sans-serif'
     svg=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="{WIDTH}" height="{HEIGHT}" role="img" aria-labelledby="title description">',
         f'<title id="title">Open Source Metro: {theme} GitHub-style contribution calendar</title>',
@@ -172,8 +185,8 @@ def render(data: dict, theme: str='midnight') -> str:
       text(1250,53,mark,'tag','end'),
       text(1250,77,f'{len(events)} EVENTS   /   {len(daily)} ACTIVE DAYS   /   {len(repo_idx)} STATIONS','detail','end'),
       f'<rect x="76" y="127" width="1288" height="247" rx="{2 if vintage else 13}" fill="{t["panel"]}" stroke="{t["line"]}" stroke-width="1"/>',
-      text(101,147,'01 / THE CALENDAR','tag'),
-      text(1332,147,'A SQUARE IS A DAY.  THE BRIGHTER IT IS, THE MORE OBSERVED UNITS.','tag','end')])
+      text(101,147,'01 / CALENDAR CITY + FIVE METRO LINES','tag'),
+      text(1332,147,'SQUARE = DAY    /    COLOURED RAIL = EVENT TYPE    /    DOT = ACTIVE WEEK','tag','end')])
     # Quiet alternating monthly city districts keep the chart readable.
     for week in range(53):
         if week%4==0:
@@ -201,57 +214,61 @@ def render(data: dict, theme: str='midnight') -> str:
             svg.append(f'<g class="cell" data-date="{d.isoformat()}" data-units="{units}" tabindex="0" aria-label="{escape(tooltip,quote=True)}">')
             svg.append(f'<title>{escape(tooltip)}</title>')
             svg.append(f'<rect class="tile-cell f{k}" x="{x:.1f}" y="{y:.1f}"/>')
+            kinds_for_day = sorted({ev['kind'] for ev in daily[d]}, key=lambda kind: KINDS[kind])
+            # Tiny colour ticks identify which services stopped on this exact
+            # date; unlike metro rails, these are DAILY source observations.
+            for j, kind in enumerate(kinds_for_day):
+                col = tint(kind, vintage)
+                svg.append(f'<rect class="day-service" data-kind="{kind}" x="{x+1.1+j*3.0:.1f}" y="{y+CELL-2.35:.1f}" width="2.4" height="1.65" fill="{col}"/>')
             svg.append(f'<rect class="focus" x="{x-1:.1f}" y="{y-1:.1f}" width="{CELL+2}" height="{CELL+2}" rx="4" fill="none" stroke="{t["ink"]}" opacity="0"/>')
             svg.append('</g>')
-    # Five source-grounded route services, thinned to legible milestone stops.
-    selected=[]
-    for kind,code,_ in SERVICE:
-        all_events=[ev for ev in events if ev['kind']==kind]
-        unique=[];seen=set()
-        for ev in all_events:
-            if ev['date'].date() not in seen:
-                unique.append(ev);seen.add(ev['date'].date())
-        if len(unique)>6:
-            picks=sorted({round(i*(len(unique)-1)/5) for i in range(6)})
-            unique=[unique[i] for i in picks]
-        selected.append(unique)
-    for (kind,code,_),route in zip(SERVICE,selected):
-        path=_route(route,points)
-        if path:
-            col=tint(kind,vintage)
-            svg.append(f'<g class="route route-{kind}"><title>{escape(code)} service links recorded {escape(kind)} milestones by date, not repository dependencies</title>')
-            svg.append(f'<path d="{path}" fill="none" stroke="{t["panel"]}" stroke-width="7.4" stroke-linejoin="round" stroke-linecap="round"/>')
-            svg.append(f'<path d="{path}" fill="none" stroke="{col}" stroke-width="{2.6 if vintage else 3.1}" stroke-linejoin="round" stroke-linecap="round" opacity=".86"/>')
-            if vintage:svg.append(f'<path d="{path}" fill="none" stroke="{t["panel"]}" stroke-width=".75" stroke-dasharray="3 4"/>')
-            svg.append('</g>')
-    # Repeated per-day stop dots connect each coloured route to the calendar.
-    anchor_by_repo={}
-    for (kind,_,_),route in zip(SERVICE,selected):
-        col=tint(kind,vintage)
-        for ev in route:
-            x,y=points[ev['date'].date()]
-            rid=repo_idx.get(ev['repo'])
-            if rid:
-                priority={'release':4,'pr_merged':3,'commit':2,'pr_opened':1,'issue_opened':0}[kind]
-                prior=anchor_by_repo.get(rid)
-                if prior is None or (priority,ev['date'])>(prior[0],prior[1]['date']):
-                    anchor_by_repo[rid]=(priority,ev)
-            svg.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5.3" fill="{t["paper"]}" stroke="{col}" stroke-width="2.1"><title>{escape(ev["repo"])}: {escape(kind)}, {ev["date"].date()}</title></circle>')
-    # Numbered terminal stop per repository, cross-referenced to its index.
-    for rid,(_,ev) in anchor_by_repo.items():
-        x,y=points[ev['date'].date()]
-        col=tint(ev['kind'],vintage)
+    # Five transit services run as STRAIGHT east-west tracks through gaps
+    # between the calendar's day rows. The former city-spanning diagonal
+    # polylines were pretty but visually noisy and implied fake journeys.
+    # One small, labelled stop per observed active WEEK on each typed rail.
+    by_kind = {kind: [ev for ev in events if ev['kind'] == kind] for kind, _, _ in SERVICE}
+    for index, (kind, code, _) in enumerate(SERVICE):
+        col = tint(kind, vintage)
+        path, stops = metro_track(by_kind[kind], positions, index)
+        if not stops:
+            continue
+        y = stops[0][2]
+        svg.append(f'<g class="service-route route-{kind}" data-kind="{kind}">')
+        svg.append(f'<title>{escape(code)}: one straight rail for {escape(kind)}. Each stop marks a week with recorded events. The track between stops does not mean daily contributions.</title>')
+        svg.append(f'<path class="service-track-halo" d="{path}" fill="none" stroke="{t["panel"]}" stroke-width="6.3" stroke-linecap="round"/>')
+        svg.append(f'<path class="service-track" data-kind="{kind}" d="{path}" fill="none" stroke="{col}" stroke-width="{2.9 if vintage else 3.2}" stroke-linecap="round"/>')
+        for week, x, y, count in stops:
+            svg.append(f'<circle class="service-stop" data-kind="{kind}" data-week="{week}" data-events="{count}" cx="{x:.1f}" cy="{y:.1f}" r="{3.4 if vintage else 3.8}" fill="{t["panel"]}" stroke="{col}" stroke-width="1.9"><title>{escape(code)}: {count} recorded event(s) in calendar week {week+1}</title></circle>')
+        # A right-hand line number makes the meaning obvious even when sparse.
+        svg.append(f'<rect x="1291" y="{y-7:.1f}" width="40" height="14" rx="7" fill="{col}"/>')
+        svg.append(f'<text x="1311" y="{y+3:.1f}" text-anchor="middle" font-size="8.5" font-weight="800" font-family="system-ui,sans-serif" fill="{t["panel"]}">M{index+1}</text>')
+        svg.append('</g>')
+    # A repository is a numbered TERMINAL on an exact recorded day. Each
+    # repository chooses its most meaningful observed event, with release and
+    # merge milestones taking precedence over routine commits.
+    anchor_by_repo = {}
+    priorities = {'release':4, 'pr_merged':3, 'commit':2, 'pr_opened':1, 'issue_opened':0}
+    for event in events:
+        rid = repo_idx.get(event['repo'])
+        if rid is None:
+            continue
+        prior = anchor_by_repo.get(rid)
+        if prior is None or (priorities[event['kind']], event['date']) > (priorities[prior['kind']], prior['date']):
+            anchor_by_repo[rid] = event
+    for rid, ev in sorted(anchor_by_repo.items()):
+        x, y = points[ev['date'].date()]
+        col = tint(ev['kind'], vintage)
         svg.append(f'<g class="terminal" data-repo="{escape(ev["repo"],quote=True)}">')
-        svg.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="11" fill="{t["paper"]}" stroke="{col}" stroke-width="3"/>')
+        svg.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="10.5" fill="{t["paper"]}" stroke="{col}" stroke-width="3"/>')
         svg.append(f'<text x="{x:.1f}" y="{y+3.4:.1f}" text-anchor="middle" font-size="10" font-weight="800" font-family="system-ui,sans-serif" fill="{t["ink"]}">{rid:02d}</text>')
-        svg.append(f'<title>Station {rid:02d}: {escape(ev["repo"])}; {escape(ev["kind"])} on {ev["date"].date()}</title></g>')
+        svg.append(f'<title>Repository terminal {rid:02d}: {escape(ev["repo"])}; {escape(ev["kind"])} on {ev["date"].date()}</title></g>')
     svg.extend([text(101,365,'CALENDAR DENSITY:   NONE / NO OBSERVATION','tag'),text(1210,365,'LOW','tag','end')])
     for idx in range(5):
         fill=t['blank'] if idx==0 else t['intensity'][idx-1]
         svg.append(f'<rect x="{1222+idx*20}" y="354" width="12" height="12" rx="3" fill="{fill}"/>')
     svg.append(text(1353,365,'HIGH','tag','end'))
-    svg.extend([text(81,408,'02 / THE FIVE TRANSIT SERVICES','tag'),
-        text(1359,408,'TRACKS LINK EVENTS OF THE SAME TYPE, IN CHRONOLOGICAL ORDER','tag','end')])
+    svg.extend([text(81,408,'02 / THE FIVE STRAIGHT TRANSIT LINES','tag'),
+        text(1359,408,'M1–M5 RUN IN ROW GAPS. ROUNDELS MARK WEEKS WITH THAT EVENT TYPE.','tag','end')])
     for i,(kind,code,_) in enumerate(SERVICE):
         x=94+i*265;col=tint(kind,vintage)
         svg.append(f'<path d="M{x} 433H{x+33}" stroke="{col}" stroke-width="5" stroke-linecap="round"/>')
@@ -260,7 +277,7 @@ def render(data: dict, theme: str='midnight') -> str:
         svg.append(text(x+48,449,f'{len([e for e in events if e["kind"]==kind])} EVENTS','tag'))
     svg.append(f'<path d="M81 453H1360" stroke="{t["line"]}"/>')
     svg.extend([text(81,475,'03 / REPOSITORY TERMINALS','tag'),
-      text(1359,475,'THE NUMBER ON A MAP STOP IDENTIFIES A REPOSITORY BELOW','tag','end')])
+      text(1359,475,'NUMBERED TERMINALS PIN REPOSITORIES TO EXACT OBSERVED DATES','tag','end')])
     stations=data['repositories'][:5]
     for i,repo in enumerate(stations):
         x=82+i*265; cnt=repo_counts[repo['full_name']]; rid=i+1

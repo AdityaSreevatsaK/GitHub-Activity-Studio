@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 CONCEPT=Path(__file__).resolve().parents[1]
 ROOT=CONCEPT.parents[1]
 sys.path.insert(0,str(CONCEPT))
-from metro_atlas import COLORS, SERVICE, expand_showcase, generate, render
+from metro_atlas import COLORS, SERVICE, expand_showcase, generate, metro_track, render
 
 FIXTURE=ROOT/'shared'/'fixtures'/'demo-activity.json'
 
@@ -93,6 +93,61 @@ class AtlasTests(unittest.TestCase):
         data=raw();data['repositories']=data['repositories'][:1]
         data['activity']=[x for x in data['activity'] if x['repo_full_name']==data['repositories'][0]['full_name']]
         ET.fromstring(render(data))
+
+    def test_metro_tracks_are_straight_and_use_five_separate_gutters(self):
+        svg=render(expand_showcase(raw()))
+        root=ET.fromstring(svg)
+        tracks=[e for e in root.iter() if e.get('class')=='service-track']
+        self.assertEqual(len(tracks),5)
+        y_positions=[]
+        for path in tracks:
+            route=path.attrib['d']
+            self.assertRegex(route,r'^M\d+\.\d+ \d+\.\d+ H\d+\.\d+$')
+            self.assertNotIn(' L',route)
+            self.assertNotIn(' V',route)
+            y_positions.append(float(route.split()[1]))
+        self.assertEqual(y_positions,sorted(y_positions))
+        self.assertEqual([round(y_positions[i+1]-y_positions[i]) for i in range(4)],[21]*4)
+
+    def test_each_weekly_stop_has_observed_events_and_no_synthetic_dates(self):
+        raw_data=raw()
+        snap=expand_showcase(raw_data)
+        svg=ET.fromstring(render(snap))
+        stops=[e for e in svg.iter() if e.get('class')=='service-stop']
+        from calendar_metro import normalise
+        normalized=normalise(snap)
+        end=normalized['generated'].date()
+        from datetime import timedelta
+        start=end-timedelta(days=(end.weekday()+1)%7)-timedelta(weeks=52)
+        dates_by_kind={}
+        for event in normalized['events']:
+            week=(event['date'].date()-start).days//7
+            if week>=0 and event['date'].date()<=end:
+                dates_by_kind.setdefault((event['kind'],week),0)
+                dates_by_kind[(event['kind'],week)]+=1
+        self.assertEqual(len(stops),len(dates_by_kind))
+        for stop in stops:
+            key=stop.get('data-kind'),int(stop.get('data-week'))
+            self.assertIn(key,dates_by_kind)
+            self.assertEqual(int(stop.get('data-events')), dates_by_kind[key])
+
+    def test_dated_cells_keep_daily_source_type_ticks(self):
+        normalized=raw()
+        svg=ET.fromstring(render(normalized))
+        dots=[e for e in svg.iter() if e.get('class')=='day-service']
+        self.assertEqual(len(dots),10)
+        self.assertEqual({e.get('data-kind') for e in dots}, {row['kind'] for row in normalized['activity']})
+
+    def test_event_limit_excludes_entire_boundary_day(self):
+        data=raw()
+        data['activity']=[{'id':f'event-{i:03d}', 'repo_full_name':'sample-dev/aurora',
+                           'kind':'commit', 'count':1,
+                           'occurred_at':f'2026-10-{1 if i<120 else 2:02d}T{i//60:02d}:{i%60:02d}:00Z'}
+                          for i in range(270)]
+        svg=render(data)
+        self.assertIn('150 EVENTS',svg)
+        self.assertIn('120 SOURCE EVENTS NOT SHOWN',svg)
+        self.assertNotIn('data-date="2026-10-01"',svg)
 
     def test_exports_match_local_renderer(self):
         with tempfile.TemporaryDirectory() as temp:
