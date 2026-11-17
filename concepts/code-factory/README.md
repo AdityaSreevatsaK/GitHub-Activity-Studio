@@ -100,14 +100,14 @@ The old `factory.py` remains for historical comparison. **It is not the source o
 
 ## Accessibility and GitHub behaviour
 
-The browser preview provides an accessible week selector, previous/next buttons, a bounded source-backed event ledger, a static default, an optional detail zoom for mobile and optional motion. Each SVG contains a title, description and event-specific machine titles. Browser reduced-motion preferences are respected, and a static SVG can always be used instead.
+The browser preview provides an accessible week selector, previous/next buttons, keyboard arrow/Home/End navigation on the highlighted calendar column, a bounded source-backed event ledger, a static default, an optional detail zoom for mobile and optional motion. Each SVG contains a title, description and event-specific machine titles. Browser reduced-motion preferences are respected, and a static SVG can always be used instead.
 
-The **README embeds still SVGs**, so the design can be judged without relying on GitHub SVG animation support. CSS/SMIL animation in GitHub's image proxy is not claimed as verified. Labels will be smaller on mobile because the complete 53-week chart shares a single wide image.
+The **README embeds still SVGs**, so the design can be judged without relying on GitHub SVG animation support. [GitHub's documentation](https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files) says inline SVG animation and scripting are unsupported in its file viewer. Treat optional animated SVGs as **local-browser previews**, not GitHub profile deliverables. Use the committed static SVGs in a README; a separately rendered GIF would be required for reliable animated playback. Labels will be smaller on mobile because the complete 53-week chart shares a single wide image.
 
 ### Verification status
 
-- **25 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
-- Native `node --test`, the PowerShell verification script, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes. All ten SVGs were previously matched byte-for-byte with the renderer and passed structural checks; the current revisions also have deterministic JavaScript coverage. The verifier now checks all ten committed SVGs against freshly regenerated copies without changing the repository.
+- **26 targeted regression scenarios passed in an isolated JavaScript validation harness**, including source-week mapping, fake-activity prevention, empty weeks, overflow, unsafe input and four theme/layout combinations.
+- Native `node --test`, the PowerShell verification script, browser interaction and GitHub's image proxy **have not yet been independently verified** in their actual runtimes. All ten SVGs were previously matched byte-for-byte with the renderer and passed structural checks; the current revisions also have deterministic JavaScript coverage. The verifier now checks all ten committed SVGs against freshly regenerated copies without changing the repository. A new loop-boundary regression ensures optional moving parcels fade rather than jumping; still exports include the same event parcels without motion.
 - The pull request remains draft. **No changes to `master` or the owner's profile.**
 - The two artwork styles use different factory floors and machinery, with crisp-edged geometry for pixel art; both retain the same exact calendar data.
 
