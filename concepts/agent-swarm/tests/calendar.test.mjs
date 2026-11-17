@@ -145,15 +145,15 @@ test("observed-day links use only consecutive recorded dates",()=>{
 });
 test("invalid XML control characters are excluded from SVG text and attributes",()=>{
  const raw=structuredClone(fixture);
- raw.repositories[0].name="test\\u0000\\u0001\\u000bname";
- raw.activity[0].id="event\\u0001id";
+ raw.repositories[0].name="test\u0000\u0001\u000bname";
+ raw.activity[0].id="event\u0001id";
  const svg=svgCalendar(sceneFor(raw));
- assert(!svg.includes("\\u0000"));assert(!svg.includes("\\u0001"));assert(!svg.includes("\\u000b"));
+ assert(!svg.includes("\u0000"));assert(!svg.includes("\u0001"));assert(!svg.includes("\u000b"));
 });
 test("reduced-motion SVG hides all movement and task pulse layers",()=>{
  const svg=svgCalendar(sceneFor(fixture));
  assert.match(svg,/prefers-reduced-motion:reduce/);
- assert.match(svg,/\\.swarm-motion,\\.symbolic-task\\{display:none!important\\}/);
+ assert.match(svg,/\.swarm-motion,\.symbolic-task\{display:none!important\}/);
 });
 test("high-density source days receive indicators, not invented activity",()=>{
  const raw=structuredClone(fixture);
