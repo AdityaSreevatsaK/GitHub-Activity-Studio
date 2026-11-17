@@ -99,7 +99,7 @@ for(let i=0;i<7;i++){
       rect(-6,-5,12,3,p.accent,0)+txt(0,4,TYPES[group.kind].symbol,9,p.shadow,'text-anchor="middle" font-weight="900"');
     const caption=`${group.repo} · ${group.kind} · ${group.records} record(s), ×${group.count} units`;
     if(animated){
-      v.push(`<g class="travelling" data-package="${group.kind}" data-day="${day.date}" data-repo="${h(group.repo)}" data-units="${group.count}"><title>${h(caption)}</title><g>${box}<animateMotion dur="7s" begin="${(i*.37+j*.25).toFixed(2)}s" repeatCount="indefinite" path="M${x} 377L${Math.min(1151,x+84)} 377"/></g></g>`);
+      v.push(`<g class="travelling" data-package="${group.kind}" data-day="${day.date}" data-repo="${h(group.repo)}" data-units="${group.count}"><title>${h(caption)}</title><g>${box}<animateMotion dur="7s" begin="${(i*.37+j*.25).toFixed(2)}s" repeatCount="indefinite" path="M${x} 377L${Math.min(1151,x+84)} 377"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.08;.90;1" dur="7s" begin="${(i*.37+j*.25).toFixed(2)}s" repeatCount="indefinite"/></g></g>`);
     }else{
       v.push(`<g transform="translate(${x} 377)" data-package="${group.kind}" data-day="${day.date}" data-repo="${h(group.repo)}" data-units="${group.count}"><title>${h(caption)}</title>${box}</g>`);
     }
