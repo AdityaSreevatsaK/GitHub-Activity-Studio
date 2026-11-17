@@ -60,6 +60,29 @@ class TestCalendarExports(unittest.TestCase):
         self.assertNotIn('data-repo="sample-dev/orbit"', svg)
         self.assertIn('data-week-index="51"', svg)
 
+    def test_stills_have_source_linked_parcels_even_without_animation(self):
+        for filename in ("isometric-dark-still.svg", "pixel-light-still.svg"):
+            with self.subTest(filename=filename):
+                root = ET.parse(EXPORTS / filename).getroot()
+                parcels = [element.attrib for element in root.iter() if "data-package" in element.attrib]
+                self.assertEqual(len(parcels), 2)
+                self.assertEqual(
+                    [(p["data-package"], p["data-day"], p["data-repo"], p["data-units"]) for p in parcels],
+                    [
+                        ("commit", "2026-11-09", "sample-dev/harbour", "4"),
+                        ("pr_opened", "2026-11-13", "sample-dev/ember", "1"),
+                    ],
+                )
+
+    def test_selected_calendar_week_keyboard_metadata(self):
+        root = ET.parse(EXPORTS / "isometric-dark-still.svg").getroot()
+        weeks = [el.attrib for el in root.iter() if "data-week-index" in el.attrib]
+        self.assertEqual(len(weeks), 53)
+        self.assertEqual(len([w for w in weeks if w.get("tabindex") == "0"]), 1)
+        active = next(w for w in weeks if w.get("tabindex") == "0")
+        self.assertEqual(active["data-week-index"], "51")
+        self.assertEqual(active["aria-pressed"], "true")
+
     def test_historical_previews_use_only_corresponding_activity(self):
         release = (EXPORTS / "isometric-light-release-week-still.svg").read_text(encoding="utf-8")
         inspect = (EXPORTS / "pixel-dark-inspection-week-still.svg").read_text(encoding="utf-8")
