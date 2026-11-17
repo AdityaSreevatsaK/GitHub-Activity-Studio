@@ -71,12 +71,12 @@ test("future-created events cannot enter a source snapshot",async()=>{
  const request=async(route,args)=>{
   const out=fakeRequest(route,args);
   if(route.includes("/search/issues")&&route.includes("is%3Apr"))
-   out.items[0].created_at="2026-11-18T00:00:00Z";
+   {out.items[0].created_at="2026-11-18T00:00:00Z";out.items[0].pull_request.merged_at="2026-11-18T01:00:00Z";}
   return out;
  };
  const snap=await collect({request,now:date,since:"2026-11-01"});
  assert.equal(snap.activity.some(e=>e.kind==="pr_opened"),false);
- assert.equal(snap.activity.some(e=>e.kind==="pr_merged"),true);
+ assert.equal(snap.activity.some(e=>e.kind==="pr_merged"),false);
 });
 test("collector enforces safe UTC start date and repository URLs",()=>{
  assert.equal(assertDate("2026-11-17").toISOString(),"2026-11-17T00:00:00.000Z");
@@ -84,4 +84,14 @@ test("collector enforces safe UTC start date and repository URLs",()=>{
  assert.throws(()=>assertDate("17/11/2026"),/YYYY-MM-DD/);
  assert.equal(sourceRepo("https://api.github.com/repos/example/repo"),"example/repo");
  assert.throws(()=>sourceRepo("https://evil.example/repos/example/repo"),/Invalid repository URL/);
+});
+
+test("impossible PR merge timestamps fail closed",async()=>{
+ const request=async(route,args)=>{
+  const out=fakeRequest(route,args);
+  if(route.includes("/search/issues")&&route.includes("is%3Apr"))
+   out.items[0].pull_request.merged_at="2026-11-14T00:00:00Z";
+  return out;
+ };
+ await assert.rejects(collect({request,now:date,since:"2026-11-01"}),/predates its opening/);
 });
