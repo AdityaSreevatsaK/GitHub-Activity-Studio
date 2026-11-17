@@ -51,9 +51,16 @@ function Assert-SameHash {
 Push-Location $repo
 try {
     if ($Regenerate) {
-        Write-Host 'Regenerating the eight primary SVG exports...' -ForegroundColor Cyan
+        Write-Host 'Regenerating all ten committed SVG exports...' -ForegroundColor Cyan
         & node $renderer
         if ($LASTEXITCODE -ne 0) { throw 'Primary SVG regeneration failed.' }
+        New-Item -Path $temporary -ItemType Directory -Force | Out-Null
+        $releaseSource = Join-Path $temporary 'refresh-release'
+        Invoke-Export -OutputDirectory $releaseSource -Week 48
+        Copy-Item -LiteralPath (Join-Path $releaseSource 'isometric-light-still.svg') -Destination (Join-Path $exports 'isometric-light-release-week-still.svg') -Force
+        $inspectionSource = Join-Path $temporary 'refresh-inspection'
+        Invoke-Export -OutputDirectory $inspectionSource -Week 45
+        Copy-Item -LiteralPath (Join-Path $inspectionSource 'pixel-dark-still.svg') -Destination (Join-Path $exports 'pixel-dark-inspection-week-still.svg') -Force
     }
 
     Write-Host 'Running Node.js regression tests...' -ForegroundColor Cyan
