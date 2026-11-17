@@ -13,13 +13,17 @@ from pathlib import Path
 import sys
 import unittest
 
+# Direct invocation puts tools/ on sys.path; test-module loading may not.
+TOOLS_DIR = str(Path(__file__).resolve().parent)
+if TOOLS_DIR not in sys.path:
+    sys.path.insert(0, TOOLS_DIR)
 from verify_readme_exports import validate_gallery, validate_reproducibility
 
 
 def discover_tests(concept: Path) -> unittest.TestSuite:
     """Discover all concept-owned regression tests from any working directory."""
     return unittest.defaultTestLoader.discover(
-        start_dir=str(concept / "tests"), pattern="test_*.py", top_level_dir=str(concept)
+        start_dir=str(concept / "tests"), pattern="test_*.py"
     )
 
 
