@@ -1,5 +1,33 @@
 # GitHub Activity Studio
 
+## Open Source Metro | Five straight metro lines inside GitHub's contribution grid
+
+The redesigned **Metro Atlas** keeps the familiar GitHub contribution calendar and overlays **five straight, parallel, non-intersecting activity lines** inside the gaps between day rows. Each colour-coded metro station marks a week with an event of that type. Numbered terminal markers identify repositories on specific activity dates. These are **synthetic design previews**, not the owner's actual contribution history.
+
+**Modern Metropolitan (invented demo events, explicitly labelled)**
+
+![Synthetic midnight contribution-calendar map with five straight horizontal activity lines in day-row gutters, weekly platform stops and numbered repository terminals.](concepts/open-source-metro/exports/atlas-midnight-showcase.svg)
+
+**Vintage Transit (the same invented demo events)**
+
+![Synthetic vintage parchment contribution calendar with five straight parallel colour-coded metro rails and dated weekly stops.](concepts/open-source-metro/exports/atlas-parchment-showcase.svg)
+
+**The exact shared fixture, without any invented history**
+
+![Faithful ten-event Open Source Metro diagram using only the shared synthetic fixture.](concepts/open-source-metro/exports/atlas-midnight-fixture.svg)
+
+**How to read:** squares are days; brighter greens mean more observed source units. **The five straight lines are CODE, PROPOSE, MERGE, DISCUSS and SHIP**. Small circles mark source-observed active weeks. **Numbered circles** mark specific repositories on actual recorded days. The rails between active weeks are schematic, not claims of daily activity.
+
+[Technical documentation](concepts/open-source-metro/README.md) · [Draft PR #4](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/pull/4)
+
+---
+
+### Previous Metro prototype
+
+The earlier, sparsely populated design remains available for comparison in the [concept archive and generator documentation](concepts/open-source-metro/README.md#earlier-calendar-metro-prototype). The new Metro Atlas illustrations above are the current exploration.
+
+---
+
 Five original, independently developed GitHub activity visualisations. Explore them, compare the results, then select one for a personal GitHub profile or develop a reusable open-source tool.
 
 **Status:** concept exploration. No design is selected, released, or installed on a GitHub profile.

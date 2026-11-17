@@ -1,0 +1,79 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Source Metro | Calendar + Transit Studio</title>
+<style>
+:root{color-scheme:dark;background:#08111d;color:#ecf5fc;font:16px system-ui,Segoe UI,sans-serif}
+*{box-sizing:border-box}body{margin:0;padding:clamp(15px,3vw,42px)}main{max-width:1450px;margin:auto}
+h1{font-weight:800;letter-spacing:-.045em;font-size:clamp(2rem,4.5vw,4rem);margin:4px 0 8px}
+.eyebrow{color:#48dfbc;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+.lede{max-width:72ch;color:#b0c2d0;line-height:1.55}
+.controls{display:flex;gap:15px;flex-wrap:wrap;margin:24px 0}
+label{display:grid;gap:6px;font-size:.78rem;letter-spacing:.1em;font-weight:700;text-transform:uppercase;color:#abc5d7}
+select{padding:10px 15px;border-radius:8px;border:1px solid #3c5e73;background:#142b3c;color:#fff;font:600 1rem system-ui}
+.figure{border:1px solid #2c4558;background:#0d1c29;border-radius:20px;padding:13px;box-shadow:0 20px 70px #0005}
+object{width:100%;display:block;aspect-ratio:1320/540}
+.figure.stress object{aspect-ratio:1320/595}
+.map-viewport{max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-gutter:stable;scrollbar-color:#56869a #112736;touch-action:pan-x pan-y}
+.map-viewport:focus-visible{outline:2px solid #48dfbc;outline-offset:2px}
+.mobile-hint{display:none}
+.small{color:#acc1d0;font-size:.86rem;line-height:1.65;margin:15px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:22px 0}
+.tile{background:#112736;border:1px solid #2c4558;padding:20px;border-radius:12px}
+.tile b{display:block;margin-bottom:7px}.tile p{color:#afc2d0;line-height:1.5;font-size:.9rem;margin:0}
+a{color:#84e9d1}
+
+.audit{margin:22px 0;padding:18px;background:#112736;border:1px solid #2c4558;border-radius:12px}
+.audit h2{font-size:1.12rem;margin:0 0 12px;letter-spacing:-.015em}
+.ledger summary{cursor:pointer;font-weight:700;color:#b9e8e1;padding:7px 0}
+.ledger summary:focus-visible{outline:2px solid #84e9d1;outline-offset:3px}
+.table-scroll{max-width:100%;overflow-x:auto;margin-top:10px}
+.audit table{border-collapse:collapse;width:100%;min-width:650px;text-align:left;font-size:.85rem;font-variant-numeric:tabular-nums}
+.audit caption{font-size:.78rem;color:#acc1d0;text-align:left;padding-bottom:10px}
+.audit th,.audit td{padding:9px 10px;border-bottom:1px solid #2c4558}
+.audit th{color:#84e9d1}.audit td{color:#d8e8f0}
+@media(max-width:700px){body{padding:12px}.figure{padding:2px}select{max-width:100%}.map-viewport object{min-width:1050px}.mobile-hint{display:block}}
+</style></head><body><main>
+<div class="eyebrow">Concept 04 / Synthetic demo / Offline</div><h1>Open Source Metro</h1>
+<p class="lede">The GitHub-style <strong>53-week by 7-day contribution grid is the foundation</strong>. Metro services weave through actual recorded days; repository stations are indexed below. The supplied fixture is intentionally sparse. Empty days are <em>not evidence</em> of zero GitHub contributions.</p>
+<div class="controls"><label for="style">Art direction<select id="style"><option value="modern">Metropolitan</option><option value="vintage">Vintage transport</option></select></label>
+<label for="scheme">Canvas<select id="scheme"><option value="dark">Night</option><option value="light">Day</option></select></label>
+<label for="motion">Replay<select id="motion"><option value="still">Still (GitHub-friendly)</option><option value="animated">Animated</option></select></label>
+<label for="scenario">Dataset<select id="scenario"><option value="normal">Shared fixture: 5 stations</option><option value="stress">Synthetic 17-station stress test</option></select></label></div>
+<div class="figure" id="figure"><div class="map-viewport" tabindex="0" role="region" aria-label="Contribution calendar metro map, scroll horizontally on small screens"><object id="map" data="modern-dark-still.svg" type="image/svg+xml" aria-label="GitHub-style contribution calendar crossed by source-backed metro routes">Open the SVG export directly if your browser does not display it.</object></div></div>
+<p class="small mobile-hint">Swipe sideways to inspect the complete 53-week map. The map scrolls inside this panel, not across the whole page.</p>
+<p class="small" id="caption">Illustration from the shared synthetic fixture, not the owner's actual GitHub contributions.</p>
+<p class="small" id="asset-note" role="status" aria-live="polite">All alternative palettes can be generated locally with Python 3.11+. The included README SVGs work without any setup.</p>
+<div class="tiles"><div class="tile"><b>The grid is the canvas</b><p>53 Sunday-to-Saturday columns, weekdays, month labels and observed-event density. No fabricated history.</p></div>
+<div class="tile"><b>Transit routes are factual</b><p>Five event-type services call only at dated source events. Trains, when enabled, traverse those routes.</p></div>
+<div class="tile"><b>Stations are real identifiers</b><p>Named repositories, exact event IDs and UTC dates are disclosed in calendar-cell tooltips and accessible labels.</p></div></div>
+<section class="audit" aria-labelledby="events-heading"><h2 id="events-heading">Recorded source events</h2><details class="ledger"><summary>10 included source events; 0 outside the selected view</summary><div class="table-scroll"><table><caption>UTC event provenance from the supplied snapshot, not a complete GitHub contributions graph</caption><thead><tr><th scope="col">UTC date</th><th scope="col">Event ID</th><th scope="col">Repository</th><th scope="col">Type</th><th scope="col">Units</th></tr></thead><tbody><tr><td><time>03 Aug 2026 10:20 UTC</time></td><td>demo-001</td><td>sample-dev/aurora</td><td>commit</td><td>3</td></tr><tr><td><time>21 Aug 2026 09:15 UTC</time></td><td>demo-002</td><td>sample-dev/atlas</td><td>pr_opened</td><td>1</td></tr><tr><td><time>06 Sep 2026 20:45 UTC</time></td><td>demo-003</td><td>sample-dev/ember</td><td>commit</td><td>2</td></tr><tr><td><time>12 Sep 2026 13:00 UTC</time></td><td>demo-004</td><td>sample-dev/atlas</td><td>pr_merged</td><td>1</td></tr><tr><td><time>28 Sep 2026 06:30 UTC</time></td><td>demo-005</td><td>sample-dev/orbit</td><td>issue_opened</td><td>1</td></tr><tr><td><time>17 Oct 2026 18:25 UTC</time></td><td>demo-006</td><td>sample-dev/orbit</td><td>commit</td><td>5</td></tr><tr><td><time>24 Oct 2026 11:00 UTC</time></td><td>demo-007</td><td>sample-dev/aurora</td><td>release</td><td>1</td></tr><tr><td><time>04 Nov 2026 15:10 UTC</time></td><td>demo-008</td><td>sample-dev/harbour</td><td>pr_merged</td><td>1</td></tr><tr><td><time>09 Nov 2026 07:45 UTC</time></td><td>demo-009</td><td>sample-dev/harbour</td><td>commit</td><td>4</td></tr><tr><td><time>13 Nov 2026 09:00 UTC</time></td><td>demo-010</td><td>sample-dev/ember</td><td>pr_opened</td><td>1</td></tr></tbody></table></div></details></section>
+<p class="small">No token, external API, JavaScript library, external fonts or paid service required. Animated SVG playback in GitHub README previews is not guaranteed.</p>
+<script>
+const style=document.getElementById('style'),scheme=document.getElementById('scheme'),motion=document.getElementById('motion'),scenario=document.getElementById('scenario'),map=document.getElementById('map'),fig=document.getElementById('figure'),caption=document.getElementById('caption');
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)motion.value='still';
+const assetNote=document.getElementById('asset-note');
+const bundled=new Set(['modern-dark-still.svg','modern-dark.svg','vintage-light-still.svg','vintage-light.svg','stress-modern-dark-still.svg']);
+const aliases={'modern-dark-animated.svg':'modern-dark.svg','vintage-light-animated.svg':'vintage-light.svg'};
+let selection=0;
+function refresh(){
+  const stress=scenario.value==='stress';
+  const stem=(stress?'stress-':'')+style.value+'-'+scheme.value+(motion.value==='still'?'-still':'-animated')+'.svg';
+  const candidate=aliases[stem]||stem;
+  const fallback=stress?'stress-modern-dark-still.svg':(style.value==='vintage'?'vintage-light-still.svg':'modern-dark-still.svg');
+  const token=++selection;
+  fig.classList.toggle('stress',stress);
+  map.style.aspectRatio=stress?'1320/595':'1320/540';
+  caption.textContent=(stress?'17-station synthetic scale scenario':'Five repositories from the shared synthetic fixture')+' / source-observed events only / not a complete GitHub contributions history.';
+  if(bundled.has(candidate)){
+    map.data=candidate;
+    assetNote.textContent='Showing a checked-in sample export. Generate all combinations locally to explore additional themes and stress variants.';
+    return;
+  }
+  const probe=new Image();
+  probe.onload=()=>{if(token!==selection)return;map.data=candidate;assetNote.textContent='Showing the locally generated variant: '+candidate;};
+  probe.onerror=()=>{if(token!==selection)return;map.data=fallback;assetNote.textContent='The selected variant has not been generated yet. Showing '+fallback+' instead. Run the Python generator to create every combination.';};
+  probe.src=candidate;
+}
+style.addEventListener('change',()=>{scheme.value=style.value==='vintage'?'light':'dark';refresh();});
+for(const select of [scheme,motion,scenario])select.addEventListener('change',refresh);
+refresh();
+</script></main></body></html>
