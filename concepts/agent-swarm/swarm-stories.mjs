@@ -53,9 +53,24 @@ export function makeStory(scene,raw){
      return {...a,x,y,start:0.9+k*2.15+r.index*0.19,duration:1.65};
    })};
  });
+ // Public source links allow a viewer to verify individual observed events.
+ // Accept only canonical GitHub HTTPS event URLs from the original snapshot.
+ const originalById=new Map((Array.isArray(raw.activity)?raw.activity:[]).map(e=>[e.id,e]));
+ const linksByDate=new Map();
+ for(const ev of input.activity){
+   if(ev.occurred_at>input.generated_at)continue;
+   const date=ev.occurred_at.slice(0,10);
+   if(!byDate.has(date))continue;
+   const url=originalById.get(ev.id)?.url;
+   if(typeof url!=='string'||url.length>400||!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/(?:pull\/\d+|issues\/\d+|commit\/[A-Fa-f0-9]{7,64}|releases\/tag\/[A-Za-z0-9_.-]+)$/.test(url))continue;
+   const links=linksByDate.get(date)||[];
+   if(links.length<3)links.push({kind:ev.kind,repo_full_name:ev.repo_full_name,url});
+   linksByDate.set(date,links);
+ }
+ const inspectedDays=dates.map(d=>({...d,links:linksByDate.get(d.date)||[]}));
  const total=dates.reduce((n,d)=>n+d.events,0);
  return {source:scene.source,user:scene.user,generated_at:scene.generated_at,
-   calendar:{start:scene.calendar.start,end:scene.calendar.end,days:dates,observed_days:dates.length},
+   calendar:{start:scene.calendar.start,end:scene.calendar.end,days:inspectedDays,observed_days:dates.length},
    event_total:scene.event_total,window_events:total,repositories:repos,signals,
    snapshot_age_days:scene.stale_days,period:STORY_PERIOD,
    note:'Observed public events only. The robots are fictional and perform no GitHub actions.'};
