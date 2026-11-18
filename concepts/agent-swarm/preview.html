@@ -43,21 +43,23 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <section class="panel" aria-label="Interactive design preview">
 <div class="controls">
 <fieldset aria-label="Visual design"><legend>Design</legend>
-<button id="geometric" type="button" aria-pressed="true">Geometric</button>
+<button id="forge" type="button" aria-pressed="true">Swarm Forge</button>
+<button id="relay" type="button" aria-pressed="false">Swarm Relay</button>
+<button id="geometric" type="button" aria-pressed="false">Original geometric</button>
 <button id="robots" type="button" aria-pressed="false">Mini robots</button></fieldset>
 <label for="theme"><span class="eyebrow">Theme</span><br><select id="theme"><option value="dark">Dark</option><option value="light">Light</option></select></label>
 <button id="play" type="button" aria-label="Play animation">Play</button>
 <button id="reset" type="button">Restart</button>
 </div>
 <div class="stage" id="stage">
-<object id="art" type="image/svg+xml" data="exports/account/geometric-dark.svg" aria-label="Geometric swarm, source-backed symbolic tasks"><img src="exports/account/geometric-dark-still.svg" alt="Static contribution-style calendar with tiny coordinated agent markers"></object>
+<object id="art" type="image/svg+xml" data="exports/account/forge-dark.svg" aria-label="Swarm Forge, building observed contribution calendar"><img src="exports/account/forge-dark-still.svg" alt="Static contribution-style calendar with tiny coordinated agent markers"></object>
 </div>
 <div class="controls" style="margin-top:12px">
 <label for="recorded-date">Inspect recorded date <select id="recorded-date"><option value="">Choose a highlighted day</option></select></label>
 <p class="note" id="day-detail" aria-live="polite">Select a recorded date or hover over a calendar square to inspect its source events.</p>
 </div>
 <div class="motion"><label for="scrub" class="eyebrow">Replay</label><input id="scrub" type="range" min="0" max="140" step="1" value="0" aria-label="Scrub the fourteen-second replay"><time id="clock">0.0s / 14s</time></div>
-<p class="note">Pause or scrub to inspect event phases. The timeline is compressed choreography, not original event time. Reduced-motion preferences start paused. Static images are available below.</p>
+<p class="note">Pause or scrub to see the calendar being assembled, or follow source-backed repository signal deliveries. Older styles retain their event phases. This is symbolic choreography, not the original event timeline. Reduced-motion preferences start paused. Static images are available below.</p>
 </section>
 <div class="layout">
 <section class="panel" aria-label="Activity provenance"><h2>From recorded dates to the swarm</h2>
@@ -67,7 +69,7 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <a id="gif" href="exports/geometric-dark.gif">Download GitHub-compatible GIF</a> ·
 <a id="still" href="exports/geometric-dark-still.svg">Static fallback</a>
 </section>
-<section class="panel"><h2>Task inspector</h2><ol id="tasks" aria-live="off"><li>Loading scene…</li></ol></section>
+<section class="panel"><h2>Swarm inspector</h2><ol id="tasks" aria-live="off"><li>Loading scene…</li></ol></section>
 </div><footer>Source: public GitHub account snapshot. Read-only visualisation, no autonomous GitHub operations. Use ?source=demo for the synthetic test fixture.</footer>
 </main>
 <script>
@@ -75,7 +77,7 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 const el=id=>document.getElementById(id);
 const accountView=new URLSearchParams(window.location.search).get("source")!=="demo";
 const assetRoot=accountView?"exports/account/":"exports/";
-let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0,lastSignature="",selectedDate="";
+let scene=null,story=null,style="forge",theme="dark",playing=false,seconds=0,previous=0,raf=0,lastSignature="",selectedDate="";
 const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function phase(j,t){const d=((t%14)+14)%14-j.start;return d<0?"queued":d<.18?"assigned":d<.68?"travelling":d<1.56?"working":d<2.2?"complete":"delivered"}
 function svg(){try{return el("art").contentDocument.querySelector("svg")}catch{return null}}
@@ -99,8 +101,30 @@ function renderState(){
  el("scrub").value=String(Math.round(seconds*10));
  el("clock").textContent=seconds.toFixed(1)+"s / 14s";
  if(!scene)return;
- const signature=scene.jobs.map(j=>phase(j,seconds)).join("|");if(signature===lastSignature)return;lastSignature=signature;
+ const narrative=(style==="forge"||style==="relay");
+ const signature=narrative?style+"|"+Math.floor(seconds*4):scene.jobs.map(j=>phase(j,seconds)).join("|");
+ if(signature===lastSignature)return;lastSignature=signature;
  const list=el("tasks");list.replaceChildren();
+ if(narrative&&story){
+  if(style==="forge"){
+   const progress=Math.max(0,Math.min(1,(seconds-.85)/9.8));
+   const week=Math.floor(progress*53);
+   const built=story.calendar.days.filter(d=>d.week<week);
+   const total=built.reduce((n,d)=>n+d.events,0);
+   const li=document.createElement("li");
+   li.textContent="Assembled "+built.length+" of "+story.calendar.observed_days+" observed days · "+total+" of "+story.window_events+" source events";
+   list.append(li);
+   for(const repo of story.repositories){const row=document.createElement("li");row.textContent=repo.name+" · "+repo.events+" recorded events · builder team "+(repo.index+1);list.append(row);}
+  }else{
+   for(const group of story.signals){
+    const active=group.events.filter(e=>seconds>=e.start&&seconds<=e.start+e.duration);
+    const row=document.createElement("li");
+    row.textContent=group.repo.name+" · "+group.events.length+" source-backed routes · "+(active.length?("delivering to "+active.map(e=>e.date).join(", ")):"standing by");
+    list.append(row);
+   }
+  }
+  return;
+ }
  for(const j of scene.jobs){
    const li=document.createElement("li"),summary=document.createElement("div"),name=document.createElement("strong"),meta=document.createElement("small"),state=document.createElement("span");
    name.textContent=j.repo_full_name.split("/").pop()+"  ·  "+j.kind.replaceAll("_"," ");
@@ -109,7 +133,7 @@ function renderState(){
    summary.append(name,meta);li.append(summary,state);list.append(li);
  }
 }
-function choose(next){style=next;el("geometric").setAttribute("aria-pressed",String(style==="geometric"));el("robots").setAttribute("aria-pressed",String(style==="robots"));loadArt()}
+function choose(next){style=next;for(const name of ["forge","relay","geometric","robots"])el(name).setAttribute("aria-pressed",String(style===name));lastSignature="";renderState();loadArt()}
 function loadArt(){const art=el("art");const fallback=art.querySelector("img");if(fallback)fallback.src=assetRoot+style+"-"+theme+"-still.svg";art.setAttribute("aria-label",style+" agent swarm, "+theme+" theme");art.onload=()=>{setSvgTime();try{
  const root=svg();if(root)for(const cell of root.querySelectorAll(".day-cell")){
   cell.style.cursor="help";
@@ -123,6 +147,7 @@ function loadArt(){const art=el("art");const fallback=art.querySelector("img");i
 }
 function setPlaying(value){playing=value;el("play").textContent=playing?"Pause":"Play";el("play").setAttribute("aria-label",playing?"Pause animation":"Play animation");previous=performance.now();setSvgTime();if(playing)raf=requestAnimationFrame(tick);else cancelAnimationFrame(raf)}
 function tick(now){if(!playing)return;seconds=(seconds+(now-previous)/1000)%14;previous=now;renderState();raf=requestAnimationFrame(tick)}
+el("forge").addEventListener("click",()=>choose("forge"));el("relay").addEventListener("click",()=>choose("relay"));
 el("geometric").addEventListener("click",()=>choose("geometric"));el("robots").addEventListener("click",()=>choose("robots"));
 el("theme").addEventListener("change",e=>{theme=e.target.value;loadArt()});
 el("play").addEventListener("click",()=>setPlaying(!playing));
@@ -132,18 +157,20 @@ el("recorded-date").addEventListener("change",e=>{selectedDate=e.target.value;in
 (async()=>{try{
  const response=await fetch(assetRoot+"scene.json",{cache:"no-store"});if(!response.ok)throw Error("scene.json not found. Run the build command.");
  scene=await response.json();
+ const storyResponse=await fetch(assetRoot+"story.json",{cache:"no-store"});if(!storyResponse.ok)throw Error("story.json not found. Run the new build command.");
+ story=await storyResponse.json();
  el("provenance").textContent=scene.source==="demo"?"● DEMO DATA":"● PUBLIC GITHUB EVENTS";
  if(scene.source==="github"){
    document.querySelector("h1").textContent="Agent Swarm · @"+scene.user.login;
    document.querySelector("footer").textContent="Public GitHub activity snapshot for @"+scene.user.login+". PRs, issues and authored public default-branch commits only. Not GitHub's complete contribution calendar. No tokens or autonomous actions.";
  }
- el("events").textContent=scene.shown+" / "+scene.event_total+" events shown";
- el("repos").textContent=scene.repositories.length+" / "+scene.repository_total+" hubs";
- el("units").textContent=scene.jobs.reduce((n,j)=>n+j.count,0)+" animated units";
+ el("events").textContent=story.window_events+" observed events on the calendar";
+ el("repos").textContent=story.repositories.length+" repository teams";
+ el("units").textContent=story.signals.reduce((n,g)=>n+g.events.length,0)+" selected source-backed relays";
  el("days").textContent=scene.calendar.observed_days+" observed days";
  const daySelect=el("recorded-date");
  for(const d of scene.calendar.days){const option=document.createElement("option");option.value=d.date;option.textContent=d.date+" ("+d.events+" events)";daySelect.append(option);}
- el("limits").textContent=(scene.truncated?"Animated subset: five most recent repository beacons and up to ten time-stratified eligible events. ":"Calendar covers observed events in the 53-week window. ")+(scene.stale_days>30?"Snapshot is stale by "+scene.stale_days+" days. ":"")+"Agents are illustrative, never operational.";
+ el("limits").textContent="Forge reconstructs every observed day in the 53-week snapshot. Relay samples up to five real dates per top repository. The original designs illustrate only ten events. "+(scene.stale_days>30?"Snapshot is stale by "+scene.stale_days+" days. ":"")+"These are imaginary agents, never actual GitHub operations.";
  renderState();loadArt();setPlaying(!reduced);
  }catch(error){el("tasks").textContent="Could not load scene: "+error.message;el("events").textContent="Build required";setPlaying(false)}})();
 document.addEventListener("visibilitychange",()=>{if(document.hidden&&playing)setPlaying(false)});
