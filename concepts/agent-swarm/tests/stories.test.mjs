@@ -6,7 +6,7 @@ import {calendarData} from "../calendar.mjs";
 import {makeStory,forgeProgress,forgeCrewTargets,forgeCrewPosition,storyState,signalPosition,renderStorySvg,storyGifFrame,renderStoryGif} from "../swarm-stories.mjs";
 import {readGifMetadata} from "../gif.mjs";
 
-const fixture=JSON.parse(readFileSync(new URL("../../../../shared/fixtures/demo-activity.json",import.meta.url),"utf8"));
+const fixture=JSON.parse(readFileSync(new URL("../../../shared/fixtures/demo-activity.json",import.meta.url),"utf8"));
 const construct=(raw)=>makeStory(calendarData(makeScene(raw),raw),raw);
 const copy=()=>structuredClone(fixture);
 
