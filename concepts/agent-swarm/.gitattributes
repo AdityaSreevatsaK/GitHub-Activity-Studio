@@ -1,0 +1,8 @@
+# Keep checked-in snapshots and generated SVG/JSON assets byte-identical on
+# Windows, Linux and macOS. The renderer deliberately writes LF files.
+*.mjs text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.svg text eol=lf
+*.md text eol=lf
+*.gif binary
