@@ -33,9 +33,20 @@
     "AdityaSreevatsaK/Open-Source-Metro",
     "AdityaSreevatsaK/PySpark-Pipeline",
     "AdityaSreevatsaK/pytest-cov",
-    "AdityaSreevatsaK/pytest-xdist"
+    "AdityaSreevatsaK/pytest-xdist",
+    "AdityaSreevatsaK/RAG-Foundry",
+    "AdityaSreevatsaK/RL-RampUp",
+    "AdityaSreevatsaK/SmartFlow",
+    "AdityaSreevatsaK/SmartFlow-Prep",
+    "AdityaSreevatsaK/Suggestify-RecommendationSystems",
+    "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+    "AdityaSreevatsaK/The-Neural-Nexus",
+    "AdityaSreevatsaK/tracker",
+    "AdityaSreevatsaK/Useful-Code-Snippets",
+    "AdityaSreevatsaK/wheelgap",
+    "AdityaSreevatsaK/wheels"
   ],
-  "public_default_branch_commits": 95,
+  "public_default_branch_commits": 159,
   "failed_commit_queries": [],
   "commit_limit_per_repository": 40
 }
