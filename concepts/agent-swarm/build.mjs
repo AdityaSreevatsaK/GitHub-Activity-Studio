@@ -5,6 +5,7 @@ import { makeScene } from "./scene.mjs";
 import { calendarData, svgCalendar } from "./calendar.mjs";
 import { renderCalendarGif } from "./calendar-gif.mjs";
 import { showcaseData } from "./showcase.mjs";
+import { makeStory, renderStorySvg, renderStoryGif } from "./swarm-stories.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -54,6 +55,18 @@ for (const style of ["geometric", "robots"]) {
     outputFile(join(out,prefix+".gif"),Buffer.from(gif));
     console.log("SVG / STILL / GIF  "+prefix);
   }
+}
+
+// New readable swarm narratives, derived from all source-observed calendar dates.
+// Keep the earlier geometric/robot styles intact as alternatives.
+const story=makeStory(scene,payload);
+outputFile(join(out,"story.json"),JSON.stringify(story,null,2)+"\n","utf8");
+for(const mode of ["forge","relay"])for(const theme of ["dark","light"]){
+ const name=mode+"-"+theme;
+ outputFile(join(out,name+".svg"),renderStorySvg(story,{mode,theme}),"utf8");
+ outputFile(join(out,name+"-still.svg"),renderStorySvg(story,{mode,theme,animated:false,time:mode==="forge"?11.2:4}),"utf8");
+ outputFile(join(out,name+".gif"),Buffer.from(renderStoryGif(story,{mode,theme})));
+ console.log("STORY SVG / STILL / GIF  "+name);
 }
 
 // Optional richer synthetic demo, useful for judging the swarm's choreography
