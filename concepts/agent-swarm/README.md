@@ -120,7 +120,7 @@ node concepts/agent-swarm/serve.mjs
 5. Run tests in another PowerShell window:
 
 ~~~powershell
-node --test concepts/agent-swarm/tests/*.test.mjs
+node --test concepts/agent-swarm/tests/scene.test.mjs concepts/agent-swarm/tests/calendar.test.mjs concepts/agent-swarm/tests/showcase.test.mjs concepts/agent-swarm/tests/exports.test.mjs concepts/agent-swarm/tests/server.test.mjs concepts/agent-swarm/tests/preview.test.mjs concepts/agent-swarm/tests/collector.test.mjs concepts/agent-swarm/tests/account.test.mjs concepts/agent-swarm/tests/stories.test.mjs
 ~~~
 
 Both new modes are now included in every regular build and `--verify` invocation. All four new GIF variants loop for 14 seconds at 800 × 250, with animated SVGs and no-motion stills. To use a different, already-normalised public snapshot:
