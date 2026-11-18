@@ -1,5 +1,5 @@
 import {makeScene,normaliseSnapshot,KIND_META,REPO_COLOURS,PERIOD,phaseAt,timelineValues} from './scene.mjs';
-const GRID={"x":99,"y":128,"dx":17.25,"dy":16.6,"size":12.4,"weeks":53};
+export const GRID={"x":99,"y":128,"dx":17.25,"dy":16.6,"size":12.4,"weeks":53};
 const ONE_DAY=86400000;
 export function calendarData(scene,raw){
  const snap=normaliseSnapshot(raw),generated=Date.parse(snap.generated_at);
