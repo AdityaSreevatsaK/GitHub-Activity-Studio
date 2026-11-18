@@ -185,3 +185,21 @@ test("Relay packets carry an event-type marker instead of anonymous dots",()=>{
  const gif=storyGifFrame(story,{mode:"relay",time:3});
  assert.equal(gif.length,800*250);
 });
+
+
+test("One-event days and 25-plus-event bursts are visually distinguishable",()=>{
+ const raw=JSON.parse(readFileSync(new URL("../data/adityasreevatsak-public.json",import.meta.url),"utf8"));
+ const story=construct(raw);
+ const low=story.calendar.days.find(d=>d.events===1);
+ const high=story.calendar.days.find(d=>d.events>=25);
+ assert(low&&high);
+ const pixels=storyGifFrame(story,{mode:"relay",theme:"dark",time:0});
+ const pixel=d=>{
+  const x=Math.round((99+d.week*17.25)*800/1120)+4;
+  const y=Math.round((128+d.weekday*16.6)*250/350)+4;
+  return pixels[y*800+x];
+ };
+ assert.notEqual(pixel(low),pixel(high));
+ const svg=renderStorySvg(story,{mode:"forge"});
+ assert.match(svg,/DAILY EVENTS  1-2  \/  3-6  \/  7-24  \/  25\+/);
+});
