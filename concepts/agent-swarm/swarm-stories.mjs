@@ -157,7 +157,10 @@ export function renderStorySvg(story,{mode='forge',theme='dark',animated=true,ti
      const repo=group.repo;
      for(const signal of group.events){
        const path=pathFor(signal,repo),pos=signalPosition(signal,repo,time);
-       r.push('<path d="'+path+'" stroke="'+repo.colour+'" opacity=".16" stroke-width="1" fill="none"/>');
+       if(animated){
+         const a=signal.start/STORY_PERIOD,b=(signal.start+signal.duration)/STORY_PERIOD;
+         r.push('<path d="'+path+'" stroke="'+repo.colour+'" fill="none" stroke-width="1.5" opacity="0"><animate attributeName="opacity" values="0;0;.23;.23;0;0" keyTimes="0;'+a.toFixed(5)+';'+(a+.006).toFixed(5)+';'+(b-.006).toFixed(5)+';'+b.toFixed(5)+';1" dur="14s" repeatCount="indefinite"/></path>');
+       }else if(pos.active)r.push('<path d="'+path+'" stroke="'+repo.colour+'" opacity=".23" stroke-width="1.5" fill="none"/>');
        if(animated){
          const a=signal.start/STORY_PERIOD,b=(signal.start+signal.duration)/STORY_PERIOD;
          const shape='<polygon points="'+hex(0,0,6)+'" fill="'+repo.colour+'" stroke="'+c.bright+'" stroke-width="1"/>';
@@ -274,8 +277,8 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
      for(const signal of group.events){
        const path=signalPosition(signal,group.repo,time);
        const x0=graphX(144+group.repo.index*206),y0=graphY(292),x1=graphX(signal.x),y1=graphY(signal.y);
-       line(x0,y0,x1,y1,17);
        if(path.active){
+         line(x0,y0,x1,y1,17);
          const x=graphX(path.x),y=graphY(path.y),colour=5+group.repo.index;
          ring(x,y,7,colour);box(x-2,y-2,5,5,15);
          ring(x1,y1,11,colour);
