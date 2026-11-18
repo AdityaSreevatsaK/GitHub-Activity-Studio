@@ -8,68 +8,68 @@
   "period": 14,
   "repository_total": 42,
   "event_total": 859,
-  "eligible_total": 140,
+  "eligible_total": 701,
   "repositories": [
     {
-      "full_name": "AdityaSreevatsaK/Code-Factory",
-      "name": "Code-Factory",
+      "full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+      "name": "agent-engineering-accelerator",
       "language": "",
       "stars": null,
       "index": 0,
-      "events": 7,
-      "units": 7
+      "events": 295,
+      "units": 295
     },
     {
-      "full_name": "AdityaSreevatsaK/Open-Source-Metro",
-      "name": "Open-Source-Metro",
+      "full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+      "name": "agentic-engineering-toolkit",
       "language": "",
       "stars": null,
       "index": 1,
-      "events": 6,
-      "units": 6
-    },
-    {
-      "full_name": "AdityaSreevatsaK/GitHub-Constellation",
-      "name": "GitHub-Constellation",
-      "language": "",
-      "stars": null,
-      "index": 2,
-      "events": 1,
-      "units": 1
+      "events": 138,
+      "units": 138
     },
     {
       "full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
       "name": "Taiyou-Novels-Storage-Controller",
       "language": "",
       "stars": null,
-      "index": 3,
+      "index": 2,
       "events": 122,
       "units": 122
     },
     {
-      "full_name": "wheelgap/wheels",
-      "name": "wheels",
+      "full_name": "rossjrw/rossjrw",
+      "name": "rossjrw",
+      "language": "",
+      "stars": null,
+      "index": 3,
+      "events": 106,
+      "units": 106
+    },
+    {
+      "full_name": "AdityaSreevatsaK/wheelgap",
+      "name": "wheelgap",
       "language": "",
       "stars": null,
       "index": 4,
-      "events": 4,
-      "units": 4
+      "events": 40,
+      "units": 40
     }
   ],
   "jobs": [
     {
-      "id": "pr-opened:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller#1",
-      "kind": "pr_opened",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "id": "issue:rossjrw/rossjrw#4135",
+      "kind": "issue_opened",
+      "repo_full_name": "rossjrw/rossjrw",
       "repo_index": 3,
       "count": 1,
-      "occurred_at": "2026-11-10T14:45:04Z",
-      "date": "2026-11-10",
+      "occurred_at": "2025-11-24T16:28:54Z",
+      "date": "2025-11-24",
       "cell": {
-        "week": 51,
-        "weekday": 2,
-        "x": 984.95,
-        "y": 167.4
+        "week": 1,
+        "weekday": 1,
+        "x": 122.45,
+        "y": 150.8
       },
       "start": 0.55,
       "duration": 2.2,
@@ -79,18 +79,18 @@
       ]
     },
     {
-      "id": "pr-opened:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller#6",
-      "kind": "pr_opened",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "id": "issue:rossjrw/rossjrw#4275",
+      "kind": "issue_opened",
+      "repo_full_name": "rossjrw/rossjrw",
       "repo_index": 3,
       "count": 1,
-      "occurred_at": "2026-11-10T17:55:24Z",
-      "date": "2026-11-10",
+      "occurred_at": "2026-03-01T05:30:26Z",
+      "date": "2026-03-01",
       "cell": {
-        "week": 51,
-        "weekday": 2,
-        "x": 984.95,
-        "y": 167.4
+        "week": 15,
+        "weekday": 0,
+        "x": 363.95,
+        "y": 134.2
       },
       "start": 1.75,
       "duration": 2.2,
@@ -100,18 +100,18 @@
       ]
     },
     {
-      "id": "commit:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller:ab89cb3a34bc4ad9ae72d29f025856e4df990ffc",
-      "kind": "commit",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "id": "issue:rossjrw/rossjrw#4313",
+      "kind": "issue_opened",
+      "repo_full_name": "rossjrw/rossjrw",
       "repo_index": 3,
       "count": 1,
-      "occurred_at": "2026-11-11T16:30:33Z",
-      "date": "2026-11-11",
+      "occurred_at": "2026-03-17T17:57:41Z",
+      "date": "2026-03-17",
       "cell": {
-        "week": 51,
-        "weekday": 3,
-        "x": 984.95,
-        "y": 184
+        "week": 17,
+        "weekday": 2,
+        "x": 398.45,
+        "y": 167.4
       },
       "start": 2.95,
       "duration": 2.2,
@@ -121,18 +121,18 @@
       ]
     },
     {
-      "id": "commit:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller:d474a7de95d18ce005170b94493b5fe87a9bb8df",
-      "kind": "commit",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "id": "issue:rossjrw/rossjrw#4346",
+      "kind": "issue_opened",
+      "repo_full_name": "rossjrw/rossjrw",
       "repo_index": 3,
       "count": 1,
-      "occurred_at": "2026-11-13T04:02:47Z",
-      "date": "2026-11-13",
+      "occurred_at": "2026-03-28T05:23:23Z",
+      "date": "2026-03-28",
       "cell": {
-        "week": 51,
-        "weekday": 5,
-        "x": 984.95,
-        "y": 217.2
+        "week": 18,
+        "weekday": 6,
+        "x": 415.7,
+        "y": 233.8
       },
       "start": 4.15,
       "duration": 2.2,
@@ -142,18 +142,18 @@
       ]
     },
     {
-      "id": "commit:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller:d455318c8453ef6bf425075a288313c28d2daf93",
-      "kind": "commit",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "id": "issue:rossjrw/rossjrw#4391",
+      "kind": "issue_opened",
+      "repo_full_name": "rossjrw/rossjrw",
       "repo_index": 3,
       "count": 1,
-      "occurred_at": "2026-11-13T17:45:29Z",
-      "date": "2026-11-13",
+      "occurred_at": "2026-04-07T05:35:02Z",
+      "date": "2026-04-07",
       "cell": {
-        "week": 51,
-        "weekday": 5,
-        "x": 984.95,
-        "y": 217.2
+        "week": 20,
+        "weekday": 2,
+        "x": 450.2,
+        "y": 167.4
       },
       "start": 5.35,
       "duration": 2.2,
@@ -163,18 +163,18 @@
       ]
     },
     {
-      "id": "pr-opened:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller#28",
-      "kind": "pr_opened",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "id": "issue:rossjrw/rossjrw#4639",
+      "kind": "issue_opened",
+      "repo_full_name": "rossjrw/rossjrw",
       "repo_index": 3,
       "count": 1,
-      "occurred_at": "2026-11-16T16:16:55Z",
-      "date": "2026-11-16",
+      "occurred_at": "2026-07-26T12:57:46Z",
+      "date": "2026-07-26",
       "cell": {
-        "week": 52,
-        "weekday": 1,
-        "x": 1002.2,
-        "y": 150.8
+        "week": 36,
+        "weekday": 0,
+        "x": 726.2,
+        "y": 134.2
       },
       "start": 6.55,
       "duration": 2.2,
@@ -184,18 +184,18 @@
       ]
     },
     {
-      "id": "commit:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller:36f58c42f65ee29629b64cd023ec041068bc0026",
-      "kind": "commit",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "id": "issue:rossjrw/rossjrw#4675",
+      "kind": "issue_opened",
+      "repo_full_name": "rossjrw/rossjrw",
       "repo_index": 3,
       "count": 1,
-      "occurred_at": "2026-11-17T10:06:22Z",
-      "date": "2026-11-17",
+      "occurred_at": "2026-09-02T04:33:13Z",
+      "date": "2026-09-02",
       "cell": {
-        "week": 52,
-        "weekday": 2,
-        "x": 1002.2,
-        "y": 167.4
+        "week": 41,
+        "weekday": 3,
+        "x": 812.45,
+        "y": 184
       },
       "start": 7.75,
       "duration": 2.2,
@@ -205,17 +205,17 @@
       ]
     },
     {
-      "id": "commit:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller:5f389d17ec1df1a7796954ce594820bb687f9ac2",
-      "kind": "commit",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
-      "repo_index": 3,
+      "id": "issue:AdityaSreevatsaK/agent-engineering-accelerator#1",
+      "kind": "issue_opened",
+      "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+      "repo_index": 0,
       "count": 1,
-      "occurred_at": "2026-11-17T11:27:20Z",
-      "date": "2026-11-17",
+      "occurred_at": "2026-10-27T06:19:41Z",
+      "date": "2026-10-27",
       "cell": {
-        "week": 52,
+        "week": 49,
         "weekday": 2,
-        "x": 1002.2,
+        "x": 950.45,
         "y": 167.4
       },
       "start": 8.95,
@@ -226,18 +226,18 @@
       ]
     },
     {
-      "id": "commit:AdityaSreevatsaK/Taiyou-Novels-Storage-Controller:299a75a28b33f635417d4f421fe77447fb7d0f22",
-      "kind": "commit",
-      "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
-      "repo_index": 3,
+      "id": "pr-opened:AdityaSreevatsaK/agent-engineering-accelerator#66",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+      "repo_index": 0,
       "count": 1,
-      "occurred_at": "2026-11-18T08:19:38Z",
-      "date": "2026-11-18",
+      "occurred_at": "2026-11-09T13:44:25Z",
+      "date": "2026-11-09",
       "cell": {
-        "week": 52,
-        "weekday": 3,
-        "x": 1002.2,
-        "y": 184
+        "week": 51,
+        "weekday": 1,
+        "x": 984.95,
+        "y": 150.8
       },
       "start": 10.15,
       "duration": 2.2,
@@ -247,12 +247,12 @@
       ]
     },
     {
-      "id": "commit:AdityaSreevatsaK/Code-Factory:f785da0f9398432090d4c09367fef15509095902",
-      "kind": "commit",
-      "repo_full_name": "AdityaSreevatsaK/Code-Factory",
-      "repo_index": 0,
+      "id": "pr-opened:AdityaSreevatsaK/wheelgap#26",
+      "kind": "pr_opened",
+      "repo_full_name": "AdityaSreevatsaK/wheelgap",
+      "repo_index": 4,
       "count": 1,
-      "occurred_at": "2026-11-18T08:34:18Z",
+      "occurred_at": "2026-11-18T05:56:20Z",
       "date": "2026-11-18",
       "cell": {
         "week": 52,
