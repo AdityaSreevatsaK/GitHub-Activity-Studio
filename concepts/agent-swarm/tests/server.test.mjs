@@ -9,6 +9,7 @@ test("preview server exposes only the preview pages and exported media",()=>{
  assert.equal(resolvePublicFile(root,"/preview.html"),resolve(root,"preview.html"));
  assert.equal(resolvePublicFile(root,"/showcase.html"),resolve(root,"showcase.html"));
  assert.equal(resolvePublicFile(root,"/compare.html"),resolve(root,"compare.html"));
+ assert.equal(resolvePublicFile(root,"/bloom.html"),resolve(root,"bloom.html"));
  assert.equal(resolvePublicFile(root,"/exports/showcase/robots-light.gif"),
    resolve(root,"exports","showcase","robots-light.gif"));
  assert.equal(resolvePublicFile(root,"/exports/geometric-dark.svg"),resolve(root,"exports","geometric-dark.svg"));
