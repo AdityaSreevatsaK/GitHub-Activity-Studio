@@ -108,3 +108,23 @@ test("Invalid source snapshots, modes and GIF options are rejected",()=>{
  assert.throws(()=>storyGifFrame(s,{mode:"unknown"}));
  assert.throws(()=>renderStoryGif(s,{frames:0}));
 });
+
+
+test("Relay stills show source-backed destinations without permanent cross-chart cables",()=>{
+ const story=construct(fixture);
+ const still=renderStorySvg(story,{mode:"relay",animated:false,time:4});
+ assert.match(still,/r="10" fill="none" stroke=/);
+ assert(!still.includes('<path d="M '));
+ const animated=renderStorySvg(story,{mode:"relay"});
+ assert.match(animated,/<animateMotion/);
+ assert(!animated.includes('stroke-width="1.5" opacity="0"><animate attributeName="opacity"'));
+});
+
+test("Forge completion displays the synchronised team badge and preserves cells",()=>{
+ const story=construct(fixture);
+ const complete=renderStorySvg(story,{mode:"forge",animated:false,time:11.6});
+ const starting=renderStorySvg(story,{mode:"forge",animated:false,time:0});
+ assert.match(complete,/circle cx="565" cy="49" r="13"/);
+ assert(!starting.includes('circle cx="565" cy="49" r="13"'));
+ assert.equal((complete.match(/class="day-cell"/g)||[]).length,story.calendar.observed_days);
+});
