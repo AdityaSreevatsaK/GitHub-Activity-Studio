@@ -46,7 +46,7 @@ export function makeStory(scene,raw){
    }
    const sorted=[...perDay.values()].sort((a,b)=>a.date.localeCompare(b.date));
    const selected=sorted.length<=5?sorted:Array.from({length:5},(_,k)=>sorted[Math.round(k*(sorted.length-1)/4)]);
-   return {repo:r,events:selected.map((a,k)=>{
+   return {repo:r,all_days:sorted.map(a=>({date:a.date,events:a.events,kind:a.kind})),events:selected.map((a,k)=>{
      const day=dates.find(x=>x.date===a.date);
      const x=G.x+day.week*G.dx+G.size/2;
      const y=G.y+day.weekday*G.dy+G.size/2;
@@ -69,6 +69,59 @@ export function sourceDaysAt(story,time){
  const visibleWeek=Math.floor(forgeProgress(time)*53);
  return story.calendar.days.filter(d=>d.week<visibleWeek).length;
 }
+
+export function forgeCrewTargets(story,teamIndex){
+ if(!Number.isInteger(teamIndex)||teamIndex<0||teamIndex>=story.repositories.length)throw Error('Invalid repository team');
+ // Each team can work only on an observed day for its own repository.
+ const days=new Map(story.calendar.days.map(d=>[d.date,d]));
+ const work=story.signals[teamIndex]?.all_days||story.signals[teamIndex]?.events||[];
+ const byWeek=new Map();
+ for(const item of work){
+   const day=days.get(item.date);
+   if(!day)continue;
+   const current=byWeek.get(day.week);
+   if(!current||item.events>current.events||(item.events===current.events&&item.date<current.date))
+     byWeek.set(day.week,{date:item.date,events:item.events,weekday:day.weekday});
+ }
+ return Array.from({length:53},(_,week)=>{
+   const record=byWeek.get(week),x=G.x+week*G.dx+G.size/2;
+   const y=record?G.y+record.weekday*G.dy+G.size/2:115+(teamIndex%5)*2.1;
+   return {week,x,y,date:record?.date||null,events:record?.events||0,
+     repo_full_name:story.repositories[teamIndex].full_name};
+ });
+}
+
+export function forgeCrewPosition(targets,time){
+ if(!Array.isArray(targets)||targets.length!==53)throw Error('53-week team targets required');
+ const cycle=((time%STORY_PERIOD)+STORY_PERIOD)%STORY_PERIOD;
+ if(cycle<0.85)return {x:G.x-9,y:115,active:false,date:null,phase:'ready'};
+ const p=forgeProgress(time);
+ if(p<1){
+   const step=p*53,w=Math.min(52,Math.floor(step)),q=step-w;
+   const a=targets[w],b=targets[Math.min(52,w+1)];
+   return {x:a.x+(b.x-a.x)*q,y:a.y+(b.y-a.y)*q,
+     active:!!a.date,date:a.date,phase:a.date?'working':'travelling'};
+ }
+ const last=targets.slice().reverse().find(d=>d.date),start=targets[52];
+ const target=last||{x:G.x+53*G.dx,y:start.y,date:null};
+ const q=clamp((cycle-10.65)/1.2,0,1);
+ const eased=q*q*(3-2*q);
+ return {x:start.x+(target.x-start.x)*eased,y:start.y+(target.y-start.y)*eased,
+   active:!!last,date:last?.date||null,phase:q>=1?'complete':'converging'};
+}
+
+function svgCrewSchedule(targets){
+ const values=[],times=[],add=(t,p)=>{times.push((t/STORY_PERIOD).toFixed(6));values.push(p.x.toFixed(2)+' '+p.y.toFixed(2))};
+ add(0,{x:G.x-9,y:115});
+ add(.85,targets[0]);
+ for(let w=1;w<53;w++)add(.85+9.8*w/53,targets[w]);
+ add(10.65,targets[52]);
+ const last=targets.slice().reverse().find(d=>d.date)||targets[52];
+ add(11.85,last);
+ add(STORY_PERIOD,last);
+ return {times:times.join(';'),values:values.join(';')};
+}
+
 function pathFor(signal,repo){
  const x0=144+repo.index*206,y0=292,x1=signal.x,y1=signal.y;
  const control=256-(repo.index%2)*12;
@@ -142,13 +195,17 @@ export function renderStorySvg(story,{mode='forge',theme='dark',animated=true,ti
    if(animated)r.push('<line x1="'+(G.x-3)+'" x2="'+(G.x-3)+'" y1="117" y2="249"><animate attributeName="x1" values="'+(G.x-3)+';'+(G.x-3)+';'+(G.x+G.dx*53)+';'+(G.x+G.dx*53)+'" keyTimes="0;.0607;.7607;1" dur="14s" repeatCount="indefinite"/><animate attributeName="x2" values="'+(G.x-3)+';'+(G.x-3)+';'+(G.x+G.dx*53)+';'+(G.x+G.dx*53)+'" keyTimes="0;.0607;.7607;1" dur="14s" repeatCount="indefinite"/></line>');
    else r.push('<line x1="'+beam+'" x2="'+beam+'" y1="117" y2="249"/>');
    r.push('</g>');
-   for(let i=0;i<5;i++){
-     const cy=135+i*23,colour=COLOURS[i],start=G.x-4,end=G.x+53*G.dx;
-     r.push('<g>');
-     const x=animated?start:G.x-4+53*G.dx*progress;
-     r.push('<polygon points="'+hex(x,cy,7)+'" fill="'+c.bg+'" stroke="'+colour+'" stroke-width="2">');
-     if(animated)r.push('<animateTransform attributeName="transform" type="translate" values="0 0;0 0;'+(end-start).toFixed(1)+' 0;'+(end-start).toFixed(1)+' 0" keyTimes="0;.0607;.7607;1" dur="14s" repeatCount="indefinite"/>');
-     r.push('</polygon></g>');
+   // Each builder follows the genuine dates of its own repository, rather
+   // than marching in an arbitrary horizontal line.
+   for(let i=0;i<story.repositories.length;i++){
+     const targets=forgeCrewTargets(story,i),colour=COLOURS[i],pos=forgeCrewPosition(targets,time);
+     const track=svgCrewSchedule(targets),x=animated?0:pos.x,y=animated?0:pos.y;
+     r.push('<g transform="translate('+x.toFixed(2)+' '+y.toFixed(2)+')">');
+     r.push('<circle cx="0" cy="0" r="7" fill="'+c.panel+'" stroke="'+colour+'" stroke-width="2"/>');
+     r.push('<circle cx="0" cy="0" r="2.5" fill="'+colour+'"/>');
+     r.push('<path d="M -10 0 L -7 0 M 7 0 L 10 0" stroke="'+colour+'" stroke-width="1.5"/>');
+     if(animated)r.push('<animateTransform attributeName="transform" type="translate" calcMode="linear" values="'+track.values+'" keyTimes="'+track.times+'" dur="14s" repeatCount="indefinite"/>');
+     r.push('</g>');
    }
    const marker='<g><circle cx="565" cy="49" r="13" fill="'+c.panel+'" stroke="'+COLOURS[0]+'" stroke-width="2"/>'+
     COLOURS.map((colour,i)=>{const angle=i*Math.PI*2/5;return '<circle cx="'+(565+Math.cos(angle)*8).toFixed(1)+'" cy="'+(49+Math.sin(angle)*8).toFixed(1)+'" r="2.6" fill="'+colour+'"/>';}).join('')+'</g>';
@@ -277,14 +334,12 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
  if(mode==='forge'){
    const head=graphX(G.x+builtWeeks*G.dx),text=storyState(story,mode,time);
    line(head,84,head,179,5);
-   for(let k=0;k<5;k++){
-     const destination=story.signals[k]?.events.at(-1);
-     const finish=progress>=1&&destination;
-     const x=finish?graphX(destination.x):head+(k%2?-4:4);
-     const y=finish?graphY(destination.y):96+k*15;
-     ring(x,y,finish?7:5,5+k);
-     box(x-2,y-2,5,5,15);pix(x,y,5+k);
-     if(finish)ring(x,y,11,5+k);
+   for(let k=0;k<story.repositories.length;k++){
+     const targets=forgeCrewTargets(story,k),crew=forgeCrewPosition(targets,time);
+     const x=graphX(crew.x),y=graphY(crew.y),col=5+k;
+     ring(x,y,crew.active?6:4,col);
+     box(x-2,y-2,5,5,15);pix(x,y,col);
+     if(crew.phase==='complete'&&crew.active)ring(x,y,10,col);
    }
    box(50,190,704,17,3);
    box(51,191,Math.round(702*progress),15,24);
