@@ -9,6 +9,7 @@ export const STORY_PERIOD = 14;
 export const MODES = ['forge', 'relay'];
 const G = { x: 99, y: 128, dx: 17.25, dy: 16.6, size: 12.4 };
 const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+const TYPE_MARKER = {commit:'C',pr_opened:'O',pr_merged:'M',issue_opened:'I',release:'R'};
 const COLOURS = ['#53e0c8','#7bc5ff','#be9dff','#ffc47a','#ff8eb4'];
 const DAY = 86400000;
 const themeColours = {
@@ -239,10 +240,11 @@ export function renderStorySvg(story,{mode='forge',theme='dark',animated=true,ti
        }else if(pos.active)r.push('<circle cx="'+signal.x+'" cy="'+signal.y+'" r="10" fill="none" stroke="'+repo.colour+'" opacity=".9" stroke-width="2"/>');
        if(animated){
          const a=signal.start/STORY_PERIOD,b=(signal.start+signal.duration)/STORY_PERIOD;
-         const shape='<polygon points="'+hex(0,0,6)+'" fill="'+repo.colour+'" stroke="'+c.bright+'" stroke-width="1"/>';
+         const shape='<circle cx="0" cy="0" r="7.5" fill="'+repo.colour+'" stroke="'+c.bright+'" stroke-width="1"/>'+
+           '<text x="0" y="3" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="bold" fill="'+c.bg+'">'+TYPE_MARKER[signal.kind]+'</text>';
          r.push('<g opacity="0"><animate attributeName="opacity" dur="14s" keyTimes="0;'+a.toFixed(5)+';'+(a+.006).toFixed(5)+';'+(b-.006).toFixed(5)+';'+b.toFixed(5)+';1" values="0;0;1;1;0;0" repeatCount="indefinite"/>'+shape+
            '<animateMotion path="'+path+'" dur="14s" keyPoints="0;0;1;1" keyTimes="0;'+a.toFixed(5)+';'+b.toFixed(5)+';1" calcMode="linear" repeatCount="indefinite"/></g>');
-       }else if(pos.active)r.push('<polygon points="'+hex(pos.x,pos.y,6)+'" fill="'+repo.colour+'" stroke="'+c.bright+'"/>');
+       }else if(pos.active)r.push('<circle cx="'+pos.x+'" cy="'+pos.y+'" r="7.5" fill="'+repo.colour+'" stroke="'+c.bright+'"/>'+txt(pos.x,pos.y+3,TYPE_MARKER[signal.kind],8,c.bg,'text-anchor="middle"'));
      }
    }
    r.push(txt(104,272,'LIVE SIGNALS  /  '+story.signals.reduce((n,g)=>n+g.events.length,0)+' SOURCE-BACKED ROUTES',10,c.muted));
@@ -370,7 +372,8 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
            const echo=signalPosition(signal,group.repo,time-dt);
            if(echo.active)box(graphX(echo.x)-1,graphY(echo.y)-1,3,3,dt===.06?colour:18);
          }
-         ring(x,y,7,colour);box(x-2,y-2,5,5,15);
+         ring(x,y,8,colour);box(x-5,y-5,11,11,colour);
+         label(x-2,y-3,TYPE_MARKER[signal.kind],0,1,1);
          ring(x1,y1,10,colour);
        }
      }
@@ -388,7 +391,7 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
    label(x+7,214,r.name,1,1,13);
    label(x+7,224,r.events+' EVENTS',2,1);
  }
- label(52,236,'OBSERVED PUBLIC EVENTS ONLY - NO REAL AGENT OPERATIONS',2,1);
+ label(52,236,mode==='relay'?'C COMMIT / O PR OPEN / M MERGED / I ISSUE / R RELEASE - NO REAL AGENTS':'OBSERVED PUBLIC EVENTS ONLY - NO REAL AGENT OPERATIONS',2,1);
  return p;
 }
 export function renderStoryGif(story,{mode='forge',theme='dark',frames=56}={}){
