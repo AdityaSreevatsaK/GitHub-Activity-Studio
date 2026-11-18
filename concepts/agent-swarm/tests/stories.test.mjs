@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {makeScene} from "../scene.mjs";
 import {calendarData} from "../calendar.mjs";
-import {makeStory,forgeProgress,storyState,signalPosition,renderStorySvg,storyGifFrame,renderStoryGif} from "../swarm-stories.mjs";
+import {makeStory,forgeProgress,forgeCrewTargets,forgeCrewPosition,storyState,signalPosition,renderStorySvg,storyGifFrame,renderStoryGif} from "../swarm-stories.mjs";
 import {readGifMetadata} from "../gif.mjs";
 
 const fixture=JSON.parse(readFileSync(new URL("../../../../shared/fixtures/demo-activity.json",import.meta.url),"utf8"));
@@ -127,4 +127,56 @@ test("Forge completion displays the synchronised team badge and preserves cells"
  assert.match(complete,/circle cx="565" cy="49" r="13"/);
  assert(!starting.includes('circle cx="565" cy="49" r="13"'));
  assert.equal((complete.match(/class="day-cell"/g)||[]).length,story.calendar.observed_days);
+});
+
+
+test("Forge teams visit only dates observed in their own repositories",()=>{
+ const raw=JSON.parse(readFileSync(new URL("../data/adityasreevatsak-public.json",import.meta.url),"utf8"));
+ const story=construct(raw);
+ const allowed=new Set(raw.activity.map(e=>e.repo_full_name+"|"+e.occurred_at.slice(0,10)));
+ let assigned=0;
+ for(let i=0;i<story.repositories.length;i++){
+  const targets=forgeCrewTargets(story,i);
+  assert.equal(targets.length,53);
+  for(const target of targets){
+   if(target.date){assert(allowed.has(target.repo_full_name+"|"+target.date));assigned++;}
+   assert(Number.isFinite(target.x)&&Number.isFinite(target.y));
+  }
+  for(const t of [0,.85,2.5,5.5,10.6,11.5,13.9]){
+   const pos=forgeCrewPosition(targets,t);
+   assert(Number.isFinite(pos.x)&&Number.isFinite(pos.y));
+  }
+ }
+ assert(assigned>0);
+ assert.throws(()=>forgeCrewTargets(story,100));
+});
+
+test("Story inspector preserves bounded, safe, source-backed hyperlinks",()=>{
+ const raw=JSON.parse(readFileSync(new URL("../data/adityasreevatsak-public.json",import.meta.url),"utf8"));
+ const story=construct(raw);
+ const events=new Map(raw.activity.map(e=>[e.url,e]));
+ const links=story.calendar.days.flatMap(day=>day.links);
+ assert(links.length>0);
+ assert(story.calendar.days.every(day=>day.links.length<=3));
+ for(const link of links){
+  assert.match(link.url,/^https:\/\/github\.com\/[^/]+\/[^/]+\/(?:issues|pull|commit|releases)\//);
+  const source=events.get(link.url);
+  assert(source);
+  assert.equal(source.repo_full_name,link.repo_full_name);
+  assert.equal(source.kind,link.kind);
+ }
+ const injected=copy();
+ injected.activity[0].url="https://github.com.evil.invalid/a/b/pull/3";
+ injected.activity[1].url="javascript:alert(1)";
+ injected.activity[2].url="https://github.com/example/hello/pull/3";
+ const updated=construct(injected);
+ assert(updated.calendar.days.every(day=>day.links.every(link=>!link.url.includes("evil.invalid")&&!link.url.startsWith("javascript:"))));
+});
+
+test("Relay packets carry an event-type marker instead of anonymous dots",()=>{
+ const story=construct(fixture);
+ const svg=renderStorySvg(story,{mode:"relay"});
+ assert.match(svg,/font-size="8.5" font-weight="bold"/);
+ const gif=storyGifFrame(story,{mode:"relay",time:3});
+ assert.equal(gif.length,800*250);
 });
