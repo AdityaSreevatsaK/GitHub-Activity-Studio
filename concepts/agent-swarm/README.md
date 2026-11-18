@@ -6,7 +6,7 @@ Four original **visual metaphors** using a recognisable, source-backed **53-week
 
 ### 1. Swarm Forge (recommended)
 
-Five colour-coded builder teams **assemble the entire observed contribution chart from left to right**. Each week reveals its genuine recorded activity cells, the progress bar counts source-backed events, and the completed heatmap remains illuminated. At completion the team sigil synchronises and builders move towards real recorded dates. The 14-second loop then restarts the assembly. **No day is removed and no contribution is fabricated.**
+Five colour-coded repository teams **assemble the entire observed contribution chart from left to right**. Each team follows its own repository's recorded days in the corresponding weeks, rather than travelling on a straight decorative line. Weeks without recorded activity for that repository do not receive fictional tasks. The finished heatmap remains illuminated, and the team sigil synchronises. The 14-second loop then restarts. **No day is removed and no contribution is fabricated.**
 
 ![Swarm Forge reconstructing @AdityaSreevatsaK's 53-week observed public-activity calendar](exports/account/forge-dark.gif)
 
@@ -14,15 +14,19 @@ Five colour-coded builder teams **assemble the entire observed contribution char
 
 ### 2. Swarm Relay (alternative)
 
-The full heatmap is present throughout. Five specialised repository teams send identifiable coloured signals from their hubs to **real recorded event dates in those repositories**. In the compact GIF, each packet leaves a short trail and highlights its actual destination. SVGs show the same destination beacons, avoiding long decorative cross-chart lines. A maximum of five actual days per team are selected for legibility; the calendar itself still represents **every collected in-window event**.
+The full heatmap is present throughout. Five specialised repository teams send coloured, activity-labelled packets to **real recorded dates in their own repositories**. C = commit, O = PR opened, M = PR merged, I = issue opened and R = release. GIF packets leave short trails and illuminate actual destinations without permanent cross-chart cables. At most five genuine dates per team are animated for legibility; the heatmap still represents **every collected in-window event**.
 
 ![Swarm Relay delivering source-backed repository signals on @AdityaSreevatsaK's calendar](exports/account/relay-dark.gif)
 
 [Light GIF](exports/account/relay-light.gif) · [Dark still](exports/account/relay-dark-still.svg) · [Animated SVG](exports/account/relay-dark.svg)
 
-**Compare in the browser:** Run `node concepts/agent-swarm/serve.mjs` and open `http://127.0.0.1:8000/`. Choose **Swarm Forge**, **Swarm Relay**, **Original geometric** or **Mini robots**. Change themes, pause, replay, scrub and inspect source-recorded days. The initial design is Swarm Forge. In reduced-motion environments the preview opens paused.
+**Compare in the browser:** Run `node concepts/agent-swarm/serve.mjs` and open `http://127.0.0.1:8000/`. Choose **Swarm Forge**, **Swarm Relay**, **Original geometric** or **Mini robots**. Change themes, pause, replay, scrub and inspect source-recorded days. The date inspector also provides up to three validated public GitHub event links per date, opening in a separate tab. The initial design is Swarm Forge. In reduced-motion environments the preview opens paused.
 
 **Recorded-data boundaries:** The account snapshot on 18 November 2026 contains **859 observed public events across 82 recorded days and 42 represented repositories**. This is **not** GitHub's authoritative contribution graph and does not prove inactivity on empty dates. Only the five leading repositories receive named team hubs; no other recorded activity is omitted from the heatmap. The animation uses symbolic builders, not operational AI agents. The snapshot does **not** auto-refresh.
+
+## Automated validation
+
+A dedicated [Agent Swarm workflow](https://github.com/AdityaSreevatsaK/GitHub-Activity-Studio/actions/workflows/agent-swarm.yml) checks the isolated concept on **Windows and Ubuntu, Node.js 20 and 22**. It runs offline tests and byte-for-byte verification for demo, showcase and account-specific assets, without API keys or npm installation. A local `.gitattributes` file fixes LF line endings for deterministic export comparisons on Windows. The actual animated image display through GitHub's README image proxy has not yet been verified in a browser; a supported GIF export is not proof of end-to-end GitHub playback.
 
 ## Earlier designs retained
 
