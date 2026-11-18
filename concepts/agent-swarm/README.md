@@ -6,7 +6,7 @@ Four original **visual metaphors** using a recognisable, source-backed **53-week
 
 ### 1. Swarm Forge (recommended)
 
-Five colour-coded builder teams **assemble the entire observed contribution chart from left to right**. Each week reveals its genuine recorded activity cells, the progress bar counts source-backed events, and the completed heatmap remains illuminated. The 14-second loop then restarts the assembly. **No day is removed and no contribution is fabricated.**
+Five colour-coded builder teams **assemble the entire observed contribution chart from left to right**. Each week reveals its genuine recorded activity cells, the progress bar counts source-backed events, and the completed heatmap remains illuminated. At completion the team sigil synchronises and builders move towards real recorded dates. The 14-second loop then restarts the assembly. **No day is removed and no contribution is fabricated.**
 
 ![Swarm Forge reconstructing @AdityaSreevatsaK's 53-week observed public-activity calendar](exports/account/forge-dark.gif)
 
@@ -14,7 +14,7 @@ Five colour-coded builder teams **assemble the entire observed contribution char
 
 ### 2. Swarm Relay (alternative)
 
-The full heatmap is present throughout. Five specialised repository teams send identifiable coloured signals from their hubs to **real recorded event dates in those repositories**. Traces are visible only while a signal is travelling, not as permanent random lines. A maximum of five actual days per team are selected for legibility; the calendar itself still represents **every collected in-window event**.
+The full heatmap is present throughout. Five specialised repository teams send identifiable coloured signals from their hubs to **real recorded event dates in those repositories**. In the compact GIF, each packet leaves a short trail and highlights its actual destination. SVGs show the same destination beacons, avoiding long decorative cross-chart lines. A maximum of five actual days per team are selected for legibility; the calendar itself still represents **every collected in-window event**.
 
 ![Swarm Relay delivering source-backed repository signals on @AdityaSreevatsaK's calendar](exports/account/relay-dark.gif)
 
