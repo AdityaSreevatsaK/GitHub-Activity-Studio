@@ -1,6 +1,12 @@
 name: Agent Swarm validation
 
 on:
+  push:
+    branches:
+      - exploration/agent-swarm-signal-bloom
+    paths:
+      - "concepts/agent-swarm/**"
+      - ".github/workflows/agent-swarm.yml"
   pull_request:
     paths:
       - "concepts/agent-swarm/**"
