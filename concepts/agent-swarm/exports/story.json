@@ -16,7 +16,8 @@
         "units": 3,
         "kinds": {
           "commit": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-08-21",
@@ -26,7 +27,8 @@
         "units": 1,
         "kinds": {
           "pr_opened": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-09-06",
@@ -36,7 +38,8 @@
         "units": 2,
         "kinds": {
           "commit": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-09-12",
@@ -46,7 +49,8 @@
         "units": 1,
         "kinds": {
           "pr_merged": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-09-28",
@@ -56,7 +60,8 @@
         "units": 1,
         "kinds": {
           "issue_opened": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-10-17",
@@ -66,7 +71,8 @@
         "units": 5,
         "kinds": {
           "commit": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-10-24",
@@ -76,7 +82,8 @@
         "units": 1,
         "kinds": {
           "release": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-11-04",
@@ -86,7 +93,8 @@
         "units": 1,
         "kinds": {
           "pr_merged": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-11-09",
@@ -96,7 +104,8 @@
         "units": 4,
         "kinds": {
           "commit": 1
-        }
+        },
+        "links": []
       },
       {
         "date": "2026-11-13",
@@ -106,7 +115,8 @@
         "units": 1,
         "kinds": {
           "pr_opened": 1
-        }
+        },
+        "links": []
       }
     ],
     "observed_days": 10
@@ -159,6 +169,18 @@
         "colour": "#53e0c8",
         "events": 2
       },
+      "all_days": [
+        {
+          "date": "2026-09-06",
+          "events": 1,
+          "kind": "commit"
+        },
+        {
+          "date": "2026-11-13",
+          "events": 1,
+          "kind": "pr_opened"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-06",
@@ -188,6 +210,18 @@
         "colour": "#7bc5ff",
         "events": 2
       },
+      "all_days": [
+        {
+          "date": "2026-11-04",
+          "events": 1,
+          "kind": "pr_merged"
+        },
+        {
+          "date": "2026-11-09",
+          "events": 1,
+          "kind": "commit"
+        }
+      ],
       "events": [
         {
           "date": "2026-11-04",
@@ -217,6 +251,18 @@
         "colour": "#be9dff",
         "events": 2
       },
+      "all_days": [
+        {
+          "date": "2026-08-03",
+          "events": 1,
+          "kind": "commit"
+        },
+        {
+          "date": "2026-10-24",
+          "events": 1,
+          "kind": "release"
+        }
+      ],
       "events": [
         {
           "date": "2026-08-03",
@@ -246,6 +292,18 @@
         "colour": "#ffc47a",
         "events": 2
       },
+      "all_days": [
+        {
+          "date": "2026-09-28",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-10-17",
+          "events": 1,
+          "kind": "commit"
+        }
+      ],
       "events": [
         {
           "date": "2026-09-28",
@@ -275,6 +333,18 @@
         "colour": "#ff8eb4",
         "events": 2
       },
+      "all_days": [
+        {
+          "date": "2026-08-21",
+          "events": 1,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-09-12",
+          "events": 1,
+          "kind": "pr_merged"
+        }
+      ],
       "events": [
         {
           "date": "2026-08-21",
