@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Agent Swarm | Side-by-side design review</title>
+<style>
+:root{font-family:Inter,"Segoe UI",system-ui,sans-serif;background:#081521;color:#eef6fd}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#184c57 0%,transparent 54%),#081521}
+main{width:min(1560px,100%);margin:auto;padding:clamp(16px,3vw,44px)}
+header{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.kicker{color:#8de4cf;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+h1{font-size:clamp(28px,4vw,50px);line-height:1.1;letter-spacing:-.045em;margin:9px 0}
+p{color:#b5cbdb;line-height:1.5;margin:8px 0}
+nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+a{color:#95e4d0;text-underline-offset:4px}
+.toolbar{margin-top:27px;display:flex;flex-wrap:wrap;align-items:center;gap:18px;background:#102439;border:1px solid #30506a;padding:15px;border-radius:15px}
+.toolbar label{display:flex;align-items:center;gap:8px;font-size:13px;color:#dae8f2}
+.toolbar select{font:inherit;background:#18354c;color:#fff;border:1px solid #50798e;border-radius:8px;padding:8px}
+.toolbar select:focus-visible,a:focus-visible{outline:2px solid #9affe5;outline-offset:3px}
+.note{font-size:12px;color:#9bb6c7}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
+figure{margin:0;border:1px solid #36536a;border-radius:17px;background:#122638;overflow:hidden}
+figure header{padding:15px 18px 12px;display:block}
+figure h2{font-size:20px;margin:0 0 5px}
+figure p{font-size:13px;margin:0}
+.media{position:relative;background:#06111d;min-height:120px}
+.media img{display:block;width:100%;height:auto;aspect-ratio:16/5;object-fit:contain}
+.details{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 18px 16px;flex-wrap:wrap}
+.stat{font-size:12px;color:#bdd0dc}
+footer{font-size:12px;margin-top:27px;border-top:1px solid #34506b;padding:17px 0;color:#aac0cc}
+.badge{font-size:11px;color:#101b2b;background:#b9f0dc;border-radius:6px;padding:4px 7px;font-weight:700}
+@media(max-width:1000px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div><div class="kicker">Agent Swarm / Design review</div><h1>Which swarm tells the better story?</h1><p>Side-by-side account-specific contribution visualisations, using the same public activity snapshot.</p></div>
+<nav><a href="preview.html">Interactive inspector</a><a href="showcase.html">Synthetic showcase</a></nav>
+</header>
+<div class="toolbar" aria-label="Comparison controls">
+<label for="theme">Theme <select id="theme"><option value="dark">Dark</option><option value="light">Light</option></select></label>
+<label for="motion">Playback <select id="motion"><option value="gif">Animated GIF</option><option value="still">Static SVG</option></select></label>
+<label for="source">Dataset <select id="source"><option value="account">Your public account</option><option value="demo">Synthetic demonstration</option></select></label>
+<span class="note" id="provenance">Snapshot: 18 November 2026. Observed public events, not GitHub's complete contribution totals.</span>
+</div>
+<div class="grid" aria-label="Side-by-side animation comparison">
+<figure>
+<header><h2>Swarm Forge <span class="badge">Primary</span></h2><p>Five specialist builder crews reconstruct all recorded calendar days; the contribution grid remains intact at completion.</p></header>
+<div class="media"><img id="forge-image" src="exports/account/forge-dark.gif" alt="Swarm Forge progressively assembling a GitHub-style contribution heatmap from observed event dates" width="800" height="250"></div>
+<div class="details"><span class="stat">53-week heatmap · Five builder crews · Full observed calendar</span><a id="forge-file" href="exports/account/forge-dark.gif">Open full-size</a></div>
+</figure>
+<figure>
+<header><h2>Swarm Relay</h2><p>Repository teams deliver identifiable event packets to recorded source dates, without erasing the contribution chart.</p></header>
+<div class="media"><img id="relay-image" src="exports/account/relay-dark.gif" alt="Swarm Relay sending source-backed signals to corresponding dates on a GitHub-style contribution calendar" width="800" height="250"></div>
+<div class="details"><span class="stat">Fixed heatmap · Five repository teams · Source-backed signal destinations</span><a id="relay-file" href="exports/account/relay-dark.gif">Open full-size</a></div>
+</figure>
+</div>
+<footer>
+Both designs represent observed events, not official GitHub contribution totals. Empty cells mean no matching event was collected; no fictional agents performed GitHub operations.
+The account snapshot does not update automatically. This page only serves checked-in exports and works without third-party assets or JavaScript dependencies.
+</footer>
+</main>
+<script>
+"use strict";
+const el=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const valid={theme:["dark","light"],motion:["gif","still"],source:["account","demo"]};
+for(const key of Object.keys(valid)){
+ const proposed=params.get(key);
+ el(key).value=valid[key].includes(proposed)?proposed:(key==="motion"&&reduced?"still":valid[key][0]);
+}
+function refresh(){
+ const theme=el("theme").value,motion=el("motion").value,source=el("source").value;
+ const root=source==="account"?"exports/account/":"exports/";
+ for(const mode of ["forge","relay"]){
+  const name=mode+"-"+theme+(motion==="still"?"-still.svg":".gif");
+  const url=root+name;
+  const img=el(mode+"-image");
+  img.src=url;
+  el(mode+"-file").href=url;
+ }
+ el("provenance").textContent=source==="account"?
+  "Recorded public GitHub activity for @AdityaSreevatsaK, 18 November 2026. Not official GitHub contribution totals.":
+  "SYNTHETIC DEMONSTRATION. These events are fictional and do not represent the account.";
+}
+for(const key of Object.keys(valid))el(key).addEventListener("change",refresh);
+refresh();
+</script>
+</body></html>
