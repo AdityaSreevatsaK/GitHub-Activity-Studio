@@ -2,6 +2,8 @@
 
 Four original **visual metaphors** using a recognisable, source-backed **53-week GitHub-style activity calendar**. The new designs correct a problem with the earlier prototype: agents now have clearly defined outcomes, rather than appearing to attack individual contributions. All animations are deterministic visualisations, **not agents performing GitHub actions**. There are no LLM calls, external rendering services, paid APIs or GitHub writes.
 
+[Compare Swarm Forge and Relay side by side](compare.html) in the local browser gallery (dark/light, animation/still, account/demo). No deployment or external services required.
+
 ## New account-specific concepts
 
 ### 1. Swarm Forge (recommended)
