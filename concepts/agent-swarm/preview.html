@@ -39,7 +39,7 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 </head>
 <body><main>
 <header><div><div class="eyebrow">GitHub Activity Studio / concept 03</div><h1>Agent Swarm: Living Contributions</h1>
-<p>A calendar of recorded GitHub activity, animated by tiny coordinated helpers.<br>The agents are metaphors, not real GitHub operations.</p></div><mark id="provenance">● DEMO DATA</mark></header>
+<p>A calendar of recorded GitHub activity, animated by tiny coordinated helpers.<br>The agents are metaphors, not real GitHub operations.</p></div><mark id="provenance">● PUBLIC GITHUB EVENTS</mark></header>
 <section class="panel" aria-label="Interactive design preview">
 <div class="controls">
 <fieldset aria-label="Visual design"><legend>Design</legend>
@@ -50,7 +50,7 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <button id="reset" type="button">Restart</button>
 </div>
 <div class="stage" id="stage">
-<object id="art" type="image/svg+xml" data="exports/geometric-dark.svg" aria-label="Geometric swarm, source-backed symbolic tasks"><img src="exports/geometric-dark-still.svg" alt="Static contribution-style calendar with tiny coordinated agent markers"></object>
+<object id="art" type="image/svg+xml" data="exports/account/geometric-dark.svg" aria-label="Geometric swarm, source-backed symbolic tasks"><img src="exports/account/geometric-dark-still.svg" alt="Static contribution-style calendar with tiny coordinated agent markers"></object>
 </div>
 <div class="controls" style="margin-top:12px">
 <label for="recorded-date">Inspect recorded date <select id="recorded-date"><option value="">Choose a highlighted day</option></select></label>
@@ -68,12 +68,12 @@ footer{font-size:12px;color:#bdcada;margin-top:20px}a{color:#9de3cb;text-decorat
 <a id="still" href="exports/geometric-dark-still.svg">Static fallback</a>
 </section>
 <section class="panel"><h2>Task inspector</h2><ol id="tasks" aria-live="off"><li>Loading scene…</li></ol></section>
-</div><footer>Source: labelled shared demonstration fixture. Offline and deterministic. No GitHub token, network API, autonomous AI or write access.</footer>
+</div><footer>Source: public GitHub account snapshot. Read-only visualisation, no autonomous GitHub operations. Use ?source=demo for the synthetic test fixture.</footer>
 </main>
 <script>
 "use strict";
 const el=id=>document.getElementById(id);
-const accountView=new URLSearchParams(window.location.search).get("source")==="account";
+const accountView=new URLSearchParams(window.location.search).get("source")!=="demo";
 const assetRoot=accountView?"exports/account/":"exports/";
 let scene=null,style="geometric",theme="dark",playing=false,seconds=0,previous=0,raf=0,lastSignature="",selectedDate="";
 const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;

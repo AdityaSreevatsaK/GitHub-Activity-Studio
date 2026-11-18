@@ -10,7 +10,7 @@ The account-specific exports use verified public records. All separate sample da
 
 ## Your account: @AdityaSreevatsaK
 
-These animations use **your actual publicly visible GitHub activity**, recorded on 17 November 2026. Events include public PR openings and merges, issues you opened, and commits authored by you on public repository default branches. No fictional events appear in these two animations.
+These animations are built from **859 verified public activity records** associated with @AdityaSreevatsaK, captured on **18 November 2026**: **327 PR openings, 259 PR merges, 114 opened issues and 159 authored commits**. The heatmap contains **82 observed dates**. This is a historical snapshot, not an automatically live feed. All records correspond to your public GitHub account. The animation uses ten selected real event dates across seven calendar months, including earlier open-source work. No fictional events appear in the account designs.
 
 ### Geometric Agent Swarm (your account)
 
@@ -24,7 +24,7 @@ These animations use **your actual publicly visible GitHub activity**, recorded 
 
 **Coverage:** This is a calendar of **observed public events**, not GitHub's authoritative contribution-heatmap totals. GitHub may omit private activity, commits on other people's branches, and other contribution types from these collected sources. A blank square means no matching *collected* public event, not inactivity. Each contribution/task shown is backed by a GitHub URL in [the committed account snapshot](data/adityasreevatsak-public.json).
 
-To inspect the account preview on Windows, run the server and open **http://127.0.0.1:8000/preview.html?source=account**.
+To inspect your account in the browser, run the server and open **http://127.0.0.1:8000/**. The account view is now the default. For the separate ten-event fixture use **http://127.0.0.1:8000/?source=demo**.
 
 ## Separate synthetic examples
 
@@ -40,7 +40,7 @@ The canonical ten-event fixture and the fictional 327-event showcase are retaine
 
 ## Calendar interpretation
 
-The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar can display events from all repositories in the input, whilst the animated swarm selects up to five recently active repository beacons and ten sampled source events. Animations target source-backed calendar dates; the 14-second replay remains a visual metaphor.
+The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar covers all 859 public records. The animated swarm selects the five repositories with the greatest observed activity and ten distinct, chronologically spread source-backed dates. Animations target source-backed calendar dates; the 14-second replay remains a visual metaphor.
 
 ## A richer, explicitly fictional visual showcase
 
@@ -66,7 +66,7 @@ node concepts/agent-swarm/build.mjs --account
 node concepts/agent-swarm/build.mjs --account --verify
 ~~~
 
-The collector uses the official GitHub public REST endpoints for PRs, issues and default-branch commits. An optional read-only `GITHUB_TOKEN` environment variable helps with GitHub rate limits, but no credentials are written to files or required for offline tests. The collector refuses partial API results and writes the updated JSON only when collection succeeds. It **never** requests private repositories or changes GitHub data.
+The collector uses GitHub's public REST endpoints for PRs, issues and default-branch commits. The checked-in snapshot is a date-stamped public capture; original URLs accompany each event. The initial commit capture was capped at the latest 40 authored commits per owned public default branch, while future refreshes use paginated results. An optional read-only `GITHUB_TOKEN` environment variable helps with GitHub rate limits, but no credentials are written to files or required for offline tests. The collector refuses partial API results and writes the updated JSON only when collection succeeds. It **never** requests private repositories or changes GitHub data.
 
 Commit the refreshed JSON and generated account exports to the feature branch after reviewing them. The artwork remains a dated public-activity snapshot, not the complete official GitHub contributions grid.
 
@@ -90,7 +90,7 @@ node concepts/agent-swarm/build.mjs --account --verify
 node concepts/agent-swarm/serve.mjs
 ~~~
 
-4. Open **http://127.0.0.1:8000/** (or **http://127.0.0.1:8000/showcase.html** for the richer fictional gallery). Switch design and theme, pause/replay, scrub the timeline, inspect date cells with the mouse or use the keyboard-accessible recorded-day selector. Press **Ctrl+C** to stop.
+4. Open **http://127.0.0.1:8000/** for your actual public account, **http://127.0.0.1:8000/?source=demo** for the tiny fixture, or **http://127.0.0.1:8000/showcase.html** for the richer fictional gallery. Switch design and theme, pause/replay, scrub the timeline, inspect date cells with the mouse or use the keyboard-accessible recorded-day selector. Press **Ctrl+C** to stop.
 5. Run tests in another PowerShell window:
 
 ~~~powershell

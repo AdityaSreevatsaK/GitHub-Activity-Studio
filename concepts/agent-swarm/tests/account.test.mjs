@@ -43,3 +43,21 @@ test("account exports are reproducible and have all four GIF variants",()=>{
   assert.deepEqual([meta.width,meta.height,meta.frames,meta.duration_centi,meta.looping],[800,250,70,1400,true]);
  }
 });
+
+test("real account choreography spans historically distinct dates, rather than only recent PR bursts",()=>{
+ const months=new Set(scene.jobs.map(j=>j.date.slice(0,7)));
+ const weeks=new Set(scene.jobs.map(j=>j.cell.week));
+ assert.equal(scene.jobs.length,10);
+ assert.equal(new Set(scene.jobs.map(j=>j.date)).size,10);
+ assert(months.size>=5);
+ assert(weeks.size>=7);
+ assert(scene.jobs.some(j=>j.date<"2026-06-01"));
+ assert(scene.jobs.some(j=>j.date>="2026-11-01"));
+ assert(scene.repositories.some(r=>r.full_name==="rossjrw/rossjrw"));
+});
+test("no private repository URL or private data enters the public snapshot",()=>{
+ assert(source.repositories.every(r=>r.url==="https://github.com/"+r.full_name));
+ assert(source.activity.every(e=>e.url.startsWith("https://github.com/"+e.repo_full_name+"/")));
+ assert(source.activity.every(e=>e.occurred_at<=source.generated_at));
+ assert(source.coverage.caveats.some(c=>c.includes("Private activity")));
+});
