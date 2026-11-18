@@ -124,7 +124,7 @@ export function renderStorySvg(story,{mode='forge',theme='dark',animated=true,ti
    const date=dateFrom(story.calendar.start,w*7+weekday);
    const d=days.get(date),x=G.x+w*G.dx,y=G.y+weekday*G.dy,fill=d?cellFill(maxLevel(d.events),c):c.off;
    const visibility=d?1:.65;
-   let body='<rect x="'+x.toFixed(2)+'" y="'+y.toFixed(2)+'" width="'+G.size+'" height="'+G.size+'" rx="2.4" fill="'+fill+'" opacity="'+visibility+'"/>';
+   let body='<rect class="'+(d?'day-cell':'empty-cell')+'" data-date="'+date+'" x="'+x.toFixed(2)+'" y="'+y.toFixed(2)+'" width="'+G.size+'" height="'+G.size+'" rx="2.4" fill="'+fill+'" opacity="'+visibility+'"/>';
    if(d&&d.events>=5)body+='<circle cx="'+(x+G.size-2).toFixed(2)+'" cy="'+(y+2).toFixed(2)+'" r="1.5" fill="'+c.bright+'"/>';
    if(mode==='forge'&&d){
      if(animated){
