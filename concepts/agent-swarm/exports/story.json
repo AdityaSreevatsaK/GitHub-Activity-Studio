@@ -1,0 +1,303 @@
+{
+  "source": "demo",
+  "user": {
+    "login": "sample-dev"
+  },
+  "generated_at": "2026-11-16T00:00:00Z",
+  "calendar": {
+    "start": "2025-11-16",
+    "end": "2026-11-16",
+    "days": [
+      {
+        "date": "2026-08-03",
+        "week": 37,
+        "weekday": 1,
+        "events": 1,
+        "units": 3,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-08-21",
+        "week": 39,
+        "weekday": 5,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_opened": 1
+        }
+      },
+      {
+        "date": "2026-09-06",
+        "week": 42,
+        "weekday": 0,
+        "events": 1,
+        "units": 2,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-09-12",
+        "week": 42,
+        "weekday": 6,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_merged": 1
+        }
+      },
+      {
+        "date": "2026-09-28",
+        "week": 45,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        }
+      },
+      {
+        "date": "2026-10-17",
+        "week": 47,
+        "weekday": 6,
+        "events": 1,
+        "units": 5,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-10-24",
+        "week": 48,
+        "weekday": 6,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "release": 1
+        }
+      },
+      {
+        "date": "2026-11-04",
+        "week": 50,
+        "weekday": 3,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_merged": 1
+        }
+      },
+      {
+        "date": "2026-11-09",
+        "week": 51,
+        "weekday": 1,
+        "events": 1,
+        "units": 4,
+        "kinds": {
+          "commit": 1
+        }
+      },
+      {
+        "date": "2026-11-13",
+        "week": 51,
+        "weekday": 5,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_opened": 1
+        }
+      }
+    ],
+    "observed_days": 10
+  },
+  "event_total": 10,
+  "window_events": 10,
+  "repositories": [
+    {
+      "name": "ember",
+      "full_name": "sample-dev/ember",
+      "index": 0,
+      "colour": "#53e0c8",
+      "events": 2
+    },
+    {
+      "name": "harbour",
+      "full_name": "sample-dev/harbour",
+      "index": 1,
+      "colour": "#7bc5ff",
+      "events": 2
+    },
+    {
+      "name": "aurora",
+      "full_name": "sample-dev/aurora",
+      "index": 2,
+      "colour": "#be9dff",
+      "events": 2
+    },
+    {
+      "name": "orbit",
+      "full_name": "sample-dev/orbit",
+      "index": 3,
+      "colour": "#ffc47a",
+      "events": 2
+    },
+    {
+      "name": "atlas",
+      "full_name": "sample-dev/atlas",
+      "index": 4,
+      "colour": "#ff8eb4",
+      "events": 2
+    }
+  ],
+  "signals": [
+    {
+      "repo": {
+        "name": "ember",
+        "full_name": "sample-dev/ember",
+        "index": 0,
+        "colour": "#53e0c8",
+        "events": 2
+      },
+      "events": [
+        {
+          "date": "2026-09-06",
+          "events": 1,
+          "kind": "commit",
+          "x": 829.7,
+          "y": 134.2,
+          "start": 0.9,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-13",
+          "events": 1,
+          "kind": "pr_opened",
+          "x": 984.95,
+          "y": 217.2,
+          "start": 3.05,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "harbour",
+        "full_name": "sample-dev/harbour",
+        "index": 1,
+        "colour": "#7bc5ff",
+        "events": 2
+      },
+      "events": [
+        {
+          "date": "2026-11-04",
+          "events": 1,
+          "kind": "pr_merged",
+          "x": 967.7,
+          "y": 184,
+          "start": 1.09,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-09",
+          "events": 1,
+          "kind": "commit",
+          "x": 984.95,
+          "y": 150.79999999999998,
+          "start": 3.2399999999999998,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "aurora",
+        "full_name": "sample-dev/aurora",
+        "index": 2,
+        "colour": "#be9dff",
+        "events": 2
+      },
+      "events": [
+        {
+          "date": "2026-08-03",
+          "events": 1,
+          "kind": "commit",
+          "x": 743.45,
+          "y": 150.79999999999998,
+          "start": 1.28,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-10-24",
+          "events": 1,
+          "kind": "release",
+          "x": 933.2,
+          "y": 233.8,
+          "start": 3.4299999999999997,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "orbit",
+        "full_name": "sample-dev/orbit",
+        "index": 3,
+        "colour": "#ffc47a",
+        "events": 2
+      },
+      "events": [
+        {
+          "date": "2026-09-28",
+          "events": 1,
+          "kind": "issue_opened",
+          "x": 881.45,
+          "y": 150.79999999999998,
+          "start": 1.4700000000000002,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-10-17",
+          "events": 1,
+          "kind": "commit",
+          "x": 915.95,
+          "y": 233.8,
+          "start": 3.62,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "atlas",
+        "full_name": "sample-dev/atlas",
+        "index": 4,
+        "colour": "#ff8eb4",
+        "events": 2
+      },
+      "events": [
+        {
+          "date": "2026-08-21",
+          "events": 1,
+          "kind": "pr_opened",
+          "x": 777.95,
+          "y": 217.2,
+          "start": 1.6600000000000001,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-09-12",
+          "events": 1,
+          "kind": "pr_merged",
+          "x": 829.7,
+          "y": 233.8,
+          "start": 3.8099999999999996,
+          "duration": 1.65
+        }
+      ]
+    }
+  ],
+  "snapshot_age_days": 2,
+  "period": 14,
+  "note": "Observed public events only. The robots are fictional and perform no GitHub actions."
+}
