@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Signal Bloom | Agent Swarm Exploration</title>
+<style>
+:root{font-family:Inter,"Segoe UI",system-ui,sans-serif;color:#f0fbff;background:#07131f}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 65% -15%,#284c50,transparent 53%),#07131f;min-height:100vh}
+main{width:min(1300px,100%);margin:auto;padding:clamp(16px,3.7vw,44px)}
+.eyebrow{text-transform:uppercase;color:#81e5c8;letter-spacing:.18em;font-size:11px;font-weight:700}
+h1{font-size:clamp(29px,4.5vw,53px);margin:9px 0;letter-spacing:-.04em}h2{font-size:18px;margin:4px 0 8px}
+p{color:#b6ccdb;line-height:1.58;margin:8px 0 16px}
+a{color:#91f0d5;text-underline-offset:3px}
+a:focus-visible,select:focus-visible{outline:2px solid #9fffea;outline-offset:3px}
+.controls{display:flex;flex-wrap:wrap;gap:15px;margin:22px 0;padding:18px;background:#102639;border:1px solid #3d5c72;border-radius:13px}
+label{display:flex;align-items:center;gap:7px;font-size:13px;color:#dbeefa}
+select{font:inherit;border-radius:8px;padding:8px 12px;border:1px solid #5e8795;color:#fff;background:#1b394d}
+.frame{border-radius:17px;border:1px solid #365366;background:#0a1928;overflow:hidden;padding:10px}
+.frame img{display:block;width:100%;height:auto;aspect-ratio:16/5;object-fit:contain}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:20px}
+.card{border:1px solid #334f61;border-radius:15px;background:#102236;padding:14px}
+.caption{font-size:12px;color:#aac4d3;margin-top:12px}
+.meta{font-size:12px;border-left:3px solid #64ddbd;padding:6px 12px;margin:17px 0;color:#adc4d2}
+footer{border-top:1px solid #345064;padding-top:18px;margin-top:28px;font-size:12px;color:#a3bdcf}
+@media(max-width:810px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body><main>
+<div class="eyebrow">GitHub Activity Studio / Agent Swarm exploration</div>
+<h1>Signal Bloom</h1>
+<p>Four pollinator drones energise actual recorded contribution cells. Small dates grow delicate teal flowers; busier dates bloom into amber and violet constellations. Every cell stays intact.</p>
+<div class="controls" aria-label="Signal Bloom preview controls">
+<label for="source">Data <select id="source"><option value="account">Your public GitHub account</option><option value="demo">Synthetic demonstration</option></select></label>
+<label for="metric">Count <select id="metric"><option value="events">All observed public events</option><option value="commits">Observed authored commits only</option></select></label>
+<label for="theme">Theme <select id="theme"><option value="dark">Dark</option><option value="light">Light</option></select></label>
+<label for="format">Playback <select id="format"><option value="gif">Animated GIF</option><option value="still">Static SVG</option></select></label>
+</div>
+<section aria-labelledby="hero-title">
+<h2 id="hero-title">Your contribution garden</h2>
+<div class="frame"><img id="hero" src="exports/account/bloom-events-dark.gif" width="800" height="250" alt="Signal Bloom contribution calendar with four drones and luminous flowers at observed event dates"></div>
+<p class="caption"><a id="open" href="exports/account/bloom-events-dark.gif">Open this export at full size</a> · <a href="compare.html">Compare previous Agent Swarm designs</a></p>
+</section>
+<div class="grid">
+<section class="card"><h2>All observed events</h2>
+<p>Includes observed public commits, PR openings and merges, issues and releases. Not GitHub's official contribution tally.</p>
+<img id="events" src="exports/account/bloom-events-dark-still.svg" width="800" height="250" alt="Source-observed events blossom across a GitHub-style calendar" style="display:block;width:100%;height:auto">
+</section>
+<section class="card"><h2>Authored commits only</h2>
+<p>Flowers appear exclusively on days with captured authored commit events. PRs and issues do not inflate their intensity.</p>
+<img id="commits" src="exports/account/bloom-commits-dark-still.svg" width="800" height="250" alt="Only recorded authored commit days have luminous flowers" style="display:block;width:100%;height:auto">
+</section>
+</div>
+<p id="provenance" class="meta" role="status">Dated snapshot: public GitHub events collected 18 November 2026. Empty dates do not prove inactivity.</p>
+<footer>These are decorative agents, not automated GitHub operations. Preview media are self-contained and regenerated offline from the existing normalised snapshot. This page does not fetch live account activity, use third-party services or access tokens.</footer>
+</main>
+<script>
+"use strict";
+const el=x=>document.getElementById(x);
+const params=new URLSearchParams(location.search);
+const options={source:["account","demo"],metric:["events","commits"],theme:["dark","light"],format:["gif","still"]};
+for(const [key,values] of Object.entries(options)){
+ const value=params.get(key),fallback=key==="format"&&matchMedia("(prefers-reduced-motion: reduce)").matches?"still":values[0];
+ el(key).value=values.includes(value)?value:fallback;
+}
+function render(){
+ const src=el("source").value,metric=el("metric").value,theme=el("theme").value,format=el("format").value;
+ const root=src==="account"?"exports/account/":"exports/";
+ const path=m=>root+"bloom-"+m+"-"+theme+(format==="gif"?".gif":"-still.svg");
+ el("hero").src=path(metric);el("open").href=path(metric);
+ el("events").src=root+"bloom-events-"+theme+"-still.svg";
+ el("commits").src=root+"bloom-commits-"+theme+"-still.svg";
+ el("provenance").textContent=src==="demo"?"SYNTHETIC DEMO DATA. This artwork is not the account's contribution history.":"Public source snapshot for @AdityaSreevatsaK, captured 18 November 2026. Not the complete GitHub contribution graph.";
+}
+for(const key of Object.keys(options))el(key).addEventListener("change",render);
+render();
+</script>
+</body></html>

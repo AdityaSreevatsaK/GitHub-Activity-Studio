@@ -4,6 +4,18 @@ Four original **visual metaphors** using a recognisable, source-backed **53-week
 
 [Compare Swarm Forge and Relay side by side](compare.html) in the local browser gallery (dark/light, animation/still, account/demo). No deployment or external services required.
 
+## Signal Bloom experimental feature branch
+
+A separate experimental design, **Signal Bloom**, gives each source-observed date a geometric flower. Four symbolic pollinator drones sweep the recognisable GitHub-style calendar. More recorded activity produces more petals and brighter colours, with a final illuminated garden rather than removed cells. Choose between **all observed public events** and **observed authored commit events only** so a PR or issue is never presented as a commit. The calendar is based on the same fixed 18 November 2026 public snapshot, not GitHub’s official contribution totals.
+
+[Open the local Signal Bloom preview](bloom.html) after running `node concepts/agent-swarm/serve.mjs`. Account-specific examples:
+
+![Signal Bloom from source-observed public events](exports/account/bloom-events-dark.gif)
+
+[Commits-only GIF](exports/account/bloom-commits-dark.gif) · [Light GIF](exports/account/bloom-events-light.gif) · [Static SVG](exports/account/bloom-events-dark-still.svg)
+
+On this experimental branch, the standard `build.mjs` and `--verify` commands also generate and verify the new exports for account and demo, both themes and metrics. No dependency installation, token or live API is needed.
+
 ## New account-specific concepts
 
 ### 1. Swarm Forge (recommended)

@@ -6,6 +6,7 @@ import { calendarData, svgCalendar } from "./calendar.mjs";
 import { renderCalendarGif } from "./calendar-gif.mjs";
 import { showcaseData } from "./showcase.mjs";
 import { makeStory, renderStorySvg, renderStoryGif } from "./swarm-stories.mjs";
+import { bloomScene, renderBloomSvg, renderBloomGif } from "./signal-bloom.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
@@ -67,6 +68,19 @@ for(const mode of ["forge","relay"])for(const theme of ["dark","light"]){
  outputFile(join(out,name+"-still.svg"),renderStorySvg(story,{mode,theme,animated:false,time:mode==="forge"?11.2:4}),"utf8");
  outputFile(join(out,name+".gif"),Buffer.from(renderStoryGif(story,{mode,theme})));
  console.log("STORY SVG / STILL / GIF  "+name);
+}
+
+// Experimental Signal Bloom uses the same complete source-observed calendar.
+// The metric is explicit: distinct public events or observed authored commit events.
+for(const metric of ["events","commits"]){
+ const flowers=bloomScene(scene,{metric});
+ for(const theme of ["dark","light"]){
+  const name="bloom-"+metric+"-"+theme;
+  outputFile(join(out,name+".svg"),renderBloomSvg(flowers,{theme}),"utf8");
+  outputFile(join(out,name+"-still.svg"),renderBloomSvg(flowers,{theme,animated:false,time:11.3}),"utf8");
+  outputFile(join(out,name+".gif"),Buffer.from(renderBloomGif(flowers,{theme})));
+  console.log("SIGNAL BLOOM SVG / STILL / GIF  "+name);
+ }
 }
 
 // Optional richer synthetic demo, useful for judging the swarm's choreography

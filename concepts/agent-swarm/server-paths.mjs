@@ -10,7 +10,7 @@ export function resolvePublicFile(root,urlPath){
  try{decoded=decodeURIComponent(urlPath)}catch{return null;}
  if(!decoded.startsWith("/")||decoded.includes("\0"))return null;
  const target=resolve(root,"."+(decoded==="/"?"/preview.html":decoded));
- if(target===resolve(root,"preview.html")||target===resolve(root,"showcase.html")||target===resolve(root,"compare.html"))return target;
+ if(target===resolve(root,"preview.html")||target===resolve(root,"showcase.html")||target===resolve(root,"compare.html")||target===resolve(root,"bloom.html"))return target;
  const exportDir=resolve(root,"exports");
  if(target.startsWith(exportDir+sep)&&[".gif",".svg",".png",".webp",".json"].includes(extname(target).toLowerCase()))return target;
  return null;

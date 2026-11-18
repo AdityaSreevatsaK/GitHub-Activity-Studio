@@ -15,7 +15,7 @@ createServer((request,response) => {
     // Symlinks are resolved before serving, so an export cannot point outside
     // its directory even on platforms with different path separators.
     const real = realpathSync(target);
-    const allowed=real===resolve(root,"preview.html")||real===resolve(root,"showcase.html")||real===resolve(root,"compare.html")||
+    const allowed=real===resolve(root,"preview.html")||real===resolve(root,"showcase.html")||real===resolve(root,"compare.html")||real===resolve(root,"bloom.html")||
       (real.startsWith(resolve(root,"exports")+sep)&&[".gif",".svg",".png",".webp",".json"].includes(extname(real).toLowerCase()));
     if(!allowed){response.writeHead(403);response.end("Forbidden");return;}
     const content = readFileSync(target);
