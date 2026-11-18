@@ -1,12 +1,6 @@
 name: Agent Swarm validation
 
 on:
-  push:
-    branches:
-      - concept/agent-swarm
-    paths:
-      - "concepts/agent-swarm/**"
-      - ".github/workflows/agent-swarm.yml"
   pull_request:
     paths:
       - "concepts/agent-swarm/**"
@@ -22,12 +16,13 @@ concurrency:
 
 jobs:
   validate:
-    name: Node 20 / ${{ matrix.os }}
+    name: Node ${{ matrix.node }} / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
+        node: ["20", "22"]
     timeout-minutes: 15
 
     steps:
@@ -35,10 +30,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Install Node.js 20
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: ${{ matrix.node }}
       - name: Run offline Agent Swarm tests
         shell: bash
         run: node --test concepts/agent-swarm/tests/*.test.mjs
