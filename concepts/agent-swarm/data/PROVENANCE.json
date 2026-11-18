@@ -7,5 +7,24 @@
   "pr_items": 327,
   "issues": 50,
   "commit_collection": "pending",
-  "privacy": "Only is:public search results retained. No private repository names, credentials or contents."
+  "privacy": "Only is:public search results retained. No private repository names, credentials or contents.",
+  "public_issue_items": 114,
+  "issue_pages_fetched": 3,
+  "owned_public_repository_count": 33,
+  "commits_checked_public_repos": [
+    "AdityaSreevatsaK/100DaysOfCode_Python",
+    "AdityaSreevatsaK/AdityaSreevatsaK",
+    "AdityaSreevatsaK/agent-engineering-accelerator",
+    "AdityaSreevatsaK/Agentic-Assembly",
+    "AdityaSreevatsaK/agentic-engineering-toolkit",
+    "AdityaSreevatsaK/AlphaAgent",
+    "AdityaSreevatsaK/AlphaAgent-Phase1-Baseline",
+    "AdityaSreevatsaK/Applied-AI-Lab",
+    "AdityaSreevatsaK/Code-Factory",
+    "AdityaSreevatsaK/DS-ML-Playground",
+    "AdityaSreevatsaK/github-actions-command-centre"
+  ],
+  "public_default_branch_commits": 86,
+  "failed_commit_queries": [],
+  "commit_limit_per_repository": 40
 }
