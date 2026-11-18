@@ -28,11 +28,33 @@ export function calendarData(scene,raw){
  };
  // Assign representative observed events across the time span, not just the
  // most recent week, so distant calendar cells receive meaningful swarm visits.
- const knownRepos=new Map(filtered.repositories.map(r=>[r.full_name,r.index]));
+ // For public account previews, prioritise repositories with meaningful recorded
+ // activity, rather than those touched in the last few minutes. This also keeps
+ // historical open-source collaborations visible as coloured beacons.
+ const publicAccount=snap.source==="github";
+ const stats=new Map();
+ for(const e of windowEvents){
+  const s=stats.get(e.repo_full_name)||{events:0,units:0,latest:""};
+  s.events++;s.units+=e.count;
+  if(e.occurred_at>s.latest)s.latest=e.occurred_at;
+  stats.set(e.repo_full_name,s);
+ }
+ const chosenRepos=publicAccount?
+  [...snap.repositories].sort((a,b)=>
+   (stats.get(b.full_name)?.events||0)-(stats.get(a.full_name)?.events||0)||
+   (stats.get(b.full_name)?.latest||"").localeCompare(stats.get(a.full_name)?.latest||"")||
+   a.full_name.localeCompare(b.full_name)).slice(0,5).map((r,index)=>({
+    ...r,index,events:stats.get(r.full_name)?.events||0,units:stats.get(r.full_name)?.units||0
+   })):filtered.repositories;
+ const knownRepos=new Map(chosenRepos.map(r=>[r.full_name,r.index]));
  const eligible=windowEvents.filter(e=>knownRepos.has(e.repo_full_name));
  const maxJobs=10;
- const picked=eligible.length<=maxJobs?eligible:
-  Array.from({length:maxJobs},(_,i)=>eligible[Math.round(i*(eligible.length-1)/(maxJobs-1))]);
+ // Use different recorded *days* for a well-spread account animation. Selecting
+ // event indices alone would make a high-volume recent week dominate the swarm.
+ const dates=[...new Set(eligible.map(e=>e.occurred_at.slice(0,10)))];
+ const candidates=publicAccount?dates.map(date=>eligible.find(e=>e.occurred_at.startsWith(date))):eligible;
+ const picked=candidates.length<=maxJobs?candidates:
+  Array.from({length:maxJobs},(_,i)=>candidates[Math.round(i*(candidates.length-1)/(maxJobs-1))]);
  const spacing=picked.length>1?10.8/(picked.length-1):0;
  const jobs=picked.map((e,i)=>({
   id:e.id,kind:e.kind,repo_full_name:e.repo_full_name,
@@ -44,12 +66,12 @@ export function calendarData(scene,raw){
  }));
  const historical=snap.activity.filter(e=>Date.parse(e.occurred_at)<=generated);
  const last=historical.at(-1),stale_days=last?Math.max(0,Math.floor((generated-Date.parse(last.occurred_at))/ONE_DAY)):null;
- return {...filtered,event_total:snap.activity.length,repository_total:snap.repositories.length,
+ return {...filtered,repositories:chosenRepos,eligible_total:eligible.length,event_total:snap.activity.length,repository_total:snap.repositories.length,
   jobs,shown:jobs.length,stale_days,
   calendar:{start:startDay,end:lastDay,generated_at:snap.generated_at,days,observed_days:days.length,
    window_events:windowEvents.length,outside_window_events:outside,future_events:future,
    semantics:"Source-observed events only; not GitHub's complete contributions graph. Choreography is time-stratified."},
-  truncated:filtered.repositories.length<snap.repositories.length||eligible.length>jobs.length||outside>0||future>0
+  truncated:chosenRepos.length<snap.repositories.length||eligible.length>jobs.length||outside>0||future>0
  };
 }
 
