@@ -150,6 +150,10 @@ export function renderStorySvg(story,{mode='forge',theme='dark',animated=true,ti
      if(animated)r.push('<animateTransform attributeName="transform" type="translate" values="0 0;0 0;'+(end-start).toFixed(1)+' 0;'+(end-start).toFixed(1)+' 0" keyTimes="0;.0607;.7607;1" dur="14s" repeatCount="indefinite"/>');
      r.push('</polygon></g>');
    }
+   const marker='<g><circle cx="565" cy="49" r="13" fill="'+c.panel+'" stroke="'+COLOURS[0]+'" stroke-width="2"/>'+
+    COLOURS.map((colour,i)=>{const angle=i*Math.PI*2/5;return '<circle cx="'+(565+Math.cos(angle)*8).toFixed(1)+'" cy="'+(49+Math.sin(angle)*8).toFixed(1)+'" r="2.6" fill="'+colour+'"/>';}).join('')+'</g>';
+   if(animated)r.push('<g opacity="0"><animate attributeName="opacity" dur="14s" keyTimes="0;.76;.77;1" values="0;0;1;1" repeatCount="indefinite"/>'+marker+'</g>');
+   else if(progress>=1)r.push(marker);
    r.push(txt(104,272,'ASSEMBLY ROUTE  /  ALL '+story.window_events+' OBSERVED EVENTS',10,c.muted));
    r.push(txt(1040,272,animated?'BUILDING  →  COMPLETE':(Math.floor(progress*100)+'% BUILT'),10,COLOURS[0],'text-anchor="end"'));
  }else{
@@ -159,8 +163,8 @@ export function renderStorySvg(story,{mode='forge',theme='dark',animated=true,ti
        const path=pathFor(signal,repo),pos=signalPosition(signal,repo,time);
        if(animated){
          const a=signal.start/STORY_PERIOD,b=(signal.start+signal.duration)/STORY_PERIOD;
-         r.push('<path d="'+path+'" stroke="'+repo.colour+'" fill="none" stroke-width="1.5" opacity="0"><animate attributeName="opacity" values="0;0;.23;.23;0;0" keyTimes="0;'+a.toFixed(5)+';'+(a+.006).toFixed(5)+';'+(b-.006).toFixed(5)+';'+b.toFixed(5)+';1" dur="14s" repeatCount="indefinite"/></path>');
-       }else if(pos.active)r.push('<path d="'+path+'" stroke="'+repo.colour+'" opacity=".23" stroke-width="1.5" fill="none"/>');
+         r.push('<circle cx="'+signal.x+'" cy="'+signal.y+'" r="10" fill="none" stroke="'+repo.colour+'" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;0;.9;.9;0;0" keyTimes="0;'+a.toFixed(5)+';'+(a+.006).toFixed(5)+';'+(b-.006).toFixed(5)+';'+b.toFixed(5)+';1" dur="14s" repeatCount="indefinite"/></circle>');
+       }else if(pos.active)r.push('<circle cx="'+signal.x+'" cy="'+signal.y+'" r="10" fill="none" stroke="'+repo.colour+'" opacity=".9" stroke-width="2"/>');
        if(animated){
          const a=signal.start/STORY_PERIOD,b=(signal.start+signal.duration)/STORY_PERIOD;
          const shape='<polygon points="'+hex(0,0,6)+'" fill="'+repo.colour+'" stroke="'+c.bright+'" stroke-width="1"/>';
@@ -236,6 +240,14 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
  const graphX=x=>x*scx,graphY=y=>y*scy;
  for(let y=9;y<H;y+=14)for(let x=11;x<W;x+=14)pix(x,y,29);
  box(12,12,776,37,3);rect(16,16,5,28,mode==='forge'?5:6);
+ const done=mode==='forge'&&forgeProgress(time)>=1;
+ const sx=427,sy=30,orb=done?8:14;
+ for(let i=0;i<5;i++){
+   const angle=2*Math.PI*i/5+time*.28,x=sx+Math.cos(angle)*orb,y=sy+Math.sin(angle)*orb;
+   line(sx,sy,x,y,17);box(x-2,y-2,5,5,5+i);
+ }
+ ring(sx,sy,done?13:6,done?10:1);
+ label(451,23,done?'TEAMS SYNCED':'5 ACTIVE TEAMS',done?10:2,1,14);
  label(29,21,mode==='forge'?'SWARM FORGE':'SWARM RELAY',1,2);
  label(30,41,mode==='forge'?'BUILDING THE REAL OBSERVED CALENDAR':'TEAMS RELAY REPOSITORY SIGNALS',2,1);
  label(553,20,'@'+story.user.login,1,1,38);
@@ -244,17 +256,17 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
  label(70,64,'53 WEEKS / SUN TO SAT',2);
  if(story.source==='demo')label(664,65,'DEMO DATA',8);
  const byDate=new Map(story.calendar.days.map(d=>[d.date,d]));
- const progress=forgeProgress(time),done=Math.floor(progress*53);
+ const progress=forgeProgress(time),builtWeeks=Math.floor(progress*53);
  for(let w=0;w<53;w++)for(let day=0;day<7;day++){
    const date=dateFrom(story.calendar.start,w*7+day),d=byDate.get(date);
    const x=graphX(G.x+w*G.dx),y=graphY(G.y+day*G.dy);
    let colour=11;
    if(d){
      const level=maxLevel(d.events),shades=[11,12,13,14,10];
-     colour=(mode==='forge'&&w>=done)?17:shades[level];
+     colour=(mode==='forge'&&w>=builtWeeks)?17:shades[level];
    } else colour=11;
    box(x,y,9,9,colour);
-   if(d&&d.events>=5&&!(mode==='forge'&&w>=done))pix(x+7,y+1,15);
+   if(d&&d.events>=5&&!(mode==='forge'&&w>=builtWeeks))pix(x+7,y+1,15);
  }
  const first=Date.parse(story.calendar.start+'T00:00:00Z');
  let last=-1;for(let w=0;w<53;w++){
@@ -263,11 +275,16 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
  }
  label(58,106,'M',2);label(58,129,'W',2);label(58,153,'F',2);
  if(mode==='forge'){
-   const head=graphX(G.x+done*G.dx),text=storyState(story,mode,time);
+   const head=graphX(G.x+builtWeeks*G.dx),text=storyState(story,mode,time);
    line(head,84,head,179,5);
    for(let k=0;k<5;k++){
-     const x=head+(k%2?-4:4),y=96+k*15;
-     ring(x,y,4,5+k);pix(x,y,1);
+     const destination=story.signals[k]?.events.at(-1);
+     const finish=progress>=1&&destination;
+     const x=finish?graphX(destination.x):head+(k%2?-4:4);
+     const y=finish?graphY(destination.y):96+k*15;
+     ring(x,y,finish?7:5,5+k);
+     box(x-2,y-2,5,5,15);pix(x,y,5+k);
+     if(finish)ring(x,y,11,5+k);
    }
    box(50,190,704,17,3);
    box(51,191,Math.round(702*progress),15,24);
@@ -278,14 +295,22 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
        const path=signalPosition(signal,group.repo,time);
        const x0=graphX(144+group.repo.index*206),y0=graphY(292),x1=graphX(signal.x),y1=graphY(signal.y);
        if(path.active){
-         line(x0,y0,x1,y1,17);
          const x=graphX(path.x),y=graphY(path.y),colour=5+group.repo.index;
+         for(const dt of [.18,.12,.06]){
+           const echo=signalPosition(signal,group.repo,time-dt);
+           if(echo.active)box(graphX(echo.x)-1,graphY(echo.y)-1,3,3,dt===.06?colour:18);
+         }
          ring(x,y,7,colour);box(x-2,y-2,5,5,15);
-         ring(x1,y1,11,colour);
+         ring(x1,y1,10,colour);
        }
      }
    }
-   box(50,190,704,17,3);label(57,194,'SIGNAL RELAY / REAL SOURCE DATES / CALENDAR PRESERVED',1);
+   box(50,190,704,17,3);
+   const flights=story.signals.flatMap(g=>g.events.filter(e=>signalPosition(e,g.repo,time).active).map(e=>({repo:g.repo,event:e})));
+   if(flights.length){
+     const current=flights[0],kind=current.event.kind.replaceAll('_',' ').toUpperCase();
+     label(57,194,'LIVE DELIVERY  '+safeName(current.repo.name,16)+'  /  '+kind+'  /  '+current.event.date,1,1,105);
+   }else label(57,194,'WAITING FOR THE NEXT SOURCE-BACKED SIGNAL / CALENDAR PRESERVED',1);
  }
  for(let i=0;i<story.repositories.length;i++){
    const r=story.repositories[i],x=54+i*141,col=5+i;
