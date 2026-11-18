@@ -22,9 +22,20 @@
     "AdityaSreevatsaK/Applied-AI-Lab",
     "AdityaSreevatsaK/Code-Factory",
     "AdityaSreevatsaK/DS-ML-Playground",
-    "AdityaSreevatsaK/github-actions-command-centre"
+    "AdityaSreevatsaK/github-actions-command-centre",
+    "AdityaSreevatsaK/GitHub-Activity-Studio",
+    "AdityaSreevatsaK/GitHub-Constellation",
+    "AdityaSreevatsaK/httpx2",
+    "AdityaSreevatsaK/hypercorn",
+    "AdityaSreevatsaK/logfire",
+    "AdityaSreevatsaK/MongoDB-Mechanics",
+    "AdityaSreevatsaK/NLP-Navigator",
+    "AdityaSreevatsaK/Open-Source-Metro",
+    "AdityaSreevatsaK/PySpark-Pipeline",
+    "AdityaSreevatsaK/pytest-cov",
+    "AdityaSreevatsaK/pytest-xdist"
   ],
-  "public_default_branch_commits": 86,
+  "public_default_branch_commits": 95,
   "failed_commit_queries": [],
   "commit_limit_per_repository": 40
 }
