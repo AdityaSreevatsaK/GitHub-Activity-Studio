@@ -1,0 +1,45 @@
+name: Agent Swarm validation
+
+on:
+  pull_request:
+    paths:
+      - "concepts/agent-swarm/**"
+      - ".github/workflows/agent-swarm.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agent-swarm-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Node ${{ matrix.node }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ["20", "22"]
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the PR branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Run offline Agent Swarm tests
+        shell: bash
+        run: node --test concepts/agent-swarm/tests/*.test.mjs
+      - name: Verify demo and showcase exports byte for byte
+        shell: bash
+        run: node concepts/agent-swarm/build.mjs --verify
+      - name: Verify AdityaSreevatsaK exports byte for byte
+        shell: bash
+        run: node concepts/agent-swarm/build.mjs --account --verify

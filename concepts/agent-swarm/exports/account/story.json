@@ -1,0 +1,2672 @@
+{
+  "source": "github",
+  "user": {
+    "login": "AdityaSreevatsaK"
+  },
+  "generated_at": "2026-11-18T08:36:06.522Z",
+  "calendar": {
+    "start": "2025-11-16",
+    "end": "2026-11-18",
+    "days": [
+      {
+        "date": "2025-11-24",
+        "week": 1,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4135"
+          }
+        ]
+      },
+      {
+        "date": "2025-12-20",
+        "week": 4,
+        "weekday": 6,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "commit": 1
+        },
+        "links": [
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/Agentic-Assembly",
+            "url": "https://github.com/AdityaSreevatsaK/Agentic-Assembly/commit/632633a74c39ac93e293e8179edb2799b86097f6"
+          }
+        ]
+      },
+      {
+        "date": "2025-12-23",
+        "week": 5,
+        "weekday": 2,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4142"
+          }
+        ]
+      },
+      {
+        "date": "2025-12-29",
+        "week": 6,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4145"
+          }
+        ]
+      },
+      {
+        "date": "2026-02-01",
+        "week": 11,
+        "weekday": 0,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4232"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4233"
+          }
+        ]
+      },
+      {
+        "date": "2026-02-06",
+        "week": 11,
+        "weekday": 5,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4256"
+          }
+        ]
+      },
+      {
+        "date": "2026-02-11",
+        "week": 12,
+        "weekday": 3,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4261"
+          }
+        ]
+      },
+      {
+        "date": "2026-02-22",
+        "week": 14,
+        "weekday": 0,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4265"
+          }
+        ]
+      },
+      {
+        "date": "2026-02-25",
+        "week": 14,
+        "weekday": 3,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4269"
+          }
+        ]
+      },
+      {
+        "date": "2026-02-28",
+        "week": 14,
+        "weekday": 6,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4272"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4273"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-01",
+        "week": 15,
+        "weekday": 0,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4275"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4276"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-03",
+        "week": 15,
+        "weekday": 2,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4280"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-05",
+        "week": 15,
+        "weekday": 4,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4285"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4286"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-08",
+        "week": 16,
+        "weekday": 0,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4293"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4294"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-09",
+        "week": 16,
+        "weekday": 1,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4296"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4297"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-11",
+        "week": 16,
+        "weekday": 3,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4299"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4300"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-13",
+        "week": 16,
+        "weekday": 5,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4302"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-14",
+        "week": 16,
+        "weekday": 6,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4305"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4306"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-15",
+        "week": 17,
+        "weekday": 0,
+        "events": 3,
+        "units": 3,
+        "kinds": {
+          "issue_opened": 3
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4308"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4309"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4311"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-17",
+        "week": 17,
+        "weekday": 2,
+        "events": 3,
+        "units": 3,
+        "kinds": {
+          "issue_opened": 3
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4313"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4314"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4315"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-18",
+        "week": 17,
+        "weekday": 3,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4318"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-19",
+        "week": 17,
+        "weekday": 4,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4320"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-20",
+        "week": 17,
+        "weekday": 5,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4322"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4324"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-22",
+        "week": 18,
+        "weekday": 0,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4327"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4330"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-23",
+        "week": 18,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4332"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-25",
+        "week": 18,
+        "weekday": 3,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4334"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-26",
+        "week": 18,
+        "weekday": 4,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4336"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-27",
+        "week": 18,
+        "weekday": 5,
+        "events": 4,
+        "units": 4,
+        "kinds": {
+          "issue_opened": 4
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4338"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4341"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4342"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-28",
+        "week": 18,
+        "weekday": 6,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4346"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4347"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-29",
+        "week": 19,
+        "weekday": 0,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4349"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4351"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-30",
+        "week": 19,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4354"
+          }
+        ]
+      },
+      {
+        "date": "2026-03-31",
+        "week": 19,
+        "weekday": 2,
+        "events": 5,
+        "units": 5,
+        "kinds": {
+          "issue_opened": 5
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4357"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4358"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4360"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-01",
+        "week": 19,
+        "weekday": 3,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4364"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-02",
+        "week": 19,
+        "weekday": 4,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4366"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-04",
+        "week": 19,
+        "weekday": 6,
+        "events": 4,
+        "units": 4,
+        "kinds": {
+          "issue_opened": 4
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4372"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4375"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4378"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-05",
+        "week": 20,
+        "weekday": 0,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4384"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-06",
+        "week": 20,
+        "weekday": 1,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4386"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4388"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-07",
+        "week": 20,
+        "weekday": 2,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4391"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-08",
+        "week": 20,
+        "weekday": 3,
+        "events": 6,
+        "units": 6,
+        "kinds": {
+          "issue_opened": 6
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4393"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4394"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4395"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-09",
+        "week": 20,
+        "weekday": 4,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4400"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4402"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-10",
+        "week": 20,
+        "weekday": 5,
+        "events": 3,
+        "units": 3,
+        "kinds": {
+          "issue_opened": 3
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4408"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4409"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4410"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-13",
+        "week": 21,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4417"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-14",
+        "week": 21,
+        "weekday": 2,
+        "events": 3,
+        "units": 3,
+        "kinds": {
+          "issue_opened": 3
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4422"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4424"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4425"
+          }
+        ]
+      },
+      {
+        "date": "2026-04-20",
+        "week": 22,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4455"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-24",
+        "week": 35,
+        "weekday": 5,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4634"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-26",
+        "week": 36,
+        "weekday": 0,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4639"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-02",
+        "week": 37,
+        "weekday": 0,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4648"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4649"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-04",
+        "week": 37,
+        "weekday": 2,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4652"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-05",
+        "week": 37,
+        "weekday": 3,
+        "events": 3,
+        "units": 3,
+        "kinds": {
+          "issue_opened": 3
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4654"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4655"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4656"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-08",
+        "week": 37,
+        "weekday": 6,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4660"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-15",
+        "week": 38,
+        "weekday": 6,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4662"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-17",
+        "week": 39,
+        "weekday": 1,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4666"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-18",
+        "week": 39,
+        "weekday": 2,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4668"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4669"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-28",
+        "week": 40,
+        "weekday": 5,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4672"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-02",
+        "week": 41,
+        "weekday": 3,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4675"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4677"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-03",
+        "week": 41,
+        "weekday": 4,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4682"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-05",
+        "week": 41,
+        "weekday": 6,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4689"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4690"
+          }
+        ]
+      },
+      {
+        "date": "2026-09-09",
+        "week": 42,
+        "weekday": 3,
+        "events": 2,
+        "units": 2,
+        "kinds": {
+          "issue_opened": 2
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4694"
+          },
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4695"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-16",
+        "week": 47,
+        "weekday": 5,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4841"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-20",
+        "week": 48,
+        "weekday": 2,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "rossjrw/rossjrw",
+            "url": "https://github.com/rossjrw/rossjrw/issues/4849"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-24",
+        "week": 48,
+        "weekday": 6,
+        "events": 4,
+        "units": 4,
+        "kinds": {
+          "pr_opened": 2,
+          "pr_merged": 2
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/1"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/1"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/2"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-25",
+        "week": 49,
+        "weekday": 0,
+        "events": 47,
+        "units": 47,
+        "kinds": {
+          "pr_opened": 13,
+          "pr_merged": 13,
+          "commit": 20,
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/3"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/3"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/4"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-26",
+        "week": 49,
+        "weekday": 1,
+        "events": 4,
+        "units": 4,
+        "kinds": {
+          "pr_opened": 1,
+          "commit": 1,
+          "pr_merged": 1,
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/17"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/commit/ee7dbc18d458fd6db2c8288ff59454e84e6063c9"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/17"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-27",
+        "week": 49,
+        "weekday": 2,
+        "events": 26,
+        "units": 26,
+        "kinds": {
+          "issue_opened": 2,
+          "commit": 14,
+          "pr_opened": 5,
+          "pr_merged": 5
+        },
+        "links": [
+          {
+            "kind": "issue_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/issues/1"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/commit/3057cb351e6ae834b2296d84689990bbdda87fcc"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/commit/9c826527b650ce77d07d94ea7b16be4a96cc1311"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-28",
+        "week": 49,
+        "weekday": 3,
+        "events": 6,
+        "units": 6,
+        "kinds": {
+          "pr_opened": 1,
+          "commit": 4,
+          "pr_merged": 1
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/25"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/commit/755fbcc69fccff95e3b5aeccf06e45b4b856e7d0"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/25"
+          }
+        ]
+      },
+      {
+        "date": "2026-10-29",
+        "week": 49,
+        "weekday": 4,
+        "events": 1,
+        "units": 1,
+        "kinds": {
+          "pr_opened": 1
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/2"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-03",
+        "week": 50,
+        "weekday": 2,
+        "events": 6,
+        "units": 6,
+        "kinds": {
+          "pr_opened": 2,
+          "commit": 2,
+          "pr_merged": 2
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/26"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/commit/b348592d82dae484fad0a703d3b7fa96455d9e0f"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/26"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-04",
+        "week": 50,
+        "weekday": 3,
+        "events": 6,
+        "units": 6,
+        "kinds": {
+          "pr_opened": 2,
+          "commit": 2,
+          "pr_merged": 2
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/29"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/commit/c39bb1abafe85a0fbb4135655f6d6eb3e0acfce1"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/29"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-05",
+        "week": 50,
+        "weekday": 4,
+        "events": 44,
+        "units": 44,
+        "kinds": {
+          "pr_opened": 20,
+          "commit": 4,
+          "pr_merged": 20
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/31"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/commit/160efec019ebba365f366978602ddba04c97a70e"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/31"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-06",
+        "week": 50,
+        "weekday": 5,
+        "events": 26,
+        "units": 26,
+        "kinds": {
+          "pr_opened": 14,
+          "pr_merged": 12
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/21"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/21"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/22"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-07",
+        "week": 50,
+        "weekday": 6,
+        "events": 41,
+        "units": 41,
+        "kinds": {
+          "pr_merged": 21,
+          "pr_opened": 20
+        },
+        "links": [
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/34"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/35"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/35"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-08",
+        "week": 51,
+        "weekday": 0,
+        "events": 22,
+        "units": 22,
+        "kinds": {
+          "pr_opened": 11,
+          "pr_merged": 11
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/55"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/55"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/56"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-09",
+        "week": 51,
+        "weekday": 1,
+        "events": 27,
+        "units": 27,
+        "kinds": {
+          "pr_opened": 14,
+          "pr_merged": 13
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/66"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/66"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/67"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-10",
+        "week": 51,
+        "weekday": 2,
+        "events": 40,
+        "units": 40,
+        "kinds": {
+          "pr_opened": 16,
+          "pr_merged": 16,
+          "commit": 8
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/79"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/79"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/80"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-11",
+        "week": 51,
+        "weekday": 3,
+        "events": 31,
+        "units": 31,
+        "kinds": {
+          "pr_opened": 13,
+          "commit": 7,
+          "pr_merged": 11
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+            "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller/pull/9"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+            "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller/commit/2ca1393332ad63ca044ada447cc267711818d5c1"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+            "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller/pull/9"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-12",
+        "week": 51,
+        "weekday": 4,
+        "events": 34,
+        "units": 34,
+        "kinds": {
+          "pr_opened": 19,
+          "pr_merged": 12,
+          "commit": 3
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "pydantic/httpx2",
+            "url": "https://github.com/pydantic/httpx2/pull/1332"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/90"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+            "url": "https://github.com/AdityaSreevatsaK/agentic-engineering-toolkit/pull/33"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-13",
+        "week": 51,
+        "weekday": 5,
+        "events": 35,
+        "units": 35,
+        "kinds": {
+          "pr_opened": 14,
+          "pr_merged": 11,
+          "commit": 9,
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/100"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/101"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/100"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-14",
+        "week": 51,
+        "weekday": 6,
+        "events": 99,
+        "units": 99,
+        "kinds": {
+          "pr_opened": 40,
+          "commit": 16,
+          "pr_merged": 39,
+          "issue_opened": 4
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+            "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller/pull/26"
+          },
+          {
+            "kind": "commit",
+            "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+            "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller/commit/d436a1f3ded01879ee19ec52ef32d732035c54e1"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+            "url": "https://github.com/AdityaSreevatsaK/Taiyou-Novels-Storage-Controller/pull/26"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-15",
+        "week": 52,
+        "weekday": 0,
+        "events": 106,
+        "units": 106,
+        "kinds": {
+          "pr_opened": 48,
+          "pr_merged": 30,
+          "commit": 27,
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/128"
+          },
+          {
+            "kind": "pr_merged",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/128"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+            "url": "https://github.com/AdityaSreevatsaK/agent-engineering-accelerator/pull/129"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-16",
+        "week": 52,
+        "weekday": 1,
+        "events": 37,
+        "units": 37,
+        "kinds": {
+          "pr_opened": 21,
+          "commit": 7,
+          "pr_merged": 8,
+          "issue_opened": 1
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/wheelgap",
+            "url": "https://github.com/AdityaSreevatsaK/wheelgap/pull/9"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/wheelgap",
+            "url": "https://github.com/AdityaSreevatsaK/wheelgap/pull/10"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "wheelgap/wheelgap",
+            "url": "https://github.com/wheelgap/wheelgap/pull/406"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-17",
+        "week": 52,
+        "weekday": 2,
+        "events": 78,
+        "units": 78,
+        "kinds": {
+          "pr_opened": 36,
+          "pr_merged": 24,
+          "commit": 18
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/tracker",
+            "url": "https://github.com/AdityaSreevatsaK/tracker/pull/2"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/tracker",
+            "url": "https://github.com/AdityaSreevatsaK/tracker/pull/3"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/tracker",
+            "url": "https://github.com/AdityaSreevatsaK/tracker/pull/4"
+          }
+        ]
+      },
+      {
+        "date": "2026-11-18",
+        "week": 52,
+        "weekday": 3,
+        "events": 35,
+        "units": 35,
+        "kinds": {
+          "pr_opened": 14,
+          "pr_merged": 5,
+          "commit": 16
+        },
+        "links": [
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/wheels",
+            "url": "https://github.com/AdityaSreevatsaK/wheels/pull/1"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/wheels",
+            "url": "https://github.com/AdityaSreevatsaK/wheels/pull/2"
+          },
+          {
+            "kind": "pr_opened",
+            "repo_full_name": "AdityaSreevatsaK/wheels",
+            "url": "https://github.com/AdityaSreevatsaK/wheels/pull/3"
+          }
+        ]
+      }
+    ],
+    "observed_days": 82
+  },
+  "event_total": 859,
+  "window_events": 859,
+  "repositories": [
+    {
+      "name": "agent-engineering-accelerator",
+      "full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+      "index": 0,
+      "colour": "#53e0c8",
+      "events": 295
+    },
+    {
+      "name": "agentic-engineering-toolkit",
+      "full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+      "index": 1,
+      "colour": "#7bc5ff",
+      "events": 138
+    },
+    {
+      "name": "Taiyou-Novels-Storage-Controller",
+      "full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+      "index": 2,
+      "colour": "#be9dff",
+      "events": 122
+    },
+    {
+      "name": "rossjrw",
+      "full_name": "rossjrw/rossjrw",
+      "index": 3,
+      "colour": "#ffc47a",
+      "events": 106
+    },
+    {
+      "name": "wheelgap",
+      "full_name": "AdityaSreevatsaK/wheelgap",
+      "index": 4,
+      "colour": "#ff8eb4",
+      "events": 40
+    }
+  ],
+  "signals": [
+    {
+      "repo": {
+        "name": "agent-engineering-accelerator",
+        "full_name": "AdityaSreevatsaK/agent-engineering-accelerator",
+        "index": 0,
+        "colour": "#53e0c8",
+        "events": 295
+      },
+      "all_days": [
+        {
+          "date": "2026-10-25",
+          "events": 14,
+          "kind": "commit"
+        },
+        {
+          "date": "2026-10-27",
+          "events": 10,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-10-28",
+          "events": 3,
+          "kind": "commit"
+        },
+        {
+          "date": "2026-10-29",
+          "events": 1,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-05",
+          "events": 38,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-06",
+          "events": 26,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-07",
+          "events": 41,
+          "kind": "pr_merged"
+        },
+        {
+          "date": "2026-11-08",
+          "events": 22,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-09",
+          "events": 26,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-10",
+          "events": 16,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-11",
+          "events": 6,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-12",
+          "events": 20,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-13",
+          "events": 4,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-14",
+          "events": 49,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-15",
+          "events": 19,
+          "kind": "pr_opened"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-25",
+          "events": 14,
+          "kind": "commit",
+          "x": 950.45,
+          "y": 134.2,
+          "start": 0.9,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-05",
+          "events": 38,
+          "kind": "pr_opened",
+          "x": 967.7,
+          "y": 200.6,
+          "start": 3.05,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-08",
+          "events": 22,
+          "kind": "pr_opened",
+          "x": 984.95,
+          "y": 134.2,
+          "start": 5.2,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-12",
+          "events": 20,
+          "kind": "pr_opened",
+          "x": 984.95,
+          "y": 200.6,
+          "start": 7.35,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-15",
+          "events": 19,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 134.2,
+          "start": 9.5,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "agentic-engineering-toolkit",
+        "full_name": "AdityaSreevatsaK/agentic-engineering-toolkit",
+        "index": 1,
+        "colour": "#7bc5ff",
+        "events": 138
+      },
+      "all_days": [
+        {
+          "date": "2026-10-24",
+          "events": 4,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-10-25",
+          "events": 33,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-10-26",
+          "events": 4,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-10-27",
+          "events": 16,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-10-28",
+          "events": 3,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-03",
+          "events": 6,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-04",
+          "events": 6,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-05",
+          "events": 6,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-12",
+          "events": 7,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-14",
+          "events": 25,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-15",
+          "events": 25,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-17",
+          "events": 3,
+          "kind": "pr_opened"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-10-24",
+          "events": 4,
+          "kind": "pr_opened",
+          "x": 933.2,
+          "y": 233.8,
+          "start": 1.09,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-10-27",
+          "events": 16,
+          "kind": "pr_opened",
+          "x": 950.45,
+          "y": 167.39999999999998,
+          "start": 3.2399999999999998,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-04",
+          "events": 6,
+          "kind": "pr_opened",
+          "x": 967.7,
+          "y": 184,
+          "start": 5.390000000000001,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-12",
+          "events": 7,
+          "kind": "pr_opened",
+          "x": 984.95,
+          "y": 200.6,
+          "start": 7.54,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-17",
+          "events": 3,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 167.39999999999998,
+          "start": 9.69,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "Taiyou-Novels-Storage-Controller",
+        "full_name": "AdityaSreevatsaK/Taiyou-Novels-Storage-Controller",
+        "index": 2,
+        "colour": "#be9dff",
+        "events": 122
+      },
+      "all_days": [
+        {
+          "date": "2026-11-10",
+          "events": 24,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-11",
+          "events": 21,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-13",
+          "events": 28,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-14",
+          "events": 3,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-16",
+          "events": 4,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-11-17",
+          "events": 36,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-18",
+          "events": 6,
+          "kind": "pr_opened"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-11-10",
+          "events": 24,
+          "kind": "pr_opened",
+          "x": 984.95,
+          "y": 167.39999999999998,
+          "start": 1.28,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-13",
+          "events": 28,
+          "kind": "pr_opened",
+          "x": 984.95,
+          "y": 217.2,
+          "start": 3.4299999999999997,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-14",
+          "events": 3,
+          "kind": "pr_opened",
+          "x": 984.95,
+          "y": 233.8,
+          "start": 5.58,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-17",
+          "events": 36,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 167.39999999999998,
+          "start": 7.7299999999999995,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-18",
+          "events": 6,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 184,
+          "start": 9.88,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "rossjrw",
+        "full_name": "rossjrw/rossjrw",
+        "index": 3,
+        "colour": "#ffc47a",
+        "events": 106
+      },
+      "all_days": [
+        {
+          "date": "2025-11-24",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2025-12-23",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2025-12-29",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-02-01",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-02-06",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-02-11",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-02-22",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-02-25",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-02-28",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-01",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-03",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-05",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-08",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-09",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-11",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-13",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-14",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-15",
+          "events": 3,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-17",
+          "events": 3,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-18",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-19",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-20",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-22",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-23",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-25",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-26",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-27",
+          "events": 4,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-28",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-29",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-30",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-03-31",
+          "events": 5,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-01",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-02",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-04",
+          "events": 4,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-05",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-06",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-07",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-08",
+          "events": 6,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-09",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-10",
+          "events": 3,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-13",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-14",
+          "events": 3,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-04-20",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-07-24",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-07-26",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-02",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-04",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-05",
+          "events": 3,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-08",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-15",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-17",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-18",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-08-28",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-09-02",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-09-03",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-09-05",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-09-09",
+          "events": 2,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-10-16",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-10-20",
+          "events": 1,
+          "kind": "issue_opened"
+        },
+        {
+          "date": "2026-11-09",
+          "events": 1,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-11",
+          "events": 1,
+          "kind": "pr_merged"
+        },
+        {
+          "date": "2026-11-13",
+          "events": 1,
+          "kind": "issue_opened"
+        }
+      ],
+      "events": [
+        {
+          "date": "2025-11-24",
+          "events": 1,
+          "kind": "issue_opened",
+          "x": 122.45,
+          "y": 150.79999999999998,
+          "start": 1.4700000000000002,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-03-13",
+          "events": 1,
+          "kind": "issue_opened",
+          "x": 381.2,
+          "y": 217.2,
+          "start": 3.62,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-04-01",
+          "events": 1,
+          "kind": "issue_opened",
+          "x": 432.95,
+          "y": 184,
+          "start": 5.7700000000000005,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-08-04",
+          "events": 1,
+          "kind": "issue_opened",
+          "x": 743.45,
+          "y": 167.39999999999998,
+          "start": 7.92,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-13",
+          "events": 1,
+          "kind": "issue_opened",
+          "x": 984.95,
+          "y": 217.2,
+          "start": 10.07,
+          "duration": 1.65
+        }
+      ]
+    },
+    {
+      "repo": {
+        "name": "wheelgap",
+        "full_name": "AdityaSreevatsaK/wheelgap",
+        "index": 4,
+        "colour": "#ff8eb4",
+        "events": 40
+      },
+      "all_days": [
+        {
+          "date": "2026-11-15",
+          "events": 12,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-16",
+          "events": 18,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-17",
+          "events": 9,
+          "kind": "pr_opened"
+        },
+        {
+          "date": "2026-11-18",
+          "events": 1,
+          "kind": "pr_opened"
+        }
+      ],
+      "events": [
+        {
+          "date": "2026-11-15",
+          "events": 12,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 134.2,
+          "start": 1.6600000000000001,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-16",
+          "events": 18,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 150.79999999999998,
+          "start": 3.8099999999999996,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-17",
+          "events": 9,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 167.39999999999998,
+          "start": 5.96,
+          "duration": 1.65
+        },
+        {
+          "date": "2026-11-18",
+          "events": 1,
+          "kind": "pr_opened",
+          "x": 1002.2,
+          "y": 184,
+          "start": 8.11,
+          "duration": 1.65
+        }
+      ]
+    }
+  ],
+  "snapshot_age_days": 0,
+  "period": 14,
+  "note": "Observed public events only. The robots are fictional and perform no GitHub actions."
+}
