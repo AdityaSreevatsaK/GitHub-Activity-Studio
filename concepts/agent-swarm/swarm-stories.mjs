@@ -19,7 +19,8 @@ const themeColours = {
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const s=(v)=>escapeXml(String(v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g,''));
 const dateFrom=(start,index)=>new Date(Date.parse(start+'T00:00:00Z')+index*DAY).toISOString().slice(0,10);
-const maxLevel=(n)=>n>=5?4:n>=3?3:n>=2?2:n?1:0;
+// Four source-event intensity bands with a separate upper tier for busy days.
+const maxLevel=(n)=>n>=25?4:n>=7?3:n>=3?2:n>=1?1:0;
 const safeName=(s,n=15)=>Array.from(String(s)).slice(0,n).join('');
 const hex=(cx,cy,r)=>Array.from({length:6},(_,i)=>{const a=Math.PI/3*i+Math.PI/6;return (cx+Math.cos(a)*r).toFixed(1)+','+(cy+Math.sin(a)*r).toFixed(1)}).join(' ');
 
@@ -170,7 +171,7 @@ function svgFrame(story,mode,theme){
  r.push(svgText(1074,57,String(story.window_events)+' OBSERVED EVENTS  /  '+story.calendar.observed_days+' DAYS',10,c.muted,'text-anchor="end"'));
  r.push('<rect x="69" y="87" width="987" height="173" rx="13" fill="'+c.panel+'" stroke="'+c.line+'"/>');
  r.push(svgText(104,105,'53 WEEKS  ·  SUNDAY TO SATURDAY',10,c.muted,'letter-spacing=".8"'));
- r.push(svgText(1046,105,'LOW  ◼ ◼ ◼ ◼  HIGH',10,c.muted,'text-anchor="end"'));
+ r.push(svgText(1046,105,'DAILY EVENTS  1-2  /  3-6  /  7-24  /  25+',10,c.muted,'text-anchor="end"'));
  let prev=-1;
  for(let w=0;w<53;w++){
    const m=new Date(dateFrom(story.calendar.start,w*7)+'T00:00:00Z').getUTCMonth();
@@ -194,7 +195,7 @@ export function renderStorySvg(story,{mode='forge',theme='dark',animated=true,ti
    const d=days.get(date),x=G.x+w*G.dx,y=G.y+weekday*G.dy,fill=d?cellFill(maxLevel(d.events),c):c.off;
    const visibility=d?1:.65;
    let body='<rect class="'+(d?'day-cell':'empty-cell')+'" data-date="'+date+'" x="'+x.toFixed(2)+'" y="'+y.toFixed(2)+'" width="'+G.size+'" height="'+G.size+'" rx="2.4" fill="'+fill+'" opacity="'+visibility+'"/>';
-   if(d&&d.events>=5)body+='<circle cx="'+(x+G.size-2).toFixed(2)+'" cy="'+(y+2).toFixed(2)+'" r="1.5" fill="'+c.bright+'"/>';
+   if(d&&d.events>=25)body+='<circle cx="'+(x+G.size-2).toFixed(2)+'" cy="'+(y+2).toFixed(2)+'" r="1.5" fill="'+c.bright+'"/>';
    if(mode==='forge'&&d){
      if(animated){
        const start=(.85+9.8*w/53)/STORY_PERIOD;
@@ -328,6 +329,7 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
  label(553,33,story.window_events+' EVENTS / '+story.calendar.observed_days+' DAYS',2,1);
  box(49,60,705,128,3);
  label(70,64,'53 WEEKS / SUN TO SAT',2);
+ label(565,64,'1-2  3-6  7-24  25+',2);
  if(story.source==='demo')label(664,65,'DEMO DATA',8);
  const byDate=new Map(story.calendar.days.map(d=>[d.date,d]));
  const progress=forgeProgress(time),builtWeeks=Math.floor(progress*53);
@@ -340,7 +342,7 @@ export function storyGifFrame(story,{mode='forge',theme='dark',time=0}={}){
      colour=(mode==='forge'&&w>=builtWeeks)?17:shades[level];
    } else colour=11;
    box(x,y,9,9,colour);
-   if(d&&d.events>=5&&!(mode==='forge'&&w>=builtWeeks))pix(x+7,y+1,15);
+   if(d&&d.events>=25&&!(mode==='forge'&&w>=builtWeeks))pix(x+7,y+1,15);
  }
  const first=Date.parse(story.calendar.start+'T00:00:00Z');
  let last=-1;for(let w=0;w<53;w++){
