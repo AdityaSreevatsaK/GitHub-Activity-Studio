@@ -70,7 +70,7 @@ The canonical ten-event fixture and the fictional 327-event showcase are retaine
 
 ## Calendar interpretation
 
-The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar covers all 859 public records. Forge constructs all source-observed dates, while Relay animates up to five source-backed dates per each of the five busiest represented repositories. The earlier two designs still animate ten chronologically sampled events. The 14-second replay remains a visual metaphor.
+The 53-week, seven-day grid is **date-accurate for events present in the normalised input snapshot**. It is **not** GitHub's complete contributions graph. Intensity represents the number of **distinct recorded source events** per day, not a verified GitHub contribution total. The new designs distinguish **1–2**, **3–6**, **7–24** and **25+** observed events per day, so a day with 100 recorded events no longer looks like one with five. Blank cells mean *no events in the provided snapshot*, **not** zero contributions. The calendar covers all 859 public records. Forge constructs all source-observed dates, while Relay animates up to five source-backed dates per each of the five busiest represented repositories. The earlier two designs still animate ten chronologically sampled events. The 14-second replay remains a visual metaphor.
 
 ## A richer, explicitly fictional visual showcase
 
