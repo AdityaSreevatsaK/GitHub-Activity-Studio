@@ -154,7 +154,13 @@ test("Forge teams visit only dates observed in their own repositories",()=>{
 test("Story inspector preserves bounded, safe, source-backed hyperlinks",()=>{
  const raw=JSON.parse(readFileSync(new URL("../data/adityasreevatsak-public.json",import.meta.url),"utf8"));
  const story=construct(raw);
- const events=new Map(raw.activity.map(e=>[e.url,e]));
+ // One PR URL legitimately represents both an opening and a merge event.
+ const events=new Map();
+ for(const event of raw.activity){
+  const keys=events.get(event.url)||new Set();
+  keys.add(event.repo_full_name+"|"+event.kind);
+  events.set(event.url,keys);
+ }
  const links=story.calendar.days.flatMap(day=>day.links);
  assert(links.length>0);
  assert(story.calendar.days.every(day=>day.links.length<=3));
@@ -162,8 +168,7 @@ test("Story inspector preserves bounded, safe, source-backed hyperlinks",()=>{
   assert.match(link.url,/^https:\/\/github\.com\/[^/]+\/[^/]+\/(?:issues|pull|commit|releases)\//);
   const source=events.get(link.url);
   assert(source);
-  assert.equal(source.repo_full_name,link.repo_full_name);
-  assert.equal(source.kind,link.kind);
+  assert(source.has(link.repo_full_name+"|"+link.kind));
  }
  const injected=copy();
  injected.activity[0].url="https://github.com.evil.invalid/a/b/pull/3";
